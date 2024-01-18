@@ -232,7 +232,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               ),
                                         ),
                                         AutoSizeText(
-                                          'Name',
+                                          getJsonField(
+                                            FFAppState().indentSelectedSite,
+                                            r'''$.CustomerBank''',
+                                          ).toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -264,7 +267,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 ),
                                           ),
                                           AutoSizeText(
-                                            '00000',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.IndentId''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -302,7 +308,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 ),
                                           ),
                                           AutoSizeText(
-                                            'Remote Onus',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.Strategy''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -336,7 +345,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       ),
                                             ),
                                             AutoSizeText(
-                                              'Name',
+                                              getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.City''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

@@ -30,7 +30,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     super.initState();
     _model = createModel(context, () => IndentSiteDetailsModel());
 
-    _model.textController1 ??= TextEditingController(text: 'ICICI Bank');
+    _model.textController1 ??= TextEditingController(
+        text: getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.CustomerBank''',
+    ).toString().toString());
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();

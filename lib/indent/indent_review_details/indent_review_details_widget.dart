@@ -190,7 +190,10 @@ class _IndentReviewDetailsWidgetState extends State<IndentReviewDetailsWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            'Name',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.CustomerBank''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -224,7 +227,10 @@ class _IndentReviewDetailsWidgetState extends State<IndentReviewDetailsWidget> {
                                                       ),
                                             ),
                                             Text(
-                                              '00000',
+                                              getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.IndentId''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -266,7 +272,10 @@ class _IndentReviewDetailsWidgetState extends State<IndentReviewDetailsWidget> {
                                                       ),
                                             ),
                                             Text(
-                                              'Remote Onus',
+                                              getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.Strategy''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -303,7 +312,11 @@ class _IndentReviewDetailsWidgetState extends State<IndentReviewDetailsWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Name',
+                                                getJsonField(
+                                                  FFAppState()
+                                                      .indentSelectedSite,
+                                                  r'''$.City''',
+                                                ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

@@ -255,9 +255,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        FFAppState()
-                                            .indentSelectedSite
-                                            .toString(),
+                                        getJsonField(
+                                          FFAppState().indentSelectedSite,
+                                          r'''$.BranchName''',
+                                        ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -354,7 +355,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'Remote Onus',
+                                        getJsonField(
+                                          FFAppState().indentSelectedSite,
+                                          r'''$.Strategy''',
+                                        ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -386,7 +390,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'Name',
+                                          getJsonField(
+                                            FFAppState().indentSelectedSite,
+                                            r'''$.CircleCluster''',
+                                          ).toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -425,7 +432,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'Name',
+                                        getJsonField(
+                                          FFAppState().indentSelectedSite,
+                                          r'''$.City''',
+                                        ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -454,7 +464,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'Name',
+                                        getJsonField(
+                                          FFAppState().indentSelectedSite,
+                                          r'''$.District''',
+                                        ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -486,7 +499,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               ),
                                         ),
                                         Text(
-                                          '00000',
+                                          getJsonField(
+                                            FFAppState().indentSelectedSite,
+                                            r'''$.Pincode''',
+                                          ).toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -541,7 +557,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'Name',
+                                          getJsonField(
+                                            FFAppState().indentSelectedSite,
+                                            r'''$.Address''',
+                                          ).toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

@@ -136,9 +136,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Indent_details',
           path: '/indentDetails',
-          builder: (context, params) => IndentDetailsWidget(
-            indexNo: params.getParam('indexNo', ParamType.int),
-          ),
+          builder: (context, params) => IndentDetailsWidget(),
         ),
         FFRoute(
           name: 'indent_review_details',

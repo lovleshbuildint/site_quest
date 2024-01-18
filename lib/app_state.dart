@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -50,6 +51,16 @@ class FFAppState extends ChangeNotifier {
     });
     _safeInit(() {
       _State = prefs.getString('ff_State') ?? _State;
+    });
+    _safeInit(() {
+      if (prefs.containsKey('ff_indentSelectedSite')) {
+        try {
+          _indentSelectedSite =
+              jsonDecode(prefs.getString('ff_indentSelectedSite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
     });
   }
 
@@ -284,6 +295,13 @@ class FFAppState extends ChangeNotifier {
   set State(String _value) {
     _State = _value;
     prefs.setString('ff_State', _value);
+  }
+
+  dynamic _indentSelectedSite;
+  dynamic get indentSelectedSite => _indentSelectedSite;
+  set indentSelectedSite(dynamic _value) {
+    _indentSelectedSite = _value;
+    prefs.setString('ff_indentSelectedSite', jsonEncode(_value));
   }
 }
 

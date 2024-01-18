@@ -114,6 +114,11 @@ class IndentsListCall {
       alwaysAllowBody: false,
     );
   }
+
+  dynamic list(dynamic response) => getJsonField(
+        response,
+        r'''$.indents''',
+      );
 }
 
 class UpdateDOAdetailsfirstCall {

@@ -11,12 +11,7 @@ import 'indent_details_model.dart';
 export 'indent_details_model.dart';
 
 class IndentDetailsWidget extends StatefulWidget {
-  const IndentDetailsWidget({
-    Key? key,
-    required this.indexNo,
-  }) : super(key: key);
-
-  final int? indexNo;
+  const IndentDetailsWidget({Key? key}) : super(key: key);
 
   @override
   _IndentDetailsWidgetState createState() => _IndentDetailsWidgetState();
@@ -260,10 +255,9 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        valueOrDefault<String>(
-                                          widget.indexNo?.toString(),
-                                          'null',
-                                        ),
+                                        FFAppState()
+                                            .indentSelectedSite
+                                            .toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

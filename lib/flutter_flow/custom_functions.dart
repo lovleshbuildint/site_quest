@@ -49,3 +49,10 @@ String? checkIndex(
   }
   return null;
 }
+
+dynamic jsonResponse(
+  int? index,
+  dynamic list,
+) {
+  return list[index];
+}

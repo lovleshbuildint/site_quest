@@ -79,6 +79,12 @@ class _IndentReviewDetailsWidgetState extends State<IndentReviewDetailsWidget> {
                           onTap: () async {
                             context.goNamed(
                               'Indent_details',
+                              queryParameters: {
+                                'indexNo': serializeParam(
+                                  4,
+                                  ParamType.int,
+                                ),
+                              }.withoutNulls,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,

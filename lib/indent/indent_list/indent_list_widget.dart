@@ -197,6 +197,12 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             onTap: () async {
                                               context.pushNamed(
                                                 'Indent_details',
+                                                queryParameters: {
+                                                  'indexNo': serializeParam(
+                                                    indentsDataIndex,
+                                                    ParamType.int,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(

@@ -132,7 +132,6 @@ flutter:
     - family: 'MyFlutterApp'
       fonts:
         - asset: assets/fonts/MyFlutterApp.ttf
-          weight: 600
 
     - family: MyFlutterApp
       fonts:

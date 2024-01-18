@@ -353,7 +353,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                     getJsonField(
                                                                           mainPageDashboardResponse
                                                                               .jsonBody,
-                                                                          r'''$.UserReview[1].Count''',
+                                                                          r'''$.UserReview[3].Count''',
                                                                         ) /
                                                                         getJsonField(
                                                                           mainPageDashboardResponse
@@ -543,7 +543,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                             getJsonField(
                                                               mainPageDashboardResponse
                                                                   .jsonBody,
-                                                              r'''$.UserReview[4].Count''',
+                                                              r'''$.UserReview[2].Count''',
                                                             ).toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -669,7 +669,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                             getJsonField(
                                                               mainPageDashboardResponse
                                                                   .jsonBody,
-                                                              r'''$.UserReview[1].Count''',
+                                                              r'''$.UserReview[3].Count''',
                                                             ).toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -794,7 +794,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                             getJsonField(
                                                               mainPageDashboardResponse
                                                                   .jsonBody,
-                                                              r'''$.UserReview[2].Count''',
+                                                              r'''$.UserReview[0].Count''',
                                                             ).toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1562,7 +1562,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                             getJsonField(
                                                               mainPageDashboardResponse
                                                                   .jsonBody,
-                                                              r'''$.UserReview[0].Count''',
+                                                              r'''$.UserReview[1].Count''',
                                                             ).toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)

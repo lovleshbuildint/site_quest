@@ -322,7 +322,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        '00000',
+                                        getJsonField(
+                                          FFAppState().indentSelectedSite,
+                                          r'''$.IndentId''',
+                                        ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

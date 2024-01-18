@@ -215,7 +215,11 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                         .indentSelectedSite =
                                                     functions.jsonResponse(
                                                         indentsDataIndex,
-                                                        indentsDataItem)!;
+                                                        getJsonField(
+                                                          indentListIndentsListResponse
+                                                              .jsonBody,
+                                                          r'''$.indents''',
+                                                        ))!;
                                               });
                                             },
                                             child: Container(

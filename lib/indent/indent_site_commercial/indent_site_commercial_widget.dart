@@ -208,7 +208,10 @@ class _IndentSiteCommercialWidgetState
                                               ),
                                         ),
                                         AutoSizeText(
-                                          'Name',
+                                          getJsonField(
+                                            FFAppState().indentSelectedSite,
+                                            r'''$.CustomerBank''',
+                                          ).toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -240,7 +243,10 @@ class _IndentSiteCommercialWidgetState
                                                 ),
                                           ),
                                           AutoSizeText(
-                                            '00000',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.IndentId''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -278,7 +284,10 @@ class _IndentSiteCommercialWidgetState
                                                 ),
                                           ),
                                           AutoSizeText(
-                                            'Remote Onus',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.Strategy''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -312,7 +321,10 @@ class _IndentSiteCommercialWidgetState
                                                       ),
                                             ),
                                             AutoSizeText(
-                                              'Name',
+                                              getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.City''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

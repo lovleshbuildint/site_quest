@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'indent_site_details_widget.dart' show IndentSiteDetailsWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +17,16 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Backend Call - API (GetSite TypeFor SiteEvaluation )] action in indent_site_details widget.
+  ApiCallResponse? siteType;
+  // Stores action output result for [Backend Call - API (get Cash DeviceApi)] action in indent_site_details widget.
+  ApiCallResponse? cashDevice;
+  // Stores action output result for [Backend Call - API (Get Cash Device Movement CategoryForSiteEvaluation)] action in indent_site_details widget.
+  ApiCallResponse? cashDeviceMoment;
+  // Stores action output result for [Backend Call - API (get shop type site)] action in indent_site_details widget.
+  ApiCallResponse? shopType;
+  // Stores action output result for [Backend Call - API (Get Project Type)] action in indent_site_details widget.
+  ApiCallResponse? projectType;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;

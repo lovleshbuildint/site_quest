@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,6 +32,114 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     super.initState();
     _model = createModel(context, () => IndentSiteDetailsModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.siteType = await SqGroup.getSiteTypeForSiteEvaluationCall.call(
+        token: FFAppState().Token,
+      );
+      if ((_model.siteType?.succeeded ?? true)) {
+        _model.cashDevice = await SqGroup.getCashDeviceApiCall.call(
+          token: FFAppState().Token,
+        );
+        if ((_model.cashDevice?.succeeded ?? true)) {
+          _model.cashDeviceMoment = await SqGroup
+              .getCashDeviceMovementCategoryForSiteEvaluationCall
+              .call(
+            token: FFAppState().Token,
+          );
+          if ((_model.cashDeviceMoment?.succeeded ?? true)) {
+            _model.shopType = await SqGroup.getShopTypeSiteCall.call();
+            if ((_model.shopType?.succeeded ?? true)) {
+              _model.projectType = await SqGroup.getProjectTypeCall.call(
+                icust: 0,
+              );
+              if (!(_model.projectType?.succeeded ?? true)) {
+                await showDialog(
+                  context: context,
+                  builder: (alertDialogContext) {
+                    return AlertDialog(
+                      title: Text('Alert'),
+                      content: Text('Internal Server Error'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(alertDialogContext),
+                          child: Text('Ok'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
+            } else {
+              await showDialog(
+                context: context,
+                builder: (alertDialogContext) {
+                  return AlertDialog(
+                    title: Text('Alert'),
+                    content: Text('Internal Server Error'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(alertDialogContext),
+                        child: Text('Ok'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert'),
+                  content: Text('Internal Server Error'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        } else {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: Text('Alert'),
+                content: Text('Internal Server Error'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
+        }
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text('Internal Server Error'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+    });
+
     _model.textController1 ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
@@ -43,7 +153,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController(text: 'Address');
+    _model.textController4 ??= TextEditingController(
+        text: getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.Address''',
+    ).toString().toString());
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController5 ??= TextEditingController(text: '0000');
@@ -617,10 +731,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController1 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue1 ??= 'Full Shop',
-                            ),
-                            options: ['Full Shop', 'Part Shop'],
+                                FormFieldController<String>(null),
+                            options: (getJsonField(
+                              (_model.siteType?.jsonBody ?? ''),
+                              r'''$..SiteTypeName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue1 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -668,10 +786,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController2 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue2 ??= 'ATM',
-                            ),
-                            options: ['ATM'],
+                                FormFieldController<String>(null),
+                            options: (getJsonField(
+                              (_model.cashDevice?.jsonBody ?? ''),
+                              r'''$..CashDeviceType''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue2 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -719,11 +841,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController3 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue3 ??=
-                                  'No cash device on new site',
-                            ),
-                            options: ['No cash device on new site'],
+                                FormFieldController<String>(null),
+                            options: (getJsonField(
+                              (_model.cashDeviceMoment?.jsonBody ?? ''),
+                              r'''$..CashDeviceMovementCategory''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue3 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -822,10 +947,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController5 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue5 ??= 'ICICI',
-                            ),
-                            options: ['ICICI'],
+                                FormFieldController<String>(null),
+                            options: (getJsonField(
+                              (_model.projectType?.jsonBody ?? ''),
+                              r'''$.ProjectTypeName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue5 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,

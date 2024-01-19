@@ -16,6 +16,14 @@ class SqGroup {
   static Map<String, String> headers = {};
   static DashboardCall dashboardCall = DashboardCall();
   static StateListCall stateListCall = StateListCall();
+  static GetCashDeviceApiCall getCashDeviceApiCall = GetCashDeviceApiCall();
+  static GetProjectTypeCall getProjectTypeCall = GetProjectTypeCall();
+  static GetSiteTypeForSiteEvaluationCall getSiteTypeForSiteEvaluationCall =
+      GetSiteTypeForSiteEvaluationCall();
+  static GetCashDeviceMovementCategoryForSiteEvaluationCall
+      getCashDeviceMovementCategoryForSiteEvaluationCall =
+      GetCashDeviceMovementCategoryForSiteEvaluationCall();
+  static GetShopTypeSiteCall getShopTypeSiteCall = GetShopTypeSiteCall();
   static LoginAPICall loginAPICall = LoginAPICall();
   static IndentsListCall indentsListCall = IndentsListCall();
   static UpdateDOAdetailsfirstCall updateDOAdetailsfirstCall =
@@ -50,6 +58,134 @@ class StateListCall {
     return ApiManager.instance.makeApiCall(
       callName: 'State List',
       apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? states(dynamic response) => getJsonField(
+        response,
+        r'''$.States''',
+        true,
+      ) as List?;
+}
+
+class GetCashDeviceApiCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'get Cash DeviceApi',
+      apiUrl: '${SqGroup.baseUrl}/getCashDeviceApi/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? states(dynamic response) => getJsonField(
+        response,
+        r'''$.States''',
+        true,
+      ) as List?;
+}
+
+class GetProjectTypeCall {
+  Future<ApiCallResponse> call({
+    int? icust,
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Get Project Type',
+      apiUrl:
+          '${SqGroup.baseUrl}/GetProjectTypeForSiteEvaluation/icust=${icust}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? states(dynamic response) => getJsonField(
+        response,
+        r'''$.States''',
+        true,
+      ) as List?;
+}
+
+class GetSiteTypeForSiteEvaluationCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetSite TypeFor SiteEvaluation ',
+      apiUrl: '${SqGroup.baseUrl}/GetSiteTypeForSiteEvaluation/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? states(dynamic response) => getJsonField(
+        response,
+        r'''$.States''',
+        true,
+      ) as List?;
+}
+
+class GetCashDeviceMovementCategoryForSiteEvaluationCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Get Cash Device Movement CategoryForSiteEvaluation',
+      apiUrl:
+          '${SqGroup.baseUrl}/GetCashDeviceMovementCategoryForSiteEvaluation/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? states(dynamic response) => getJsonField(
+        response,
+        r'''$.States''',
+        true,
+      ) as List?;
+}
+
+class GetShopTypeSiteCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'get shop type site',
+      apiUrl: '${SqGroup.baseUrl}/GetShopTypeForSiteEvaluation/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

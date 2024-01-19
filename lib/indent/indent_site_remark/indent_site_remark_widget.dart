@@ -220,7 +220,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                               ),
                                         ),
                                         AutoSizeText(
-                                          'Name',
+                                          getJsonField(
+                                            FFAppState().indentSelectedSite,
+                                            r'''$.CustomerBank''',
+                                          ).toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -252,7 +255,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                 ),
                                           ),
                                           AutoSizeText(
-                                            '00000',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.IndentId''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -290,7 +296,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                 ),
                                           ),
                                           AutoSizeText(
-                                            'Remote Onus',
+                                            getJsonField(
+                                              FFAppState().indentSelectedSite,
+                                              r'''$.Strategy''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -324,7 +333,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                       ),
                                             ),
                                             AutoSizeText(
-                                              'Name',
+                                              getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.City''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

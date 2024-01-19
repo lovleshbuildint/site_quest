@@ -51,7 +51,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     ).toString().toString());
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController(text: '0000');
+    _model.textController5 ??= TextEditingController(
+        text: getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.Pincode''',
+    ).toString().toString());
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textController6 ??= TextEditingController();

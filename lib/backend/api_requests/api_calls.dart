@@ -30,6 +30,7 @@ class SqGroup {
       UpdateDOAdetailsfirstCall();
   static UpdateDOADetailssecondCall updateDOADetailssecondCall =
       UpdateDOADetailssecondCall();
+  static StaregtyCall staregtyCall = StaregtyCall();
 }
 
 class DashboardCall {
@@ -490,6 +491,25 @@ class UpdateDOADetailssecondCall {
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class StaregtyCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'staregty',
+      apiUrl: '${SqGroup.baseUrl}/getStrategies/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

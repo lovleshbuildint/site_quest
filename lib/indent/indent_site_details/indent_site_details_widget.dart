@@ -692,36 +692,64 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController2 ??=
-                                FormFieldController<String>(null),
-                            options: <String>[],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue2 = val),
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
-                                ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.dashboardCall.call(
+                              token: FFAppState().Token,
                             ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownDashboardResponse = snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController2 ??=
+                                    FormFieldController<String>(null),
+                                options: (getJsonField(
+                                  dropDownDashboardResponse.jsonBody,
+                                  r'''$..CashDeviceType''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue2 = val),
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 50.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: Color(0xFFE1E2E6),
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor: Color(0xFFE1E2E6),
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Padding(
@@ -741,36 +769,68 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController3 ??=
-                                FormFieldController<String>(null),
-                            options: ['No cash device on new site'],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue3 = val),
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
-                                ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup
+                                .getCashDeviceMovementCategoryForSiteEvaluationCall
+                                .call(
+                              token: FFAppState().Token,
                             ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse =
+                                  snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController3 ??=
+                                    FormFieldController<String>(null),
+                                options: (getJsonField(
+                                  dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse
+                                      .jsonBody,
+                                  r'''$..CashDeviceMovementCategory''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue3 = val),
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 50.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: Color(0xFFE1E2E6),
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor: Color(0xFFE1E2E6),
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Padding(
@@ -841,36 +901,59 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController5 ??=
-                                FormFieldController<String>(null),
-                            options: <String>[],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue5 = val),
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
-                                ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.getProjectTypeCall.call(
+                              icust: 0,
                             ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownGetProjectTypeResponse =
+                                  snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController5 ??=
+                                    FormFieldController<String>(null),
+                                options: <String>[],
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue5 = val),
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 50.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: Color(0xFFE1E2E6),
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor: Color(0xFFE1E2E6),
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Padding(

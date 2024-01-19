@@ -693,7 +693,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.dashboardCall.call(
+                            future: SqGroup.getCashDeviceApiCall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -703,12 +703,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   '',
                                 );
                               }
-                              final dropDownDashboardResponse = snapshot.data!;
+                              final dropDownGetCashDeviceApiResponse =
+                                  snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController2 ??=
                                     FormFieldController<String>(null),
                                 options: (getJsonField(
-                                  dropDownDashboardResponse.jsonBody,
+                                  dropDownGetCashDeviceApiResponse.jsonBody,
                                   r'''$..CashDeviceType''',
                                   true,
                                 ) as List)

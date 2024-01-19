@@ -59,7 +59,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                   builder: (alertDialogContext) {
                     return AlertDialog(
                       title: Text('Alert'),
-                      content: Text('Internal Server Error'),
+                      content: Text('Internal Server Error- Project type'),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(alertDialogContext),
@@ -76,7 +76,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                 builder: (alertDialogContext) {
                   return AlertDialog(
                     title: Text('Alert'),
-                    content: Text('Internal Server Error'),
+                    content: Text('Internal Server Error- shop type'),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(alertDialogContext),
@@ -127,7 +127,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
           builder: (alertDialogContext) {
             return AlertDialog(
               title: Text('Alert'),
-              content: Text('Internal Server Error'),
+              content: Text('Internal Server Error - Site Type'),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(alertDialogContext),

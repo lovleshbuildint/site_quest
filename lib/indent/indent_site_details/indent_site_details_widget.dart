@@ -48,7 +48,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
             token: FFAppState().Token,
           );
           if ((_model.cashDeviceMoment?.succeeded ?? true)) {
-            _model.shopType = await SqGroup.getShopTypeSiteCall.call();
+            _model.shopType = await SqGroup.getShopTypeSiteCall.call(
+              token: FFAppState().Token,
+            );
             if ((_model.shopType?.succeeded ?? true)) {
               _model.projectType = await SqGroup.getProjectTypeCall.call(
                 icust: 0,
@@ -93,7 +95,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
               builder: (alertDialogContext) {
                 return AlertDialog(
                   title: Text('Alert'),
-                  content: Text('Internal Server Error'),
+                  content: Text('Internal Server Error-Cash Device Moment'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),
@@ -110,7 +112,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
             builder: (alertDialogContext) {
               return AlertDialog(
                 title: Text('Alert'),
-                content: Text('Internal Server Error'),
+                content: Text('Internal Server Error - Cash Device'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),

@@ -31,6 +31,10 @@ class SqGroup {
   static UpdateDOADetailssecondCall updateDOADetailssecondCall =
       UpdateDOADetailssecondCall();
   static StaregtyCall staregtyCall = StaregtyCall();
+  static RbiCall rbiCall = RbiCall();
+  static CityCall cityCall = CityCall();
+  static StatesCall statesCall = StatesCall();
+  static CircleCall circleCall = CircleCall();
 }
 
 class DashboardCall {
@@ -507,6 +511,82 @@ class StaregtyCall {
     return ApiManager.instance.makeApiCall(
       callName: 'staregty',
       apiUrl: '${SqGroup.baseUrl}/getStrategies/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class RbiCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'RBI',
+      apiUrl: '${SqGroup.baseUrl}/getRBICategory/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CityCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'City',
+      apiUrl: '${SqGroup.baseUrl}/getCities/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class StatesCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'states',
+      apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CircleCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'circle',
+      apiUrl: '${SqGroup.baseUrl}/getCircles/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

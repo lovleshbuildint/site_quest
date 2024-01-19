@@ -1447,58 +1447,88 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController9 ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue9 ??=
-                                              'Maharashtra',
+                                      child: FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup.statesCall.call(
+                                          token: FFAppState().Token,
                                         ),
-                                        options: [
-                                          'Maharashtra',
-                                          'Gujarat',
-                                          'Telengana'
-                                        ],
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue9 = val),
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        searchHintTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  fontSize: 12.0,
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
                                                 ),
-                                        searchTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
-                                              fontSize: 12.0,
+                                              ),
+                                            );
+                                          }
+                                          final dropDownStatesResponse =
+                                              snapshot.data!;
+                                          return FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownValueController9 ??=
+                                                FormFieldController<String>(
+                                              _model.dropDownValue9 ??=
+                                                  'Maharashtra',
                                             ),
-                                        searchHintText: 'Search',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: Color(0xFFE1E2E6),
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor: Color(0xFFE1E2E6),
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 4.0, 16.0, 4.0),
-                                        hidesUnderline: true,
-                                        isSearchable: true,
-                                        isMultiSelect: false,
+                                            options: [
+                                              'Maharashtra',
+                                              'Gujarat',
+                                              'Telengana'
+                                            ],
+                                            onChanged: (val) => setState(() =>
+                                                _model.dropDownValue9 = val),
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      fontSize: 12.0,
+                                                    ),
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                    ),
+                                            searchHintText: 'Search',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: Color(0xFFE1E2E6),
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFE1E2E6),
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 4.0, 16.0, 4.0),
+                                            hidesUnderline: true,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
                                       ),
                                     ),
                                   ],
@@ -1535,51 +1565,81 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController10 ??=
+                                      child: FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup.cityCall.call(
+                                          token: FFAppState().Token,
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          final dropDownCityResponse =
+                                              snapshot.data!;
+                                          return FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownValueController10 ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue10 ??= 'Mumbai',
-                                        ),
-                                        options: [
-                                          'Mumbai',
-                                          'Navi Mumbai',
-                                          'Other...'
-                                        ],
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue10 = val),
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        searchHintTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                        searchTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
+                                              _model.dropDownValue10 ??=
+                                                  'Mumbai',
                                             ),
-                                        searchHintText: 'Search City...',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: Color(0xFFE1E2E6),
-                                          size: 24.0,
-                                        ),
-                                        fillColor: Colors.white,
-                                        elevation: 2.0,
-                                        borderColor: Color(0xFFE1E2E6),
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 16.0, 4.0),
-                                        hidesUnderline: true,
-                                        isSearchable: true,
-                                        isMultiSelect: false,
+                                            options: [
+                                              'Mumbai',
+                                              'Navi Mumbai',
+                                              'Other...'
+                                            ],
+                                            onChanged: (val) => setState(() =>
+                                                _model.dropDownValue10 = val),
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium,
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                    ),
+                                            searchHintText: 'Search City...',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: Color(0xFFE1E2E6),
+                                              size: 24.0,
+                                            ),
+                                            fillColor: Colors.white,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFE1E2E6),
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 4.0, 16.0, 4.0),
+                                            hidesUnderline: true,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
                                       ),
                                     ),
                                   ],
@@ -1692,37 +1752,59 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController11 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue11 ??= 'NA',
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.circleCall.call(
+                              token: FFAppState().Token,
                             ),
-                            options: ['NA'],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue11 = val),
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownCircleResponse = snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController11 ??=
+                                    FormFieldController<String>(
+                                  _model.dropDownValue11 ??= 'NA',
                                 ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
-                            ),
-                            fillColor: Colors.white,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                                options: ['NA'],
+                                onChanged: (val) => setState(
+                                    () => _model.dropDownValue11 = val),
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 50.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: Color(0xFFE1E2E6),
+                                  size: 24.0,
+                                ),
+                                fillColor: Colors.white,
+                                elevation: 2.0,
+                                borderColor: Color(0xFFE1E2E6),
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Padding(
@@ -1808,37 +1890,59 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController12 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue12 ??= 'Urban',
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.rbiCall.call(
+                              token: FFAppState().Token,
                             ),
-                            options: ['Urban', 'Rural', 'Metro'],
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue12 = val),
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownRbiResponse = snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController12 ??=
+                                    FormFieldController<String>(
+                                  _model.dropDownValue12 ??= 'Urban',
                                 ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
-                            ),
-                            fillColor: Colors.white,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                                options: ['Urban', 'Rural', 'Metro'],
+                                onChanged: (val) => setState(
+                                    () => _model.dropDownValue12 = val),
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 50.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: Color(0xFFE1E2E6),
+                                  size: 24.0,
+                                ),
+                                fillColor: Colors.white,
+                                elevation: 2.0,
+                                borderColor: Color(0xFFE1E2E6),
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Row(

@@ -952,7 +952,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 FormFieldController<String>(null),
                             options: (getJsonField(
                               (_model.projectType?.jsonBody ?? ''),
-                              r'''$.ProjectTypeName''',
+                              r'''$..ProjectTypeName''',
                               true,
                             ) as List)
                                 .map<String>((s) => s.toString())

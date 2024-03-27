@@ -13,10 +13,10 @@ import 'landlordform_model.dart';
 export 'landlordform_model.dart';
 
 class LandlordformWidget extends StatefulWidget {
-  const LandlordformWidget({Key? key}) : super(key: key);
+  const LandlordformWidget({super.key});
 
   @override
-  _LandlordformWidgetState createState() => _LandlordformWidgetState();
+  State<LandlordformWidget> createState() => _LandlordformWidgetState();
 }
 
 class _LandlordformWidgetState extends State<LandlordformWidget> {
@@ -94,8 +94,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(

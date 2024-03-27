@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:provider/provider.dart';
@@ -11,10 +10,10 @@ import 'indent_details_model.dart';
 export 'indent_details_model.dart';
 
 class IndentDetailsWidget extends StatefulWidget {
-  const IndentDetailsWidget({Key? key}) : super(key: key);
+  const IndentDetailsWidget({super.key});
 
   @override
-  _IndentDetailsWidgetState createState() => _IndentDetailsWidgetState();
+  State<IndentDetailsWidget> createState() => _IndentDetailsWidgetState();
 }
 
 class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
@@ -41,15 +40,6 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
     if (currentUserLocationValue == null) {
       return Container(

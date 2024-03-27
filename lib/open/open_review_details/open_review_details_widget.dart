@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -11,10 +10,10 @@ import 'open_review_details_model.dart';
 export 'open_review_details_model.dart';
 
 class OpenReviewDetailsWidget extends StatefulWidget {
-  const OpenReviewDetailsWidget({Key? key}) : super(key: key);
+  const OpenReviewDetailsWidget({super.key});
 
   @override
-  _OpenReviewDetailsWidgetState createState() =>
+  State<OpenReviewDetailsWidget> createState() =>
       _OpenReviewDetailsWidgetState();
 }
 
@@ -38,17 +37,6 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

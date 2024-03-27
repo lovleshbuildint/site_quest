@@ -13,10 +13,10 @@ import 'nearestatm_model.dart';
 export 'nearestatm_model.dart';
 
 class NearestatmWidget extends StatefulWidget {
-  const NearestatmWidget({Key? key}) : super(key: key);
+  const NearestatmWidget({super.key});
 
   @override
-  _NearestatmWidgetState createState() => _NearestatmWidgetState();
+  State<NearestatmWidget> createState() => _NearestatmWidgetState();
 }
 
 class _NearestatmWidgetState extends State<NearestatmWidget> {
@@ -61,8 +61,6 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(

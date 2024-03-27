@@ -5,17 +5,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'commercial_advance_model.dart';
 export 'commercial_advance_model.dart';
 
 class CommercialAdvanceWidget extends StatefulWidget {
-  const CommercialAdvanceWidget({Key? key}) : super(key: key);
+  const CommercialAdvanceWidget({super.key});
 
   @override
-  _CommercialAdvanceWidgetState createState() =>
+  State<CommercialAdvanceWidget> createState() =>
       _CommercialAdvanceWidgetState();
 }
 
@@ -67,8 +66,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestbranch/nearestbranch_widget.dart';
 import 'open_site_nearest_branch_widget.dart' show OpenSiteNearestBranchWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,10 +18,12 @@ class OpenSiteNearestBranchModel
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {
     nearestbranchModel = createModel(context, () => NearestbranchModel());
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     nearestbranchModel.dispose();

@@ -3,17 +3,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'submited_list_model.dart';
 export 'submited_list_model.dart';
 
 class SubmitedListWidget extends StatefulWidget {
-  const SubmitedListWidget({Key? key}) : super(key: key);
+  const SubmitedListWidget({super.key});
 
   @override
-  _SubmitedListWidgetState createState() => _SubmitedListWidgetState();
+  State<SubmitedListWidget> createState() => _SubmitedListWidgetState();
 }
 
 class _SubmitedListWidgetState extends State<SubmitedListWidget> {
@@ -36,17 +35,6 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -144,6 +132,9 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                           children: [
                             Container(
                               width: 100.0,
+                              constraints: BoxConstraints(
+                                minHeight: 142.0,
+                              ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,

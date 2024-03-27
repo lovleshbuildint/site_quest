@@ -3,17 +3,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'draft_list_model.dart';
 export 'draft_list_model.dart';
 
 class DraftListWidget extends StatefulWidget {
-  const DraftListWidget({Key? key}) : super(key: key);
+  const DraftListWidget({super.key});
 
   @override
-  _DraftListWidgetState createState() => _DraftListWidgetState();
+  State<DraftListWidget> createState() => _DraftListWidgetState();
 }
 
 class _DraftListWidgetState extends State<DraftListWidget> {
@@ -36,17 +35,6 @@ class _DraftListWidgetState extends State<DraftListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -164,6 +152,9 @@ class _DraftListWidgetState extends State<DraftListWidget> {
                               },
                               child: Container(
                                 width: 100.0,
+                                constraints: BoxConstraints(
+                                  minHeight: 142.0,
+                                ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,

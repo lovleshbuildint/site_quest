@@ -13,10 +13,10 @@ import 'referal_clien_details_model.dart';
 export 'referal_clien_details_model.dart';
 
 class ReferalClienDetailsWidget extends StatefulWidget {
-  const ReferalClienDetailsWidget({Key? key}) : super(key: key);
+  const ReferalClienDetailsWidget({super.key});
 
   @override
-  _ReferalClienDetailsWidgetState createState() =>
+  State<ReferalClienDetailsWidget> createState() =>
       _ReferalClienDetailsWidgetState();
 }
 
@@ -67,17 +67,6 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

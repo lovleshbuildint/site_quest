@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -11,10 +10,10 @@ import 'referal_survey_details_model.dart';
 export 'referal_survey_details_model.dart';
 
 class ReferalSurveyDetailsWidget extends StatefulWidget {
-  const ReferalSurveyDetailsWidget({Key? key}) : super(key: key);
+  const ReferalSurveyDetailsWidget({super.key});
 
   @override
-  _ReferalSurveyDetailsWidgetState createState() =>
+  State<ReferalSurveyDetailsWidget> createState() =>
       _ReferalSurveyDetailsWidgetState();
 }
 
@@ -60,17 +59,6 @@ class _ReferalSurveyDetailsWidgetState
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

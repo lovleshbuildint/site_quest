@@ -5,17 +5,16 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'indent_list_model.dart';
 export 'indent_list_model.dart';
 
 class IndentListWidget extends StatefulWidget {
-  const IndentListWidget({Key? key}) : super(key: key);
+  const IndentListWidget({super.key});
 
   @override
-  _IndentListWidgetState createState() => _IndentListWidgetState();
+  State<IndentListWidget> createState() => _IndentListWidgetState();
 }
 
 class _IndentListWidgetState extends State<IndentListWidget> {
@@ -38,15 +37,6 @@ class _IndentListWidgetState extends State<IndentListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
@@ -224,6 +214,9 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             },
                                             child: Container(
                                               width: 100.0,
+                                              constraints: BoxConstraints(
+                                                minHeight: 142.0,
+                                              ),
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)

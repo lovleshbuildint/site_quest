@@ -5,7 +5,6 @@ import '/indent/nearestatm/nearestatm_widget.dart';
 import 'indent_site_nearest_atm_widget.dart' show IndentSiteNearestAtmWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -20,10 +19,12 @@ class IndentSiteNearestAtmModel
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {
     nearestatmModel = createModel(context, () => NearestatmModel());
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     nearestatmModel.dispose();

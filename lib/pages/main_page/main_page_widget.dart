@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -13,10 +12,10 @@ import 'main_page_model.dart';
 export 'main_page_model.dart';
 
 class MainPageWidget extends StatefulWidget {
-  const MainPageWidget({Key? key}) : super(key: key);
+  const MainPageWidget({super.key});
 
   @override
-  _MainPageWidgetState createState() => _MainPageWidgetState();
+  State<MainPageWidget> createState() => _MainPageWidgetState();
 }
 
 class _MainPageWidgetState extends State<MainPageWidget> {
@@ -39,15 +38,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(

@@ -35,6 +35,9 @@ class SqGroup {
   static CityCall cityCall = CityCall();
   static StatesCall statesCall = StatesCall();
   static CircleCall circleCall = CircleCall();
+  static MasterCall masterCall = MasterCall();
+  static TisCall tisCall = TisCall();
+  static SitevistedCall sitevistedCall = SitevistedCall();
 }
 
 class DashboardCall {
@@ -599,6 +602,66 @@ class CircleCall {
   }
 }
 
+class MasterCall {
+  Future<ApiCallResponse> call({
+    String? state = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'master',
+      apiUrl: '${SqGroup.baseUrl}/getMasters/Token=${token}/state=${state}',
+      callType: ApiCallType.GET,
+      headers: {
+        'state': '${state}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class TisCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'tis',
+      apiUrl: '${SqGroup.baseUrl}/GetTISTypeForSiteEvaluation/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SitevistedCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'sitevisted',
+      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SQ Group Code
 
 class LoginCheckCall {
@@ -620,6 +683,163 @@ class LoginCheckCall {
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetIndentsByStatesCall {
+  static Future<ApiCallResponse> call({
+    String? state = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetIndentsByStates',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/GetIndentsByStates/state=${state}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DistrictAPICall {
+  static Future<ApiCallResponse> call({
+    String? token = '',
+    int? istate,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DistrictAPI',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DistrictAPI',
+      callType: ApiCallType.GET,
+      headers: {
+        'Token': '${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetCustomerBankCall {
+  static Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getCustomerBank',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/getCustomerBank/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {
+        'Token': '${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetIndentBankCall {
+  static Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getIndentBank',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/getIndentBank/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {
+        'Token': '${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ListSitesCall {
+  static Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'ListSites',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/ListSites/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {
+        'Token': '${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DownloadImageCall {
+  static Future<ApiCallResponse> call({
+    String? imgname = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DownloadImage',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DownloadImage/Token=${token}&imgname=${imgname}',
+      callType: ApiCallType.GET,
+      headers: {
+        'Token': '${token}',
+        'imgname': '${imgname}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetSubmittedSitesCall {
+  static Future<ApiCallResponse> call({
+    String? token = '',
+    String? iIndent = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetSubmittedSites',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/GetSubmittedSites/Token=${token}&iIndent=${iIndent}',
+      callType: ApiCallType.GET,
+      headers: {
+        'iIndent': '${iIndent}',
+        'Token': '${token}',
+      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

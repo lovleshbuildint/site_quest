@@ -5,7 +5,6 @@ import '/flutter_flow/upload_data.dart';
 import 'indent_site_photo_widget.dart' show IndentSitePhotoWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -28,8 +27,10 @@ class IndentSitePhotoModel extends FlutterFlowModel<IndentSitePhotoWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
   }

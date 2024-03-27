@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,10 +11,10 @@ import 'open_site_details_model.dart';
 export 'open_site_details_model.dart';
 
 class OpenSiteDetailsWidget extends StatefulWidget {
-  const OpenSiteDetailsWidget({Key? key}) : super(key: key);
+  const OpenSiteDetailsWidget({super.key});
 
   @override
-  _OpenSiteDetailsWidgetState createState() => _OpenSiteDetailsWidgetState();
+  State<OpenSiteDetailsWidget> createState() => _OpenSiteDetailsWidgetState();
 }
 
 class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
@@ -59,17 +58,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

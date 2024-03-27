@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -11,10 +10,10 @@ import 'analytics_opensites_overview_model.dart';
 export 'analytics_opensites_overview_model.dart';
 
 class AnalyticsOpensitesOverviewWidget extends StatefulWidget {
-  const AnalyticsOpensitesOverviewWidget({Key? key}) : super(key: key);
+  const AnalyticsOpensitesOverviewWidget({super.key});
 
   @override
-  _AnalyticsOpensitesOverviewWidgetState createState() =>
+  State<AnalyticsOpensitesOverviewWidget> createState() =>
       _AnalyticsOpensitesOverviewWidgetState();
 }
 
@@ -39,15 +38,6 @@ class _AnalyticsOpensitesOverviewWidgetState
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return GestureDetector(

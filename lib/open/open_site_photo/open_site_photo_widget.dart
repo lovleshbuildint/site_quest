@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,10 +10,10 @@ import 'open_site_photo_model.dart';
 export 'open_site_photo_model.dart';
 
 class OpenSitePhotoWidget extends StatefulWidget {
-  const OpenSitePhotoWidget({Key? key}) : super(key: key);
+  const OpenSitePhotoWidget({super.key});
 
   @override
-  _OpenSitePhotoWidgetState createState() => _OpenSitePhotoWidgetState();
+  State<OpenSitePhotoWidget> createState() => _OpenSitePhotoWidgetState();
 }
 
 class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
@@ -37,17 +36,6 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

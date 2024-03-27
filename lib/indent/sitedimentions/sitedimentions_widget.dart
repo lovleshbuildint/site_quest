@@ -11,10 +11,10 @@ import 'sitedimentions_model.dart';
 export 'sitedimentions_model.dart';
 
 class SitedimentionsWidget extends StatefulWidget {
-  const SitedimentionsWidget({Key? key}) : super(key: key);
+  const SitedimentionsWidget({super.key});
 
   @override
-  _SitedimentionsWidgetState createState() => _SitedimentionsWidgetState();
+  State<SitedimentionsWidget> createState() => _SitedimentionsWidgetState();
 }
 
 class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
@@ -77,8 +77,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(

@@ -10,10 +10,10 @@ import 'nearestbranch_model.dart';
 export 'nearestbranch_model.dart';
 
 class NearestbranchWidget extends StatefulWidget {
-  const NearestbranchWidget({Key? key}) : super(key: key);
+  const NearestbranchWidget({super.key});
 
   @override
-  _NearestbranchWidgetState createState() => _NearestbranchWidgetState();
+  State<NearestbranchWidget> createState() => _NearestbranchWidgetState();
 }
 
 class _NearestbranchWidgetState extends State<NearestbranchWidget> {
@@ -52,8 +52,6 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(

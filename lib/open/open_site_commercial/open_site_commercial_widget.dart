@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/commercial_advance/commercial_advance_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,10 +10,10 @@ import 'open_site_commercial_model.dart';
 export 'open_site_commercial_model.dart';
 
 class OpenSiteCommercialWidget extends StatefulWidget {
-  const OpenSiteCommercialWidget({Key? key}) : super(key: key);
+  const OpenSiteCommercialWidget({super.key});
 
   @override
-  _OpenSiteCommercialWidgetState createState() =>
+  State<OpenSiteCommercialWidget> createState() =>
       _OpenSiteCommercialWidgetState();
 }
 
@@ -38,17 +37,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

@@ -290,7 +290,7 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_iState', _value);
   }
 
-  String _State = '1';
+  String _State = '0';
   String get State => _State;
   set State(String _value) {
     _State = _value;
@@ -303,16 +303,6 @@ class FFAppState extends ChangeNotifier {
     _indentSelectedSite = _value;
     prefs.setString('ff_indentSelectedSite', jsonEncode(_value));
   }
-}
-
-LatLng? _latLngFromString(String? val) {
-  if (val == null) {
-    return null;
-  }
-  final split = val.split(',');
-  final lat = double.parse(split.first);
-  final lng = double.parse(split.last);
-  return LatLng(lat, lng);
 }
 
 void _safeInit(Function() initializeField) {

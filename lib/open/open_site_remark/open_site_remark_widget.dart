@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -10,10 +9,10 @@ import 'open_site_remark_model.dart';
 export 'open_site_remark_model.dart';
 
 class OpenSiteRemarkWidget extends StatefulWidget {
-  const OpenSiteRemarkWidget({Key? key}) : super(key: key);
+  const OpenSiteRemarkWidget({super.key});
 
   @override
-  _OpenSiteRemarkWidgetState createState() => _OpenSiteRemarkWidgetState();
+  State<OpenSiteRemarkWidget> createState() => _OpenSiteRemarkWidgetState();
 }
 
 class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
@@ -51,17 +50,6 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestatm/nearestatm_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,10 +11,10 @@ import 'indent_site_nearest_atm_model.dart';
 export 'indent_site_nearest_atm_model.dart';
 
 class IndentSiteNearestAtmWidget extends StatefulWidget {
-  const IndentSiteNearestAtmWidget({Key? key}) : super(key: key);
+  const IndentSiteNearestAtmWidget({super.key});
 
   @override
-  _IndentSiteNearestAtmWidgetState createState() =>
+  State<IndentSiteNearestAtmWidget> createState() =>
       _IndentSiteNearestAtmWidgetState();
 }
 
@@ -40,15 +39,6 @@ class _IndentSiteNearestAtmWidgetState
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -138,6 +128,9 @@ class _IndentSiteNearestAtmWidgetState
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
+                  constraints: BoxConstraints(
+                    minHeight: 126.0,
+                  ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(8.0),

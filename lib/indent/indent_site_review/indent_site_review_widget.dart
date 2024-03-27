@@ -2,17 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'indent_site_review_model.dart';
 export 'indent_site_review_model.dart';
 
 class IndentSiteReviewWidget extends StatefulWidget {
-  const IndentSiteReviewWidget({Key? key}) : super(key: key);
+  const IndentSiteReviewWidget({super.key});
 
   @override
-  _IndentSiteReviewWidgetState createState() => _IndentSiteReviewWidgetState();
+  State<IndentSiteReviewWidget> createState() => _IndentSiteReviewWidgetState();
 }
 
 class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
@@ -35,17 +34,6 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

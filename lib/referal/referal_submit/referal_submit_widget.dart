@@ -2,17 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'referal_submit_model.dart';
 export 'referal_submit_model.dart';
 
 class ReferalSubmitWidget extends StatefulWidget {
-  const ReferalSubmitWidget({Key? key}) : super(key: key);
+  const ReferalSubmitWidget({super.key});
 
   @override
-  _ReferalSubmitWidgetState createState() => _ReferalSubmitWidgetState();
+  State<ReferalSubmitWidget> createState() => _ReferalSubmitWidgetState();
 }
 
 class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
@@ -35,17 +34,6 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)

@@ -38,6 +38,9 @@ class SqGroup {
   static MasterCall masterCall = MasterCall();
   static TisCall tisCall = TisCall();
   static SitevistedCall sitevistedCall = SitevistedCall();
+  static RBICitiesCall rBICitiesCall = RBICitiesCall();
+  static StymgetCashDeviceApiCall stymgetCashDeviceApiCall =
+      StymgetCashDeviceApiCall();
 }
 
 class DashboardCall {
@@ -662,6 +665,45 @@ class SitevistedCall {
   }
 }
 
+class RBICitiesCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'RBICities',
+      apiUrl:
+          '${SqGroup.baseUrl}/SearchFilters/user={user}&clsstate={clsstate}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class StymgetCashDeviceApiCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'stymgetCashDeviceApi',
+      apiUrl: '${SqGroup.baseUrl}/getCashDeviceApi/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SQ Group Code
 
 class LoginCheckCall {
@@ -837,6 +879,29 @@ class GetSubmittedSitesCall {
       callType: ApiCallType.GET,
       headers: {
         'iIndent': '${iIndent}',
+        'Token': '${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetRBICitiesCall {
+  static Future<ApiCallResponse> call({
+    String? pageNo = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetRBICities',
+      apiUrl:
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/getUserReview/Token=${token}&PageNo=${pageNo}',
+      callType: ApiCallType.GET,
+      headers: {
         'Token': '${token}',
       },
       params: {},

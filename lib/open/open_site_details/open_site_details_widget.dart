@@ -1322,7 +1322,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.stateListCall.call(
+                                        future: SqGroup.statesCall.call(
                                           token: FFAppState().Token,
                                         ),
                                         builder: (context, snapshot) {
@@ -1344,7 +1344,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final dropDownStateListResponse =
+                                          final dropDownStatesResponse =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model

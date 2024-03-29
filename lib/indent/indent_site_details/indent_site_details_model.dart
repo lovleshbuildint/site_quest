@@ -58,8 +58,6 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue8;
   FormFieldController<String>? dropDownValueController8;
-  // Stores action output result for [Backend Call - API (DistrictAPI)] action in DropDown widget.
-  ApiCallResponse? apiResultog6;
   // State field(s) for DropDown widget.
   String? dropDownValue9;
   FormFieldController<String>? dropDownValueController9;

@@ -1516,8 +1516,16 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               'Nashik',
                                               'Other...'
                                             ],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue8 = val),
+                                            onChanged: (val) async {
+                                              setState(() =>
+                                                  _model.dropDownValue8 = val);
+                                              _model.apiResultog6 =
+                                                  await DistrictAPICall.call(
+                                                token: FFAppState().Token,
+                                              );
+
+                                              setState(() {});
+                                            },
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,

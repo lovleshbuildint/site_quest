@@ -41,6 +41,10 @@ class SqGroup {
   static RBICitiesCall rBICitiesCall = RBICitiesCall();
   static StymgetCashDeviceApiCall stymgetCashDeviceApiCall =
       StymgetCashDeviceApiCall();
+  static GetsitevisiteddbyAPICall getsitevisiteddbyAPICall =
+      GetsitevisiteddbyAPICall();
+  static GetDepartmentWiseUserAPICall getDepartmentWiseUserAPICall =
+      GetDepartmentWiseUserAPICall();
 }
 
 class DashboardCall {
@@ -695,6 +699,48 @@ class StymgetCashDeviceApiCall {
       callType: ApiCallType.GET,
       headers: {},
       params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetsitevisiteddbyAPICall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getsitevisiteddbyAPI',
+      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbyAPI/Token={token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetDepartmentWiseUserAPICall {
+  Future<ApiCallResponse> call({
+    int? department,
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getDepartmentWiseUserAPI',
+      apiUrl:
+          '${SqGroup.baseUrl}/getDepartmentWiseUserAPI/Token={token}&department={department}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'Department': department,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

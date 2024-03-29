@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -94,6 +95,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(
@@ -105,6 +108,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
           ),
@@ -113,6 +117,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController1,
               focusNode: _model.textFieldFocusNode1,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -120,6 +125,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -152,7 +158,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController1Validator.asValidator(context),
             ),
           ),
@@ -163,6 +173,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -172,12 +183,14 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.percentController,
               focusNode: _model.percentFocusNode,
+              autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Percent',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -210,7 +223,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.percentControllerValidator.asValidator(context),
             ),
@@ -222,6 +239,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -231,6 +249,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController3,
               focusNode: _model.textFieldFocusNode2,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -238,6 +257,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -270,7 +290,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController3Validator.asValidator(context),
             ),
           ),
@@ -280,135 +304,255 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               Expanded(
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                        child: Text(
-                          'District',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                  child: FutureBuilder<ApiCallResponse>(
+                    future: DistrictAPICall.call(
+                      token: FFAppState().Token,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      final columnDistrictAPIResponse = snapshot.data!;
+                      return Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
+                            child: Text(
+                              'District',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                        child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController1 ??=
-                              FormFieldController<String>(
-                            _model.dropDownValue1 ??= 'Name',
+                            ),
                           ),
-                          options: ['Name', 'Other...'],
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue1 = val),
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 50.0,
-                          searchHintTextStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 10.0,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 0.0),
+                            child: FutureBuilder<ApiCallResponse>(
+                              future: DistrictAPICall.call(
+                                token: FFAppState().Token,
+                                istate: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.istate''',
+                                ),
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                final dropDownDistrictAPIResponse =
+                                    snapshot.data!;
+                                return FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController1 ??=
+                                          FormFieldController<String>(
+                                    _model.dropDownValue1 ??= 'Name',
                                   ),
-                          searchTextStyle:
-                              FlutterFlowTheme.of(context).bodyMedium,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
+                                  options: ['Name', 'Other...'],
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue1 = val),
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 50.0,
+                                  searchHintTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                  searchTextStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  searchHintText: 'Search District...',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: Color(0xFFE1E2E6),
+                                    size: 24.0,
                                   ),
-                          searchHintText: 'Search District...',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: Color(0xFFE1E2E6),
-                            size: 24.0,
+                                  fillColor: Colors.white,
+                                  elevation: 2.0,
+                                  borderColor: Color(0xFFE1E2E6),
+                                  borderWidth: 2.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 16.0, 4.0),
+                                  hidesUnderline: true,
+                                  isSearchable: true,
+                                  isMultiSelect: false,
+                                );
+                              },
+                            ),
                           ),
-                          fillColor: Colors.white,
-                          elevation: 2.0,
-                          borderColor: Color(0xFFE1E2E6),
-                          borderWidth: 2.0,
-                          borderRadius: 8.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 4.0, 16.0, 4.0),
-                          hidesUnderline: true,
-                          isSearchable: true,
-                          isMultiSelect: false,
-                        ),
-                      ),
-                    ],
+                        ],
+                      );
+                    },
                   ),
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                        child: Text(
-                          'State',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                  child: FutureBuilder<ApiCallResponse>(
+                    future: SqGroup.statesCall.call(
+                      token: FFAppState().Token,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      final columnStatesResponse = snapshot.data!;
+                      return Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
+                            child: Text(
+                              'State',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                        child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController2 ??=
-                              FormFieldController<String>(
-                            _model.dropDownValue2 ??= 'Name',
+                            ),
                           ),
-                          options: ['Name'],
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue2 = val),
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 50.0,
-                          searchHintTextStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 10.0,
-                                    fontWeight: FontWeight.w300,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 0.0),
+                            child: FutureBuilder<ApiCallResponse>(
+                              future: SqGroup.stateListCall.call(
+                                token: FFAppState().Token,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                final dropDownStateListResponse =
+                                    snapshot.data!;
+                                return FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController2 ??=
+                                          FormFieldController<String>(
+                                    _model.dropDownValue2 ??= 'Name',
                                   ),
-                          searchTextStyle:
-                              FlutterFlowTheme.of(context).bodyMedium,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
+                                  options: ['Name'],
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue2 = val),
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 50.0,
+                                  searchHintTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                  searchTextStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  searchHintText: 'Search State...',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: Color(0xFFE1E2E6),
+                                    size: 24.0,
                                   ),
-                          searchHintText: 'Search State...',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: Color(0xFFE1E2E6),
-                            size: 24.0,
+                                  fillColor: Colors.white,
+                                  elevation: 2.0,
+                                  borderColor: Color(0xFFE1E2E6),
+                                  borderWidth: 2.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 16.0, 4.0),
+                                  hidesUnderline: true,
+                                  isSearchable: true,
+                                  isMultiSelect: false,
+                                );
+                              },
+                            ),
                           ),
-                          fillColor: Colors.white,
-                          elevation: 2.0,
-                          borderColor: Color(0xFFE1E2E6),
-                          borderWidth: 2.0,
-                          borderRadius: 8.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 4.0, 16.0, 4.0),
-                          hidesUnderline: true,
-                          isSearchable: true,
-                          isMultiSelect: false,
-                        ),
-                      ),
-                    ],
+                        ],
+                      );
+                    },
                   ),
                 ),
               ),
@@ -420,121 +564,186 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               Expanded(
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                        child: Text(
-                          'City',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                        child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController3 ??=
-                              FormFieldController<String>(
-                            _model.dropDownValue3 ??= 'Name',
+                  child: FutureBuilder<ApiCallResponse>(
+                    future: SqGroup.cityCall.call(
+                      token: FFAppState().Token,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
                           ),
-                          options: ['Name', 'Other...'],
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue3 = val),
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 50.0,
-                          searchHintTextStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 10.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                          searchTextStyle:
-                              FlutterFlowTheme.of(context).bodyMedium,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
-                          searchHintText: 'Search City...',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: Color(0xFFE1E2E6),
-                            size: 24.0,
-                          ),
-                          fillColor: Colors.white,
-                          elevation: 2.0,
-                          borderColor: Color(0xFFE1E2E6),
-                          borderWidth: 2.0,
-                          borderRadius: 8.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 4.0, 16.0, 4.0),
-                          hidesUnderline: true,
-                          isSearchable: true,
-                          isMultiSelect: false,
-                        ),
-                      ),
-                      if (_model.dropDownValue3 == 'Other...')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode3,
-                            textCapitalization: TextCapitalization.words,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Enter City',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
+                        );
+                      }
+                      final columnCityResponse = snapshot.data!;
+                      return Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
+                            child: Text(
+                              'City',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFE1E2E6),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFFF0026),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                            validator: _model.textController4Validator
-                                .asValidator(context),
                           ),
-                        ),
-                    ],
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 0.0),
+                            child: FutureBuilder<ApiCallResponse>(
+                              future: SqGroup.cityCall.call(
+                                token: FFAppState().Token,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                final dropDownCityResponse = snapshot.data!;
+                                return FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController3 ??=
+                                          FormFieldController<String>(
+                                    _model.dropDownValue3 ??= 'Name',
+                                  ),
+                                  options: ['Name', 'Other...'],
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue3 = val),
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 50.0,
+                                  searchHintTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                  searchTextStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  searchHintText: 'Search City...',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: Color(0xFFE1E2E6),
+                                    size: 24.0,
+                                  ),
+                                  fillColor: Colors.white,
+                                  elevation: 2.0,
+                                  borderColor: Color(0xFFE1E2E6),
+                                  borderWidth: 2.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 16.0, 4.0),
+                                  hidesUnderline: true,
+                                  isSearchable: true,
+                                  isMultiSelect: false,
+                                );
+                              },
+                            ),
+                          ),
+                          if (_model.dropDownValue3 == 'Other...')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
+                              child: TextFormField(
+                                controller: _model.textController4,
+                                focusNode: _model.textFieldFocusNode3,
+                                autofocus: false,
+                                textCapitalization: TextCapitalization.words,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: 'Enter City',
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFE1E2E6),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFFF0026),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.transparent,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                                minLines: null,
+                                validator: _model.textController4Validator
+                                    .asValidator(context),
+                              ),
+                            ),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ),
@@ -554,6 +763,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -564,6 +774,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         child: TextFormField(
                           controller: _model.textController5,
                           focusNode: _model.textFieldFocusNode4,
+                          autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Enter Pincode ',
@@ -572,6 +783,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -604,7 +816,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             filled: true,
                             fillColor: Colors.transparent,
                           ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                          minLines: null,
                           keyboardType: TextInputType.number,
                           validator: _model.textController5Validator
                               .asValidator(context),
@@ -626,6 +843,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -635,6 +853,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController6,
               focusNode: _model.textFieldFocusNode5,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -642,6 +861,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -674,7 +894,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController6Validator.asValidator(context),
             ),
           ),
@@ -685,6 +909,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -694,12 +919,14 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController7,
               focusNode: _model.textFieldFocusNode6,
+              autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Number',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -732,7 +959,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.textController7Validator.asValidator(context),
               inputFormatters: [_model.textFieldMask6],
@@ -745,6 +976,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -754,12 +986,14 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController8,
               focusNode: _model.textFieldFocusNode7,
+              autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Number',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -792,7 +1026,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.textController8Validator.asValidator(context),
               inputFormatters: [_model.textFieldMask7],
@@ -805,6 +1043,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -814,6 +1053,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController9,
               focusNode: _model.textFieldFocusNode8,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -821,6 +1061,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -853,7 +1094,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController9Validator.asValidator(context),
             ),
           ),
@@ -864,6 +1109,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -890,12 +1136,17 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Poppins',
                         fontSize: 10.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
                       ),
-              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium,
+              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               searchHintText: 'Search Bank...',
               icon: Icon(
@@ -926,6 +1177,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
                         color: Colors.black,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),
                 ),
@@ -974,6 +1226,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         fontFamily: 'Poppins',
                         color: Color(0xFF6C6B6B),
                         fontSize: 12.0,
+                        letterSpacing: 0.0,
                       ),
                 ),
               ],
@@ -984,6 +1237,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.chequefieldController,
               focusNode: _model.chequefieldFocusNode,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               readOnly: _model.checkboxValue == true,
               obscureText: false,
@@ -992,6 +1246,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1028,7 +1283,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ? Color(0xFFF2F2F2)
                     : Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator:
                   _model.chequefieldControllerValidator.asValidator(context),
             ),
@@ -1040,6 +1299,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1049,12 +1309,14 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController11,
               focusNode: _model.textFieldFocusNode9,
+              autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Number',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1087,7 +1349,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.textController11Validator.asValidator(context),
             ),
@@ -1099,6 +1365,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1108,6 +1375,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController12,
               focusNode: _model.textFieldFocusNode10,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -1115,6 +1383,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1147,7 +1416,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController12Validator.asValidator(context),
             ),
           ),
@@ -1158,6 +1431,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1167,6 +1441,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController13,
               focusNode: _model.textFieldFocusNode11,
+              autofocus: false,
               textCapitalization: TextCapitalization.characters,
               obscureText: false,
               decoration: InputDecoration(
@@ -1174,6 +1449,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1206,7 +1482,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController13Validator.asValidator(context),
             ),
           ),
@@ -1217,6 +1497,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1226,6 +1507,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController14,
               focusNode: _model.textFieldFocusNode12,
+              autofocus: false,
               textCapitalization: TextCapitalization.characters,
               obscureText: false,
               decoration: InputDecoration(
@@ -1233,6 +1515,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1265,7 +1548,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController14Validator.asValidator(context),
             ),
           ),
@@ -1276,6 +1563,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1347,7 +1635,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             BoxShadow(
                               blurRadius: 16.0,
                               color: Color(0x15000000),
-                              offset: Offset(2.0, 4.0),
+                              offset: Offset(
+                                2.0,
+                                4.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
@@ -1376,6 +1667,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
                                         fontSize: 12.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1458,7 +1750,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             BoxShadow(
                               blurRadius: 16.0,
                               color: Color(0x15000000),
-                              offset: Offset(2.0, 4.0),
+                              offset: Offset(
+                                2.0,
+                                4.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
@@ -1486,6 +1781,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
                                         fontSize: 12.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1516,6 +1812,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1525,6 +1822,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController15,
               focusNode: _model.textFieldFocusNode13,
+              autofocus: false,
               textCapitalization: TextCapitalization.none,
               obscureText: false,
               decoration: InputDecoration(
@@ -1532,6 +1830,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1564,7 +1863,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.textController15Validator.asValidator(context),
               inputFormatters: [
@@ -1579,6 +1882,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1650,7 +1954,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             BoxShadow(
                               blurRadius: 16.0,
                               color: Color(0x15000000),
-                              offset: Offset(2.0, 4.0),
+                              offset: Offset(
+                                2.0,
+                                4.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
@@ -1679,6 +1986,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
                                         fontSize: 12.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1761,7 +2069,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             BoxShadow(
                               blurRadius: 16.0,
                               color: Color(0x15000000),
-                              offset: Offset(2.0, 4.0),
+                              offset: Offset(
+                                2.0,
+                                4.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
@@ -1789,6 +2100,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
                                         fontSize: 12.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1819,6 +2131,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1828,6 +2141,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController16,
               focusNode: _model.textFieldFocusNode14,
+              autofocus: false,
               textCapitalization: TextCapitalization.none,
               obscureText: false,
               decoration: InputDecoration(
@@ -1835,6 +2149,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1867,7 +2182,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.textController16Validator.asValidator(context),
               inputFormatters: [
@@ -1882,6 +2201,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1891,6 +2211,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: TextFormField(
               controller: _model.textController17,
               focusNode: _model.textFieldFocusNode15,
+              autofocus: false,
               textCapitalization: TextCapitalization.none,
               obscureText: false,
               decoration: InputDecoration(
@@ -1898,6 +2219,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1930,7 +2252,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType: TextInputType.number,
               validator: _model.textController17Validator.asValidator(context),
               inputFormatters: [

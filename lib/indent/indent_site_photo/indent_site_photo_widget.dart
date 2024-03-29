@@ -99,6 +99,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -114,6 +115,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -195,6 +197,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                         ),
@@ -207,6 +210,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -230,6 +234,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Colors.black,
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                           ),
@@ -242,6 +247,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
@@ -271,6 +277,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Colors.black,
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                           ),
@@ -283,6 +290,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
@@ -307,6 +315,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -321,6 +330,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -353,6 +363,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -364,6 +375,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -375,6 +387,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -386,6 +399,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -566,6 +580,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -578,6 +593,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: Color(0xFFFF0026),
                                             fontSize: 16.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
@@ -675,6 +691,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -687,6 +704,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                               fontFamily: 'Readex Pro',
                                               color: Color(0xFFFF0026),
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -785,6 +803,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -797,6 +816,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                               fontFamily: 'Readex Pro',
                                               color: Color(0xFFFF0026),
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -845,6 +865,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -886,6 +907,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -927,6 +949,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -968,6 +991,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1009,6 +1033,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1050,6 +1075,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1091,6 +1117,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1132,6 +1159,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1173,6 +1201,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1214,6 +1243,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1255,6 +1285,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -1319,6 +1350,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

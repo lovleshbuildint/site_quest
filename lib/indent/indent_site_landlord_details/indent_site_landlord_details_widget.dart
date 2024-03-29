@@ -101,6 +101,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -116,6 +117,7 @@ class _IndentSiteLandlordDetailsWidgetState
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -197,6 +199,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                         ),
@@ -209,6 +212,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -232,6 +236,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                   fontFamily: 'Poppins',
                                                   color: Colors.black,
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                           ),
@@ -244,6 +249,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
@@ -273,6 +279,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                   fontFamily: 'Poppins',
                                                   color: Colors.black,
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                           ),
@@ -285,6 +292,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
@@ -309,6 +317,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -323,6 +332,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -355,6 +365,7 @@ class _IndentSiteLandlordDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -366,6 +377,7 @@ class _IndentSiteLandlordDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -377,6 +389,7 @@ class _IndentSiteLandlordDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -388,6 +401,7 @@ class _IndentSiteLandlordDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -470,6 +484,50 @@ class _IndentSiteLandlordDetailsWidgetState
                         decoration: BoxDecoration(
                           color: Color(0xFFD1D5DB),
                         ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 5.0, 20.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FFButtonWidget(
+                                onPressed: () {
+                                  print('Button pressed ...');
+                                },
+                                text: 'Landlord-1',
+                                options: FFButtonOptions(
+                                  width: 100.0,
+                                  height: 30.0,
+                                  padding: EdgeInsets.all(0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0xFF2D2D2D),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                              Icon(
+                                Icons.add,
+                                color: Colors.black,
+                                size: 30.0,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     FaIcon(
@@ -484,47 +542,6 @@ class _IndentSiteLandlordDetailsWidgetState
                           color: Color(0xFFD1D5DB),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
-                      text: 'Landlord-1',
-                      options: FFButtonOptions(
-                        width: 100.0,
-                        height: 30.0,
-                        padding: EdgeInsets.all(0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFF2D2D2D),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                  fontSize: 12.0,
-                                ),
-                        elevation: 3.0,
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                    ),
-                    Icon(
-                      Icons.add,
-                      color: Colors.black,
-                      size: 30.0,
                     ),
                   ],
                 ),
@@ -585,6 +602,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

@@ -131,6 +131,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
@@ -225,7 +226,10 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                   BoxShadow(
                                                     blurRadius: 16.0,
                                                     color: Color(0x14000000),
-                                                    offset: Offset(2.0, 4.0),
+                                                    offset: Offset(
+                                                      2.0,
+                                                      4.0,
+                                                    ),
                                                   )
                                                 ],
                                                 borderRadius: BorderRadius.only(
@@ -329,6 +333,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                             'Poppins',
                                                                         fontSize:
                                                                             12.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w300,
                                                                       ),
@@ -344,6 +350,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),
@@ -381,6 +389,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                           0xFF2D2D2D),
                                                                       fontSize:
                                                                           10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .normal,
@@ -433,6 +443,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                                 'Poppins',
                                                                             fontSize:
                                                                                 10.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -479,6 +491,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                           'Poppins',
                                                                       fontSize:
                                                                           12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w300,
@@ -495,6 +509,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -529,6 +545,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                               'Poppins',
                                                                           fontSize:
                                                                               12.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w300,
                                                                         ),
@@ -544,6 +562,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Poppins',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                         ),
@@ -579,6 +599,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                               'Poppins',
                                                                           fontSize:
                                                                               12.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w300,
                                                                         ),
@@ -594,6 +616,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Poppins',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                         ),
@@ -687,6 +711,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -737,6 +762,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.white,
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -796,6 +822,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -865,6 +892,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -935,6 +963,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),

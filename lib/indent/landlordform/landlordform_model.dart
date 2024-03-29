@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -115,8 +116,6 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   TextEditingController? textController17;
   String? Function(BuildContext, String?)? textController17Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -173,8 +172,4 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
     textFieldFocusNode15?.dispose();
     textController17?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

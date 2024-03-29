@@ -17,8 +17,6 @@ class OpenSiteLandlordDetailsModel
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     landlordformModel = createModel(context, () => LandlordformModel());
@@ -29,8 +27,4 @@ class OpenSiteLandlordDetailsModel
     unfocusNode.dispose();
     landlordformModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

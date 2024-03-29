@@ -74,6 +74,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -83,6 +84,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.textController1,
               focusNode: _model.textFieldFocusNode1,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -90,6 +92,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -122,7 +125,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController1Validator.asValidator(context),
@@ -138,6 +145,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -157,12 +165,17 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Poppins',
                         fontSize: 10.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
                       ),
-              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium,
+              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               searchHintText: 'Search Bank...',
               icon: Icon(
@@ -188,6 +201,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -198,10 +212,14 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             controller: _model.radioButtonValueController ??=
                 FormFieldController<String>('ONSITE'),
             optionHeight: 37.0,
-            textStyle: FlutterFlowTheme.of(context).labelMedium,
+            textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                  fontFamily: 'Readex Pro',
+                  letterSpacing: 0.0,
+                ),
             selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
                 ),
             buttonPosition: RadioButtonPosition.left,
@@ -219,6 +237,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -237,6 +256,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -261,6 +281,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -270,6 +291,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.textController2,
               focusNode: _model.textFieldFocusNode2,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -277,6 +299,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -309,7 +332,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController2Validator.asValidator(context),
@@ -325,6 +352,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -334,6 +362,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.textController3,
               focusNode: _model.textFieldFocusNode3,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -341,6 +370,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -373,7 +403,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController3Validator.asValidator(context),
@@ -389,6 +423,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -398,6 +433,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.textController4,
               focusNode: _model.textFieldFocusNode4,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -405,6 +441,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -437,7 +474,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController4Validator.asValidator(context),
@@ -453,6 +494,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -462,6 +504,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.textController5,
               focusNode: _model.textFieldFocusNode5,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -469,6 +512,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -501,7 +545,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController5Validator.asValidator(context),
@@ -517,6 +565,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -526,6 +575,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.textController6,
               focusNode: _model.textFieldFocusNode6,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -533,6 +583,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -565,7 +616,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController6Validator.asValidator(context),
@@ -581,6 +636,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -617,6 +673,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                             fontFamily: 'Poppins',
                             color: Color(0xFF2D2D2D),
                             fontSize: 12.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -629,6 +686,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                             fontFamily: 'Poppins',
                             color: Color(0xFF2D2D2D),
                             fontSize: 10.0,
+                            letterSpacing: 0.0,
                           ),
                     ),
                   ),
@@ -686,6 +744,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(

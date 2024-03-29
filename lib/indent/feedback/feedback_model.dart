@@ -15,8 +15,6 @@ class FeedbackModel extends FlutterFlowModel<FeedbackWidget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -26,8 +24,4 @@ class FeedbackModel extends FlutterFlowModel<FeedbackWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

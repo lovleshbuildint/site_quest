@@ -93,6 +93,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -114,6 +115,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -125,6 +127,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -136,6 +139,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -147,6 +151,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -271,6 +276,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(
@@ -344,6 +350,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

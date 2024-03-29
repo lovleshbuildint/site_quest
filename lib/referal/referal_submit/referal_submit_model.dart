@@ -11,8 +11,6 @@ class ReferalSubmitModel extends FlutterFlowModel<ReferalSubmitWidget> {
 
   final unfocusNode = FocusNode();
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -20,8 +18,4 @@ class ReferalSubmitModel extends FlutterFlowModel<ReferalSubmitWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

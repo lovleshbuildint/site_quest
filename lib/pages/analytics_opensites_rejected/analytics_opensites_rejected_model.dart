@@ -15,8 +15,6 @@ class AnalyticsOpensitesRejectedModel
 
   final unfocusNode = FocusNode();
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -24,8 +22,4 @@ class AnalyticsOpensitesRejectedModel
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

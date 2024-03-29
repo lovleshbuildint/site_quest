@@ -91,6 +91,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -148,7 +149,10 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                   BoxShadow(
                                     blurRadius: 16.0,
                                     color: Color(0x14000000),
-                                    offset: Offset(2.0, 4.0),
+                                    offset: Offset(
+                                      2.0,
+                                      4.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.only(
@@ -185,6 +189,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -196,6 +201,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ),
@@ -218,6 +224,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
@@ -229,6 +236,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -256,6 +264,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -267,6 +276,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -290,6 +300,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
@@ -301,6 +312,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),

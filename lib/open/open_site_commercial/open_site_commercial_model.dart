@@ -16,8 +16,6 @@ class OpenSiteCommercialModel
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     commercialAdvanceModel =
@@ -29,8 +27,4 @@ class OpenSiteCommercialModel
     unfocusNode.dispose();
     commercialAdvanceModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

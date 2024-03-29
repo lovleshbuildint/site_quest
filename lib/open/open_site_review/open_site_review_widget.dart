@@ -72,6 +72,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           fontSize: 18.0,
+                          letterSpacing: 0.0,
                         ),
                   ),
                 ),
@@ -79,6 +80,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                   'HYP Code: 00000',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
                 ),
@@ -110,6 +112,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -118,6 +121,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -143,6 +147,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -151,6 +156,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -176,6 +182,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -184,6 +191,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -209,6 +217,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -217,6 +226,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -257,6 +267,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(

@@ -88,6 +88,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
           ),
@@ -99,10 +100,14 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               controller: _model.radioButtonValueController ??=
                   FormFieldController<String>('Full Shop'),
               optionHeight: 32.0,
-              textStyle: FlutterFlowTheme.of(context).labelMedium,
+              textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               selectedTextStyle:
                   FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),
               buttonPosition: RadioButtonPosition.left,
@@ -122,6 +127,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -131,6 +137,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textController1,
               focusNode: _model.textFieldFocusNode1,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -138,6 +145,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -170,7 +178,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController1Validator.asValidator(context),
@@ -186,6 +198,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -195,12 +208,14 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textFieldController,
               focusNode: _model.textFieldFocusNode2,
+              autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Area',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -233,7 +248,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator:
@@ -250,6 +269,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -259,6 +279,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textController3,
               focusNode: _model.textFieldFocusNode3,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -266,6 +287,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -298,7 +320,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController3Validator.asValidator(context),
@@ -326,6 +352,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -335,6 +362,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           child: TextFormField(
                             controller: _model.textController4,
                             focusNode: _model.textFieldFocusNode4,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -344,6 +372,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -376,7 +405,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController4Validator
@@ -404,6 +439,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -413,6 +449,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           child: TextFormField(
                             controller: _model.textController5,
                             focusNode: _model.textFieldFocusNode5,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -422,6 +459,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -454,7 +492,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController5Validator
@@ -478,6 +522,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -487,6 +532,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textController6,
               focusNode: _model.textFieldFocusNode6,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -494,6 +540,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -526,7 +573,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController6Validator.asValidator(context),
@@ -542,6 +593,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -551,6 +603,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textController7,
               focusNode: _model.textFieldFocusNode7,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -558,6 +611,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -590,7 +644,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController7Validator.asValidator(context),
@@ -606,6 +664,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -615,6 +674,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textController8,
               focusNode: _model.textFieldFocusNode8,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -622,6 +682,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -654,7 +715,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController8Validator.asValidator(context),
@@ -682,6 +747,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -691,6 +757,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           child: TextFormField(
                             controller: _model.textController9,
                             focusNode: _model.textFieldFocusNode9,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -700,6 +767,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -732,7 +800,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController9Validator
@@ -760,6 +834,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -769,6 +844,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           child: TextFormField(
                             controller: _model.textController10,
                             focusNode: _model.textFieldFocusNode10,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -778,6 +854,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -810,7 +887,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController10Validator
@@ -834,6 +917,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -852,6 +936,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -876,6 +961,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -894,6 +980,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -918,6 +1005,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -936,6 +1024,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -973,6 +1062,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -994,6 +1084,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -1032,6 +1123,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1041,6 +1133,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             child: TextFormField(
                               controller: _model.textController11,
                               focusNode: _model.textFieldFocusNode11,
+                              autofocus: false,
                               textCapitalization: TextCapitalization.words,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -1050,6 +1143,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -1082,7 +1176,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                 filled: true,
                                 fillColor: Colors.transparent,
                               ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                              minLines: null,
                               keyboardType: TextInputType.number,
                               validator: _model.textController11Validator
                                   .asValidator(context),
@@ -1106,6 +1206,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1125,12 +1226,17 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Poppins',
                         fontSize: 10.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
                       ),
-              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium,
+              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               searchHintText: 'Search Bank...',
               icon: Icon(
@@ -1156,6 +1262,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1174,6 +1281,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -1198,6 +1306,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -1207,6 +1316,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: TextFormField(
               controller: _model.textController12,
               focusNode: _model.textFieldFocusNode12,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -1214,6 +1324,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -1246,7 +1357,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController12Validator.asValidator(context),
             ),
           ),

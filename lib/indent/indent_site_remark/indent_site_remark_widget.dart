@@ -113,6 +113,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -128,6 +129,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -209,6 +211,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                         ),
@@ -221,6 +224,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -244,6 +248,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Colors.black,
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                           ),
@@ -256,6 +261,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
@@ -285,6 +291,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Colors.black,
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                           ),
@@ -297,6 +304,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
@@ -321,6 +329,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -335,6 +344,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -367,6 +377,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -378,6 +389,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -389,6 +401,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -400,6 +413,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -524,6 +538,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(
@@ -559,6 +574,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(
@@ -591,6 +607,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -600,6 +617,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -632,7 +650,13 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -643,6 +667,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.textController2,
                             focusNode: _model.textFieldFocusNode2,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -652,6 +677,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -684,7 +710,13 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
@@ -695,6 +727,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.textController3,
                             focusNode: _model.textFieldFocusNode3,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -704,6 +737,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -736,7 +770,13 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -747,6 +787,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.textController4,
                             focusNode: _model.textFieldFocusNode4,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -756,6 +797,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -788,7 +830,13 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController4Validator
                                 .asValidator(context),
                           ),
@@ -799,6 +847,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.textController5,
                             focusNode: _model.textFieldFocusNode5,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -808,6 +857,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -840,7 +890,13 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController5Validator
                                 .asValidator(context),
                           ),
@@ -889,6 +945,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

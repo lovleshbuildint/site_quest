@@ -65,6 +65,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -83,6 +84,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -107,6 +109,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -125,6 +128,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                   ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -149,6 +153,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -158,6 +163,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.textController1,
               focusNode: _model.textFieldFocusNode1,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -165,6 +171,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -197,7 +204,11 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController1Validator.asValidator(context),
             ),
           ),
@@ -208,6 +219,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -217,6 +229,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.textController2,
               focusNode: _model.textFieldFocusNode2,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -224,6 +237,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -256,7 +270,11 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               validator: _model.textController2Validator.asValidator(context),
             ),
           ),
@@ -267,6 +285,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -276,6 +295,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.textController3,
               focusNode: _model.textFieldFocusNode3,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -283,6 +303,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -315,7 +336,11 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController3Validator.asValidator(context),
@@ -331,6 +356,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
@@ -340,6 +366,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.textController4,
               focusNode: _model.textFieldFocusNode4,
+              autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
@@ -347,6 +374,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -379,7 +407,11 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 filled: true,
                 fillColor: Colors.transparent,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController4Validator.asValidator(context),

@@ -102,6 +102,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontSize: 16.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
@@ -142,7 +143,10 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                   BoxShadow(
                                     blurRadius: 16.0,
                                     color: Color(0x14000000),
-                                    offset: Offset(2.0, 4.0),
+                                    offset: Offset(
+                                      2.0,
+                                      4.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.only(
@@ -179,6 +183,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -190,6 +195,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ),
@@ -212,6 +218,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
@@ -223,6 +230,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -250,6 +258,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -261,6 +270,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -284,6 +294,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
@@ -295,6 +306,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -406,6 +418,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                           fontFamily: 'Poppins',
                                           color: Color(0xFFB5BFC8),
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                   Container(
@@ -447,6 +460,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
                                         fontSize: 10.0,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                                 Container(
@@ -487,6 +501,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                         fontFamily: 'Poppins',
                                         color: Color(0xFFB5BFC8),
                                         fontSize: 10.0,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                                 Container(
@@ -545,6 +560,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                           fontFamily: 'Poppins',
                                           color: Color(0xFFB5BFC8),
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                   Container(
@@ -605,6 +621,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                           fontFamily: 'Poppins',
                                           color: Color(0xFFB5BFC8),
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                   Container(

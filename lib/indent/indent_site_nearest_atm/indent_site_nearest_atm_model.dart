@@ -17,8 +17,6 @@ class IndentSiteNearestAtmModel
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     nearestatmModel = createModel(context, () => NearestatmModel());
@@ -29,8 +27,4 @@ class IndentSiteNearestAtmModel
     unfocusNode.dispose();
     nearestatmModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

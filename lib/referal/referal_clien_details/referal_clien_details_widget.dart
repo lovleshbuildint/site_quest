@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -67,6 +68,8 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -123,6 +126,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -144,6 +148,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -155,6 +160,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -166,6 +172,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -265,6 +272,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -274,6 +282,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -283,6 +292,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -315,7 +325,13 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -330,6 +346,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -340,6 +357,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController2,
                             focusNode: _model.textFieldFocusNode2,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Enter Number',
@@ -348,6 +366,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -380,7 +399,13 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.textController2Validator
                                 .asValidator(context),
@@ -397,6 +422,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -407,6 +433,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController3,
                             focusNode: _model.textFieldFocusNode3,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -416,6 +443,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -448,7 +476,13 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -463,6 +497,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -473,6 +508,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController4,
                             focusNode: _model.textFieldFocusNode4,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -482,6 +518,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -514,7 +551,13 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.textController4Validator
                                 .asValidator(context),
@@ -530,6 +573,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -540,6 +584,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           child: TextFormField(
                             controller: _model.percentController,
                             focusNode: _model.percentFocusNode,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Enter Company',
@@ -548,6 +593,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -580,7 +626,13 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.percentControllerValidator
                                 .asValidator(context),
@@ -607,6 +659,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -614,52 +667,88 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController1 ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue1 ??= 'Name',
+                                      child: FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup.stateListCall.call(
+                                          token: FFAppState().Token,
                                         ),
-                                        options: ['Name'],
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue1 = val),
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        searchHintTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  fontSize: 10.0,
-                                                  fontWeight: FontWeight.w300,
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
                                                 ),
-                                        searchTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
+                                              ),
+                                            );
+                                          }
+                                          final dropDownStateListResponse =
+                                              snapshot.data!;
+                                          return FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownValueController1 ??=
+                                                FormFieldController<String>(
+                                              _model.dropDownValue1 ??= 'Name',
                                             ),
-                                        searchHintText: 'Search State...',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: Color(0xFFE1E2E6),
-                                          size: 24.0,
-                                        ),
-                                        fillColor: Colors.white,
-                                        elevation: 2.0,
-                                        borderColor: Color(0xFFE1E2E6),
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 16.0, 4.0),
-                                        hidesUnderline: true,
-                                        isSearchable: true,
-                                        isMultiSelect: false,
+                                            options: ['Name'],
+                                            onChanged: (val) => setState(() =>
+                                                _model.dropDownValue1 = val),
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      fontSize: 10.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            searchHintText: 'Search State...',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: Color(0xFFE1E2E6),
+                                              size: 24.0,
+                                            ),
+                                            fillColor: Colors.white,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFE1E2E6),
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 4.0, 16.0, 4.0),
+                                            hidesUnderline: true,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
                                       ),
                                     ),
                                   ],
@@ -684,6 +773,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -710,15 +800,21 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                 .override(
                                                   fontFamily: 'Poppins',
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                         searchTextStyle:
                                             FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                             ),
                                         searchHintText: 'Search District...',
                                         icon: Icon(
@@ -745,6 +841,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         child: TextFormField(
                                           controller: _model.textController6,
                                           focusNode: _model.textFieldFocusNode5,
+                                          autofocus: false,
                                           textCapitalization:
                                               TextCapitalization.words,
                                           obscureText: false,
@@ -756,6 +853,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                     .override(
                                                       fontFamily: 'Poppins',
                                                       color: Colors.black,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -798,7 +896,12 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                             fillColor: Colors.transparent,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minLines: null,
                                           validator: _model
                                               .textController6Validator
                                               .asValidator(context),
@@ -831,6 +934,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -841,6 +945,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                       child: TextFormField(
                                         controller: _model.textController7,
                                         focusNode: _model.textFieldFocusNode6,
+                                        autofocus: false,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText: 'Enter Pincode ',
@@ -850,6 +955,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                   .override(
                                                     fontFamily: 'Poppins',
                                                     color: Colors.black,
+                                                    letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -892,7 +998,12 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           fillColor: Colors.transparent,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        minLines: null,
                                         keyboardType: TextInputType.number,
                                         validator: _model
                                             .textController7Validator
@@ -925,6 +1036,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -932,52 +1044,88 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController3 ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue3 ??= 'Name',
+                                      child: FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup.cityCall.call(
+                                          token: FFAppState().Token,
                                         ),
-                                        options: ['Name', 'Other...'],
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue3 = val),
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        searchHintTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  fontSize: 10.0,
-                                                  fontWeight: FontWeight.w300,
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
                                                 ),
-                                        searchTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
+                                              ),
+                                            );
+                                          }
+                                          final dropDownCityResponse =
+                                              snapshot.data!;
+                                          return FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownValueController3 ??=
+                                                FormFieldController<String>(
+                                              _model.dropDownValue3 ??= 'Name',
                                             ),
-                                        searchHintText: 'Search City...',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: Color(0xFFE1E2E6),
-                                          size: 24.0,
-                                        ),
-                                        fillColor: Colors.white,
-                                        elevation: 2.0,
-                                        borderColor: Color(0xFFE1E2E6),
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 16.0, 4.0),
-                                        hidesUnderline: true,
-                                        isSearchable: true,
-                                        isMultiSelect: false,
+                                            options: ['Name', 'Other...'],
+                                            onChanged: (val) => setState(() =>
+                                                _model.dropDownValue3 = val),
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      fontSize: 10.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            searchHintText: 'Search City...',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: Color(0xFFE1E2E6),
+                                              size: 24.0,
+                                            ),
+                                            fillColor: Colors.white,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFE1E2E6),
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 4.0, 16.0, 4.0),
+                                            hidesUnderline: true,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
                                       ),
                                     ),
                                     if (_model.dropDownValue3 == 'Other...')
@@ -987,6 +1135,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         child: TextFormField(
                                           controller: _model.textController8,
                                           focusNode: _model.textFieldFocusNode7,
+                                          autofocus: false,
                                           textCapitalization:
                                               TextCapitalization.words,
                                           obscureText: false,
@@ -998,6 +1147,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                     .override(
                                                       fontFamily: 'Poppins',
                                                       color: Colors.black,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -1040,7 +1190,12 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                             fillColor: Colors.transparent,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minLines: null,
                                           validator: _model
                                               .textController8Validator
                                               .asValidator(context),
@@ -1062,6 +1217,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1072,6 +1228,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController9,
                             focusNode: _model.textFieldFocusNode8,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1081,6 +1238,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1113,7 +1271,13 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController9Validator
                                 .asValidator(context),
                           ),
@@ -1165,6 +1329,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

@@ -45,8 +45,6 @@ class ReferalSurveyDetailsModel
   final textFieldMask6 = MaskTextInputFormatter(mask: '+91##########');
   String? Function(BuildContext, String?)? textController7Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -74,8 +72,4 @@ class ReferalSurveyDetailsModel
     textFieldFocusNode6?.dispose();
     textController7?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

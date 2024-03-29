@@ -81,8 +81,6 @@ class SitedimentionsModel extends FlutterFlowModel<SitedimentionsWidget> {
   TextEditingController? textController12;
   String? Function(BuildContext, String?)? textController12Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -125,9 +123,6 @@ class SitedimentionsModel extends FlutterFlowModel<SitedimentionsWidget> {
     textController12?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get radioButtonValue => radioButtonValueController?.value;
 }

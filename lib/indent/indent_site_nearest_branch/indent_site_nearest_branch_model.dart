@@ -18,8 +18,6 @@ class IndentSiteNearestBranchModel
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     nearestbranchModel = createModel(context, () => NearestbranchModel());
@@ -30,8 +28,4 @@ class IndentSiteNearestBranchModel
     unfocusNode.dispose();
     nearestbranchModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

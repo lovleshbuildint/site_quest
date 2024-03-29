@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -58,6 +59,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -118,6 +121,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -133,6 +137,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -154,6 +159,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -165,6 +171,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -176,6 +183,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -187,6 +195,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -307,6 +316,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -328,15 +338,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   fontSize: 10.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
                                 ),
-                            searchTextStyle:
-                                FlutterFlowTheme.of(context).bodyMedium,
+                            searchTextStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             searchHintText: 'Search Bank...',
                             icon: Icon(
@@ -366,6 +382,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -388,6 +405,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -417,6 +435,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -439,6 +458,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -468,6 +488,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -491,6 +512,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -520,6 +542,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -542,6 +565,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -571,6 +595,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -593,6 +618,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -622,6 +648,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -644,6 +671,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -672,6 +700,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -699,6 +728,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -728,6 +758,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -755,6 +786,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -784,6 +816,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -794,6 +827,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -803,6 +837,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -835,7 +870,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -850,6 +891,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -860,6 +902,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController2,
                             focusNode: _model.textFieldFocusNode2,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Distance in mtrs',
@@ -868,6 +911,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -905,7 +949,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
+                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController2Validator
@@ -922,6 +968,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -932,6 +979,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController3,
                             focusNode: _model.textFieldFocusNode3,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -941,6 +989,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -973,7 +1022,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -996,6 +1051,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
@@ -1003,46 +1059,92 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
-                                    child: FlutterFlowDropDown<String>(
-                                      controller:
-                                          _model.dropDownValueController9 ??=
+                                    child: FutureBuilder<ApiCallResponse>(
+                                      future: DistrictAPICall.call(
+                                        token: FFAppState().Token,
+                                        istate: getJsonField(
+                                          FFAppState().indentSelectedSite,
+                                          r'''$.istate''',
+                                        ),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final dropDownDistrictAPIResponse =
+                                            snapshot.data!;
+                                        return FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropDownValueController9 ??=
                                               FormFieldController<String>(
-                                        _model.dropDownValue9 ??= 'Mumbai',
-                                      ),
-                                      options: ['Mumbai', 'Nashik', 'Other...'],
-                                      onChanged: (val) => setState(
-                                          () => _model.dropDownValue9 = val),
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      height: 50.0,
-                                      searchHintTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                      searchTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.black,
+                                            _model.dropDownValue9 ??= 'Mumbai',
                                           ),
-                                      searchHintText: 'Search district...',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: Color(0xFFE1E2E6),
-                                        size: 24.0,
-                                      ),
-                                      fillColor: Colors.white,
-                                      elevation: 2.0,
-                                      borderColor: Color(0xFFE1E2E6),
-                                      borderWidth: 2.0,
-                                      borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isSearchable: true,
-                                      isMultiSelect: false,
+                                          options: [
+                                            'Mumbai',
+                                            'Nashik',
+                                            'Other...'
+                                          ],
+                                          onChanged: (val) => setState(() =>
+                                              _model.dropDownValue9 = val),
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: 50.0,
+                                          searchHintTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          searchTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: Colors.black,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          searchHintText: 'Search district...',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: Color(0xFFE1E2E6),
+                                            size: 24.0,
+                                          ),
+                                          fillColor: Colors.white,
+                                          elevation: 2.0,
+                                          borderColor: Color(0xFFE1E2E6),
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isSearchable: true,
+                                          isMultiSelect: false,
+                                        );
+                                      },
                                     ),
                                   ),
                                 ],
@@ -1066,6 +1168,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1073,58 +1176,94 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController10 ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue10 ??=
-                                              'Maharashtra',
+                                      child: FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup.stateListCall.call(
+                                          token: FFAppState().Token,
                                         ),
-                                        options: [
-                                          'Maharashtra',
-                                          'Telengana',
-                                          'Gujarat',
-                                          'New Delhi'
-                                        ],
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue10 = val),
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        searchHintTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  fontSize: 10.0,
-                                                  fontWeight: FontWeight.w300,
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
                                                 ),
-                                        searchTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
+                                              ),
+                                            );
+                                          }
+                                          final dropDownStateListResponse =
+                                              snapshot.data!;
+                                          return FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownValueController10 ??=
+                                                FormFieldController<String>(
+                                              _model.dropDownValue10 ??=
+                                                  'Maharashtra',
                                             ),
-                                        searchHintText: 'Search Bank...',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: Color(0xFFE1E2E6),
-                                          size: 24.0,
-                                        ),
-                                        fillColor: Colors.white,
-                                        elevation: 2.0,
-                                        borderColor: Color(0xFFE1E2E6),
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 16.0, 4.0),
-                                        hidesUnderline: true,
-                                        isSearchable: true,
-                                        isMultiSelect: false,
+                                            options: [
+                                              'Maharashtra',
+                                              'Telengana',
+                                              'Gujarat',
+                                              'New Delhi'
+                                            ],
+                                            onChanged: (val) => setState(() =>
+                                                _model.dropDownValue10 = val),
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      fontSize: 10.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            searchHintText: 'Search Bank...',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: Color(0xFFE1E2E6),
+                                              size: 24.0,
+                                            ),
+                                            fillColor: Colors.white,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFE1E2E6),
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 4.0, 16.0, 4.0),
+                                            hidesUnderline: true,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
                                       ),
                                     ),
                                   ],
@@ -1151,6 +1290,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
@@ -1158,50 +1298,88 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
-                                    child: FlutterFlowDropDown<String>(
-                                      controller:
-                                          _model.dropDownValueController11 ??=
+                                    child: FutureBuilder<ApiCallResponse>(
+                                      future: SqGroup.cityCall.call(
+                                        token: FFAppState().Token,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final dropDownCityResponse =
+                                            snapshot.data!;
+                                        return FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropDownValueController11 ??=
                                               FormFieldController<String>(
-                                        _model.dropDownValue11 ??= 'Mumbai',
-                                      ),
-                                      options: [
-                                        'Mumbai',
-                                        'Navi Mumbai',
-                                        'Other...'
-                                      ],
-                                      onChanged: (val) => setState(
-                                          () => _model.dropDownValue11 = val),
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      height: 50.0,
-                                      searchHintTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                      searchTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.black,
+                                            _model.dropDownValue11 ??= 'Mumbai',
                                           ),
-                                      searchHintText: 'Search City...',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: Color(0xFFE1E2E6),
-                                        size: 24.0,
-                                      ),
-                                      fillColor: Colors.white,
-                                      elevation: 2.0,
-                                      borderColor: Color(0xFFE1E2E6),
-                                      borderWidth: 2.0,
-                                      borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isSearchable: true,
-                                      isMultiSelect: false,
+                                          options: [
+                                            'Mumbai',
+                                            'Navi Mumbai',
+                                            'Other...'
+                                          ],
+                                          onChanged: (val) => setState(() =>
+                                              _model.dropDownValue11 = val),
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: 50.0,
+                                          searchHintTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          searchTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: Colors.black,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          searchHintText: 'Search City...',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: Color(0xFFE1E2E6),
+                                            size: 24.0,
+                                          ),
+                                          fillColor: Colors.white,
+                                          elevation: 2.0,
+                                          borderColor: Color(0xFFE1E2E6),
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isSearchable: true,
+                                          isMultiSelect: false,
+                                        );
+                                      },
                                     ),
                                   ),
                                 ],
@@ -1225,6 +1403,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1235,6 +1414,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       child: TextFormField(
                                         controller: _model.textController4,
                                         focusNode: _model.textFieldFocusNode4,
+                                        autofocus: false,
                                         textCapitalization:
                                             TextCapitalization.words,
                                         obscureText: false,
@@ -1246,6 +1426,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                   .override(
                                                     fontFamily: 'Poppins',
                                                     color: Colors.black,
+                                                    letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -1288,7 +1469,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           fillColor: Colors.transparent,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        minLines: null,
                                         validator: _model
                                             .textController4Validator
                                             .asValidator(context),
@@ -1310,6 +1496,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1332,6 +1519,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -1360,6 +1548,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1370,6 +1559,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController5,
                             focusNode: _model.textFieldFocusNode5,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1379,6 +1569,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1411,7 +1602,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController5Validator
                                 .asValidator(context),
                           ),
@@ -1426,6 +1623,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1448,6 +1646,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -1487,6 +1686,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1512,6 +1712,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                             ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1552,6 +1753,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1577,6 +1779,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                             ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1611,6 +1814,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1633,6 +1837,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -1662,6 +1867,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1684,6 +1890,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
@@ -1713,6 +1920,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1723,6 +1931,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController6,
                             focusNode: _model.textFieldFocusNode6,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1732,6 +1941,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1764,7 +1974,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController6Validator
                                 .asValidator(context),
                           ),
@@ -1779,6 +1995,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -1789,6 +2006,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.textController7,
                             focusNode: _model.textFieldFocusNode7,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1798,6 +2016,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1830,7 +2049,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController7Validator
                                 .asValidator(context),
                           ),
@@ -1882,6 +2107,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

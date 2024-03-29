@@ -33,8 +33,6 @@ class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -56,8 +54,4 @@ class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
     textFieldFocusNode5?.dispose();
     textController5?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

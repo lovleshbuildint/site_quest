@@ -50,8 +50,6 @@ class NearestatmModel extends FlutterFlowModel<NearestatmWidget> {
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -76,9 +74,6 @@ class NearestatmModel extends FlutterFlowModel<NearestatmWidget> {
     textController6?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get radioButtonValue => radioButtonValueController?.value;
 }

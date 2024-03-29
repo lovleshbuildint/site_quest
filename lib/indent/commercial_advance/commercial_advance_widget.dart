@@ -77,6 +77,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
           ),
@@ -86,9 +87,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
             controller: _model.radioButtonValueController1 ??=
                 FormFieldController<String>('Advance Rent'),
             optionHeight: 32.0,
-            textStyle: FlutterFlowTheme.of(context).labelMedium,
+            textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                  fontFamily: 'Readex Pro',
+                  letterSpacing: 0.0,
+                ),
             selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
             buttonPosition: RadioButtonPosition.left,
@@ -112,6 +117,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: Colors.black,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
                         ),
                   ),
@@ -161,6 +167,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   });
                                 },
                               ),
+                              autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'Enter Rent',
@@ -169,6 +176,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -206,7 +214,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
+                              minLines: null,
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
@@ -227,6 +237,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -247,6 +258,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -273,6 +285,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -317,6 +330,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -343,6 +357,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -357,6 +372,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         Duration(milliseconds: 1),
                         () => setState(() {}),
                       ),
+                      autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       readOnly: true,
                       obscureText: false,
@@ -365,6 +381,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -397,7 +414,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         filled: true,
                         fillColor: Color(0xFFF2F2F2),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      minLines: null,
                       validator: _model.totalAdvanceAmountControllerValidator
                           .asValidator(context),
                     ),
@@ -410,6 +431,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -464,6 +486,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -503,6 +526,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -517,6 +541,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
+                                    autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.words,
                                     readOnly: true,
@@ -527,6 +552,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -565,8 +591,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       filled: true,
                                       fillColor: Color(0xFFF2F2F2),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    minLines: null,
                                     validator: _model
                                         .advanceAmountControllerValidator
                                         .asValidator(context),
@@ -591,6 +622,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -605,6 +637,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
+                                    autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.words,
                                     readOnly: true,
@@ -615,6 +648,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -653,8 +687,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       filled: true,
                                       fillColor: Color(0xFFF2F2F2),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    minLines: null,
                                     validator: _model
                                         .balanceAmountControllerValidator
                                         .asValidator(context),
@@ -675,6 +714,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -695,6 +735,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -721,6 +762,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -752,6 +794,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -778,6 +821,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -809,6 +853,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -835,6 +880,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -852,12 +898,18 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             controller: _model.radioButtonValueController2 ??=
                                 FormFieldController<String>('Yes'),
                             optionHeight: 16.0,
-                            textStyle: FlutterFlowTheme.of(context).labelMedium,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                             selectedTextStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                             buttonPosition: RadioButtonPosition.left,
@@ -887,6 +939,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: Colors.black,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
                         ),
                   ),
@@ -936,6 +989,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   });
                                 },
                               ),
+                              autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'Enter Rent',
@@ -944,6 +998,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -981,7 +1036,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
+                              minLines: null,
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
@@ -1001,6 +1058,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1021,6 +1079,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -1047,6 +1106,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1080,6 +1140,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -1106,6 +1167,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1120,6 +1182,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         Duration(milliseconds: 2000),
                         () => setState(() {}),
                       ),
+                      autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       readOnly: true,
                       obscureText: false,
@@ -1128,6 +1191,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -1160,7 +1224,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         filled: true,
                         fillColor: Color(0xFFF2F2F2),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      minLines: null,
                       validator: _model.totalSecurityDepositControllerValidator
                           .asValidator(context),
                     ),
@@ -1173,6 +1241,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1227,6 +1296,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -1266,6 +1336,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1281,6 +1352,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
+                                    autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.words,
                                     readOnly: true,
@@ -1291,6 +1363,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -1329,8 +1402,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       filled: true,
                                       fillColor: Color(0xFFF2F2F2),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    minLines: null,
                                     validator: _model
                                         .advanceSDAmountControllerValidator
                                         .asValidator(context),
@@ -1355,6 +1433,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1370,6 +1449,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
+                                    autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.words,
                                     readOnly: true,
@@ -1380,6 +1460,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -1418,8 +1499,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       filled: true,
                                       fillColor: Color(0xFFF2F2F2),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    minLines: null,
                                     validator: _model
                                         .balanceSDAmountControllerValidator
                                         .asValidator(context),
@@ -1440,6 +1526,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1460,6 +1547,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -1486,6 +1574,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1517,6 +1606,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -1543,6 +1633,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1574,6 +1665,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
+                                letterSpacing: 0.0,
                               ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -1600,6 +1692,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -1617,12 +1710,18 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             controller: _model.radioButtonValueController3 ??=
                                 FormFieldController<String>('Yes'),
                             optionHeight: 16.0,
-                            textStyle: FlutterFlowTheme.of(context).labelMedium,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                             selectedTextStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                             buttonPosition: RadioButtonPosition.left,

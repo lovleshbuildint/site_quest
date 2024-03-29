@@ -12,8 +12,6 @@ class DraftListModel extends FlutterFlowModel<DraftListWidget> {
 
   final unfocusNode = FocusNode();
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -21,8 +19,4 @@ class DraftListModel extends FlutterFlowModel<DraftListWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

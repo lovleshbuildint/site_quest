@@ -34,8 +34,6 @@ class NearestbranchModel extends FlutterFlowModel<NearestbranchWidget> {
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -53,8 +51,4 @@ class NearestbranchModel extends FlutterFlowModel<NearestbranchWidget> {
     textFieldFocusNode4?.dispose();
     textController4?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

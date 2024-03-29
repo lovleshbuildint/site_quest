@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -63,8 +64,6 @@ class ReferalClienDetailsModel
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -98,8 +97,4 @@ class ReferalClienDetailsModel
     textFieldFocusNode8?.dispose();
     textController9?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -72,6 +72,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           fontSize: 18.0,
+                          letterSpacing: 0.0,
                         ),
                   ),
                 ),
@@ -81,6 +82,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                     'HPY Code : ',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
                   ),
@@ -113,6 +115,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -121,6 +124,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -146,6 +150,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -154,6 +159,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -179,6 +185,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -187,6 +194,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -212,6 +220,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                     fontFamily: 'Readex Pro',
                                     color: Colors.black,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -220,6 +229,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -260,6 +270,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(

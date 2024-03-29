@@ -125,6 +125,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           fontFamily: 'Poppins',
                                           color: Colors.black,
                                           fontSize: 22.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -161,6 +162,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -171,6 +173,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ],
@@ -208,8 +211,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 56.0,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                               hintText: 'Select State',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -242,8 +249,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 },
                                 child: Text(
                                   'Logout',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                             ],
@@ -251,12 +262,22 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           SelectionArea(
                               child: Text(
                             FFAppState().iState,
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           )),
                           SelectionArea(
                               child: Text(
                             FFAppState().State,
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           )),
                         ],
                       ),
@@ -326,6 +347,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -393,6 +415,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -451,6 +474,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -518,6 +542,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -586,6 +611,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.white,
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),

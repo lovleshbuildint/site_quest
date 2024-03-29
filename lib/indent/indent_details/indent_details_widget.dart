@@ -151,7 +151,10 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                           BoxShadow(
                             blurRadius: 16.0,
                             color: Color(0x33000000),
-                            offset: Offset(0.0, -2.0),
+                            offset: Offset(
+                              0.0,
+                              -2.0,
+                            ),
                           )
                         ],
                         borderRadius: BorderRadius.only(
@@ -190,6 +193,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -241,6 +245,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,
                                             ),
                                       ),
@@ -254,6 +259,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -286,6 +292,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF2D2D2D),
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                             ),
@@ -310,6 +317,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
@@ -322,6 +330,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -342,6 +351,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
@@ -354,6 +364,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -377,6 +388,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                         Text(
@@ -389,6 +401,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -419,6 +432,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
@@ -431,6 +445,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -451,6 +466,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
@@ -463,6 +479,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -486,6 +503,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                         Text(
@@ -498,6 +516,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -544,6 +563,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFF9D9D9D),
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                         Text(
@@ -557,6 +577,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
@@ -599,6 +620,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
                                         fontSize: 18.0,
+                                        letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
                                   borderSide: BorderSide(

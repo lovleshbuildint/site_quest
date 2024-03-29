@@ -18,8 +18,6 @@ class IndentSiteLandlordDetailsModel
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     landlordformModel = createModel(context, () => LandlordformModel());
@@ -30,8 +28,4 @@ class IndentSiteLandlordDetailsModel
     unfocusNode.dispose();
     landlordformModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

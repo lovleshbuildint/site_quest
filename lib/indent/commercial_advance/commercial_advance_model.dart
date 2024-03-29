@@ -89,8 +89,6 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController3;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -121,10 +119,7 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
     balanceSDAmountController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get radioButtonValue1 => radioButtonValueController1?.value;
   String? get radioButtonValue2 => radioButtonValueController2?.value;
   String? get radioButtonValue3 => radioButtonValueController3?.value;

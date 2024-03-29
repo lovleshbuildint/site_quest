@@ -115,6 +115,7 @@ class _ReferalSurveyDetailsWidgetState
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -136,6 +137,7 @@ class _ReferalSurveyDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -147,6 +149,7 @@ class _ReferalSurveyDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -158,6 +161,7 @@ class _ReferalSurveyDetailsWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -257,6 +261,7 @@ class _ReferalSurveyDetailsWidgetState
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -266,6 +271,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -275,6 +281,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -307,7 +314,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -322,6 +335,7 @@ class _ReferalSurveyDetailsWidgetState
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -332,6 +346,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.percentController,
                             focusNode: _model.percentFocusNode,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Enter Percent',
@@ -340,6 +355,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -372,7 +388,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.percentControllerValidator
                                 .asValidator(context),
@@ -388,6 +410,7 @@ class _ReferalSurveyDetailsWidgetState
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -398,6 +421,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.textController3,
                             focusNode: _model.textFieldFocusNode2,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -407,6 +431,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -439,7 +464,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -454,6 +485,7 @@ class _ReferalSurveyDetailsWidgetState
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -464,6 +496,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.textController4,
                             focusNode: _model.textFieldFocusNode3,
+                            autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -473,6 +506,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -505,7 +539,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             validator: _model.textController4Validator
                                 .asValidator(context),
                           ),
@@ -520,6 +560,7 @@ class _ReferalSurveyDetailsWidgetState
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -530,6 +571,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.textController5,
                             focusNode: _model.textFieldFocusNode4,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Enter Number',
@@ -538,6 +580,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -570,7 +613,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.textController5Validator
                                 .asValidator(context),
@@ -587,6 +636,7 @@ class _ReferalSurveyDetailsWidgetState
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -597,6 +647,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.textController6,
                             focusNode: _model.textFieldFocusNode5,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Enter Number',
@@ -605,6 +656,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -637,7 +689,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.textController6Validator
                                 .asValidator(context),
@@ -654,6 +712,7 @@ class _ReferalSurveyDetailsWidgetState
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -664,6 +723,7 @@ class _ReferalSurveyDetailsWidgetState
                           child: TextFormField(
                             controller: _model.textController7,
                             focusNode: _model.textFieldFocusNode6,
+                            autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Enter Number',
@@ -672,6 +732,7 @@ class _ReferalSurveyDetailsWidgetState
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -704,7 +765,13 @@ class _ReferalSurveyDetailsWidgetState
                               filled: true,
                               fillColor: Colors.transparent,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model.textController7Validator
                                 .asValidator(context),
@@ -758,6 +825,7 @@ class _ReferalSurveyDetailsWidgetState
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

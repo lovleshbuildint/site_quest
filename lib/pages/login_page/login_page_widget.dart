@@ -134,6 +134,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -182,8 +183,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 .override(
                                                   fontFamily: 'Poppins',
                                                   color: Colors.white,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
+                                            minLines: null,
                                             validator: _model
                                                 .emailAddressControllerValidator
                                                 .asValidator(context),
@@ -225,6 +228,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -293,8 +297,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Colors.white,
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
+                                            minLines: null,
                                             validator: _model
                                                 .passwordControllerValidator
                                                 .asValidator(context),
@@ -323,6 +329,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFFC9CCC9),
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                                 decoration:
                                                     TextDecoration.underline,
@@ -484,6 +491,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -519,6 +527,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     fontFamily: 'Lexend Deca',
                                                     color: Colors.white,
                                                     fontSize: 18.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                           elevation: 3.0,
@@ -577,6 +586,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     fontFamily: 'Lexend Deca',
                                                     color: Colors.white,
                                                     fontSize: 18.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                           elevation: 3.0,

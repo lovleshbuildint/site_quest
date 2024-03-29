@@ -79,6 +79,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -119,6 +120,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -155,6 +157,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -182,6 +185,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -272,6 +276,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -327,6 +332,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFFF0026),
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -402,6 +408,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -480,6 +487,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -558,6 +566,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -587,7 +596,10 @@ class _AnalyticsOpensitesApprovalWidgetState
                               BoxShadow(
                                 blurRadius: 16.0,
                                 color: Color(0x14000000),
-                                offset: Offset(2.0, 4.0),
+                                offset: Offset(
+                                  2.0,
+                                  4.0,
+                                ),
                               )
                             ],
                             borderRadius: BorderRadius.circular(12.0),
@@ -611,6 +623,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 12.0,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                     Text(
@@ -621,6 +634,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF828282),
                                             fontSize: 10.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -642,6 +656,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                             .override(
                                               fontFamily: 'Poppins',
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
@@ -678,6 +693,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                           color:
                                                               Color(0xFF219653),
                                                           fontSize: 10.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -744,7 +760,10 @@ class _AnalyticsOpensitesApprovalWidgetState
                               BoxShadow(
                                 blurRadius: 16.0,
                                 color: Color(0x14000000),
-                                offset: Offset(2.0, 4.0),
+                                offset: Offset(
+                                  2.0,
+                                  4.0,
+                                ),
                               )
                             ],
                             borderRadius: BorderRadius.circular(12.0),
@@ -772,6 +791,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                         ),
@@ -783,6 +803,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFF828282),
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -800,6 +821,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
@@ -828,6 +850,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                         color:
                                                             Color(0xFF828282),
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -840,6 +863,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -878,6 +902,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                         color:
                                                             Color(0xFF828282),
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -890,6 +915,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -928,6 +954,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                         color:
                                                             Color(0xFF07D95A),
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -940,6 +967,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                   .override(
                                                     fontFamily: 'Poppins',
                                                     color: Color(0xFF07D95A),
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             ),
@@ -967,6 +995,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               decoration:
                                                   TextDecoration.underline,
@@ -987,7 +1016,11 @@ class _AnalyticsOpensitesApprovalWidgetState
                                         Text(
                                           'Details',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Padding(
                                           padding:
@@ -1028,6 +1061,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                                 'Poppins',
                                                             color: Colors.black,
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -1041,6 +1075,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                             fontFamily:
                                                                 'Poppins',
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -1068,6 +1103,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                                 'Poppins',
                                                             color: Colors.black,
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -1081,6 +1117,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                             fontFamily:
                                                                 'Poppins',
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -1108,6 +1145,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                                 'Poppins',
                                                             color: Colors.black,
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -1121,6 +1159,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                             fontFamily:
                                                                 'Poppins',
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -1160,6 +1199,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                                           color:
                                                               Color(0xFF2D2D2D),
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -1247,6 +1287,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1313,6 +1354,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1379,6 +1421,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1445,6 +1488,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               fontFamily: 'Poppins',
                                               color: Colors.white,
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1512,6 +1556,7 @@ class _AnalyticsOpensitesApprovalWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),

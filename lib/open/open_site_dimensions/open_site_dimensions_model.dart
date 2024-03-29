@@ -16,8 +16,6 @@ class OpenSiteDimensionsModel
   // Model for sitedimentions component.
   late SitedimentionsModel sitedimentionsModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     sitedimentionsModel = createModel(context, () => SitedimentionsModel());
@@ -28,8 +26,4 @@ class OpenSiteDimensionsModel
     unfocusNode.dispose();
     sitedimentionsModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

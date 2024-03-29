@@ -24,8 +24,6 @@ class OpenSitePhotoModel extends FlutterFlowModel<OpenSitePhotoWidget> {
   FFUploadedFile uploadedLocalFile3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -33,8 +31,4 @@ class OpenSitePhotoModel extends FlutterFlowModel<OpenSitePhotoWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

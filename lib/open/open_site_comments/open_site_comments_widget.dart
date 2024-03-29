@@ -94,6 +94,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -115,6 +116,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -126,6 +128,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -137,6 +140,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -148,6 +152,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 10.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -281,6 +286,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                   fontFamily: 'Poppins',
                                   color: Colors.black,
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(
@@ -307,6 +313,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(
@@ -350,6 +357,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
+                              autofocus: false,
                               textCapitalization: TextCapitalization.words,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -360,6 +368,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -392,7 +401,13 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                 filled: true,
                                 fillColor: Colors.transparent,
                               ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                              minLines: null,
                               validator: _model.textControllerValidator
                                   .asValidator(context),
                             ),
@@ -445,6 +460,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

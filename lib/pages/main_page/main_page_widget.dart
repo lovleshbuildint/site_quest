@@ -106,6 +106,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
                                             fontSize: 18.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -117,6 +118,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             fontFamily: 'Poppins',
                                             color: Colors.black,
                                             fontSize: 12.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w300,
                                           ),
                                     ),
@@ -153,6 +155,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               fontFamily: 'Poppins',
                                               color: Colors.white,
                                               fontSize: 6.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,
                                             ),
                                       ),
@@ -224,7 +227,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                 BoxShadow(
                                                   blurRadius: 16.0,
                                                   color: Color(0x14000000),
-                                                  offset: Offset(2.0, 4.0),
+                                                  offset: Offset(
+                                                    2.0,
+                                                    4.0,
+                                                  ),
                                                 )
                                               ],
                                               borderRadius:
@@ -258,6 +264,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w600,
@@ -362,6 +370,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                             'Poppins',
                                                                         fontSize:
                                                                             18.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -387,6 +397,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                             0xFF404042),
                                                                         fontSize:
                                                                             10.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                               ),
@@ -410,6 +422,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 10.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -450,7 +463,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   BoxShadow(
                                                     blurRadius: 16.0,
                                                     color: Color(0x15000000),
-                                                    offset: Offset(2.0, 4.0),
+                                                    offset: Offset(
+                                                      2.0,
+                                                      4.0,
+                                                    ),
                                                   )
                                                 ],
                                                 borderRadius:
@@ -524,6 +540,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFFA3AED0),
                                                                   fontSize:
                                                                       10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -545,6 +563,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFF2B3674),
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -575,7 +595,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   BoxShadow(
                                                     blurRadius: 16.0,
                                                     color: Color(0x15000000),
-                                                    offset: Offset(2.0, 4.0),
+                                                    offset: Offset(
+                                                      2.0,
+                                                      4.0,
+                                                    ),
                                                   )
                                                 ],
                                                 borderRadius:
@@ -650,6 +673,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFFA3AED0),
                                                                   fontSize:
                                                                       10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -671,6 +696,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFF2B3674),
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -701,7 +728,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   BoxShadow(
                                                     blurRadius: 16.0,
                                                     color: Color(0x15000000),
-                                                    offset: Offset(2.0, 4.0),
+                                                    offset: Offset(
+                                                      2.0,
+                                                      4.0,
+                                                    ),
                                                   )
                                                 ],
                                                 borderRadius:
@@ -775,6 +805,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFFA3AED0),
                                                                   fontSize:
                                                                       10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -796,6 +828,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFF2B3674),
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -831,6 +865,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         fontFamily: 'Poppins',
                                         color: Colors.black,
                                         fontSize: 12.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -877,7 +912,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             BoxShadow(
                                               blurRadius: 16.0,
                                               color: Color(0x14000000),
-                                              offset: Offset(2.0, 4.0),
+                                              offset: Offset(
+                                                2.0,
+                                                4.0,
+                                              ),
                                             )
                                           ],
                                           borderRadius:
@@ -903,6 +941,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -967,7 +1006,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             BoxShadow(
                                               blurRadius: 16.0,
                                               color: Color(0x14000000),
-                                              offset: Offset(2.0, 4.0),
+                                              offset: Offset(
+                                                2.0,
+                                                4.0,
+                                              ),
                                             )
                                           ],
                                           borderRadius:
@@ -993,6 +1035,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -1063,7 +1106,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         BoxShadow(
                                           blurRadius: 16.0,
                                           color: Color(0x15000000),
-                                          offset: Offset(2.0, 4.0),
+                                          offset: Offset(
+                                            2.0,
+                                            4.0,
+                                          ),
                                         )
                                       ],
                                       borderRadius: BorderRadius.circular(18.0),
@@ -1123,6 +1169,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                     'Poppins',
                                                                 color: Color(
                                                                     0xFF2D2D2D),
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
@@ -1137,6 +1185,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                 fontFamily:
                                                                     'Poppins',
                                                                 fontSize: 12.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
@@ -1192,6 +1242,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                 color: Color(
                                                                     0xFF2D2D2D),
                                                                 fontSize: 18.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -1241,7 +1293,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           BoxShadow(
                                             blurRadius: 16.0,
                                             color: Color(0x15000000),
-                                            offset: Offset(2.0, 4.0),
+                                            offset: Offset(
+                                              2.0,
+                                              4.0,
+                                            ),
                                           )
                                         ],
                                         borderRadius:
@@ -1305,6 +1360,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       'Poppins',
                                                                   color: Color(
                                                                       0xFF2D2D2D),
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -1320,6 +1377,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       'Poppins',
                                                                   fontSize:
                                                                       12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .normal,
@@ -1378,6 +1437,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFF2D2D2D),
                                                                   fontSize:
                                                                       18.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -1428,7 +1489,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           BoxShadow(
                                             blurRadius: 16.0,
                                             color: Color(0x15000000),
-                                            offset: Offset(2.0, 4.0),
+                                            offset: Offset(
+                                              2.0,
+                                              4.0,
+                                            ),
                                           )
                                         ],
                                         borderRadius:
@@ -1491,6 +1555,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       'Poppins',
                                                                   color: Color(
                                                                       0xFF2D2D2D),
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -1506,6 +1572,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       'Poppins',
                                                                   fontSize:
                                                                       12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .normal,
@@ -1564,6 +1632,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0xFF2D2D2D),
                                                                   fontSize:
                                                                       18.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -1614,7 +1684,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           BoxShadow(
                                             blurRadius: 16.0,
                                             color: Color(0x15000000),
-                                            offset: Offset(2.0, 4.0),
+                                            offset: Offset(
+                                              2.0,
+                                              4.0,
+                                            ),
                                           )
                                         ],
                                         borderRadius:
@@ -1672,6 +1745,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       'Poppins',
                                                                   color: Color(
                                                                       0xFF2D2D2D),
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -1687,6 +1762,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       'Poppins',
                                                                   fontSize:
                                                                       12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .normal,
@@ -1758,6 +1835,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                 fontFamily: 'Poppins',
                                                 color: Colors.white,
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -1826,6 +1904,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -1886,6 +1965,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -1955,6 +2035,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -2025,6 +2106,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),

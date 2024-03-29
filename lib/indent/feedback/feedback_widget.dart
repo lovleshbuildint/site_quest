@@ -93,6 +93,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
@@ -132,6 +133,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
+                              autofocus: false,
                               textCapitalization: TextCapitalization.words,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -142,6 +144,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -174,7 +177,13 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 filled: true,
                                 fillColor: Colors.transparent,
                               ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                              minLines: null,
                               validator: _model.textControllerValidator
                                   .asValidator(context),
                             ),
@@ -227,6 +236,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 3.0,

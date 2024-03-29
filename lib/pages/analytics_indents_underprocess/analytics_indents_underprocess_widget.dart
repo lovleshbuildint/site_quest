@@ -79,6 +79,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -111,6 +112,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -138,6 +140,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -174,6 +177,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                       fontFamily: 'Poppins',
                                       color: Colors.black,
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -264,6 +268,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -341,6 +346,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -418,6 +424,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -473,6 +480,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                   fontFamily: 'Poppins',
                                                   color: Color(0xFFFF0026),
                                                   fontSize: 12.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -548,6 +556,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -577,7 +586,10 @@ class _AnalyticsIndentsUnderprocessWidgetState
                               BoxShadow(
                                 blurRadius: 16.0,
                                 color: Color(0x14000000),
-                                offset: Offset(2.0, 4.0),
+                                offset: Offset(
+                                  2.0,
+                                  4.0,
+                                ),
                               )
                             ],
                             borderRadius: BorderRadius.circular(12.0),
@@ -601,6 +613,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 12.0,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                     Text(
@@ -611,6 +624,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF828282),
                                             fontSize: 10.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -632,6 +646,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                             .override(
                                               fontFamily: 'Poppins',
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
@@ -668,6 +683,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                           color:
                                                               Color(0xFFF7931A),
                                                           fontSize: 10.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -734,7 +750,10 @@ class _AnalyticsIndentsUnderprocessWidgetState
                               BoxShadow(
                                 blurRadius: 16.0,
                                 color: Color(0x14000000),
-                                offset: Offset(2.0, 4.0),
+                                offset: Offset(
+                                  2.0,
+                                  4.0,
+                                ),
                               )
                             ],
                             borderRadius: BorderRadius.circular(12.0),
@@ -762,6 +781,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 color: Colors.black,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                         ),
@@ -773,6 +793,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFF828282),
                                                 fontSize: 10.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -790,6 +811,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
@@ -818,6 +840,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                         color:
                                                             Color(0xFF828282),
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -830,6 +853,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -868,6 +892,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                         color:
                                                             Color(0xFF828282),
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -880,6 +905,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -918,6 +944,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                         color:
                                                             Color(0xFFF7931A),
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -930,6 +957,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                   .override(
                                                     fontFamily: 'Poppins',
                                                     color: Color(0xFFF7931A),
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             ),
@@ -957,6 +985,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               decoration:
                                                   TextDecoration.underline,
@@ -977,7 +1006,11 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                         Text(
                                           'Details',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Padding(
                                           padding:
@@ -1018,6 +1051,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                                 'Poppins',
                                                             color: Colors.black,
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -1031,6 +1065,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                             fontFamily:
                                                                 'Poppins',
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -1058,6 +1093,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                                 'Poppins',
                                                             color: Colors.black,
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -1071,6 +1107,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                             fontFamily:
                                                                 'Poppins',
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -1098,6 +1135,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                                 'Poppins',
                                                             color: Colors.black,
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -1111,6 +1149,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                             fontFamily:
                                                                 'Poppins',
                                                             fontSize: 10.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -1150,6 +1189,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                                           color:
                                                               Color(0xFF2D2D2D),
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -1237,6 +1277,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1303,6 +1344,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1369,6 +1411,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1435,6 +1478,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               fontFamily: 'Poppins',
                                               color: Colors.white,
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -1502,6 +1546,7 @@ class _AnalyticsIndentsUnderprocessWidgetState
                                               fontFamily: 'Poppins',
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),

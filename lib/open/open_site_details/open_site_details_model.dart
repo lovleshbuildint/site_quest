@@ -88,14 +88,12 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue17;
   FormFieldController<String>? dropDownValueController17;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue18;
+  FormFieldController<String>? dropDownValueController18;
+  // State field(s) for DropDown widget.
+  String? dropDownValue19;
+  FormFieldController<String>? dropDownValueController19;
 
   @override
   void initState(BuildContext context) {}
@@ -117,11 +115,5 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
     textFieldFocusNode5?.dispose();
     textController5?.dispose();
-
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
-
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
   }
 }

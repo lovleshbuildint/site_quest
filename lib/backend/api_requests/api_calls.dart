@@ -45,6 +45,19 @@ class SqGroup {
       GetsitevisiteddbyAPICall();
   static GetDepartmentWiseUserAPICall getDepartmentWiseUserAPICall =
       GetDepartmentWiseUserAPICall();
+  static GetSecondSiteVisitersCall getSecondSiteVisitersCall =
+      GetSecondSiteVisitersCall();
+  static GetUserReviewByDateCall getUserReviewByDateCall =
+      GetUserReviewByDateCall();
+  static ConfirmDOADetailsubmissionCall confirmDOADetailsubmissionCall =
+      ConfirmDOADetailsubmissionCall();
+  static UpdatenearestATMCall updatenearestATMCall = UpdatenearestATMCall();
+  static UpdateDOADetailsfiveCall updateDOADetailsfiveCall =
+      UpdateDOADetailsfiveCall();
+  static UpdateDOADetailsfourCall updateDOADetailsfourCall =
+      UpdateDOADetailsfourCall();
+  static UpdateDOADetailsthreeCall updateDOADetailsthreeCall =
+      UpdateDOADetailsthreeCall();
 }
 
 class DashboardCall {
@@ -750,6 +763,474 @@ class GetDepartmentWiseUserAPICall {
   }
 }
 
+class GetSecondSiteVisitersCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getSecondSiteVisiters',
+      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token={token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetUserReviewByDateCall {
+  Future<ApiCallResponse> call({
+    String? endDT = '',
+    String? startDT = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getUserReviewByDate',
+      apiUrl: '${SqGroup.baseUrl}/getUserReviewByDate',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'StartDT': startDT,
+        'EndDT ': endDT,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ConfirmDOADetailsubmissionCall {
+  Future<ApiCallResponse> call({
+    String? iindent = '',
+    String? stageComent = '',
+    String? errCnt = '',
+    String? msg = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "iindent": "${iindent}",
+  "stageComent": "${stageComent}",
+  "errCnt": "${errCnt}",
+  "msg": "${msg}",
+  "Token": "${token}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ConfirmDOADetailsubmission',
+      apiUrl: '${SqGroup.baseUrl}/Confirm_DOADetail_submission',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdatenearestATMCall {
+  Future<ApiCallResponse> call({
+    String? indentId = '',
+    String? siteId = '',
+    String? targetBank = '',
+    String? district = '',
+    String? centre = '',
+    String? comment = '',
+    String? lastModStamp = '',
+    String? isHold = '',
+    String? istage = '',
+    String? iStageText = '',
+    String? locationName = '',
+    String? androidKey = '',
+    String? isPrizm = '',
+    String? iDevice = '',
+    String? atmid = '',
+    String? bankName = '',
+    String? isBranch = '',
+    String? distance = '',
+    String? direction = '',
+    String? avgtxns = '',
+    String? avgTotaltransDA = '',
+    String? avgOnusTransDA = '',
+    String? avgOffusTransDA = '',
+    String? pinCode = '',
+    String? errCnt = '',
+    String? msg = '',
+    String? isWB = '',
+    bool? isFromSiteref,
+    String? companyName = '',
+    String? employeeName = '',
+    String? contactNumber = '',
+    String? emailId = '',
+    String? iindent = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "IndentId": "${indentId}",
+  "SitedId": "${siteId}",
+  "TargetBank": "${targetBank}",
+  "District": "${district}",
+  "Centre": "${centre}",
+  "Comment": "${comment}",
+  "LastModStamp": "${lastModStamp}",
+  "IsHold": "${isHold}",
+  "Istage": "${istage}",
+  "IStageText": "${iStageText}",
+  "LocationName": "${locationName}",
+"AndroidKey":"${androidKey}",
+"isPrizm":"${isPrizm}",
+"iDevice":"${iDevice}",
+"ATMID":"${atmid}",
+"BankName":"${bankName}",
+"IsBranch":"${isBranch}",
+"Distance":"${distance}",
+"Direction":"${direction}",
+"avgtxns":"${avgtxns}",
+"AndroidKey":"${androidKey}",
+"AvgTotaltrans_DA":"${avgTotaltransDA}",
+"AvgOnusTrans_DA":"${avgOnusTransDA}",
+"AvgOffusTrans_DA":"${avgOffusTransDA}",
+"PinCode":"${pinCode}",
+"errCnt":"${errCnt}",
+"Msg":"${msg}",
+"isWB":"${isWB}",
+"isFromSiteref":"${isFromSiteref}",
+"companyName":"${companyName}",
+"EmployeeName":"${employeeName}",
+"ContactNumber":"${contactNumber}",
+"EmailId":"${emailId}",
+"iindent":"${iindent}",
+"Token":"${token}"
+
+
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'UpdatenearestATM',
+      apiUrl: '${SqGroup.baseUrl}/Update_nearestATM',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateDOADetailsfiveCall {
+  Future<ApiCallResponse> call({
+    String? indentId = '',
+    String? siteId = '',
+    String? targetBank = '',
+    String? district = '',
+    String? centre = '',
+    String? comment = '',
+    String? lastModStamp = '',
+    String? isHold = '',
+    String? istage = '',
+    String? iStageText = '',
+    String? locationName = '',
+    String? androidKey = '',
+    String? cRACoverage = '',
+    String? cRAAgency = '',
+    String? branchSOLID = '',
+    String? nearestBranch = '',
+    String? distanceFromNearestBranch = '',
+    String? remarks1 = '',
+    String? remarks2 = '',
+    String? remarks3 = '',
+    String? remarks4 = '',
+    String? remarks5 = '',
+    String? iCIT = '',
+    String? latitude = '',
+    String? longitude = '',
+    String? videoURL = '',
+    String? errCnt = '',
+    String? msg = '',
+    String? isWB = '',
+    bool? isFromSiteref,
+    String? companyName = '',
+    String? employeeName = '',
+    String? contactNumber = '',
+    String? emailId = '',
+    String? iindent = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "IndentId": "${indentId}",
+  "SiteId": "${siteId}",
+  "TargetBank": "${targetBank}",
+  "District": "${district}",
+  "Centre": "${centre}",
+  "Comment": "${comment}",
+  "LastModStamp": "${lastModStamp}",
+"IsHold":"${isHold}",
+"Istage":"${istage}",
+"IStageText":"${iStageText}",
+"LocationName":"${locationName}",
+"Token":"${token}",
+"AndroidKey":"${androidKey}",
+"CRACoverage":"${cRACoverage}",
+"CRAAgency":"${cRAAgency}",
+"BranchSOLID":"${branchSOLID}",
+"NearestBranch":"${nearestBranch}",
+"DistanceFromNearestBranch":"${distanceFromNearestBranch}",
+"Remarks1":"${remarks1}",
+"Remarks2":"${remarks2}",
+"Remarks3":"${remarks3}",
+"Remarks4":"${remarks4}",
+"Remarks5":"${remarks5}",
+"iCIT":"${iCIT}",
+"Latitude":"${latitude}",
+"Longitude":"${longitude}",
+"VideoURL":"${videoURL}",
+"errCnt":"${errCnt}",
+"Msg":"${msg}",
+"isWB":"${isWB}",
+"isFromSiteref":"${isFromSiteref}",
+"companyName":"${companyName}",
+"EmployeeName":"${employeeName}",
+"ContactNumber":"${contactNumber}",
+"EmailId":"${emailId}",
+"iindent":"${iindent}"
+
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'UpdateDOADetailsfive',
+      apiUrl: '${SqGroup.baseUrl}/\tUpdate_DOADetails5',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateDOADetailsfourCall {
+  Future<ApiCallResponse> call({
+    String? indentId = '',
+    String? siteId = '',
+    String? targetBank = '',
+    String? district = '',
+    String? centre = '',
+    String? comment = '',
+    String? lastModStamp = '',
+    String? isHold = '',
+    String? istage = '',
+    String? iStageText = '',
+    String? locationName = '',
+    String? androidKey = '',
+    String? shopType = '',
+    String? totalShopArea = '',
+    String? shopAreaOffered = '',
+    String? carpetArea = '',
+    String? depth = '',
+    String? width = '',
+    String? height = '',
+    String? totalFrontage = '',
+    String? frontageOffered = '',
+    String? signWidth = '',
+    String? signHeight = '',
+    String? lShape = '',
+    String? vsat = '',
+    String? acodu = '',
+    String? powerAvailability = '',
+    String? hours = '',
+    String? isTotempole = '',
+    String? projectNote = '',
+    String? isRampAval = '',
+    String? errCnt = '',
+    String? msg = '',
+    String? isWB = '',
+    bool? isFromSiteref,
+    String? companyName = '',
+    String? employeeName = '',
+    String? contactNumber = '',
+    String? emailId = '',
+    String? iindent = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+"IndentId":"${indentId}",
+"SiteId":"${siteId}",
+"TargetBank":"${targetBank}",
+"District":"${district}",
+"Centre":"${centre}",
+"Comment":"${comment}",
+"LastModStamp":"${lastModStamp}",
+"IsHold":"${isHold}",
+"Istage":"${istage}",
+"IStageText":"${iStageText}",
+"LocationName":"${locationName}",
+"Token":"${token}",
+"AndroidKey":"${androidKey}",
+"AndroidKey":"${androidKey}",
+"TotalShopArea":"${totalShopArea}",
+"ShopAreaOffered":"${shopAreaOffered}",
+"CarpetArea":"${carpetArea}",
+"Depth":"${depth}",
+"Depth":"${depth}",
+"Height":"${height}",
+"TotalFrontage":"${totalFrontage}",
+"FrontageOffered":"${frontageOffered}",
+"SignWidth":"${signWidth}",
+"SignHeight":"${signHeight}",
+"LShape":"${lShape}",
+"VSAT":"${vsat}",
+"ACODU":"${acodu}",
+"PowerAvailability":"${powerAvailability}",
+"Hours":"${hours}",
+"IsTotempole":"${isTotempole}",
+"Project_Note":"${projectNote}",
+"Is_Ramp_aval":"${isRampAval}",
+"errCnt":"${errCnt}",
+"Msg":"${msg}",
+"isWB":"${isWB}",
+"isFromSiteref":"${isFromSiteref}",
+"companyName":"${companyName}",
+"EmployeeName":"${employeeName}",
+"ContactNumber":"${contactNumber}",
+"EmailId":"${emailId}",
+"iindent":"${iindent}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'UpdateDOADetailsfour',
+      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails4',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateDOADetailsthreeCall {
+  Future<ApiCallResponse> call({
+    String? indentId = '',
+    String? siteId = '',
+    String? targetBank = '',
+    String? district = '',
+    String? centre = '',
+    String? comment = '',
+    String? lastModStamp = '',
+    String? isHold = '',
+    String? istage = '',
+    String? iStageText = '',
+    String? locationName = '',
+    String? androidKey = '',
+    String? rentalType = '',
+    String? rent = '',
+    String? rentFreePeriod = '',
+    String? securityDeposit = '',
+    String? advanceDeposit = '',
+    String? fullDeposit = '',
+    String? oneMonthDeposit = '',
+    String? balanceDeposit = '',
+    String? totalDeposit = '',
+    String? rentEscalation = '',
+    String? escalationPeriod = '',
+    String? agreementPeriod = '',
+    String? isAdvance = '',
+    String? totalAdvSec = '',
+    String? months = '',
+    String? errCnt = '',
+    String? msg = '',
+    String? isWB = '',
+    bool? isFromSiteref,
+    String? companyName = '',
+    String? employeeName = '',
+    String? contactNumber = '',
+    String? emailId = '',
+    String? iindent = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+"IndentId":"${indentId}",
+"SiteId":"${siteId}",
+"TargetBank":"${targetBank}",
+"District":"${district}",
+"Centre":"${centre}",
+"Comment":"${comment}",
+"LastModStamp":"${lastModStamp}",
+"IsHold":"${isHold}",
+"Istage":"${istage}",
+"IStageText":"${iStageText}",
+"LocationName":"${locationName}",
+"Token":"${token}",
+"AndroidKey":"${androidKey}",
+"RentalType":"${rentalType}",
+"Rent":"${rent}",
+"RentFreePeriod":"${rentFreePeriod}",
+"SecurityDeposit":"${securityDeposit}",
+"AdvanceDeposit":"${advanceDeposit}",
+"FullDeposit":"${fullDeposit}",
+"OneMonthDeposit":"${oneMonthDeposit}",
+"BalanceDeposit":"${balanceDeposit}",
+"TotalDeposit":"${totalDeposit}",
+"RentEscalation":"${rentEscalation}",
+"EscalationPeriod":"${escalationPeriod}",
+"AgreementPeriod":"${agreementPeriod}",
+"isAdvance":"${isAdvance}",
+"TotalAdvSec":"${totalAdvSec}",
+"Months":"${months}",
+"errCnt":"${errCnt}",
+"Msg":"${msg}",
+"isWB":"${isWB}",
+"isFromSiteref":"${isFromSiteref}",
+"companyName":"${companyName}",
+"EmployeeName":"${employeeName}",
+"ContactNumber":"${contactNumber}",
+"EmailId":"${emailId}",
+"iindent":"${iindent}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'UpdateDOADetailsthree',
+      apiUrl: '${SqGroup.baseUrl}/\tUpdate_DOADetails3',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SQ Group Code
 
 class LoginCheckCall {
@@ -803,16 +1284,14 @@ class GetIndentsByStatesCall {
 class DistrictAPICall {
   static Future<ApiCallResponse> call({
     String? token = '',
-    int? istate,
+    String? istate = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'DistrictAPI',
       apiUrl:
-          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DistrictAPI',
+          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DistrictAPI/Token=${token}&State=${istate}',
       callType: ApiCallType.GET,
-      headers: {
-        'Token': '${token}',
-      },
+      headers: {},
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,

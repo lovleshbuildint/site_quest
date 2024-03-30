@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -575,19 +576,32 @@ class _IndentSiteLandlordDetailsWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          if (Navigator.of(context).canPop()) {
-                            context.pop();
-                          }
-                          context.pushNamed(
-                            'indent_site_commercial',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
+                          var _shouldSetState = false;
+                          _model.apiResultavw =
+                              await SqGroup.updateDOADetailssecondCall.call(
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
                           );
+                          _shouldSetState = true;
+                          if ((_model.apiResultavw?.succeeded ?? true)) {
+                            context.pushNamed(
+                              'indent_site_commercial',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

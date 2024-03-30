@@ -65,6 +65,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
 
     _model.textController8 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
+
+    _model.textController9 ??= TextEditingController();
+    _model.textFieldFocusNode9 ??= FocusNode();
   }
 
   @override
@@ -1478,10 +1481,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       child: FutureBuilder<ApiCallResponse>(
                                         future: DistrictAPICall.call(
                                           token: FFAppState().Token,
-                                          istate: getJsonField(
-                                            FFAppState().indentSelectedSite,
-                                            r'''$.istate''',
-                                          ),
+                                          istate: FFAppState().iState,
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -2533,6 +2533,81 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             },
                           ),
                         ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 30.0),
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.sitevistedCall.call(
+                              token: FFAppState().Token,
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Image.asset(
+                                  '',
+                                );
+                              }
+                              final textFieldSitevistedResponse =
+                                  snapshot.data!;
+                              return TextFormField(
+                                controller: _model.textController9,
+                                focusNode: _model.textFieldFocusNode9,
+                                autofocus: false,
+                                textCapitalization: TextCapitalization.words,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: 'Enter Name',
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFE1E2E6),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFFF0026),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.transparent,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                                minLines: null,
+                                validator: _model.textController9Validator
+                                    .asValidator(context),
+                              );
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -2553,19 +2628,23 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          if (Navigator.of(context).canPop()) {
-                            context.pop();
-                          }
-                          context.pushNamed(
-                            'indent_site_landlord_details',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
+                          var _shouldSetState = false;
+                          _model.apiResultm1m =
+                              await SqGroup.updateDOAdetailsfirstCall.call(
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
                           );
+                          _shouldSetState = true;
+                          if ((_model.apiResultm1m?.succeeded ?? true)) {
+                            context.pushNamed('indent_site_landlord_details');
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

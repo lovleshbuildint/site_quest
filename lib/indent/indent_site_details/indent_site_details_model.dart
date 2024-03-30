@@ -98,6 +98,12 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   FocusNode? textFieldFocusNode8;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode9;
+  TextEditingController? textController9;
+  String? Function(BuildContext, String?)? textController9Validator;
+  // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
+  ApiCallResponse? apiResultm1m;
 
   @override
   void initState(BuildContext context) {}
@@ -128,5 +134,8 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
     textFieldFocusNode8?.dispose();
     textController8?.dispose();
+
+    textFieldFocusNode9?.dispose();
+    textController9?.dispose();
   }
 }

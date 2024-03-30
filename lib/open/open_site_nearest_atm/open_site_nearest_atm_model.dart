@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -15,6 +16,8 @@ class OpenSiteNearestAtmModel
   final unfocusNode = FocusNode();
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
+  // Stores action output result for [Backend Call - API (UpdatenearestATM)] action in Button widget.
+  ApiCallResponse? apiResult6bp;
 
   @override
   void initState(BuildContext context) {

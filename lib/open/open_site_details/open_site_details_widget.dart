@@ -42,12 +42,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
     _model.textController5 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
-
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
-
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
   }
 
   @override
@@ -1206,11 +1200,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: FutureBuilder<ApiCallResponse>(
                                       future: DistrictAPICall.call(
+                                        istate: FFAppState().iState,
                                         token: FFAppState().Token,
-                                        istate: getJsonField(
-                                          FFAppState().indentSelectedSite,
-                                          r'''$.istate''',
-                                        ),
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
@@ -1322,7 +1313,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.statesCall.call(
+                                        future: SqGroup.stateListCall.call(
                                           token: FFAppState().Token,
                                         ),
                                         builder: (context, snapshot) {
@@ -1344,7 +1335,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final dropDownStatesResponse =
+                                          final dropDownStateListResponse =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
@@ -2139,61 +2130,63 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController6,
-                            focusNode: _model.textFieldFocusNode6,
-                            autofocus: false,
-                            textCapitalization: TextCapitalization.words,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Enter Name',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFE1E2E6),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFFF0026),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.transparent,
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.getsitevisiteddbyAPICall.call(
+                              token: FFAppState().Token,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownGetsitevisiteddbyAPIResponse =
+                                  snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController18 ??=
+                                    FormFieldController<String>(null),
+                                options: ['Option 1'],
+                                onChanged: (val) => setState(
+                                    () => _model.dropDownValue18 = val),
+                                width: 300.0,
+                                height: 56.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintText: 'Please select...',
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
                                 ),
-                            minLines: null,
-                            validator: _model.textController6Validator
-                                .asValidator(context),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isOverButton: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Padding(
@@ -2214,61 +2207,63 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 30.0),
-                          child: TextFormField(
-                            controller: _model.textController7,
-                            focusNode: _model.textFieldFocusNode7,
-                            autofocus: false,
-                            textCapitalization: TextCapitalization.words,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Enter Name',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFE1E2E6),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFFF0026),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.transparent,
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.getSecondSiteVisitersCall.call(
+                              token: FFAppState().Token,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final dropDownGetSecondSiteVisitersResponse =
+                                  snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController19 ??=
+                                    FormFieldController<String>(null),
+                                options: ['Option 1'],
+                                onChanged: (val) => setState(
+                                    () => _model.dropDownValue19 = val),
+                                width: 300.0,
+                                height: 56.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintText: 'Please select...',
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
                                 ),
-                            minLines: null,
-                            validator: _model.textController7Validator
-                                .asValidator(context),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isOverButton: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                       ],

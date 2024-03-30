@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -31,6 +32,8 @@ class OpenSiteRemarkModel extends FlutterFlowModel<OpenSiteRemarkWidget> {
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
+  // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
+  ApiCallResponse? apiResultuxw;
 
   @override
   void initState(BuildContext context) {}

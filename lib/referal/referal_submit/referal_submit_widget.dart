@@ -34,6 +34,8 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -108,7 +110,10 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                                   ),
                             ),
                             Text(
-                              '00000',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.SiteId''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -143,7 +148,10 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                                   ),
                             ),
                             Text(
-                              'Date',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.LastModTime''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -178,7 +186,10 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                                   ),
                             ),
                             Text(
-                              'Strategy',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.Strategy''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

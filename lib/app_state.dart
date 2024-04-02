@@ -303,6 +303,12 @@ class FFAppState extends ChangeNotifier {
     _indentSelectedSite = _value;
     prefs.setString('ff_indentSelectedSite', jsonEncode(_value));
   }
+
+  String _EmailId = '';
+  String get EmailId => _EmailId;
+  set EmailId(String _value) {
+    _EmailId = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

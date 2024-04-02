@@ -157,7 +157,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Name ',
+                                        FFAppState().UserName,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -167,7 +167,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'E-mail',
+                                        FFAppState().EmailId,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

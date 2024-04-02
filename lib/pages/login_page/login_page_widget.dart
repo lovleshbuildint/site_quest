@@ -327,6 +327,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
+                                            var _shouldSetState = false;
                                             _model.apiResultqf6 = await SqGroup
                                                 .forgotPwdCall
                                                 .call(
@@ -343,8 +344,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 r'''$.Longitude''',
                                               ).toString(),
                                             );
+                                            _shouldSetState = true;
+                                            if ((_model
+                                                    .apiResultqf6?.succeeded ??
+                                                true)) {
+                                              context.pushNamed('LoginPage');
+                                            } else {
+                                              if (_shouldSetState)
+                                                setState(() {});
+                                              return;
+                                            }
 
-                                            setState(() {});
+                                            if (_shouldSetState)
+                                              setState(() {});
                                           },
                                           child: Text(
                                             'Reset Password?',

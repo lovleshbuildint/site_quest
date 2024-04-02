@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -209,6 +210,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          var _shouldSetState = false;
                           if (Navigator.of(context).canPop()) {
                             context.pop();
                           }
@@ -222,6 +224,20 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               ),
                             },
                           );
+
+                          _model.apiResult1j6 =
+                              await SqGroup.updateDOADetailsfiveCall.call(
+                            comment: _model.textController.text,
+                          );
+                          _shouldSetState = true;
+                          if ((_model.apiResult1j6?.succeeded ?? true)) {
+                            setState(() {});
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Submit',
                         options: FFButtonOptions(

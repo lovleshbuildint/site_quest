@@ -259,7 +259,11 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                         ),
                                                   ),
                                                   AutoSizeText(
-                                                    '00000',
+                                                    getJsonField(
+                                                      FFAppState()
+                                                          .indentSelectedSite,
+                                                      r'''$.iIndent''',
+                                                    ).toString(),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium

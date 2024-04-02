@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -683,19 +684,32 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          if (Navigator.of(context).canPop()) {
-                            context.pop();
-                          }
-                          context.pushNamed(
-                            'indent_site_review',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
+                          var _shouldSetState = false;
+                          _model.apiResult7p3 =
+                              await SqGroup.updateDOADetailsfiveCall.call(
+                            comment: _model.textController.text,
                           );
+                          _shouldSetState = true;
+                          if ((_model.apiResult7p3?.succeeded ?? true)) {
+                            if (Navigator.of(context).canPop()) {
+                              context.pop();
+                            }
+                            context.pushNamed(
+                              'indent_site_review',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Review',
                         options: FFButtonOptions(

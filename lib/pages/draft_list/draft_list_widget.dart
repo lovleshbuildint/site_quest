@@ -253,7 +253,11 @@ class _DraftListWidgetState extends State<DraftListWidget> {
                                                       ),
                                                 ),
                                                 AutoSizeText(
-                                                  '00000',
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .indentSelectedSite,
+                                                    r'''$.iIndent''',
+                                                  ).toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

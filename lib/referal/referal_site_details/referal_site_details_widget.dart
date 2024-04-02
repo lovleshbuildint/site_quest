@@ -29,7 +29,11 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
     super.initState();
     _model = createModel(context, () => ReferalSiteDetailsModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.textController1 ??= TextEditingController(
+        text: getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.Address''',
+    ).toString().toString());
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
@@ -41,7 +45,11 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
+    _model.textController5 ??= TextEditingController(
+        text: getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.Pincode''',
+    ).toString().toString());
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textController6 ??= TextEditingController();

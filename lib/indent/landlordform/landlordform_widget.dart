@@ -40,7 +40,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.percentController ??= TextEditingController();
     _model.percentFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
+    _model.textController3 ??= TextEditingController(
+        text: getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.Address''',
+    ).toString().toString());
     _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();

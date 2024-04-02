@@ -75,6 +75,9 @@ class SqGroup {
       GetDOADetailsImageCall();
   static LogOutCall logOutCall = LogOutCall();
   static ForgotPwdCall forgotPwdCall = ForgotPwdCall();
+  static GetPOITypeForSiteEvaluationCall getPOITypeForSiteEvaluationCall =
+      GetPOITypeForSiteEvaluationCall();
+  static ListSitesCall listSitesCall = ListSitesCall();
 }
 
 class DashboardCall {
@@ -1535,6 +1538,44 @@ class ForgotPwdCall {
   }
 }
 
+class GetPOITypeForSiteEvaluationCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetPOITypeForSiteEvaluation',
+      apiUrl: '${SqGroup.baseUrl}/GetPOITypeForSiteEvaluation/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ListSitesCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'ListSites',
+      apiUrl: '${SqGroup.baseUrl}/ListSites/Token={token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SQ Group Code
 
 class LoginCheckCall {
@@ -1596,28 +1637,6 @@ class DistrictAPICall {
           'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DistrictAPI/Token=${token}&State=${istate}',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ListSitesCall {
-  static Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ListSites',
-      apiUrl:
-          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/ListSites/Token=${token}',
-      callType: ApiCallType.GET,
-      headers: {
-        'Token': '${token}',
-      },
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,

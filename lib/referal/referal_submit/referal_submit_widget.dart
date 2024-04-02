@@ -78,6 +78,33 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                         ),
                   ),
                 ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(100.0, 4.0, 0.0, 0.0),
+                      child: Text(
+                        'HPY Code : ',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                    ),
+                    Text(
+                      getJsonField(
+                        FFAppState().indentSelectedSite,
+                        r'''$.IndentId''',
+                      ).toString(),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ],
+                ),
                 SizedBox(
                   width: 350.0,
                   child: Divider(

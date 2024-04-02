@@ -35,6 +35,8 @@ class _DraftListWidgetState extends State<DraftListWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -210,7 +212,11 @@ class _DraftListWidgetState extends State<DraftListWidget> {
                                                         ),
                                               ),
                                               AutoSizeText(
-                                                'Name',
+                                                getJsonField(
+                                                  FFAppState()
+                                                      .indentSelectedSite,
+                                                  r'''$.BranchName''',
+                                                ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -287,7 +293,11 @@ class _DraftListWidgetState extends State<DraftListWidget> {
                                                         ),
                                               ),
                                               AutoSizeText(
-                                                '0000',
+                                                getJsonField(
+                                                  FFAppState()
+                                                      .indentSelectedSite,
+                                                  r'''$.IndentId''',
+                                                ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -323,7 +333,11 @@ class _DraftListWidgetState extends State<DraftListWidget> {
                                                       ),
                                                 ),
                                                 AutoSizeText(
-                                                  'Remote Onus',
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .indentSelectedSite,
+                                                    r'''$.Strategy''',
+                                                  ).toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

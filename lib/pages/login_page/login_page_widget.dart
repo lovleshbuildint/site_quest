@@ -321,19 +321,45 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       child: Align(
                                         alignment:
                                             AlignmentDirectional(1.0, 0.0),
-                                        child: Text(
-                                          'Reset Password?',
-                                          textAlign: TextAlign.justify,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFFC9CCC9),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.normal,
-                                                decoration:
-                                                    TextDecoration.underline,
-                                              ),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.apiResultqf6 = await SqGroup
+                                                .forgotPwdCall
+                                                .call(
+                                              userName: FFAppState().UserName,
+                                              email: _model
+                                                  .emailAddressController.text,
+                                              token: FFAppState().Token,
+                                              lattitude: getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.Lattitude''',
+                                              ).toString(),
+                                              longitude: getJsonField(
+                                                FFAppState().indentSelectedSite,
+                                                r'''$.Longitude''',
+                                              ).toString(),
+                                            );
+
+                                            setState(() {});
+                                          },
+                                          child: Text(
+                                            'Reset Password?',
+                                            textAlign: TextAlign.justify,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFFC9CCC9),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                ),
+                                          ),
                                         ),
                                       ),
                                     ),

@@ -58,6 +58,23 @@ class SqGroup {
       UpdateDOADetailsfourCall();
   static UpdateDOADetailsthreeCall updateDOADetailsthreeCall =
       UpdateDOADetailsthreeCall();
+  static GetCustomerBankCall getCustomerBankCall = GetCustomerBankCall();
+  static GetIndentBankCall getIndentBankCall = GetIndentBankCall();
+  static DOADetailssteponeCall dOADetailssteponeCall = DOADetailssteponeCall();
+  static DOADetailssteptwoCall dOADetailssteptwoCall = DOADetailssteptwoCall();
+  static DOADetailsstepthreeCall dOADetailsstepthreeCall =
+      DOADetailsstepthreeCall();
+  static DOADetailsstepfourCall dOADetailsstepfourCall =
+      DOADetailsstepfourCall();
+  static DOADetailsstepfiveCall dOADetailsstepfiveCall =
+      DOADetailsstepfiveCall();
+  static DOADetailsstepsevenCall dOADetailsstepsevenCall =
+      DOADetailsstepsevenCall();
+  static UploadImageCall uploadImageCall = UploadImageCall();
+  static GetDOADetailsImageCall getDOADetailsImageCall =
+      GetDOADetailsImageCall();
+  static LogOutCall logOutCall = LogOutCall();
+  static ForgotPwdCall forgotPwdCall = ForgotPwdCall();
 }
 
 class DashboardCall {
@@ -1231,6 +1248,293 @@ class UpdateDOADetailsthreeCall {
   }
 }
 
+class GetCustomerBankCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getCustomerBank',
+      apiUrl: '${SqGroup.baseUrl}/getCustomerBank/Token={token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetIndentBankCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getIndentBank',
+      apiUrl: '${SqGroup.baseUrl}/getIndentBank/Token={token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DOADetailssteponeCall {
+  Future<ApiCallResponse> call({
+    String? iIndent = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DOADetailsstepone',
+      apiUrl: '${SqGroup.baseUrl}/DOADetails_step1',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DOADetailssteptwoCall {
+  Future<ApiCallResponse> call({
+    String? iIndent = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DOADetailssteptwo',
+      apiUrl: '${SqGroup.baseUrl}/DOADetails_step2',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DOADetailsstepthreeCall {
+  Future<ApiCallResponse> call({
+    String? iIndent = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DOADetailsstepthree',
+      apiUrl: '${SqGroup.baseUrl}/DOADetails_step3',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DOADetailsstepfourCall {
+  Future<ApiCallResponse> call({
+    String? iIndent = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DOADetailsstepfour',
+      apiUrl: '${SqGroup.baseUrl}/DOADetails_step4',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DOADetailsstepfiveCall {
+  Future<ApiCallResponse> call({
+    String? iIndent = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DOADetailsstepfive',
+      apiUrl: '${SqGroup.baseUrl}/DOADetails_step5',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DOADetailsstepsevenCall {
+  Future<ApiCallResponse> call({
+    String? iIndent = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DOADetailsstepseven',
+      apiUrl: '${SqGroup.baseUrl}/DOADetails_step7',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UploadImageCall {
+  Future<ApiCallResponse> call({
+    String? siteId = '',
+    String? name = '',
+    String? content = '',
+    String? description = '',
+    double? gPSLatitude,
+    double? gPSLongitude,
+    double? coarseLatitude,
+    double? coarseLongitude,
+    double? isUploadComplete,
+    bool? isFromSiteRef,
+    String? androidKey = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+"SiteId":"${siteId}",
+"Token":"${token}",
+"Name":"${name}",
+"Content":"${content}",
+"Description":"${description}",
+"GPSLatitude":"${gPSLatitude}",
+"GPSLongitude":"${gPSLongitude}",
+"CoarseLatitude":"${coarseLatitude}",
+"CoarseLongitude":"${coarseLongitude}",
+"AndroidKey":"${androidKey}",
+"IsUploadComplete":"${isUploadComplete}",
+"IsFromSiteRef":"${isFromSiteRef}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'UploadImage',
+      apiUrl: '${SqGroup.baseUrl}/UploadImage',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetDOADetailsImageCall {
+  Future<ApiCallResponse> call({
+    int? iIndent,
+    int? iCustomer,
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getDOADetailsImage',
+      apiUrl: '${SqGroup.baseUrl}/getDOADetailsImage',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class LogOutCall {
+  Future<ApiCallResponse> call({
+    String? lattitude = '',
+    String? longitude = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+"Token":"${token}",
+"Lattitude":"${lattitude}",
+"Longitude":"${longitude}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'LogOut',
+      apiUrl: '${SqGroup.baseUrl}/LogOut',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ForgotPwdCall {
+  Future<ApiCallResponse> call({
+    String? userName = '',
+    String? email = '',
+    String? lattitude = '',
+    String? longitude = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+"UserName":"${userName}",
+"Email":"${email}",
+"Lattitude":"${lattitude}",
+"Longitude":"${longitude}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ForgotPwd',
+      apiUrl: '${SqGroup.baseUrl}/ForgotPwd',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SQ Group Code
 
 class LoginCheckCall {
@@ -1292,50 +1596,6 @@ class DistrictAPICall {
           'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DistrictAPI/Token=${token}&State=${istate}',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class GetCustomerBankCall {
-  static Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'getCustomerBank',
-      apiUrl:
-          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/getCustomerBank/Token=${token}',
-      callType: ApiCallType.GET,
-      headers: {
-        'Token': '${token}',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class GetIndentBankCall {
-  static Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'getIndentBank',
-      apiUrl:
-          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/getIndentBank/Token=${token}',
-      callType: ApiCallType.GET,
-      headers: {
-        'Token': '${token}',
-      },
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,

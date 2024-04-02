@@ -34,6 +34,8 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -76,13 +78,40 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                         ),
                   ),
                 ),
-                Text(
-                  'HYP Code: 00000',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            100.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'HYP Code:',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                        ),
                       ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                      child: Text(
+                        getJsonField(
+                          FFAppState().indentSelectedSite,
+                          r'''$.IndentId''',
+                        ).toString(),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   width: 350.0,
@@ -116,7 +145,10 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   ),
                             ),
                             Text(
-                              '00000',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.SiteId''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -151,7 +183,10 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   ),
                             ),
                             Text(
-                              'Date',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.LastModTime''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -186,7 +221,10 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   ),
                             ),
                             Text(
-                              'Strategy',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.Strategy''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -221,7 +259,10 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   ),
                             ),
                             Text(
-                              'City',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.City''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

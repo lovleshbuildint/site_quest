@@ -218,7 +218,11 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                       ),
                                                 ),
                                                 AutoSizeText(
-                                                  'Name',
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .indentSelectedSite,
+                                                    r'''$.BranchName''',
+                                                  ).toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -295,7 +299,11 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                       ),
                                                 ),
                                                 AutoSizeText(
-                                                  '0000',
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .indentSelectedSite,
+                                                    r'''$.IndentId''',
+                                                  ).toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -331,7 +339,11 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                         ),
                                                   ),
                                                   AutoSizeText(
-                                                    'Remote Onus',
+                                                    getJsonField(
+                                                      FFAppState()
+                                                          .indentSelectedSite,
+                                                      r'''$.Strategy''',
+                                                    ).toString(),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium

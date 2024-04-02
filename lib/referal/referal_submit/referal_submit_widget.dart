@@ -224,7 +224,10 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                                   ),
                             ),
                             Text(
-                              'City',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.City''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

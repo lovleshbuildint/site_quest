@@ -356,7 +356,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ),
                                 options: (getJsonField(
                                   dropDownGetCustomerBankResponse.jsonBody,
-                                  r'''$..CustomerBank''',
+                                  r'''$..CustomerBanks''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

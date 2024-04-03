@@ -1369,13 +1369,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 getJsonField(
                                               dropDownDistrictAPIResponse
                                                   .jsonBody,
-                                              r'''$[0].DistrictName''',
+                                              r'''$.District[0].DistrictName''',
                                             ).toString(),
                                           ),
                                           options: (getJsonField(
                                             dropDownDistrictAPIResponse
                                                 .jsonBody,
-                                            r'''$..DistrictName''',
+                                            r'''$..District..DistrictName''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())

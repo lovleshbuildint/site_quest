@@ -1687,13 +1687,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   getJsonField(
                                                 dropDownStateListResponse
                                                     .jsonBody,
-                                                r'''$.States[0].State''',
+                                                r'''$[0].State''',
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
                                               dropDownStateListResponse
                                                   .jsonBody,
-                                              r'''$.States.State''',
+                                              r'''$.States..State''',
                                               true,
                                             ) as List)
                                                 .map<String>(

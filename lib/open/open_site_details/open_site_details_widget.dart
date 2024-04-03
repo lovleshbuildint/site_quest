@@ -354,7 +354,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     r'''$.CustomerBank''',
                                   ).toString(),
                                 ),
-                                options: ['ICICI Bank', 'Axsis Bank'],
+                                options: (getJsonField(
+                                  dropDownGetCustomerBankResponse.jsonBody,
+                                  r'''$..CustomerBank''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue1 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,

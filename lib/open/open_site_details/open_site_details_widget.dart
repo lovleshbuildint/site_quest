@@ -324,7 +324,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
+                              0.0, 7.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.getCustomerBankCall.call(
                               token: FFAppState().Token,

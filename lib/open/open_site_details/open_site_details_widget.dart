@@ -951,12 +951,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         FormFieldController<String>(
                                   _model.strategyDropDwonValue ??= getJsonField(
                                     strategyDropDwonStaregtyResponse.jsonBody,
-                                    r'''$[0].Strategy''',
+                                    r'''$.Strategies[0].Strategy''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
                                   strategyDropDwonStaregtyResponse.jsonBody,
-                                  r'''$..Strategy''',
+                                  r'''$.Strategies..Strategy''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

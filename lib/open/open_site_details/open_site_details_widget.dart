@@ -324,7 +324,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 7.0, 0.0, 0.0),
+                              0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.getCustomerBankCall.call(
                               token: FFAppState().Token,
@@ -349,14 +349,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController1 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue1 ??= getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$[0].Name''',
-                                  ).toString(),
+                                  _model.dropDownValue1 ??=
+                                      'Abhyudaya Cooperative Bank Ltd',
                                 ),
                                 options: (getJsonField(
                                   dropDownGetCustomerBankResponse.jsonBody,
-                                  r'''$..CustomerBanks''',
+                                  r'''$.CustomerBank..Name''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -365,21 +363,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     setState(() => _model.dropDownValue1 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
-                                searchHintTextStyle:
-                                    FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w300,
-                                        ),
-                                searchTextStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -387,7 +370,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
-                                searchHintText: 'Search Bank...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: Color(0xFFE1E2E6),
@@ -401,7 +383,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 margin: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 16.0, 4.0),
                                 hidesUnderline: true,
-                                isSearchable: true,
+                                isSearchable: false,
                                 isMultiSelect: false,
                               );
                             },

@@ -1372,13 +1372,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                   getJsonField(
                                                 dropDownStateListResponse
                                                     .jsonBody,
-                                                r'''$[0].State''',
+                                                r'''$.States[0].State''',
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
                                               dropDownStateListResponse
                                                   .jsonBody,
-                                              r'''$..State''',
+                                              r'''$.States..State''',
                                               true,
                                             ) as List)
                                                 .map<String>(
@@ -1498,12 +1498,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               _model.dropDownValue10 ??=
                                                   getJsonField(
                                                 dropDownCityResponse.jsonBody,
-                                                r'''$[0].City''',
+                                                r'''$.Cities[0].City''',
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
                                               dropDownCityResponse.jsonBody,
-                                              r'''$..City''',
+                                              r'''$.Cities..City''',
                                               true,
                                             ) as List)
                                                 .map<String>(

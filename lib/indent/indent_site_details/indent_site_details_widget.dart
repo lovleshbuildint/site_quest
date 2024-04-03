@@ -1071,7 +1071,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 ),
                                 options: (getJsonField(
                                   dropDownGetShopTypeSiteResponse.jsonBody,
-                                  r'''$.ShopTypeName''',
+                                  r'''$..ShopTypeName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -1151,12 +1151,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         FormFieldController<String>(
                                   _model.strategyDropDwonValue ??= getJsonField(
                                     strategyDropDwonStaregtyResponse.jsonBody,
-                                    r'''$[0].Strategy''',
+                                    r'''$.Strategies[0].Strategy''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
                                   strategyDropDwonStaregtyResponse.jsonBody,
-                                  r'''$..Strategy''',
+                                  r'''$.Strategies..Strategy''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -1241,13 +1241,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     _model.dropDownValue7 ??= getJsonField(
                                       dropDownGetPOITypeForSiteEvaluationResponse
                                           .jsonBody,
-                                      r'''$[0].ipoi''',
+                                      r'''$[0].poiTypeName''',
                                     ).toString(),
                                   ),
                                   options: (getJsonField(
                                     dropDownGetPOITypeForSiteEvaluationResponse
                                         .jsonBody,
-                                    r'''$..ipoi''',
+                                    r'''$..poiTypeName''',
                                     true,
                                   ) as List)
                                       .map<String>((s) => s.toString())
@@ -1687,13 +1687,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   getJsonField(
                                                 dropDownStateListResponse
                                                     .jsonBody,
-                                                r'''$[0].State''',
+                                                r'''$.States[0].State''',
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
                                               dropDownStateListResponse
                                                   .jsonBody,
-                                              r'''$..State''',
+                                              r'''$.States.State''',
                                               true,
                                             ) as List)
                                                 .map<String>(
@@ -1807,12 +1807,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               _model.dropDownValue10 ??=
                                                   getJsonField(
                                                 dropDownCityResponse.jsonBody,
-                                                r'''$[0].City''',
+                                                r'''$.Cities[0].City''',
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
                                               dropDownCityResponse.jsonBody,
-                                              r'''$..City''',
+                                              r'''$.Cities..City''',
                                               true,
                                             ) as List)
                                                 .map<String>(
@@ -2003,12 +2003,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     FormFieldController<String>(
                                   _model.dropDownValue11 ??= getJsonField(
                                     dropDownCircleResponse.jsonBody,
-                                    r'''$[1].CircleName''',
+                                    r'''$.Circles_app1[0].CircleName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
                                   dropDownCircleResponse.jsonBody,
-                                  r'''$..CircleName''',
+                                  r'''$.Circles_app1..CircleName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -2153,12 +2153,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     FormFieldController<String>(
                                   _model.dropDownValue12 ??= getJsonField(
                                     dropDownRbiResponse.jsonBody,
-                                    r'''$[0].Name''',
+                                    r'''$.RBICategories[0].Name''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
                                   dropDownRbiResponse.jsonBody,
-                                  r'''$..Name''',
+                                  r'''$.RBICategories..Name''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

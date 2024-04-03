@@ -1064,9 +1064,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController6 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue6 ??= 'No Business',
+                                  _model.dropDownValue6 ??= getJsonField(
+                                    dropDownGetShopTypeSiteResponse.jsonBody,
+                                    r'''$[0].ShopTypeName''',
+                                  ).toString(),
                                 ),
-                                options: ['No Business'],
+                                options: (getJsonField(
+                                  dropDownGetShopTypeSiteResponse.jsonBody,
+                                  r'''$..ShopTypeName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue6 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1229,13 +1238,20 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   controller:
                                       _model.dropDownValueController7 ??=
                                           FormFieldController<String>(
-                                    _model.dropDownValue7 ??= 'Railway Station',
+                                    _model.dropDownValue7 ??= getJsonField(
+                                      dropDownGetPOITypeForSiteEvaluationResponse
+                                          .jsonBody,
+                                      r'''$[0].ipoi''',
+                                    ).toString(),
                                   ),
-                                  options: [
-                                    'Railway Station',
-                                    'Hospital',
-                                    'BUS Stand'
-                                  ],
+                                  options: (getJsonField(
+                                    dropDownGetPOITypeForSiteEvaluationResponse
+                                        .jsonBody,
+                                    r'''$..ipoi''',
+                                    true,
+                                  ) as List)
+                                      .map<String>((s) => s.toString())
+                                      .toList()!,
                                   onChanged: (val) => setState(
                                       () => _model.dropDownValue7 = val),
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1555,13 +1571,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController8 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue8 ??=
-                                                  'Mumbai',
+                                                  getJsonField(
+                                                dropDownDistrictAPIResponse
+                                                    .jsonBody,
+                                                r'''$[0].DistrictName''',
+                                              ).toString(),
                                             ),
-                                            options: [
-                                              'Mumbai',
-                                              'Nashik',
-                                              'Other...'
-                                            ],
+                                            options: (getJsonField(
+                                              dropDownDistrictAPIResponse
+                                                  .jsonBody,
+                                              r'''$..DistrictName''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue8 = val),
                                             width: MediaQuery.sizeOf(context)
@@ -2409,7 +2433,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.sitevistedCall.call(
+                            future: SqGroup.getsitevisiteddbyAPICall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2427,7 +2451,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownSitevistedResponse = snapshot.data!;
+                              final dropDownGetsitevisiteddbyAPIResponse =
+                                  snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController16 ??=
                                     FormFieldController<String>(
@@ -2483,61 +2508,84 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController7,
-                            focusNode: _model.textFieldFocusNode7,
-                            autofocus: false,
-                            textCapitalization: TextCapitalization.words,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Enter Name',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFE1E2E6),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFFF0026),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.transparent,
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.getsitevisiteddbyAPICall.call(
+                              token: FFAppState().Token,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final textFieldGetsitevisiteddbyAPIResponse =
+                                  snapshot.data!;
+                              return TextFormField(
+                                controller: _model.textController7,
+                                focusNode: _model.textFieldFocusNode7,
+                                autofocus: false,
+                                textCapitalization: TextCapitalization.words,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: 'Enter Name',
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFE1E2E6),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFFF0026),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.transparent,
                                 ),
-                            minLines: null,
-                            validator: _model.textController7Validator
-                                .asValidator(context),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                                minLines: null,
+                                validator: _model.textController7Validator
+                                    .asValidator(context),
+                              );
+                            },
                           ),
                         ),
                         Padding(
@@ -2573,8 +2621,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController17 ??=
-                                    FormFieldController<String>(null),
-                                options: ['Option 1'],
+                                    FormFieldController<String>(
+                                  _model.dropDownValue17 ??= getJsonField(
+                                    dropDownGetSecondSiteVisitersResponse
+                                        .jsonBody,
+                                    r'''$[0].UserName''',
+                                  ).toString(),
+                                ),
+                                options: (getJsonField(
+                                  dropDownGetSecondSiteVisitersResponse
+                                      .jsonBody,
+                                  r'''$..UserName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue17 = val),
                                 width: 300.0,

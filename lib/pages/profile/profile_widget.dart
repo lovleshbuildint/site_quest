@@ -167,7 +167,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             ),
                                       ),
                                       Text(
-                                        FFAppState().EmailId,
+                                        'E-mail',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

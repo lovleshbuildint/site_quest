@@ -444,9 +444,20 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController2 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue2 ??= 'Full Shop',
+                                  _model.dropDownValue2 ??= getJsonField(
+                                    dropDownGetSiteTypeForSiteEvaluationResponse
+                                        .jsonBody,
+                                    r'''$[0].SiteTypeName''',
+                                  ).toString(),
                                 ),
-                                options: ['Full Shop', 'Part Shop'],
+                                options: (getJsonField(
+                                  dropDownGetSiteTypeForSiteEvaluationResponse
+                                      .jsonBody,
+                                  r'''$..SiteTypeName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue2 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -520,9 +531,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController3 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue3 ??= 'ATM',
+                                  _model.dropDownValue3 ??= getJsonField(
+                                    dropDownGetCashDeviceApiResponse.jsonBody,
+                                    r'''$[0].CashDeviceType''',
+                                  ).toString(),
                                 ),
-                                options: ['ATM'],
+                                options: (getJsonField(
+                                  dropDownGetCashDeviceApiResponse.jsonBody,
+                                  r'''$..CashDeviceType''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue3 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -598,10 +618,20 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController4 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue4 ??=
-                                      'No cash device on new site',
+                                  _model.dropDownValue4 ??= getJsonField(
+                                    dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse
+                                        .jsonBody,
+                                    r'''$[0].CashDeviceMovementCategory''',
+                                  ).toString(),
                                 ),
-                                options: ['No cash device on new site'],
+                                options: (getJsonField(
+                                  dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse
+                                      .jsonBody,
+                                  r'''$..CashDeviceMovementCategory''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue4 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -674,9 +704,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController5 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue5 ??= 'Full TIS',
+                                  _model.dropDownValue5 ??= getJsonField(
+                                    dropDownTisResponse.jsonBody,
+                                    r'''$[0].TISTypeName''',
+                                  ).toString(),
                                 ),
-                                options: ['Full TIS'],
+                                options: (getJsonField(
+                                  dropDownTisResponse.jsonBody,
+                                  r'''$..TISTypeName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue5 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -750,9 +789,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController6 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue6 ??= 'ICICI',
+                                  _model.dropDownValue6 ??= getJsonField(
+                                    dropDownGetProjectTypeResponse.jsonBody,
+                                    r'''$[0].ProjectTypeName''',
+                                  ).toString(),
                                 ),
-                                options: ['ICICI'],
+                                options: (getJsonField(
+                                  dropDownGetProjectTypeResponse.jsonBody,
+                                  r'''$..ProjectTypeName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue6 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -826,9 +874,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController7 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue7 ??= 'No Business',
+                                  _model.dropDownValue7 ??= getJsonField(
+                                    dropDownGetShopTypeSiteResponse.jsonBody,
+                                    r'''$[0].ShopTypeName''',
+                                  ).toString(),
                                 ),
-                                options: ['No Business'],
+                                options: (getJsonField(
+                                  dropDownGetShopTypeSiteResponse.jsonBody,
+                                  r'''$..ShopTypeName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue7 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -902,14 +959,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 controller:
                                     _model.strategyDropDwonValueController ??=
                                         FormFieldController<String>(
-                                  _model.strategyDropDwonValue ??=
-                                      'High Potential',
+                                  _model.strategyDropDwonValue ??= getJsonField(
+                                    strategyDropDwonStaregtyResponse.jsonBody,
+                                    r'''$[0].Strategy''',
+                                  ).toString(),
                                 ),
-                                options: [
-                                  'High Potential',
-                                  'Medium Potential',
-                                  'POI'
-                                ],
+                                options: (getJsonField(
+                                  strategyDropDwonStaregtyResponse.jsonBody,
+                                  r'''$..Strategy''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.strategyDropDwonValue = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -987,13 +1048,20 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   controller:
                                       _model.dropDownValueController8 ??=
                                           FormFieldController<String>(
-                                    _model.dropDownValue8 ??= 'Railway Station',
+                                    _model.dropDownValue8 ??= getJsonField(
+                                      dropDownGetPOITypeForSiteEvaluationResponse
+                                          .jsonBody,
+                                      r'''$[2].poiTypeName''',
+                                    ).toString(),
                                   ),
-                                  options: [
-                                    'Railway Station',
-                                    'Hospital',
-                                    'BUS Stand'
-                                  ],
+                                  options: (getJsonField(
+                                    dropDownGetPOITypeForSiteEvaluationResponse
+                                        .jsonBody,
+                                    r'''$..poiTypeName''',
+                                    true,
+                                  ) as List)
+                                      .map<String>((s) => s.toString())
+                                      .toList()!,
                                   onChanged: (val) => setState(
                                       () => _model.dropDownValue8 = val),
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1307,13 +1375,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           controller: _model
                                                   .dropDownValueController9 ??=
                                               FormFieldController<String>(
-                                            _model.dropDownValue9 ??= 'Mumbai',
+                                            _model.dropDownValue9 ??=
+                                                getJsonField(
+                                              dropDownDistrictAPIResponse
+                                                  .jsonBody,
+                                              r'''$[0].DistrictName''',
+                                            ).toString(),
                                           ),
-                                          options: [
-                                            'Mumbai',
-                                            'Nashik',
-                                            'Other...'
-                                          ],
+                                          options: (getJsonField(
+                                            dropDownDistrictAPIResponse
+                                                .jsonBody,
+                                            r'''$..DistrictName''',
+                                            true,
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!,
                                           onChanged: (val) => setState(() =>
                                               _model.dropDownValue9 = val),
                                           width:
@@ -1422,14 +1498,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                     .dropDownValueController10 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue10 ??=
-                                                  'Maharashtra',
+                                                  getJsonField(
+                                                dropDownStateListResponse
+                                                    .jsonBody,
+                                                r'''$[0].State''',
+                                              ).toString(),
                                             ),
-                                            options: [
-                                              'Maharashtra',
-                                              'Telengana',
-                                              'Gujarat',
-                                              'New Delhi'
-                                            ],
+                                            options: (getJsonField(
+                                              dropDownStateListResponse
+                                                  .jsonBody,
+                                              r'''$..State''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue10 = val),
                                             width: MediaQuery.sizeOf(context)
@@ -1542,13 +1625,19 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           controller: _model
                                                   .dropDownValueController11 ??=
                                               FormFieldController<String>(
-                                            _model.dropDownValue11 ??= 'Mumbai',
+                                            _model.dropDownValue11 ??=
+                                                getJsonField(
+                                              dropDownCityResponse.jsonBody,
+                                              r'''$[0].City''',
+                                            ).toString(),
                                           ),
-                                          options: [
-                                            'Mumbai',
-                                            'Navi Mumbai',
-                                            'Other...'
-                                          ],
+                                          options: (getJsonField(
+                                            dropDownCityResponse.jsonBody,
+                                            r'''$..City''',
+                                            true,
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!,
                                           onChanged: (val) => setState(() =>
                                               _model.dropDownValue11 = val),
                                           width:
@@ -1743,9 +1832,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController12 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue12 ??= 'NA',
+                                  _model.dropDownValue12 ??= getJsonField(
+                                    dropDownCircleResponse.jsonBody,
+                                    r'''$[0].CircleName''',
+                                  ).toString(),
                                 ),
-                                options: ['NA'],
+                                options: (getJsonField(
+                                  dropDownCircleResponse.jsonBody,
+                                  r'''$..CircleName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue12 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1892,9 +1990,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController13 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue13 ??= 'Urban',
+                                  _model.dropDownValue13 ??= getJsonField(
+                                    dropDownRbiResponse.jsonBody,
+                                    r'''$[0].Name''',
+                                  ).toString(),
                                 ),
-                                options: ['Urban', 'Rural', 'Metro'],
+                                options: (getJsonField(
+                                  dropDownRbiResponse.jsonBody,
+                                  r'''$..Name''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue13 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2310,8 +2417,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController19 ??=
-                                    FormFieldController<String>(null),
-                                options: ['Option 1'],
+                                    FormFieldController<String>(
+                                  _model.dropDownValue19 ??= getJsonField(
+                                    dropDownGetSecondSiteVisitersResponse
+                                        .jsonBody,
+                                    r'''$[0].UserName''',
+                                  ).toString(),
+                                ),
+                                options: (getJsonField(
+                                  dropDownGetSecondSiteVisitersResponse
+                                      .jsonBody,
+                                  r'''$..UserName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue19 = val),
                                 width: 300.0,

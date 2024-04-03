@@ -357,9 +357,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             return FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController1 ??=
                                   FormFieldController<String>(
-                                _model.dropDownValue1 ??= 'Name',
+                                _model.dropDownValue1 ??= getJsonField(
+                                  dropDownDistrictAPIResponse.jsonBody,
+                                  r'''$[0].DistrictName''',
+                                ).toString(),
                               ),
-                              options: ['Name', 'Other...'],
+                              options: (getJsonField(
+                                dropDownDistrictAPIResponse.jsonBody,
+                                r'''$..DistrictName''',
+                                true,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()!,
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue1 = val),
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -455,9 +464,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             return FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController2 ??=
                                   FormFieldController<String>(
-                                _model.dropDownValue2 ??= 'Name',
+                                _model.dropDownValue2 ??= getJsonField(
+                                  dropDownStateListResponse.jsonBody,
+                                  r'''$[0].State''',
+                                ).toString(),
                               ),
-                              options: ['Name'],
+                              options: (getJsonField(
+                                dropDownStateListResponse.jsonBody,
+                                r'''$..State''',
+                                true,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()!,
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue2 = val),
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -559,9 +577,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             return FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController3 ??=
                                   FormFieldController<String>(
-                                _model.dropDownValue3 ??= 'Name',
+                                _model.dropDownValue3 ??= getJsonField(
+                                  dropDownCityResponse.jsonBody,
+                                  r'''$[0].City''',
+                                ).toString(),
                               ),
-                              options: ['Name', 'Other...'],
+                              options: (getJsonField(
+                                dropDownCityResponse.jsonBody,
+                                r'''$..City''',
+                                true,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()!,
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue3 = val),
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1041,53 +1068,79 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-            child: FlutterFlowDropDown<String>(
-              controller: _model.dropDownValueController4 ??=
-                  FormFieldController<String>(
-                _model.dropDownValue4 ??= 'ICICI Bank',
+            child: FutureBuilder<ApiCallResponse>(
+              future: SqGroup.getIndentBankCall.call(
+                token: FFAppState().Token,
               ),
-              options: [
-                'ICICI Bank',
-                'HDFC Bank',
-                'HSBC Bank',
-                'Union Bank',
-                'SBI',
-                'Other...'
-              ],
-              onChanged: (val) => setState(() => _model.dropDownValue4 = val),
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: 50.0,
-              searchHintTextStyle:
-                  FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Poppins',
-                        fontSize: 10.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w300,
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          FlutterFlowTheme.of(context).primary,
+                        ),
                       ),
-              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
+                    ),
+                  );
+                }
+                final dropDownGetIndentBankResponse = snapshot.data!;
+                return FlutterFlowDropDown<String>(
+                  controller: _model.dropDownValueController4 ??=
+                      FormFieldController<String>(
+                    _model.dropDownValue4 ??= getJsonField(
+                      dropDownGetIndentBankResponse.jsonBody,
+                      r'''$[0].Name''',
+                    ).toString(),
                   ),
-              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.black,
-                    letterSpacing: 0.0,
+                  options: (getJsonField(
+                    dropDownGetIndentBankResponse.jsonBody,
+                    r'''$..Name''',
+                    true,
+                  ) as List)
+                      .map<String>((s) => s.toString())
+                      .toList()!,
+                  onChanged: (val) =>
+                      setState(() => _model.dropDownValue4 = val),
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 50.0,
+                  searchHintTextStyle:
+                      FlutterFlowTheme.of(context).labelMedium.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 10.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                  searchTextStyle:
+                      FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.black,
+                        letterSpacing: 0.0,
+                      ),
+                  searchHintText: 'Search Bank...',
+                  icon: Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: Color(0xFFE1E2E6),
+                    size: 24.0,
                   ),
-              searchHintText: 'Search Bank...',
-              icon: Icon(
-                Icons.keyboard_arrow_down_rounded,
-                color: Color(0xFFE1E2E6),
-                size: 24.0,
-              ),
-              fillColor: Colors.white,
-              elevation: 2.0,
-              borderColor: Color(0xFFE1E2E6),
-              borderWidth: 2.0,
-              borderRadius: 8.0,
-              margin: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 16.0, 4.0),
-              hidesUnderline: true,
-              isSearchable: true,
-              isMultiSelect: false,
+                  fillColor: Colors.white,
+                  elevation: 2.0,
+                  borderColor: Color(0xFFE1E2E6),
+                  borderWidth: 2.0,
+                  borderRadius: 8.0,
+                  margin: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 16.0, 4.0),
+                  hidesUnderline: true,
+                  isSearchable: true,
+                  isMultiSelect: false,
+                );
+              },
             ),
           ),
           Padding(

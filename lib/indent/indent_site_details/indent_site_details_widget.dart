@@ -1071,7 +1071,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 ),
                                 options: (getJsonField(
                                   dropDownGetShopTypeSiteResponse.jsonBody,
-                                  r'''$..ShopTypeName''',
+                                  r'''$.ShopTypeName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

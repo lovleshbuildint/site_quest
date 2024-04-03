@@ -14,6 +14,10 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -32,19 +36,12 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue6;
   FormFieldController<String>? dropDownValueController6;
-  // State field(s) for DropDown widget.
-  String? dropDownValue7;
-  FormFieldController<String>? dropDownValueController7;
   // State field(s) for StrategyDropDwon widget.
   String? strategyDropDwonValue;
   FormFieldController<String>? strategyDropDwonValueController;
   // State field(s) for DropDown widget.
-  String? dropDownValue8;
-  FormFieldController<String>? dropDownValueController8;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
+  String? dropDownValue7;
+  FormFieldController<String>? dropDownValueController7;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
@@ -53,26 +50,33 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
+  TextEditingController? textController4;
+  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue8;
+  FormFieldController<String>? dropDownValueController8;
   // State field(s) for DropDown widget.
   String? dropDownValue9;
   FormFieldController<String>? dropDownValueController9;
   // State field(s) for DropDown widget.
   String? dropDownValue10;
   FormFieldController<String>? dropDownValueController10;
-  // State field(s) for DropDown widget.
-  String? dropDownValue11;
-  FormFieldController<String>? dropDownValueController11;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue12;
-  FormFieldController<String>? dropDownValueController12;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue11;
+  FormFieldController<String>? dropDownValueController11;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode6;
+  TextEditingController? textController6;
+  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue12;
+  FormFieldController<String>? dropDownValueController12;
   // State field(s) for DropDown widget.
   String? dropDownValue13;
   FormFieldController<String>? dropDownValueController13;
@@ -91,9 +95,6 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue18;
   FormFieldController<String>? dropDownValueController18;
-  // State field(s) for DropDown widget.
-  String? dropDownValue19;
-  FormFieldController<String>? dropDownValueController19;
 
   @override
   void initState(BuildContext context) {}
@@ -115,5 +116,8 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
     textFieldFocusNode5?.dispose();
     textController5?.dispose();
+
+    textFieldFocusNode6?.dispose();
+    textController6?.dispose();
   }
 }

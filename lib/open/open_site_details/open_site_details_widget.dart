@@ -1338,7 +1338,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: FutureBuilder<ApiCallResponse>(
                                       future: DistrictAPICall.call(
-                                        istate: FFAppState().iState,
+                                        istate: FFAppState().istate,
                                         token: FFAppState().Token,
                                       ),
                                       builder: (context, snapshot) {
@@ -1375,7 +1375,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           options: (getJsonField(
                                             dropDownDistrictAPIResponse
                                                 .jsonBody,
-                                            r'''$..District..DistrictName''',
+                                            r'''$.District..DistrictName''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())

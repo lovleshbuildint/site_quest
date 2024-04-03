@@ -41,7 +41,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: SqGroup.indentsListCall.call(
-        state: FFAppState().iState,
+        state: FFAppState().istate,
         token: FFAppState().Token,
       ),
       builder: (context, snapshot) {

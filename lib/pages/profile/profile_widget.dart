@@ -201,7 +201,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 setState(() => _model.dropDownValue = val);
                                 setState(() {
                                   FFAppState().State = _model.dropDownValue!;
-                                  FFAppState().iState = functions.checkIndex(
+                                  FFAppState().istate = functions.checkIndex(
                                       profileStateListResponse.jsonBody,
                                       _model.dropDownValue,
                                       'States',
@@ -261,7 +261,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           ),
                           SelectionArea(
                               child: Text(
-                            FFAppState().iState,
+                            FFAppState().istate,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

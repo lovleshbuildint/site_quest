@@ -47,7 +47,7 @@ class FFAppState extends ChangeNotifier {
       _UserName = prefs.getString('ff_UserName') ?? _UserName;
     });
     _safeInit(() {
-      _iState = prefs.getString('ff_iState') ?? _iState;
+      _istate = prefs.getString('ff_istate') ?? _istate;
     });
     _safeInit(() {
       _State = prefs.getString('ff_State') ?? _State;
@@ -283,11 +283,11 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_UserName', _value);
   }
 
-  String _iState = '';
-  String get iState => _iState;
-  set iState(String _value) {
-    _iState = _value;
-    prefs.setString('ff_iState', _value);
+  String _istate = '';
+  String get istate => _istate;
+  set istate(String _value) {
+    _istate = _value;
+    prefs.setString('ff_istate', _value);
   }
 
   String _State = '0';

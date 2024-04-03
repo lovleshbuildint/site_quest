@@ -336,7 +336,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         child: FutureBuilder<ApiCallResponse>(
                           future: DistrictAPICall.call(
                             token: FFAppState().Token,
-                            istate: FFAppState().iState,
+                            istate: FFAppState().istate,
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.

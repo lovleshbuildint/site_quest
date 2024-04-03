@@ -351,7 +351,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     FormFieldController<String>(
                                   _model.dropDownValue1 ??= getJsonField(
                                     FFAppState().indentSelectedSite,
-                                    r'''$.CustomerBank''',
+                                    r'''$.CustomerBanks[0].Name''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(

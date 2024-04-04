@@ -1245,8 +1245,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     ).toString(),
                                   ),
                                   options: (getJsonField(
-                                    dropDownGetPOITypeForSiteEvaluationResponse
-                                        .jsonBody,
+                                    FFAppState().POIList,
                                     r'''$..poiTypeName''',
                                     true,
                                   ) as List)
@@ -1571,21 +1570,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController8 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue8 ??=
-                                                  getJsonField(
-                                                dropDownDistrictAPIResponse
-                                                    .jsonBody,
-                                                r'''$[0].DistrictName''',
-                                              ).toString(),
+                                                  'Mumbai',
                                             ),
-                                            options: (getJsonField(
-                                              dropDownDistrictAPIResponse
-                                                  .jsonBody,
-                                              r'''$..DistrictName''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
+                                            options: [
+                                              'Mumbai',
+                                              'Nashik',
+                                              'Other...'
+                                            ],
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue8 = val),
                                             width: MediaQuery.sizeOf(context)

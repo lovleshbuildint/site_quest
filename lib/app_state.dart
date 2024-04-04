@@ -309,6 +309,120 @@ class FFAppState extends ChangeNotifier {
   set EmailId(String _value) {
     _EmailId = _value;
   }
+
+  dynamic _CustomerBank;
+  dynamic get CustomerBank => _CustomerBank;
+  set CustomerBank(dynamic _value) {
+    _CustomerBank = _value;
+  }
+
+  dynamic _SiteType;
+  dynamic get SiteType => _SiteType;
+  set SiteType(dynamic _value) {
+    _SiteType = _value;
+  }
+
+  dynamic _CashDeviceType;
+  dynamic get CashDeviceType => _CashDeviceType;
+  set CashDeviceType(dynamic _value) {
+    _CashDeviceType = _value;
+  }
+
+  dynamic _CashDeviceMovementCategory;
+  dynamic get CashDeviceMovementCategory => _CashDeviceMovementCategory;
+  set CashDeviceMovementCategory(dynamic _value) {
+    _CashDeviceMovementCategory = _value;
+  }
+
+  dynamic _TISType;
+  dynamic get TISType => _TISType;
+  set TISType(dynamic _value) {
+    _TISType = _value;
+  }
+
+  dynamic _ProjectType;
+  dynamic get ProjectType => _ProjectType;
+  set ProjectType(dynamic _value) {
+    _ProjectType = _value;
+  }
+
+  dynamic _BusinessType;
+  dynamic get BusinessType => _BusinessType;
+  set BusinessType(dynamic _value) {
+    _BusinessType = _value;
+  }
+
+  dynamic _Strategy;
+  dynamic get Strategy => _Strategy;
+  set Strategy(dynamic _value) {
+    _Strategy = _value;
+  }
+
+  dynamic _POIList;
+  dynamic get POIList => _POIList;
+  set POIList(dynamic _value) {
+    _POIList = _value;
+  }
+
+  dynamic _Stateapi;
+  dynamic get Stateapi => _Stateapi;
+  set Stateapi(dynamic _value) {
+    _Stateapi = _value;
+  }
+
+  dynamic _District;
+  dynamic get District => _District;
+  set District(dynamic _value) {
+    _District = _value;
+  }
+
+  dynamic _City;
+  dynamic get City => _City;
+  set City(dynamic _value) {
+    _City = _value;
+  }
+
+  dynamic _Pincode;
+  dynamic get Pincode => _Pincode;
+  set Pincode(dynamic _value) {
+    _Pincode = _value;
+  }
+
+  dynamic _Circle;
+  dynamic get Circle => _Circle;
+  set Circle(dynamic _value) {
+    _Circle = _value;
+  }
+
+  dynamic _RBICategory;
+  dynamic get RBICategory => _RBICategory;
+  set RBICategory(dynamic _value) {
+    _RBICategory = _value;
+  }
+
+  dynamic _Duplicatesite;
+  dynamic get Duplicatesite => _Duplicatesite;
+  set Duplicatesite(dynamic _value) {
+    _Duplicatesite = _value;
+  }
+
+  dynamic _SiteVisitedBy;
+  dynamic get SiteVisitedBy => _SiteVisitedBy;
+  set SiteVisitedBy(dynamic _value) {
+    _SiteVisitedBy = _value;
+  }
+
+  dynamic _FirstSiteVisitedBy;
+  dynamic get FirstSiteVisitedBy => _FirstSiteVisitedBy;
+  set FirstSiteVisitedBy(dynamic _value) {
+    _FirstSiteVisitedBy = _value;
+  }
+
+  dynamic _SecondSiteVisitedBY;
+  dynamic get SecondSiteVisitedBY => _SecondSiteVisitedBY;
+  set SecondSiteVisitedBY(dynamic _value) {
+    _SecondSiteVisitedBY = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

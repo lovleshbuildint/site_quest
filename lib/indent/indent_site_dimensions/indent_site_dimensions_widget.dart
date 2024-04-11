@@ -29,6 +29,8 @@ class _IndentSiteDimensionsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => IndentSiteDimensionsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

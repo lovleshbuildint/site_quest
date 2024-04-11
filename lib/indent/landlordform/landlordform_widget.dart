@@ -92,6 +92,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
     _model.textController17 ??= TextEditingController();
     _model.textFieldFocusNode15 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -1192,6 +1194,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             });
                           }
                         },
+                        side: BorderSide(
+                          width: 2,
+                          color: Color(0xFF6C6B6B),
+                        ),
                         activeColor: Color(0xFFFF0026),
                         checkColor: FlutterFlowTheme.of(context).info,
                       ),

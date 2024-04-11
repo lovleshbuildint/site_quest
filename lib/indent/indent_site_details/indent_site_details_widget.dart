@@ -65,6 +65,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
 
     _model.textController8 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -2749,6 +2751,30 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            customerBank: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.CustomerBank''',
+                            ).toString(),
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.SiteId''',
+                            ).toString(),
+                            district: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.District''',
+                            ).toString(),
+                            iCashDeviceType: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.iCashDeviceType''',
+                            ),
+                            iCashDeviceMovementCategory: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.iCashDeviceMovementCategory''',
+                            ),
+                            iTisType: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.iTis''',
+                            ),
                           );
                           _shouldSetState = true;
                           if ((_model.apiResultm1m?.succeeded ?? true)) {

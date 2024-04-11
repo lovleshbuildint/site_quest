@@ -26,6 +26,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => IndentListModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

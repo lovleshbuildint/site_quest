@@ -50,6 +50,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
     _model.textController5 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -2482,19 +2484,35 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          if (Navigator.of(context).canPop()) {
-                            context.pop();
-                          }
-                          context.pushNamed(
-                            'open_site_landlord_details',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
+                          var _shouldSetState = false;
+                          _model.apiResultq6m =
+                              await SqGroup.updateDOAdetailsfirstCall.call(
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
                           );
+                          _shouldSetState = true;
+                          if ((_model.apiResultq6m?.succeeded ?? true)) {
+                            if (Navigator.of(context).canPop()) {
+                              context.pop();
+                            }
+                            context.pushNamed(
+                              'open_site_landlord_details',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

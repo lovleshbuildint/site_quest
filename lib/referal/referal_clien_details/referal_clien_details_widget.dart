@@ -57,6 +57,8 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
 
     _model.textController9 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

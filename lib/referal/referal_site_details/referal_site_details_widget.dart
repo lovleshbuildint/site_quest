@@ -57,6 +57,8 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
 
     _model.textController7 ??= TextEditingController();
     _model.textFieldFocusNode7 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -1146,19 +1148,59 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          if (Navigator.of(context).canPop()) {
-                            context.pop();
-                          }
-                          context.pushNamed(
-                            'referal_survey_details',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
+                          var _shouldSetState = false;
+                          _model.apiResultl1y =
+                              await SqGroup.updateDOAdetailsfirstCall.call(
+                            address: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.Address''',
+                            ).toString(),
+                            state: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.State''',
+                            ).toString(),
+                            district: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.District''',
+                            ).toString(),
+                            city: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.City''',
+                            ).toString(),
+                            pincode: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.Pincode''',
+                            ).toString(),
+                            circle: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.Circle''',
+                            ).toString(),
+                            landMark: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.LandMark''',
+                            ).toString(),
                           );
+                          _shouldSetState = true;
+                          if ((_model.apiResultl1y?.succeeded ?? true)) {
+                            if (Navigator.of(context).canPop()) {
+                              context.pop();
+                            }
+                            context.pushNamed(
+                              'referal_survey_details',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

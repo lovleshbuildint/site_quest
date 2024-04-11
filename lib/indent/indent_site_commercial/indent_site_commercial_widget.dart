@@ -29,6 +29,8 @@ class _IndentSiteCommercialWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => IndentSiteCommercialModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

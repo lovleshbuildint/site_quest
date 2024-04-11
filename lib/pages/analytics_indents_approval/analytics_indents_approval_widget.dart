@@ -28,6 +28,8 @@ class _AnalyticsIndentsApprovalWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AnalyticsIndentsApprovalModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

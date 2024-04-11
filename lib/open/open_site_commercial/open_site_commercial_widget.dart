@@ -26,6 +26,8 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteCommercialModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

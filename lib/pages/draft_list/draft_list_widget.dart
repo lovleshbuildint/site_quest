@@ -24,6 +24,8 @@ class _DraftListWidgetState extends State<DraftListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DraftListModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

@@ -40,6 +40,8 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
 
     _model.textController5 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

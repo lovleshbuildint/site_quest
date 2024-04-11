@@ -27,6 +27,8 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteNearestAtmModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

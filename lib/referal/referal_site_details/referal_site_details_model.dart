@@ -49,6 +49,8 @@ class ReferalSiteDetailsModel
   FocusNode? textFieldFocusNode7;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
+  // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
+  ApiCallResponse? apiResultl1y;
 
   @override
   void initState(BuildContext context) {}

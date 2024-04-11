@@ -29,6 +29,8 @@ class _IndentSiteLandlordDetailsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => IndentSiteLandlordDetailsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

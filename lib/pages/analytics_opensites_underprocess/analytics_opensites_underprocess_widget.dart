@@ -27,6 +27,8 @@ class _AnalyticsOpensitesUnderprocessWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AnalyticsOpensitesUnderprocessModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

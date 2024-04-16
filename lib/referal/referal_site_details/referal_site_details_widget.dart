@@ -333,7 +333,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -428,7 +427,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                minLines: null,
                                 validator: _model.textController2Validator
                                     .asValidator(context),
                               );
@@ -620,7 +618,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                               ),
-                                          minLines: null,
                                           validator: _model
                                               .textController3Validator
                                               .asValidator(context),
@@ -810,7 +807,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                               ),
-                                          minLines: null,
                                           validator: _model
                                               .textController4Validator
                                               .asValidator(context),
@@ -914,7 +910,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                               fontFamily: 'Readex Pro',
                                               letterSpacing: 0.0,
                                             ),
-                                        minLines: null,
                                         validator: _model
                                             .textController5Validator
                                             .asValidator(context),
@@ -1039,7 +1034,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                                   fontFamily: 'Readex Pro',
                                                   letterSpacing: 0.0,
                                                 ),
-                                            minLines: null,
                                             validator: _model
                                                 .textController6Validator
                                                 .asValidator(context),
@@ -1123,7 +1117,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController7Validator
                                 .asValidator(context),
                           ),

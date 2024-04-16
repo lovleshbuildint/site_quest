@@ -184,7 +184,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController1Validator.asValidator(context),
@@ -254,7 +253,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator:
@@ -326,7 +324,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController3Validator.asValidator(context),
@@ -413,7 +410,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController4Validator
@@ -500,7 +496,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController5Validator
@@ -579,7 +574,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController6Validator.asValidator(context),
@@ -650,7 +644,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController7Validator.asValidator(context),
@@ -721,7 +714,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.textController8Validator.asValidator(context),
@@ -808,7 +800,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController9Validator
@@ -895,7 +886,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController10Validator
@@ -1184,7 +1174,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                     fontFamily: 'Readex Pro',
                                     letterSpacing: 0.0,
                                   ),
-                              minLines: null,
                               keyboardType: TextInputType.number,
                               validator: _model.textController11Validator
                                   .asValidator(context),
@@ -1363,7 +1352,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               validator: _model.textController12Validator.asValidator(context),
             ),
           ),

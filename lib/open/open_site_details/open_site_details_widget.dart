@@ -1155,7 +1155,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -1230,7 +1229,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController2Validator
@@ -1307,7 +1305,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -1777,7 +1774,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               fontFamily: 'Readex Pro',
                                               letterSpacing: 0.0,
                                             ),
-                                        minLines: null,
                                         validator: _model
                                             .textController4Validator
                                             .asValidator(context),
@@ -1942,7 +1938,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController5Validator
                                 .asValidator(context),
                           ),

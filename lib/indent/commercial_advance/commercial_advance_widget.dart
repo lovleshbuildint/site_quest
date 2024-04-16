@@ -218,7 +218,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
-                              minLines: null,
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
@@ -420,7 +419,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
                           ),
-                      minLines: null,
                       validator: _model.totalAdvanceAmountControllerValidator
                           .asValidator(context),
                     ),
@@ -599,7 +597,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
-                                    minLines: null,
                                     validator: _model
                                         .advanceAmountControllerValidator
                                         .asValidator(context),
@@ -695,7 +692,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
-                                    minLines: null,
                                     validator: _model
                                         .balanceAmountControllerValidator
                                         .asValidator(context),
@@ -1040,7 +1036,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
-                              minLines: null,
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
@@ -1230,7 +1225,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
                           ),
-                      minLines: null,
                       validator: _model.totalSecurityDepositControllerValidator
                           .asValidator(context),
                     ),
@@ -1410,7 +1404,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
-                                    minLines: null,
                                     validator: _model
                                         .advanceSDAmountControllerValidator
                                         .asValidator(context),
@@ -1507,7 +1500,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
-                                    minLines: null,
                                     validator: _model
                                         .balanceSDAmountControllerValidator
                                         .asValidator(context),

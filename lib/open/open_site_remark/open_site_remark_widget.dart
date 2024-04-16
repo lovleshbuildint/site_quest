@@ -412,7 +412,6 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -472,7 +471,6 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
@@ -532,7 +530,6 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -592,7 +589,6 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController4Validator
                                 .asValidator(context),
                           ),
@@ -652,7 +648,6 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController5Validator
                                 .asValidator(context),
                           ),

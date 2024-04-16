@@ -620,7 +620,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -1354,7 +1353,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
@@ -1429,7 +1427,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.textController3Validator
@@ -1507,7 +1504,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
-                            minLines: null,
                             validator: _model.textController4Validator
                                 .asValidator(context),
                           ),
@@ -1935,7 +1931,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
-                                        minLines: null,
                                         validator: _model
                                             .textController5Validator
                                             .asValidator(context),
@@ -2092,7 +2087,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textController6Validator
                                 .asValidator(context),
                           ),
@@ -2560,7 +2554,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                minLines: null,
                                 validator: _model.textController7Validator
                                     .asValidator(context),
                               );
@@ -2717,7 +2710,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                minLines: null,
                                 validator: _model.textController8Validator
                                     .asValidator(context),
                               );
@@ -2763,18 +2755,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.District''',
                             ).toString(),
-                            iCashDeviceType: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.iCashDeviceType''',
-                            ),
-                            iCashDeviceMovementCategory: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.iCashDeviceMovementCategory''',
-                            ),
-                            iTisType: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.iTis''',
-                            ),
                           );
                           _shouldSetState = true;
                           if ((_model.apiResultm1m?.succeeded ?? true)) {

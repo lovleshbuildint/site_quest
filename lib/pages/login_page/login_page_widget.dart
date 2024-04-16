@@ -188,7 +188,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
-                                            minLines: null,
                                             validator: _model
                                                 .emailAddressControllerValidator
                                                 .asValidator(context),
@@ -302,7 +301,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
-                                            minLines: null,
                                             validator: _model
                                                 .passwordControllerValidator
                                                 .asValidator(context),

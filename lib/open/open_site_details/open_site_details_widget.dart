@@ -2185,9 +2185,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController16 ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue16 ??= 'Name',
+                              _model.dropDownValue16 ??= 'Yes',
                             ),
-                            options: ['Name'],
+                            options: ['Yes', 'No'],
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue16 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2236,7 +2236,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.sitevistedCall.call(
+                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2254,13 +2254,25 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownSitevistedResponse = snapshot.data!;
+                              final dropDownGetsitevisiteddbydeptAPIResponse =
+                                  snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController17 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue17 ??= 'Manager',
+                                  _model.dropDownValue17 ??= getJsonField(
+                                    dropDownGetsitevisiteddbydeptAPIResponse
+                                        .jsonBody,
+                                    r'''$[0].Department''',
+                                  ).toString(),
                                 ),
-                                options: ['Manager'],
+                                options: (getJsonField(
+                                  dropDownGetsitevisiteddbydeptAPIResponse
+                                      .jsonBody,
+                                  r'''$..Department''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue17 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2333,8 +2345,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController18 ??=
-                                    FormFieldController<String>(null),
-                                options: ['Option 1'],
+                                    FormFieldController<String>(
+                                  _model.dropDownValue18 ??= getJsonField(
+                                    dropDownGetsitevisiteddbydeptAPIResponse
+                                        .jsonBody,
+                                    r'''$[0].Department''',
+                                  ).toString(),
+                                ),
+                                options: (getJsonField(
+                                  dropDownGetsitevisiteddbydeptAPIResponse
+                                      .jsonBody,
+                                  r'''$..Department''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue18 = val),
                                 width: 300.0,

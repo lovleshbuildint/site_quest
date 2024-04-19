@@ -37,7 +37,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.percentController ??= TextEditingController();
+    _model.percentTextController ??= TextEditingController();
     _model.percentFocusNode ??= FocusNode();
 
     _model.textController3 ??= TextEditingController(
@@ -69,7 +69,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.textController9 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
 
-    _model.chequefieldController ??= TextEditingController();
+    _model.chequefieldTextController ??= TextEditingController();
     _model.chequefieldFocusNode ??= FocusNode();
 
     _model.textController11 ??= TextEditingController();
@@ -190,7 +190,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.percentController,
+              controller: _model.percentTextController,
               focusNode: _model.percentFocusNode,
               autofocus: false,
               obscureText: false,
@@ -237,7 +237,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.percentControllerValidator.asValidator(context),
+              validator:
+                  _model.percentTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -1173,7 +1174,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           setState(() => _model.checkboxValue = newValue!);
                           if (newValue!) {
                             setState(() {
-                              _model.chequefieldController?.text =
+                              _model.chequefieldTextController?.text =
                                   valueOrDefault<String>(
                                 _model.textController1.text,
                                 'Name',
@@ -1181,7 +1182,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             });
                           } else {
                             setState(() {
-                              _model.chequefieldController?.text = '';
+                              _model.chequefieldTextController?.text = '';
                             });
                           }
                         },
@@ -1210,7 +1211,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.chequefieldController,
+              controller: _model.chequefieldTextController,
               focusNode: _model.chequefieldFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -1262,8 +1263,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator:
-                  _model.chequefieldControllerValidator.asValidator(context),
+              validator: _model.chequefieldTextControllerValidator
+                  .asValidator(context),
             ),
           ),
           Padding(

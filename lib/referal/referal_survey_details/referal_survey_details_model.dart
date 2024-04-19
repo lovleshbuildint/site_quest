@@ -19,8 +19,8 @@ class ReferalSurveyDetailsModel
   String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for percent widget.
   FocusNode? percentFocusNode;
-  TextEditingController? percentController;
-  String? Function(BuildContext, String?)? percentControllerValidator;
+  TextEditingController? percentTextController;
+  String? Function(BuildContext, String?)? percentTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
@@ -55,7 +55,7 @@ class ReferalSurveyDetailsModel
     textController1?.dispose();
 
     percentFocusNode?.dispose();
-    percentController?.dispose();
+    percentTextController?.dispose();
 
     textFieldFocusNode2?.dispose();
     textController3?.dispose();

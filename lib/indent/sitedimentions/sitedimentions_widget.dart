@@ -34,7 +34,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textFieldController ??= TextEditingController();
+    _model.textFieldTextController ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController3 ??= TextEditingController();
@@ -207,7 +207,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textFieldController,
+              controller: _model.textFieldTextController,
               focusNode: _model.textFieldFocusNode2,
               autofocus: false,
               obscureText: false,
@@ -256,7 +256,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator:
-                  _model.textFieldControllerValidator.asValidator(context),
+                  _model.textFieldTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],

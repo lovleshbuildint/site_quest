@@ -16,8 +16,9 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FormFieldController<String>? radioButtonValueController1;
   // State field(s) for advanceRentAmount widget.
   FocusNode? advanceRentAmountFocusNode;
-  TextEditingController? advanceRentAmountController;
-  String? Function(BuildContext, String?)? advanceRentAmountControllerValidator;
+  TextEditingController? advanceRentAmountTextController;
+  String? Function(BuildContext, String?)?
+      advanceRentAmountTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -26,20 +27,20 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FormFieldController<String>? advanceRentDD1ValueController;
   // State field(s) for TotalAdvanceAmount widget.
   FocusNode? totalAdvanceAmountFocusNode;
-  TextEditingController? totalAdvanceAmountController;
+  TextEditingController? totalAdvanceAmountTextController;
   String? Function(BuildContext, String?)?
-      totalAdvanceAmountControllerValidator;
+      totalAdvanceAmountTextControllerValidator;
   // State field(s) for intialAdvance widget.
   String? intialAdvanceValue;
   FormFieldController<String>? intialAdvanceValueController;
   // State field(s) for AdvanceAmount widget.
   FocusNode? advanceAmountFocusNode;
-  TextEditingController? advanceAmountController;
-  String? Function(BuildContext, String?)? advanceAmountControllerValidator;
+  TextEditingController? advanceAmountTextController;
+  String? Function(BuildContext, String?)? advanceAmountTextControllerValidator;
   // State field(s) for BalanceAmount widget.
   FocusNode? balanceAmountFocusNode;
-  TextEditingController? balanceAmountController;
-  String? Function(BuildContext, String?)? balanceAmountControllerValidator;
+  TextEditingController? balanceAmountTextController;
+  String? Function(BuildContext, String?)? balanceAmountTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
@@ -53,8 +54,8 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FormFieldController<String>? radioButtonValueController2;
   // State field(s) for securityRent widget.
   FocusNode? securityRentFocusNode;
-  TextEditingController? securityRentController;
-  String? Function(BuildContext, String?)? securityRentControllerValidator;
+  TextEditingController? securityRentTextController;
+  String? Function(BuildContext, String?)? securityRentTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue5;
   FormFieldController<String>? dropDownValueController5;
@@ -63,20 +64,22 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FormFieldController<String>? dropDownValueController6;
   // State field(s) for TotalSecurityDeposit widget.
   FocusNode? totalSecurityDepositFocusNode;
-  TextEditingController? totalSecurityDepositController;
+  TextEditingController? totalSecurityDepositTextController;
   String? Function(BuildContext, String?)?
-      totalSecurityDepositControllerValidator;
+      totalSecurityDepositTextControllerValidator;
   // State field(s) for DropDownSDI widget.
   String? dropDownSDIValue;
   FormFieldController<String>? dropDownSDIValueController;
   // State field(s) for AdvanceSDAmount widget.
   FocusNode? advanceSDAmountFocusNode;
-  TextEditingController? advanceSDAmountController;
-  String? Function(BuildContext, String?)? advanceSDAmountControllerValidator;
+  TextEditingController? advanceSDAmountTextController;
+  String? Function(BuildContext, String?)?
+      advanceSDAmountTextControllerValidator;
   // State field(s) for BalanceSDAmount widget.
   FocusNode? balanceSDAmountFocusNode;
-  TextEditingController? balanceSDAmountController;
-  String? Function(BuildContext, String?)? balanceSDAmountControllerValidator;
+  TextEditingController? balanceSDAmountTextController;
+  String? Function(BuildContext, String?)?
+      balanceSDAmountTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue7;
   FormFieldController<String>? dropDownValueController7;
@@ -95,28 +98,28 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   @override
   void dispose() {
     advanceRentAmountFocusNode?.dispose();
-    advanceRentAmountController?.dispose();
+    advanceRentAmountTextController?.dispose();
 
     totalAdvanceAmountFocusNode?.dispose();
-    totalAdvanceAmountController?.dispose();
+    totalAdvanceAmountTextController?.dispose();
 
     advanceAmountFocusNode?.dispose();
-    advanceAmountController?.dispose();
+    advanceAmountTextController?.dispose();
 
     balanceAmountFocusNode?.dispose();
-    balanceAmountController?.dispose();
+    balanceAmountTextController?.dispose();
 
     securityRentFocusNode?.dispose();
-    securityRentController?.dispose();
+    securityRentTextController?.dispose();
 
     totalSecurityDepositFocusNode?.dispose();
-    totalSecurityDepositController?.dispose();
+    totalSecurityDepositTextController?.dispose();
 
     advanceSDAmountFocusNode?.dispose();
-    advanceSDAmountController?.dispose();
+    advanceSDAmountTextController?.dispose();
 
     balanceSDAmountFocusNode?.dispose();
-    balanceSDAmountController?.dispose();
+    balanceSDAmountTextController?.dispose();
   }
 
   /// Additional helper methods.

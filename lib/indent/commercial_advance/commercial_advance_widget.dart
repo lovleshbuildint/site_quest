@@ -32,28 +32,28 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     super.initState();
     _model = createModel(context, () => CommercialAdvanceModel());
 
-    _model.advanceRentAmountController ??= TextEditingController();
+    _model.advanceRentAmountTextController ??= TextEditingController();
     _model.advanceRentAmountFocusNode ??= FocusNode();
 
-    _model.totalAdvanceAmountController ??= TextEditingController();
+    _model.totalAdvanceAmountTextController ??= TextEditingController();
     _model.totalAdvanceAmountFocusNode ??= FocusNode();
 
-    _model.advanceAmountController ??= TextEditingController();
+    _model.advanceAmountTextController ??= TextEditingController();
     _model.advanceAmountFocusNode ??= FocusNode();
 
-    _model.balanceAmountController ??= TextEditingController();
+    _model.balanceAmountTextController ??= TextEditingController();
     _model.balanceAmountFocusNode ??= FocusNode();
 
-    _model.securityRentController ??= TextEditingController();
+    _model.securityRentTextController ??= TextEditingController();
     _model.securityRentFocusNode ??= FocusNode();
 
-    _model.totalSecurityDepositController ??= TextEditingController();
+    _model.totalSecurityDepositTextController ??= TextEditingController();
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
-    _model.advanceSDAmountController ??= TextEditingController();
+    _model.advanceSDAmountTextController ??= TextEditingController();
     _model.advanceSDAmountFocusNode ??= FocusNode();
 
-    _model.balanceSDAmountController ??= TextEditingController();
+    _model.balanceSDAmountTextController ??= TextEditingController();
     _model.balanceSDAmountFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -150,19 +150,20 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model.advanceRentAmountController,
+                              controller:
+                                  _model.advanceRentAmountTextController,
                               focusNode: _model.advanceRentAmountFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
-                                '_model.advanceRentAmountController',
+                                '_model.advanceRentAmountTextController',
                                 Duration(milliseconds: 2000),
                                 () async {
                                   setState(() {
-                                    _model.totalAdvanceAmountController
+                                    _model.totalAdvanceAmountTextController
                                         ?.text = ((int.tryParse((_model
                                                     .advanceRentDD1Value!)) ??
                                                 0) *
                                             (int.tryParse(_model
-                                                    .advanceRentAmountController
+                                                    .advanceRentAmountTextController
                                                     .text) ??
                                                 0))
                                         .toString();
@@ -222,7 +223,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
                               validator: _model
-                                  .advanceRentAmountControllerValidator
+                                  .advanceRentAmountTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -315,11 +316,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         setState(() => _model.advanceRentDD1Value = val);
                         setState(() {
-                          _model.totalAdvanceAmountController?.text =
+                          _model.totalAdvanceAmountTextController?.text =
                               ((int.tryParse((_model.advanceRentDD1Value!)) ??
                                           0) *
                                       (int.tryParse(_model
-                                              .advanceRentAmountController
+                                              .advanceRentAmountTextController
                                               .text) ??
                                           0))
                                   .toString();
@@ -366,10 +367,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.totalAdvanceAmountController,
+                      controller: _model.totalAdvanceAmountTextController,
                       focusNode: _model.totalAdvanceAmountFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
-                        '_model.totalAdvanceAmountController',
+                        '_model.totalAdvanceAmountTextController',
                         Duration(milliseconds: 1),
                         () => setState(() {}),
                       ),
@@ -419,7 +420,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
                           ),
-                      validator: _model.totalAdvanceAmountControllerValidator
+                      validator: _model
+                          .totalAdvanceAmountTextControllerValidator
                           .asValidator(context),
                     ),
                   ),
@@ -460,22 +462,23 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         setState(() => _model.intialAdvanceValue = val);
                         setState(() {
-                          _model.advanceAmountController?.text =
+                          _model.advanceAmountTextController?.text =
                               ((int.tryParse((_model.intialAdvanceValue!)) ??
                                           0) *
                                       (int.tryParse(_model
-                                              .advanceRentAmountController
+                                              .advanceRentAmountTextController
                                               .text) ??
                                           0))
                                   .toString();
                         });
                         setState(() {
-                          _model.balanceAmountController?.text = ((int.tryParse(
-                                          _model.totalAdvanceAmountController
-                                              .text) ??
+                          _model.balanceAmountTextController
+                              ?.text = ((int.tryParse(_model
+                                          .totalAdvanceAmountTextController
+                                          .text) ??
                                       0) -
                                   (int.tryParse(_model
-                                          .advanceAmountController.text) ??
+                                          .advanceAmountTextController.text) ??
                                       0))
                               .toString();
                         });
@@ -534,10 +537,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.advanceAmountController,
+                                    controller:
+                                        _model.advanceAmountTextController,
                                     focusNode: _model.advanceAmountFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.advanceAmountController',
+                                      '_model.advanceAmountTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -598,7 +602,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .advanceAmountControllerValidator
+                                        .advanceAmountTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -629,10 +633,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.balanceAmountController,
+                                    controller:
+                                        _model.balanceAmountTextController,
                                     focusNode: _model.balanceAmountFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.balanceAmountController',
+                                      '_model.balanceAmountTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -693,7 +698,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .balanceAmountControllerValidator
+                                        .balanceAmountTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -968,19 +973,19 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model.securityRentController,
+                              controller: _model.securityRentTextController,
                               focusNode: _model.securityRentFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
-                                '_model.securityRentController',
+                                '_model.securityRentTextController',
                                 Duration(milliseconds: 2000),
                                 () async {
                                   setState(() {
-                                    _model.totalSecurityDepositController
+                                    _model.totalSecurityDepositTextController
                                         ?.text = ((int.tryParse(
                                                     (_model.dropDownValue6!)) ??
                                                 0) *
                                             (int.tryParse(_model
-                                                    .securityRentController
+                                                    .securityRentTextController
                                                     .text) ??
                                                 0))
                                         .toString();
@@ -1039,7 +1044,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
-                              validator: _model.securityRentControllerValidator
+                              validator: _model
+                                  .securityRentTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -1172,10 +1178,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.totalSecurityDepositController,
+                      controller: _model.totalSecurityDepositTextController,
                       focusNode: _model.totalSecurityDepositFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
-                        '_model.totalSecurityDepositController',
+                        '_model.totalSecurityDepositTextController',
                         Duration(milliseconds: 2000),
                         () => setState(() {}),
                       ),
@@ -1225,7 +1231,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
                           ),
-                      validator: _model.totalSecurityDepositControllerValidator
+                      validator: _model
+                          .totalSecurityDepositTextControllerValidator
                           .asValidator(context),
                     ),
                   ),
@@ -1266,24 +1273,25 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         setState(() => _model.dropDownSDIValue = val);
                         setState(() {
-                          _model.advanceSDAmountController?.text =
+                          _model.advanceSDAmountTextController?.text =
                               ((int.tryParse((_model.dropDownSDIValue!)) ?? 0) *
                                       (int.tryParse(_model
-                                              .securityRentController.text) ??
+                                              .securityRentTextController
+                                              .text) ??
                                           0))
                                   .toString();
                         });
                         setState(() {
-                          _model.balanceSDAmountController?.text =
-                              ((int.tryParse(_model
-                                              .totalSecurityDepositController
-                                              .text) ??
-                                          0) -
-                                      (int.tryParse(_model
-                                              .advanceSDAmountController
-                                              .text) ??
-                                          0))
-                                  .toString();
+                          _model.balanceSDAmountTextController
+                              ?.text = ((int.tryParse(_model
+                                          .totalSecurityDepositTextController
+                                          .text) ??
+                                      0) -
+                                  (int.tryParse(_model
+                                          .advanceSDAmountTextController
+                                          .text) ??
+                                      0))
+                              .toString();
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1341,10 +1349,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
                                     controller:
-                                        _model.advanceSDAmountController,
+                                        _model.advanceSDAmountTextController,
                                     focusNode: _model.advanceSDAmountFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.advanceSDAmountController',
+                                      '_model.advanceSDAmountTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -1405,7 +1413,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .advanceSDAmountControllerValidator
+                                        .advanceSDAmountTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -1437,10 +1445,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
                                     controller:
-                                        _model.balanceSDAmountController,
+                                        _model.balanceSDAmountTextController,
                                     focusNode: _model.balanceSDAmountFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.balanceSDAmountController',
+                                      '_model.balanceSDAmountTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -1501,7 +1509,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .balanceSDAmountControllerValidator
+                                        .balanceSDAmountTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),

@@ -34,10 +34,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       }
     });
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -123,8 +123,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       children: [
                                         Expanded(
                                           child: TextFormField(
-                                            controller:
-                                                _model.emailAddressController,
+                                            controller: _model
+                                                .emailAddressTextController,
                                             focusNode:
                                                 _model.emailAddressFocusNode,
                                             obscureText: false,
@@ -189,7 +189,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                             validator: _model
-                                                .emailAddressControllerValidator
+                                                .emailAddressTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -216,7 +216,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         Expanded(
                                           child: TextFormField(
                                             controller:
-                                                _model.passwordController,
+                                                _model.passwordTextController,
                                             focusNode: _model.passwordFocusNode,
                                             obscureText:
                                                 !_model.passwordVisibility,
@@ -302,7 +302,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                             validator: _model
-                                                .passwordControllerValidator
+                                                .passwordTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -333,7 +333,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 .call(
                                               userName: FFAppState().UserName,
                                               email: _model
-                                                  .emailAddressController.text,
+                                                  .emailAddressTextController
+                                                  .text,
                                               token: FFAppState().Token,
                                               lattitude: getJsonField(
                                                 FFAppState().indentSelectedSite,
@@ -390,23 +391,25 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           var _shouldSetState = false;
-                                          if ((_model.emailAddressController
+                                          if ((_model.emailAddressTextController
                                                           .text !=
                                                       null &&
-                                                  _model.emailAddressController
+                                                  _model.emailAddressTextController
                                                           .text !=
                                                       '') &&
-                                              (_model.passwordController.text !=
+                                              (_model.passwordTextController
+                                                          .text !=
                                                       null &&
-                                                  _model.passwordController
+                                                  _model.passwordTextController
                                                           .text !=
                                                       '')) {
                                             _model.loginResponse =
                                                 await LoginCheckCall.call(
                                               userName: _model
-                                                  .emailAddressController.text,
+                                                  .emailAddressTextController
+                                                  .text,
                                               password: _model
-                                                  .passwordController.text,
+                                                  .passwordTextController.text,
                                             );
                                             _shouldSetState = true;
                                             if ((_model
@@ -447,7 +450,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               } else {
                                                 setState(() {
                                                   FFAppState().UserName = _model
-                                                      .emailAddressController
+                                                      .emailAddressTextController
                                                       .text;
                                                 });
 

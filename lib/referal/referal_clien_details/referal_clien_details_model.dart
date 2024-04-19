@@ -36,8 +36,8 @@ class ReferalClienDetailsModel
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for percent widget.
   FocusNode? percentFocusNode;
-  TextEditingController? percentController;
-  String? Function(BuildContext, String?)? percentControllerValidator;
+  TextEditingController? percentTextController;
+  String? Function(BuildContext, String?)? percentTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -83,7 +83,7 @@ class ReferalClienDetailsModel
     textController4?.dispose();
 
     percentFocusNode?.dispose();
-    percentController?.dispose();
+    percentTextController?.dispose();
 
     textFieldFocusNode5?.dispose();
     textController6?.dispose();

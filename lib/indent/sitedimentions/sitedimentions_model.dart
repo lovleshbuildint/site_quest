@@ -20,8 +20,8 @@ class SitedimentionsModel extends FlutterFlowModel<SitedimentionsWidget> {
   String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? textFieldController;
-  String? Function(BuildContext, String?)? textFieldControllerValidator;
+  TextEditingController? textFieldTextController;
+  String? Function(BuildContext, String?)? textFieldTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
@@ -90,7 +90,7 @@ class SitedimentionsModel extends FlutterFlowModel<SitedimentionsWidget> {
     textController1?.dispose();
 
     textFieldFocusNode2?.dispose();
-    textFieldController?.dispose();
+    textFieldTextController?.dispose();
 
     textFieldFocusNode3?.dispose();
     textController3?.dispose();

@@ -43,7 +43,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    _model.percentController ??= TextEditingController();
+    _model.percentTextController ??= TextEditingController();
     _model.percentFocusNode ??= FocusNode();
 
     _model.textController6 ??= TextEditingController();
@@ -580,7 +580,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.percentController,
+                            controller: _model.percentTextController,
                             focusNode: _model.percentFocusNode,
                             autofocus: false,
                             obscureText: false,
@@ -631,7 +631,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
-                            validator: _model.percentControllerValidator
+                            validator: _model.percentTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),

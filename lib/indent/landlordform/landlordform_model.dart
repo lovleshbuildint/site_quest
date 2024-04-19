@@ -21,8 +21,8 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for percent widget.
   FocusNode? percentFocusNode;
-  TextEditingController? percentController;
-  String? Function(BuildContext, String?)? percentControllerValidator;
+  TextEditingController? percentTextController;
+  String? Function(BuildContext, String?)? percentTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
@@ -69,8 +69,8 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   bool? checkboxValue;
   // State field(s) for chequefield widget.
   FocusNode? chequefieldFocusNode;
-  TextEditingController? chequefieldController;
-  String? Function(BuildContext, String?)? chequefieldControllerValidator;
+  TextEditingController? chequefieldTextController;
+  String? Function(BuildContext, String?)? chequefieldTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode9;
   TextEditingController? textController11;
@@ -125,7 +125,7 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
     textController1?.dispose();
 
     percentFocusNode?.dispose();
-    percentController?.dispose();
+    percentTextController?.dispose();
 
     textFieldFocusNode2?.dispose();
     textController3?.dispose();
@@ -149,7 +149,7 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
     textController9?.dispose();
 
     chequefieldFocusNode?.dispose();
-    chequefieldController?.dispose();
+    chequefieldTextController?.dispose();
 
     textFieldFocusNode9?.dispose();
     textController11?.dispose();

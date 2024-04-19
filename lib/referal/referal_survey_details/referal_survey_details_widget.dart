@@ -31,7 +31,7 @@ class _ReferalSurveyDetailsWidgetState
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.percentController ??= TextEditingController();
+    _model.percentTextController ??= TextEditingController();
     _model.percentFocusNode ??= FocusNode();
 
     _model.textController3 ??= TextEditingController();
@@ -345,7 +345,7 @@ class _ReferalSurveyDetailsWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.percentController,
+                            controller: _model.percentTextController,
                             focusNode: _model.percentFocusNode,
                             autofocus: false,
                             obscureText: false,
@@ -396,7 +396,7 @@ class _ReferalSurveyDetailsWidgetState
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
-                            validator: _model.percentControllerValidator
+                            validator: _model.percentTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),

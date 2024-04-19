@@ -2323,7 +2323,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
+                            future: SqGroup.getDepartmentWiseUserAPICall.call(
+                              department: FFAppState().department,
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2341,21 +2342,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetsitevisiteddbydeptAPIResponse =
+                              final dropDownGetDepartmentWiseUserAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController18 ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue18 ??= getJsonField(
-                                    dropDownGetsitevisiteddbydeptAPIResponse
+                                    dropDownGetDepartmentWiseUserAPIResponse
                                         .jsonBody,
-                                    r'''$[0].Department''',
+                                    r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetsitevisiteddbydeptAPIResponse
+                                  dropDownGetDepartmentWiseUserAPIResponse
                                       .jsonBody,
-                                  r'''$..Department''',
+                                  r'''$..UserName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

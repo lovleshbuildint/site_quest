@@ -322,18 +322,6 @@ class FFAppState extends ChangeNotifier {
     _SiteType = _value;
   }
 
-  dynamic _CashDeviceType;
-  dynamic get CashDeviceType => _CashDeviceType;
-  set CashDeviceType(dynamic _value) {
-    _CashDeviceType = _value;
-  }
-
-  dynamic _CashDeviceMovementCategory;
-  dynamic get CashDeviceMovementCategory => _CashDeviceMovementCategory;
-  set CashDeviceMovementCategory(dynamic _value) {
-    _CashDeviceMovementCategory = _value;
-  }
-
   dynamic _TISType;
   dynamic get TISType => _TISType;
   set TISType(dynamic _value) {
@@ -422,6 +410,24 @@ class FFAppState extends ChangeNotifier {
   dynamic get SecondSiteVisitedBY => _SecondSiteVisitedBY;
   set SecondSiteVisitedBY(dynamic _value) {
     _SecondSiteVisitedBY = _value;
+  }
+
+  int _department = 0;
+  int get department => _department;
+  set department(int _value) {
+    _department = _value;
+  }
+
+  dynamic _CashDeviceType;
+  dynamic get CashDeviceType => _CashDeviceType;
+  set CashDeviceType(dynamic _value) {
+    _CashDeviceType = _value;
+  }
+
+  dynamic _CashDeviceMovementCategory;
+  dynamic get CashDeviceMovementCategory => _CashDeviceMovementCategory;
+  set CashDeviceMovementCategory(dynamic _value) {
+    _CashDeviceMovementCategory = _value;
   }
 }
 

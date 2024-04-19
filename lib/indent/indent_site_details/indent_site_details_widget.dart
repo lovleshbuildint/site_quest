@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -30,35 +31,35 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     super.initState();
     _model = createModel(context, () => IndentSiteDetailsModel());
 
-    _model.textController1 ??= TextEditingController(
+    _model.customerbankTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.CustomerBank''',
     ).toString().toString());
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.customerbankFocusNode ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController4 ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Address''',
     ).toString().toString());
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textController5 ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Pincode''',
     ).toString().toString());
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.textFieldFocusNode5 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -429,7 +430,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                     ),
                     Expanded(
                       child: Text(
-                        'Site Dimensions',
+                        valueOrDefault<String>(
+                          _model.idevicetype?.toString(),
+                          '8',
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
@@ -563,8 +567,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController1,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.customerbankTextController,
+                            focusNode: _model.customerbankFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             readOnly: true,
@@ -614,7 +618,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController1Validator
+                            validator: _model
+                                .customerbankTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -648,19 +653,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   '',
                                 );
                               }
-                              final dropDownGetSiteTypeForSiteEvaluationResponse =
+                              final sitetypeGetSiteTypeForSiteEvaluationResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController1 ??=
+                                controller: _model.sitetypeValueController ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue1 ??= getJsonField(
-                                    dropDownGetSiteTypeForSiteEvaluationResponse
+                                  _model.sitetypeValue ??= getJsonField(
+                                    sitetypeGetSiteTypeForSiteEvaluationResponse
                                         .jsonBody,
                                     r'''$[0].SiteTypeName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetSiteTypeForSiteEvaluationResponse
+                                  sitetypeGetSiteTypeForSiteEvaluationResponse
                                       .jsonBody,
                                   r'''$..SiteTypeName''',
                                   true,
@@ -668,7 +673,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) =>
-                                    setState(() => _model.dropDownValue1 = val),
+                                    setState(() => _model.sitetypeValue = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -727,25 +732,40 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   '',
                                 );
                               }
-                              final dropDownGetCashDeviceApiResponse =
+                              final cashdevicetypeGetCashDeviceApiResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController2 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue2 ??= getJsonField(
-                                    dropDownGetCashDeviceApiResponse.jsonBody,
+                                controller:
+                                    _model.cashdevicetypeValueController ??=
+                                        FormFieldController<String>(
+                                  _model.cashdevicetypeValue ??= getJsonField(
+                                    cashdevicetypeGetCashDeviceApiResponse
+                                        .jsonBody,
                                     r'''$[0].CashDeviceType''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetCashDeviceApiResponse.jsonBody,
+                                  cashdevicetypeGetCashDeviceApiResponse
+                                      .jsonBody,
                                   r'''$..CashDeviceType''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue2 = val),
+                                onChanged: (val) async {
+                                  setState(
+                                      () => _model.cashdevicetypeValue = val);
+                                  setState(() {
+                                    _model.idevicetype = functions.checkIndexint(
+                                        cashdevicetypeGetCashDeviceApiResponse
+                                            .jsonBody,
+                                        _model.cashdevicetypeValue,
+                                        '-',
+                                        'CashDeviceType',
+                                        'iCashDeviceType',
+                                        false);
+                                  });
+                                },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -809,9 +829,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               final dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController3 ??=
+                                controller: _model.dropDownValueController1 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue3 ??= getJsonField(
+                                  _model.dropDownValue1 ??= getJsonField(
                                     dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse
                                         .jsonBody,
                                     r'''$[0].CashDeviceMovementCategory''',
@@ -826,7 +846,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) =>
-                                    setState(() => _model.dropDownValue3 = val),
+                                    setState(() => _model.dropDownValue1 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -895,9 +915,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               }
                               final dropDownTisResponse = snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController4 ??=
+                                controller: _model.dropDownValueController2 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue4 ??= getJsonField(
+                                  _model.dropDownValue2 ??= getJsonField(
                                     dropDownTisResponse.jsonBody,
                                     r'''$[0].TISTypeName''',
                                   ).toString(),
@@ -910,7 +930,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) =>
-                                    setState(() => _model.dropDownValue4 = val),
+                                    setState(() => _model.dropDownValue2 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -972,9 +992,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               final dropDownGetProjectTypeResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController5 ??=
+                                controller: _model.dropDownValueController3 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue5 ??= getJsonField(
+                                  _model.dropDownValue3 ??= getJsonField(
                                     dropDownGetProjectTypeResponse.jsonBody,
                                     r'''$[0].ProjectTypeName''',
                                   ).toString(),
@@ -987,7 +1007,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) =>
-                                    setState(() => _model.dropDownValue5 = val),
+                                    setState(() => _model.dropDownValue3 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1057,9 +1077,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               final dropDownGetShopTypeSiteResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController6 ??=
+                                controller: _model.dropDownValueController4 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue6 ??= getJsonField(
+                                  _model.dropDownValue4 ??= getJsonField(
                                     dropDownGetShopTypeSiteResponse.jsonBody,
                                     r'''$[0].ShopTypeName''',
                                   ).toString(),
@@ -1072,7 +1092,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) =>
-                                    setState(() => _model.dropDownValue6 = val),
+                                    setState(() => _model.dropDownValue4 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1231,9 +1251,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     snapshot.data!;
                                 return FlutterFlowDropDown<String>(
                                   controller:
-                                      _model.dropDownValueController7 ??=
+                                      _model.dropDownValueController5 ??=
                                           FormFieldController<String>(
-                                    _model.dropDownValue7 ??= getJsonField(
+                                    _model.dropDownValue5 ??= getJsonField(
                                       dropDownGetPOITypeForSiteEvaluationResponse
                                           .jsonBody,
                                       r'''$[0].poiTypeName''',
@@ -1247,7 +1267,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       .map<String>((s) => s.toString())
                                       .toList()!,
                                   onChanged: (val) => setState(
-                                      () => _model.dropDownValue7 = val),
+                                      () => _model.dropDownValue5 = val),
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 50.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1297,7 +1317,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController2,
-                            focusNode: _model.textFieldFocusNode2,
+                            focusNode: _model.textFieldFocusNode1,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -1371,7 +1391,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController3,
-                            focusNode: _model.textFieldFocusNode3,
+                            focusNode: _model.textFieldFocusNode2,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1447,7 +1467,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode4,
+                            focusNode: _model.textFieldFocusNode3,
                             autofocus: false,
                             readOnly: true,
                             obscureText: false,
@@ -1559,9 +1579,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
-                                                    .dropDownValueController8 ??=
+                                                    .dropDownValueController6 ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue8 ??=
+                                              _model.dropDownValue6 ??=
                                                   'Mumbai',
                                             ),
                                             options: [
@@ -1570,7 +1590,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               'Other...'
                                             ],
                                             onChanged: (val) => setState(() =>
-                                                _model.dropDownValue8 = val),
+                                                _model.dropDownValue6 = val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -1664,9 +1684,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
-                                                    .dropDownValueController9 ??=
+                                                    .dropDownValueController7 ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue9 ??=
+                                              _model.dropDownValue7 ??=
                                                   'Maharashtra',
                                             ),
                                             options: [
@@ -1675,7 +1695,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               'Telengana'
                                             ],
                                             onChanged: (val) => setState(() =>
-                                                _model.dropDownValue9 = val),
+                                                _model.dropDownValue7 = val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -1777,9 +1797,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
-                                                    .dropDownValueController10 ??=
+                                                    .dropDownValueController8 ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue10 ??=
+                                              _model.dropDownValue8 ??=
                                                   'Mumbai',
                                             ),
                                             options: [
@@ -1788,7 +1808,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               'Other...'
                                             ],
                                             onChanged: (val) => setState(() =>
-                                                _model.dropDownValue10 = val),
+                                                _model.dropDownValue8 = val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -1868,7 +1888,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController5,
-                                        focusNode: _model.textFieldFocusNode5,
+                                        focusNode: _model.textFieldFocusNode4,
                                         autofocus: false,
                                         readOnly: true,
                                         obscureText: false,
@@ -1967,9 +1987,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               }
                               final dropDownCircleResponse = snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController11 ??=
+                                controller: _model.dropDownValueController9 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue11 ??= getJsonField(
+                                  _model.dropDownValue9 ??= getJsonField(
                                     dropDownCircleResponse.jsonBody,
                                     r'''$.Circles_app1[0].CircleName''',
                                   ).toString(),
@@ -1981,8 +2001,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.dropDownValue11 = val),
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue9 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2031,7 +2051,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController6,
-                            focusNode: _model.textFieldFocusNode6,
+                            focusNode: _model.textFieldFocusNode5,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -2116,9 +2136,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               }
                               final dropDownRbiResponse = snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController12 ??=
+                                controller: _model.dropDownValueController10 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue12 ??= getJsonField(
+                                  _model.dropDownValue10 ??= getJsonField(
                                     dropDownRbiResponse.jsonBody,
                                     r'''$.RBICategories[0].Name''',
                                   ).toString(),
@@ -2131,7 +2151,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) => setState(
-                                    () => _model.dropDownValue12 = val),
+                                    () => _model.dropDownValue10 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2216,13 +2236,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
-                                                    .dropDownValueController13 ??=
+                                                    .dropDownValueController11 ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue13 ??= 'HPY',
+                                              _model.dropDownValue11 ??= 'HPY',
                                             ),
                                             options: ['HPY'],
                                             onChanged: (val) => setState(() =>
-                                                _model.dropDownValue13 = val),
+                                                _model.dropDownValue11 = val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -2287,13 +2307,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController14 ??=
+                                            _model.dropDownValueController12 ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue14 ??= 'Onsite',
+                                          _model.dropDownValue12 ??= 'Onsite',
                                         ),
                                         options: ['Onsite', 'Offsite'],
                                         onChanged: (val) => setState(
-                                            () => _model.dropDownValue14 = val),
+                                            () => _model.dropDownValue12 = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -2347,13 +2367,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController15 ??=
+                            controller: _model.dropDownValueController13 ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue15 ??= 'Yes',
+                              _model.dropDownValue13 ??= 'Yes',
                             ),
                             options: ['Yes', 'No'],
                             onChanged: (val) =>
-                                setState(() => _model.dropDownValue15 = val),
+                                setState(() => _model.dropDownValue13 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2421,9 +2441,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               final dropDownGetsitevisiteddbydeptAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController16 ??=
+                                controller: _model.dropDownValueController14 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue16 ??= getJsonField(
+                                  _model.dropDownValue14 ??= getJsonField(
                                     dropDownGetsitevisiteddbydeptAPIResponse
                                         .jsonBody,
                                     r'''$[0].Department''',
@@ -2438,7 +2458,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) => setState(
-                                    () => _model.dropDownValue16 = val),
+                                    () => _model.dropDownValue14 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2487,8 +2507,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
+                            future: SqGroup.getDepartmentWiseUserAPICall.call(
                               token: FFAppState().Token,
+                              department: FFAppState().department,
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
@@ -2505,27 +2526,27 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetsitevisiteddbydeptAPIResponse =
+                              final dropDownGetDepartmentWiseUserAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController17 ??=
+                                controller: _model.dropDownValueController15 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue17 ??= getJsonField(
-                                    dropDownGetsitevisiteddbydeptAPIResponse
+                                  _model.dropDownValue15 ??= getJsonField(
+                                    dropDownGetDepartmentWiseUserAPIResponse
                                         .jsonBody,
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetsitevisiteddbydeptAPIResponse
+                                  dropDownGetDepartmentWiseUserAPIResponse
                                       .jsonBody,
-                                  r'''$..Department''',
+                                  r'''$..UserName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) => setState(
-                                    () => _model.dropDownValue17 = val),
+                                    () => _model.dropDownValue15 = val),
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2589,9 +2610,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               final dropDownGetSecondSiteVisitersResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController18 ??=
+                                controller: _model.dropDownValueController16 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue18 ??= getJsonField(
+                                  _model.dropDownValue16 ??= getJsonField(
                                     dropDownGetSecondSiteVisitersResponse
                                         .jsonBody,
                                     r'''$[0].UserName''',
@@ -2606,7 +2627,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) => setState(
-                                    () => _model.dropDownValue18 = val),
+                                    () => _model.dropDownValue16 = val),
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2665,10 +2686,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
-                            customerBank: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.CustomerBank''',
-                            ).toString(),
+                            customerBank:
+                                _model.customerbankTextController.text,
                             siteId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.SiteId''',
@@ -2677,6 +2696,22 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.District''',
                             ).toString(),
+                            strategy: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.Strategy''',
+                            ).toString(),
+                            iSiteType: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.SiteType''',
+                            ),
+                            iTisType: getJsonField(
+                              FFAppState().TISType,
+                              r'''$.TisType''',
+                            ),
+                            iProjType: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.ProjectType''',
+                            ),
                           );
                           _shouldSetState = true;
                           if ((_model.apiResultm1m?.succeeded ?? true)) {

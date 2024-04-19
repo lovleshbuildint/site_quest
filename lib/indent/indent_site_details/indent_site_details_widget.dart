@@ -430,10 +430,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                     ),
                     Expanded(
                       child: Text(
-                        valueOrDefault<String>(
-                          _model.idevicetype?.toString(),
-                          '8',
-                        ),
+                        'Site Dimensions',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',

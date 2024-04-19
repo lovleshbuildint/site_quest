@@ -2512,11 +2512,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   _model.dropDownValue17 ??= getJsonField(
                                     dropDownGetsitevisiteddbyAPIResponse
                                         .jsonBody,
-                                    r'''$[0].Department''',
+                                    r'''$[0]..Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().POIList,
+                                  dropDownGetsitevisiteddbyAPIResponse.jsonBody,
                                   r'''$..Department''',
                                   true,
                                 ) as List)

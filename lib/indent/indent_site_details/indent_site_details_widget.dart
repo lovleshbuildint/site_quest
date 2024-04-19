@@ -2400,7 +2400,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getsitevisiteddbyAPICall.call(
+                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2418,19 +2418,20 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetsitevisiteddbyAPIResponse =
+                              final dropDownGetsitevisiteddbydeptAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController16 ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue16 ??= getJsonField(
-                                    dropDownGetsitevisiteddbyAPIResponse
+                                    dropDownGetsitevisiteddbydeptAPIResponse
                                         .jsonBody,
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetsitevisiteddbyAPIResponse.jsonBody,
+                                  dropDownGetsitevisiteddbydeptAPIResponse
+                                      .jsonBody,
                                   r'''$..Department''',
                                   true,
                                 ) as List)
@@ -2486,7 +2487,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getsitevisiteddbyAPICall.call(
+                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2504,19 +2505,20 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetsitevisiteddbyAPIResponse =
+                              final dropDownGetsitevisiteddbydeptAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController17 ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue17 ??= getJsonField(
-                                    dropDownGetsitevisiteddbyAPIResponse
+                                    dropDownGetsitevisiteddbydeptAPIResponse
                                         .jsonBody,
-                                    r'''$[0]..Department''',
+                                    r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetsitevisiteddbyAPIResponse.jsonBody,
+                                  dropDownGetsitevisiteddbydeptAPIResponse
+                                      .jsonBody,
                                   r'''$..Department''',
                                   true,
                                 ) as List)

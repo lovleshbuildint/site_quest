@@ -2311,7 +2311,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getsitevisiteddbyAPICall.call(
+                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2329,7 +2329,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetsitevisiteddbyAPIResponse =
+                              final dropDownGetsitevisiteddbydeptAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController18 ??=

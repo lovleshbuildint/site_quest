@@ -41,8 +41,8 @@ class SqGroup {
   static RBICitiesCall rBICitiesCall = RBICitiesCall();
   static StymgetCashDeviceApiCall stymgetCashDeviceApiCall =
       StymgetCashDeviceApiCall();
-  static GetsitevisiteddbyAPICall getsitevisiteddbyAPICall =
-      GetsitevisiteddbyAPICall();
+  static GetsitevisiteddbydeptAPICall getsitevisiteddbydeptAPICall =
+      GetsitevisiteddbydeptAPICall();
   static GetDepartmentWiseUserAPICall getDepartmentWiseUserAPICall =
       GetDepartmentWiseUserAPICall();
   static GetSecondSiteVisitersCall getSecondSiteVisitersCall =
@@ -741,13 +741,13 @@ class StymgetCashDeviceApiCall {
   }
 }
 
-class GetsitevisiteddbyAPICall {
+class GetsitevisiteddbydeptAPICall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
     return ApiManager.instance.makeApiCall(
-      callName: 'getsitevisiteddbyAPI',
-      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAP/Token={token}',
+      callName: 'getsitevisiteddbydeptAPI',
+      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAPI/Token={token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

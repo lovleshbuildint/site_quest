@@ -747,7 +747,7 @@ class GetsitevisiteddbyAPICall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getsitevisiteddbyAPI',
-      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAPI/Token={token}',
+      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAP/Token={token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

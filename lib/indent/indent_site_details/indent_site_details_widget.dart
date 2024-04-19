@@ -2349,9 +2349,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController15 ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue15 ??= 'Name',
+                              _model.dropDownValue15 ??= 'Yes',
                             ),
-                            options: ['Name'],
+                            options: ['Yes', 'No'],
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue15 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2532,6 +2532,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please select...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -2613,6 +2614,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please select...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)

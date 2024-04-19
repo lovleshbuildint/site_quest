@@ -60,12 +60,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     _model.textController6 ??= TextEditingController();
     _model.textFieldFocusNode6 ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
-
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -2429,9 +2423,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController16 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue16 ??= 'Manager',
+                                  _model.dropDownValue16 ??= getJsonField(
+                                    dropDownGetsitevisiteddbyAPIResponse
+                                        .jsonBody,
+                                    r'''$[0].Department''',
+                                  ).toString(),
                                 ),
-                                options: ['Manager'],
+                                options: (getJsonField(
+                                  dropDownGetsitevisiteddbyAPIResponse.jsonBody,
+                                  r'''$..Department''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) => setState(
                                     () => _model.dropDownValue16 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2500,110 +2504,20 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final textFieldGetsitevisiteddbyAPIResponse =
-                                  snapshot.data!;
-                              return TextFormField(
-                                controller: _model.textController7,
-                                focusNode: _model.textFieldFocusNode7,
-                                autofocus: false,
-                                textCapitalization: TextCapitalization.words,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: 'Enter Name',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.black,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFE1E2E6),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFFF0026),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.transparent,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                                validator: _model.textController7Validator
-                                    .asValidator(context),
-                              );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 12.0, 0.0, 0.0),
-                          child: Text(
-                            'Second Site Visited BY',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 30.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getSecondSiteVisitersCall.call(
-                              token: FFAppState().Token,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Image.asset(
-                                  '',
-                                );
-                              }
-                              final dropDownGetSecondSiteVisitersResponse =
+                              final dropDownGetsitevisiteddbyAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController17 ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue17 ??= getJsonField(
-                                    dropDownGetSecondSiteVisitersResponse
+                                    dropDownGetsitevisiteddbyAPIResponse
                                         .jsonBody,
-                                    r'''$[0].UserName''',
+                                    r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetSecondSiteVisitersResponse
-                                      .jsonBody,
-                                  r'''$..UserName''',
+                                  dropDownGetsitevisiteddbyAPIResponse.jsonBody,
+                                  r'''$..Department''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -2644,6 +2558,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
+                          child: Text(
+                            'Second Site Visited BY',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 30.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.getSecondSiteVisitersCall.call(
@@ -2656,62 +2585,55 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   '',
                                 );
                               }
-                              final textFieldGetSecondSiteVisitersResponse =
+                              final dropDownGetSecondSiteVisitersResponse =
                                   snapshot.data!;
-                              return TextFormField(
-                                controller: _model.textController8,
-                                focusNode: _model.textFieldFocusNode8,
-                                autofocus: false,
-                                textCapitalization: TextCapitalization.words,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: 'Enter Name',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.black,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFE1E2E6),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFFF0026),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.transparent,
+                              return FlutterFlowDropDown<String>(
+                                controller: _model.dropDownValueController18 ??=
+                                    FormFieldController<String>(
+                                  _model.dropDownValue18 ??= getJsonField(
+                                    dropDownGetSecondSiteVisitersResponse
+                                        .jsonBody,
+                                    r'''$[0].UserName''',
+                                  ).toString(),
                                 ),
-                                style: FlutterFlowTheme.of(context)
+                                options: (getJsonField(
+                                  dropDownGetSecondSiteVisitersResponse
+                                      .jsonBody,
+                                  r'''$..UserName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
+                                onChanged: (val) => setState(
+                                    () => _model.dropDownValue18 = val),
+                                width: 300.0,
+                                height: 56.0,
+                                textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                validator: _model.textController8Validator
-                                    .asValidator(context),
+                                hintText: 'Please select...',
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isOverButton: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
                               );
                             },
                           ),

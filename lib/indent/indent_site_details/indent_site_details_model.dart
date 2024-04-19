@@ -90,17 +90,12 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue16;
   FormFieldController<String>? dropDownValueController16;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue17;
   FormFieldController<String>? dropDownValueController17;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue18;
+  FormFieldController<String>? dropDownValueController18;
   // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
   ApiCallResponse? apiResultm1m;
 
@@ -127,11 +122,5 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
     textFieldFocusNode6?.dispose();
     textController6?.dispose();
-
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
-
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
   }
 }

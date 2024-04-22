@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,76 @@ class _MainPageWidgetState extends State<MainPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MainPageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.apiResultksz = await SqGroup.masterCall.call(
+        state: FFAppState().istate,
+        token: FFAppState().Token,
+      );
+      await SqGroup.getProjectTypeCall.call(
+        icust: 0,
+        token: FFAppState().Token,
+      );
+      await SqGroup.getCashDeviceMovementCategoryForSiteEvaluationCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getShopTypeSiteCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.circleCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.tisCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getSiteTypeForSiteEvaluationCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getCashDeviceApiCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.staregtyCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getPOITypeForSiteEvaluationCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.rbiCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getsitevisiteddbydeptAPICall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getSecondSiteVisitersCall.call(
+        token: FFAppState().Token,
+      );
+      await SqGroup.getsitevisiteddbydeptAPICall.call(
+        token: FFAppState().Token,
+      );
+      setState(() {
+        FFAppState().State = (_model.apiResultksz?.jsonBody ?? '').toString();
+        FFAppState().City = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().Circle = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().CashDeviceType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().CashDeviceMovementCategory =
+            (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().District = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().SiteType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().TISType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().ProjectType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().BusinessType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().Strategy = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().RBICategory = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().SiteVisitedBy = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().POIList = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().istate = (_model.apiResultksz?.jsonBody ?? '').toString();
+        FFAppState().FirstSiteVisitedBy = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().SecondSiteVisitedBY =
+            (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
+      });
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

@@ -6,6 +6,7 @@ import 'main_page_widget.dart' show MainPageWidget;
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Backend Call - API (master)] action in MainPage widget.
+  ApiCallResponse? apiResultksz;
 
   @override
   void initState(BuildContext context) {}

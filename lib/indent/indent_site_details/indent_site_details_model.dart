@@ -17,6 +17,22 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   int? idevicetype;
 
+  int? isitetype;
+
+  int? iprojecttype;
+
+  int? itistype;
+
+  int? ishoptype;
+
+  int? icashdevicemov;
+
+  int? isitevisitedby;
+
+  int? iSiteVisitedByName;
+
+  int? iSecondSiteVisitedByName;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -30,24 +46,24 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for cashdevicetype widget.
   String? cashdevicetypeValue;
   FormFieldController<String>? cashdevicetypeValueController;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
+  // State field(s) for cashdevicemov widget.
+  String? cashdevicemovValue;
+  FormFieldController<String>? cashdevicemovValueController;
+  // State field(s) for tistype widget.
+  String? tistypeValue;
+  FormFieldController<String>? tistypeValueController;
+  // State field(s) for projecttype widget.
+  String? projecttypeValue;
+  FormFieldController<String>? projecttypeValueController;
+  // State field(s) for businesstype widget.
+  String? businesstypeValue;
+  FormFieldController<String>? businesstypeValueController;
   // State field(s) for StrategyDropDwon widget.
   String? strategyDropDwonValue;
   FormFieldController<String>? strategyDropDwonValueController;
-  // State field(s) for DropDown widget.
-  String? dropDownValue5;
-  FormFieldController<String>? dropDownValueController5;
+  // State field(s) for poitype widget.
+  String? poitypeValue;
+  FormFieldController<String>? poitypeValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController2;
@@ -61,6 +77,29 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for DropDown widget.
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
+  // State field(s) for DropDown widget.
+  String? dropDownValue3;
+  FormFieldController<String>? dropDownValueController3;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
+  TextEditingController? textController5;
+  String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue4;
+  FormFieldController<String>? dropDownValueController4;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode5;
+  TextEditingController? textController6;
+  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue5;
+  FormFieldController<String>? dropDownValueController5;
+  // State field(s) for DropDown widget.
   String? dropDownValue6;
   FormFieldController<String>? dropDownValueController6;
   // State field(s) for DropDown widget.
@@ -69,38 +108,15 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue8;
   FormFieldController<String>? dropDownValueController8;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue9;
-  FormFieldController<String>? dropDownValueController9;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue10;
-  FormFieldController<String>? dropDownValueController10;
-  // State field(s) for DropDown widget.
-  String? dropDownValue11;
-  FormFieldController<String>? dropDownValueController11;
-  // State field(s) for DropDown widget.
-  String? dropDownValue12;
-  FormFieldController<String>? dropDownValueController12;
-  // State field(s) for DropDown widget.
-  String? dropDownValue13;
-  FormFieldController<String>? dropDownValueController13;
-  // State field(s) for DropDown widget.
-  String? dropDownValue14;
-  FormFieldController<String>? dropDownValueController14;
-  // State field(s) for DropDown widget.
-  String? dropDownValue15;
-  FormFieldController<String>? dropDownValueController15;
-  // State field(s) for DropDown widget.
-  String? dropDownValue16;
-  FormFieldController<String>? dropDownValueController16;
+  // State field(s) for sitevisitedby widget.
+  String? sitevisitedbyValue;
+  FormFieldController<String>? sitevisitedbyValueController;
+  // State field(s) for firstsitevisitedby widget.
+  String? firstsitevisitedbyValue;
+  FormFieldController<String>? firstsitevisitedbyValueController;
+  // State field(s) for secondsitevisitedby widget.
+  String? secondsitevisitedbyValue;
+  FormFieldController<String>? secondsitevisitedbyValueController;
   // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
   ApiCallResponse? apiResultm1m;
 

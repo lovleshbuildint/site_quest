@@ -75,6 +75,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
       await SqGroup.getsitevisiteddbydeptAPICall.call(
         token: FFAppState().Token,
       );
+      await SqGroup.districtAPisCall.call(
+        istate: FFAppState().istate,
+        token: FFAppState().Token,
+      );
       setState(() {
         FFAppState().State = (_model.apiResultksz?.jsonBody ?? '').toString();
         FFAppState().City = (_model.apiResultksz?.jsonBody ?? '');

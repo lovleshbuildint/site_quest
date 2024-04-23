@@ -662,7 +662,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().SiteType,
+                                  sitetypeGetSiteTypeForSiteEvaluationResponse
+                                      .jsonBody,
                                   r'''$..SiteTypeName''',
                                   true,
                                 ) as List)

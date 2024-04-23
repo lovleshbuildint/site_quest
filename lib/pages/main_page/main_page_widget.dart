@@ -55,6 +55,42 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           await SqGroup.getSiteTypeForSiteEvaluationCall.call(
         token: FFAppState().Token,
       );
+      if ((_model.siteTypeEvaluationResponse?.succeeded ?? true)) {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Info'),
+              content: Text((_model.siteTypeEvaluationResponse?.jsonBody ?? '')
+                  .toString()),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content:
+                  Text((_model.siteTypeEvaluationResponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
       await SqGroup.getCashDeviceApiCall.call(
         token: FFAppState().Token,
       );

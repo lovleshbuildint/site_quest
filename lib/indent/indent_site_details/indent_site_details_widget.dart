@@ -1649,7 +1649,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             options: (getJsonField(
                                               dropDownDistrictAPIResponse
                                                   .jsonBody,
-                                              r'''$.District..DistrictName''',
+                                              r'''$.District.DistrictName''',
                                               true,
                                             ) as List)
                                                 .map<String>(

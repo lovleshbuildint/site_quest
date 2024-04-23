@@ -78,6 +78,7 @@ class SqGroup {
   static GetPOITypeForSiteEvaluationCall getPOITypeForSiteEvaluationCall =
       GetPOITypeForSiteEvaluationCall();
   static ListSitesCall listSitesCall = ListSitesCall();
+  static DistrictAPisCall districtAPisCall = DistrictAPisCall();
 }
 
 class DashboardCall {
@@ -1564,6 +1565,26 @@ class ListSitesCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ListSites',
       apiUrl: '${SqGroup.baseUrl}/ListSites/Token={token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DistrictAPisCall {
+  Future<ApiCallResponse> call({
+    String? istate = '',
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'DistrictAPis',
+      apiUrl: '${SqGroup.baseUrl}/DistrictAPI/Token=${token}/istate=${istate}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

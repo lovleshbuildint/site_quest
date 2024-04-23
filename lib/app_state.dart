@@ -435,6 +435,12 @@ class FFAppState extends ChangeNotifier {
   set districts(String _value) {
     _districts = _value;
   }
+
+  String _sitetypess = '';
+  String get sitetypess => _sitetypess;
+  set sitetypess(String _value) {
+    _sitetypess = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

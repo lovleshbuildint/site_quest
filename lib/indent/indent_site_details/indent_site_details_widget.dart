@@ -661,14 +661,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$[0].SiteTypeName''',
                                   ).toString(),
                                 ),
-                                options: (getJsonField(
-                                  sitetypeGetSiteTypeForSiteEvaluationResponse
-                                      .jsonBody,
-                                  r'''$..SiteTypeName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
+                                options: <String>[],
                                 onChanged: (val) async {
                                   setState(() => _model.sitetypeValue = val);
                                   setState(() {

@@ -626,7 +626,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           child: Text(
                             getJsonField(
                               FFAppState().SiteType,
-                              r'''$..SiteTypeName''',
+                              r'''$[0].SiteTypeName''',
                             ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

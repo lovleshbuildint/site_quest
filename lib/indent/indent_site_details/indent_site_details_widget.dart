@@ -1640,13 +1640,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController1 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue1 ??=
-                                                  'Mumbai',
+                                                  getJsonField(
+                                                dropDownDistrictAPIResponse
+                                                    .jsonBody,
+                                                r'''$.District[0].DistrictName''',
+                                              ).toString(),
                                             ),
-                                            options: [
-                                              'Mumbai',
-                                              'Nashik',
-                                              'Other...'
-                                            ],
+                                            options: (getJsonField(
+                                              dropDownDistrictAPIResponse
+                                                  .jsonBody,
+                                              r'''$.District..DistrictName''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
                                             width: MediaQuery.sizeOf(context)
@@ -1745,13 +1753,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController2 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue2 ??=
-                                                  'Maharashtra',
+                                                  getJsonField(
+                                                dropDownStateListResponse
+                                                    .jsonBody,
+                                                r'''$.States[0].State''',
+                                              ).toString(),
                                             ),
-                                            options: [
-                                              'Maharashtra',
-                                              'Gujarat',
-                                              'Telengana'
-                                            ],
+                                            options: (getJsonField(
+                                              dropDownStateListResponse
+                                                  .jsonBody,
+                                              r'''$.States..State''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue2 = val),
                                             width: MediaQuery.sizeOf(context)
@@ -1858,13 +1874,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController3 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue3 ??=
-                                                  'Mumbai',
+                                                  getJsonField(
+                                                dropDownCityResponse.jsonBody,
+                                                r'''$.Cities[0].City''',
+                                              ).toString(),
                                             ),
-                                            options: [
-                                              'Mumbai',
-                                              'Navi Mumbai',
-                                              'Other...'
-                                            ],
+                                            options: (getJsonField(
+                                              dropDownCityResponse.jsonBody,
+                                              r'''$.Cities..City''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue3 = val),
                                             width: MediaQuery.sizeOf(context)

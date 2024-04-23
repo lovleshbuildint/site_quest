@@ -104,6 +104,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             (_model.apiResultksz?.jsonBody ?? '').toString();
         FFAppState().SiteType =
             (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
+        FFAppState().sitetypess =
+            (_model.siteTypeEvaluationResponse?.jsonBody ?? '').toString();
       });
     });
 

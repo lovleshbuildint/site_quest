@@ -39,6 +39,21 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         setState(() {
           FFAppState().master = (_model.apiResultksz?.jsonBody ?? '');
         });
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Info'),
+              content: Text('All data updated'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
       } else {
         await showDialog(
           context: context,

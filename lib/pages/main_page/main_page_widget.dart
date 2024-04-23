@@ -100,6 +100,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         FFAppState().SecondSiteVisitedBY =
             (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().districts =
+            (_model.apiResultksz?.jsonBody ?? '').toString();
       });
     });
 

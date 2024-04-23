@@ -429,6 +429,12 @@ class FFAppState extends ChangeNotifier {
   set CashDeviceMovementCategory(dynamic _value) {
     _CashDeviceMovementCategory = _value;
   }
+
+  String _districts = '';
+  String get districts => _districts;
+  set districts(String _value) {
+    _districts = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

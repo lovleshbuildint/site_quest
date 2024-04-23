@@ -193,27 +193,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         token: FFAppState().Token,
       );
       if ((_model.siteTypeEvaluationResponse?.succeeded ?? true)) {
-        var confirmDialogResponse = await showDialog<bool>(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('mess'),
-                  content:
-                      Text((_model.siteTypeEvaluationResponse?.bodyText ?? '')),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext, false),
-                      child: Text('Cancel'),
-                    ),
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext, true),
-                      child: Text('Confirm'),
-                    ),
-                  ],
-                );
-              },
-            ) ??
-            false;
+        setState(() {
+          FFAppState().SiteType =
+              (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
+        });
       } else {
         await showDialog(
           context: context,
@@ -414,8 +397,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().districts =
             (_model.apiResultksz?.jsonBody ?? '').toString();
-        FFAppState().SiteType =
-            (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
       });
     });
 
@@ -1251,7 +1232,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  FFAppState().TISType.toString(),
+                                  'Action',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

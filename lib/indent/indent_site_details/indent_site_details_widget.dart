@@ -1595,7 +1595,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        'District',
+                                        FFAppState().District.toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1640,16 +1640,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController1 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue1 ??=
-                                                  getJsonField(
-                                                dropDownDistrictAPIResponse
-                                                    .jsonBody,
-                                                r'''$.District[0].DistrictName''',
-                                              ).toString(),
+                                                  'Mumbai',
                                             ),
                                             options: (getJsonField(
                                               dropDownDistrictAPIResponse
                                                   .jsonBody,
-                                              r'''$.District.DistrictName''',
+                                              r'''$.District..DistrictName''',
                                               true,
                                             ) as List)
                                                 .map<String>(

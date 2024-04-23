@@ -624,7 +624,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Site Type',
+                            getJsonField(
+                              FFAppState().SiteType,
+                              r'''$..SiteTypeName''',
+                            ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -655,13 +658,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.sitetypeValueController ??=
                                     FormFieldController<String>(null),
-                                options: (getJsonField(
-                                  FFAppState().SiteType,
-                                  r'''$..SiteTypeName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
+                                options: <String>[],
                                 onChanged: (val) async {
                                   setState(() => _model.sitetypeValue = val);
                                   setState(() {

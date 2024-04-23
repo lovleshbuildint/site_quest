@@ -17,6 +17,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - API (master)] action in MainPage widget.
   ApiCallResponse? apiResultksz;
+  // Stores action output result for [Backend Call - API (GetSite TypeFor SiteEvaluation )] action in MainPage widget.
+  ApiCallResponse? siteTypeEvaluationResponse;
 
   @override
   void initState(BuildContext context) {}

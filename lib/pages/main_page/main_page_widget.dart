@@ -51,7 +51,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
       await SqGroup.tisCall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.getSiteTypeForSiteEvaluationCall.call(
+      _model.siteTypeEvaluationResponse =
+          await SqGroup.getSiteTypeForSiteEvaluationCall.call(
         token: FFAppState().Token,
       );
       await SqGroup.getCashDeviceApiCall.call(
@@ -87,7 +88,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         FFAppState().CashDeviceMovementCategory =
             (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().District = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().SiteType = (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().TISType = (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().ProjectType = (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().BusinessType = (_model.apiResultksz?.jsonBody ?? '');
@@ -102,6 +102,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().districts =
             (_model.apiResultksz?.jsonBody ?? '').toString();
+        FFAppState().SiteType =
+            (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
       });
     });
 

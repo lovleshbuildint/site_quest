@@ -624,7 +624,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Site Type',
+                            getJsonField(
+                              FFAppState().SiteType,
+                              r'''$..SiteTypeName''',
+                            ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

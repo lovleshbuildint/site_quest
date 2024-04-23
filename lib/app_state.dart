@@ -441,6 +441,12 @@ class FFAppState extends ChangeNotifier {
   set sitetypess(String _value) {
     _sitetypess = _value;
   }
+
+  dynamic _master;
+  dynamic get master => _master;
+  set master(dynamic _value) {
+    _master = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

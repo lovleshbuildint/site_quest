@@ -35,34 +35,17 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         state: FFAppState().istate,
         token: FFAppState().Token,
       );
-      await SqGroup.getProjectTypeCall.call(
-        icust: 0,
-        token: FFAppState().Token,
-      );
-      await SqGroup.getCashDeviceMovementCategoryForSiteEvaluationCall.call(
-        token: FFAppState().Token,
-      );
-      await SqGroup.getShopTypeSiteCall.call(
-        token: FFAppState().Token,
-      );
-      await SqGroup.circleCall.call(
-        token: FFAppState().Token,
-      );
-      await SqGroup.tisCall.call(
-        token: FFAppState().Token,
-      );
-      _model.siteTypeEvaluationResponse =
-          await SqGroup.getSiteTypeForSiteEvaluationCall.call(
-        token: FFAppState().Token,
-      );
-      if ((_model.siteTypeEvaluationResponse?.succeeded ?? true)) {
+      if ((_model.apiResultksz?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().master = (_model.apiResultksz?.jsonBody ?? '');
+        });
+      } else {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
             return AlertDialog(
-              title: Text('Info'),
-              content: Text((_model.siteTypeEvaluationResponse?.jsonBody ?? '')
-                  .toString()),
+              title: Text('Alert'),
+              content: Text((_model.apiResultksz?.bodyText ?? '')),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(alertDialogContext),
@@ -72,6 +55,148 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             );
           },
         );
+      }
+
+      _model.apiresultgetprojecttype = await SqGroup.getProjectTypeCall.call(
+        icust: 0,
+        token: FFAppState().Token,
+      );
+      if ((_model.apiresultgetprojecttype?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().ProjectType =
+              (_model.apiresultgetprojecttype?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.apiresultgetprojecttype?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.cashdevicemovementcatreponse =
+          await SqGroup.getCashDeviceMovementCategoryForSiteEvaluationCall.call(
+        token: FFAppState().Token,
+      );
+      if ((_model.cashdevicemovementcatreponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().CashDeviceMovementCategory =
+              (_model.cashdevicemovementcatreponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content:
+                  Text((_model.cashdevicemovementcatreponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.getshoptypesiteresponse = await SqGroup.getShopTypeSiteCall.call(
+        token: FFAppState().Token,
+      );
+      if ((_model.getshoptypesiteresponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().BusinessType =
+              (_model.getshoptypesiteresponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.getshoptypesiteresponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.circlereponse = await SqGroup.circleCall.call(
+        token: FFAppState().Token,
+      );
+      if ((_model.circlereponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().Circle = (_model.circlereponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.circlereponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.tisreponse = await SqGroup.tisCall.call(
+        token: FFAppState().Token,
+      );
+      if ((_model.tisreponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().TISType = (_model.tisreponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.tisreponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.siteTypeEvaluationResponse =
+          await SqGroup.getSiteTypeForSiteEvaluationCall.call(
+        token: FFAppState().Token,
+      );
+      if ((_model.siteTypeEvaluationResponse?.succeeded ?? true)) {
+        setState(() {
+          FFAppState().SiteType =
+              (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
+        });
       } else {
         await showDialog(
           context: context,
@@ -91,58 +216,164 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         );
       }
 
-      await SqGroup.getCashDeviceApiCall.call(
+      _model.getcashdeviceapiresponse = await SqGroup.getCashDeviceApiCall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.staregtyCall.call(
+      if ((_model.getcashdeviceapiresponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().CashDeviceType =
+              (_model.getcashdeviceapiresponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.getcashdeviceapiresponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.staregtyreponse = await SqGroup.staregtyCall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.getPOITypeForSiteEvaluationCall.call(
+      if ((_model.staregtyreponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().Strategy = (_model.staregtyreponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.staregtyreponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.getPoiTypeForSiteEvaluationResponse =
+          await SqGroup.getPOITypeForSiteEvaluationCall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.rbiCall.call(
+      if ((_model.getPoiTypeForSiteEvaluationResponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().POIList =
+              (_model.getPoiTypeForSiteEvaluationResponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text(
+                  (_model.getPoiTypeForSiteEvaluationResponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.rBIResponse = await SqGroup.rbiCall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.getsitevisiteddbydeptAPICall.call(
+      if ((_model.rBIResponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().RBICategory = (_model.rBIResponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.rBIResponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.getsitevisiteedbydeptapiresponse =
+          await SqGroup.getsitevisiteddbydeptAPICall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.getSecondSiteVisitersCall.call(
+      if ((_model.getsitevisiteedbydeptapiresponse?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().SiteVisitedBy =
+              (_model.getsitevisiteedbydeptapiresponse?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text(
+                  (_model.getsitevisiteedbydeptapiresponse?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      _model.getsecondsitevisiters =
+          await SqGroup.getSecondSiteVisitersCall.call(
         token: FFAppState().Token,
       );
-      await SqGroup.getsitevisiteddbydeptAPICall.call(
-        token: FFAppState().Token,
-      );
-      await SqGroup.districtAPisCall.call(
-        istate: FFAppState().istate,
-        token: FFAppState().Token,
-      );
-      setState(() {
-        FFAppState().State = (_model.apiResultksz?.jsonBody ?? '').toString();
-        FFAppState().City = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().Circle = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().CashDeviceType = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().CashDeviceMovementCategory =
-            (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().District = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().TISType = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().ProjectType = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().BusinessType = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().Strategy = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().RBICategory = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().SiteVisitedBy = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().POIList = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().istate = (_model.apiResultksz?.jsonBody ?? '').toString();
-        FFAppState().FirstSiteVisitedBy = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().SecondSiteVisitedBY =
-            (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
-        FFAppState().districts =
-            (_model.apiResultksz?.jsonBody ?? '').toString();
-      });
-      setState(() {
-        FFAppState().SiteType =
-            (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
-      });
+      if ((_model.getsecondsitevisiters?.jsonBody ?? '')) {
+        setState(() {
+          FFAppState().SecondSiteVisitedBY =
+              (_model.getsecondsitevisiters?.jsonBody ?? '');
+        });
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text((_model.getsecondsitevisiters?.bodyText ?? '')),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+      }
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -977,7 +1208,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  FFAppState().SiteType.toString(),
+                                  'Action',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

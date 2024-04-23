@@ -655,7 +655,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.sitetypeValueController ??=
                                     FormFieldController<String>(null),
-                                options: <String>[],
+                                options: FFAppState().SiteType,
                                 onChanged: (val) async {
                                   setState(() => _model.sitetypeValue = val);
                                   setState(() {

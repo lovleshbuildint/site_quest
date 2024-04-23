@@ -72,10 +72,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             );
           },
         );
-        setState(() {
-          FFAppState().SiteType =
-              (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
-        });
       } else {
         await showDialog(
           context: context,
@@ -142,10 +138,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
         FFAppState().districts =
             (_model.apiResultksz?.jsonBody ?? '').toString();
+      });
+      setState(() {
         FFAppState().SiteType =
             (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
-        FFAppState().sitetypess =
-            (_model.siteTypeEvaluationResponse?.jsonBody ?? '').toString();
       });
     });
 

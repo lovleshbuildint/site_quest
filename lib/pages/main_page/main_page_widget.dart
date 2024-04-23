@@ -72,6 +72,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             );
           },
         );
+        setState(() {
+          FFAppState().SiteType =
+              (_model.siteTypeEvaluationResponse?.jsonBody ?? '');
+        });
       } else {
         await showDialog(
           context: context,

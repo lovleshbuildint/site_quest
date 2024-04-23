@@ -1642,15 +1642,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               _model.dropDownValue1 ??=
                                                   'Mumbai',
                                             ),
-                                            options: (getJsonField(
-                                              dropDownDistrictAPIResponse
-                                                  .jsonBody,
-                                              r'''$.District..DistrictName''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
+                                            options: [
+                                              'Mumbai',
+                                              'Nashik',
+                                              'Other...'
+                                            ],
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
                                             width: MediaQuery.sizeOf(context)

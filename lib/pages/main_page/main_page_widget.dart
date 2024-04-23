@@ -374,6 +374,30 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           },
         );
       }
+
+      setState(() {
+        FFAppState().State = (_model.apiResultksz?.jsonBody ?? '').toString();
+        FFAppState().City = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().Circle = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().CashDeviceType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().CashDeviceMovementCategory =
+            (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().District = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().TISType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().ProjectType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().BusinessType = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().Strategy = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().RBICategory = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().SiteVisitedBy = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().POIList = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().istate = (_model.apiResultksz?.jsonBody ?? '').toString();
+        FFAppState().FirstSiteVisitedBy = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().SecondSiteVisitedBY =
+            (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().department = (_model.apiResultksz?.jsonBody ?? '');
+        FFAppState().districts =
+            (_model.apiResultksz?.jsonBody ?? '').toString();
+      });
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

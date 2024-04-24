@@ -1590,7 +1590,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: FutureBuilder<ApiCallResponse>(
-                                      future: DistrictAPICall.call(
+                                      future: SqGroup.districtAPisCall.call(
                                         istate: FFAppState().istate,
                                         token: FFAppState().Token,
                                       ),
@@ -1612,7 +1612,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             ),
                                           );
                                         }
-                                        final dropDownDistrictAPIResponse =
+                                        final dropDownDistrictAPisResponse =
                                             snapshot.data!;
                                         return FlutterFlowDropDown<String>(
                                           controller: _model
@@ -1620,13 +1620,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               FormFieldController<String>(
                                             _model.dropDownValue11 ??=
                                                 getJsonField(
-                                              dropDownDistrictAPIResponse
+                                              dropDownDistrictAPisResponse
                                                   .jsonBody,
                                               r'''$.District[0].DistrictName''',
                                             ).toString(),
                                           ),
                                           options: (getJsonField(
-                                            dropDownDistrictAPIResponse
+                                            dropDownDistrictAPisResponse
                                                 .jsonBody,
                                             r'''$.District..DistrictName''',
                                             true,

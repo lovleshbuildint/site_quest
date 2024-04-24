@@ -1606,9 +1606,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
-                                        future: DistrictAPICall.call(
-                                          token: FFAppState().Token,
+                                        future: SqGroup.districtAPisCall.call(
                                           istate: FFAppState().istate,
+                                          token: FFAppState().Token,
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -1629,7 +1629,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final dropDownDistrictAPIResponse =
+                                          final dropDownDistrictAPisResponse =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model

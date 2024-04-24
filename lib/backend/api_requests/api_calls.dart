@@ -1562,12 +1562,10 @@ class DistrictAPisCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'DistrictAPis',
-      apiUrl: '${SqGroup.baseUrl}/DistrictAPI/Token=${token}/istate=${istate}',
+      apiUrl: '${SqGroup.baseUrl}/DistrictAPI/Token=${token}&istate=${istate}',
       callType: ApiCallType.GET,
       headers: {},
-      params: {
-        'istate': istate,
-      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -1634,27 +1632,6 @@ class GetIndentsByStatesCall {
       callName: 'GetIndentsByStates',
       apiUrl:
           'https://workbenchuat.hitachi-payments.com:9443/service1.svc/GetIndentsByStates/state=${state}',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class DistrictAPICall {
-  static Future<ApiCallResponse> call({
-    String? token = '',
-    String? istate = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'DistrictAPI',
-      apiUrl:
-          'https://workbenchuat.hitachi-payments.com:9443/service1.svc/DistrictAPI/Token=${token}&State=${istate}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

@@ -779,12 +779,9 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
-                                        future: DistrictAPICall.call(
+                                        future: SqGroup.districtAPisCall.call(
+                                          istate: FFAppState().istate,
                                           token: FFAppState().Token,
-                                          istate: getJsonField(
-                                            FFAppState().indentSelectedSite,
-                                            r'''$..istate''',
-                                          ).toString(),
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -805,7 +802,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final dropDownDistrictAPIResponse =
+                                          final dropDownDistrictAPisResponse =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model

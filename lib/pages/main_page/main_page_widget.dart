@@ -430,6 +430,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.getsitevisitedbydep?.succeeded ?? true)) {
             setState(() {
               FFAppState().departments = FFAppState().departments;
+              FFAppState().department = FFAppState().department;
             });
           } else {
             await showDialog(

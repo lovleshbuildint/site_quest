@@ -452,7 +452,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
           if ((_model.cityresponse?.succeeded ?? true)) {
             setState(() {
-              FFAppState().Circle = (_model.cityresponse?.jsonBody ?? '');
+              FFAppState().City = (_model.cityresponse?.jsonBody ?? '');
             });
           } else {
             await showDialog(

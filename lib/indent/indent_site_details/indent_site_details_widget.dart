@@ -2340,15 +2340,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller:
                                     _model.firstsitevisitedbyValueController ??=
-                                        FormFieldController<String>(
-                                  _model.firstsitevisitedbyValue ??=
-                                      getJsonField(
-                                    FFAppState().FirstSiteVisitedBy,
-                                    r'''$[0].UserName''',
-                                  ).toString(),
-                                ),
+                                        FormFieldController<String>(null),
                                 options: (getJsonField(
-                                  FFAppState().FirstSiteVisitedBy,
+                                  FFAppState().departments,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)

@@ -78,6 +78,7 @@ class SqGroup {
       GetPOITypeForSiteEvaluationCall();
   static ListSitesCall listSitesCall = ListSitesCall();
   static DistrictAPisCall districtAPisCall = DistrictAPisCall();
+  static StatenewCall statenewCall = StatenewCall();
 }
 
 class DashboardCall {
@@ -725,7 +726,7 @@ class GetsitevisiteddbydeptAPICall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getsitevisiteddbydeptAPI',
-      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAPI/Token={token}',
+      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAPI/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1567,6 +1568,25 @@ class DistrictAPisCall {
       params: {
         'istate': istate,
       },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class StatenewCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'STATENEW',
+      apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

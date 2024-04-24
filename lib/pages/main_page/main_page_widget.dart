@@ -231,8 +231,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.stateResponse = await SqGroup.stateListCall.call(
-            token: FFAppState().State,
+          _model.stateResponse = await SqGroup.statenewCall.call(
+            token: FFAppState().Token,
           );
           if ((_model.stateResponse?.succeeded ?? true)) {
             setState(() {

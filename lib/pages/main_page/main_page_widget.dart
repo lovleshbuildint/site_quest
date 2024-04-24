@@ -1145,10 +1145,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  getJsonField(
-                                    FFAppState().SiteType,
-                                    r'''$..SiteTypeName''',
-                                  ).toString(),
+                                  'Action',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

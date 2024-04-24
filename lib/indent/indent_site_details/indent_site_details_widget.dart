@@ -2251,8 +2251,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().departmentswiseuser,
-                                  r'''$..UserName''',
+                                  FFAppState().visitedbydeptapi,
+                                  r'''$..Department''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

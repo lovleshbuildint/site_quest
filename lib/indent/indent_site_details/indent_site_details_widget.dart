@@ -837,14 +837,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     _model.cashdevicemovValueController ??=
                                         FormFieldController<String>(
                                   _model.cashdevicemovValue ??= getJsonField(
-                                    cashdevicemovGetCashDeviceMovementCategoryForSiteEvaluationResponse
-                                        .jsonBody,
+                                    FFAppState().CashDeviceMovementCategory,
                                     r'''$[0].CashDeviceMovementCategory''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  cashdevicemovGetCashDeviceMovementCategoryForSiteEvaluationResponse
-                                      .jsonBody,
+                                  FFAppState().CashDeviceMovementCategory,
                                   r'''$..CashDeviceMovementCategory''',
                                   true,
                                 ) as List)
@@ -935,12 +933,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 controller: _model.tistypeValueController ??=
                                     FormFieldController<String>(
                                   _model.tistypeValue ??= getJsonField(
-                                    tistypeTisResponse.jsonBody,
+                                    FFAppState().TISType,
                                     r'''$[0].TISTypeName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  tistypeTisResponse.jsonBody,
+                                  FFAppState().TISType,
                                   r'''$..TISTypeName''',
                                   true,
                                 ) as List)
@@ -1024,12 +1022,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     _model.projecttypeValueController ??=
                                         FormFieldController<String>(
                                   _model.projecttypeValue ??= getJsonField(
-                                    projecttypeGetProjectTypeResponse.jsonBody,
+                                    FFAppState().ProjectType,
                                     r'''$[0].ProjectTypeName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  projecttypeGetProjectTypeResponse.jsonBody,
+                                  FFAppState().ProjectType,
                                   r'''$..ProjectTypeName''',
                                   true,
                                 ) as List)
@@ -1128,7 +1126,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  businesstypeGetShopTypeSiteResponse.jsonBody,
+                                  FFAppState().BusinessType,
                                   r'''$..ShopTypeName''',
                                   true,
                                 ) as List)
@@ -1308,8 +1306,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   controller: _model.poitypeValueController ??=
                                       FormFieldController<String>(
                                     _model.poitypeValue ??= getJsonField(
-                                      poitypeGetPOITypeForSiteEvaluationResponse
-                                          .jsonBody,
+                                      FFAppState().POIList,
                                       r'''$[0].poiTypeName''',
                                     ).toString(),
                                   ),
@@ -1636,13 +1633,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController1 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue1 ??=
-                                                  'Mumbai',
+                                                  getJsonField(
+                                                FFAppState().District,
+                                                r'''$.District[0].DistrictName''',
+                                              ).toString(),
                                             ),
-                                            options: [
-                                              'Mumbai',
-                                              'Nashik',
-                                              'Other...'
-                                            ],
+                                            options: (getJsonField(
+                                              FFAppState().District,
+                                              r'''$.District..DistrictName''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
                                             width: MediaQuery.sizeOf(context)
@@ -1748,8 +1751,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
-                                              dropDownStateListResponse
-                                                  .jsonBody,
+                                              FFAppState().Stateapi,
                                               r'''$.States..State''',
                                               true,
                                             ) as List)
@@ -1863,12 +1865,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 FormFieldController<String>(
                                               _model.dropDownValue3 ??=
                                                   getJsonField(
-                                                dropDownCityResponse.jsonBody,
+                                                FFAppState().City,
                                                 r'''$.Cities[0].City''',
                                               ).toString(),
                                             ),
                                             options: (getJsonField(
-                                              dropDownCityResponse.jsonBody,
+                                              FFAppState().City,
                                               r'''$.Cities..City''',
                                               true,
                                             ) as List)
@@ -2058,12 +2060,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 controller: _model.dropDownValueController4 ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue4 ??= getJsonField(
-                                    dropDownCircleResponse.jsonBody,
+                                    FFAppState().Circle,
                                     r'''$.Circles_app1[0].CircleName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownCircleResponse.jsonBody,
+                                  FFAppState().Circle,
                                   r'''$.Circles_app1..CircleName''',
                                   true,
                                 ) as List)
@@ -2207,12 +2209,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 controller: _model.dropDownValueController5 ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue5 ??= getJsonField(
-                                    dropDownRbiResponse.jsonBody,
+                                    FFAppState().RBICategory,
                                     r'''$.RBICategories[0].Name''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownRbiResponse.jsonBody,
+                                  FFAppState().RBICategory,
                                   r'''$.RBICategories..Name''',
                                   true,
                                 ) as List)
@@ -2513,14 +2515,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     _model.sitevisitedbyValueController ??=
                                         FormFieldController<String>(
                                   _model.sitevisitedbyValue ??= getJsonField(
-                                    sitevisitedbyGetsitevisiteddbydeptAPIResponse
-                                        .jsonBody,
+                                    FFAppState().SiteVisitedBy,
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  sitevisitedbyGetsitevisiteddbydeptAPIResponse
-                                      .jsonBody,
+                                  FFAppState().SiteVisitedBy,
                                   r'''$..Department''',
                                   true,
                                 ) as List)
@@ -2616,14 +2616,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         FormFieldController<String>(
                                   _model.firstsitevisitedbyValue ??=
                                       getJsonField(
-                                    firstsitevisitedbyGetDepartmentWiseUserAPIResponse
-                                        .jsonBody,
-                                    r'''$[0].Department''',
+                                    FFAppState().FirstSiteVisitedBy,
+                                    r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  firstsitevisitedbyGetDepartmentWiseUserAPIResponse
-                                      .jsonBody,
+                                  FFAppState().FirstSiteVisitedBy,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
@@ -2713,14 +2711,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     FormFieldController<String>(
                                   _model.secondsitevisitedbyValue ??=
                                       getJsonField(
-                                    secondsitevisitedbyGetSecondSiteVisitersResponse
-                                        .jsonBody,
+                                    FFAppState().SecondSiteVisitedBY,
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  secondsitevisitedbyGetSecondSiteVisitersResponse
-                                      .jsonBody,
+                                  FFAppState().SecondSiteVisitedBY,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)

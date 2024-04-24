@@ -21,6 +21,20 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ApiCallResponse? getsitetypeforsiteevaluationresponse;
   // Stores action output result for [Backend Call - API (get Cash DeviceApi)] action in MainPage widget.
   ApiCallResponse? getcashdeviceapi;
+  // Stores action output result for [Backend Call - API (Get Project Type)] action in MainPage widget.
+  ApiCallResponse? getProjecTypeResponse;
+  // Stores action output result for [Backend Call - API (Get Cash Device Movement CategoryForSiteEvaluation)] action in MainPage widget.
+  ApiCallResponse? getCashDeviceMovementCategoryResponse;
+  // Stores action output result for [Backend Call - API (get shop type site)] action in MainPage widget.
+  ApiCallResponse? getShopTypeSiteResponse;
+  // Stores action output result for [Backend Call - API (staregty)] action in MainPage widget.
+  ApiCallResponse? straegtyResponse;
+  // Stores action output result for [Backend Call - API (states)] action in MainPage widget.
+  ApiCallResponse? stateResponse;
+  // Stores action output result for [Backend Call - API (circle)] action in MainPage widget.
+  ApiCallResponse? circelResponse;
+  // Stores action output result for [Backend Call - API (master)] action in MainPage widget.
+  ApiCallResponse? masterResponse;
 
   @override
   void initState(BuildContext context) {}

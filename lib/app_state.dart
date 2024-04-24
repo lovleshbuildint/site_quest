@@ -447,6 +447,12 @@ class FFAppState extends ChangeNotifier {
   set master(dynamic _value) {
     _master = _value;
   }
+
+  int _icust = 0;
+  int get icust => _icust;
+  set icust(int _value) {
+    _icust = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

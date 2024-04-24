@@ -2248,7 +2248,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   _model.sitevisitedbyValue ??= 'Manager',
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().departments,
+                                  FFAppState().departmentswiseuser,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
@@ -2340,14 +2340,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller:
                                     _model.firstsitevisitedbyValueController ??=
-                                        FormFieldController<String>(null),
-                                options: (getJsonField(
-                                  FFAppState().departments,
-                                  r'''$..UserName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
+                                        FormFieldController<String>(
+                                  _model.firstsitevisitedbyValue ??=
+                                      getJsonField(
+                                    FFAppState().departmentswiseuser,
+                                    r'''$[0].UserName''',
+                                  ).toString(),
+                                ),
+                                options: ['Option 1'],
                                 onChanged: (val) async {
                                   setState(() =>
                                       _model.firstsitevisitedbyValue = val);

@@ -454,10 +454,16 @@ class FFAppState extends ChangeNotifier {
     _icust = _value;
   }
 
-  dynamic _departments;
-  dynamic get departments => _departments;
-  set departments(dynamic _value) {
-    _departments = _value;
+  dynamic _departmentswiseuser;
+  dynamic get departmentswiseuser => _departmentswiseuser;
+  set departmentswiseuser(dynamic _value) {
+    _departmentswiseuser = _value;
+  }
+
+  dynamic _visitedbydeptapi;
+  dynamic get visitedbydeptapi => _visitedbydeptapi;
+  set visitedbydeptapi(dynamic _value) {
+    _visitedbydeptapi = _value;
   }
 }
 

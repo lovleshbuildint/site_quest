@@ -2250,26 +2250,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
-                                options: (getJsonField(
-                                  FFAppState().departments,
-                                  r'''$..Department''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
+                                options: FFAppState().departments,
                                 onChanged: (val) async {
                                   setState(
                                       () => _model.sitevisitedbyValue = val);
                                   setState(() {
-                                    _model.iSiteVisitedByName =
-                                        functions.checkIndexint(
-                                            sitevisitedbyGetsitevisiteddbydeptAPIResponse
-                                                .jsonBody,
-                                            _model.isitevisitedby?.toString(),
-                                            '-',
-                                            'Department',
-                                            'idepartment',
-                                            false);
+                                    _model.isiteddep = functions.checkIndexint(
+                                        sitevisitedbyGetsitevisiteddbydeptAPIResponse
+                                            .jsonBody,
+                                        _model.isiteddep?.toString(),
+                                        '-',
+                                        'Department',
+                                        'idepartment',
+                                        false);
                                   });
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,

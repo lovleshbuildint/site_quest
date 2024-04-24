@@ -1588,7 +1588,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        FFAppState().districts,
+                                        'District',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1638,14 +1638,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 r'''$.District[0].DistrictName''',
                                               ).toString(),
                                             ),
-                                            options: (getJsonField(
-                                              FFAppState().District,
-                                              r'''$.District..DistrictName''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
+                                            options: FFAppState().District,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
                                             width: MediaQuery.sizeOf(context)
@@ -1712,7 +1705,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        FFAppState().State,
+                                        'State',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

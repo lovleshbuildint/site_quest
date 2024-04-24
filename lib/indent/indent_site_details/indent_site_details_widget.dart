@@ -1744,7 +1744,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController2 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue2 ??=
-                                                  'Maharashtra',
+                                                  getJsonField(
+                                                FFAppState().Stateapi,
+                                                r'''$.States[0].State''',
+                                              ).toString(),
                                             ),
                                             options: (getJsonField(
                                               FFAppState().Stateapi,

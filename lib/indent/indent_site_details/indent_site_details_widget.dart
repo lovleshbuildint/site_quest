@@ -1637,14 +1637,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       .District
                                                       .toString(),
                                             ),
-                                            options: (getJsonField(
-                                              FFAppState().District,
-                                              r'''$.District..DistrictName''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
+                                            options: FFAppState().District,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
                                             width: MediaQuery.sizeOf(context)

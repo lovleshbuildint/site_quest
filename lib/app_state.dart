@@ -453,6 +453,12 @@ class FFAppState extends ChangeNotifier {
   set icust(int _value) {
     _icust = _value;
   }
+
+  dynamic _departments;
+  dynamic get departments => _departments;
+  set departments(dynamic _value) {
+    _departments = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

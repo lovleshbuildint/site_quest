@@ -2324,7 +2324,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.getDepartmentWiseUserAPICall.call(
-                              department: FFAppState().department,
+                              department: FFAppState().department.toString(),
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {

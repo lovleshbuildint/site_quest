@@ -2519,7 +2519,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().SiteVisitedBy,
+                                  FFAppState().departments,
                                   r'''$..Department''',
                                   true,
                                 ) as List)
@@ -2590,7 +2590,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.getDepartmentWiseUserAPICall.call(
                               token: FFAppState().Token,
-                              department: FFAppState().department,
+                              department: FFAppState().department.toString(),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.

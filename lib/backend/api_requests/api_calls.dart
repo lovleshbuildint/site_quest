@@ -745,17 +745,17 @@ class GetsitevisiteddbydeptAPICall {
 
 class GetDepartmentWiseUserAPICall {
   Future<ApiCallResponse> call({
-    int? department,
+    String? department = '',
     String? token = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getDepartmentWiseUserAPI',
       apiUrl:
-          '${SqGroup.baseUrl}/getDepartmentWiseUserAPI/Token={token}&department={department}',
+          '${SqGroup.baseUrl}/getDepartmentWiseUserAPI/Token=${token}&department=${department}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
-        'Department': department,
+        'department': department,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -772,7 +772,7 @@ class GetSecondSiteVisitersCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getSecondSiteVisiters',
-      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token={token}',
+      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

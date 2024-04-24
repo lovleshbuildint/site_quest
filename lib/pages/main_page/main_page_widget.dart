@@ -399,7 +399,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.sitevisited = await SqGroup.sitevistedCall.call();
           if ((_model.sitevisited?.succeeded ?? true)) {
             setState(() {
-              FFAppState().SiteVisitedBy = (_model.sitevisited?.jsonBody ?? '');
+              FFAppState().SecondSiteVisitedBY =
+                  (_model.sitevisited?.jsonBody ?? '');
             });
           } else {
             await showDialog(
@@ -420,14 +421,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.secondsiteresponse =
-              await SqGroup.getSecondSiteVisitersCall.call(
+          _model.getsitevisitedbydep =
+              await SqGroup.getsitevisiteddbydeptAPICall.call(
             token: FFAppState().Token,
           );
-          if ((_model.secondsiteresponse?.succeeded ?? true)) {
+          if ((_model.getsitevisitedbydep?.succeeded ?? true)) {
             setState(() {
-              FFAppState().SecondSiteVisitedBY =
-                  (_model.secondsiteresponse?.jsonBody ?? '');
+              FFAppState().SiteVisitedBy =
+                  (_model.getsitevisitedbydep?.jsonBody ?? '');
             });
           } else {
             await showDialog(
@@ -435,7 +436,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               builder: (alertDialogContext) {
                 return AlertDialog(
                   title: Text('Alert(secondsite)'),
-                  content: Text((_model.secondsiteresponse?.bodyText ?? '')),
+                  content: Text((_model.getsitevisitedbydep?.bodyText ?? '')),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),
@@ -462,6 +463,36 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                 return AlertDialog(
                   title: Text('Alert(City)'),
                   content: Text((_model.cityresponse?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
+          _model.getdepartmentwiseuserapi =
+              await SqGroup.getDepartmentWiseUserAPICall.call(
+            department: FFAppState().department.toString(),
+            token: FFAppState().Token,
+          );
+          if ((_model.getdepartmentwiseuserapi?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().departments =
+                  (_model.getdepartmentwiseuserapi?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(department)'),
+                  content:
+                      Text((_model.getdepartmentwiseuserapi?.bodyText ?? '')),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),

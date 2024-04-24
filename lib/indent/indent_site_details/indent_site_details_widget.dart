@@ -2247,13 +2247,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         FormFieldController<String>(
                                   _model.sitevisitedbyValue ??= 'Manager',
                                 ),
-                                options: (getJsonField(
-                                  FFAppState().departmentswiseuser,
-                                  r'''$..UserName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
+                                options: ['Manager'],
                                 onChanged: (val) async {
                                   setState(
                                       () => _model.sitevisitedbyValue = val);
@@ -2347,7 +2341,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
-                                options: ['Option 1'],
+                                options: (getJsonField(
+                                  FFAppState().departmentswiseuser,
+                                  r'''$..UserName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
                                 onChanged: (val) async {
                                   setState(() =>
                                       _model.firstsitevisitedbyValue = val);

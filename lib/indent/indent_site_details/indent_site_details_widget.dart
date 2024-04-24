@@ -1860,11 +1860,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController3 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue3 ??=
-                                                  FFAppState()
-                                                      .master
-                                                      .toString(),
+                                                  getJsonField(
+                                                FFAppState().master,
+                                                r'''$.cities[0].City''',
+                                              ).toString(),
                                             ),
-                                            options: FFAppState().master,
+                                            options: (getJsonField(
+                                              FFAppState().master,
+                                              r'''$.cities..City''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue3 = val),
                                             width: MediaQuery.sizeOf(context)

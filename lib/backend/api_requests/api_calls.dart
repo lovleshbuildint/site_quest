@@ -36,7 +36,6 @@ class SqGroup {
   static CircleCall circleCall = CircleCall();
   static MasterCall masterCall = MasterCall();
   static TisCall tisCall = TisCall();
-  static SitevistedCall sitevistedCall = SitevistedCall();
   static RBICitiesCall rBICitiesCall = RBICitiesCall();
   static StymgetCashDeviceApiCall stymgetCashDeviceApiCall =
       StymgetCashDeviceApiCall();
@@ -654,25 +653,6 @@ class TisCall {
     return ApiManager.instance.makeApiCall(
       callName: 'tis',
       apiUrl: '${SqGroup.baseUrl}/GetTISTypeForSiteEvaluation/Token=${token}',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class SitevistedCall {
-  Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'sitevisted',
-      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

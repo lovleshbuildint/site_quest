@@ -396,7 +396,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.sitevisited = await SqGroup.sitevistedCall.call();
+          _model.sitevisited = await SqGroup.getSecondSiteVisitersCall.call(
+            token: FFAppState().Token,
+          );
           if ((_model.sitevisited?.succeeded ?? true)) {
             setState(() {
               FFAppState().SecondSiteVisitedBY =
@@ -427,8 +429,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
           if ((_model.getsitevisitedbydep?.succeeded ?? true)) {
             setState(() {
-              FFAppState().SiteVisitedBy =
-                  (_model.getsitevisitedbydep?.jsonBody ?? '');
+              FFAppState().departments = FFAppState().departments;
             });
           } else {
             await showDialog(

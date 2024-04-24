@@ -1750,7 +1750,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             ),
                                             options: (getJsonField(
                                               FFAppState().master,
-                                              r'''$.States..State''',
+                                              r'''$.states..State''',
                                               true,
                                             ) as List)
                                                 .map<String>(

@@ -2206,7 +2206,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            FFAppState().department.toString(),
+                            FFAppState().departments.toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

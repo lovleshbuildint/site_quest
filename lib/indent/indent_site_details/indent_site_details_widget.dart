@@ -624,7 +624,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            FFAppState().SiteType.toString(),
+                            'Site Type',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -654,7 +654,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.sitetypeValueController ??=
-                                    FormFieldController<String>(null),
+                                    FormFieldController<String>(
+                                  _model.sitetypeValue ??= getJsonField(
+                                    FFAppState().SiteType,
+                                    r'''$[0].SiteTypeName''',
+                                  ).toString(),
+                                ),
                                 options: (getJsonField(
                                   FFAppState().SiteType,
                                   r'''$..SiteTypeName''',
@@ -740,14 +745,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     _model.cashdevicetypeValueController ??=
                                         FormFieldController<String>(
                                   _model.cashdevicetypeValue ??= getJsonField(
-                                    cashdevicetypeGetCashDeviceApiResponse
-                                        .jsonBody,
+                                    FFAppState().CashDeviceType,
                                     r'''$[0].CashDeviceType''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  cashdevicetypeGetCashDeviceApiResponse
-                                      .jsonBody,
+                                  FFAppState().CashDeviceType,
                                   r'''$..CashDeviceType''',
                                   true,
                                 ) as List)

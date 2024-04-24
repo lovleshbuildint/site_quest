@@ -43,7 +43,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(rbi)'),
                   content: Text((_model.rbiresponse?.bodyText ?? '')),
                   actions: [
                     TextButton(
@@ -72,7 +72,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(getsitetype)'),
                   content: Text(
                       (_model.getsitetypeforsiteevaluationresponse?.bodyText ??
                           '')),
@@ -101,7 +101,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(get cashdevice)'),
                   content: Text((_model.getcashdeviceapi?.bodyText ?? '')),
                   actions: [
                     TextButton(
@@ -129,7 +129,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(getprojecttype)'),
                   content: Text((_model.getProjecTypeResponse?.bodyText ?? '')),
                   actions: [
                     TextButton(
@@ -160,7 +160,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(getcashdevicemovementcat)'),
                   content: Text(
                       (_model.getCashDeviceMovementCategoryResponse?.bodyText ??
                           '')),
@@ -190,7 +190,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(get shoptypesite)'),
                   content:
                       Text((_model.getShopTypeSiteResponse?.bodyText ?? '')),
                   actions: [
@@ -217,7 +217,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert((straegtyresponse)'),
                   content: Text((_model.straegtyResponse?.bodyText ?? '')),
                   actions: [
                     TextButton(
@@ -244,7 +244,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(stateresponse)'),
                   content: Text((_model.stateResponse?.bodyText ?? '')),
                   actions: [
                     TextButton(
@@ -270,7 +270,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(circle)'),
                   content: Text((_model.circelResponse?.bodyText ?? '')),
                   actions: [
                     TextButton(
@@ -297,8 +297,111 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Alert'),
+                  title: Text('Alert(masterresponse)'),
                   content: Text((_model.masterResponse?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
+          _model.tisResponse = await SqGroup.tisCall.call(
+            token: FFAppState().Token,
+          );
+          if ((_model.tisResponse?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().TISType = (_model.tisResponse?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(tisresponse)'),
+                  content: Text((_model.tisResponse?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
+          _model.poiType = await SqGroup.getPOITypeForSiteEvaluationCall.call(
+            token: FFAppState().Token,
+          );
+          if ((_model.poiType?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().POIList = (_model.poiType?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(Poilist)'),
+                  content: Text((_model.poiType?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
+          _model.districtApiResponse = await SqGroup.districtAPisCall.call(
+            istate: FFAppState().istate,
+            token: FFAppState().Token,
+          );
+          if ((_model.districtApiResponse?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().District =
+                  (_model.districtApiResponse?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(District)'),
+                  content: Text((_model.districtApiResponse?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
+          _model.sitevisited = await SqGroup.sitevistedCall.call();
+          if ((_model.sitevisited?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().SiteVisitedBy = (_model.sitevisited?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(sitevisted)'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),

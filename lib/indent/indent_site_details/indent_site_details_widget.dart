@@ -1746,7 +1746,15 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               _model.dropDownValue2 ??=
                                                   FFAppState().State,
                                             ),
-                                            options: FFAppState().Stateapi,
+                                            options: (getJsonField(
+                                              dropDownStateListResponse
+                                                  .jsonBody,
+                                              r'''$.States..State''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue2 = val),
                                             width: MediaQuery.sizeOf(context)

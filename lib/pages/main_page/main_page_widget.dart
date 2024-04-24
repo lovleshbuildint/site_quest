@@ -238,8 +238,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
           if ((_model.stateResponse?.succeeded ?? true)) {
             setState(() {
-              FFAppState().State =
-                  (_model.stateResponse?.jsonBody ?? '').toString();
+              FFAppState().Stateapi = (_model.stateResponse?.jsonBody ?? '');
             });
           } else {
             await showDialog(

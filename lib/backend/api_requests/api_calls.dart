@@ -79,6 +79,7 @@ class SqGroup {
   static ListSitesCall listSitesCall = ListSitesCall();
   static DistrictAPisCall districtAPisCall = DistrictAPisCall();
   static StatenewCall statenewCall = StatenewCall();
+  static RBInewCall rBInewCall = RBInewCall();
 }
 
 class DashboardCall {
@@ -1582,6 +1583,25 @@ class StatenewCall {
     return ApiManager.instance.makeApiCall(
       callName: 'STATENEW',
       apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class RBInewCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'RBInew',
+      apiUrl: '${SqGroup.baseUrl}/getRBICategory/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

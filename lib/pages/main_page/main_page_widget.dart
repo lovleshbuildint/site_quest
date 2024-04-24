@@ -33,7 +33,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.wait([
         Future(() async {
-          _model.rbiresponse = await SqGroup.rbiCall.call();
+          _model.rbiresponse = await SqGroup.rBInewCall.call();
           if ((_model.rbiresponse?.succeeded ?? true)) {
             setState(() {
               FFAppState().RBICategory = (_model.rbiresponse?.jsonBody ?? '');

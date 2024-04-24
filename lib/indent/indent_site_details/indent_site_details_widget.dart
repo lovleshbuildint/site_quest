@@ -2250,13 +2250,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
-                                options: (getJsonField(
-                                  FFAppState().departments,
-                                  r'''$..Department''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
+                                options: FFAppState().departments,
                                 onChanged: (val) async {
                                   setState(
                                       () => _model.sitevisitedbyValue = val);

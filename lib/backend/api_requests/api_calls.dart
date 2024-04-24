@@ -1566,7 +1566,9 @@ class DistrictAPisCall {
       apiUrl: '${SqGroup.baseUrl}/DistrictAPI/Token=${token}&istate=${istate}',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
+      params: {
+        'istate': istate,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

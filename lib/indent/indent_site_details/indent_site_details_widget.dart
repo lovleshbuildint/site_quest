@@ -1633,12 +1633,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .dropDownValueController1 ??=
                                                 FormFieldController<String>(
                                               _model.dropDownValue1 ??=
-                                                  getJsonField(
-                                                FFAppState().District,
-                                                r'''$.District[0].DistrictName''',
-                                              ).toString(),
+                                                  FFAppState()
+                                                      .District
+                                                      .toString(),
                                             ),
-                                            options: FFAppState().District,
+                                            options: (getJsonField(
+                                              FFAppState().District,
+                                              r'''$.District..DistrictName''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
                                             width: MediaQuery.sizeOf(context)

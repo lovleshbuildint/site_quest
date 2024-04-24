@@ -431,8 +431,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.deptwiseuserapi?.succeeded ?? true)) {
             setState(() {
               FFAppState().departmentswiseuser =
-                  FFAppState().departmentswiseuser;
-              FFAppState().department =
                   (_model.deptwiseuserapi?.jsonBody ?? '');
             });
           } else {

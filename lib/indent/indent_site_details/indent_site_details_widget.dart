@@ -2220,58 +2220,81 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.sitevisitedbyValueController ??=
-                                FormFieldController<String>(
-                              _model.sitevisitedbyValue ??= getJsonField(
-                                FFAppState().visitedbydeptapi,
-                                r'''$[0].UserName''',
-                              ).toString(),
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
+                              token: FFAppState().Token,
                             ),
-                            options: (getJsonField(
-                              FFAppState().visitedbydeptapi,
-                              r'''$..UserName''',
-                              true,
-                            ) as List)
-                                .map<String>((s) => s.toString())
-                                .toList()!,
-                            onChanged: (val) async {
-                              setState(() => _model.sitevisitedbyValue = val);
-                              setState(() {
-                                _model.isiteddep = functions.checkIndexint(
-                                    FFAppState().departmentswiseuser,
-                                    _model.isiteddep?.toString(),
-                                    '-',
-                                    'Department',
-                                    'idepartment',
-                                    false);
-                              });
-                            },
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
-                                  letterSpacing: 0.0,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              final sitevisitedbyGetsitevisiteddbydeptAPIResponse =
+                                  snapshot.data!;
+                              return FlutterFlowDropDown<String>(
+                                controller:
+                                    _model.sitevisitedbyValueController ??=
+                                        FormFieldController<String>(
+                                  _model.sitevisitedbyValue ??= 'Manager',
                                 ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
-                            ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                                options: (getJsonField(
+                                  FFAppState().departmentswiseuser,
+                                  r'''$..UserName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!,
+                                onChanged: (val) async {
+                                  setState(
+                                      () => _model.sitevisitedbyValue = val);
+                                  setState(() {
+                                    _model.isiteddep = functions.checkIndexint(
+                                        sitevisitedbyGetsitevisiteddbydeptAPIResponse
+                                            .jsonBody,
+                                        _model.isiteddep?.toString(),
+                                        '-',
+                                        'Department',
+                                        'idepartment',
+                                        false);
+                                  });
+                                },
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 50.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                      letterSpacing: 0.0,
+                                    ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: Color(0xFFE1E2E6),
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor: Color(0xFFE1E2E6),
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              );
+                            },
                           ),
                         ),
                         Padding(

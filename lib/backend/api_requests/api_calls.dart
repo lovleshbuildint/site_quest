@@ -33,7 +33,6 @@ class SqGroup {
   static StaregtyCall staregtyCall = StaregtyCall();
   static RbiCall rbiCall = RbiCall();
   static CityCall cityCall = CityCall();
-  static StatesCall statesCall = StatesCall();
   static CircleCall circleCall = CircleCall();
   static MasterCall masterCall = MasterCall();
   static TisCall tisCall = TisCall();
@@ -605,25 +604,6 @@ class CityCall {
   }
 }
 
-class StatesCall {
-  Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'states',
-      apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
 class CircleCall {
   Future<ApiCallResponse> call({
     String? token = '',
@@ -645,16 +625,13 @@ class CircleCall {
 
 class MasterCall {
   Future<ApiCallResponse> call({
-    String? state = '',
     String? token = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'master',
-      apiUrl: '${SqGroup.baseUrl}/getMasters/Token=${token}/state=${state}',
+      apiUrl: '${SqGroup.baseUrl}/getMasters/Token=${token}&State=0',
       callType: ApiCallType.GET,
-      headers: {
-        'state': '${state}',
-      },
+      headers: {},
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1587,7 +1564,9 @@ class DistrictAPisCall {
       apiUrl: '${SqGroup.baseUrl}/DistrictAPI/Token=${token}/istate=${istate}',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
+      params: {
+        'istate': istate,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

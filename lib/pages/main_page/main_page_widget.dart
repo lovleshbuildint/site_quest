@@ -231,7 +231,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.stateResponse = await SqGroup.statesCall.call(
+          _model.stateResponse = await SqGroup.stateListCall.call(
             token: FFAppState().State,
           );
           if ((_model.stateResponse?.succeeded ?? true)) {
@@ -285,7 +285,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         }),
         Future(() async {
           _model.masterResponse = await SqGroup.masterCall.call(
-            state: FFAppState().State,
             token: FFAppState().Token,
           );
           if ((_model.masterResponse?.succeeded ?? true)) {
@@ -402,6 +401,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               builder: (alertDialogContext) {
                 return AlertDialog(
                   title: Text('Alert(sitevisted)'),
+                  content: Text((_model.sitevisited?.bodyText ?? '')),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),

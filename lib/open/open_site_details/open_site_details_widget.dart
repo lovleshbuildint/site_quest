@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -327,70 +328,45 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getCustomerBankCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.dropDownValueController1 ??=
+                                FormFieldController<String>(
+                              _model.dropDownValue1 ??=
+                                  'Abhyudaya Cooperative Bank Ltd',
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetCustomerBankResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController1 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue1 ??= getJsonField(
-                                    dropDownGetCustomerBankResponse.jsonBody,
-                                    r'''$.CustomerBanks[0].Name''',
-                                  ).toString(),
+                            options: (getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.CustomerBank''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) =>
+                                setState(() => _model.dropDownValue1 = val),
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
-                                options: (getJsonField(
-                                  dropDownGetCustomerBankResponse.jsonBody,
-                                  r'''$.CustomerBanks..Name''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue1 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: Colors.white,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
-                            },
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: Colors.white,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -411,74 +387,58 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future:
-                                SqGroup.getSiteTypeForSiteEvaluationCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.sitetypeValueController ??=
+                                FormFieldController<String>(
+                              _model.sitetypeValue ??= getJsonField(
+                                FFAppState().SiteType,
+                                r'''$[0].SiteTypeName''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetSiteTypeForSiteEvaluationResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController2 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue2 ??= getJsonField(
-                                    dropDownGetSiteTypeForSiteEvaluationResponse
-                                        .jsonBody,
-                                    r'''$[0].SiteTypeName''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
-                                  dropDownGetSiteTypeForSiteEvaluationResponse
-                                      .jsonBody,
-                                  r'''$..SiteTypeName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue2 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                            options: (getJsonField(
+                              FFAppState().SiteType,
+                              r'''$..SiteTypeName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(() => _model.sitetypeValue = val);
+                              setState(() {
+                                _model.isitetypes = functions.checkIndexint(
+                                    FFAppState().SiteType,
+                                    _model.sitetypeValue,
+                                    '-',
+                                    'SiteTypeName',
+                                    'iSiteType',
+                                    false);
+                              });
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -499,71 +459,59 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getCashDeviceApiCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.cashDeviceValueController ??=
+                                FormFieldController<String>(
+                              _model.cashDeviceValue ??= getJsonField(
+                                FFAppState().CashDeviceType,
+                                r'''$[0].CashDeviceType''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetCashDeviceApiResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController3 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue3 ??= getJsonField(
-                                    dropDownGetCashDeviceApiResponse.jsonBody,
-                                    r'''$[0].CashDeviceType''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
-                                  dropDownGetCashDeviceApiResponse.jsonBody,
-                                  r'''$..CashDeviceType''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue3 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                            options: (getJsonField(
+                              FFAppState().CashDeviceType,
+                              r'''$..CashDeviceType''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(() => _model.cashDeviceValue = val);
+                              setState(() {
+                                _model.icashdevicetypes =
+                                    functions.checkIndexint(
+                                        FFAppState().CashDeviceType,
+                                        _model.cashDeviceValue,
+                                        '-',
+                                        'CashDeviceType',
+                                        'iCashDeviceType',
+                                        false);
+                              });
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -584,75 +532,62 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup
-                                .getCashDeviceMovementCategoryForSiteEvaluationCall
-                                .call(
-                              token: FFAppState().Token,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController4 ??=
+                          child: FlutterFlowDropDown<String>(
+                            controller:
+                                _model.cashDeviceMovementValueController ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue4 ??= getJsonField(
-                                    dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse
-                                        .jsonBody,
-                                    r'''$[0].CashDeviceMovementCategory''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
-                                  dropDownGetCashDeviceMovementCategoryForSiteEvaluationResponse
-                                      .jsonBody,
-                                  r'''$..CashDeviceMovementCategory''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue4 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                              _model.cashDeviceMovementValue ??= getJsonField(
+                                FFAppState().CashDeviceMovementCategory,
+                                r'''$[0].CashDeviceMovementCategory''',
+                              ).toString(),
+                            ),
+                            options: (getJsonField(
+                              FFAppState().CashDeviceMovementCategory,
+                              r'''$..CashDeviceMovementCategory''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(
+                                  () => _model.cashDeviceMovementValue = val);
+                              setState(() {
+                                _model.ichasdevicemovementcategorys =
+                                    functions.checkIndexint(
+                                        FFAppState().CashDeviceMovementCategory,
+                                        _model.ichasdevicemovementcategorys
+                                            ?.toString(),
+                                        '-',
+                                        'CashDeviceMovementCategory',
+                                        'iCashDeviceMovementCategory',
+                                        false);
+                              });
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -673,70 +608,58 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.tisCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.tisTypeValueController ??=
+                                FormFieldController<String>(
+                              _model.tisTypeValue ??= getJsonField(
+                                FFAppState().TISType,
+                                r'''$[0].TISTypeName''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownTisResponse = snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController5 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue5 ??= getJsonField(
-                                    dropDownTisResponse.jsonBody,
-                                    r'''$[0].TISTypeName''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
-                                  dropDownTisResponse.jsonBody,
-                                  r'''$..TISTypeName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue5 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                            options: (getJsonField(
+                              FFAppState().TISType,
+                              r'''$..TISTypeName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(() => _model.tisTypeValue = val);
+                              setState(() {
+                                _model.iTisTypes = functions.checkIndexint(
+                                    FFAppState().TISType,
+                                    _model.iTisTypes?.toString(),
+                                    '-',
+                                    'CashDeviceMovementCategory',
+                                    'iCashDeviceMovementCategory',
+                                    false);
+                              });
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -757,71 +680,58 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getProjectTypeCall.call(
-                              icust: 0,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.projectTypeValueController ??=
+                                FormFieldController<String>(
+                              _model.projectTypeValue ??= getJsonField(
+                                FFAppState().ProjectType,
+                                r'''$[0].ProjectTypeName''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetProjectTypeResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController6 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue6 ??= getJsonField(
-                                    dropDownGetProjectTypeResponse.jsonBody,
-                                    r'''$[0].ProjectTypeName''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
-                                  dropDownGetProjectTypeResponse.jsonBody,
-                                  r'''$..ProjectTypeName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue6 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                            options: (getJsonField(
+                              FFAppState().ProjectType,
+                              r'''$..ProjectTypeName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(() => _model.projectTypeValue = val);
+                              setState(() {
+                                _model.iprojecttypes = functions.checkIndexint(
+                                    FFAppState().ProjectType,
+                                    _model.iprojecttypes?.toString(),
+                                    '-',
+                                    'ProjectTypeName',
+                                    'iProjType',
+                                    false);
+                              });
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -842,70 +752,57 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getShopTypeSiteCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.businessTypeValueController ??=
+                                FormFieldController<String>(
+                              _model.businessTypeValue ??= getJsonField(
+                                FFAppState().BusinessType,
+                                r'''$[0].ShopTypeName''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetShopTypeSiteResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController7 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue7 ??= getJsonField(
-                                    dropDownGetShopTypeSiteResponse.jsonBody,
-                                    r'''$[0].ShopTypeName''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
-                                  dropDownGetShopTypeSiteResponse.jsonBody,
-                                  r'''$..ShopTypeName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue7 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: Colors.white,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                            options: (getJsonField(
+                              FFAppState().BusinessType,
+                              r'''$..ShopTypeName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(() => _model.businessTypeValue = val);
+                              setState(() {
+                                _model.ishoptypes = functions.checkIndexint(
+                                    FFAppState().BusinessType,
+                                    _model.ishoptypes?.toString(),
+                                    '-',
+                                    'ShopTypeName',
+                                    'iShopType',
+                                    false);
+                              });
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: Colors.white,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -926,71 +823,48 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.staregtyCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller:
+                                _model.strategyDropDwonValueController ??=
+                                    FormFieldController<String>(
+                              _model.strategyDropDwonValue ??= getJsonField(
+                                FFAppState().Strategy,
+                                r'''$.Strategies[0].Strategy''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final strategyDropDwonStaregtyResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.strategyDropDwonValueController ??=
-                                        FormFieldController<String>(
-                                  _model.strategyDropDwonValue ??= getJsonField(
-                                    strategyDropDwonStaregtyResponse.jsonBody,
-                                    r'''$.Strategies[0].Strategy''',
-                                  ).toString(),
+                            options: (getJsonField(
+                              FFAppState().Strategy,
+                              r'''$.Strategies..Strategy''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) => setState(
+                                () => _model.strategyDropDwonValue = val),
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
-                                options: (getJsonField(
-                                  strategyDropDwonStaregtyResponse.jsonBody,
-                                  r'''$.Strategies..Strategy''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.strategyDropDwonValue = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: Colors.white,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
-                            },
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: Colors.white,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         if (_model.strategyDropDwonValue == 'POI')
@@ -1013,76 +887,48 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
-                            child: FutureBuilder<ApiCallResponse>(
-                              future:
-                                  SqGroup.getPOITypeForSiteEvaluationCall.call(
-                                token: FFAppState().Token,
+                            child: FlutterFlowDropDown<String>(
+                              controller: _model.pOIListValueController ??=
+                                  FormFieldController<String>(
+                                _model.pOIListValue ??= getJsonField(
+                                  FFAppState().POIList,
+                                  r'''$[0].poiTypeName''',
+                                ).toString(),
                               ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }
-                                final dropDownGetPOITypeForSiteEvaluationResponse =
-                                    snapshot.data!;
-                                return FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropDownValueController8 ??=
-                                          FormFieldController<String>(
-                                    _model.dropDownValue8 ??= getJsonField(
-                                      dropDownGetPOITypeForSiteEvaluationResponse
-                                          .jsonBody,
-                                      r'''$[2].poiTypeName''',
-                                    ).toString(),
+                              options: (getJsonField(
+                                FFAppState().POIList,
+                                r'''$..poiTypeName''',
+                                true,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()!,
+                              onChanged: (val) =>
+                                  setState(() => _model.pOIListValue = val),
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
                                   ),
-                                  options: (getJsonField(
-                                    dropDownGetPOITypeForSiteEvaluationResponse
-                                        .jsonBody,
-                                    r'''$..poiTypeName''',
-                                    true,
-                                  ) as List)
-                                      .map<String>((s) => s.toString())
-                                      .toList()!,
-                                  onChanged: (val) => setState(
-                                      () => _model.dropDownValue8 = val),
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height: 50.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.black,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: Color(0xFFE1E2E6),
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Color(0xFFE1E2E6),
-                                  borderWidth: 2.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 4.0, 16.0, 4.0),
-                                  hidesUnderline: true,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                );
-                              },
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color: Color(0xFFE1E2E6),
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              elevation: 2.0,
+                              borderColor: Color(0xFFE1E2E6),
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isSearchable: false,
+                              isMultiSelect: false,
                             ),
                           ),
                         Padding(
@@ -1338,101 +1184,68 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.stateListCall.call(
-                                          token: FFAppState().Token,
-                                        ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                          }
-                                          final dropDownStateListResponse =
-                                              snapshot.data!;
-                                          return FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropDownValueController9 ??=
+                                      child: FlutterFlowDropDown<String>(
+                                        controller:
+                                            _model.dropDownValueController2 ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue9 ??=
-                                                  getJsonField(
-                                                dropDownStateListResponse
-                                                    .jsonBody,
-                                                r'''$.States[0].State''',
-                                              ).toString(),
-                                            ),
-                                            options: (getJsonField(
-                                              dropDownStateListResponse
-                                                  .jsonBody,
-                                              r'''$.States..State''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue9 = val),
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
+                                          _model.dropDownValue2 ??=
+                                              getJsonField(
+                                            FFAppState().master,
+                                            r'''$.states[0].State''',
+                                          ).toString(),
+                                        ),
+                                        options: (getJsonField(
+                                          FFAppState().master,
+                                          r'''$.states..State''',
+                                          true,
+                                        ) as List)
+                                            .map<String>((s) => s.toString())
+                                            .toList()!,
+                                        onChanged: (val) => setState(
+                                            () => _model.dropDownValue2 = val),
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
                                                 1.0,
-                                            height: 50.0,
-                                            searchHintTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      fontSize: 10.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w300,
-                                                    ),
-                                            searchTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: Colors.black,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            searchHintText: 'Search Bank...',
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color: Color(0xFFE1E2E6),
-                                              size: 24.0,
+                                        height: 50.0,
+                                        searchHintTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w300,
+                                                ),
+                                        searchTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.black,
+                                              letterSpacing: 0.0,
                                             ),
-                                            fillColor: Colors.white,
-                                            elevation: 2.0,
-                                            borderColor: Color(0xFFE1E2E6),
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 4.0, 16.0, 4.0),
-                                            hidesUnderline: true,
-                                            isSearchable: true,
-                                            isMultiSelect: false,
-                                          );
-                                        },
+                                        searchHintText: 'Search Bank...',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: Color(0xFFE1E2E6),
+                                          size: 24.0,
+                                        ),
+                                        fillColor: Colors.white,
+                                        elevation: 2.0,
+                                        borderColor: Color(0xFFE1E2E6),
+                                        borderWidth: 2.0,
+                                        borderRadius: 8.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 16.0, 4.0),
+                                        hidesUnderline: true,
+                                        isSearchable: true,
+                                        isMultiSelect: false,
                                       ),
                                     ),
                                   ],
@@ -1465,96 +1278,66 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
-                                      child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.cityCall.call(
-                                          token: FFAppState().Token,
-                                        ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                          }
-                                          final dropDownCityResponse =
-                                              snapshot.data!;
-                                          return FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropDownValueController10 ??=
+                                      child: FlutterFlowDropDown<String>(
+                                        controller:
+                                            _model.dropDownValueController3 ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue10 ??=
-                                                  getJsonField(
-                                                dropDownCityResponse.jsonBody,
-                                                r'''$.Cities[0].City''',
-                                              ).toString(),
-                                            ),
-                                            options: (getJsonField(
-                                              dropDownCityResponse.jsonBody,
-                                              r'''$.Cities..City''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue10 = val),
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
+                                          _model.dropDownValue3 ??=
+                                              getJsonField(
+                                            FFAppState().master,
+                                            r'''$.cities[0].City''',
+                                          ).toString(),
+                                        ),
+                                        options: (getJsonField(
+                                          FFAppState().master,
+                                          r'''$.cities..City''',
+                                          true,
+                                        ) as List)
+                                            .map<String>((s) => s.toString())
+                                            .toList()!,
+                                        onChanged: (val) => setState(
+                                            () => _model.dropDownValue3 = val),
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
                                                 1.0,
-                                            height: 50.0,
-                                            searchHintTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            searchTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: Colors.black,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            searchHintText: 'Search City...',
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color: Color(0xFFE1E2E6),
-                                              size: 24.0,
+                                        height: 50.0,
+                                        searchHintTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        searchTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.black,
+                                              letterSpacing: 0.0,
                                             ),
-                                            fillColor: Colors.white,
-                                            elevation: 2.0,
-                                            borderColor: Color(0xFFE1E2E6),
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 4.0, 16.0, 4.0),
-                                            hidesUnderline: true,
-                                            isSearchable: true,
-                                            isMultiSelect: false,
-                                          );
-                                        },
+                                        searchHintText: 'Search City...',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: Color(0xFFE1E2E6),
+                                          size: 24.0,
+                                        ),
+                                        fillColor: Colors.white,
+                                        elevation: 2.0,
+                                        borderColor: Color(0xFFE1E2E6),
+                                        borderWidth: 2.0,
+                                        borderRadius: 8.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 16.0, 4.0),
+                                        hidesUnderline: true,
+                                        isSearchable: true,
+                                        isMultiSelect: false,
                                       ),
                                     ),
                                   ],
@@ -1589,97 +1372,64 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
-                                    child: FutureBuilder<ApiCallResponse>(
-                                      future: SqGroup.districtAPisCall.call(
-                                        istate: FFAppState().istate,
-                                        token: FFAppState().Token,
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        final dropDownDistrictAPisResponse =
-                                            snapshot.data!;
-                                        return FlutterFlowDropDown<String>(
-                                          controller: _model
-                                                  .dropDownValueController11 ??=
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropDownValueController4 ??=
                                               FormFieldController<String>(
-                                            _model.dropDownValue11 ??=
-                                                getJsonField(
-                                              dropDownDistrictAPisResponse
-                                                  .jsonBody,
-                                              r'''$.District[0].DistrictName''',
-                                            ).toString(),
+                                        _model.dropDownValue4 ??= getJsonField(
+                                          FFAppState().District,
+                                          r'''$.District[0].DistrictName''',
+                                        ).toString(),
+                                      ),
+                                      options: (getJsonField(
+                                        FFAppState().District,
+                                        r'''$.District..DistrictName''',
+                                        true,
+                                      ) as List)
+                                          .map<String>((s) => s.toString())
+                                          .toList()!,
+                                      onChanged: (val) => setState(
+                                          () => _model.dropDownValue4 = val),
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      height: 50.0,
+                                      searchHintTextStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
+                                      searchTextStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.black,
+                                            letterSpacing: 0.0,
                                           ),
-                                          options: (getJsonField(
-                                            dropDownDistrictAPisResponse
-                                                .jsonBody,
-                                            r'''$.District..DistrictName''',
-                                            true,
-                                          ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
-                                          onChanged: (val) => setState(() =>
-                                              _model.dropDownValue11 = val),
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: 50.0,
-                                          searchHintTextStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          searchTextStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.black,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          searchHintText: 'Search district...',
-                                          icon: Icon(
-                                            Icons.keyboard_arrow_down_rounded,
-                                            color: Color(0xFFE1E2E6),
-                                            size: 24.0,
-                                          ),
-                                          fillColor: Colors.white,
-                                          elevation: 2.0,
-                                          borderColor: Color(0xFFE1E2E6),
-                                          borderWidth: 2.0,
-                                          borderRadius: 8.0,
-                                          margin:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 16.0, 4.0),
-                                          hidesUnderline: true,
-                                          isSearchable: true,
-                                          isMultiSelect: false,
-                                        );
-                                      },
+                                      searchHintText: 'Search district...',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: Color(0xFFE1E2E6),
+                                        size: 24.0,
+                                      ),
+                                      fillColor: Colors.white,
+                                      elevation: 2.0,
+                                      borderColor: Color(0xFFE1E2E6),
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 16.0, 4.0),
+                                      hidesUnderline: true,
+                                      isSearchable: true,
+                                      isMultiSelect: false,
                                     ),
                                   ),
                                 ],
@@ -1803,69 +1553,47 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.circleCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.circleValueController ??=
+                                FormFieldController<String>(
+                              _model.circleValue ??= getJsonField(
+                                FFAppState().Circle,
+                                r'''$.Circles_app1[0].CircleName''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownCircleResponse = snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController12 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue12 ??= getJsonField(
-                                    dropDownCircleResponse.jsonBody,
-                                    r'''$[0].CircleName''',
-                                  ).toString(),
+                            options: (getJsonField(
+                              FFAppState().Circle,
+                              r'''$.Circles_app1..CircleName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) =>
+                                setState(() => _model.circleValue = val),
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
-                                options: (getJsonField(
-                                  dropDownCircleResponse.jsonBody,
-                                  r'''$..CircleName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.dropDownValue12 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: Colors.white,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
-                            },
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: Colors.white,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -1960,69 +1688,47 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.rbiCall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.rBICategoryValueController ??=
+                                FormFieldController<String>(
+                              _model.rBICategoryValue ??= getJsonField(
+                                FFAppState().RBICategory,
+                                r'''$.RBICategories[0].Name''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownRbiResponse = snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController13 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue13 ??= getJsonField(
-                                    dropDownRbiResponse.jsonBody,
-                                    r'''$[0].Name''',
-                                  ).toString(),
+                            options: (getJsonField(
+                              FFAppState().RBICategory,
+                              r'''$.RBICategories..Name''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) =>
+                                setState(() => _model.rBICategoryValue = val),
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
                                 ),
-                                options: (getJsonField(
-                                  dropDownRbiResponse.jsonBody,
-                                  r'''$..Name''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.dropDownValue13 = val),
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: Colors.white,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
-                            },
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: Colors.white,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Row(
@@ -2056,13 +1762,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController14 ??=
+                                            _model.dropDownValueController5 ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue14 ??= 'HPY',
+                                          _model.dropDownValue5 ??= 'HPY',
                                         ),
                                         options: ['HPY'],
                                         onChanged: (val) => setState(
-                                            () => _model.dropDownValue14 = val),
+                                            () => _model.dropDownValue5 = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -2123,13 +1829,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController15 ??=
+                                            _model.dropDownValueController6 ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue15 ??= 'Onsite',
+                                          _model.dropDownValue6 ??= 'Onsite',
                                         ),
                                         options: ['Onsite', 'Offsite'],
                                         onChanged: (val) => setState(
-                                            () => _model.dropDownValue15 = val),
+                                            () => _model.dropDownValue6 = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -2183,13 +1889,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController16 ??=
+                            controller: _model.dropDownValueController7 ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue16 ??= 'Yes',
+                              _model.dropDownValue7 ??= 'Yes',
                             ),
                             options: ['Yes', 'No'],
                             onChanged: (val) =>
-                                setState(() => _model.dropDownValue16 = val),
+                                setState(() => _model.dropDownValue7 = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2257,24 +1963,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               final dropDownGetsitevisiteddbydeptAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController17 ??=
+                                controller: _model.dropDownValueController8 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue17 ??= getJsonField(
-                                    dropDownGetsitevisiteddbydeptAPIResponse
-                                        .jsonBody,
+                                  _model.dropDownValue8 ??= getJsonField(
+                                    FFAppState().departmentswiseuser,
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetsitevisiteddbydeptAPIResponse
-                                      .jsonBody,
+                                  FFAppState().visitedbydeptapi,
                                   r'''$..Department''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.dropDownValue17 = val),
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue8 = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2345,24 +2049,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               final dropDownGetDepartmentWiseUserAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController18 ??=
+                                controller: _model.dropDownValueController9 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue18 ??= getJsonField(
-                                    dropDownGetDepartmentWiseUserAPIResponse
-                                        .jsonBody,
+                                  _model.dropDownValue9 ??= getJsonField(
+                                    FFAppState().departmentswiseuser,
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetDepartmentWiseUserAPIResponse
-                                      .jsonBody,
+                                  FFAppState().departmentswiseuser,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.dropDownValue18 = val),
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue9 = val),
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2435,24 +2137,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               final dropDownGetSecondSiteVisitersResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController19 ??=
+                                controller: _model.dropDownValueController10 ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue19 ??= getJsonField(
-                                    dropDownGetSecondSiteVisitersResponse
-                                        .jsonBody,
+                                  _model.dropDownValue10 ??= getJsonField(
+                                    FFAppState().SecondSiteVisitedBY,
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetSecondSiteVisitersResponse
-                                      .jsonBody,
+                                  FFAppState().SecondSiteVisitedBY,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) => setState(
-                                    () => _model.dropDownValue19 = val),
+                                    () => _model.dropDownValue10 = val),
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)

@@ -2247,12 +2247,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     _model.sitevisitedbyValueController ??=
                                         FormFieldController<String>(
                                   _model.sitevisitedbyValue ??= getJsonField(
-                                    FFAppState().departmentswiseuser,
+                                    FFAppState().visitedbydeptapi,
                                     r'''$[0].Department''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().departmentswiseuser,
+                                  FFAppState().visitedbydeptapi,
                                   r'''$..Department''',
                                   true,
                                 ) as List)

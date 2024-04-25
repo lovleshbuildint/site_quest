@@ -2026,75 +2026,49 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getDepartmentWiseUserAPICall.call(
-                              department: FFAppState().department.toString(),
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.dropDownValueController9 ??=
+                                FormFieldController<String>(
+                              _model.dropDownValue9 ??= getJsonField(
+                                FFAppState().departmentswiseuser,
+                                r'''$[0].UserName''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final dropDownGetDepartmentWiseUserAPIResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController9 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue9 ??= getJsonField(
-                                    FFAppState().departmentswiseuser,
-                                    r'''$[0].UserName''',
-                                  ).toString(),
+                            options: (getJsonField(
+                              FFAppState().departmentswiseuser,
+                              r'''$..UserName''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) =>
+                                setState(() => _model.dropDownValue9 = val),
+                            width: 300.0,
+                            height: 56.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
                                 ),
-                                options: (getJsonField(
-                                  FFAppState().departmentswiseuser,
-                                  r'''$..UserName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue9 = val),
-                                width: 300.0,
-                                height: 56.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Please select...',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isOverButton: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
-                            },
+                            hintText: 'Please select...',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: FlutterFlowTheme.of(context).alternate,
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isOverButton: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(

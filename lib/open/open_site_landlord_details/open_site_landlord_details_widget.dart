@@ -41,8 +41,6 @@ class _OpenSiteLandlordDetailsWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -351,12 +349,7 @@ class _OpenSiteLandlordDetailsWidgetState
                         onPressed: () async {
                           var _shouldSetState = false;
                           _model.apiResultwtn =
-                              await SqGroup.updateDOADetailssecondCall.call(
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                          );
+                              await SqGroup.updateDOADetailssecondCall.call();
                           _shouldSetState = true;
                           if ((_model.apiResultwtn?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

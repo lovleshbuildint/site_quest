@@ -465,6 +465,12 @@ class FFAppState extends ChangeNotifier {
   set visitedbydeptapi(dynamic _value) {
     _visitedbydeptapi = _value;
   }
+
+  dynamic _Listsite;
+  dynamic get Listsite => _Listsite;
+  set Listsite(dynamic _value) {
+    _Listsite = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

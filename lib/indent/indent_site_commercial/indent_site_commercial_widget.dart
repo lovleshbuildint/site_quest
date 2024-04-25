@@ -537,10 +537,10 @@ class _IndentSiteCommercialWidgetState
                           var _shouldSetState = false;
                           _model.apiResult14k =
                               await SqGroup.updateDOADetailsthreeCall.call(
-                            indentId: getJsonField(
+                            iIndent: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
-                            ).toString(),
+                            ),
                           );
                           _shouldSetState = true;
                           if ((_model.apiResult14k?.succeeded ?? true)) {

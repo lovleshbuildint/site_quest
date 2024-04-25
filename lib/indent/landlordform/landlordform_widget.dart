@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,64 +35,64 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     super.initState();
     _model = createModel(context, () => LandlordformModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.landoardNameTextController ??= TextEditingController();
+    _model.landoardNameFocusNode ??= FocusNode();
 
     _model.percentTextController ??= TextEditingController();
     _model.percentFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController(
+    _model.addressTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Address''',
     ).toString().toString());
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.addressFocusNode ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.textFieldFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController(
+    _model.pincodeTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Pincode''',
     ).toString().toString());
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.pincodeFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.landmarksTextController ??= TextEditingController();
+    _model.landmarksFocusNode ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.contactNameTextController ??= TextEditingController();
+    _model.contactNameFocusNode ??= FocusNode();
 
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
+    _model.alernativenumberTextController ??= TextEditingController();
+    _model.alernativenumberFocusNode ??= FocusNode();
 
-    _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.faxTextController ??= TextEditingController();
+    _model.faxFocusNode ??= FocusNode();
 
     _model.chequefieldTextController ??= TextEditingController();
     _model.chequefieldFocusNode ??= FocusNode();
 
-    _model.textController11 ??= TextEditingController();
-    _model.textFieldFocusNode9 ??= FocusNode();
+    _model.bankAccountNumberTextController ??= TextEditingController();
+    _model.bankAccountNumberFocusNode ??= FocusNode();
 
-    _model.textController12 ??= TextEditingController();
-    _model.textFieldFocusNode10 ??= FocusNode();
+    _model.bankBranchTextController ??= TextEditingController();
+    _model.bankBranchFocusNode ??= FocusNode();
 
-    _model.textController13 ??= TextEditingController();
-    _model.textFieldFocusNode11 ??= FocusNode();
+    _model.iFSCCodeTextController ??= TextEditingController();
+    _model.iFSCCodeFocusNode ??= FocusNode();
 
-    _model.textController14 ??= TextEditingController();
-    _model.textFieldFocusNode12 ??= FocusNode();
+    _model.panNumberTextController ??= TextEditingController();
+    _model.panNumberFocusNode ??= FocusNode();
 
-    _model.textController15 ??= TextEditingController();
-    _model.textFieldFocusNode13 ??= FocusNode();
+    _model.aAdharcardNoTextController ??= TextEditingController();
+    _model.aAdharcardNoFocusNode ??= FocusNode();
 
-    _model.textController16 ??= TextEditingController();
-    _model.textFieldFocusNode14 ??= FocusNode();
+    _model.siteReferralNameTextController ??= TextEditingController();
+    _model.siteReferralNameFocusNode ??= FocusNode();
 
-    _model.textController17 ??= TextEditingController();
-    _model.textFieldFocusNode15 ??= FocusNode();
+    _model.siteReferralNoTextController ??= TextEditingController();
+    _model.siteReferralNoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -125,8 +126,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController1,
-              focusNode: _model.textFieldFocusNode1,
+              controller: _model.landoardNameTextController,
+              focusNode: _model.landoardNameFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -172,7 +173,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController1Validator.asValidator(context),
+              validator: _model.landoardNameTextControllerValidator
+                  .asValidator(context),
             ),
           ),
           Padding(
@@ -256,8 +258,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController3,
-              focusNode: _model.textFieldFocusNode2,
+              controller: _model.addressTextController,
+              focusNode: _model.addressFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -303,7 +305,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController3Validator.asValidator(context),
+              validator:
+                  _model.addressTextControllerValidator.asValidator(context),
             ),
           ),
           Row(
@@ -334,9 +337,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController1 ??=
+                          controller: _model.districtValueController ??=
                               FormFieldController<String>(
-                            _model.dropDownValue1 ??= getJsonField(
+                            _model.districtValue ??= getJsonField(
                               FFAppState().District,
                               r'''$[0].DistrictName''',
                             ).toString(),
@@ -348,8 +351,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           ) as List)
                               .map<String>((s) => s.toString())
                               .toList()!,
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue1 = val),
+                          onChanged: (val) async {
+                            setState(() => _model.districtValue = val);
+                            setState(() {
+                              _model.iDistrict = functions.checkIndexint(
+                                  FFAppState().District,
+                                  _model.iDistrict?.toString(),
+                                  'District',
+                                  'DistrictName',
+                                  'iDistrict',
+                                  false);
+                            });
+                          },
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 50.0,
                           searchHintTextStyle:
@@ -416,9 +429,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController2 ??=
+                          controller: _model.stateValueController ??=
                               FormFieldController<String>(
-                            _model.dropDownValue2 ??= getJsonField(
+                            _model.stateValue ??= getJsonField(
                               FFAppState().master,
                               r'''$[0].State''',
                             ).toString(),
@@ -430,8 +443,21 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           ) as List)
                               .map<String>((s) => s.toString())
                               .toList()!,
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue2 = val),
+                          onChanged: (val) async {
+                            setState(() => _model.stateValue = val);
+                            setState(() {
+                              _model.istate = functions.checkIndexint(
+                                  getJsonField(
+                                    FFAppState().master,
+                                    r'''$.states..State''',
+                                  ),
+                                  _model.istate?.toString(),
+                                  'states',
+                                  'State',
+                                  'iState',
+                                  false);
+                            });
+                          },
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 50.0,
                           searchHintTextStyle:
@@ -504,9 +530,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController3 ??=
+                          controller: _model.cityValueController ??=
                               FormFieldController<String>(
-                            _model.dropDownValue3 ??= getJsonField(
+                            _model.cityValue ??= getJsonField(
                               FFAppState().master,
                               r'''$[0].City''',
                             ).toString(),
@@ -518,8 +544,21 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           ) as List)
                               .map<String>((s) => s.toString())
                               .toList()!,
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue3 = val),
+                          onChanged: (val) async {
+                            setState(() => _model.cityValue = val);
+                            setState(() {
+                              _model.iCity = functions.checkIndexint(
+                                  getJsonField(
+                                    FFAppState().master,
+                                    r'''$.cities..City''',
+                                  ),
+                                  _model.iCity?.toString(),
+                                  'cities',
+                                  'City',
+                                  'iCity',
+                                  false);
+                            });
+                          },
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 50.0,
                           searchHintTextStyle:
@@ -558,13 +597,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           isMultiSelect: false,
                         ),
                       ),
-                      if (_model.dropDownValue3 == 'Other...')
+                      if (_model.cityValue == 'Other...')
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode3,
+                            focusNode: _model.textFieldFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -647,8 +686,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: TextFormField(
-                          controller: _model.textController5,
-                          focusNode: _model.textFieldFocusNode4,
+                          controller: _model.pincodeTextController,
+                          focusNode: _model.pincodeFocusNode,
                           autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
@@ -697,7 +736,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           keyboardType: TextInputType.number,
-                          validator: _model.textController5Validator
+                          validator: _model.pincodeTextControllerValidator
                               .asValidator(context),
                           inputFormatters: [
                             FilteringTextInputFormatter.allow(RegExp('[0-9]'))
@@ -725,8 +764,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController6,
-              focusNode: _model.textFieldFocusNode5,
+              controller: _model.landmarksTextController,
+              focusNode: _model.landmarksFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -772,7 +811,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController6Validator.asValidator(context),
+              validator:
+                  _model.landmarksTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -790,8 +830,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController7,
-              focusNode: _model.textFieldFocusNode6,
+              controller: _model.contactNameTextController,
+              focusNode: _model.contactNameFocusNode,
               autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
@@ -837,8 +877,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.textController7Validator.asValidator(context),
-              inputFormatters: [_model.textFieldMask6],
+              validator: _model.contactNameTextControllerValidator
+                  .asValidator(context),
+              inputFormatters: [_model.contactNameMask],
             ),
           ),
           Padding(
@@ -856,8 +897,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController8,
-              focusNode: _model.textFieldFocusNode7,
+              controller: _model.alernativenumberTextController,
+              focusNode: _model.alernativenumberFocusNode,
               autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
@@ -903,8 +944,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.textController8Validator.asValidator(context),
-              inputFormatters: [_model.textFieldMask7],
+              validator: _model.alernativenumberTextControllerValidator
+                  .asValidator(context),
+              inputFormatters: [_model.alernativenumberMask],
             ),
           ),
           Padding(
@@ -922,8 +964,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController9,
-              focusNode: _model.textFieldFocusNode8,
+              controller: _model.faxTextController,
+              focusNode: _model.faxFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -969,7 +1011,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController9Validator.asValidator(context),
+              validator: _model.faxTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -1005,24 +1047,24 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                   );
                 }
-                final dropDownGetIndentBankResponse = snapshot.data!;
+                final landlordBankNameGetIndentBankResponse = snapshot.data!;
                 return FlutterFlowDropDown<String>(
-                  controller: _model.dropDownValueController4 ??=
+                  controller: _model.landlordBankNameValueController ??=
                       FormFieldController<String>(
-                    _model.dropDownValue4 ??= getJsonField(
-                      dropDownGetIndentBankResponse.jsonBody,
+                    _model.landlordBankNameValue ??= getJsonField(
+                      landlordBankNameGetIndentBankResponse.jsonBody,
                       r'''$[0].Name''',
                     ).toString(),
                   ),
                   options: (getJsonField(
-                    dropDownGetIndentBankResponse.jsonBody,
+                    landlordBankNameGetIndentBankResponse.jsonBody,
                     r'''$..Name''',
                     true,
                   ) as List)
                       .map<String>((s) => s.toString())
                       .toList()!,
                   onChanged: (val) =>
-                      setState(() => _model.dropDownValue4 = val),
+                      setState(() => _model.landlordBankNameValue = val),
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
                   searchHintTextStyle:
@@ -1100,7 +1142,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             setState(() {
                               _model.chequefieldTextController?.text =
                                   valueOrDefault<String>(
-                                _model.textController1.text,
+                                _model.landoardNameTextController.text,
                                 'Name',
                               );
                             });
@@ -1206,8 +1248,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController11,
-              focusNode: _model.textFieldFocusNode9,
+              controller: _model.bankAccountNumberTextController,
+              focusNode: _model.bankAccountNumberFocusNode,
               autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
@@ -1253,7 +1295,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.textController11Validator.asValidator(context),
+              validator: _model.bankAccountNumberTextControllerValidator
+                  .asValidator(context),
             ),
           ),
           Padding(
@@ -1271,8 +1314,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController12,
-              focusNode: _model.textFieldFocusNode10,
+              controller: _model.bankBranchTextController,
+              focusNode: _model.bankBranchFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -1318,7 +1361,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController12Validator.asValidator(context),
+              validator:
+                  _model.bankBranchTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -1336,8 +1380,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController13,
-              focusNode: _model.textFieldFocusNode11,
+              controller: _model.iFSCCodeTextController,
+              focusNode: _model.iFSCCodeFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.characters,
               obscureText: false,
@@ -1383,7 +1427,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController13Validator.asValidator(context),
+              validator:
+                  _model.iFSCCodeTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -1401,8 +1446,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController14,
-              focusNode: _model.textFieldFocusNode12,
+              controller: _model.panNumberTextController,
+              focusNode: _model.panNumberFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.characters,
               obscureText: false,
@@ -1448,7 +1493,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController14Validator.asValidator(context),
+              validator:
+                  _model.panNumberTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -1715,8 +1761,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController15,
-              focusNode: _model.textFieldFocusNode13,
+              controller: _model.aAdharcardNoTextController,
+              focusNode: _model.aAdharcardNoFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.none,
               obscureText: false,
@@ -1763,7 +1809,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.textController15Validator.asValidator(context),
+              validator: _model.aAdharcardNoTextControllerValidator
+                  .asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -2033,8 +2080,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController16,
-              focusNode: _model.textFieldFocusNode14,
+              controller: _model.siteReferralNameTextController,
+              focusNode: _model.siteReferralNameFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.none,
               obscureText: false,
@@ -2081,7 +2128,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.textController16Validator.asValidator(context),
+              validator: _model.siteReferralNameTextControllerValidator
+                  .asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -2102,8 +2150,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 35.0),
             child: TextFormField(
-              controller: _model.textController17,
-              focusNode: _model.textFieldFocusNode15,
+              controller: _model.siteReferralNoTextController,
+              focusNode: _model.siteReferralNoFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.none,
               obscureText: false,
@@ -2150,7 +2198,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
-              validator: _model.textController17Validator.asValidator(context),
+              validator: _model.siteReferralNoTextControllerValidator
+                  .asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],

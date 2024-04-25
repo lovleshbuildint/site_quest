@@ -396,33 +396,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.sitevisited = await SqGroup.getSecondSiteVisitersCall.call(
-            token: FFAppState().Token,
-          );
-          if ((_model.sitevisited?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().SecondSiteVisitedBY =
-                  (_model.sitevisited?.jsonBody ?? '');
-            });
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('Alert(sitevisted)'),
-                  content: Text((_model.sitevisited?.bodyText ?? '')),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
-          }
-        }),
-        Future(() async {
           _model.deptwiseuserapi =
               await SqGroup.getDepartmentWiseUserAPICall.call(
             department: FFAppState().departmentswiseuser.toString(),
@@ -495,6 +468,33 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                   title: Text('Alert(department)'),
                   content: Text(
                       (_model.getsitevisitedbydeptapiresponse?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
+          _model.listsitesresponse = await SqGroup.listSitesCall.call(
+            token: FFAppState().Token,
+          );
+          if ((_model.listsitesresponse?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().Listsite =
+                  (_model.listsitesresponse?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(ListSite)'),
+                  content: Text((_model.listsitesresponse?.bodyText ?? '')),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),

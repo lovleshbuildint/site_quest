@@ -38,28 +38,28 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     ).toString().toString());
     _model.customerbankFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.locationNameTextController ??= TextEditingController();
+    _model.locationNameFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.distancefrominindentTextController ??= TextEditingController();
+    _model.distancefrominindentFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController(
+    _model.siteAddressTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Address''',
     ).toString().toString());
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.siteAddressFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController(
+    _model.pincodeTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Pincode''',
     ).toString().toString());
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.pincodeFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.landMarksTextController ??= TextEditingController();
+    _model.landMarksFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -1085,8 +1085,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) => setState(
-                                () => _model.strategyDropDwonValue = val),
+                            onChanged: (val) async {
+                              setState(
+                                  () => _model.strategyDropDwonValue = val);
+                              setState(() {
+                                _model.istrategy = functions.checkIndexint(
+                                    FFAppState().Strategy,
+                                    _model.istrategy?.toString(),
+                                    'Strategies',
+                                    'Strategy',
+                                    'iStrategy',
+                                    false);
+                              });
+                            },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1196,8 +1207,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController2,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.locationNameTextController,
+                            focusNode: _model.locationNameFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -1247,7 +1258,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController2Validator
+                            validator: _model
+                                .locationNameTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1270,8 +1282,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController3,
-                            focusNode: _model.textFieldFocusNode2,
+                            controller:
+                                _model.distancefrominindentTextController,
+                            focusNode: _model.distancefrominindentFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1323,7 +1336,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 ),
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
-                            validator: _model.textController3Validator
+                            validator: _model
+                                .distancefrominindentTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1346,8 +1360,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode3,
+                            controller: _model.siteAddressTextController,
+                            focusNode: _model.siteAddressFocusNode,
                             autofocus: false,
                             readOnly: true,
                             obscureText: false,
@@ -1398,7 +1412,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
-                            validator: _model.textController4Validator
+                            validator: _model.siteAddressTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1433,10 +1447,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController1 ??=
+                                            _model.districtValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue1 ??=
-                                              getJsonField(
+                                          _model.districtValue ??= getJsonField(
                                             FFAppState().District,
                                             r'''$.District[0].DistrictName''',
                                           ).toString(),
@@ -1448,8 +1461,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue1 = val),
+                                        onChanged: (val) async {
+                                          setState(
+                                              () => _model.districtValue = val);
+                                          setState(() {
+                                            _model.idistrict =
+                                                functions.checkIndexint(
+                                                    FFAppState().District,
+                                                    _model.idistrict
+                                                        ?.toString(),
+                                                    'District',
+                                                    'DistrictName',
+                                                    'iDistrict',
+                                                    false);
+                                          });
+                                        },
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1525,10 +1551,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController2 ??=
+                                            _model.stateValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue2 ??=
-                                              getJsonField(
+                                          _model.stateValue ??= getJsonField(
                                             FFAppState().master,
                                             r'''$.states[0].State''',
                                           ).toString(),
@@ -1540,8 +1565,23 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue2 = val),
+                                        onChanged: (val) async {
+                                          setState(
+                                              () => _model.stateValue = val);
+                                          setState(() {
+                                            _model.istate =
+                                                functions.checkIndexint(
+                                                    getJsonField(
+                                                      FFAppState().master,
+                                                      r'''$.states..State''',
+                                                    ),
+                                                    _model.istate?.toString(),
+                                                    'states',
+                                                    'State',
+                                                    'iState',
+                                                    false);
+                                          });
+                                        },
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1625,10 +1665,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController3 ??=
+                                            _model.cityValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue3 ??=
-                                              getJsonField(
+                                          _model.cityValue ??= getJsonField(
                                             FFAppState().master,
                                             r'''$.cities[0].City''',
                                           ).toString(),
@@ -1640,8 +1679,23 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue3 = val),
+                                        onChanged: (val) async {
+                                          setState(
+                                              () => _model.cityValue = val);
+                                          setState(() {
+                                            _model.iCity =
+                                                functions.checkIndexint(
+                                                    getJsonField(
+                                                      FFAppState().master,
+                                                      r'''$.cities..City''',
+                                                    ),
+                                                    _model.iCity?.toString(),
+                                                    'cities',
+                                                    'City',
+                                                    'iCity',
+                                                    false);
+                                          });
+                                        },
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1716,8 +1770,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: TextFormField(
-                                        controller: _model.textController5,
-                                        focusNode: _model.textFieldFocusNode4,
+                                        controller:
+                                            _model.pincodeTextController,
+                                        focusNode: _model.pincodeFocusNode,
                                         autofocus: false,
                                         readOnly: true,
                                         obscureText: false,
@@ -1775,7 +1830,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               fontWeight: FontWeight.normal,
                                             ),
                                         validator: _model
-                                            .textController5Validator
+                                            .pincodeTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -1804,9 +1859,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController4 ??=
+                            controller: _model.circleValueController ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue4 ??= getJsonField(
+                              _model.circleValue ??= getJsonField(
                                 FFAppState().Circle,
                                 r'''$.Circles_app1[0].CircleName''',
                               ).toString(),
@@ -1818,8 +1873,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue4 = val),
+                            onChanged: (val) async {
+                              setState(() => _model.circleValue = val);
+                              setState(() {
+                                _model.iCircle = functions.checkIndexint(
+                                    FFAppState().Circle,
+                                    _model.iCircle?.toString(),
+                                    'Circles_app1',
+                                    'CircleName',
+                                    'iCircle',
+                                    false);
+                              });
+                            },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1865,8 +1930,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController6,
-                            focusNode: _model.textFieldFocusNode5,
+                            controller: _model.landMarksTextController,
+                            focusNode: _model.landMarksFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -1916,7 +1981,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController6Validator
+                            validator: _model.landMarksTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1939,9 +2004,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController5 ??=
+                            controller: _model.rBICategoryValueController ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue5 ??= getJsonField(
+                              _model.rBICategoryValue ??= getJsonField(
                                 FFAppState().RBICategory,
                                 r'''$.RBICategories[0].Name''',
                               ).toString(),
@@ -1953,8 +2018,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) =>
-                                setState(() => _model.dropDownValue5 = val),
+                            onChanged: (val) async {
+                              setState(() => _model.rBICategoryValue = val);
+                              setState(() {
+                                _model.iRBICategory = functions.checkIndexint(
+                                    FFAppState().RBICategory,
+                                    _model.iRBICategory?.toString(),
+                                    'RBICategories',
+                                    'Name',
+                                    'iCategory',
+                                    false);
+                              });
+                            },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2033,17 +2108,17 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final dropDownListSitesResponse =
+                                          final siteSourcedListSitesResponse =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
-                                                    .dropDownValueController6 ??=
+                                                    .siteSourcedValueController ??=
                                                 FormFieldController<String>(
-                                              _model.dropDownValue6 ??= 'HPY',
+                                              _model.siteSourcedValue ??= 'HPY',
                                             ),
                                             options: ['HPY'],
                                             onChanged: (val) => setState(() =>
-                                                _model.dropDownValue6 = val),
+                                                _model.siteSourcedValue = val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -2108,13 +2183,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController7 ??=
+                                            _model.onofsiteValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue7 ??= 'Onsite',
+                                          _model.onofsiteValue ??= 'Onsite',
                                         ),
                                         options: ['Onsite', 'Offsite'],
                                         onChanged: (val) => setState(
-                                            () => _model.dropDownValue7 = val),
+                                            () => _model.onofsiteValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -2168,13 +2243,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController8 ??=
+                            controller: _model.duplicatesiteValueController ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue8 ??= 'Yes',
+                              _model.duplicatesiteValue ??= 'Yes',
                             ),
                             options: ['Yes', 'No'],
                             onChanged: (val) =>
-                                setState(() => _model.dropDownValue8 = val),
+                                setState(() => _model.duplicatesiteValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2522,38 +2597,46 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                       child: FFButtonWidget(
                         onPressed: () async {
                           var _shouldSetState = false;
-                          _model.apiResultm1m =
+                          _model.updateDOAdetailsfirst =
                               await SqGroup.updateDOAdetailsfirstCall.call(
-                            indentId: getJsonField(
+                            iIndent: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
-                            ).toString(),
-                            customerBank:
-                                _model.customerbankTextController.text,
-                            siteId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.SiteId''',
-                            ).toString(),
-                            district: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.District''',
-                            ).toString(),
-                            strategy: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.Strategy''',
-                            ).toString(),
+                            ),
+                            iDOAStrategy: _model.istrategy,
+                            locationName:
+                                _model.locationNameTextController.text,
+                            distFromIndent:
+                                _model.distancefrominindentTextController.text,
+                            iState: _model.istate,
+                            iDistrict: _model.idistrict,
+                            iCity: _model.iCity,
+                            pinCode:
+                                int.tryParse(_model.pincodeTextController.text),
+                            address1: _model.siteAddressTextController.text,
+                            address2: _model.siteAddressTextController.text,
+                            landMark: _model.landMarksTextController.text,
+                            iRBICategory: _model.iRBICategory,
+                            isOnSite: _model.onofsiteValue,
+                            token: FFAppState().Token,
+                            iSecondSiteVisitedByName:
+                                _model.iSecondSiteVisitedByName,
+                            iSiteVisitedByName: _model.iSiteVisitedByName,
+                            iSiteVisitedBy: _model.isitevisitedby,
+                            isDuplicateSite: _model.duplicatesiteValue,
+                            iCashDeviceMovementCategory: _model.icashdevicemov,
+                            iCashDeviceType: _model.idevicetype,
+                            iShopType: _model.ishoptype,
+                            iTisType: _model.itistype,
                             iSiteType: _model.isitetype,
-                            iTisType: getJsonField(
-                              FFAppState().TISType,
-                              r'''$.TisType''',
-                            ),
-                            iProjType: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.ProjectType''',
-                            ),
+                            iProjType: _model.iprojecttype,
+                            iCircle: _model.iCircle,
+                            siteSourcedBy: _model.siteSourcedValue,
+                            mgrName: _model.customerbankTextController.text,
                           );
                           _shouldSetState = true;
-                          if ((_model.apiResultm1m?.succeeded ?? true)) {
+                          if ((_model.updateDOAdetailsfirst?.succeeded ??
+                              true)) {
                             context.pushNamed('indent_site_landlord_details');
                           } else {
                             if (_shouldSetState) setState(() {});

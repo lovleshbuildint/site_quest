@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'landlordform_widget.dart' show LandlordformWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,80 +14,90 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
+  ///  Local state fields for this component.
+
+  int? istate;
+
+  int? iDistrict;
+
+  int? iCity;
+
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for LandoardName widget.
+  FocusNode? landoardNameFocusNode;
+  TextEditingController? landoardNameTextController;
+  String? Function(BuildContext, String?)? landoardNameTextControllerValidator;
   // State field(s) for percent widget.
   FocusNode? percentFocusNode;
   TextEditingController? percentTextController;
   String? Function(BuildContext, String?)? percentTextControllerValidator;
+  // State field(s) for Address widget.
+  FocusNode? addressFocusNode;
+  TextEditingController? addressTextController;
+  String? Function(BuildContext, String?)? addressTextControllerValidator;
+  // State field(s) for District widget.
+  String? districtValue;
+  FormFieldController<String>? districtValueController;
+  // State field(s) for State widget.
+  String? stateValue;
+  FormFieldController<String>? stateValueController;
+  // State field(s) for City widget.
+  String? cityValue;
+  FormFieldController<String>? cityValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController7;
-  final textFieldMask6 = MaskTextInputFormatter(mask: '+91##########');
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController8;
-  final textFieldMask7 = MaskTextInputFormatter(mask: '+91##########');
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
+  // State field(s) for Pincode widget.
+  FocusNode? pincodeFocusNode;
+  TextEditingController? pincodeTextController;
+  String? Function(BuildContext, String?)? pincodeTextControllerValidator;
+  // State field(s) for Landmarks widget.
+  FocusNode? landmarksFocusNode;
+  TextEditingController? landmarksTextController;
+  String? Function(BuildContext, String?)? landmarksTextControllerValidator;
+  // State field(s) for ContactName widget.
+  FocusNode? contactNameFocusNode;
+  TextEditingController? contactNameTextController;
+  final contactNameMask = MaskTextInputFormatter(mask: '+91##########');
+  String? Function(BuildContext, String?)? contactNameTextControllerValidator;
+  // State field(s) for Alernativenumber widget.
+  FocusNode? alernativenumberFocusNode;
+  TextEditingController? alernativenumberTextController;
+  final alernativenumberMask = MaskTextInputFormatter(mask: '+91##########');
+  String? Function(BuildContext, String?)?
+      alernativenumberTextControllerValidator;
+  // State field(s) for Fax widget.
+  FocusNode? faxFocusNode;
+  TextEditingController? faxTextController;
+  String? Function(BuildContext, String?)? faxTextControllerValidator;
+  // State field(s) for LandlordBankName widget.
+  String? landlordBankNameValue;
+  FormFieldController<String>? landlordBankNameValueController;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
   // State field(s) for chequefield widget.
   FocusNode? chequefieldFocusNode;
   TextEditingController? chequefieldTextController;
   String? Function(BuildContext, String?)? chequefieldTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
-  TextEditingController? textController12;
-  String? Function(BuildContext, String?)? textController12Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode11;
-  TextEditingController? textController13;
-  String? Function(BuildContext, String?)? textController13Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode12;
-  TextEditingController? textController14;
-  String? Function(BuildContext, String?)? textController14Validator;
+  // State field(s) for BankAccountNumber widget.
+  FocusNode? bankAccountNumberFocusNode;
+  TextEditingController? bankAccountNumberTextController;
+  String? Function(BuildContext, String?)?
+      bankAccountNumberTextControllerValidator;
+  // State field(s) for BankBranch widget.
+  FocusNode? bankBranchFocusNode;
+  TextEditingController? bankBranchTextController;
+  String? Function(BuildContext, String?)? bankBranchTextControllerValidator;
+  // State field(s) for IFSCCode widget.
+  FocusNode? iFSCCodeFocusNode;
+  TextEditingController? iFSCCodeTextController;
+  String? Function(BuildContext, String?)? iFSCCodeTextControllerValidator;
+  // State field(s) for PanNumber widget.
+  FocusNode? panNumberFocusNode;
+  TextEditingController? panNumberTextController;
+  String? Function(BuildContext, String?)? panNumberTextControllerValidator;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -95,10 +106,10 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode13;
-  TextEditingController? textController15;
-  String? Function(BuildContext, String?)? textController15Validator;
+  // State field(s) for AAdharcardNo widget.
+  FocusNode? aAdharcardNoFocusNode;
+  TextEditingController? aAdharcardNoTextController;
+  String? Function(BuildContext, String?)? aAdharcardNoTextControllerValidator;
   bool isDataUploading3 = false;
   FFUploadedFile uploadedLocalFile3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -107,69 +118,71 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   FFUploadedFile uploadedLocalFile4 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode14;
-  TextEditingController? textController16;
-  String? Function(BuildContext, String?)? textController16Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode15;
-  TextEditingController? textController17;
-  String? Function(BuildContext, String?)? textController17Validator;
+  // State field(s) for SiteReferralName widget.
+  FocusNode? siteReferralNameFocusNode;
+  TextEditingController? siteReferralNameTextController;
+  String? Function(BuildContext, String?)?
+      siteReferralNameTextControllerValidator;
+  // State field(s) for siteReferralNo widget.
+  FocusNode? siteReferralNoFocusNode;
+  TextEditingController? siteReferralNoTextController;
+  String? Function(BuildContext, String?)?
+      siteReferralNoTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    landoardNameFocusNode?.dispose();
+    landoardNameTextController?.dispose();
 
     percentFocusNode?.dispose();
     percentTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController3?.dispose();
+    addressFocusNode?.dispose();
+    addressTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
+    textFieldFocusNode?.dispose();
     textController4?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController5?.dispose();
+    pincodeFocusNode?.dispose();
+    pincodeTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController6?.dispose();
+    landmarksFocusNode?.dispose();
+    landmarksTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController7?.dispose();
+    contactNameFocusNode?.dispose();
+    contactNameTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController8?.dispose();
+    alernativenumberFocusNode?.dispose();
+    alernativenumberTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController9?.dispose();
+    faxFocusNode?.dispose();
+    faxTextController?.dispose();
 
     chequefieldFocusNode?.dispose();
     chequefieldTextController?.dispose();
 
-    textFieldFocusNode9?.dispose();
-    textController11?.dispose();
+    bankAccountNumberFocusNode?.dispose();
+    bankAccountNumberTextController?.dispose();
 
-    textFieldFocusNode10?.dispose();
-    textController12?.dispose();
+    bankBranchFocusNode?.dispose();
+    bankBranchTextController?.dispose();
 
-    textFieldFocusNode11?.dispose();
-    textController13?.dispose();
+    iFSCCodeFocusNode?.dispose();
+    iFSCCodeTextController?.dispose();
 
-    textFieldFocusNode12?.dispose();
-    textController14?.dispose();
+    panNumberFocusNode?.dispose();
+    panNumberTextController?.dispose();
 
-    textFieldFocusNode13?.dispose();
-    textController15?.dispose();
+    aAdharcardNoFocusNode?.dispose();
+    aAdharcardNoTextController?.dispose();
 
-    textFieldFocusNode14?.dispose();
-    textController16?.dispose();
+    siteReferralNameFocusNode?.dispose();
+    siteReferralNameTextController?.dispose();
 
-    textFieldFocusNode15?.dispose();
-    textController17?.dispose();
+    siteReferralNoFocusNode?.dispose();
+    siteReferralNoTextController?.dispose();
   }
 }

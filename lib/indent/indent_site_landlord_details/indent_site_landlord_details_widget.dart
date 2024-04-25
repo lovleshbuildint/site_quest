@@ -579,15 +579,54 @@ class _IndentSiteLandlordDetailsWidgetState
                       child: FFButtonWidget(
                         onPressed: () async {
                           var _shouldSetState = false;
-                          _model.apiResultavw =
+                          _model.updateDOADdeatils2 =
                               await SqGroup.updateDOADetailssecondCall.call(
-                            indentId: getJsonField(
+                            iIndent: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            landLordName: _model.landlordformModel
+                                .landoardNameTextController.text,
+                            landLordPercentage: _model
+                                .landlordformModel.percentTextController.text,
+                            address1: _model
+                                .landlordformModel.addressTextController.text,
+                            address2: _model
+                                .landlordformModel.addressTextController.text,
+                            landMark: _model
+                                .landlordformModel.landmarksTextController.text,
+                            contact1: int.tryParse(_model.landlordformModel
+                                .contactNameTextController.text),
+                            contact2: int.tryParse(_model.landlordformModel
+                                .alernativenumberTextController.text),
+                            accountNo: _model.landlordformModel
+                                .bankAccountNumberTextController.text,
+                            branchName: _model.landlordformModel
+                                .bankBranchTextController.text,
+                            chequeInFavour: _model.landlordformModel
+                                .chequefieldTextController.text,
+                            fax:
+                                _model.landlordformModel.faxTextController.text,
+                            iFSCCode: _model
+                                .landlordformModel.iFSCCodeTextController.text,
+                            pANCard: _model
+                                .landlordformModel.panNumberTextController.text,
+                            pincode: _model
+                                .landlordformModel.pincodeTextController.text,
+                            aadharcard: _model.landlordformModel
+                                .aAdharcardNoTextController.text,
+                            iState: _model.istate,
+                            iCity: _model.iCity,
+                            token: FFAppState().Token,
+                            refeId: int.tryParse(_model.landlordformModel
+                                .siteReferralNoTextController.text),
+                            refeName: _model.landlordformModel
+                                .siteReferralNameTextController.text,
+                            chequePercent: _model
+                                .landlordformModel.percentTextController.text,
                           );
                           _shouldSetState = true;
-                          if ((_model.apiResultavw?.succeeded ?? true)) {
+                          if ((_model.updateDOADdeatils2?.succeeded ?? true)) {
                             context.pushNamed(
                               'indent_site_commercial',
                               extra: <String, dynamic>{

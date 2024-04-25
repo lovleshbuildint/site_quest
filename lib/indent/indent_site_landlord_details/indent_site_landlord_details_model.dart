@@ -13,13 +13,21 @@ import 'package:provider/provider.dart';
 
 class IndentSiteLandlordDetailsModel
     extends FlutterFlowModel<IndentSiteLandlordDetailsWidget> {
+  ///  Local state fields for this page.
+
+  int? istate;
+
+  int? iDistrict;
+
+  int? iCity;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailssecond)] action in Button widget.
-  ApiCallResponse? apiResultavw;
+  ApiCallResponse? updateDOADdeatils2;
 
   @override
   void initState(BuildContext context) {

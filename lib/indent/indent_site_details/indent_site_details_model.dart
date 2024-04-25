@@ -37,6 +37,18 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   int? ideparmrnt;
 
+  int? istrategy;
+
+  int? istate;
+
+  int? idistrict;
+
+  int? iCity;
+
+  int? iRBICategory;
+
+  int? iCircle;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -68,50 +80,51 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for poitype widget.
   String? poitypeValue;
   FormFieldController<String>? poitypeValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue5;
-  FormFieldController<String>? dropDownValueController5;
-  // State field(s) for DropDown widget.
-  String? dropDownValue6;
-  FormFieldController<String>? dropDownValueController6;
-  // State field(s) for DropDown widget.
-  String? dropDownValue7;
-  FormFieldController<String>? dropDownValueController7;
-  // State field(s) for DropDown widget.
-  String? dropDownValue8;
-  FormFieldController<String>? dropDownValueController8;
+  // State field(s) for LocationName widget.
+  FocusNode? locationNameFocusNode;
+  TextEditingController? locationNameTextController;
+  String? Function(BuildContext, String?)? locationNameTextControllerValidator;
+  // State field(s) for Distancefrominindent widget.
+  FocusNode? distancefrominindentFocusNode;
+  TextEditingController? distancefrominindentTextController;
+  String? Function(BuildContext, String?)?
+      distancefrominindentTextControllerValidator;
+  // State field(s) for SiteAddress widget.
+  FocusNode? siteAddressFocusNode;
+  TextEditingController? siteAddressTextController;
+  String? Function(BuildContext, String?)? siteAddressTextControllerValidator;
+  // State field(s) for District widget.
+  String? districtValue;
+  FormFieldController<String>? districtValueController;
+  // State field(s) for State widget.
+  String? stateValue;
+  FormFieldController<String>? stateValueController;
+  // State field(s) for City widget.
+  String? cityValue;
+  FormFieldController<String>? cityValueController;
+  // State field(s) for Pincode widget.
+  FocusNode? pincodeFocusNode;
+  TextEditingController? pincodeTextController;
+  String? Function(BuildContext, String?)? pincodeTextControllerValidator;
+  // State field(s) for circle widget.
+  String? circleValue;
+  FormFieldController<String>? circleValueController;
+  // State field(s) for LandMarks widget.
+  FocusNode? landMarksFocusNode;
+  TextEditingController? landMarksTextController;
+  String? Function(BuildContext, String?)? landMarksTextControllerValidator;
+  // State field(s) for RBICategory widget.
+  String? rBICategoryValue;
+  FormFieldController<String>? rBICategoryValueController;
+  // State field(s) for SiteSourced widget.
+  String? siteSourcedValue;
+  FormFieldController<String>? siteSourcedValueController;
+  // State field(s) for onofsite widget.
+  String? onofsiteValue;
+  FormFieldController<String>? onofsiteValueController;
+  // State field(s) for Duplicatesite widget.
+  String? duplicatesiteValue;
+  FormFieldController<String>? duplicatesiteValueController;
   // State field(s) for sitevisitedby widget.
   String? sitevisitedbyValue;
   FormFieldController<String>? sitevisitedbyValueController;
@@ -122,7 +135,7 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   String? secondsitevisitedbyValue;
   FormFieldController<String>? secondsitevisitedbyValueController;
   // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
-  ApiCallResponse? apiResultm1m;
+  ApiCallResponse? updateDOAdetailsfirst;
 
   @override
   void initState(BuildContext context) {}
@@ -133,19 +146,19 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
     customerbankFocusNode?.dispose();
     customerbankTextController?.dispose();
 
-    textFieldFocusNode1?.dispose();
-    textController2?.dispose();
+    locationNameFocusNode?.dispose();
+    locationNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController3?.dispose();
+    distancefrominindentFocusNode?.dispose();
+    distancefrominindentTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController4?.dispose();
+    siteAddressFocusNode?.dispose();
+    siteAddressTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController5?.dispose();
+    pincodeFocusNode?.dispose();
+    pincodeTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController6?.dispose();
+    landMarksFocusNode?.dispose();
+    landMarksTextController?.dispose();
   }
 }

@@ -12,16 +12,16 @@ import 'package:provider/provider.dart';
 class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController1;
-  // State field(s) for advanceRentAmount widget.
-  FocusNode? advanceRentAmountFocusNode;
-  TextEditingController? advanceRentAmountTextController;
+  // State field(s) for rentaltype widget.
+  FormFieldController<String>? rentaltypeValueController;
+  // State field(s) for advanceRentAmountRENT widget.
+  FocusNode? advanceRentAmountRENTFocusNode;
+  TextEditingController? advanceRentAmountRENTTextController;
   String? Function(BuildContext, String?)?
-      advanceRentAmountTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
+      advanceRentAmountRENTTextControllerValidator;
+  // State field(s) for RentFreePeriod widget.
+  String? rentFreePeriodValue;
+  FormFieldController<String>? rentFreePeriodValueController;
   // State field(s) for advanceRentDD1 widget.
   String? advanceRentDD1Value;
   FormFieldController<String>? advanceRentDD1ValueController;
@@ -42,26 +42,26 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   TextEditingController? balanceAmountTextController;
   String? Function(BuildContext, String?)? balanceAmountTextControllerValidator;
   // State field(s) for DropDown widget.
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
+  // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
   // State field(s) for DropDown widget.
   String? dropDownValue3;
   FormFieldController<String>? dropDownValueController3;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
   // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController2;
+  FormFieldController<String>? radioButtonValueController1;
   // State field(s) for securityRent widget.
   FocusNode? securityRentFocusNode;
   TextEditingController? securityRentTextController;
   String? Function(BuildContext, String?)? securityRentTextControllerValidator;
   // State field(s) for DropDown widget.
+  String? dropDownValue4;
+  FormFieldController<String>? dropDownValueController4;
+  // State field(s) for DropDown widget.
   String? dropDownValue5;
   FormFieldController<String>? dropDownValueController5;
-  // State field(s) for DropDown widget.
-  String? dropDownValue6;
-  FormFieldController<String>? dropDownValueController6;
   // State field(s) for TotalSecurityDeposit widget.
   FocusNode? totalSecurityDepositFocusNode;
   TextEditingController? totalSecurityDepositTextController;
@@ -81,24 +81,24 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   String? Function(BuildContext, String?)?
       balanceSDAmountTextControllerValidator;
   // State field(s) for DropDown widget.
+  String? dropDownValue6;
+  FormFieldController<String>? dropDownValueController6;
+  // State field(s) for DropDown widget.
   String? dropDownValue7;
   FormFieldController<String>? dropDownValueController7;
   // State field(s) for DropDown widget.
   String? dropDownValue8;
   FormFieldController<String>? dropDownValueController8;
-  // State field(s) for DropDown widget.
-  String? dropDownValue9;
-  FormFieldController<String>? dropDownValueController9;
   // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController3;
+  FormFieldController<String>? radioButtonValueController2;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    advanceRentAmountFocusNode?.dispose();
-    advanceRentAmountTextController?.dispose();
+    advanceRentAmountRENTFocusNode?.dispose();
+    advanceRentAmountRENTTextController?.dispose();
 
     totalAdvanceAmountFocusNode?.dispose();
     totalAdvanceAmountTextController?.dispose();
@@ -123,7 +123,7 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   }
 
   /// Additional helper methods.
+  String? get rentaltypeValue => rentaltypeValueController?.value;
   String? get radioButtonValue1 => radioButtonValueController1?.value;
   String? get radioButtonValue2 => radioButtonValueController2?.value;
-  String? get radioButtonValue3 => radioButtonValueController3?.value;
 }

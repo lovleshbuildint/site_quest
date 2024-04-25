@@ -1143,36 +1143,7 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                         onPressed: () async {
                           var _shouldSetState = false;
                           _model.apiResultl1y =
-                              await SqGroup.updateDOAdetailsfirstCall.call(
-                            address: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.Address''',
-                            ).toString(),
-                            state: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.State''',
-                            ).toString(),
-                            district: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.District''',
-                            ).toString(),
-                            city: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.City''',
-                            ).toString(),
-                            pincode: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.Pincode''',
-                            ).toString(),
-                            circle: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.Circle''',
-                            ).toString(),
-                            landMark: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.LandMark''',
-                            ).toString(),
-                          );
+                              await SqGroup.updateDOAdetailsfirstCall.call();
                           _shouldSetState = true;
                           if ((_model.apiResultl1y?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

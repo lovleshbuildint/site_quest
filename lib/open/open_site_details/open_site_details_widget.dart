@@ -2207,12 +2207,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         onPressed: () async {
                           var _shouldSetState = false;
                           _model.apiResultq6m =
-                              await SqGroup.updateDOAdetailsfirstCall.call(
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                          );
+                              await SqGroup.updateDOAdetailsfirstCall.call();
                           _shouldSetState = true;
                           if ((_model.apiResultq6m?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

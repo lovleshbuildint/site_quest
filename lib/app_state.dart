@@ -412,6 +412,12 @@ class FFAppState extends ChangeNotifier {
     _SecondSiteVisitedBY = _value;
   }
 
+  int _department = 0;
+  int get department => _department;
+  set department(int _value) {
+    _department = _value;
+  }
+
   dynamic _CashDeviceType;
   dynamic get CashDeviceType => _CashDeviceType;
   set CashDeviceType(dynamic _value) {
@@ -458,12 +464,6 @@ class FFAppState extends ChangeNotifier {
   dynamic get visitedbydeptapi => _visitedbydeptapi;
   set visitedbydeptapi(dynamic _value) {
     _visitedbydeptapi = _value;
-  }
-
-  String _department = '';
-  String get department => _department;
-  set department(String _value) {
-    _department = _value;
   }
 }
 

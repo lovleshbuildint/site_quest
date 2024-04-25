@@ -35,6 +35,8 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   int? isiteddep;
 
+  int? ideparmrnt;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

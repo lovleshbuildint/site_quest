@@ -471,6 +471,12 @@ class FFAppState extends ChangeNotifier {
   set Listsite(dynamic _value) {
     _Listsite = _value;
   }
+
+  dynamic _secondsitevisiterNew;
+  dynamic get secondsitevisiterNew => _secondsitevisiterNew;
+  set secondsitevisiterNew(dynamic _value) {
+    _secondsitevisiterNew = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

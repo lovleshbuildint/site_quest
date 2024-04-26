@@ -47,6 +47,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ApiCallResponse? getsitevisitedbydeptapiresponse;
   // Stores action output result for [Backend Call - API (ListSites)] action in MainPage widget.
   ApiCallResponse? listsitesresponse;
+  // Stores action output result for [Backend Call - API (SecondSiteVisitersNEW)] action in MainPage widget.
+  ApiCallResponse? secondsiteVisiterNew;
 
   @override
   void initState(BuildContext context) {}

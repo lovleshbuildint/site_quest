@@ -475,6 +475,34 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             );
           }
         }),
+        Future(() async {
+          _model.secondsiteVisiterNew =
+              await SqGroup.secondSiteVisitersNEWCall.call(
+            token: FFAppState().Token,
+          );
+          if ((_model.secondsiteVisiterNew?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().secondsitevisiterNew =
+                  (_model.secondsiteVisiterNew?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(secondsitevisiterNEW)'),
+                  content: Text((_model.secondsiteVisiterNew?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
       ]);
     });
 

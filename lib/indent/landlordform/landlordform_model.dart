@@ -22,6 +22,8 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
 
   int? iCity;
 
+  int? ilandlordbankname;
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for LandoardName widget.
@@ -68,6 +70,11 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   final alernativenumberMask = MaskTextInputFormatter(mask: '+91##########');
   String? Function(BuildContext, String?)?
       alernativenumberTextControllerValidator;
+  // State field(s) for Emailid widget.
+  FocusNode? emailidFocusNode;
+  TextEditingController? emailidTextController;
+  final emailidMask = MaskTextInputFormatter(mask: '+91##########');
+  String? Function(BuildContext, String?)? emailidTextControllerValidator;
   // State field(s) for Fax widget.
   FocusNode? faxFocusNode;
   TextEditingController? faxTextController;
@@ -157,6 +164,9 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
 
     alernativenumberFocusNode?.dispose();
     alernativenumberTextController?.dispose();
+
+    emailidFocusNode?.dispose();
+    emailidTextController?.dispose();
 
     faxFocusNode?.dispose();
     faxTextController?.dispose();

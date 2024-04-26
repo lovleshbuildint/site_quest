@@ -67,6 +67,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.alernativenumberTextController ??= TextEditingController();
     _model.alernativenumberFocusNode ??= FocusNode();
 
+    _model.emailidTextController ??= TextEditingController();
+    _model.emailidFocusNode ??= FocusNode();
+
     _model.faxTextController ??= TextEditingController();
     _model.faxFocusNode ??= FocusNode();
 
@@ -952,6 +955,73 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
+              'Email Id',
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.black,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+            child: TextFormField(
+              controller: _model.emailidTextController,
+              focusNode: _model.emailidFocusNode,
+              autofocus: false,
+              obscureText: false,
+              decoration: InputDecoration(
+                hintText: 'Enter Number',
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.black,
+                      letterSpacing: 0.0,
+                    ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFE1E2E6),
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFF0026),
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                filled: true,
+                fillColor: Colors.transparent,
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              keyboardType: TextInputType.number,
+              validator:
+                  _model.emailidTextControllerValidator.asValidator(context),
+              inputFormatters: [_model.emailidMask],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+            child: Text(
               'Fax',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
@@ -1052,13 +1122,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   controller: _model.landlordBankNameValueController ??=
                       FormFieldController<String>(
                     _model.landlordBankNameValue ??= getJsonField(
-                      landlordBankNameGetIndentBankResponse.jsonBody,
-                      r'''$[0].Name''',
+                      FFAppState().master,
+                      r'''$.customerbank[0].Name''',
                     ).toString(),
                   ),
                   options: (getJsonField(
-                    landlordBankNameGetIndentBankResponse.jsonBody,
-                    r'''$..Name''',
+                    FFAppState().master,
+                    r'''$.customerbank.Name''',
                     true,
                   ) as List)
                       .map<String>((s) => s.toString())

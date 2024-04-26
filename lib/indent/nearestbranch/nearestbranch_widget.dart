@@ -30,17 +30,17 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
     super.initState();
     _model = createModel(context, () => NearestbranchModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.branchSOLIDTextController ??= TextEditingController();
+    _model.branchSOLIDFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.nearestBranchstextTextController ??= TextEditingController();
+    _model.nearestBranchstextFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.distanceNearestBranchTextController ??= TextEditingController();
+    _model.distanceNearestBranchFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.videoURLTextController ??= TextEditingController();
+    _model.videoURLFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -75,12 +75,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
-              controller: _model.dropDownValueController1 ??=
+              controller: _model.cRACoverageValueController ??=
                   FormFieldController<String>(
-                _model.dropDownValue1 ??= 'No',
+                _model.cRACoverageValue ??= 'No',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.dropDownValue1 = val),
+              onChanged: (val) => setState(() => _model.cRACoverageValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -119,12 +119,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
-              controller: _model.dropDownValueController2 ??=
+              controller: _model.cRAAgencyValueController ??=
                   FormFieldController<String>(
-                _model.dropDownValue2 ??= 'CMS',
+                _model.cRAAgencyValue ??= 'CMS',
               ),
               options: ['CMS'],
-              onChanged: (val) => setState(() => _model.dropDownValue2 = val),
+              onChanged: (val) => setState(() => _model.cRAAgencyValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -163,8 +163,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController1,
-              focusNode: _model.textFieldFocusNode1,
+              controller: _model.branchSOLIDTextController,
+              focusNode: _model.branchSOLIDFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -210,7 +210,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController1Validator.asValidator(context),
+              validator: _model.branchSOLIDTextControllerValidator
+                  .asValidator(context),
             ),
           ),
           Padding(
@@ -228,8 +229,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController2,
-              focusNode: _model.textFieldFocusNode2,
+              controller: _model.nearestBranchstextTextController,
+              focusNode: _model.nearestBranchstextFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -275,7 +276,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              validator: _model.textController2Validator.asValidator(context),
+              validator: _model.nearestBranchstextTextControllerValidator
+                  .asValidator(context),
             ),
           ),
           Padding(
@@ -293,8 +295,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController3,
-              focusNode: _model.textFieldFocusNode3,
+              controller: _model.distanceNearestBranchTextController,
+              focusNode: _model.distanceNearestBranchFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -342,7 +344,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController3Validator.asValidator(context),
+              validator: _model.distanceNearestBranchTextControllerValidator
+                  .asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -363,8 +366,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 35.0),
             child: TextFormField(
-              controller: _model.textController4,
-              focusNode: _model.textFieldFocusNode4,
+              controller: _model.videoURLTextController,
+              focusNode: _model.videoURLFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -412,7 +415,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController4Validator.asValidator(context),
+              validator:
+                  _model.videoURLTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],

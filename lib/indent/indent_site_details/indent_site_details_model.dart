@@ -109,6 +109,9 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for circle widget.
   String? circleValue;
   FormFieldController<String>? circleValueController;
+  // State field(s) for ATMExisting widget.
+  String? aTMExistingValue;
+  FormFieldController<String>? aTMExistingValueController;
   // State field(s) for LandMarks widget.
   FocusNode? landMarksFocusNode;
   TextEditingController? landMarksTextController;

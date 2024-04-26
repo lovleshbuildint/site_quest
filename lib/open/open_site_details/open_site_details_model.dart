@@ -41,9 +41,9 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
+  // State field(s) for CustomerBank widget.
+  String? customerBankValue;
+  FormFieldController<String>? customerBankValueController;
   // State field(s) for Sitetype widget.
   String? sitetypeValue;
   FormFieldController<String>? sitetypeValueController;
@@ -68,59 +68,60 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for POIList widget.
   String? pOIListValue;
   FormFieldController<String>? pOIListValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for locationName widget.
+  FocusNode? locationNameFocusNode;
+  TextEditingController? locationNameTextController;
+  String? Function(BuildContext, String?)? locationNameTextControllerValidator;
+  // State field(s) for DistanceFromIndents widget.
+  FocusNode? distanceFromIndentsFocusNode;
+  TextEditingController? distanceFromIndentsTextController;
+  String? Function(BuildContext, String?)?
+      distanceFromIndentsTextControllerValidator;
+  // State field(s) for Address widget.
+  FocusNode? addressFocusNode;
+  TextEditingController? addressTextController;
+  String? Function(BuildContext, String?)? addressTextControllerValidator;
+  // State field(s) for stateDropdown widget.
+  String? stateDropdownValue;
+  FormFieldController<String>? stateDropdownValueController;
+  // State field(s) for City widget.
+  String? cityValue;
+  FormFieldController<String>? cityValueController;
+  // State field(s) for District widget.
+  String? districtValue;
+  FormFieldController<String>? districtValueController;
+  // State field(s) for Pincode widget.
+  FocusNode? pincodeFocusNode;
+  TextEditingController? pincodeTextController;
+  String? Function(BuildContext, String?)? pincodeTextControllerValidator;
   // State field(s) for Circle widget.
   String? circleValue;
   FormFieldController<String>? circleValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for LandMarks widget.
+  FocusNode? landMarksFocusNode;
+  TextEditingController? landMarksTextController;
+  String? Function(BuildContext, String?)? landMarksTextControllerValidator;
   // State field(s) for RBICategory widget.
   String? rBICategoryValue;
   FormFieldController<String>? rBICategoryValueController;
+  // State field(s) for SiteSourced widget.
+  String? siteSourcedValue;
+  FormFieldController<String>? siteSourcedValueController;
+  // State field(s) for ONOFSite widget.
+  String? oNOFSiteValue;
+  FormFieldController<String>? oNOFSiteValueController;
+  // State field(s) for DuplicateSite widget.
+  String? duplicateSiteValue;
+  FormFieldController<String>? duplicateSiteValueController;
+  // State field(s) for SiteVisitedBY widget.
+  String? siteVisitedBYValue;
+  FormFieldController<String>? siteVisitedBYValueController;
+  // State field(s) for FirstSiteVisitedBy widget.
+  String? firstSiteVisitedByValue;
+  FormFieldController<String>? firstSiteVisitedByValueController;
   // State field(s) for DropDown widget.
-  String? dropDownValue5;
-  FormFieldController<String>? dropDownValueController5;
-  // State field(s) for DropDown widget.
-  String? dropDownValue6;
-  FormFieldController<String>? dropDownValueController6;
-  // State field(s) for DropDown widget.
-  String? dropDownValue7;
-  FormFieldController<String>? dropDownValueController7;
-  // State field(s) for DropDown widget.
-  String? dropDownValue8;
-  FormFieldController<String>? dropDownValueController8;
-  // State field(s) for DropDown widget.
-  String? dropDownValue9;
-  FormFieldController<String>? dropDownValueController9;
-  // State field(s) for DropDown widget.
-  String? dropDownValue10;
-  FormFieldController<String>? dropDownValueController10;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
   ApiCallResponse? apiResultq6m;
 
@@ -130,19 +131,19 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    locationNameFocusNode?.dispose();
+    locationNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    distanceFromIndentsFocusNode?.dispose();
+    distanceFromIndentsTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    addressFocusNode?.dispose();
+    addressTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    pincodeFocusNode?.dispose();
+    pincodeTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    landMarksFocusNode?.dispose();
+    landMarksTextController?.dispose();
   }
 }

@@ -33,23 +33,23 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
     super.initState();
     _model = createModel(context, () => NearestatmModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.atmidTextController ??= TextEditingController();
+    _model.atmidFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.distanceKMTextController ??= TextEditingController();
+    _model.distanceKMFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.directionTextController ??= TextEditingController();
+    _model.directionFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.avgApproxTxnsDayTextController ??= TextEditingController();
+    _model.avgApproxTxnsDayFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.avgOnusTextController ??= TextEditingController();
+    _model.avgOnusFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.avgOffusTextController ??= TextEditingController();
+    _model.avgOffusFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -84,8 +84,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController1,
-              focusNode: _model.textFieldFocusNode1,
+              controller: _model.atmidTextController,
+              focusNode: _model.atmidFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -133,7 +133,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController1Validator.asValidator(context),
+              validator:
+                  _model.atmidTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -154,12 +155,12 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
-              controller: _model.dropDownValueController1 ??=
+              controller: _model.aTMNameValueController ??=
                   FormFieldController<String>(
-                _model.dropDownValue1 ??= 'Bank Name 1',
+                _model.aTMNameValue ??= 'Bank Name 1',
               ),
               options: ['Bank Name 1', 'Bank Name 2'],
-              onChanged: (val) => setState(() => _model.dropDownValue1 = val),
+              onChanged: (val) => setState(() => _model.aTMNameValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               searchHintTextStyle:
@@ -210,7 +211,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           FlutterFlowRadioButton(
             options: ['ONSITE', 'OFFSITE'].toList(),
             onChanged: (val) => setState(() {}),
-            controller: _model.radioButtonValueController ??=
+            controller: _model.aTMSTatusValueController ??=
                 FormFieldController<String>('ONSITE'),
             optionHeight: 37.0,
             textStyle: FlutterFlowTheme.of(context).labelMedium.override(
@@ -246,12 +247,12 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
-              controller: _model.dropDownValueController2 ??=
+              controller: _model.hitachiATMValueController ??=
                   FormFieldController<String>(
-                _model.dropDownValue2 ??= 'Yes',
+                _model.hitachiATMValue ??= 'Yes',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.dropDownValue2 = val),
+              onChanged: (val) => setState(() => _model.hitachiATMValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -290,8 +291,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController2,
-              focusNode: _model.textFieldFocusNode2,
+              controller: _model.distanceKMTextController,
+              focusNode: _model.distanceKMFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -339,7 +340,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController2Validator.asValidator(context),
+              validator:
+                  _model.distanceKMTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -360,8 +362,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController3,
-              focusNode: _model.textFieldFocusNode3,
+              controller: _model.directionTextController,
+              focusNode: _model.directionFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -409,7 +411,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController3Validator.asValidator(context),
+              validator:
+                  _model.directionTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -430,8 +433,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController4,
-              focusNode: _model.textFieldFocusNode4,
+              controller: _model.avgApproxTxnsDayTextController,
+              focusNode: _model.avgApproxTxnsDayFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -479,7 +482,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController4Validator.asValidator(context),
+              validator: _model.avgApproxTxnsDayTextControllerValidator
+                  .asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -500,8 +504,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController5,
-              focusNode: _model.textFieldFocusNode5,
+              controller: _model.avgOnusTextController,
+              focusNode: _model.avgOnusFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -549,7 +553,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController5Validator.asValidator(context),
+              validator:
+                  _model.avgOnusTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],
@@ -570,8 +575,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: TextFormField(
-              controller: _model.textController6,
-              focusNode: _model.textFieldFocusNode6,
+              controller: _model.avgOffusTextController,
+              focusNode: _model.avgOffusFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -619,7 +624,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
-              validator: _model.textController6Validator.asValidator(context),
+              validator:
+                  _model.avgOffusTextControllerValidator.asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))
               ],

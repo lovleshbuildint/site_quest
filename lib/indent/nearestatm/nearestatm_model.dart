@@ -14,38 +14,39 @@ import 'package:provider/provider.dart';
 class NearestatmModel extends FlutterFlowModel<NearestatmWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for ATMID widget.
+  FocusNode? atmidFocusNode;
+  TextEditingController? atmidTextController;
+  String? Function(BuildContext, String?)? atmidTextControllerValidator;
+  // State field(s) for ATMName widget.
+  String? aTMNameValue;
+  FormFieldController<String>? aTMNameValueController;
+  // State field(s) for ATMSTatus widget.
+  FormFieldController<String>? aTMSTatusValueController;
+  // State field(s) for HitachiATM widget.
+  String? hitachiATMValue;
+  FormFieldController<String>? hitachiATMValueController;
+  // State field(s) for DistanceKM widget.
+  FocusNode? distanceKMFocusNode;
+  TextEditingController? distanceKMTextController;
+  String? Function(BuildContext, String?)? distanceKMTextControllerValidator;
+  // State field(s) for Direction widget.
+  FocusNode? directionFocusNode;
+  TextEditingController? directionTextController;
+  String? Function(BuildContext, String?)? directionTextControllerValidator;
+  // State field(s) for AvgApproxTxns-Day widget.
+  FocusNode? avgApproxTxnsDayFocusNode;
+  TextEditingController? avgApproxTxnsDayTextController;
+  String? Function(BuildContext, String?)?
+      avgApproxTxnsDayTextControllerValidator;
+  // State field(s) for AvgOnus widget.
+  FocusNode? avgOnusFocusNode;
+  TextEditingController? avgOnusTextController;
+  String? Function(BuildContext, String?)? avgOnusTextControllerValidator;
+  // State field(s) for AvgOffus widget.
+  FocusNode? avgOffusFocusNode;
+  TextEditingController? avgOffusTextController;
+  String? Function(BuildContext, String?)? avgOffusTextControllerValidator;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -55,25 +56,25 @@ class NearestatmModel extends FlutterFlowModel<NearestatmWidget> {
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    atmidFocusNode?.dispose();
+    atmidTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    distanceKMFocusNode?.dispose();
+    distanceKMTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    directionFocusNode?.dispose();
+    directionTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    avgApproxTxnsDayFocusNode?.dispose();
+    avgApproxTxnsDayTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    avgOnusFocusNode?.dispose();
+    avgOnusTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    avgOffusFocusNode?.dispose();
+    avgOffusTextController?.dispose();
   }
 
   /// Additional helper methods.
-  String? get radioButtonValue => radioButtonValueController?.value;
+  String? get aTMSTatusValue => aTMSTatusValueController?.value;
 }

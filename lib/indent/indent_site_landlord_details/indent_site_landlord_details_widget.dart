@@ -624,6 +624,10 @@ class _IndentSiteLandlordDetailsWidgetState
                                 .siteReferralNameTextController.text,
                             chequePercent: _model
                                 .landlordformModel.percentTextController.text,
+                            emailId: _model
+                                .landlordformModel.emailidTextController.text,
+                            iIndentBank:
+                                _model.landlordformModel.ilandlordbankname,
                           );
                           _shouldSetState = true;
                           if ((_model.updateDOADdeatils2?.succeeded ?? true)) {

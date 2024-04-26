@@ -11,44 +11,46 @@ import 'package:provider/provider.dart';
 class NearestbranchModel extends FlutterFlowModel<NearestbranchWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for CRACoverage widget.
+  String? cRACoverageValue;
+  FormFieldController<String>? cRACoverageValueController;
+  // State field(s) for CRAAgency widget.
+  String? cRAAgencyValue;
+  FormFieldController<String>? cRAAgencyValueController;
+  // State field(s) for BranchSOLID widget.
+  FocusNode? branchSOLIDFocusNode;
+  TextEditingController? branchSOLIDTextController;
+  String? Function(BuildContext, String?)? branchSOLIDTextControllerValidator;
+  // State field(s) for NearestBranchstext widget.
+  FocusNode? nearestBranchstextFocusNode;
+  TextEditingController? nearestBranchstextTextController;
+  String? Function(BuildContext, String?)?
+      nearestBranchstextTextControllerValidator;
+  // State field(s) for distanceNearestBranch widget.
+  FocusNode? distanceNearestBranchFocusNode;
+  TextEditingController? distanceNearestBranchTextController;
+  String? Function(BuildContext, String?)?
+      distanceNearestBranchTextControllerValidator;
+  // State field(s) for VideoURL widget.
+  FocusNode? videoURLFocusNode;
+  TextEditingController? videoURLTextController;
+  String? Function(BuildContext, String?)? videoURLTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    branchSOLIDFocusNode?.dispose();
+    branchSOLIDTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    nearestBranchstextFocusNode?.dispose();
+    nearestBranchstextTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    distanceNearestBranchFocusNode?.dispose();
+    distanceNearestBranchTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    videoURLFocusNode?.dispose();
+    videoURLTextController?.dispose();
   }
 }

@@ -1915,6 +1915,58 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
+                            'ATM Existing',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 0.0),
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.aTMExistingValueController ??=
+                                FormFieldController<String>(
+                              _model.aTMExistingValue ??= 'Yes',
+                            ),
+                            options: ['Yes', 'No'],
+                            onChanged: (val) =>
+                                setState(() => _model.aTMExistingValue = val),
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: Colors.white,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
+                          child: Text(
                             'Landmark',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -2633,6 +2685,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             iCircle: _model.iCircle,
                             siteSourcedBy: _model.siteSourcedValue,
                             mgrName: _model.customerbankTextController.text,
+                            atmExisting: _model.aTMExistingValue,
                           );
                           _shouldSetState = true;
                           if ((_model.updateDOAdetailsfirst?.succeeded ??

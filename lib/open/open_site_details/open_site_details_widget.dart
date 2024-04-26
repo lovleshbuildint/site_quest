@@ -29,28 +29,28 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     super.initState();
     _model = createModel(context, () => OpenSiteDetailsModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.locationNameTextController ??= TextEditingController();
+    _model.locationNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.distanceFromIndentsTextController ??= TextEditingController();
+    _model.distanceFromIndentsFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController(
+    _model.addressTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Address''',
     ).toString().toString());
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.addressFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController(
+    _model.pincodeTextController ??= TextEditingController(
         text: getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Pincode''',
     ).toString().toString());
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.pincodeFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.landMarksTextController ??= TextEditingController();
+    _model.landMarksFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -329,9 +329,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController1 ??=
+                            controller: _model.customerBankValueController ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue1 ??=
+                              _model.customerBankValue ??=
                                   'Abhyudaya Cooperative Bank Ltd',
                             ),
                             options: (getJsonField(
@@ -342,7 +342,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) =>
-                                setState(() => _model.dropDownValue1 = val),
+                                setState(() => _model.customerBankValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -950,8 +950,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController1,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.locationNameTextController,
+                            focusNode: _model.locationNameFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -1001,7 +1001,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController1Validator
+                            validator: _model
+                                .locationNameTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1024,8 +1025,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController2,
-                            focusNode: _model.textFieldFocusNode2,
+                            controller:
+                                _model.distanceFromIndentsTextController,
+                            focusNode: _model.distanceFromIndentsFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1077,7 +1079,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ),
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
-                            validator: _model.textController2Validator
+                            validator: _model
+                                .distanceFromIndentsTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1100,8 +1103,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController3,
-                            focusNode: _model.textFieldFocusNode3,
+                            controller: _model.addressTextController,
+                            focusNode: _model.addressFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -1151,7 +1154,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController3Validator
+                            validator: _model.addressTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1185,10 +1188,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController2 ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue2 ??=
+                                        controller: _model
+                                                .stateDropdownValueController ??=
+                                            FormFieldController<String>(
+                                          _model.stateDropdownValue ??=
                                               getJsonField(
                                             FFAppState().master,
                                             r'''$.states[0].State''',
@@ -1201,8 +1204,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue2 = val),
+                                        onChanged: (val) => setState(() =>
+                                            _model.stateDropdownValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1280,10 +1283,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController3 ??=
+                                            _model.cityValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue3 ??=
-                                              getJsonField(
+                                          _model.cityValue ??= getJsonField(
                                             FFAppState().master,
                                             r'''$.cities[0].City''',
                                           ).toString(),
@@ -1296,7 +1298,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             .map<String>((s) => s.toString())
                                             .toList()!,
                                         onChanged: (val) => setState(
-                                            () => _model.dropDownValue3 = val),
+                                            () => _model.cityValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1374,9 +1376,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller:
-                                          _model.dropDownValueController4 ??=
+                                          _model.districtValueController ??=
                                               FormFieldController<String>(
-                                        _model.dropDownValue4 ??= getJsonField(
+                                        _model.districtValue ??= getJsonField(
                                           FFAppState().District,
                                           r'''$.District[0].DistrictName''',
                                         ).toString(),
@@ -1389,7 +1391,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           .map<String>((s) => s.toString())
                                           .toList()!,
                                       onChanged: (val) => setState(
-                                          () => _model.dropDownValue4 = val),
+                                          () => _model.districtValue = val),
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 50.0,
@@ -1462,8 +1464,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: TextFormField(
-                                        controller: _model.textController4,
-                                        focusNode: _model.textFieldFocusNode4,
+                                        controller:
+                                            _model.pincodeTextController,
+                                        focusNode: _model.pincodeFocusNode,
                                         autofocus: false,
                                         textCapitalization:
                                             TextCapitalization.words,
@@ -1525,7 +1528,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                         validator: _model
-                                            .textController4Validator
+                                            .pincodeTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -1615,8 +1618,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController5,
-                            focusNode: _model.textFieldFocusNode5,
+                            controller: _model.landMarksTextController,
+                            focusNode: _model.landMarksFocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -1666,7 +1669,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController5Validator
+                            validator: _model.landMarksTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -1761,14 +1764,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController5 ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue5 ??= 'HPY',
+                                        controller: _model
+                                                .siteSourcedValueController ??=
+                                            FormFieldController<String>(
+                                          _model.siteSourcedValue ??= 'HPY',
                                         ),
                                         options: ['HPY'],
-                                        onChanged: (val) => setState(
-                                            () => _model.dropDownValue5 = val),
+                                        onChanged: (val) => setState(() =>
+                                            _model.siteSourcedValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1829,13 +1832,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
-                                            _model.dropDownValueController6 ??=
+                                            _model.oNOFSiteValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue6 ??= 'Onsite',
+                                          _model.oNOFSiteValue ??= 'Onsite',
                                         ),
                                         options: ['Onsite', 'Offsite'],
                                         onChanged: (val) => setState(
-                                            () => _model.dropDownValue6 = val),
+                                            () => _model.oNOFSiteValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1889,13 +1892,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.dropDownValueController7 ??=
+                            controller: _model.duplicateSiteValueController ??=
                                 FormFieldController<String>(
-                              _model.dropDownValue7 ??= 'Yes',
+                              _model.duplicateSiteValue ??= 'Yes',
                             ),
                             options: ['Yes', 'No'],
                             onChanged: (val) =>
-                                setState(() => _model.dropDownValue7 = val),
+                                setState(() => _model.duplicateSiteValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1960,12 +1963,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetsitevisiteddbydeptAPIResponse =
+                              final siteVisitedBYGetsitevisiteddbydeptAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController8 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue8 ??= getJsonField(
+                                controller:
+                                    _model.siteVisitedBYValueController ??=
+                                        FormFieldController<String>(
+                                  _model.siteVisitedBYValue ??= getJsonField(
                                     FFAppState().departmentswiseuser,
                                     r'''$[0].Department''',
                                   ).toString(),
@@ -1977,8 +1981,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue8 = val),
+                                onChanged: (val) => setState(
+                                    () => _model.siteVisitedBYValue = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2046,12 +2050,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetDepartmentWiseUserAPIResponse =
+                              final firstSiteVisitedByGetDepartmentWiseUserAPIResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController9 ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue9 ??= getJsonField(
+                                controller:
+                                    _model.firstSiteVisitedByValueController ??=
+                                        FormFieldController<String>(
+                                  _model.firstSiteVisitedByValue ??=
+                                      getJsonField(
                                     FFAppState().departmentswiseuser,
                                     r'''$[0].UserName''',
                                   ).toString(),
@@ -2063,8 +2069,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue9 = val),
+                                onChanged: (val) => setState(
+                                    () => _model.firstSiteVisitedByValue = val),
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2137,9 +2143,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               final dropDownGetSecondSiteVisitersResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController10 ??=
+                                controller: _model.dropDownValueController ??=
                                     FormFieldController<String>(
-                                  _model.dropDownValue10 ??= getJsonField(
+                                  _model.dropDownValue ??= getJsonField(
                                     FFAppState().SecondSiteVisitedBY,
                                     r'''$[0].UserName''',
                                   ).toString(),
@@ -2151,8 +2157,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.dropDownValue10 = val),
+                                onChanged: (val) =>
+                                    setState(() => _model.dropDownValue = val),
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)

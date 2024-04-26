@@ -14,113 +14,116 @@ class SitedimentionsModel extends FlutterFlowModel<SitedimentionsWidget> {
 
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textFieldTextController;
-  String? Function(BuildContext, String?)? textFieldTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode11;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue5;
-  FormFieldController<String>? dropDownValueController5;
-  // State field(s) for DropDown widget.
-  String? dropDownValue6;
-  FormFieldController<String>? dropDownValueController6;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode12;
-  TextEditingController? textController12;
-  String? Function(BuildContext, String?)? textController12Validator;
+  // State field(s) for totalShopArea widget.
+  FocusNode? totalShopAreaFocusNode;
+  TextEditingController? totalShopAreaTextController;
+  String? Function(BuildContext, String?)? totalShopAreaTextControllerValidator;
+  // State field(s) for TotalAreaOffered widget.
+  FocusNode? totalAreaOfferedFocusNode;
+  TextEditingController? totalAreaOfferedTextController;
+  String? Function(BuildContext, String?)?
+      totalAreaOfferedTextControllerValidator;
+  // State field(s) for CarpetArea widget.
+  FocusNode? carpetAreaFocusNode;
+  TextEditingController? carpetAreaTextController;
+  String? Function(BuildContext, String?)? carpetAreaTextControllerValidator;
+  // State field(s) for ShopDepth widget.
+  FocusNode? shopDepthFocusNode;
+  TextEditingController? shopDepthTextController;
+  String? Function(BuildContext, String?)? shopDepthTextControllerValidator;
+  // State field(s) for ShopWidth widget.
+  FocusNode? shopWidthFocusNode;
+  TextEditingController? shopWidthTextController;
+  String? Function(BuildContext, String?)? shopWidthTextControllerValidator;
+  // State field(s) for ShopHeight widget.
+  FocusNode? shopHeightFocusNode;
+  TextEditingController? shopHeightTextController;
+  String? Function(BuildContext, String?)? shopHeightTextControllerValidator;
+  // State field(s) for TotalFrontage widget.
+  FocusNode? totalFrontageFocusNode;
+  TextEditingController? totalFrontageTextController;
+  String? Function(BuildContext, String?)? totalFrontageTextControllerValidator;
+  // State field(s) for frontageOffered widget.
+  FocusNode? frontageOfferedFocusNode;
+  TextEditingController? frontageOfferedTextController;
+  String? Function(BuildContext, String?)?
+      frontageOfferedTextControllerValidator;
+  // State field(s) for SingageWidth widget.
+  FocusNode? singageWidthFocusNode;
+  TextEditingController? singageWidthTextController;
+  String? Function(BuildContext, String?)? singageWidthTextControllerValidator;
+  // State field(s) for singageHeight widget.
+  FocusNode? singageHeightFocusNode;
+  TextEditingController? singageHeightTextController;
+  String? Function(BuildContext, String?)? singageHeightTextControllerValidator;
+  // State field(s) for LShapeSingage widget.
+  String? lShapeSingageValue;
+  FormFieldController<String>? lShapeSingageValueController;
+  // State field(s) for Vsat widget.
+  String? vsatValue;
+  FormFieldController<String>? vsatValueController;
+  // State field(s) for AcODUSpace widget.
+  String? acODUSpaceValue;
+  FormFieldController<String>? acODUSpaceValueController;
+  // State field(s) for PowerAvailability widget.
+  String? powerAvailabilityValue;
+  FormFieldController<String>? powerAvailabilityValueController;
+  // State field(s) for NoofHours widget.
+  FocusNode? noofHoursFocusNode;
+  TextEditingController? noofHoursTextController;
+  String? Function(BuildContext, String?)? noofHoursTextControllerValidator;
+  // State field(s) for TotemPole widget.
+  String? totemPoleValue;
+  FormFieldController<String>? totemPoleValueController;
+  // State field(s) for RampAvailability widget.
+  String? rampAvailabilityValue;
+  FormFieldController<String>? rampAvailabilityValueController;
+  // State field(s) for NoteForProject-TIS widget.
+  FocusNode? noteForProjectTISFocusNode;
+  TextEditingController? noteForProjectTISTextController;
+  String? Function(BuildContext, String?)?
+      noteForProjectTISTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    totalShopAreaFocusNode?.dispose();
+    totalShopAreaTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textFieldTextController?.dispose();
+    totalAreaOfferedFocusNode?.dispose();
+    totalAreaOfferedTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    carpetAreaFocusNode?.dispose();
+    carpetAreaTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    shopDepthFocusNode?.dispose();
+    shopDepthTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    shopWidthFocusNode?.dispose();
+    shopWidthTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    shopHeightFocusNode?.dispose();
+    shopHeightTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
+    totalFrontageFocusNode?.dispose();
+    totalFrontageTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
+    frontageOfferedFocusNode?.dispose();
+    frontageOfferedTextController?.dispose();
 
-    textFieldFocusNode9?.dispose();
-    textController9?.dispose();
+    singageWidthFocusNode?.dispose();
+    singageWidthTextController?.dispose();
 
-    textFieldFocusNode10?.dispose();
-    textController10?.dispose();
+    singageHeightFocusNode?.dispose();
+    singageHeightTextController?.dispose();
 
-    textFieldFocusNode11?.dispose();
-    textController11?.dispose();
+    noofHoursFocusNode?.dispose();
+    noofHoursTextController?.dispose();
 
-    textFieldFocusNode12?.dispose();
-    textController12?.dispose();
+    noteForProjectTISFocusNode?.dispose();
+    noteForProjectTISTextController?.dispose();
   }
 
   /// Additional helper methods.

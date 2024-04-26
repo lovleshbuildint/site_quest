@@ -547,16 +547,16 @@ class CircleCall {
 
 class MasterCall {
   Future<ApiCallResponse> call({
-    String? state = '',
+    String? iState = '',
     String? token = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'master',
-      apiUrl: '${SqGroup.baseUrl}/getMasters/Token=${token}&State=${state}',
+      apiUrl: '${SqGroup.baseUrl}/getMasters/Token=${token}&State=${iState}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
-        'State': state,
+        'State': iState,
       },
       returnBody: true,
       encodeBodyUtf8: false,

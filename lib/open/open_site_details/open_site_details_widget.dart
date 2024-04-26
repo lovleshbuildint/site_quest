@@ -1981,8 +1981,20 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.siteVisitedBYValue = val),
+                                onChanged: (val) async {
+                                  setState(
+                                      () => _model.siteVisitedBYValue = val);
+                                  setState(() {
+                                    _model.isitevisitedbys =
+                                        functions.checkIndexint(
+                                            FFAppState().visitedbydeptapi,
+                                            _model.isitevisitedbys?.toString(),
+                                            '-',
+                                            'Department',
+                                            'idepartment',
+                                            false);
+                                  });
+                                },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2055,7 +2067,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller:
                                     _model.firstSiteVisitedByValueController ??=
-                                        FormFieldController<String>(null),
+                                        FormFieldController<String>(
+                                  _model.firstSiteVisitedByValue ??=
+                                      getJsonField(
+                                    firstSiteVisitedByGetDepartmentWiseUserAPIResponse
+                                        .jsonBody,
+                                    r'''$[0].UserName''',
+                                  ).toString(),
+                                ),
                                 options: (getJsonField(
                                   firstSiteVisitedByGetDepartmentWiseUserAPIResponse
                                       .jsonBody,
@@ -2064,8 +2083,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) => setState(
-                                    () => _model.firstSiteVisitedByValue = val),
+                                onChanged: (val) async {
+                                  setState(() =>
+                                      _model.firstSiteVisitedByValue = val);
+                                  setState(() {
+                                    _model.isitevisitedbynames =
+                                        functions.checkIndexint(
+                                            firstSiteVisitedByGetDepartmentWiseUserAPIResponse
+                                                .jsonBody,
+                                            _model.isitevisitedbynames
+                                                ?.toString(),
+                                            '-',
+                                            'UserName',
+                                            'iUser',
+                                            false);
+                                  });
+                                },
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2141,19 +2174,34 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 controller: _model.dropDownValueController ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue ??= getJsonField(
-                                    FFAppState().SecondSiteVisitedBY,
+                                    dropDownGetSecondSiteVisitersResponse
+                                        .jsonBody,
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  FFAppState().SecondSiteVisitedBY,
+                                  dropDownGetSecondSiteVisitersResponse
+                                      .jsonBody,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue = val),
+                                onChanged: (val) async {
+                                  setState(() => _model.dropDownValue = val);
+                                  setState(() {
+                                    _model.isecondsitevisitedbynames =
+                                        functions.checkIndexint(
+                                            dropDownGetSecondSiteVisitersResponse
+                                                .jsonBody,
+                                            _model.isecondsitevisitedbynames
+                                                ?.toString(),
+                                            '-',
+                                            'UserName',
+                                            'iUser',
+                                            false);
+                                  });
+                                },
                                 width: 300.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)

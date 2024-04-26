@@ -289,7 +289,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         Future(() async {
           _model.masterResponse = await SqGroup.masterCall.call(
             token: FFAppState().Token,
-            iState: FFAppState().istate,
+            state: FFAppState().istate,
           );
           if ((_model.masterResponse?.succeeded ?? true)) {
             setState(() {

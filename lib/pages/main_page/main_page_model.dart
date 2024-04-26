@@ -41,8 +41,6 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ApiCallResponse? poiType;
   // Stores action output result for [Backend Call - API (DistrictAPis)] action in MainPage widget.
   ApiCallResponse? districtApiResponse;
-  // Stores action output result for [Backend Call - API (getDepartmentWiseUserAPI)] action in MainPage widget.
-  ApiCallResponse? deptwiseuserapi;
   // Stores action output result for [Backend Call - API (City)] action in MainPage widget.
   ApiCallResponse? cityresponse;
   // Stores action output result for [Backend Call - API (getsitevisiteddbydeptAPI)] action in MainPage widget.

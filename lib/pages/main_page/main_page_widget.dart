@@ -394,35 +394,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.deptwiseuserapi =
-              await SqGroup.getDepartmentWiseUserAPICall.call(
-            department: FFAppState().departmentswiseuser.toString(),
-            token: FFAppState().Token,
-          );
-          if ((_model.deptwiseuserapi?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().departmentswiseuser =
-                  (_model.deptwiseuserapi?.jsonBody ?? '');
-            });
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('Alert(Deptwiseuser)'),
-                  content: Text((_model.deptwiseuserapi?.bodyText ?? '')),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
-          }
-        }),
-        Future(() async {
           _model.cityresponse = await SqGroup.cityCall.call(
             token: FFAppState().Token,
           );

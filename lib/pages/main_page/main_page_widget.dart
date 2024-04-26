@@ -802,7 +802,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                 CircularPercentIndicator(
                                                                   percent: (getJsonField(
                                                                             mainPageDashboardResponse.jsonBody,
-                                                                            r'''$.UserReview[2].Count''',
+                                                                            r'''$.UserReview[3].Count''',
                                                                           ) -
                                                                           getJsonField(
                                                                             mainPageDashboardResponse.jsonBody,
@@ -811,7 +811,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       getJsonField(
                                                                         mainPageDashboardResponse
                                                                             .jsonBody,
-                                                                        r'''$.UserReview[2].Count''',
+                                                                        r'''$.UserReview[3].Count''',
                                                                       ),
                                                                   radius: 50.0,
                                                                   lineWidth:

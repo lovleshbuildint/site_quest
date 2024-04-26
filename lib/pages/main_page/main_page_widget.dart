@@ -374,8 +374,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             setState(() {
               FFAppState().District =
                   (_model.districtApiResponse?.jsonBody ?? '');
-              FFAppState().districts =
-                  (_model.districtApiResponse?.jsonBody ?? '').toString();
             });
           } else {
             await showDialog(

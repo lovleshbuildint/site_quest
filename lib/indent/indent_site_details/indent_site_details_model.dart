@@ -137,8 +137,6 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for secondsitevisitedby widget.
   String? secondsitevisitedbyValue;
   FormFieldController<String>? secondsitevisitedbyValueController;
-  // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
-  ApiCallResponse? updateDOAdetailsfirst;
 
   @override
   void initState(BuildContext context) {}

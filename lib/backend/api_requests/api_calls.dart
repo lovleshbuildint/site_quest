@@ -85,6 +85,8 @@ class SqGroup {
       DOADetailsstepSECONDworddocCall();
   static DOADetailsstepTHIRDworddocCall dOADetailsstepTHIRDworddocCall =
       DOADetailsstepTHIRDworddocCall();
+  static SecondSiteVisitersNEWCall secondSiteVisitersNEWCall =
+      SecondSiteVisitersNEWCall();
 }
 
 class DashboardCall {
@@ -1790,6 +1792,25 @@ class DOADetailsstepTHIRDworddocCall {
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SecondSiteVisitersNEWCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'SecondSiteVisitersNEW',
+      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

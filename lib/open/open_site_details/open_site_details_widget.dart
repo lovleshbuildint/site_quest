@@ -2150,7 +2150,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 30.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getSecondSiteVisitersCall.call(
+                            future: SqGroup.secondSiteVisitersNEWCall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2168,19 +2168,19 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetSecondSiteVisitersResponse =
+                              final dropDownSecondSiteVisitersNEWResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue ??= getJsonField(
-                                    dropDownGetSecondSiteVisitersResponse
+                                    dropDownSecondSiteVisitersNEWResponse
                                         .jsonBody,
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownGetSecondSiteVisitersResponse
+                                  dropDownSecondSiteVisitersNEWResponse
                                       .jsonBody,
                                   r'''$..UserName''',
                                   true,
@@ -2192,7 +2192,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   setState(() {
                                     _model.isecondsitevisitedbynames =
                                         functions.checkIndexint(
-                                            dropDownGetSecondSiteVisitersResponse
+                                            dropDownSecondSiteVisitersNEWResponse
                                                 .jsonBody,
                                             _model.isecondsitevisitedbynames
                                                 ?.toString(),

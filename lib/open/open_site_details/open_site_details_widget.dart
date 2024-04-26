@@ -2055,15 +2055,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller:
                                     _model.firstSiteVisitedByValueController ??=
-                                        FormFieldController<String>(
-                                  _model.firstSiteVisitedByValue ??=
-                                      getJsonField(
-                                    FFAppState().departmentswiseuser,
-                                    r'''$[0].UserName''',
-                                  ).toString(),
-                                ),
+                                        FormFieldController<String>(null),
                                 options: (getJsonField(
-                                  FFAppState().departmentswiseuser,
+                                  firstSiteVisitedByGetDepartmentWiseUserAPIResponse
+                                      .jsonBody,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)

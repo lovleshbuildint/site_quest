@@ -806,7 +806,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                           ) -
                                                                           getJsonField(
                                                                             mainPageDashboardResponse.jsonBody,
-                                                                            r'''$.UserReview[0].Count''',
+                                                                            r'''$.UserReview[1].Count''',
                                                                           )) /
                                                                       getJsonField(
                                                                         mainPageDashboardResponse

@@ -2647,8 +2647,56 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          var _shouldSetState = false;
+                          _model.updateDOAdetailsfirst =
+                              await SqGroup.updateDOAdetailsfirstCall.call(
+                            iIndent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ),
+                            iDOAStrategy: _model.istrategy,
+                            locationName:
+                                _model.locationNameTextController.text,
+                            distFromIndent:
+                                _model.distancefrominindentTextController.text,
+                            iState: _model.istate,
+                            iDistrict: _model.idistrict,
+                            iCity: _model.iCity,
+                            pinCode:
+                                int.tryParse(_model.pincodeTextController.text),
+                            address1: _model.siteAddressTextController.text,
+                            address2: _model.siteAddressTextController.text,
+                            landMark: _model.landMarksTextController.text,
+                            iRBICategory: _model.iRBICategory,
+                            isOnSite: _model.onofsiteValue,
+                            token: FFAppState().Token,
+                            iSecondSiteVisitedByName:
+                                _model.iSecondSiteVisitedByName,
+                            iSiteVisitedByName: _model.iSiteVisitedByName,
+                            iSiteVisitedBy: _model.isitevisitedby,
+                            isDuplicateSite: _model.duplicatesiteValue,
+                            iCashDeviceMovementCategory: _model.icashdevicemov,
+                            iCashDeviceType: _model.idevicetype,
+                            iShopType: _model.ishoptype,
+                            iTisType: _model.itistype,
+                            iSiteType: _model.isitetype,
+                            iProjType: _model.iprojecttype,
+                            iCircle: _model.iCircle,
+                            siteSourcedBy: _model.siteSourcedValue,
+                            mgrName: _model.customerbankTextController.text,
+                            atmExisting: _model.aTMExistingValue,
+                          );
+                          _shouldSetState = true;
+                          if ((_model.updateDOAdetailsfirst?.succeeded ??
+                              true)) {
+                            context.pushNamed('indent_site_landlord_details');
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

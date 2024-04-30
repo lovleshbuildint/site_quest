@@ -29,13 +29,16 @@ int? checkIndexint(
   if (mainKeyYesorNo == false) {
     for (int i = 0; i < list.length; i++) {
       if (list[i][subKeys] == value) {
-        return int.parse(list[i][indexKey].toString());
+        return int.tryParse(list[i][indexKey].toString());
       }
     }
   } else {
-    for (int i = 0; i < list[keys].length; i++) {
-      if (list[keys][i][subKeys] == value) {
-        return int.parse(list[keys][i][indexKey].toString());
+    if (list is Map && list[keys] != null) {
+      List<dynamic> subList = list[keys];
+      for (int i = 0; i < subList.length; i++) {
+        if (subList[i][subKeys] == value) {
+          return int.tryParse(subList[i][indexKey].toString());
+        }
       }
     }
   }

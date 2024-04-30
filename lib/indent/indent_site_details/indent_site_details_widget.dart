@@ -2322,6 +2322,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'Department',
                                     'idepartment',
                                     false);
+                                _model.isitevisitedby = functions.checkIndexint(
+                                    FFAppState().visitedbydeptapi,
+                                    _model.sitevisitedbyValue,
+                                    '-',
+                                    'Department',
+                                    'idepartment',
+                                    false);
                               });
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2355,7 +2362,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'First Site Visited By',
+                            valueOrDefault<String>(
+                              _model.isiteddep?.toString(),
+                              '9789',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

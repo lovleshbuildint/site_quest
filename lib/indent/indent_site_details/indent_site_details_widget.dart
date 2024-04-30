@@ -840,7 +840,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'TIS Type',
+                            valueOrDefault<String>(
+                              _model.itistype?.toString(),
+                              '11',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -876,8 +879,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     FFAppState().TISType,
                                     _model.tistypeValue,
                                     '-',
-                                    'CashDeviceMovementCategory',
-                                    'iCashDeviceMovementCategory',
+                                    'TISTypeName',
+                                    'iTISType',
                                     false);
                               });
                             },

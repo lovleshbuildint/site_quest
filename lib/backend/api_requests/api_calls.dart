@@ -1529,7 +1529,6 @@ class DOADetailsstepFIRSTworddocCall {
     String? emailId = '',
     String? iindent = '',
     String? isWB = '',
-    bool? isFromSiteref,
     String? token = '',
   }) async {
     final ffApiRequestBody = '''
@@ -1581,7 +1580,7 @@ class DOADetailsstepFIRSTworddocCall {
   "ContactNumber": "${contactNumber}",
   "EmailId": "${emailId}",
   "iindent": "${iindent}",
-"isFromSiteref":"${isFromSiteref}",
+"isFromSiteref":"<isFromSiteref>",
 "isWB":"${isWB}"
 }
 ''';

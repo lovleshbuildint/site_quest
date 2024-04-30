@@ -252,8 +252,8 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                       ),
                                       Text(
                                         getJsonField(
-                                          FFAppState().indentSelectedSite,
-                                          r'''$.BranchName''',
+                                          FFAppState().CustomerBank,
+                                          r'''$..CustomerBank''',
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium

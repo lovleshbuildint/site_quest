@@ -17,8 +17,8 @@ class OpenSiteLandlordDetailsModel
   final unfocusNode = FocusNode();
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
-  // Stores action output result for [Backend Call - API (UpdateDOADetailssecond)] action in Button widget.
-  ApiCallResponse? apiResultwtn;
+  // Stores action output result for [Backend Call - API (DOADetailsstepSECONDworddoc)] action in Button widget.
+  ApiCallResponse? updateDOADdeatilssecondwordSite;
 
   @override
   void initState(BuildContext context) {

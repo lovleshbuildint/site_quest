@@ -331,8 +331,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller: _model.customerBankValueController ??=
                                 FormFieldController<String>(
-                              _model.customerBankValue ??=
-                                  'Abhyudaya Cooperative Bank Ltd',
+                              _model.customerBankValue ??= getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.CustomerBanks[0].Name''',
+                              ).toString(),
                             ),
                             options: (getJsonField(
                               FFAppState().indentSelectedSite,
@@ -2150,7 +2152,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 30.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.secondSiteVisitersNEWCall.call(
+                            future: SqGroup.getSecondSiteVisitersCall.call(
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -2168,20 +2170,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownSecondSiteVisitersNEWResponse =
+                              final dropDownGetSecondSiteVisitersResponse =
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController ??=
                                     FormFieldController<String>(
                                   _model.dropDownValue ??= getJsonField(
-                                    dropDownSecondSiteVisitersNEWResponse
-                                        .jsonBody,
+                                    FFAppState().secondsitevisiterNew,
                                     r'''$[0].UserName''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  dropDownSecondSiteVisitersNEWResponse
-                                      .jsonBody,
+                                  FFAppState().secondsitevisiterNew,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
@@ -2192,7 +2192,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   setState(() {
                                     _model.isecondsitevisitedbynames =
                                         functions.checkIndexint(
-                                            dropDownSecondSiteVisitersNEWResponse
+                                            dropDownGetSecondSiteVisitersResponse
                                                 .jsonBody,
                                             _model.isecondsitevisitedbynames
                                                 ?.toString(),
@@ -2254,30 +2254,71 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResultq6m =
-                              await SqGroup.updateDOAdetailsfirstCall.call();
-                          _shouldSetState = true;
-                          if ((_model.apiResultq6m?.succeeded ?? true)) {
-                            if (Navigator.of(context).canPop()) {
-                              context.pop();
-                            }
-                            context.pushNamed(
-                              'open_site_landlord_details',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
+                          _model.updateDOAdetailsfirstwordsSites =
+                              await SqGroup.dOADetailsstepFIRSTworddocCall.call(
+                            customerBank: _model.customerBankValue,
+                            district: _model.districtValue,
+                            strategy: _model.strategyDropDwonValue,
+                            circle: _model.circleValue,
+                            city: _model.cityValue,
+                            iSiteType: _model.isitetypes,
+                            iCashDeviceType: _model.icashdevicetypes,
+                            iCashDeviceMovementCategory:
+                                _model.ichasdevicemovementcategorys,
+                            iTisType: _model.iTisTypes,
+                            iShopType: _model.ishoptypes,
+                            token: FFAppState().Token,
+                            locationName:
+                                _model.locationNameTextController.text,
+                            distance:
+                                _model.distanceFromIndentsTextController.text,
+                            address: _model.addressTextController.text,
+                            state: _model.stateDropdownValue,
+                            pincode: _model.pincodeTextController.text,
+                            landMark: _model.landMarksTextController.text,
+                            rBICategory: _model.rBICategoryValue,
+                            sitesourcedby: _model.siteSourcedValue,
+                            isOnSite: _model.oNOFSiteValue,
+                            isDuplicateSite:
+                                _model.duplicateSiteValue != null &&
+                                    _model.duplicateSiteValue != '',
+                            iSiteVisitedBy: _model.isitevisitedbys,
+                            iSiteVisitedByName: _model.isitevisitedbynames,
+                            iSecondSiteVisitedByName:
+                                _model.isecondsitevisitedbynames,
+                            iProjType: _model.iprojecttypes,
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                          );
+                          if ((_model
+                                  .updateDOAdetailsfirstwordsSites?.succeeded ??
+                              true)) {
+                            context.goNamed('open_site_landlord_details');
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert (UpdateDOAdetailsfirst)'),
+                                  content: Text((_model
+                                          .updateDOAdetailsfirstwordsSites
+                                          ?.bodyText ??
+                                      '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
                               },
                             );
-                          } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

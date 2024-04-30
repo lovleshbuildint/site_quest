@@ -19,7 +19,7 @@ class IndentSiteNearestBranchModel
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
-  ApiCallResponse? apiResult3hi;
+  ApiCallResponse? dOADetailsfive;
 
   @override
   void initState(BuildContext context) {

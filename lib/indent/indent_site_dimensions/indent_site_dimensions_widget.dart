@@ -534,23 +534,73 @@ class _IndentSiteDimensionsWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResult57p =
+                          _model.dOADetailsFour =
                               await SqGroup.updateDOADetailsfourCall.call(
                             indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            carpetArea: _model.sitedimentionsModel
+                                .carpetAreaTextController.text,
+                            width: _model.sitedimentionsModel
+                                .shopWidthTextController.text,
+                            height: _model.sitedimentionsModel
+                                .shopHeightTextController.text,
+                            depth: _model.sitedimentionsModel
+                                .shopDepthTextController.text,
+                            shopType:
+                                _model.sitedimentionsModel.radioButtonValue,
+                            totalShopArea: _model.sitedimentionsModel
+                                .totalShopAreaTextController.text,
+                            signWidth: _model.sitedimentionsModel
+                                .singageWidthTextController.text,
+                            signHeight: _model.sitedimentionsModel
+                                .singageHeightTextController.text,
+                            shopAreaOffered: _model.sitedimentionsModel
+                                .totalAreaOfferedTextController.text,
+                            totalFrontage: _model.sitedimentionsModel
+                                .totalFrontageTextController.text,
+                            frontageOffered: _model.sitedimentionsModel
+                                .frontageOfferedTextController.text,
+                            lShape:
+                                _model.sitedimentionsModel.lShapeSingageValue,
+                            vsat: _model.sitedimentionsModel.vsatValue,
+                            token: FFAppState().Token,
+                            acodu: _model.sitedimentionsModel.acODUSpaceValue,
+                            powerAvailability: _model
+                                .sitedimentionsModel.powerAvailabilityValue,
+                            hours: _model.sitedimentionsModel
+                                .noofHoursTextController.text,
+                            isTotempole:
+                                _model.sitedimentionsModel.totemPoleValue,
+                            isRampAval: _model
+                                .sitedimentionsModel.rampAvailabilityValue,
+                            projectNote: _model.sitedimentionsModel
+                                .noteForProjectTISTextController.text,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResult57p?.succeeded ?? true)) {
+                          if ((_model.dOADetailsFour?.succeeded ?? true)) {
                             context.pushNamed('indent_site_photo');
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(SitePhoto)'),
+                                  content: Text(
+                                      (_model.dOADetailsFour?.bodyText ?? '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

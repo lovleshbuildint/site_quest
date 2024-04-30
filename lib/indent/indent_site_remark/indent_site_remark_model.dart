@@ -13,28 +13,28 @@ class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for Remark1 widget.
+  FocusNode? remark1FocusNode;
+  TextEditingController? remark1TextController;
+  String? Function(BuildContext, String?)? remark1TextControllerValidator;
+  // State field(s) for Remark2 widget.
+  FocusNode? remark2FocusNode;
+  TextEditingController? remark2TextController;
+  String? Function(BuildContext, String?)? remark2TextControllerValidator;
+  // State field(s) for Remark3 widget.
+  FocusNode? remark3FocusNode;
+  TextEditingController? remark3TextController;
+  String? Function(BuildContext, String?)? remark3TextControllerValidator;
+  // State field(s) for Remark4 widget.
+  FocusNode? remark4FocusNode;
+  TextEditingController? remark4TextController;
+  String? Function(BuildContext, String?)? remark4TextControllerValidator;
+  // State field(s) for Remark5 widget.
+  FocusNode? remark5FocusNode;
+  TextEditingController? remark5TextController;
+  String? Function(BuildContext, String?)? remark5TextControllerValidator;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
-  ApiCallResponse? apiResult9re;
+  ApiCallResponse? dOADeatilsfive;
 
   @override
   void initState(BuildContext context) {}
@@ -42,19 +42,19 @@ class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    remark1FocusNode?.dispose();
+    remark1TextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    remark2FocusNode?.dispose();
+    remark2TextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    remark3FocusNode?.dispose();
+    remark3TextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    remark4FocusNode?.dispose();
+    remark4TextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    remark5FocusNode?.dispose();
+    remark5TextController?.dispose();
   }
 }

@@ -578,75 +578,78 @@ class _IndentSiteLandlordDetailsWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.updateDOADdeatils2 =
-                              await SqGroup.updateDOADetailssecondCall.call(
-                            iIndent: getJsonField(
+                          _model.updateDOADdeatils2 = await SqGroup
+                              .dOADetailsstepSECONDworddocCall
+                              .call(
+                            indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
-                            landLordName: _model.landlordformModel
-                                .landoardNameTextController.text,
-                            landLordPercentage: _model
+                            district: _model.landlordformModel.districtValue,
+                            token: FFAppState().Token,
+                            iCity: _model.iCity?.toString(),
+                            lLPercent: _model
                                 .landlordformModel.percentTextController.text,
-                            address1: _model
+                            address: _model
                                 .landlordformModel.addressTextController.text,
-                            address2: _model
-                                .landlordformModel.addressTextController.text,
+                            iState: _model.istate?.toString(),
+                            pincode: _model
+                                .landlordformModel.pincodeTextController.text,
                             landMark: _model
                                 .landlordformModel.landmarksTextController.text,
-                            contact1: int.tryParse(_model.landlordformModel
-                                .contactNameTextController.text),
-                            contact2: int.tryParse(_model.landlordformModel
-                                .alernativenumberTextController.text),
-                            accountNo: _model.landlordformModel
+                            contact1: _model.landlordformModel
+                                .contactNameTextController.text,
+                            contact2: _model.landlordformModel
+                                .alernativenumberTextController.text,
+                            emailId: _model
+                                .landlordformModel.emailidTextController.text,
+                            fax:
+                                _model.landlordformModel.faxTextController.text,
+                            lLBankName:
+                                _model.landlordformModel.landlordBankNameValue,
+                            landLordNameonCheque: _model.landlordformModel
+                                .chequefieldTextController.text,
+                            bankAcNo: _model.landlordformModel
                                 .bankAccountNumberTextController.text,
                             branchName: _model.landlordformModel
                                 .bankBranchTextController.text,
-                            chequeInFavour: _model.landlordformModel
-                                .chequefieldTextController.text,
-                            fax:
-                                _model.landlordformModel.faxTextController.text,
                             iFSCCode: _model
                                 .landlordformModel.iFSCCodeTextController.text,
                             pANCard: _model
                                 .landlordformModel.panNumberTextController.text,
-                            pincode: _model
-                                .landlordformModel.pincodeTextController.text,
                             aadharcard: _model.landlordformModel
                                 .aAdharcardNoTextController.text,
-                            iState: _model.istate,
-                            iCity: _model.iCity,
-                            token: FFAppState().Token,
-                            refeId: int.tryParse(_model.landlordformModel
-                                .siteReferralNoTextController.text),
+                            landLordName: _model.landlordformModel
+                                .landoardNameTextController.text,
                             refeName: _model.landlordformModel
                                 .siteReferralNameTextController.text,
-                            chequePercent: _model
-                                .landlordformModel.percentTextController.text,
-                            emailId: _model
-                                .landlordformModel.emailidTextController.text,
-                            iIndentBank:
-                                _model.landlordformModel.ilandlordbankname,
+                            contactNumber: _model.landlordformModel
+                                .siteReferralNoTextController.text,
                           );
-                          _shouldSetState = true;
                           if ((_model.updateDOADdeatils2?.succeeded ?? true)) {
-                            context.pushNamed(
-                              'indent_site_commercial',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
+                            context.goNamed('indent_site_commercial');
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(Insident LandLord)'),
+                                  content: Text(
+                                      (_model.updateDOADdeatils2?.bodyText ??
+                                          '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
                               },
                             );
-                          } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

@@ -19,7 +19,7 @@ class IndentSiteCommentsModel
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
-  ApiCallResponse? apiResult7p3;
+  ApiCallResponse? dOADetailsFive;
 
   @override
   void initState(BuildContext context) {}

@@ -1461,21 +1461,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) async {
-                                          setState(
-                                              () => _model.districtValue = val);
-                                          setState(() {
-                                            _model.idistrict =
-                                                functions.checkIndexint(
-                                                    FFAppState().District,
-                                                    _model.idistrict
-                                                        ?.toString(),
-                                                    'District',
-                                                    'DistrictName',
-                                                    'iDistrict',
-                                                    false);
-                                          });
-                                        },
+                                        onChanged: (val) => setState(
+                                            () => _model.districtValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1565,23 +1552,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) async {
-                                          setState(
-                                              () => _model.stateValue = val);
-                                          setState(() {
-                                            _model.istate =
-                                                functions.checkIndexint(
-                                                    getJsonField(
-                                                      FFAppState().master,
-                                                      r'''$.states..State''',
-                                                    ),
-                                                    _model.istate?.toString(),
-                                                    'states',
-                                                    'State',
-                                                    'iState',
-                                                    false);
-                                          });
-                                        },
+                                        onChanged: (val) => setState(
+                                            () => _model.stateValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1679,23 +1651,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
-                                        onChanged: (val) async {
-                                          setState(
-                                              () => _model.cityValue = val);
-                                          setState(() {
-                                            _model.iCity =
-                                                functions.checkIndexint(
-                                                    getJsonField(
-                                                      FFAppState().master,
-                                                      r'''$.cities..City''',
-                                                    ),
-                                                    _model.iCity?.toString(),
-                                                    'cities',
-                                                    'City',
-                                                    'iCity',
-                                                    false);
-                                          });
-                                        },
+                                        onChanged: (val) => setState(
+                                            () => _model.cityValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -1873,18 +1830,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) async {
-                              setState(() => _model.circleValue = val);
-                              setState(() {
-                                _model.iCircle = functions.checkIndexint(
-                                    FFAppState().Circle,
-                                    _model.iCircle?.toString(),
-                                    'Circles_app1',
-                                    'CircleName',
-                                    'iCircle',
-                                    false);
-                              });
-                            },
+                            onChanged: (val) =>
+                                setState(() => _model.circleValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2541,7 +2488,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model
                                         .secondsitevisitedbyValueController ??=
-                                    FormFieldController<String>(null),
+                                    FormFieldController<String>(
+                                  _model.secondsitevisitedbyValue ??=
+                                      getJsonField(
+                                    FFAppState().secondsitevisiterNew,
+                                    r'''$[0].UserName''',
+                                  ).toString(),
+                                ),
                                 options: (getJsonField(
                                   FFAppState().secondsitevisiterNew,
                                   r'''$..UserName''',
@@ -2616,55 +2569,69 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
                           _model.updateDOAdetailsfirst =
-                              await SqGroup.updateDOAdetailsfirstCall.call(
-                            iIndent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ),
-                            iDOAStrategy: _model.istrategy,
+                              await SqGroup.dOADetailsstepFIRSTworddocCall.call(
+                            customerBank:
+                                _model.customerbankTextController.text,
+                            district: _model.districtValue,
+                            strategy: _model.strategyDropDwonValue,
+                            circle: _model.circleValue,
+                            city: _model.cityValue,
+                            iSiteType: _model.isitetype,
+                            iCashDeviceType: _model.idevicetype,
+                            iCashDeviceMovementCategory: _model.icashdevicemov,
+                            iTisType: _model.itistype,
+                            iShopType: _model.ishoptype,
+                            token: FFAppState().Token,
                             locationName:
                                 _model.locationNameTextController.text,
-                            distFromIndent:
+                            distance:
                                 _model.distancefrominindentTextController.text,
-                            iState: _model.istate,
-                            iDistrict: _model.idistrict,
-                            iCity: _model.iCity,
-                            pinCode:
-                                int.tryParse(_model.pincodeTextController.text),
-                            address1: _model.siteAddressTextController.text,
-                            address2: _model.siteAddressTextController.text,
+                            address: _model.siteAddressTextController.text,
+                            state: _model.stateValue,
+                            pincode: _model.pincodeTextController.text,
+                            atmExisting: _model.aTMExistingValue,
                             landMark: _model.landMarksTextController.text,
-                            iRBICategory: _model.iRBICategory,
+                            rBICategory: _model.rBICategoryValue,
+                            sitesourcedby: _model.siteSourcedValue,
                             isOnSite: _model.onofsiteValue,
-                            token: FFAppState().Token,
+                            isDuplicateSite:
+                                _model.duplicatesiteValue != null &&
+                                    _model.duplicatesiteValue != '',
+                            iSiteVisitedBy: _model.isitevisitedby,
+                            iSiteVisitedByName: _model.iSiteVisitedByName,
                             iSecondSiteVisitedByName:
                                 _model.iSecondSiteVisitedByName,
-                            iSiteVisitedByName: _model.iSiteVisitedByName,
-                            iSiteVisitedBy: _model.isitevisitedby,
-                            isDuplicateSite: _model.duplicatesiteValue,
-                            iCashDeviceMovementCategory: _model.icashdevicemov,
-                            iCashDeviceType: _model.idevicetype,
-                            iShopType: _model.ishoptype,
-                            iTisType: _model.itistype,
-                            iSiteType: _model.isitetype,
                             iProjType: _model.iprojecttype,
-                            iCircle: _model.iCircle,
-                            siteSourcedBy: _model.siteSourcedValue,
-                            mgrName: _model.customerbankTextController.text,
-                            atmExisting: _model.aTMExistingValue,
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
                           );
-                          _shouldSetState = true;
-                          if ((_model.updateDOAdetailsfirst?.succeeded ??
-                              true)) {
-                            context.pushNamed('indent_site_landlord_details');
+                          if ((_model.updateDOAdetailsfirst?.jsonBody ?? '')) {
+                            context.goNamed('indent_site_landlord_details');
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert (UpdateDOAdetailsfirst)'),
+                                  content: Text(
+                                      (_model.updateDOAdetailsfirst?.bodyText ??
+                                          '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

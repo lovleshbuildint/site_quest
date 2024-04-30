@@ -534,23 +534,47 @@ class _IndentSiteNearestBranchWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResult3hi =
+                          _model.dOADetailsfive =
                               await SqGroup.updateDOADetailsfiveCall.call(
                             indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            cRACoverage:
+                                _model.nearestbranchModel.cRACoverageValue,
+                            cRAAgency: _model.nearestbranchModel.cRAAgencyValue,
+                            branchSOLID: _model.nearestbranchModel
+                                .branchSOLIDTextController.text,
+                            nearestBranch: _model.nearestbranchModel
+                                .nearestBranchstextTextController.text,
+                            distanceFromNearestBranch: _model.nearestbranchModel
+                                .distanceNearestBranchTextController.text,
+                            videoURL: _model
+                                .nearestbranchModel.videoURLTextController.text,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResult3hi?.succeeded ?? true)) {
+                          if ((_model.dOADetailsfive?.succeeded ?? true)) {
                             context.pushNamed('indent_site_nearest_atm');
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(IndenSiteNearestAtm)'),
+                                  content: Text(
+                                      (_model.dOADetailsfive?.bodyText ?? '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

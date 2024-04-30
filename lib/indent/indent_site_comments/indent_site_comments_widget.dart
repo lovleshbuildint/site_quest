@@ -685,13 +685,11 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResult7p3 =
+                          _model.dOADetailsFive =
                               await SqGroup.updateDOADetailsfiveCall.call(
                             comment: _model.textController.text,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResult7p3?.succeeded ?? true)) {
+                          if ((_model.dOADetailsFive?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {
                               context.pop();
                             }
@@ -706,11 +704,26 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                               },
                             );
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(InsidentSiteReview)'),
+                                  content: Text(
+                                      (_model.dOADetailsFive?.bodyText ?? '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Review',
                         options: FFButtonOptions(

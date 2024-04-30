@@ -41,35 +41,36 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FocusNode? balanceAmountFocusNode;
   TextEditingController? balanceAmountTextController;
   String? Function(BuildContext, String?)? balanceAmountTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController1;
-  // State field(s) for securityRent widget.
-  FocusNode? securityRentFocusNode;
-  TextEditingController? securityRentTextController;
-  String? Function(BuildContext, String?)? securityRentTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
-  // State field(s) for DropDown widget.
-  String? dropDownValue5;
-  FormFieldController<String>? dropDownValueController5;
+  // State field(s) for RentEscaltion widget.
+  String? rentEscaltionValue;
+  FormFieldController<String>? rentEscaltionValueController;
+  // State field(s) for EscalationPeriod widget.
+  String? escalationPeriodValue1;
+  FormFieldController<String>? escalationPeriodValueController1;
+  // State field(s) for AgreementPeriods widget.
+  String? agreementPeriodsValue1;
+  FormFieldController<String>? agreementPeriodsValueController1;
+  // State field(s) for E-billingRent widget.
+  FormFieldController<String>? eBillingRentValueController;
+  // State field(s) for securityRent-RentPerMonth widget.
+  FocusNode? securityRentRentPerMonthFocusNode;
+  TextEditingController? securityRentRentPerMonthTextController;
+  String? Function(BuildContext, String?)?
+      securityRentRentPerMonthTextControllerValidator;
+  // State field(s) for RentFreePeriods widget.
+  String? rentFreePeriodsValue;
+  FormFieldController<String>? rentFreePeriodsValueController;
+  // State field(s) for SecurityDeposit widget.
+  String? securityDepositValue;
+  FormFieldController<String>? securityDepositValueController;
   // State field(s) for TotalSecurityDeposit widget.
   FocusNode? totalSecurityDepositFocusNode;
   TextEditingController? totalSecurityDepositTextController;
   String? Function(BuildContext, String?)?
       totalSecurityDepositTextControllerValidator;
-  // State field(s) for DropDownSDI widget.
-  String? dropDownSDIValue;
-  FormFieldController<String>? dropDownSDIValueController;
+  // State field(s) for SDI-IntialAdvance widget.
+  String? sDIIntialAdvanceValue;
+  FormFieldController<String>? sDIIntialAdvanceValueController;
   // State field(s) for AdvanceSDAmount widget.
   FocusNode? advanceSDAmountFocusNode;
   TextEditingController? advanceSDAmountTextController;
@@ -80,17 +81,17 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   TextEditingController? balanceSDAmountTextController;
   String? Function(BuildContext, String?)?
       balanceSDAmountTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue6;
-  FormFieldController<String>? dropDownValueController6;
-  // State field(s) for DropDown widget.
-  String? dropDownValue7;
-  FormFieldController<String>? dropDownValueController7;
-  // State field(s) for DropDown widget.
-  String? dropDownValue8;
-  FormFieldController<String>? dropDownValueController8;
-  // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController2;
+  // State field(s) for RentEscalation-per widget.
+  String? rentEscalationPerValue;
+  FormFieldController<String>? rentEscalationPerValueController;
+  // State field(s) for EscalationPeriod widget.
+  String? escalationPeriodValue2;
+  FormFieldController<String>? escalationPeriodValueController2;
+  // State field(s) for AgreementPeriods widget.
+  String? agreementPeriodsValue2;
+  FormFieldController<String>? agreementPeriodsValueController2;
+  // State field(s) for E-BillIncludingRent widget.
+  FormFieldController<String>? eBillIncludingRentValueController;
 
   @override
   void initState(BuildContext context) {}
@@ -109,8 +110,8 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
     balanceAmountFocusNode?.dispose();
     balanceAmountTextController?.dispose();
 
-    securityRentFocusNode?.dispose();
-    securityRentTextController?.dispose();
+    securityRentRentPerMonthFocusNode?.dispose();
+    securityRentRentPerMonthTextController?.dispose();
 
     totalSecurityDepositFocusNode?.dispose();
     totalSecurityDepositTextController?.dispose();
@@ -124,6 +125,7 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
 
   /// Additional helper methods.
   String? get rentaltypeValue => rentaltypeValueController?.value;
-  String? get radioButtonValue1 => radioButtonValueController1?.value;
-  String? get radioButtonValue2 => radioButtonValueController2?.value;
+  String? get eBillingRentValue => eBillingRentValueController?.value;
+  String? get eBillIncludingRentValue =>
+      eBillIncludingRentValueController?.value;
 }

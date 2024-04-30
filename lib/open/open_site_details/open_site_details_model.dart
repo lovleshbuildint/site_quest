@@ -122,8 +122,8 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  // Stores action output result for [Backend Call - API (Update DOAdetailsfirst)] action in Button widget.
-  ApiCallResponse? apiResultq6m;
+  // Stores action output result for [Backend Call - API (DOADetailsstepFIRSTworddoc)] action in Button widget.
+  ApiCallResponse? updateDOAdetailsfirstwordsSites;
 
   @override
   void initState(BuildContext context) {}

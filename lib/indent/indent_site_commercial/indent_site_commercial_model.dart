@@ -17,8 +17,8 @@ class IndentSiteCommercialModel
   final unfocusNode = FocusNode();
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
-  // Stores action output result for [Backend Call - API (UpdateDOADetailsthree)] action in Button widget.
-  ApiCallResponse? apiResult14k;
+  // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
+  ApiCallResponse? dOADetailsThirdWord;
 
   @override
   void initState(BuildContext context) {

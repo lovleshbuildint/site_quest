@@ -534,23 +534,54 @@ class _IndentSiteCommercialWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResult14k =
-                              await SqGroup.updateDOADetailsthreeCall.call(
-                            iIndent: getJsonField(
+                          _model.dOADetailsThirdWord =
+                              await SqGroup.dOADetailsstepTHIRDworddocCall.call(
+                            indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
-                            ),
+                            ).toString(),
+                            rentFreePeriod: _model
+                                .commercialAdvanceModel.rentFreePeriodValue,
+                            rentalType:
+                                _model.commercialAdvanceModel.rentaltypeValue,
+                            token: FFAppState().Token,
+                            rent: _model.commercialAdvanceModel
+                                .advanceRentAmountRENTTextController.text,
+                            advanceDeposit: _model
+                                .commercialAdvanceModel.advanceRentDD1Value,
+                            totalDeposit: _model.commercialAdvanceModel
+                                .totalSecurityDepositTextController.text,
+                            securityDeposit: _model
+                                .commercialAdvanceModel.securityDepositValue,
+                            agreementPeriod: _model
+                                .commercialAdvanceModel.agreementPeriodsValue1,
+                            escalationPeriod: _model
+                                .commercialAdvanceModel.escalationPeriodValue1,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResult14k?.succeeded ?? true)) {
-                            context.pushNamed('indent_site_dimensions');
+                          if ((_model.dOADetailsThirdWord?.succeeded ?? true)) {
+                            context.goNamed('indent_site_dimensions');
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert (Dimesions)'),
+                                  content: Text(
+                                      (_model.dOADetailsThirdWord?.bodyText ??
+                                          '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

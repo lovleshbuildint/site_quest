@@ -18,7 +18,7 @@ class IndentSiteDimensionsModel
   // Model for sitedimentions component.
   late SitedimentionsModel sitedimentionsModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfour)] action in Button widget.
-  ApiCallResponse? apiResult57p;
+  ApiCallResponse? dOADetailsFour;
 
   @override
   void initState(BuildContext context) {

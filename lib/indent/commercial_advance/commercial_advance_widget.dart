@@ -44,8 +44,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.balanceAmountTextController ??= TextEditingController();
     _model.balanceAmountFocusNode ??= FocusNode();
 
-    _model.securityRentTextController ??= TextEditingController();
-    _model.securityRentFocusNode ??= FocusNode();
+    _model.securityRentRentPerMonthTextController ??= TextEditingController();
+    _model.securityRentRentPerMonthFocusNode ??= FocusNode();
 
     _model.totalSecurityDepositTextController ??= TextEditingController();
     _model.totalSecurityDepositFocusNode ??= FocusNode();
@@ -727,13 +727,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController1 ??=
+                      controller: _model.rentEscaltionValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownValue1 ??= '20',
+                        _model.rentEscaltionValue ??= '20',
                       ),
                       options: ['0', '5', '10', '15', '20', '25'],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue1 = val),
+                          setState(() => _model.rentEscaltionValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -775,9 +775,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController2 ??=
+                      controller: _model.escalationPeriodValueController1 ??=
                           FormFieldController<String>(
-                        _model.dropDownValue2 ??= '5',
+                        _model.escalationPeriodValue1 ??= '5',
                       ),
                       options: [
                         '0',
@@ -792,7 +792,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '9'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue2 = val),
+                          setState(() => _model.escalationPeriodValue1 = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -834,9 +834,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController3 ??=
+                      controller: _model.agreementPeriodsValueController1 ??=
                           FormFieldController<String>(
-                        _model.dropDownValue3 ??= '5',
+                        _model.agreementPeriodsValue1 ??= '5',
                       ),
                       options: [
                         '0',
@@ -851,7 +851,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '9'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue3 = val),
+                          setState(() => _model.agreementPeriodsValue1 = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -900,7 +900,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           child: FlutterFlowRadioButton(
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) => setState(() {}),
-                            controller: _model.radioButtonValueController1 ??=
+                            controller: _model.eBillingRentValueController ??=
                                 FormFieldController<String>('Yes'),
                             optionHeight: 16.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -975,19 +975,21 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model.securityRentTextController,
-                              focusNode: _model.securityRentFocusNode,
+                              controller:
+                                  _model.securityRentRentPerMonthTextController,
+                              focusNode:
+                                  _model.securityRentRentPerMonthFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
-                                '_model.securityRentTextController',
+                                '_model.securityRentRentPerMonthTextController',
                                 Duration(milliseconds: 2000),
                                 () async {
                                   setState(() {
                                     _model.totalSecurityDepositTextController
-                                        ?.text = ((int.tryParse(
-                                                    (_model.dropDownValue5!)) ??
+                                        ?.text = ((int.tryParse((_model
+                                                    .securityDepositValue!)) ??
                                                 0) *
                                             (int.tryParse(_model
-                                                    .securityRentTextController
+                                                    .securityRentRentPerMonthTextController
                                                     .text) ??
                                                 0))
                                         .toString();
@@ -1047,7 +1049,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
                               validator: _model
-                                  .securityRentTextControllerValidator
+                                  .securityRentRentPerMonthTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -1071,13 +1073,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController4 ??=
+                      controller: _model.rentFreePeriodsValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownValue4 ??= '30',
+                        _model.rentFreePeriodsValue ??= '30',
                       ),
                       options: ['30', '45', '60'],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue4 = val),
+                          setState(() => _model.rentFreePeriodsValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1119,9 +1121,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController5 ??=
+                      controller: _model.securityDepositValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownValue5 ??= '4',
+                        _model.securityDepositValue ??= '4',
                       ),
                       options: [
                         '1',
@@ -1138,7 +1140,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue5 = val),
+                          setState(() => _model.securityDepositValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1254,9 +1256,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownSDIValueController ??=
+                      controller: _model.sDIIntialAdvanceValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownSDIValue ??= '5',
+                        _model.sDIIntialAdvanceValue ??= '5',
                       ),
                       options: [
                         '1',
@@ -1273,15 +1275,17 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.dropDownSDIValue = val);
+                        setState(() => _model.sDIIntialAdvanceValue = val);
                         setState(() {
-                          _model.advanceSDAmountTextController?.text =
-                              ((int.tryParse((_model.dropDownSDIValue!)) ?? 0) *
-                                      (int.tryParse(_model
-                                              .securityRentTextController
-                                              .text) ??
-                                          0))
-                                  .toString();
+                          _model.advanceSDAmountTextController
+                              ?.text = ((int.tryParse(
+                                          (_model.sDIIntialAdvanceValue!)) ??
+                                      0) *
+                                  (int.tryParse(_model
+                                          .securityRentRentPerMonthTextController
+                                          .text) ??
+                                      0))
+                              .toString();
                         });
                         setState(() {
                           _model.balanceSDAmountTextController
@@ -1538,13 +1542,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController6 ??=
+                      controller: _model.rentEscalationPerValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownValue6 ??= '20',
+                        _model.rentEscalationPerValue ??= '20',
                       ),
                       options: ['0', '5', '10', '15', '20', '25'],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue6 = val),
+                          setState(() => _model.rentEscalationPerValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1586,9 +1590,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController7 ??=
+                      controller: _model.escalationPeriodValueController2 ??=
                           FormFieldController<String>(
-                        _model.dropDownValue7 ??= '5',
+                        _model.escalationPeriodValue2 ??= '5',
                       ),
                       options: [
                         '0',
@@ -1603,7 +1607,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '9'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue7 = val),
+                          setState(() => _model.escalationPeriodValue2 = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1645,9 +1649,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController8 ??=
+                      controller: _model.agreementPeriodsValueController2 ??=
                           FormFieldController<String>(
-                        _model.dropDownValue8 ??= '5',
+                        _model.agreementPeriodsValue2 ??= '5',
                       ),
                       options: [
                         '0',
@@ -1662,7 +1666,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '9'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue8 = val),
+                          setState(() => _model.agreementPeriodsValue2 = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1711,8 +1715,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           child: FlutterFlowRadioButton(
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) => setState(() {}),
-                            controller: _model.radioButtonValueController2 ??=
-                                FormFieldController<String>('Yes'),
+                            controller:
+                                _model.eBillIncludingRentValueController ??=
+                                    FormFieldController<String>('Yes'),
                             optionHeight: 16.0,
                             textStyle: FlutterFlowTheme.of(context)
                                 .labelMedium

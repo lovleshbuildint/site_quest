@@ -1423,7 +1423,7 @@ class ListSitesCall {
 
 class DistrictAPisCall {
   Future<ApiCallResponse> call({
-    String? istate = '',
+    String? istate = '0',
     String? token = '',
   }) async {
     return ApiManager.instance.makeApiCall(

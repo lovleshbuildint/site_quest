@@ -354,18 +354,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           ) as List)
                               .map<String>((s) => s.toString())
                               .toList()!,
-                          onChanged: (val) async {
-                            setState(() => _model.districtValue = val);
-                            setState(() {
-                              _model.iDistrict = functions.checkIndexint(
-                                  FFAppState().District,
-                                  _model.iDistrict?.toString(),
-                                  'District',
-                                  'DistrictName',
-                                  'iDistrict',
-                                  false);
-                            });
-                          },
+                          onChanged: (val) =>
+                              setState(() => _model.districtValue = val),
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 50.0,
                           searchHintTextStyle:
@@ -972,7 +962,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
-                hintText: 'Enter Number',
+                hintText: 'Enter Email',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,

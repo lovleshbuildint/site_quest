@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -15,6 +16,8 @@ class OpenSiteCommercialModel
   final unfocusNode = FocusNode();
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
+  // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
+  ApiCallResponse? dOADetailsThirdWorddocSite;
 
   @override
   void initState(BuildContext context) {

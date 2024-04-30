@@ -41,6 +41,8 @@ class _OpenSiteLandlordDetailsWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -347,30 +349,81 @@ class _OpenSiteLandlordDetailsWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResultwtn =
-                              await SqGroup.updateDOADetailssecondCall.call();
-                          _shouldSetState = true;
-                          if ((_model.apiResultwtn?.succeeded ?? true)) {
-                            if (Navigator.of(context).canPop()) {
-                              context.pop();
-                            }
-                            context.pushNamed(
-                              'open_site_commercial',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
+                          _model.updateDOADdeatilssecondwordSite = await SqGroup
+                              .dOADetailsstepSECONDworddocCall
+                              .call(
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            district: _model.landlordformModel.districtValue,
+                            token: FFAppState().Token,
+                            iCity: _model.landlordformModel.iCity?.toString(),
+                            lLPercent: _model
+                                .landlordformModel.percentTextController.text,
+                            address: _model
+                                .landlordformModel.addressTextController.text,
+                            iState: _model.landlordformModel.istate?.toString(),
+                            pincode: _model
+                                .landlordformModel.pincodeTextController.text,
+                            landMark: _model
+                                .landlordformModel.landmarksTextController.text,
+                            contact1: _model.landlordformModel
+                                .contactNameTextController.text,
+                            contact2: _model.landlordformModel
+                                .alernativenumberTextController.text,
+                            emailId: _model
+                                .landlordformModel.emailidTextController.text,
+                            fax:
+                                _model.landlordformModel.faxTextController.text,
+                            lLBankName:
+                                _model.landlordformModel.landlordBankNameValue,
+                            landLordNameonCheque: _model.landlordformModel
+                                .chequefieldTextController.text,
+                            bankAcNo: _model.landlordformModel
+                                .bankAccountNumberTextController.text,
+                            branchName: _model.landlordformModel
+                                .bankBranchTextController.text,
+                            iFSCCode: _model
+                                .landlordformModel.iFSCCodeTextController.text,
+                            pANCard: _model
+                                .landlordformModel.panNumberTextController.text,
+                            aadharcard: _model.landlordformModel
+                                .aAdharcardNoTextController.text,
+                            landLordName: _model.landlordformModel
+                                .landoardNameTextController.text,
+                            refeName: _model.landlordformModel
+                                .siteReferralNameTextController.text,
+                            contactNumber: _model.landlordformModel
+                                .siteReferralNoTextController.text,
+                          );
+                          if ((_model
+                                  .updateDOADdeatilssecondwordSite?.succeeded ??
+                              true)) {
+                            context.goNamed('open_site_commercial');
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(Insident LandLord)'),
+                                  content: Text((_model
+                                          .updateDOADdeatilssecondwordSite
+                                          ?.bodyText ??
+                                      '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
                               },
                             );
-                          } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

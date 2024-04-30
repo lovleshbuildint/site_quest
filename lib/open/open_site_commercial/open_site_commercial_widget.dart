@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -39,6 +40,8 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -303,19 +306,56 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          if (Navigator.of(context).canPop()) {
-                            context.pop();
-                          }
-                          context.pushNamed(
-                            'open_site_dimensions',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
+                          _model.dOADetailsThirdWorddocSite =
+                              await SqGroup.dOADetailsstepTHIRDworddocCall.call(
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            rentFreePeriod: _model
+                                .commercialAdvanceModel.rentFreePeriodValue,
+                            rentalType:
+                                _model.commercialAdvanceModel.rentaltypeValue,
+                            token: FFAppState().Token,
+                            rent: _model.commercialAdvanceModel
+                                .advanceRentAmountRENTTextController.text,
+                            advanceDeposit: _model
+                                .commercialAdvanceModel.advanceRentDD1Value,
+                            totalDeposit: _model.commercialAdvanceModel
+                                .totalSecurityDepositTextController.text,
+                            securityDeposit: _model
+                                .commercialAdvanceModel.securityDepositValue,
+                            agreementPeriod: _model
+                                .commercialAdvanceModel.agreementPeriodsValue1,
+                            escalationPeriod: _model
+                                .commercialAdvanceModel.escalationPeriodValue1,
                           );
+                          if ((_model.dOADetailsThirdWorddocSite?.succeeded ??
+                              true)) {
+                            context.goNamed('indent_site_dimensions');
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert (Dimesions)'),
+                                  content: Text((_model
+                                          .dOADetailsThirdWorddocSite
+                                          ?.bodyText ??
+                                      '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

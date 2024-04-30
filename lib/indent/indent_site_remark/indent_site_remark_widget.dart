@@ -27,20 +27,20 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
     super.initState();
     _model = createModel(context, () => IndentSiteRemarkModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.remark1TextController ??= TextEditingController();
+    _model.remark1FocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.remark2TextController ??= TextEditingController();
+    _model.remark2FocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.remark3TextController ??= TextEditingController();
+    _model.remark3FocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.remark4TextController ??= TextEditingController();
+    _model.remark4FocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.remark5TextController ??= TextEditingController();
+    _model.remark5FocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -608,8 +608,8 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController1,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.remark1TextController,
+                            focusNode: _model.remark1FocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -659,7 +659,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController1Validator
+                            validator: _model.remark1TextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -667,8 +667,8 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController2,
-                            focusNode: _model.textFieldFocusNode2,
+                            controller: _model.remark2TextController,
+                            focusNode: _model.remark2FocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -718,7 +718,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController2Validator
+                            validator: _model.remark2TextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -726,8 +726,8 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController3,
-                            focusNode: _model.textFieldFocusNode3,
+                            controller: _model.remark3TextController,
+                            focusNode: _model.remark3FocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -777,7 +777,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController3Validator
+                            validator: _model.remark3TextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -785,8 +785,8 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode4,
+                            controller: _model.remark4TextController,
+                            focusNode: _model.remark4FocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -836,7 +836,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController4Validator
+                            validator: _model.remark4TextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -844,8 +844,8 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController5,
-                            focusNode: _model.textFieldFocusNode5,
+                            controller: _model.remark5TextController,
+                            focusNode: _model.remark5FocusNode,
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -895,7 +895,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController5Validator
+                            validator: _model.remark5TextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -919,17 +919,15 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResult9re =
+                          _model.dOADeatilsfive =
                               await SqGroup.updateDOADetailsfiveCall.call(
-                            remarks1: _model.textController1.text,
-                            remarks2: _model.textController2.text,
-                            remarks3: _model.textController3.text,
-                            remarks4: _model.textController4.text,
-                            remarks5: _model.textController5.text,
+                            remarks1: _model.remark1TextController.text,
+                            remarks2: _model.remark2TextController.text,
+                            remarks3: _model.remark3TextController.text,
+                            remarks4: _model.remark4TextController.text,
+                            remarks5: _model.remark5TextController.text,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResult9re?.succeeded ?? true)) {
+                          if ((_model.dOADeatilsfive?.succeeded ?? true)) {
                             context.pushNamed(
                               'indent_site_review',
                               extra: <String, dynamic>{
@@ -941,11 +939,26 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               },
                             );
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(IndentSiteReview)'),
+                                  content: Text(
+                                      (_model.dOADeatilsfive?.bodyText ?? '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Review',
                         options: FFButtonOptions(

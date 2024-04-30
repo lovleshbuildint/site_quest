@@ -2458,10 +2458,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            valueOrDefault<String>(
-                              _model.iSecondSiteVisitedByName?.toString(),
-                              '100',
-                            ),
+                            FFAppState().SecondSiteVisitedBY.toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2513,8 +2510,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         functions.checkIndexint(
                                             secondsitevisitedbyGetSecondSiteVisitersResponse
                                                 .jsonBody,
-                                            _model.iSecondSiteVisitedByName
-                                                ?.toString(),
+                                            FFAppState()
+                                                .SecondSiteVisitedBY
+                                                .toString(),
                                             '-',
                                             'UserName',
                                             'iUser',

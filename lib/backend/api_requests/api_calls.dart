@@ -1580,7 +1580,6 @@ class DOADetailsstepFIRSTworddocCall {
   "ContactNumber": "${contactNumber}",
   "EmailId": "${emailId}",
   "iindent": "${iindent}",
-"isFromSiteref":"<isFromSiteref>",
 "isWB":"${isWB}"
 }
 ''';

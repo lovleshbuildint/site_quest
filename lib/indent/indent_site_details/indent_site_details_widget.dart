@@ -2280,10 +2280,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            valueOrDefault<String>(
-                              _model.isitevisitedby?.toString(),
-                              '11',
-                            ),
+                            'Site Visited By',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2317,7 +2314,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() {
                                 _model.isiteddep = functions.checkIndexint(
                                     FFAppState().visitedbydeptapi,
-                                    _model.isiteddep?.toString(),
+                                    _model.sitevisitedbyValue,
                                     '-',
                                     'Department',
                                     'idepartment',
@@ -2418,8 +2415,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         functions.checkIndexint(
                                             firstsitevisitedbyGetDepartmentWiseUserAPIResponse
                                                 .jsonBody,
-                                            _model.iSiteVisitedByName
-                                                ?.toString(),
+                                            _model.firstsitevisitedbyValue,
                                             '-',
                                             'UserName',
                                             'iUser',
@@ -2461,10 +2457,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            valueOrDefault<String>(
-                              _model.iSecondSiteVisitedByName?.toString(),
-                              '00',
-                            ),
+                            'Second Site Visited BY',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

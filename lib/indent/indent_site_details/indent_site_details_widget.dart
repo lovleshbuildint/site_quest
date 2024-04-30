@@ -2546,6 +2546,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please Select..',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)

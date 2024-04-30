@@ -840,10 +840,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            valueOrDefault<String>(
-                              _model.itistype?.toString(),
-                              '11',
-                            ),
+                            'TIS Type',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2316,7 +2313,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() => _model.sitevisitedbyValue = val);
                               setState(() {
                                 _model.isiteddep = functions.checkIndexint(
-                                    FFAppState().visitedbydeptapi,
+                                    FFAppState().SiteVisitedBy,
                                     _model.sitevisitedbyValue,
                                     '-',
                                     'Department',

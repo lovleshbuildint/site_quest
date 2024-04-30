@@ -426,7 +426,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
           if ((_model.getsitevisitedbydeptapiresponse?.succeeded ?? true)) {
             setState(() {
-              FFAppState().visitedbydeptapi =
+              FFAppState().SiteVisitedBy =
                   (_model.getsitevisitedbydeptapiresponse?.jsonBody ?? '');
             });
           } else {

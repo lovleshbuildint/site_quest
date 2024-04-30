@@ -2516,8 +2516,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         functions.checkIndexint(
                                             secondsitevisitedbyGetSecondSiteVisitersResponse
                                                 .jsonBody,
-                                            _model.iSecondSiteVisitedByName
-                                                ?.toString(),
+                                            _model.secondsitevisitedbyValue,
                                             '-',
                                             'UserName',
                                             'iUser',

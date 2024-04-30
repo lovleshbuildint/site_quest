@@ -29,13 +29,13 @@ int? checkIndexint(
   if (mainKeyYesorNo == false) {
     for (int i = 0; i < list.length; i++) {
       if (list[i][subKeys] == value) {
-        return list[i][indexKey];
+        return int.parse(list[i][indexKey].toString());
       }
     }
   } else {
     for (int i = 0; i < list[keys].length; i++) {
       if (list[keys][i][subKeys] == value) {
-        return list[keys][i][indexKey];
+        return int.parse(list[keys][i][indexKey].toString());
       }
     }
   }

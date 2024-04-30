@@ -2312,13 +2312,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             onChanged: (val) async {
                               setState(() => _model.sitevisitedbyValue = val);
                               setState(() {
-                                _model.isiteddep = functions.checkIndexint(
-                                    FFAppState().visitedbydeptapi,
-                                    _model.sitevisitedbyValue,
-                                    '-',
-                                    'Department',
-                                    'idepartment',
-                                    false);
+                                _model.isiteddep = 0;
                               });
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,

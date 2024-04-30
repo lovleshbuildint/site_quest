@@ -503,6 +503,35 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             );
           }
         }),
+        Future(() async {
+          _model.apiResultsitevisitedbydept =
+              await SqGroup.getsitevisiteddbydeptAPICall.call(
+            token: FFAppState().Token,
+          );
+          if ((_model.apiResultsitevisitedbydept?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().visitedbydeptapi =
+                  (_model.apiResultsitevisitedbydept?.jsonBody ?? '');
+            });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(apiresultsitevisitebydept)'),
+                  content:
+                      Text((_model.apiResultsitevisitedbydept?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
       ]);
     });
 

@@ -2460,7 +2460,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           child: Text(
                             valueOrDefault<String>(
                               _model.iSecondSiteVisitedByName?.toString(),
-                              '1',
+                              '100',
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

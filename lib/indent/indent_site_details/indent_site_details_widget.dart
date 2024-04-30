@@ -802,7 +802,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() {
                                 _model.icashdevicemov = functions.checkIndexint(
                                     FFAppState().CashDeviceMovementCategory,
-                                    _model.icashdevicemov?.toString(),
+                                    _model.cashdevicemovValue,
                                     '-',
                                     'CashDeviceMovementCategory',
                                     'iCashDeviceMovementCategory',
@@ -874,7 +874,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() {
                                 _model.itistype = functions.checkIndexint(
                                     FFAppState().TISType,
-                                    _model.itistype?.toString(),
+                                    _model.tistypeValue,
                                     '-',
                                     'CashDeviceMovementCategory',
                                     'iCashDeviceMovementCategory',
@@ -946,7 +946,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() {
                                 _model.iprojecttype = functions.checkIndexint(
                                     FFAppState().ProjectType,
-                                    _model.iprojecttype?.toString(),
+                                    _model.projecttypeValue,
                                     '-',
                                     'ProjectTypeName',
                                     'iProjType',
@@ -1018,7 +1018,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() {
                                 _model.ishoptype = functions.checkIndexint(
                                     FFAppState().BusinessType,
-                                    _model.ishoptype?.toString(),
+                                    _model.businesstypeValue,
                                     '-',
                                     'ShopTypeName',
                                     'iShopType',

@@ -425,6 +425,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -498,6 +499,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -557,8 +559,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 _model.ichasdevicemovementcategorys =
                                     functions.checkIndexint(
                                         FFAppState().CashDeviceMovementCategory,
-                                        _model.ichasdevicemovementcategorys
-                                            ?.toString(),
+                                        _model.cashDeviceMovementValue,
                                         '-',
                                         'CashDeviceMovementCategory',
                                         'iCashDeviceMovementCategory',
@@ -574,6 +575,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -630,7 +632,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               setState(() {
                                 _model.iTisTypes = functions.checkIndexint(
                                     FFAppState().TISType,
-                                    _model.iTisTypes?.toString(),
+                                    _model.tisTypeValue,
                                     '-',
                                     'CashDeviceMovementCategory',
                                     'iCashDeviceMovementCategory',
@@ -646,6 +648,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -702,7 +705,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               setState(() {
                                 _model.iprojecttypes = functions.checkIndexint(
                                     FFAppState().ProjectType,
-                                    _model.iprojecttypes?.toString(),
+                                    _model.projectTypeValue,
                                     '-',
                                     'ProjectTypeName',
                                     'iProjType',
@@ -718,6 +721,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -774,7 +778,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               setState(() {
                                 _model.ishoptypes = functions.checkIndexint(
                                     FFAppState().BusinessType,
-                                    _model.ishoptypes?.toString(),
+                                    _model.businessTypeValue,
                                     '-',
                                     'ShopTypeName',
                                     'iShopType',
@@ -790,6 +794,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -852,6 +857,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -915,6 +921,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select...',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -1235,6 +1242,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
+                                        hintText: 'Please select...',
                                         searchHintText: 'Search Bank...',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1326,6 +1334,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
+                                        hintText: 'Please select...',
                                         searchHintText: 'Search City...',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1418,6 +1427,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
+                                      hintText: 'Please select...',
                                       searchHintText: 'Search district...',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
@@ -1584,6 +1594,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1719,6 +1730,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1995,6 +2007,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             'Department',
                                             'idepartment',
                                             false);
+                                    _model.isiteddeps = functions.checkIndexint(
+                                        FFAppState().SiteVisitedBy,
+                                        _model.siteVisitedBYValue,
+                                        '-',
+                                        'Department',
+                                        'idepartment',
+                                        false);
                                   });
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2006,6 +2025,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please select...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: Color(0xFFE1E2E6),
@@ -2093,8 +2113,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         functions.checkIndexint(
                                             firstSiteVisitedByGetDepartmentWiseUserAPIResponse
                                                 .jsonBody,
-                                            _model.isitevisitedbynames
-                                                ?.toString(),
+                                            _model.firstSiteVisitedByValue,
                                             '-',
                                             'UserName',
                                             'iUser',
@@ -2194,8 +2213,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         functions.checkIndexint(
                                             dropDownGetSecondSiteVisitersResponse
                                                 .jsonBody,
-                                            _model.isecondsitevisitedbynames
-                                                ?.toString(),
+                                            _model.dropDownValue,
                                             '-',
                                             'UserName',
                                             'iUser',

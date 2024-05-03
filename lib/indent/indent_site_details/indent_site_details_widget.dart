@@ -2634,7 +2634,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               r'''$.CustomerBank''',
                             ).toString(),
                           );
-                          if ((_model.updateDOAdetailsfirst?.jsonBody ?? '')) {
+                          if ((_model.updateDOAdetailsfirst?.succeeded ??
+                              true)) {
                             context.pushNamed('indent_site_landlord_details');
                           } else {
                             await showDialog(

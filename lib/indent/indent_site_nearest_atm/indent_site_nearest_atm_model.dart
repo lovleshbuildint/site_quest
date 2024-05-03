@@ -18,7 +18,7 @@ class IndentSiteNearestAtmModel
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
   // Stores action output result for [Backend Call - API (UpdatenearestATM)] action in Button widget.
-  ApiCallResponse? apiResultzpu;
+  ApiCallResponse? updateNearestATM;
 
   @override
   void initState(BuildContext context) {

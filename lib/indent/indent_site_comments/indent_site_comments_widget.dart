@@ -688,6 +688,11 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                           _model.dOADetailsFive =
                               await SqGroup.updateDOADetailsfiveCall.call(
                             comment: _model.textController.text,
+                            token: FFAppState().Token,
+                            indentId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.CustomerBank''',
+                            ).toString(),
                           );
                           if ((_model.dOADetailsFive?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

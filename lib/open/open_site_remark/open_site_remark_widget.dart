@@ -672,16 +672,21 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResultuxw =
+                          _model.openUpdateDOADetailsFive =
                               await SqGroup.updateDOADetailsfiveCall.call(
                             indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            remarks1: _model.remark1TextController.text,
+                            remarks2: _model.remark2TextController.text,
+                            remarks3: _model.remark3TextController.text,
+                            remarks4: _model.remark4TextController.text,
+                            remarks5: _model.remark5TextController.text,
+                            token: FFAppState().Token,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResultuxw?.succeeded ?? true)) {
+                          if ((_model.openUpdateDOADetailsFive?.succeeded ??
+                              true)) {
                             context.pushNamed(
                               'open_site_review',
                               extra: <String, dynamic>{
@@ -693,11 +698,27 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                               },
                             );
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(OpenUpdate)'),
+                                  content: Text((_model
+                                          .openUpdateDOADetailsFive?.bodyText ??
+                                      '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Review',
                         options: FFButtonOptions(

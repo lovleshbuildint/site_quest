@@ -1688,6 +1688,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
+                                        hintText: 'Please Select..',
                                         searchHintText: 'Search City...',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,

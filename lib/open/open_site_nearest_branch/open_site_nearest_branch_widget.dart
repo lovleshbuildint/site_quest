@@ -287,35 +287,49 @@ class _OpenSiteNearestBranchWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResultg4t =
+                          _model.oPENSiteDOADetailsfive =
                               await SqGroup.updateDOADetailsfiveCall.call(
                             indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            cRACoverage:
+                                _model.nearestbranchModel.cRACoverageValue,
+                            cRAAgency: _model.nearestbranchModel.cRAAgencyValue,
+                            branchSOLID: _model.nearestbranchModel
+                                .branchSOLIDTextController.text,
+                            nearestBranch: _model.nearestbranchModel
+                                .nearestBranchstextTextController.text,
+                            distanceFromNearestBranch: _model.nearestbranchModel
+                                .distanceNearestBranchTextController.text,
+                            videoURL: _model
+                                .nearestbranchModel.videoURLTextController.text,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResultg4t?.succeeded ?? true)) {
-                            if (Navigator.of(context).canPop()) {
-                              context.pop();
-                            }
-                            context.pushNamed(
-                              'open_site_nearest_atm',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
+                          if ((_model.oPENSiteDOADetailsfive?.succeeded ??
+                              true)) {
+                            context.pushNamed('open_site_nearest_atm');
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(OpenSiteNearestAtm)'),
+                                  content: Text((_model
+                                          .oPENSiteDOADetailsfive?.bodyText ??
+                                      '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
                               },
                             );
-                          } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

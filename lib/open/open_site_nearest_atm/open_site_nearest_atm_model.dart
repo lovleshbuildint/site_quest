@@ -17,7 +17,7 @@ class OpenSiteNearestAtmModel
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
   // Stores action output result for [Backend Call - API (UpdatenearestATM)] action in Button widget.
-  ApiCallResponse? apiResult6bp;
+  ApiCallResponse? openSiteUpdateNearestATM;
 
   @override
   void initState(BuildContext context) {

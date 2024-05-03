@@ -576,16 +576,28 @@ class _IndentSiteNearestAtmWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
-                          _model.apiResultzpu =
+                          _model.updateNearestATM =
                               await SqGroup.updatenearestATMCall.call(
                             indentId: getJsonField(
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            token: FFAppState().Token,
+                            atmid:
+                                _model.nearestatmModel.atmidTextController.text,
+                            bankName: _model.nearestatmModel.aTMNameValue,
+                            distance: _model
+                                .nearestatmModel.distanceKMTextController.text,
+                            direction: _model
+                                .nearestatmModel.directionTextController.text,
+                            avgOffusTransDA: _model
+                                .nearestatmModel.avgOffusTextController.text,
+                            avgOnusTransDA: _model
+                                .nearestatmModel.avgOnusTextController.text,
+                            avgtxns: _model.nearestatmModel
+                                .avgApproxTxnsDayTextController.text,
                           );
-                          _shouldSetState = true;
-                          if ((_model.apiResultzpu?.succeeded ?? true)) {
+                          if ((_model.updateNearestATM?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {
                               context.pop();
                             }
@@ -600,11 +612,27 @@ class _IndentSiteNearestAtmWidgetState
                               },
                             );
                           } else {
-                            if (_shouldSetState) setState(() {});
-                            return;
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Alert(UpdateNearestATM)'),
+                                  content: Text(
+                                      (_model.updateNearestATM?.bodyText ??
+                                          '')),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -15,6 +16,8 @@ class OpenSiteDimensionsModel
   final unfocusNode = FocusNode();
   // Model for sitedimentions component.
   late SitedimentionsModel sitedimentionsModel;
+  // Stores action output result for [Backend Call - API (UpdateDOADetailsfour)] action in Button widget.
+  ApiCallResponse? oPENSIteDOADetailsFour;
 
   @override
   void initState(BuildContext context) {

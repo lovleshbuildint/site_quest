@@ -375,6 +375,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                          hintText: 'Please Select..',
                           searchHintText: 'Search District...',
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
@@ -471,6 +472,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                          hintText: 'Please Select..',
                           searchHintText: 'Search State...',
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
@@ -572,6 +574,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                          hintText: 'Please Select..',
                           searchHintText: 'Search City...',
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
@@ -1144,6 +1147,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
+                  hintText: 'Please Select..',
                   searchHintText: 'Search Bank...',
                   icon: Icon(
                     Icons.keyboard_arrow_down_rounded,

@@ -33,7 +33,7 @@ class OpenSiteRemarkModel extends FlutterFlowModel<OpenSiteRemarkWidget> {
   TextEditingController? remark5TextController;
   String? Function(BuildContext, String?)? remark5TextControllerValidator;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
-  ApiCallResponse? apiResultuxw;
+  ApiCallResponse? openUpdateDOADetailsFive;
 
   @override
   void initState(BuildContext context) {}

@@ -2629,6 +2629,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
+                            targetBank: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.CustomerBank''',
+                            ).toString(),
                           );
                           if ((_model.updateDOAdetailsfirst?.jsonBody ?? '')) {
                             context.goNamed('indent_site_landlord_details');

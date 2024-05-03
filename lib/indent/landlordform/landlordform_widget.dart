@@ -546,7 +546,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     FFAppState().master,
                                     r'''$.cities..City''',
                                   ),
-                                  _model.iCity?.toString(),
+                                  _model.cityValue,
                                   'cities',
                                   'City',
                                   'iCity',

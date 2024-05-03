@@ -1559,7 +1559,6 @@ class DOADetailsstepFIRSTworddocCall {
   "RBICategory": "${rBICategory}",
   "sitesourcedby": "${sitesourcedby}",
   "isOnSite": "${isOnSite}",
-  "District": "${district}",
   "mgrName": "${mgrName}",
   "mgrNo": "${mgrNo}",
   "iProjType": "${iProjType}",

@@ -1678,7 +1678,7 @@ class DOADetailsstepSECONDworddocCall {
     "refeId": "${refeId}",
     "RefeName": "${refeName}",
     "isWB": "${isWB}",
-    "isFromSiteref": "<isFromSiteref>",
+
     "companyName": "${companyName}",
     "EmployeeName": "${employeeName}",
     "ContactNumber": "${contactNumber}",

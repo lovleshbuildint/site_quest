@@ -592,7 +592,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                 .landlordformModel.percentTextController.text,
                             address: _model
                                 .landlordformModel.addressTextController.text,
-                            iState: _model.istate?.toString(),
+                            iState: _model.landlordformModel.stateValue,
                             pincode: _model
                                 .landlordformModel.pincodeTextController.text,
                             landMark: _model

@@ -1585,7 +1585,7 @@ class DOADetailsstepFIRSTworddocCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepFIRSTworddoc',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails1',
+      apiUrl: '${SqGroup.baseUrl}/UpdateDOADetails1',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

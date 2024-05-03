@@ -1682,7 +1682,6 @@ class DOADetailsstepSECONDworddocCall {
     "companyName": "${companyName}",
     "EmployeeName": "${employeeName}",
     "ContactNumber": "${contactNumber}",
-    "EmailId": "${emailId}",
     "iindent": "${iindent}"
   }
 ''';

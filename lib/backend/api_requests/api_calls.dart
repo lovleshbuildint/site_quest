@@ -1484,14 +1484,14 @@ class RBInewCall {
 class DOADetailsstepFIRSTworddocCall {
   Future<ApiCallResponse> call({
     String? indentId = '',
-    String? siteId = '00',
+    String? siteId = 'null',
     String? targetBank = '',
     String? district = '',
     String? centre = 'CenterNull',
     String? comment = 'CommentNull',
     String? lastModStamp = 'LastModStampNull',
     String? isHold = 'IsHoldNull',
-    String? istage = 'IstageNull',
+    String? istage = '1',
     String? iStageText = 'IStageTextNull',
     String? locationName = '',
     String? androidKey = 'AndroidKeyNull',

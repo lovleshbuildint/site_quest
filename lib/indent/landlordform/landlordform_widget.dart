@@ -444,7 +444,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     FFAppState().master,
                                     r'''$.states..State''',
                                   ),
-                                  _model.istate?.toString(),
+                                  _model.stateValue,
                                   'states',
                                   'State',
                                   'iState',
@@ -962,6 +962,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               controller: _model.emailidTextController,
               focusNode: _model.emailidFocusNode,
               autofocus: false,
+              textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Email',
@@ -1005,7 +1006,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              keyboardType: TextInputType.emailAddress,
               validator:
                   _model.emailidTextControllerValidator.asValidator(context),
             ),
@@ -2122,7 +2122,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               controller: _model.siteReferralNameTextController,
               focusNode: _model.siteReferralNameFocusNode,
               autofocus: false,
-              textCapitalization: TextCapitalization.none,
+              textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Name',
@@ -2166,12 +2166,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              keyboardType: TextInputType.number,
               validator: _model.siteReferralNameTextControllerValidator
                   .asValidator(context),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-              ],
             ),
           ),
           Padding(

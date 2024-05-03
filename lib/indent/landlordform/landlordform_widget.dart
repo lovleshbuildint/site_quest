@@ -1005,10 +1005,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.emailAddress,
               validator:
                   _model.emailidTextControllerValidator.asValidator(context),
-              inputFormatters: [_model.emailidMask],
             ),
           ),
           Padding(

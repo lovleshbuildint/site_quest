@@ -72,7 +72,6 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   // State field(s) for Emailid widget.
   FocusNode? emailidFocusNode;
   TextEditingController? emailidTextController;
-  final emailidMask = MaskTextInputFormatter(mask: '+91##########');
   String? Function(BuildContext, String?)? emailidTextControllerValidator;
   // State field(s) for Fax widget.
   FocusNode? faxFocusNode;

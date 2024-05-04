@@ -413,13 +413,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
               validator:
                   _model.videoURLTextControllerValidator.asValidator(context),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-              ],
             ),
           ),
         ],

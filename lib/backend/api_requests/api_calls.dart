@@ -774,7 +774,6 @@ class UpdatenearestATMCall {
     String? errCnt = '',
     String? msg = '',
     String? isWB = '',
-    bool? isFromSiteref,
     String? companyName = '',
     String? employeeName = '',
     String? contactNumber = '',

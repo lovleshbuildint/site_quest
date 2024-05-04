@@ -98,7 +98,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                     Text(
                       getJsonField(
                         FFAppState().indentSelectedSite,
-                        r'''$.iIndent''',
+                        r'''$.IndentId''',
                       ).toString(),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
@@ -204,7 +204,10 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Strategy',
+                              getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.Strategy''',
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

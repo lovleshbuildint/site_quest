@@ -1257,9 +1257,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
                       controller: _model.sDIIntialAdvanceValueController ??=
-                          FormFieldController<String>(
-                        _model.sDIIntialAdvanceValue ??= '3',
-                      ),
+                          FormFieldController<String>(null),
                       options: [
                         '1',
                         '2',

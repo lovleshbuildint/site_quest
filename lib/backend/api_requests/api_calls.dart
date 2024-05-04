@@ -919,7 +919,7 @@ class UpdateDOADetailsfiveCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdateDOADetailsfive',
-      apiUrl: '${SqGroup.baseUrl}/\tUpdate_DOADetails5',
+      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails5',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

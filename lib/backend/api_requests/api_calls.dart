@@ -804,7 +804,7 @@ class UpdatenearestATMCall {
 "Distance":"${distance}",
 "Direction":"${direction}",
 "avgtxns":"${avgtxns}",
-"AndroidKey":"${androidKey}",
+
 "AvgTotaltrans_DA":"${avgTotaltransDA}",
 "AvgOnusTrans_DA":"${avgOnusTransDA}",
 "AvgOffusTrans_DA":"${avgOffusTransDA}",
@@ -812,7 +812,7 @@ class UpdatenearestATMCall {
 "errCnt":"${errCnt}",
 "Msg":"${msg}",
 "isWB":"${isWB}",
-"isFromSiteref":"${isFromSiteref}",
+
 "companyName":"${companyName}",
 "EmployeeName":"${employeeName}",
 "ContactNumber":"${contactNumber}",

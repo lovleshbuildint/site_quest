@@ -63,6 +63,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(
@@ -157,9 +159,18 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: FlutterFlowDropDown<String>(
               controller: _model.aTMNameValueController ??=
                   FormFieldController<String>(
-                _model.aTMNameValue ??= 'Bank Name 1',
+                _model.aTMNameValue ??= getJsonField(
+                  FFAppState().master,
+                  r'''$[0].customerbank''',
+                ).toString(),
               ),
-              options: ['Bank Name 1', 'Bank Name 2'],
+              options: (getJsonField(
+                FFAppState().master,
+                r'''$.customerbank..Name''',
+                true,
+              ) as List)
+                  .map<String>((s) => s.toString())
+                  .toList()!,
               onChanged: (val) => setState(() => _model.aTMNameValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -179,6 +190,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please Select..',
               searchHintText: 'Search Bank...',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,

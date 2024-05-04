@@ -1258,7 +1258,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller: _model.sDIIntialAdvanceValueController ??=
                           FormFieldController<String>(
-                        _model.sDIIntialAdvanceValue ??= '5',
+                        _model.sDIIntialAdvanceValue ??= '3',
                       ),
                       options: [
                         '1',
@@ -1308,6 +1308,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: '5',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),

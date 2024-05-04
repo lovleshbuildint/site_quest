@@ -870,7 +870,6 @@ class UpdateDOADetailsfiveCall {
     String? errCnt = '',
     String? msg = '',
     String? isWB = '',
-    bool? isFromSiteref,
     String? companyName = '',
     String? employeeName = '',
     String? contactNumber = '',
@@ -910,7 +909,7 @@ class UpdateDOADetailsfiveCall {
 "errCnt":"${errCnt}",
 "Msg":"${msg}",
 "isWB":"${isWB}",
-"isFromSiteref":"${isFromSiteref}",
+
 "companyName":"${companyName}",
 "EmployeeName":"${employeeName}",
 "ContactNumber":"${contactNumber}",

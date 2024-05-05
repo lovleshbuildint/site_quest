@@ -295,22 +295,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             setState(() {
               FFAppState().master = (_model.masterResponse?.jsonBody ?? '');
             });
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('Alert(masterresponse)'),
-                  content: Text((_model.masterResponse?.bodyText ?? '')),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
           }
         }),
         Future(() async {
@@ -375,22 +359,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               FFAppState().District =
                   (_model.districtApiResponse?.jsonBody ?? '');
             });
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('Alert(District)'),
-                  content: Text((_model.districtApiResponse?.bodyText ?? '')),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
           }
         }),
         Future(() async {

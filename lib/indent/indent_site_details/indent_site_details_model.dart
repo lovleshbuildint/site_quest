@@ -51,6 +51,8 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   int? iduplicatesite;
 
+  String? duplicatestring;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

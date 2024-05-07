@@ -596,6 +596,16 @@ class _IndentSiteNearestAtmWidgetState
                                 .nearestatmModel.avgOnusTextController.text,
                             avgtxns: _model.nearestatmModel
                                 .avgApproxTxnsDayTextController.text,
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            avgTotaltransDA: _model.nearestatmModel
+                                .avgApproxTotalDayTextController.text,
                           );
                           if ((_model.updateNearestATM?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

@@ -81,3 +81,12 @@ dynamic jsonResponse(
 ) {
   return list[index];
 }
+
+int? dropdown(String dropdownValue) {
+  // in dropdown value is yes then show 1 or in dropdown values is no then show 0
+  if (dropdownValue == "Yes") {
+    return 1;
+  } else {
+    return 0;
+  }
+}

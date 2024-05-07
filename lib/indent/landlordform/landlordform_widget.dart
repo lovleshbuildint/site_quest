@@ -75,6 +75,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.chequefieldTextController ??= TextEditingController();
     _model.chequefieldFocusNode ??= FocusNode();
 
+    _model.lLchequefieldTextController ??= TextEditingController();
+    _model.lLchequefieldFocusNode ??= FocusNode();
+
     _model.bankAccountNumberTextController ??= TextEditingController();
     _model.bankAccountNumberFocusNode ??= FocusNode();
 
@@ -1269,6 +1272,78 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     letterSpacing: 0.0,
                   ),
               validator: _model.chequefieldTextControllerValidator
+                  .asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+            child: Text(
+              'Landlord Cheque Percentage',
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.black,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+            child: TextFormField(
+              controller: _model.lLchequefieldTextController,
+              focusNode: _model.lLchequefieldFocusNode,
+              autofocus: false,
+              textCapitalization: TextCapitalization.words,
+              readOnly: _model.checkboxValue == true,
+              obscureText: false,
+              decoration: InputDecoration(
+                hintText: 'Enter Percentage',
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.black,
+                      letterSpacing: 0.0,
+                    ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: _model.checkboxValue == true
+                        ? Colors.transparent
+                        : Color(0xFFE1E2E6),
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFF0026),
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                filled: true,
+                fillColor: _model.checkboxValue == true
+                    ? Color(0xFFF2F2F2)
+                    : Colors.transparent,
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              keyboardType: TextInputType.number,
+              validator: _model.lLchequefieldTextControllerValidator
                   .asValidator(context),
             ),
           ),

@@ -588,8 +588,8 @@ class _IndentSiteLandlordDetailsWidgetState
                             district: _model.landlordformModel.districtValue,
                             token: FFAppState().Token,
                             iCity: _model.iCity?.toString(),
-                            lLPercent: _model
-                                .landlordformModel.percentTextController.text,
+                            lLPercent: _model.landlordformModel
+                                .lLchequefieldTextController.text,
                             address: _model
                                 .landlordformModel.addressTextController.text,
                             iState: _model.landlordformModel.stateValue,
@@ -625,6 +625,16 @@ class _IndentSiteLandlordDetailsWidgetState
                                 .siteReferralNameTextController.text,
                             contactNumber: _model.landlordformModel
                                 .siteReferralNoTextController.text,
+                            chequePercent: _model
+                                .landlordformModel.percentTextController.text,
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
                           );
                           if ((_model.updateDOADdeatils2?.succeeded ?? true)) {
                             context.goNamed('indent_site_commercial');

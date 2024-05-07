@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestbranch/nearestbranch_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,6 +25,7 @@ class _IndentSiteNearestBranchWidgetState
   late IndentSiteNearestBranchModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -534,6 +536,9 @@ class _IndentSiteNearestBranchWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          currentUserLocationValue =
+                              await getCurrentUserLocation(
+                                  defaultLocation: LatLng(0.0, 0.0));
                           _model.dOADetailsfive =
                               await SqGroup.updateDOADetailsfiveCall.call(
                             indentId: getJsonField(
@@ -552,6 +557,20 @@ class _IndentSiteNearestBranchWidgetState
                             videoURL: _model
                                 .nearestbranchModel.videoURLTextController.text,
                             token: FFAppState().Token,
+                            latitude: functions
+                                .latitudeFuntion(currentUserLocationValue!)
+                                .toString(),
+                            longitude: functions
+                                .longitudeFunction(currentUserLocationValue!)
+                                .toString(),
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
                           );
                           if ((_model.dOADetailsfive?.succeeded ?? true)) {
                             context.pushNamed('indent_site_nearest_atm');

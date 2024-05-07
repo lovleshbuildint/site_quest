@@ -39,6 +39,11 @@ class NearestatmModel extends FlutterFlowModel<NearestatmWidget> {
   TextEditingController? avgApproxTxnsDayTextController;
   String? Function(BuildContext, String?)?
       avgApproxTxnsDayTextControllerValidator;
+  // State field(s) for AvgApproxTotal-Day widget.
+  FocusNode? avgApproxTotalDayFocusNode;
+  TextEditingController? avgApproxTotalDayTextController;
+  String? Function(BuildContext, String?)?
+      avgApproxTotalDayTextControllerValidator;
   // State field(s) for AvgOnus widget.
   FocusNode? avgOnusFocusNode;
   TextEditingController? avgOnusTextController;
@@ -67,6 +72,9 @@ class NearestatmModel extends FlutterFlowModel<NearestatmWidget> {
 
     avgApproxTxnsDayFocusNode?.dispose();
     avgApproxTxnsDayTextController?.dispose();
+
+    avgApproxTotalDayFocusNode?.dispose();
+    avgApproxTotalDayTextController?.dispose();
 
     avgOnusFocusNode?.dispose();
     avgOnusTextController?.dispose();

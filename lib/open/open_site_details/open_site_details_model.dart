@@ -38,6 +38,10 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
   int? iTisTypes;
 
+  int? iduplicate;
+
+  int? oNOFsite;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -97,6 +101,10 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for Circle widget.
   String? circleValue;
   FormFieldController<String>? circleValueController;
+  // State field(s) for ATMExisting widget.
+  FocusNode? aTMExistingFocusNode;
+  TextEditingController? aTMExistingTextController;
+  String? Function(BuildContext, String?)? aTMExistingTextControllerValidator;
   // State field(s) for LandMarks widget.
   FocusNode? landMarksFocusNode;
   TextEditingController? landMarksTextController;
@@ -110,6 +118,14 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for ONOFSite widget.
   String? oNOFSiteValue;
   FormFieldController<String>? oNOFSiteValueController;
+  // State field(s) for MangerName widget.
+  FocusNode? mangerNameFocusNode;
+  TextEditingController? mangerNameTextController;
+  String? Function(BuildContext, String?)? mangerNameTextControllerValidator;
+  // State field(s) for MangerNumber widget.
+  FocusNode? mangerNumberFocusNode;
+  TextEditingController? mangerNumberTextController;
+  String? Function(BuildContext, String?)? mangerNumberTextControllerValidator;
   // State field(s) for DuplicateSite widget.
   String? duplicateSiteValue;
   FormFieldController<String>? duplicateSiteValueController;
@@ -143,7 +159,16 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
     pincodeFocusNode?.dispose();
     pincodeTextController?.dispose();
 
+    aTMExistingFocusNode?.dispose();
+    aTMExistingTextController?.dispose();
+
     landMarksFocusNode?.dispose();
     landMarksTextController?.dispose();
+
+    mangerNameFocusNode?.dispose();
+    mangerNameTextController?.dispose();
+
+    mangerNumberFocusNode?.dispose();
+    mangerNumberTextController?.dispose();
   }
 }

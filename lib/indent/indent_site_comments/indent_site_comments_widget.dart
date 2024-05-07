@@ -686,13 +686,15 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.dOADetailsFive =
-                              await SqGroup.updateDOADetailsfiveCall.call(
-                            comment: _model.textController.text,
-                            token: FFAppState().Token,
-                            indentId: getJsonField(
+                              await SqGroup.confirmDOADetailsubmissionCall.call(
+                            iindent: getJsonField(
                               FFAppState().indentSelectedSite,
-                              r'''$.CustomerBank''',
+                              r'''$.IndentId''',
                             ).toString(),
+                            stageComent: _model.textController.text,
+                            token: FFAppState().Token,
+                            errCnt: null,
+                            msg: null,
                           );
                           if ((_model.dOADetailsFive?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

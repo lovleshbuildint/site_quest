@@ -534,54 +534,192 @@ class _IndentSiteCommercialWidgetState
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          _model.dOADetailsThirdWord =
-                              await SqGroup.dOADetailsstepTHIRDworddocCall.call(
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            rentFreePeriod: _model
-                                .commercialAdvanceModel.rentFreePeriodValue,
-                            rentalType:
-                                _model.commercialAdvanceModel.rentaltypeValue,
-                            token: FFAppState().Token,
-                            rent: _model.commercialAdvanceModel
-                                .advanceRentAmountRENTTextController.text,
-                            advanceDeposit: _model
-                                .commercialAdvanceModel.advanceRentDD1Value,
-                            totalDeposit: _model.commercialAdvanceModel
-                                .totalSecurityDepositTextController.text,
-                            securityDeposit: _model
-                                .commercialAdvanceModel.securityDepositValue,
-                            agreementPeriod: _model
-                                .commercialAdvanceModel.agreementPeriodsValue1,
-                            escalationPeriod: _model
-                                .commercialAdvanceModel.escalationPeriodValue1,
-                          );
-                          if ((_model.dOADetailsThirdWord?.succeeded ?? true)) {
-                            context.goNamed('indent_site_dimensions');
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Alert (Dimesions)'),
-                                  content: Text(
-                                      (_model.dOADetailsThirdWord?.bodyText ??
-                                          '')),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
-                                );
-                              },
+                          var _shouldSetState = false;
+                          if (_model.commercialAdvanceModel.rentaltypeValue ==
+                              'Advance Rent ') {
+                            _model.dOADetailsThirdWordAdvance = await SqGroup
+                                .dOADetailsstepTHIRDworddocCall
+                                .call(
+                              indentId: getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.IndentId''',
+                              ).toString(),
+                              rentFreePeriod: _model.commercialAdvanceModel
+                                  .rentFreePeriodAdvanceValue,
+                              rentalType: 'Advance Rent',
+                              token: FFAppState().Token,
+                              rent: _model.commercialAdvanceModel
+                                  .advanceRentAmountRENTTextController.text,
+                              advanceDeposit: _model.commercialAdvanceModel
+                                  .advanceAmountAdvanceTextController.text,
+                              totalDeposit: _model.commercialAdvanceModel
+                                  .totalAdvanceAmountTextController.text,
+                              securityDeposit: _model
+                                  .commercialAdvanceModel.advanceRentMonthValue,
+                              agreementPeriod: _model.commercialAdvanceModel
+                                  .agreementPeriodsAdvanceValue,
+                              escalationPeriod: _model.commercialAdvanceModel
+                                  .escalationPeriodAdvanceValue,
+                              isAdvance:
+                                  _model.commercialAdvanceModel.rentaltypeValue,
+                              fullDeposit: _model.commercialAdvanceModel
+                                  .balanceAmountAdvanceTextController.text,
+                              oneMonthDeposit: _model.commercialAdvanceModel
+                                  .advanceRentAmountRENTTextController.text,
+                              balanceDeposit: _model.commercialAdvanceModel
+                                  .balanceAmountAdvanceTextController.text,
+                              totalAdvSec: _model
+                                  .commercialAdvanceModel.advanceRentMonthValue,
+                              rentEscalation: _model.commercialAdvanceModel
+                                  .rentEscaltionAdvanceValue,
+                              siteId: getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.IndentId''',
+                              ).toString(),
+                              iindent: getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.IndentId''',
+                              ).toString(),
+                              targetBank: null,
+                              district: null,
+                              centre: null,
+                              comment: null,
+                              lastModStamp: null,
+                              isHold: null,
+                              istage: null,
+                              iStageText: null,
+                              locationName: null,
+                              androidKey: null,
+                              months: _model
+                                  .commercialAdvanceModel.intialAdvanceValue,
+                              isWB: null,
+                              employeeName: null,
+                              companyName: null,
+                              contactNumber: null,
+                              emailId: null,
                             );
+                            _shouldSetState = true;
+                            if ((_model.dOADetailsThirdWordAdvance?.succeeded ??
+                                true)) {
+                              context.goNamed('indent_site_dimensions');
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Alert (Dimesions)'),
+                                    content: Text((_model
+                                            .dOADetailsThirdWordAdvance
+                                            ?.bodyText ??
+                                        '')),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          } else {
+                            _model.dOADetailsThirdWordsecur = await SqGroup
+                                .dOADetailsstepTHIRDworddocCall
+                                .call(
+                              indentId: getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.IndentId''',
+                              ).toString(),
+                              rentFreePeriod: _model.commercialAdvanceModel
+                                  .rentFreePeriodsSecurityValue,
+                              rentalType:
+                                  _model.commercialAdvanceModel.rentaltypeValue,
+                              token: FFAppState().Token,
+                              rent: _model.commercialAdvanceModel
+                                  .advanceRentAmountRENTTextController.text,
+                              advanceDeposit: _model
+                                  .commercialAdvanceModel.securityDepositValue,
+                              totalDeposit: _model.commercialAdvanceModel
+                                  .balanceSDAmountSecurityTextController.text,
+                              securityDeposit: _model
+                                  .commercialAdvanceModel.securityDepositValue,
+                              agreementPeriod: _model.commercialAdvanceModel
+                                  .agreementPeriodsAdvanceValue,
+                              escalationPeriod: _model.commercialAdvanceModel
+                                  .escalationPeriodAdvanceValue,
+                              isAdvance:
+                                  _model.commercialAdvanceModel.rentaltypeValue,
+                              fullDeposit: _model.commercialAdvanceModel
+                                  .balanceAmountAdvanceTextController.text,
+                              oneMonthDeposit: _model.commercialAdvanceModel
+                                  .securityRentRentPerMonthTextController.text,
+                              balanceDeposit: _model.commercialAdvanceModel
+                                  .balanceSDAmountSecurityTextController.text,
+                              totalAdvSec: _model.commercialAdvanceModel
+                                  .intialAdvancemonthSecurityValue,
+                              rentEscalation: _model.commercialAdvanceModel
+                                  .rentEscaltionAdvanceValue,
+                              siteId: getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.IndentId''',
+                              ).toString(),
+                              iindent: getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.IndentId''',
+                              ).toString(),
+                              months: _model
+                                  .commercialAdvanceModel.securityDepositValue,
+                              targetBank: null,
+                              district: null,
+                              centre: null,
+                              comment: null,
+                              lastModStamp: null,
+                              isHold: null,
+                              istage: null,
+                              iStageText: null,
+                              locationName: null,
+                              androidKey: null,
+                              isWB: null,
+                              companyName: null,
+                              employeeName: null,
+                              contactNumber: null,
+                              emailId: null,
+                            );
+                            _shouldSetState = true;
+                            if ((_model.dOADetailsThirdWordsecur?.succeeded ??
+                                true)) {
+                              context.goNamed('indent_site_dimensions');
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Alert (Dimesions)'),
+                                    content: Text((_model
+                                            .dOADetailsThirdWordsecur
+                                            ?.bodyText ??
+                                        '')),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+
+                            if (_shouldSetState) setState(() {});
+                            return;
                           }
 
-                          setState(() {});
+                          if (_shouldSetState) setState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

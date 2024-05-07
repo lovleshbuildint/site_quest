@@ -359,8 +359,8 @@ class _OpenSiteLandlordDetailsWidgetState
                             district: _model.landlordformModel.districtValue,
                             token: FFAppState().Token,
                             iCity: _model.landlordformModel.iCity?.toString(),
-                            lLPercent: _model
-                                .landlordformModel.percentTextController.text,
+                            lLPercent: _model.landlordformModel
+                                .lLchequefieldTextController.text,
                             address: _model
                                 .landlordformModel.addressTextController.text,
                             iState: _model.landlordformModel.istate?.toString(),
@@ -396,6 +396,29 @@ class _OpenSiteLandlordDetailsWidgetState
                                 .siteReferralNameTextController.text,
                             contactNumber: _model.landlordformModel
                                 .siteReferralNoTextController.text,
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            targetBank: null,
+                            centre: null,
+                            comment: null,
+                            lastModStamp: null,
+                            isHold: null,
+                            istage: null,
+                            iStageText: null,
+                            locationName: null,
+                            chequePercent: _model
+                                .landlordformModel.percentTextController.text,
+                            androidKey: null,
+                            refeId: null,
+                            isWB: null,
+                            companyName: null,
+                            employeeName: null,
                           );
                           if ((_model
                                   .updateDOADdeatilssecondwordSite?.succeeded ??

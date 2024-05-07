@@ -45,6 +45,9 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
     _model.avgApproxTxnsDayTextController ??= TextEditingController();
     _model.avgApproxTxnsDayFocusNode ??= FocusNode();
 
+    _model.avgApproxTotalDayTextController ??= TextEditingController();
+    _model.avgApproxTotalDayFocusNode ??= FocusNode();
+
     _model.avgOnusTextController ??= TextEditingController();
     _model.avgOnusFocusNode ??= FocusNode();
 
@@ -495,6 +498,77 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator: _model.avgApproxTxnsDayTextControllerValidator
+                  .asValidator(context),
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+            child: Text(
+              'Avg. Total. Txns./Day',
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.black,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+            child: TextFormField(
+              controller: _model.avgApproxTotalDayTextController,
+              focusNode: _model.avgApproxTotalDayFocusNode,
+              autofocus: false,
+              textCapitalization: TextCapitalization.words,
+              obscureText: false,
+              decoration: InputDecoration(
+                hintText: 'Count',
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.black,
+                      letterSpacing: 0.0,
+                    ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFE1E2E6),
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFF0026),
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                filled: true,
+                fillColor: Colors.transparent,
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              validator: _model.avgApproxTotalDayTextControllerValidator
                   .asValidator(context),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp('[0-9]'))

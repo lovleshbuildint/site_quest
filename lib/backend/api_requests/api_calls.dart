@@ -759,7 +759,7 @@ class UpdatenearestATMCall {
     String? iStageText = '',
     String? locationName = '',
     String? androidKey = '',
-    String? isPrizm = '',
+    String? isPrizm = '0',
     String? iDevice = '',
     String? atmid = '',
     String? bankName = '',
@@ -1525,6 +1525,8 @@ class DOADetailsstepFIRSTworddocCall {
     String? emailId = 'EmailIdNull@gmail.com',
     String? iindent = 'iindentNull',
     String? isWB = 'isWBNull',
+    String? msg = 'Null',
+    bool? isFromSiteref,
     String? token = '',
   }) async {
     final ffApiRequestBody = '''
@@ -1575,7 +1577,9 @@ class DOADetailsstepFIRSTworddocCall {
   "ContactNumber": "${contactNumber}",
   "EmailId": "${emailId}",
   "iindent": "${iindent}",
-"isWB":"${isWB}"
+"isWB":"${isWB}",
+"Msg":"${msg}",
+"isFromSiteref":"${isFromSiteref}"
 }
 ''';
     return ApiManager.instance.makeApiCall(

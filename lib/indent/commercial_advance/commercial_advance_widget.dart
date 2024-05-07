@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,11 +39,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.totalAdvanceAmountTextController ??= TextEditingController();
     _model.totalAdvanceAmountFocusNode ??= FocusNode();
 
-    _model.advanceAmountTextController ??= TextEditingController();
-    _model.advanceAmountFocusNode ??= FocusNode();
+    _model.advanceAmountAdvanceTextController ??= TextEditingController();
+    _model.advanceAmountAdvanceFocusNode ??= FocusNode();
 
-    _model.balanceAmountTextController ??= TextEditingController();
-    _model.balanceAmountFocusNode ??= FocusNode();
+    _model.balanceAmountAdvanceTextController ??= TextEditingController();
+    _model.balanceAmountAdvanceFocusNode ??= FocusNode();
 
     _model.securityRentRentPerMonthTextController ??= TextEditingController();
     _model.securityRentRentPerMonthFocusNode ??= FocusNode();
@@ -50,11 +51,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.totalSecurityDepositTextController ??= TextEditingController();
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
-    _model.advanceSDAmountTextController ??= TextEditingController();
-    _model.advanceSDAmountFocusNode ??= FocusNode();
+    _model.advanceSDAmountSecurityTextController ??= TextEditingController();
+    _model.advanceSDAmountSecurityFocusNode ??= FocusNode();
 
-    _model.balanceSDAmountTextController ??= TextEditingController();
-    _model.balanceSDAmountFocusNode ??= FocusNode();
+    _model.balanceSDAmountSecurityTextController ??= TextEditingController();
+    _model.balanceSDAmountSecurityFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -160,7 +161,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   setState(() {
                                     _model.totalAdvanceAmountTextController
                                         ?.text = ((int.tryParse((_model
-                                                    .advanceRentDD1Value!)) ??
+                                                    .advanceRentMonthValue!)) ??
                                                 0) *
                                             (int.tryParse(_model
                                                     .advanceRentAmountRENTTextController
@@ -247,13 +248,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.rentFreePeriodValueController ??=
-                          FormFieldController<String>(
-                        _model.rentFreePeriodValue ??= '30',
+                      controller:
+                          _model.rentFreePeriodAdvanceValueController ??=
+                              FormFieldController<String>(
+                        _model.rentFreePeriodAdvanceValue ??= '30',
                       ),
                       options: ['30', '45', '60'],
-                      onChanged: (val) =>
-                          setState(() => _model.rentFreePeriodValue = val),
+                      onChanged: (val) => setState(
+                          () => _model.rentFreePeriodAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -295,9 +297,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.advanceRentDD1ValueController ??=
+                      controller: _model.advanceRentMonthValueController ??=
                           FormFieldController<String>(
-                        _model.advanceRentDD1Value ??= '3',
+                        _model.advanceRentMonthValue ??= '3',
                       ),
                       options: [
                         '1',
@@ -314,11 +316,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.advanceRentDD1Value = val);
+                        setState(() => _model.advanceRentMonthValue = val);
                         setState(() {
                           _model.totalAdvanceAmountTextController
                               ?.text = ((int.tryParse(
-                                          (_model.advanceRentDD1Value!)) ??
+                                          (_model.advanceRentMonthValue!)) ??
                                       0) *
                                   (int.tryParse(_model
                                           .advanceRentAmountRENTTextController
@@ -463,7 +465,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         setState(() => _model.intialAdvanceValue = val);
                         setState(() {
-                          _model.advanceAmountTextController
+                          _model.advanceAmountAdvanceTextController
                               ?.text = ((int.tryParse(
                                           (_model.intialAdvanceValue!)) ??
                                       0) *
@@ -474,13 +476,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               .toString();
                         });
                         setState(() {
-                          _model.balanceAmountTextController
+                          _model.balanceAmountAdvanceTextController
                               ?.text = ((int.tryParse(_model
                                           .totalAdvanceAmountTextController
                                           .text) ??
                                       0) -
                                   (int.tryParse(_model
-                                          .advanceAmountTextController.text) ??
+                                          .advanceAmountAdvanceTextController
+                                          .text) ??
                                       0))
                               .toString();
                         });
@@ -539,11 +542,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller:
-                                        _model.advanceAmountTextController,
-                                    focusNode: _model.advanceAmountFocusNode,
+                                    controller: _model
+                                        .advanceAmountAdvanceTextController,
+                                    focusNode:
+                                        _model.advanceAmountAdvanceFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.advanceAmountTextController',
+                                      '_model.advanceAmountAdvanceTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -604,7 +608,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .advanceAmountTextControllerValidator
+                                        .advanceAmountAdvanceTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -635,11 +639,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller:
-                                        _model.balanceAmountTextController,
-                                    focusNode: _model.balanceAmountFocusNode,
+                                    controller: _model
+                                        .balanceAmountAdvanceTextController,
+                                    focusNode:
+                                        _model.balanceAmountAdvanceFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.balanceAmountTextController',
+                                      '_model.balanceAmountAdvanceTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -700,7 +705,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .balanceAmountTextControllerValidator
+                                        .balanceAmountAdvanceTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -727,13 +732,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.rentEscaltionValueController ??=
+                      controller: _model.rentEscaltionAdvanceValueController ??=
                           FormFieldController<String>(
-                        _model.rentEscaltionValue ??= '20',
+                        _model.rentEscaltionAdvanceValue ??= '20',
                       ),
                       options: ['0', '5', '10', '15', '20', '25'],
-                      onChanged: (val) =>
-                          setState(() => _model.rentEscaltionValue = val),
+                      onChanged: (val) => setState(
+                          () => _model.rentEscaltionAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -775,9 +780,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.escalationPeriodValueController1 ??=
-                          FormFieldController<String>(
-                        _model.escalationPeriodValue1 ??= '5',
+                      controller:
+                          _model.escalationPeriodAdvanceValueController ??=
+                              FormFieldController<String>(
+                        _model.escalationPeriodAdvanceValue ??= '5',
                       ),
                       options: [
                         '0',
@@ -791,8 +797,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '8',
                         '9'
                       ],
-                      onChanged: (val) =>
-                          setState(() => _model.escalationPeriodValue1 = val),
+                      onChanged: (val) => setState(
+                          () => _model.escalationPeriodAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -834,9 +840,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.agreementPeriodsValueController1 ??=
-                          FormFieldController<String>(
-                        _model.agreementPeriodsValue1 ??= '5',
+                      controller:
+                          _model.agreementPeriodsAdvanceValueController ??=
+                              FormFieldController<String>(
+                        _model.agreementPeriodsAdvanceValue ??= '5',
                       ),
                       options: [
                         '0',
@@ -850,8 +857,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '8',
                         '9'
                       ],
-                      onChanged: (val) =>
-                          setState(() => _model.agreementPeriodsValue1 = val),
+                      onChanged: (val) => setState(
+                          () => _model.agreementPeriodsAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -899,9 +906,16 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         Expanded(
                           child: FlutterFlowRadioButton(
                             options: ['Yes', 'No'].toList(),
-                            onChanged: (val) => setState(() {}),
-                            controller: _model.eBillingRentValueController ??=
-                                FormFieldController<String>('Yes'),
+                            onChanged: (val) async {
+                              setState(() {});
+                              setState(() {
+                                _model.ebilling = functions
+                                    .dropdown(_model.eBillingRentAdvanceValue!);
+                              });
+                            },
+                            controller:
+                                _model.eBillingRentAdvanceValueController ??=
+                                    FormFieldController<String>('Yes'),
                             optionHeight: 16.0,
                             textStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
@@ -1073,13 +1087,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.rentFreePeriodsValueController ??=
-                          FormFieldController<String>(
-                        _model.rentFreePeriodsValue ??= '30',
+                      controller:
+                          _model.rentFreePeriodsSecurityValueController ??=
+                              FormFieldController<String>(
+                        _model.rentFreePeriodsSecurityValue ??= '30',
                       ),
                       options: ['30', '45', '60'],
-                      onChanged: (val) =>
-                          setState(() => _model.rentFreePeriodsValue = val),
+                      onChanged: (val) => setState(
+                          () => _model.rentFreePeriodsSecurityValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1256,8 +1271,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.sDIIntialAdvanceValueController ??=
-                          FormFieldController<String>(null),
+                      controller:
+                          _model.intialAdvancemonthSecurityValueController ??=
+                              FormFieldController<String>(null),
                       options: [
                         '1',
                         '2',
@@ -1273,11 +1289,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.sDIIntialAdvanceValue = val);
+                        setState(
+                            () => _model.intialAdvancemonthSecurityValue = val);
                         setState(() {
-                          _model.advanceSDAmountTextController
-                              ?.text = ((int.tryParse(
-                                          (_model.sDIIntialAdvanceValue!)) ??
+                          _model.advanceSDAmountSecurityTextController
+                              ?.text = ((int.tryParse((_model
+                                          .intialAdvancemonthSecurityValue!)) ??
                                       0) *
                                   (int.tryParse(_model
                                           .securityRentRentPerMonthTextController
@@ -1286,13 +1303,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               .toString();
                         });
                         setState(() {
-                          _model.balanceSDAmountTextController
+                          _model.balanceSDAmountSecurityTextController
                               ?.text = ((int.tryParse(_model
                                           .totalSecurityDepositTextController
                                           .text) ??
                                       0) -
                                   (int.tryParse(_model
-                                          .advanceSDAmountTextController
+                                          .advanceSDAmountSecurityTextController
                                           .text) ??
                                       0))
                               .toString();
@@ -1353,11 +1370,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller:
-                                        _model.advanceSDAmountTextController,
-                                    focusNode: _model.advanceSDAmountFocusNode,
+                                    controller: _model
+                                        .advanceSDAmountSecurityTextController,
+                                    focusNode:
+                                        _model.advanceSDAmountSecurityFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.advanceSDAmountTextController',
+                                      '_model.advanceSDAmountSecurityTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -1418,7 +1436,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .advanceSDAmountTextControllerValidator
+                                        .advanceSDAmountSecurityTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -1449,11 +1467,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller:
-                                        _model.balanceSDAmountTextController,
-                                    focusNode: _model.balanceSDAmountFocusNode,
+                                    controller: _model
+                                        .balanceSDAmountSecurityTextController,
+                                    focusNode:
+                                        _model.balanceSDAmountSecurityFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.balanceSDAmountTextController',
+                                      '_model.balanceSDAmountSecurityTextController',
                                       Duration(milliseconds: 1),
                                       () => setState(() {}),
                                     ),
@@ -1514,7 +1533,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .balanceSDAmountTextControllerValidator
+                                        .balanceSDAmountSecurityTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -1541,13 +1560,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.rentEscalationPerValueController ??=
-                          FormFieldController<String>(
-                        _model.rentEscalationPerValue ??= '20',
+                      controller:
+                          _model.rentEscalationPerSecurityValueController ??=
+                              FormFieldController<String>(
+                        _model.rentEscalationPerSecurityValue ??= '20',
                       ),
                       options: ['0', '5', '10', '15', '20', '25'],
-                      onChanged: (val) =>
-                          setState(() => _model.rentEscalationPerValue = val),
+                      onChanged: (val) => setState(
+                          () => _model.rentEscalationPerSecurityValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1589,9 +1609,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.escalationPeriodValueController2 ??=
-                          FormFieldController<String>(
-                        _model.escalationPeriodValue2 ??= '5',
+                      controller:
+                          _model.escalationPeriodSecurityValueController ??=
+                              FormFieldController<String>(
+                        _model.escalationPeriodSecurityValue ??= '5',
                       ),
                       options: [
                         '0',
@@ -1605,8 +1626,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '8',
                         '9'
                       ],
-                      onChanged: (val) =>
-                          setState(() => _model.escalationPeriodValue2 = val),
+                      onChanged: (val) => setState(
+                          () => _model.escalationPeriodSecurityValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1648,9 +1669,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.agreementPeriodsValueController2 ??=
-                          FormFieldController<String>(
-                        _model.agreementPeriodsValue2 ??= '5',
+                      controller:
+                          _model.agreementPeriodsSecurityValueController ??=
+                              FormFieldController<String>(
+                        _model.agreementPeriodsSecurityValue ??= '5',
                       ),
                       options: [
                         '0',
@@ -1664,8 +1686,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '8',
                         '9'
                       ],
-                      onChanged: (val) =>
-                          setState(() => _model.agreementPeriodsValue2 = val),
+                      onChanged: (val) => setState(
+                          () => _model.agreementPeriodsSecurityValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:
@@ -1713,10 +1735,16 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         Expanded(
                           child: FlutterFlowRadioButton(
                             options: ['Yes', 'No'].toList(),
-                            onChanged: (val) => setState(() {}),
-                            controller:
-                                _model.eBillIncludingRentValueController ??=
-                                    FormFieldController<String>('Yes'),
+                            onChanged: (val) async {
+                              setState(() {});
+                              setState(() {
+                                _model.ebillingrent = functions.dropdown(
+                                    _model.eBillIncludingRentSecurityValue!);
+                              });
+                            },
+                            controller: _model
+                                    .eBillIncludingRentSecurityValueController ??=
+                                FormFieldController<String>('Yes'),
                             optionHeight: 16.0,
                             textStyle: FlutterFlowTheme.of(context)
                                 .labelMedium

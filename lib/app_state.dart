@@ -477,6 +477,12 @@ class FFAppState extends ChangeNotifier {
   set secondsitevisiterNew(dynamic _value) {
     _secondsitevisiterNew = _value;
   }
+
+  String _SiteId = '';
+  String get SiteId => _SiteId;
+  set SiteId(String _value) {
+    _SiteId = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

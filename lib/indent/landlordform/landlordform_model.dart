@@ -86,6 +86,10 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   FocusNode? chequefieldFocusNode;
   TextEditingController? chequefieldTextController;
   String? Function(BuildContext, String?)? chequefieldTextControllerValidator;
+  // State field(s) for LLchequefield widget.
+  FocusNode? lLchequefieldFocusNode;
+  TextEditingController? lLchequefieldTextController;
+  String? Function(BuildContext, String?)? lLchequefieldTextControllerValidator;
   // State field(s) for BankAccountNumber widget.
   FocusNode? bankAccountNumberFocusNode;
   TextEditingController? bankAccountNumberTextController;
@@ -171,6 +175,9 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
 
     chequefieldFocusNode?.dispose();
     chequefieldTextController?.dispose();
+
+    lLchequefieldFocusNode?.dispose();
+    lLchequefieldTextController?.dispose();
 
     bankAccountNumberFocusNode?.dispose();
     bankAccountNumberTextController?.dispose();

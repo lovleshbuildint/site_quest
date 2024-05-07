@@ -312,23 +312,23 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.IndentId''',
                             ).toString(),
-                            rentFreePeriod: _model
-                                .commercialAdvanceModel.rentFreePeriodValue,
+                            rentFreePeriod: _model.commercialAdvanceModel
+                                .rentFreePeriodAdvanceValue,
                             rentalType:
                                 _model.commercialAdvanceModel.rentaltypeValue,
                             token: FFAppState().Token,
                             rent: _model.commercialAdvanceModel
                                 .advanceRentAmountRENTTextController.text,
                             advanceDeposit: _model
-                                .commercialAdvanceModel.advanceRentDD1Value,
+                                .commercialAdvanceModel.advanceRentMonthValue,
                             totalDeposit: _model.commercialAdvanceModel
                                 .totalSecurityDepositTextController.text,
                             securityDeposit: _model
                                 .commercialAdvanceModel.securityDepositValue,
-                            agreementPeriod: _model
-                                .commercialAdvanceModel.agreementPeriodsValue1,
-                            escalationPeriod: _model
-                                .commercialAdvanceModel.escalationPeriodValue1,
+                            agreementPeriod: _model.commercialAdvanceModel
+                                .agreementPeriodsAdvanceValue,
+                            escalationPeriod: _model.commercialAdvanceModel
+                                .escalationPeriodAdvanceValue,
                           );
                           if ((_model.dOADetailsThirdWorddocSite?.succeeded ??
                               true)) {

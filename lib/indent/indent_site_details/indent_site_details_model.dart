@@ -49,6 +49,8 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   int? iCircle;
 
+  int? iduplicatesite;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -109,9 +111,10 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for circle widget.
   String? circleValue;
   FormFieldController<String>? circleValueController;
-  // State field(s) for ATMExisting widget.
-  String? aTMExistingValue;
-  FormFieldController<String>? aTMExistingValueController;
+  // State field(s) for ATMExisiting widget.
+  FocusNode? aTMExisitingFocusNode;
+  TextEditingController? aTMExisitingTextController;
+  String? Function(BuildContext, String?)? aTMExisitingTextControllerValidator;
   // State field(s) for LandMarks widget.
   FocusNode? landMarksFocusNode;
   TextEditingController? landMarksTextController;
@@ -125,6 +128,14 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for onofsite widget.
   String? onofsiteValue;
   FormFieldController<String>? onofsiteValueController;
+  // State field(s) for MrgName widget.
+  FocusNode? mrgNameFocusNode;
+  TextEditingController? mrgNameTextController;
+  String? Function(BuildContext, String?)? mrgNameTextControllerValidator;
+  // State field(s) for MrgNo widget.
+  FocusNode? mrgNoFocusNode;
+  TextEditingController? mrgNoTextController;
+  String? Function(BuildContext, String?)? mrgNoTextControllerValidator;
   // State field(s) for Duplicatesite widget.
   String? duplicatesiteValue;
   FormFieldController<String>? duplicatesiteValueController;
@@ -161,7 +172,16 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
     pincodeFocusNode?.dispose();
     pincodeTextController?.dispose();
 
+    aTMExisitingFocusNode?.dispose();
+    aTMExisitingTextController?.dispose();
+
     landMarksFocusNode?.dispose();
     landMarksTextController?.dispose();
+
+    mrgNameFocusNode?.dispose();
+    mrgNameTextController?.dispose();
+
+    mrgNoFocusNode?.dispose();
+    mrgNoTextController?.dispose();
   }
 }

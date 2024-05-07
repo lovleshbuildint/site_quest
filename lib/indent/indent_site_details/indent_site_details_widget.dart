@@ -58,8 +58,17 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     ).toString().toString());
     _model.pincodeFocusNode ??= FocusNode();
 
+    _model.aTMExisitingTextController ??= TextEditingController();
+    _model.aTMExisitingFocusNode ??= FocusNode();
+
     _model.landMarksTextController ??= TextEditingController();
     _model.landMarksFocusNode ??= FocusNode();
+
+    _model.mrgNameTextController ??= TextEditingController();
+    _model.mrgNameFocusNode ??= FocusNode();
+
+    _model.mrgNoTextController ??= TextEditingController();
+    _model.mrgNoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -1888,38 +1897,61 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.aTMExistingValueController ??=
-                                FormFieldController<String>(
-                              _model.aTMExistingValue ??= 'Yes',
+                          child: TextFormField(
+                            controller: _model.aTMExisitingTextController,
+                            focusNode: _model.aTMExisitingFocusNode,
+                            autofocus: false,
+                            textCapitalization: TextCapitalization.words,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              hintText: 'Enter Existing',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFE1E2E6),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFFF0026),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              filled: true,
+                              fillColor: Colors.transparent,
                             ),
-                            options: ['Yes', 'No'],
-                            onChanged: (val) =>
-                                setState(() => _model.aTMExistingValue = val),
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            textStyle: FlutterFlowTheme.of(context)
+                            style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
+                                  fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFFE1E2E6),
-                              size: 24.0,
-                            ),
-                            fillColor: Colors.white,
-                            elevation: 2.0,
-                            borderColor: Color(0xFFE1E2E6),
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
+                            validator: _model
+                                .aTMExisitingTextControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                         Padding(
@@ -2241,6 +2273,154 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
+                            'Manger Name',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.mrgNameTextController,
+                            focusNode: _model.mrgNameFocusNode,
+                            autofocus: false,
+                            textCapitalization: TextCapitalization.words,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              hintText: 'Enter Manger Name',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFE1E2E6),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFFF0026),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              filled: true,
+                              fillColor: Colors.transparent,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            validator: _model.mrgNameTextControllerValidator
+                                .asValidator(context),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
+                          child: Text(
+                            'Manger Number',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.mrgNoTextController,
+                            focusNode: _model.mrgNoFocusNode,
+                            autofocus: false,
+                            textCapitalization: TextCapitalization.words,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              hintText: 'Enter Manger Numbrer',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFE1E2E6),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFFF0026),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              filled: true,
+                              fillColor: Colors.transparent,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            validator: _model.mrgNoTextControllerValidator
+                                .asValidator(context),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
+                          child: Text(
                             'Duplicate site',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -2261,8 +2441,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               _model.duplicatesiteValue ??= 'Yes',
                             ),
                             options: ['Yes', 'No'],
-                            onChanged: (val) =>
-                                setState(() => _model.duplicatesiteValue = val),
+                            onChanged: (val) async {
+                              setState(() => _model.duplicatesiteValue = val);
+                              setState(() {
+                                _model.iduplicatesite = functions
+                                    .dropdown(_model.duplicatesiteValue!);
+                              });
+                            },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2612,8 +2797,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             address: _model.siteAddressTextController.text,
                             state: _model.stateValue,
                             pincode: _model.pincodeTextController.text,
-                            atmExisting: _model.aTMExistingValue,
-                            landMark: _model.landMarksTextController.text,
+                            atmExisting: _model.aTMExisitingTextController.text,
+                            landMark: _model.aTMExisitingTextController.text,
                             rBICategory: _model.rBICategoryValue,
                             sitesourcedby: _model.siteSourcedValue,
                             isOnSite: _model.onofsiteValue,
@@ -2633,6 +2818,17 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.CustomerBank''',
                             ).toString(),
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            mgrName: _model.mrgNameTextController.text,
+                            mgrNo: _model.mrgNoTextController.text,
+                            location: _model.locationNameTextController.text,
                           );
                           if ((_model.updateDOAdetailsfirst?.succeeded ??
                               true)) {

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,7 +99,15 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
             child: FlutterFlowRadioButton(
               options: ['Full Shop', 'Shop in Shop'].toList(),
-              onChanged: (val) => setState(() {}),
+              onChanged: (val) async {
+                setState(() {});
+                setState(() {
+                  _model.shopType = functions.dropdown(((String type) {
+                    return type == "Full Shop" ? 1 : 0;
+                  }(_model.radioButtonValue!))
+                      .toString());
+                });
+              },
               controller: _model.radioButtonValueController ??=
                   FormFieldController<String>('Full Shop'),
               optionHeight: 32.0,
@@ -929,8 +938,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 _model.lShapeSingageValue ??= 'No',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) =>
-                  setState(() => _model.lShapeSingageValue = val),
+              onChanged: (val) async {
+                setState(() => _model.lShapeSingageValue = val);
+                setState(() {
+                  _model.shapeSignage =
+                      functions.dropdown(_model.lShapeSingageValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -974,7 +988,12 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 _model.vsatValue ??= 'No',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.vsatValue = val),
+              onChanged: (val) async {
+                setState(() => _model.vsatValue = val);
+                setState(() {
+                  _model.vsat = functions.dropdown(_model.vsatValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1018,7 +1037,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 _model.acODUSpaceValue ??= 'Yes',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.acODUSpaceValue = val),
+              onChanged: (val) async {
+                setState(() => _model.acODUSpaceValue = val);
+                setState(() {
+                  _model.acOduSpace =
+                      functions.dropdown(_model.acODUSpaceValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1076,8 +1101,14 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               _model.powerAvailabilityValue ??= 'Yes',
                             ),
                             options: ['Yes', 'No'],
-                            onChanged: (val) => setState(
-                                () => _model.powerAvailabilityValue = val),
+                            onChanged: (val) async {
+                              setState(
+                                  () => _model.powerAvailabilityValue = val);
+                              setState(() {
+                                _model.powerAvailability = functions
+                                    .dropdown(_model.powerAvailabilityValue!);
+                              });
+                            },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1219,7 +1250,12 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 _model.totemPoleValue ??= 'No',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.totemPoleValue = val),
+              onChanged: (val) async {
+                setState(() => _model.totemPoleValue = val);
+                setState(() {
+                  _model.totemPole = functions.dropdown(_model.totemPoleValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               searchHintTextStyle:
@@ -1275,8 +1311,13 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 _model.rampAvailabilityValue ??= 'No',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) =>
-                  setState(() => _model.rampAvailabilityValue = val),
+              onChanged: (val) async {
+                setState(() => _model.rampAvailabilityValue = val);
+                setState(() {
+                  _model.rampAvailability =
+                      functions.dropdown(_model.rampAvailabilityValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(

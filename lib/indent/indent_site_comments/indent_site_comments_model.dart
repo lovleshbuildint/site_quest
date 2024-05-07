@@ -18,7 +18,7 @@ class IndentSiteCommentsModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
+  // Stores action output result for [Backend Call - API (ConfirmDOADetailsubmission)] action in Button widget.
   ApiCallResponse? dOADetailsFive;
 
   @override

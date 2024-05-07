@@ -549,7 +549,7 @@ class _IndentSiteDimensionsWidgetState
                             depth: _model.sitedimentionsModel
                                 .shopDepthTextController.text,
                             shopType:
-                                _model.sitedimentionsModel.radioButtonValue,
+                                _model.sitedimentionsModel.shopType?.toString(),
                             totalShopArea: _model.sitedimentionsModel
                                 .totalShopAreaTextController.text,
                             signWidth: _model.sitedimentionsModel
@@ -574,9 +574,35 @@ class _IndentSiteDimensionsWidgetState
                             isTotempole:
                                 _model.sitedimentionsModel.totemPoleValue,
                             isRampAval: _model
-                                .sitedimentionsModel.rampAvailabilityValue,
+                                .sitedimentionsModel.rampAvailability
+                                ?.toString(),
                             projectNote: _model.sitedimentionsModel
                                 .noteForProjectTISTextController.text,
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            targetBank: null,
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            district: null,
+                            centre: null,
+                            comment: null,
+                            lastModStamp: null,
+                            isHold: null,
+                            istage: null,
+                            iStageText: null,
+                            locationName: null,
+                            androidKey: null,
+                            errCnt: null,
+                            msg: null,
+                            isWB: null,
+                            companyName: null,
+                            employeeName: null,
+                            contactNumber: null,
+                            emailId: null,
                           );
                           if ((_model.dOADetailsFour?.succeeded ?? true)) {
                             context.pushNamed('indent_site_photo');

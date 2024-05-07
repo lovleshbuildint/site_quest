@@ -2446,7 +2446,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               setState(() {
                                 _model.iduplicatesite = functions
                                     .dropdown(_model.duplicatesiteValue!);
-                                _model.duplicatestring = '';
+                                _model.duplicatestring = functions
+                                    .dropdown(_model.duplicatesiteValue!)
+                                    .toString();
                               });
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,

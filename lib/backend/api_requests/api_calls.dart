@@ -1514,7 +1514,7 @@ class DOADetailsstepFIRSTworddocCall {
     int? iSiteVisitedBy,
     int? iCashDeviceMovementCategory,
     String? atmExisting = '',
-    bool? isDuplicateSite,
+    String? isDuplicateSite = '',
     int? iSiteVisitedByName,
     int? iSecondSiteVisitedByName,
     String? waterlog = 'waterlogNull',

@@ -2542,8 +2542,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             sitesourcedby: _model.siteSourcedValue,
                             isOnSite: _model.oNOFSiteValue,
                             isDuplicateSite:
-                                _model.duplicateSiteValue != null &&
-                                    _model.duplicateSiteValue != '',
+                                (_model.duplicateSiteValue != null &&
+                                        _model.duplicateSiteValue != '')
+                                    .toString(),
                             iSiteVisitedBy: _model.isitevisitedbys,
                             iSiteVisitedByName: _model.isitevisitedbynames,
                             iSecondSiteVisitedByName:

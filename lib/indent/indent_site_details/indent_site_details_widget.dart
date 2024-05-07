@@ -2805,9 +2805,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             rBICategory: _model.rBICategoryValue,
                             sitesourcedby: _model.siteSourcedValue,
                             isOnSite: _model.onofsiteValue,
-                            isDuplicateSite:
-                                _model.duplicatesiteValue != null &&
-                                    _model.duplicatesiteValue != '',
+                            isDuplicateSite: _model.iduplicatesite != null,
                             iSiteVisitedBy: _model.isitevisitedby,
                             iSiteVisitedByName: _model.iSiteVisitedByName,
                             iSecondSiteVisitedByName:

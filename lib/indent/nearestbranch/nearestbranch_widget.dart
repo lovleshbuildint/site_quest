@@ -63,7 +63,10 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'CRA Coverage',
+              valueOrDefault<String>(
+                _model.cRACoverage?.toString(),
+                '00',
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -107,7 +110,10 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'CRA Agency',
+              valueOrDefault<String>(
+                _model.cRAAgency?.toString(),
+                '00',
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,

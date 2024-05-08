@@ -2541,10 +2541,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             rBICategory: _model.rBICategoryValue,
                             sitesourcedby: _model.siteSourcedValue,
                             isOnSite: _model.oNOFSiteValue,
-                            isDuplicateSite:
-                                (_model.duplicateSiteValue != null &&
-                                        _model.duplicateSiteValue != '')
-                                    .toString(),
+                            isDuplicateSite: _model.iduplicate?.toString(),
                             iSiteVisitedBy: _model.isitevisitedbys,
                             iSiteVisitedByName: _model.isitevisitedbynames,
                             iSecondSiteVisitedByName:

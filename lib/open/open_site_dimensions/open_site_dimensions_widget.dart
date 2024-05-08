@@ -334,19 +334,21 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 .totalFrontageTextController.text,
                             frontageOffered: _model.sitedimentionsModel
                                 .frontageOfferedTextController.text,
-                            lShape:
-                                _model.sitedimentionsModel.lShapeSingageValue,
-                            vsat: _model.sitedimentionsModel.vsatValue,
+                            lShape: _model.sitedimentionsModel.shapeSignage
+                                ?.toString(),
+                            vsat: _model.sitedimentionsModel.vsat?.toString(),
                             token: FFAppState().Token,
-                            acodu: _model.sitedimentionsModel.acODUSpaceValue,
+                            acodu: _model.sitedimentionsModel.acOduSpace
+                                ?.toString(),
                             powerAvailability: _model
                                 .sitedimentionsModel.powerAvailabilityValue,
                             hours: _model.sitedimentionsModel
                                 .noofHoursTextController.text,
-                            isTotempole:
-                                _model.sitedimentionsModel.totemPoleValue,
+                            isTotempole: _model.sitedimentionsModel.totemPole
+                                ?.toString(),
                             isRampAval: _model
-                                .sitedimentionsModel.rampAvailabilityValue,
+                                .sitedimentionsModel.rampAvailability
+                                ?.toString(),
                             projectNote: _model.sitedimentionsModel
                                 .noteForProjectTISTextController.text,
                           );

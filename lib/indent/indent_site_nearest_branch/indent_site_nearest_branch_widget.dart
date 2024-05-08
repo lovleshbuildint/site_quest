@@ -547,8 +547,7 @@ class _IndentSiteNearestBranchWidgetState
                             ).toString(),
                             cRACoverage: _model.nearestbranchModel.cRACoverage
                                 ?.toString(),
-                            cRAAgency:
-                                _model.nearestbranchModel.cRAAgency?.toString(),
+                            cRAAgency: _model.nearestbranchModel.cRAAgencyValue,
                             branchSOLID: _model.nearestbranchModel
                                 .branchSOLIDTextController.text,
                             nearestBranch: _model.nearestbranchModel

@@ -64,10 +64,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              valueOrDefault<String>(
-                _model.cRACoverage?.toString(),
-                '00',
-              ),
+              'CRA Coverage',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -117,10 +114,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              valueOrDefault<String>(
-                _model.cRAAgency?.toString(),
-                '00',
-              ),
+              'CRA Agency',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -139,9 +133,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               options: ['CMS'],
               onChanged: (val) async {
                 setState(() => _model.cRAAgencyValue = val);
-                setState(() {
-                  _model.cRAAgency = functions.dropdown(_model.cRAAgencyValue!);
-                });
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,

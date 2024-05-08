@@ -14,8 +14,6 @@ class NearestbranchModel extends FlutterFlowModel<NearestbranchWidget> {
 
   int? cRACoverage;
 
-  int? cRAAgency;
-
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for CRACoverage widget.

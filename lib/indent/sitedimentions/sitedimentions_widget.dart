@@ -1020,7 +1020,10 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'AC ODU Space',
+              valueOrDefault<String>(
+                _model.acOduSpace?.toString(),
+                '00',
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,

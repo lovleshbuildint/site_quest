@@ -351,6 +351,31 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 ?.toString(),
                             projectNote: _model.sitedimentionsModel
                                 .noteForProjectTISTextController.text,
+                            siteId: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            iindent: getJsonField(
+                              FFAppState().indentSelectedSite,
+                              r'''$.IndentId''',
+                            ).toString(),
+                            targetBank: null,
+                            district: null,
+                            centre: null,
+                            comment: null,
+                            lastModStamp: null,
+                            isHold: null,
+                            istage: null,
+                            iStageText: null,
+                            locationName: null,
+                            androidKey: null,
+                            errCnt: null,
+                            msg: null,
+                            isWB: null,
+                            companyName: null,
+                            employeeName: null,
+                            contactNumber: null,
+                            emailId: null,
                           );
                           if ((_model.oPENSIteDOADetailsFour?.succeeded ??
                               true)) {

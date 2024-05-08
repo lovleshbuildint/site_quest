@@ -1294,7 +1294,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.lLchequefieldFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
-              readOnly: _model.checkboxValue == true,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Percentage',
@@ -1305,9 +1304,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: _model.checkboxValue == true
-                        ? Colors.transparent
-                        : Color(0xFFE1E2E6),
+                    color: Color(0xFFE1E2E6),
                     width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
@@ -1334,9 +1331,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: _model.checkboxValue == true
-                    ? Color(0xFFF2F2F2)
-                    : Colors.transparent,
+                fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',

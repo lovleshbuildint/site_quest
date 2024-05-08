@@ -2421,7 +2421,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            _model.iduplicatesite.toString(),
+                            'Duplicate site',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2482,10 +2482,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            valueOrDefault<String>(
-                              _model.duplicatestring,
-                              '00',
-                            ),
+                            'Site Visited By',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

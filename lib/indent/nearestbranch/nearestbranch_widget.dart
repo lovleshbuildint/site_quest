@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,7 +84,13 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 _model.cRACoverageValue ??= 'No',
               ),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.cRACoverageValue = val),
+              onChanged: (val) async {
+                setState(() => _model.cRACoverageValue = val);
+                setState(() {
+                  _model.cRACoverage =
+                      functions.dropdown(_model.cRACoverageValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -130,7 +137,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 _model.cRAAgencyValue ??= 'CMS',
               ),
               options: ['CMS'],
-              onChanged: (val) => setState(() => _model.cRAAgencyValue = val),
+              onChanged: (val) async {
+                setState(() => _model.cRAAgencyValue = val);
+                setState(() {
+                  _model.cRAAgency = functions.dropdown(_model.cRAAgencyValue!);
+                });
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(

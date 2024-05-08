@@ -9,6 +9,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class NearestbranchModel extends FlutterFlowModel<NearestbranchWidget> {
+  ///  Local state fields for this component.
+
+  int? cRACoverage;
+
+  int? cRAAgency;
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for CRACoverage widget.

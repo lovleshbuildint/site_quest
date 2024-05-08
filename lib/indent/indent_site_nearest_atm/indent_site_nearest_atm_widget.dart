@@ -606,6 +606,27 @@ class _IndentSiteNearestAtmWidgetState
                             ).toString(),
                             avgTotaltransDA: _model.nearestatmModel
                                 .avgApproxTotalDayTextController.text,
+                            targetBank: null,
+                            district: null,
+                            centre: null,
+                            comment: null,
+                            lastModStamp: null,
+                            isHold: null,
+                            istage: null,
+                            iStageText: null,
+                            locationName: null,
+                            androidKey: null,
+                            isPrizm: null,
+                            pinCode: null,
+                            errCnt: null,
+                            isWB: null,
+                            msg: null,
+                            emailId: null,
+                            contactNumber: null,
+                            employeeName: null,
+                            companyName: null,
+                            iDevice: null,
+                            isBranch: null,
                           );
                           if ((_model.updateNearestATM?.succeeded ?? true)) {
                             if (Navigator.of(context).canPop()) {

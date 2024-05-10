@@ -87,6 +87,7 @@ class SqGroup {
       DOADetailsstepTHIRDworddocCall();
   static SecondSiteVisitersNEWCall secondSiteVisitersNEWCall =
       SecondSiteVisitersNEWCall();
+  static GetCRAAgencCall getCRAAgencCall = GetCRAAgencCall();
 }
 
 class DashboardCall {
@@ -1802,6 +1803,25 @@ class SecondSiteVisitersNEWCall {
     return ApiManager.instance.makeApiCall(
       callName: 'SecondSiteVisitersNEW',
       apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetCRAAgencCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetCRAAgenc',
+      apiUrl: '${SqGroup.baseUrl}/GetCRAAgency/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

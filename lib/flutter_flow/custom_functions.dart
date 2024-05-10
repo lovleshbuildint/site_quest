@@ -90,3 +90,12 @@ int? dropdown(String dropdownValue) {
     return 0;
   }
 }
+
+int? dropdowns(String dropdownvalue) {
+  // in dropdown value is yes then show 1 or in dropdown values is no then show 0
+  if (dropdownvalue == "Onsite") {
+    return 1;
+  } else {
+    return 0;
+  }
+}

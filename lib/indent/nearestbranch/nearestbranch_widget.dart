@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -55,6 +56,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(
@@ -125,37 +128,67 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-            child: FlutterFlowDropDown<String>(
-              controller: _model.cRAAgencyValueController ??=
-                  FormFieldController<String>(
-                _model.cRAAgencyValue ??= 'CMS',
+            child: FutureBuilder<ApiCallResponse>(
+              future: SqGroup.getCRAAgencCall.call(
+                token: FFAppState().Token,
               ),
-              options: ['CMS'],
-              onChanged: (val) async {
-                setState(() => _model.cRAAgencyValue = val);
-                setState(() {});
-              },
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: 50.0,
-              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.black,
-                    letterSpacing: 0.0,
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          FlutterFlowTheme.of(context).primary,
+                        ),
+                      ),
+                    ),
+                  );
+                }
+                final cRAAgencyGetCRAAgencResponse = snapshot.data!;
+                return FlutterFlowDropDown<String>(
+                  controller: _model.cRAAgencyValueController ??=
+                      FormFieldController<String>(
+                    _model.cRAAgencyValue ??= getJsonField(
+                      cRAAgencyGetCRAAgencResponse.jsonBody,
+                      r'''$[0].CITName''',
+                    ).toString(),
                   ),
-              icon: Icon(
-                Icons.keyboard_arrow_down_rounded,
-                color: Color(0xFFE1E2E6),
-                size: 24.0,
-              ),
-              fillColor: Colors.white,
-              elevation: 2.0,
-              borderColor: Color(0xFFE1E2E6),
-              borderWidth: 2.0,
-              borderRadius: 8.0,
-              margin: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-              hidesUnderline: true,
-              isSearchable: false,
-              isMultiSelect: false,
+                  options: (getJsonField(
+                    cRAAgencyGetCRAAgencResponse.jsonBody,
+                    r'''$..CITName''',
+                    true,
+                  ) as List)
+                      .map<String>((s) => s.toString())
+                      .toList()!,
+                  onChanged: (val) =>
+                      setState(() => _model.cRAAgencyValue = val),
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 50.0,
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.black,
+                        letterSpacing: 0.0,
+                      ),
+                  hintText: 'Please Select..',
+                  icon: Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: Color(0xFFE1E2E6),
+                    size: 24.0,
+                  ),
+                  fillColor: Colors.white,
+                  elevation: 2.0,
+                  borderColor: Color(0xFFE1E2E6),
+                  borderWidth: 2.0,
+                  borderRadius: 8.0,
+                  margin: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                  hidesUnderline: true,
+                  isSearchable: false,
+                  isMultiSelect: false,
+                );
+              },
             ),
           ),
           Padding(

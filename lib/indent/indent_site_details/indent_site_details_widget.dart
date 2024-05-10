@@ -2158,9 +2158,20 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             controller: _model
                                                     .siteSourcedValueController ??=
                                                 FormFieldController<String>(
-                                              _model.siteSourcedValue ??= 'HPY',
+                                              _model.siteSourcedValue ??=
+                                                  getJsonField(
+                                                FFAppState().visitedbydeptapi,
+                                                r'''$[0].Department''',
+                                              ).toString(),
                                             ),
-                                            options: ['HPY'],
+                                            options: (getJsonField(
+                                              FFAppState().visitedbydeptapi,
+                                              r'''$..Department''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
                                             onChanged: (val) => setState(() =>
                                                 _model.siteSourcedValue = val),
                                             width: MediaQuery.sizeOf(context)
@@ -2233,8 +2244,16 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           _model.onofsiteValue ??= 'Onsite',
                                         ),
                                         options: ['Onsite', 'Offsite'],
-                                        onChanged: (val) => setState(
-                                            () => _model.onofsiteValue = val),
+                                        onChanged: (val) async {
+                                          setState(
+                                              () => _model.onofsiteValue = val);
+                                          setState(() {
+                                            _model.onofSite = functions
+                                                .dropdowns(
+                                                    _model.onofsiteValue!)
+                                                .toString();
+                                          });
+                                        },
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -2831,6 +2850,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             mgrNo: _model.mrgNoTextController.text,
                             location: _model.locationNameTextController.text,
                             isFromSiteref: false,
+                            centre: null,
+                            comment: null,
+                            lastModStamp: null,
+                            isHold: null,
+                            istage: null,
+                            iStageText: null,
+                            androidKey: null,
+                            waterlog: null,
+                            atmaval: null,
+                            companyName: null,
+                            employeeName: null,
+                            contactNumber: null,
+                            emailId: null,
+                            isWB: null,
+                            msg: null,
                           );
                           if ((_model.updateDOAdetailsfirst?.succeeded ??
                               true)) {

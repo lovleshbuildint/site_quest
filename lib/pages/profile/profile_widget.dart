@@ -271,16 +271,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   letterSpacing: 0.0,
                                 ),
                           )),
-                          SelectionArea(
-                              child: Text(
-                            FFAppState().State,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
-                          )),
                         ],
                       ),
                     ),

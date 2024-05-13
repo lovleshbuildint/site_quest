@@ -275,7 +275,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               child: Text(
                             getJsonField(
                               profileStateListResponse.jsonBody,
-                              r'''$.States[0].State''',
+                              r'''$..States''',
                             ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

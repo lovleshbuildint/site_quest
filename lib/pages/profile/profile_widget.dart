@@ -273,7 +273,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           )),
                           SelectionArea(
                               child: Text(
-                            FFAppState().State,
+                            'Hello World',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

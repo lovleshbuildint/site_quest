@@ -347,7 +347,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             ),
                             options: (getJsonField(
                               FFAppState().indentSelectedSite,
-                              r'''$.CustomerBank''',
+                              r'''$..CustomerBank''',
                               true,
                             ) as List)
                                 .map<String>((s) => s.toString())
@@ -1864,9 +1864,19 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         controller: _model
                                                 .siteSourcedValueController ??=
                                             FormFieldController<String>(
-                                          _model.siteSourcedValue ??= 'HPY',
+                                          _model.siteSourcedValue ??=
+                                              getJsonField(
+                                            FFAppState().visitedbydeptapi,
+                                            r'''$[0].Department''',
+                                          ).toString(),
                                         ),
-                                        options: ['HPY'],
+                                        options: (getJsonField(
+                                          FFAppState().visitedbydeptapi,
+                                          r'''$..Department''',
+                                          true,
+                                        ) as List)
+                                            .map<String>((s) => s.toString())
+                                            .toList()!,
                                         onChanged: (val) => setState(() =>
                                             _model.siteSourcedValue = val),
                                         width:

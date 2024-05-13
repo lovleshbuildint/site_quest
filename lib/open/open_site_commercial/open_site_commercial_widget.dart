@@ -319,8 +319,8 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                             token: FFAppState().Token,
                             rent: _model.commercialAdvanceModel
                                 .advanceRentAmountRENTTextController.text,
-                            advanceDeposit: _model
-                                .commercialAdvanceModel.advanceRentMonthValue,
+                            advanceDeposit: _model.commercialAdvanceModel
+                                .advanceRentMonthRentOrSecurityMonthsValue,
                             totalDeposit: _model.commercialAdvanceModel
                                 .totalSecurityDepositTextController.text,
                             securityDeposit: _model

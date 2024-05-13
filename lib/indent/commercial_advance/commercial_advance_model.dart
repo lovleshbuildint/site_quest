@@ -29,14 +29,16 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   // State field(s) for RentFreePeriod-Advance widget.
   String? rentFreePeriodAdvanceValue;
   FormFieldController<String>? rentFreePeriodAdvanceValueController;
-  // State field(s) for advanceRentMonth widget.
-  String? advanceRentMonthValue;
-  FormFieldController<String>? advanceRentMonthValueController;
-  // State field(s) for TotalAdvanceAmount widget.
-  FocusNode? totalAdvanceAmountFocusNode;
-  TextEditingController? totalAdvanceAmountTextController;
+  // State field(s) for advanceRentMonth---RentOrSecurityMonths widget.
+  String? advanceRentMonthRentOrSecurityMonthsValue;
+  FormFieldController<String>?
+      advanceRentMonthRentOrSecurityMonthsValueController;
+  // State field(s) for TotalAdvanceAmount--RentOrSecurityMonthsPaid widget.
+  FocusNode? totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode;
+  TextEditingController?
+      totalAdvanceAmountRentOrSecurityMonthsPaidTextController;
   String? Function(BuildContext, String?)?
-      totalAdvanceAmountTextControllerValidator;
+      totalAdvanceAmountRentOrSecurityMonthsPaidTextControllerValidator;
   // State field(s) for intialAdvance widget.
   String? intialAdvanceValue;
   FormFieldController<String>? intialAdvanceValueController;
@@ -110,8 +112,8 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
     advanceRentAmountRENTFocusNode?.dispose();
     advanceRentAmountRENTTextController?.dispose();
 
-    totalAdvanceAmountFocusNode?.dispose();
-    totalAdvanceAmountTextController?.dispose();
+    totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode?.dispose();
+    totalAdvanceAmountRentOrSecurityMonthsPaidTextController?.dispose();
 
     advanceAmountAdvanceFocusNode?.dispose();
     advanceAmountAdvanceTextController?.dispose();

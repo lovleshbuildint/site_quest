@@ -552,10 +552,12 @@ class _IndentSiteCommercialWidgetState
                                   .advanceRentAmountRENTTextController.text,
                               advanceDeposit: _model.commercialAdvanceModel
                                   .advanceAmountAdvanceTextController.text,
-                              totalDeposit: _model.commercialAdvanceModel
-                                  .totalAdvanceAmountTextController.text,
-                              securityDeposit: _model
-                                  .commercialAdvanceModel.advanceRentMonthValue,
+                              totalDeposit: _model
+                                  .commercialAdvanceModel
+                                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                  .text,
+                              securityDeposit: _model.commercialAdvanceModel
+                                  .advanceRentMonthRentOrSecurityMonthsValue,
                               agreementPeriod: _model.commercialAdvanceModel
                                   .agreementPeriodsAdvanceValue,
                               escalationPeriod: _model.commercialAdvanceModel
@@ -568,8 +570,8 @@ class _IndentSiteCommercialWidgetState
                                   .advanceRentAmountRENTTextController.text,
                               balanceDeposit: _model.commercialAdvanceModel
                                   .balanceAmountAdvanceTextController.text,
-                              totalAdvSec: _model
-                                  .commercialAdvanceModel.advanceRentMonthValue,
+                              totalAdvSec: _model.commercialAdvanceModel
+                                  .advanceRentMonthRentOrSecurityMonthsValue,
                               rentEscalation: _model.commercialAdvanceModel
                                   .rentEscaltionAdvanceValue,
                               siteId: getJsonField(

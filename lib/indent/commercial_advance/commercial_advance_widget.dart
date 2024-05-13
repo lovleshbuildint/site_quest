@@ -36,8 +36,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.advanceRentAmountRENTTextController ??= TextEditingController();
     _model.advanceRentAmountRENTFocusNode ??= FocusNode();
 
-    _model.totalAdvanceAmountTextController ??= TextEditingController();
-    _model.totalAdvanceAmountFocusNode ??= FocusNode();
+    _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController ??=
+        TextEditingController();
+    _model.totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode ??= FocusNode();
 
     _model.advanceAmountAdvanceTextController ??= TextEditingController();
     _model.advanceAmountAdvanceFocusNode ??= FocusNode();
@@ -159,9 +160,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 Duration(milliseconds: 2000),
                                 () async {
                                   setState(() {
-                                    _model.totalAdvanceAmountTextController
+                                    _model
+                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                                         ?.text = ((int.tryParse((_model
-                                                    .advanceRentMonthValue!)) ??
+                                                    .advanceRentMonthRentOrSecurityMonthsValue!)) ??
                                                 0) *
                                             (int.tryParse(_model
                                                     .advanceRentAmountRENTTextController
@@ -297,9 +299,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.advanceRentMonthValueController ??=
+                      controller: _model
+                              .advanceRentMonthRentOrSecurityMonthsValueController ??=
                           FormFieldController<String>(
-                        _model.advanceRentMonthValue ??= '3',
+                        _model.advanceRentMonthRentOrSecurityMonthsValue ??=
+                            '3',
                       ),
                       options: [
                         '1',
@@ -316,11 +320,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.advanceRentMonthValue = val);
+                        setState(() => _model
+                            .advanceRentMonthRentOrSecurityMonthsValue = val);
                         setState(() {
-                          _model.totalAdvanceAmountTextController
-                              ?.text = ((int.tryParse(
-                                          (_model.advanceRentMonthValue!)) ??
+                          _model
+                              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                              ?.text = ((int.tryParse((_model
+                                          .advanceRentMonthRentOrSecurityMonthsValue!)) ??
                                       0) *
                                   (int.tryParse(_model
                                           .advanceRentAmountRENTTextController
@@ -370,10 +376,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.totalAdvanceAmountTextController,
-                      focusNode: _model.totalAdvanceAmountFocusNode,
+                      controller: _model
+                          .totalAdvanceAmountRentOrSecurityMonthsPaidTextController,
+                      focusNode: _model
+                          .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
-                        '_model.totalAdvanceAmountTextController',
+                        '_model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController',
                         Duration(milliseconds: 1),
                         () => setState(() {}),
                       ),
@@ -424,7 +432,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             letterSpacing: 0.0,
                           ),
                       validator: _model
-                          .totalAdvanceAmountTextControllerValidator
+                          .totalAdvanceAmountRentOrSecurityMonthsPaidTextControllerValidator
                           .asValidator(context),
                     ),
                   ),
@@ -478,7 +486,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         setState(() {
                           _model.balanceAmountAdvanceTextController
                               ?.text = ((int.tryParse(_model
-                                          .totalAdvanceAmountTextController
+                                          .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                                           .text) ??
                                       0) -
                                   (int.tryParse(_model

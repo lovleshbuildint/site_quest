@@ -273,7 +273,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           )),
                           SelectionArea(
                               child: Text(
-                            'Hello World',
+                            getJsonField(
+                              profileStateListResponse.jsonBody,
+                              r'''$.States[0].State''',
+                            ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

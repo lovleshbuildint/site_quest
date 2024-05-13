@@ -351,7 +351,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         }),
         Future(() async {
           _model.districtApiResponse = await SqGroup.districtAPisCall.call(
-            istate: FFAppState().istate,
+            istate: FFAppState().State,
             token: FFAppState().Token,
           );
           if ((_model.districtApiResponse?.succeeded ?? true)) {

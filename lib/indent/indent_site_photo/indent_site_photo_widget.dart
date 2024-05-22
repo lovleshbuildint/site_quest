@@ -423,31 +423,19 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFF07D95A),
-                      size: 20.0,
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_photo');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -465,17 +453,18 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_nearest_branch');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
                       ),
                     ),
                     Expanded(
@@ -486,10 +475,57 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD1D5DB),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_nearest_atm');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD1D5DB),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD1D5DB),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_remark');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
+                      ),
                     ),
                     Expanded(
                       child: Container(

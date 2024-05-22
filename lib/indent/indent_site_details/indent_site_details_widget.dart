@@ -487,31 +487,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_landlord_details');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
                       ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -529,10 +517,49 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_commercial');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD1D5DB),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD1D5DB),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_dimensions');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
+                      ),
                     ),
                     Expanded(
                       child: Container(

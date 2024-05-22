@@ -193,7 +193,6 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
-              hintText: 'Please Select..',
               searchHintText: 'Search Bank...',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,

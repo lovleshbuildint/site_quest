@@ -172,7 +172,6 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
-                  hintText: 'Please Select..',
                   icon: Icon(
                     Icons.keyboard_arrow_down_rounded,
                     color: Color(0xFFE1E2E6),

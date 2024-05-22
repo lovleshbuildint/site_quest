@@ -219,7 +219,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     fontFamily: 'Readex Pro',
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: 'Select State',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:

@@ -710,7 +710,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -783,7 +782,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -856,7 +854,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -929,7 +926,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1002,7 +998,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1075,7 +1070,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1149,7 +1143,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1213,7 +1206,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: 'Please Select..',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -1532,7 +1524,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
-                                        hintText: 'Please Select..',
                                         searchHintText: 'Search district...',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1626,7 +1617,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
                                             ),
-                                        hintText: 'Please Select..',
                                         searchHintText: 'Search',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1724,7 +1714,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
-                                        hintText: 'Please Select..',
                                         searchHintText: 'Search City...',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1888,7 +1877,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -2213,7 +2201,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
-                                            hintText: 'Please Select..',
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color: Color(0xFFE1E2E6),
@@ -2585,7 +2572,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Please Select..',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -2686,7 +2672,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Please Select..',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -2781,7 +2766,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Please Select..',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)

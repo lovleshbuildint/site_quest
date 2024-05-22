@@ -340,8 +340,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller: _model.customerBankValueController ??=
                                 FormFieldController<String>(
-                              _model.customerBankValue ??=
-                                  'Abhyudaya Cooperative Bank Ltd',
+                              _model.customerBankValue ??= getJsonField(
+                                FFAppState().indentSelectedSite,
+                                r'''$.CustomerBanks[0].Name''',
+                              ).toString(),
                             ),
                             options: (getJsonField(
                               FFAppState().indentSelectedSite,

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -11,7 +12,9 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start SQ Group Code
 
 class SqGroup {
-  static String baseUrl =
+  static String getBaseUrl({
+    String? token = '',
+  }) =>
       'https://workbenchuat.hitachi-payments.com:9443/service1.svc';
   static Map<String, String> headers = {};
   static DashboardCall dashboardCall = DashboardCall();
@@ -94,9 +97,13 @@ class DashboardCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'Dashboard',
-      apiUrl: '${SqGroup.baseUrl}/getUserReview/Token=${token}',
+      apiUrl: '${baseUrl}/getUserReview/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -113,9 +120,13 @@ class StateListCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'State List',
-      apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
+      apiUrl: '${baseUrl}/getStates/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -138,9 +149,13 @@ class GetCashDeviceApiCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'get Cash DeviceApi',
-      apiUrl: '${SqGroup.baseUrl}/getCashDeviceApi/Token=${token}',
+      apiUrl: '${baseUrl}/getCashDeviceApi/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -164,10 +179,13 @@ class GetProjectTypeCall {
     int? icust,
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'Get Project Type',
-      apiUrl:
-          '${SqGroup.baseUrl}/GetProjectTypeForSiteEvaluation/icust=${icust}',
+      apiUrl: '${baseUrl}/GetProjectTypeForSiteEvaluation/icust=${icust}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -190,9 +208,13 @@ class GetSiteTypeForSiteEvaluationCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'GetSite TypeFor SiteEvaluation ',
-      apiUrl: '${SqGroup.baseUrl}/GetSiteTypeForSiteEvaluation/Token=${token}',
+      apiUrl: '${baseUrl}/GetSiteTypeForSiteEvaluation/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -215,10 +237,14 @@ class GetCashDeviceMovementCategoryForSiteEvaluationCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'Get Cash Device Movement CategoryForSiteEvaluation',
       apiUrl:
-          '${SqGroup.baseUrl}/GetCashDeviceMovementCategoryForSiteEvaluation/Token=${token}',
+          '${baseUrl}/GetCashDeviceMovementCategoryForSiteEvaluation/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -241,9 +267,13 @@ class GetShopTypeSiteCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'get shop type site',
-      apiUrl: '${SqGroup.baseUrl}/GetShopTypeForSiteEvaluation/Token=${token}',
+      apiUrl: '${baseUrl}/GetShopTypeForSiteEvaluation/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -268,6 +298,10 @@ class LoginAPICall {
     String? password = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "UserName": "${userName}",
@@ -275,7 +309,7 @@ class LoginAPICall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'LoginAPI',
-      apiUrl: '${SqGroup.baseUrl}/LoginCheck',
+      apiUrl: '${baseUrl}/LoginCheck',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -295,9 +329,13 @@ class IndentsListCall {
     String? state = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'Indents List',
-      apiUrl: '${SqGroup.baseUrl}/GetIndents/Token=${token}&state=${state}',
+      apiUrl: '${baseUrl}/GetIndents/Token=${token}&state=${state}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -349,6 +387,10 @@ class UpdateDOAdetailsfirstCall {
     int? iSecondSiteVisitedByName,
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "IndentId": "${iIndent}",
@@ -385,7 +427,7 @@ class UpdateDOAdetailsfirstCall {
 "Token":"${token}"}''';
     return ApiManager.instance.makeApiCall(
       callName: 'Update DOAdetailsfirst',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails1',
+      apiUrl: '${baseUrl}/Update_DOADetails1',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -427,6 +469,10 @@ class UpdateDOADetailssecondCall {
     String? refeName = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "iIndent": "${iIndent}",
@@ -457,7 +503,7 @@ class UpdateDOADetailssecondCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdateDOADetailssecond',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails2',
+      apiUrl: '${baseUrl}/Update_DOADetails2',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -476,9 +522,13 @@ class StaregtyCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'staregty',
-      apiUrl: '${SqGroup.baseUrl}/getStrategies/Token=${token}',
+      apiUrl: '${baseUrl}/getStrategies/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -495,9 +545,13 @@ class RbiCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'RBI',
-      apiUrl: '${SqGroup.baseUrl}/getRBICategory/Token=${token}',
+      apiUrl: '${baseUrl}/getRBICategory/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -514,9 +568,13 @@ class CityCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'City',
-      apiUrl: '${SqGroup.baseUrl}/getCities/Token=${token}',
+      apiUrl: '${baseUrl}/getCities/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -533,9 +591,13 @@ class CircleCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'circle',
-      apiUrl: '${SqGroup.baseUrl}/getCircles/Token=${token}',
+      apiUrl: '${baseUrl}/getCircles/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -553,9 +615,13 @@ class MasterCall {
     String? state = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'master',
-      apiUrl: '${SqGroup.baseUrl}/getMasters/Token=${token}&State=${state}',
+      apiUrl: '${baseUrl}/getMasters/Token=${token}&State=${state}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -574,9 +640,13 @@ class TisCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'tis',
-      apiUrl: '${SqGroup.baseUrl}/GetTISTypeForSiteEvaluation/Token=${token}',
+      apiUrl: '${baseUrl}/GetTISTypeForSiteEvaluation/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -593,10 +663,13 @@ class RBICitiesCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'RBICities',
-      apiUrl:
-          '${SqGroup.baseUrl}/SearchFilters/user={user}&clsstate={clsstate}',
+      apiUrl: '${baseUrl}/SearchFilters/user={user}&clsstate={clsstate}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -613,9 +686,13 @@ class StymgetCashDeviceApiCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'stymgetCashDeviceApi',
-      apiUrl: '${SqGroup.baseUrl}/getCashDeviceApi/Token=${token}',
+      apiUrl: '${baseUrl}/getCashDeviceApi/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -632,9 +709,13 @@ class GetsitevisiteddbydeptAPICall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getsitevisiteddbydeptAPI',
-      apiUrl: '${SqGroup.baseUrl}/getsitevisiteddbydeptAPI/Token=${token}',
+      apiUrl: '${baseUrl}/getsitevisiteddbydeptAPI/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -652,10 +733,14 @@ class GetDepartmentWiseUserAPICall {
     String? department = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getDepartmentWiseUserAPI',
       apiUrl:
-          '${SqGroup.baseUrl}/getDepartmentWiseUserAPI/Token=${token}&department=${department}',
+          '${baseUrl}/getDepartmentWiseUserAPI/Token=${token}&department=${department}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -674,9 +759,13 @@ class GetSecondSiteVisitersCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getSecondSiteVisiters',
-      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
+      apiUrl: '${baseUrl}/getSecondSiteVisiters/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -695,9 +784,13 @@ class GetUserReviewByDateCall {
     String? startDT = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getUserReviewByDate',
-      apiUrl: '${SqGroup.baseUrl}/getUserReviewByDate',
+      apiUrl: '${baseUrl}/getUserReviewByDate',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -721,6 +814,10 @@ class ConfirmDOADetailsubmissionCall {
     String? msg = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "iindent": "${iindent}",
@@ -731,7 +828,7 @@ class ConfirmDOADetailsubmissionCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ConfirmDOADetailsubmission',
-      apiUrl: '${SqGroup.baseUrl}/Confirm_DOADetail_submission',
+      apiUrl: '${baseUrl}/Confirm_DOADetail_submission',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -782,6 +879,10 @@ class UpdatenearestATMCall {
     String? iindent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "IndentId": "${indentId}",
@@ -824,7 +925,7 @@ class UpdatenearestATMCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdatenearestATM',
-      apiUrl: '${SqGroup.baseUrl}/Update_nearestATM',
+      apiUrl: '${baseUrl}/Update_nearestATM',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -877,6 +978,10 @@ class UpdateDOADetailsfiveCall {
     String? iindent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "IndentId": "${indentId}",
@@ -919,7 +1024,7 @@ class UpdateDOADetailsfiveCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdateDOADetailsfive',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails5',
+      apiUrl: '${baseUrl}/Update_DOADetails5',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -977,6 +1082,10 @@ class UpdateDOADetailsfourCall {
     String? iindent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
 "IndentId":"${indentId}",
@@ -1022,7 +1131,7 @@ class UpdateDOADetailsfourCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdateDOADetailsfour',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails4',
+      apiUrl: '${baseUrl}/Update_DOADetails4',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1056,6 +1165,10 @@ class UpdateDOADetailsthreeCall {
     int? months,
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "iIndent": "${iIndent}",
@@ -1078,7 +1191,7 @@ class UpdateDOADetailsthreeCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdateDOADetailsthree',
-      apiUrl: '${SqGroup.baseUrl}/\tUpdate_DOADetails3',
+      apiUrl: '${baseUrl}/\tUpdate_DOADetails3',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1097,9 +1210,13 @@ class GetCustomerBankCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getCustomerBank',
-      apiUrl: '${SqGroup.baseUrl}/getCustomerBank/Token={token}',
+      apiUrl: '${baseUrl}/getCustomerBank/Token={token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1116,9 +1233,13 @@ class GetIndentBankCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getIndentBank',
-      apiUrl: '${SqGroup.baseUrl}/getIndentBank/Token={token}',
+      apiUrl: '${baseUrl}/getIndentBank/Token={token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1136,9 +1257,13 @@ class DOADetailssteponeCall {
     String? iIndent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepone',
-      apiUrl: '${SqGroup.baseUrl}/DOADetails_step1',
+      apiUrl: '${baseUrl}/DOADetails_step1',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1156,9 +1281,13 @@ class DOADetailssteptwoCall {
     String? iIndent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailssteptwo',
-      apiUrl: '${SqGroup.baseUrl}/DOADetails_step2',
+      apiUrl: '${baseUrl}/DOADetails_step2',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1176,9 +1305,13 @@ class DOADetailsstepthreeCall {
     String? iIndent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepthree',
-      apiUrl: '${SqGroup.baseUrl}/DOADetails_step3',
+      apiUrl: '${baseUrl}/DOADetails_step3',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1196,9 +1329,13 @@ class DOADetailsstepfourCall {
     String? iIndent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepfour',
-      apiUrl: '${SqGroup.baseUrl}/DOADetails_step4',
+      apiUrl: '${baseUrl}/DOADetails_step4',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1216,9 +1353,13 @@ class DOADetailsstepfiveCall {
     String? iIndent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepfive',
-      apiUrl: '${SqGroup.baseUrl}/DOADetails_step5',
+      apiUrl: '${baseUrl}/DOADetails_step5',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1236,9 +1377,13 @@ class DOADetailsstepsevenCall {
     String? iIndent = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepseven',
-      apiUrl: '${SqGroup.baseUrl}/DOADetails_step7',
+      apiUrl: '${baseUrl}/DOADetails_step7',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1266,6 +1411,10 @@ class UploadImageCall {
     String? androidKey = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
 "SiteId":"${siteId}",
@@ -1283,7 +1432,7 @@ class UploadImageCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'UploadImage',
-      apiUrl: '${SqGroup.baseUrl}/UploadImage',
+      apiUrl: '${baseUrl}/UploadImage',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1304,9 +1453,13 @@ class GetDOADetailsImageCall {
     int? iCustomer,
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'getDOADetailsImage',
-      apiUrl: '${SqGroup.baseUrl}/getDOADetailsImage',
+      apiUrl: '${baseUrl}/getDOADetailsImage',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1325,6 +1478,10 @@ class LogOutCall {
     String? longitude = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
 "Token":"${token}",
@@ -1333,7 +1490,7 @@ class LogOutCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'LogOut',
-      apiUrl: '${SqGroup.baseUrl}/LogOut',
+      apiUrl: '${baseUrl}/LogOut',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1356,6 +1513,10 @@ class ForgotPwdCall {
     String? longitude = '',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
 "UserName":"${userName}",
@@ -1365,7 +1526,7 @@ class ForgotPwdCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ForgotPwd',
-      apiUrl: '${SqGroup.baseUrl}/ForgotPwd',
+      apiUrl: '${baseUrl}/ForgotPwd',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1384,9 +1545,13 @@ class GetPOITypeForSiteEvaluationCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'GetPOITypeForSiteEvaluation',
-      apiUrl: '${SqGroup.baseUrl}/GetPOITypeForSiteEvaluation/Token=${token}',
+      apiUrl: '${baseUrl}/GetPOITypeForSiteEvaluation/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1403,9 +1568,13 @@ class ListSitesCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'ListSites',
-      apiUrl: '${SqGroup.baseUrl}/ListSites/Token={token}',
+      apiUrl: '${baseUrl}/ListSites/Token={token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1423,9 +1592,13 @@ class DistrictAPisCall {
     String? istate = '0',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'DistrictAPis',
-      apiUrl: '${SqGroup.baseUrl}/DistrictAPI/Token=${token}&istate=${istate}',
+      apiUrl: '${baseUrl}/DistrictAPI/Token=${token}&istate=${istate}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -1444,9 +1617,13 @@ class StatenewCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'STATENEW',
-      apiUrl: '${SqGroup.baseUrl}/getStates/Token=${token}',
+      apiUrl: '${baseUrl}/getStates/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1463,9 +1640,13 @@ class RBInewCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'RBInew',
-      apiUrl: '${SqGroup.baseUrl}/getRBICategory/Token=${token}',
+      apiUrl: '${baseUrl}/getRBICategory/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1530,6 +1711,10 @@ class DOADetailsstepFIRSTworddocCall {
     bool? isFromSiteref,
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "IndentId": "${indentId}",
@@ -1585,7 +1770,7 @@ class DOADetailsstepFIRSTworddocCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepFIRSTworddoc',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails1',
+      apiUrl: '${baseUrl}/Update_DOADetails1',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1642,6 +1827,10 @@ class DOADetailsstepSECONDworddocCall {
     String? iindent = 'iindentNull',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "IndentId": "${indentId}",
@@ -1688,7 +1877,7 @@ class DOADetailsstepSECONDworddocCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepSECONDworddoc',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails2',
+      apiUrl: '${baseUrl}/Update_DOADetails2',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1740,6 +1929,10 @@ class DOADetailsstepTHIRDworddocCall {
     String? iindent = 'iindentNull',
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     final ffApiRequestBody = '''
 {
   "IndentId": "${indentId}",
@@ -1781,7 +1974,7 @@ class DOADetailsstepTHIRDworddocCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepTHIRDworddoc',
-      apiUrl: '${SqGroup.baseUrl}/Update_DOADetails3',
+      apiUrl: '${baseUrl}/Update_DOADetails3',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1800,9 +1993,13 @@ class SecondSiteVisitersNEWCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'SecondSiteVisitersNEW',
-      apiUrl: '${SqGroup.baseUrl}/getSecondSiteVisiters/Token=${token}',
+      apiUrl: '${baseUrl}/getSecondSiteVisiters/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1819,9 +2016,13 @@ class GetCRAAgencCall {
   Future<ApiCallResponse> call({
     String? token = '',
   }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
     return ApiManager.instance.makeApiCall(
       callName: 'GetCRAAgenc',
-      apiUrl: '${SqGroup.baseUrl}/GetCRAAgency/Token=${token}',
+      apiUrl: '${baseUrl}/GetCRAAgency/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1976,6 +2177,9 @@ String _serializeList(List? list) {
   try {
     return json.encode(list);
   } catch (_) {
+    if (kDebugMode) {
+      print("List serialization failed. Returning empty list.");
+    }
     return '[]';
   }
 }
@@ -1985,6 +2189,9 @@ String _serializeJson(dynamic jsonVar, [bool isList = false]) {
   try {
     return json.encode(jsonVar);
   } catch (_) {
+    if (kDebugMode) {
+      print("Json serialization failed. Returning empty json.");
+    }
     return isList ? '[]' : '{}';
   }
 }

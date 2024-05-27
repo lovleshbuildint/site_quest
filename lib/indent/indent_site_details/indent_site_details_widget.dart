@@ -1204,6 +1204,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
+                            searchHintTextStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            searchTextStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -1211,6 +1223,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            searchHintText: 'Search for an item...',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1224,7 +1237,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             margin: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
-                            isSearchable: false,
+                            isSearchable: true,
                             isMultiSelect: false,
                           ),
                         ),
@@ -2514,6 +2527,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
+                            keyboardType: TextInputType.number,
                             validator: _model.mrgNoTextControllerValidator
                                 .asValidator(context),
                           ),
@@ -2944,6 +2958,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             emailId: null,
                             isWB: null,
                             msg: null,
+                            errCnt: null,
                           );
                           if ((_model.updateDOAdetailsfirst?.succeeded ??
                               true)) {

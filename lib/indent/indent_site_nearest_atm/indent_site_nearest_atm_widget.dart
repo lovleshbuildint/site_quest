@@ -605,127 +605,153 @@ class _IndentSiteNearestAtmWidgetState
                   decoration: BoxDecoration(
                     color: Color(0xFF2D2D2D),
                   ),
-                  child: Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          _model.updateNearestATM =
-                              await SqGroup.updatenearestATMCall.call(
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            token: FFAppState().Token,
-                            atmid:
-                                _model.nearestatmModel.atmidTextController.text,
-                            bankName: _model.nearestatmModel.aTMNameValue,
-                            distance: _model
-                                .nearestatmModel.distanceKMTextController.text,
-                            direction: _model
-                                .nearestatmModel.directionTextController.text,
-                            avgOffusTransDA: _model
-                                .nearestatmModel.avgOffusTextController.text,
-                            avgOnusTransDA: _model
-                                .nearestatmModel.avgOnusTextController.text,
-                            avgtxns: _model.nearestatmModel
-                                .avgApproxTxnsDayTextController.text,
-                            siteId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            iindent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            avgTotaltransDA: _model.nearestatmModel
-                                .avgApproxTotalDayTextController.text,
-                            targetBank: null,
-                            district: null,
-                            centre: null,
-                            comment: null,
-                            lastModStamp: null,
-                            isHold: null,
-                            istage: null,
-                            iStageText: null,
-                            locationName: null,
-                            androidKey: null,
-                            isPrizm: null,
-                            pinCode: null,
-                            errCnt: null,
-                            isWB: null,
-                            msg: null,
-                            emailId: null,
-                            contactNumber: null,
-                            employeeName: null,
-                            companyName: null,
-                            iDevice: null,
-                            isBranch: null,
-                          );
-                          if ((_model.updateNearestATM?.succeeded ?? true)) {
-                            if (Navigator.of(context).canPop()) {
-                              context.pop();
-                            }
-                            context.pushNamed(
-                              'indent_site_remark',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Alert(UpdateNearestATM)'),
-                                  content: Text(
-                                      (_model.updateNearestATM?.bodyText ??
-                                          '')),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('indent_site_nearest_branch');
+                          },
+                          child: Icon(
+                            Icons.arrow_back_rounded,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 24.0,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              190.0, 0.0, 25.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              _model.updateNearestATM =
+                                  await SqGroup.updatenearestATMCall.call(
+                                indentId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                token: FFAppState().Token,
+                                atmid: _model
+                                    .nearestatmModel.atmidTextController.text,
+                                bankName: _model.nearestatmModel.aTMNameValue,
+                                distance: _model.nearestatmModel
+                                    .distanceKMTextController.text,
+                                direction: _model.nearestatmModel
+                                    .directionTextController.text,
+                                avgOffusTransDA: _model.nearestatmModel
+                                    .avgOffusTextController.text,
+                                avgOnusTransDA: _model
+                                    .nearestatmModel.avgOnusTextController.text,
+                                avgtxns: _model.nearestatmModel
+                                    .avgApproxTxnsDayTextController.text,
+                                siteId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                iindent: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                avgTotaltransDA: _model.nearestatmModel
+                                    .avgApproxTotalDayTextController.text,
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                isPrizm: null,
+                                pinCode: null,
+                                errCnt: null,
+                                isWB: null,
+                                msg: null,
+                                emailId: null,
+                                contactNumber: null,
+                                employeeName: null,
+                                companyName: null,
+                                iDevice: null,
+                                isBranch: null,
+                              );
+                              if ((_model.updateNearestATM?.succeeded ??
+                                  true)) {
+                                if (Navigator.of(context).canPop()) {
+                                  context.pop();
+                                }
+                                context.pushNamed(
+                                  'indent_site_remark',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
                                     ),
-                                  ],
+                                  },
                                 );
-                              },
-                            );
-                          }
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert(UpdateNearestATM)'),
+                                      content: Text(
+                                          (_model.updateNearestATM?.bodyText ??
+                                              '')),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
 
-                          setState(() {});
-                        },
-                        text: 'Save & Next',
-                        options: FFButtonOptions(
-                          width: 118.0,
-                          height: 40.0,
-                          padding: EdgeInsets.all(0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFFF0026),
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
+                              setState(() {});
+                            },
+                            text: 'Save & Next',
+                            options: FFButtonOptions(
+                              width: 118.0,
+                              height: 40.0,
+                              padding: EdgeInsets.all(0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Color(0xFFFF0026),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(50.0),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

@@ -87,7 +87,7 @@ export '/referal/referal_site_details/referal_site_details_widget.dart'
     show ReferalSiteDetailsWidget;
 export '/referal/referal_survey_details/referal_survey_details_widget.dart'
     show ReferalSurveyDetailsWidget;
-export '/referal/referal_clien_details/referal_clien_details_widget.dart'
+export '/open/referal_clien_details/referal_clien_details_widget.dart'
     show ReferalClienDetailsWidget;
 export '/referal/referal_submit/referal_submit_widget.dart'
     show ReferalSubmitWidget;

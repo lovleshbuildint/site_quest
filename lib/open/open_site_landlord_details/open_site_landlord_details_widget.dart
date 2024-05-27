@@ -342,137 +342,165 @@ class _OpenSiteLandlordDetailsWidgetState
                   decoration: BoxDecoration(
                     color: Color(0xFF2D2D2D),
                   ),
-                  child: Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          _model.updateDOADdeatilssecondwordSite = await SqGroup
-                              .dOADetailsstepSECONDworddocCall
-                              .call(
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            district: _model.landlordformModel.districtValue,
-                            token: FFAppState().Token,
-                            iCity: _model.landlordformModel.iCity?.toString(),
-                            lLPercent: _model.landlordformModel
-                                .lLchequefieldTextController.text,
-                            address: _model
-                                .landlordformModel.addressTextController.text,
-                            iState: _model.landlordformModel.istate?.toString(),
-                            pincode: _model
-                                .landlordformModel.pincodeTextController.text,
-                            landMark: _model
-                                .landlordformModel.landmarksTextController.text,
-                            contact1: _model.landlordformModel
-                                .contactNameTextController.text,
-                            contact2: _model.landlordformModel
-                                .alernativenumberTextController.text,
-                            emailId: _model
-                                .landlordformModel.emailidTextController.text,
-                            fax:
-                                _model.landlordformModel.faxTextController.text,
-                            lLBankName:
-                                _model.landlordformModel.landlordBankNameValue,
-                            landLordNameonCheque: _model.landlordformModel
-                                .chequefieldTextController.text,
-                            bankAcNo: _model.landlordformModel
-                                .bankAccountNumberTextController.text,
-                            branchName: _model.landlordformModel
-                                .bankBranchTextController.text,
-                            iFSCCode: _model
-                                .landlordformModel.iFSCCodeTextController.text,
-                            pANCard: _model
-                                .landlordformModel.panNumberTextController.text,
-                            aadharcard: _model.landlordformModel
-                                .aAdharcardNoTextController.text,
-                            landLordName: _model.landlordformModel
-                                .landoardNameTextController.text,
-                            refeName: _model.landlordformModel
-                                .siteReferralNameTextController.text,
-                            contactNumber: _model.landlordformModel
-                                .siteReferralNoTextController.text,
-                            siteId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            iindent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            targetBank: null,
-                            centre: null,
-                            comment: null,
-                            lastModStamp: null,
-                            isHold: null,
-                            istage: null,
-                            iStageText: null,
-                            locationName: null,
-                            chequePercent: _model
-                                .landlordformModel.percentTextController.text,
-                            androidKey: null,
-                            refeId: null,
-                            isWB: null,
-                            companyName: null,
-                            employeeName: null,
-                          );
-                          if ((_model
-                                  .updateDOADdeatilssecondwordSite?.succeeded ??
-                              true)) {
-                            context.goNamed('open_site_commercial');
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Alert(Insident LandLord)'),
-                                  content: Text((_model
-                                          .updateDOADdeatilssecondwordSite
-                                          ?.bodyText ??
-                                      '')),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('open_site_details');
+                          },
+                          child: Icon(
+                            Icons.arrow_back_rounded,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 24.0,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              190.0, 0.0, 25.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              _model.updateDOADdeatilssecondwordSite =
+                                  await SqGroup.dOADetailsstepSECONDworddocCall
+                                      .call(
+                                indentId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                district:
+                                    _model.landlordformModel.districtValue,
+                                token: FFAppState().Token,
+                                iCity:
+                                    _model.landlordformModel.iCity?.toString(),
+                                lLPercent: _model.landlordformModel
+                                    .lLchequefieldTextController.text,
+                                address: _model.landlordformModel
+                                    .addressTextController.text,
+                                iState:
+                                    _model.landlordformModel.istate?.toString(),
+                                pincode: _model.landlordformModel
+                                    .pincodeTextController.text,
+                                landMark: _model.landlordformModel
+                                    .landmarksTextController.text,
+                                contact1: _model.landlordformModel
+                                    .contactNameTextController.text,
+                                contact2: _model.landlordformModel
+                                    .alernativenumberTextController.text,
+                                emailId: _model.landlordformModel
+                                    .emailidTextController.text,
+                                fax: _model
+                                    .landlordformModel.faxTextController.text,
+                                lLBankName: _model
+                                    .landlordformModel.landlordBankNameValue,
+                                landLordNameonCheque: _model.landlordformModel
+                                    .chequefieldTextController.text,
+                                bankAcNo: _model.landlordformModel
+                                    .bankAccountNumberTextController.text,
+                                branchName: _model.landlordformModel
+                                    .bankBranchTextController.text,
+                                iFSCCode: _model.landlordformModel
+                                    .iFSCCodeTextController.text,
+                                pANCard: _model.landlordformModel
+                                    .panNumberTextController.text,
+                                aadharcard: _model.landlordformModel
+                                    .aAdharcardNoTextController.text,
+                                landLordName: _model.landlordformModel
+                                    .landoardNameTextController.text,
+                                refeName: _model.landlordformModel
+                                    .siteReferralNameTextController.text,
+                                contactNumber: _model.landlordformModel
+                                    .siteReferralNoTextController.text,
+                                siteId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                iindent: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                targetBank: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                chequePercent: _model.landlordformModel
+                                    .percentTextController.text,
+                                androidKey: null,
+                                refeId: null,
+                                isWB: null,
+                                companyName: null,
+                                employeeName: null,
+                              );
+                              if ((_model.updateDOADdeatilssecondwordSite
+                                      ?.succeeded ??
+                                  true)) {
+                                context.goNamed('open_site_commercial');
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert(Insident LandLord)'),
+                                      content: Text((_model
+                                              .updateDOADdeatilssecondwordSite
+                                              ?.bodyText ??
+                                          '')),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
                                 );
-                              },
-                            );
-                          }
+                              }
 
-                          setState(() {});
-                        },
-                        text: 'Save & Next',
-                        options: FFButtonOptions(
-                          width: 118.0,
-                          height: 40.0,
-                          padding: EdgeInsets.all(0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFFF0026),
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
+                              setState(() {});
+                            },
+                            text: 'Save & Next',
+                            options: FFButtonOptions(
+                              width: 118.0,
+                              height: 40.0,
+                              padding: EdgeInsets.all(0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Color(0xFFFF0026),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(50.0),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

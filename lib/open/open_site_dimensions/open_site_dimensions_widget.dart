@@ -299,135 +299,163 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                   decoration: BoxDecoration(
                     color: Color(0xFF2D2D2D),
                   ),
-                  child: Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          _model.oPENSIteDOADetailsFour =
-                              await SqGroup.updateDOADetailsfourCall.call(
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            carpetArea: _model.sitedimentionsModel
-                                .carpetAreaTextController.text,
-                            width: _model.sitedimentionsModel
-                                .shopWidthTextController.text,
-                            height: _model.sitedimentionsModel
-                                .shopHeightTextController.text,
-                            depth: _model.sitedimentionsModel
-                                .shopDepthTextController.text,
-                            shopType:
-                                _model.sitedimentionsModel.radioButtonValue,
-                            totalShopArea: _model.sitedimentionsModel
-                                .totalShopAreaTextController.text,
-                            signWidth: _model.sitedimentionsModel
-                                .singageWidthTextController.text,
-                            signHeight: _model.sitedimentionsModel
-                                .singageHeightTextController.text,
-                            shopAreaOffered: _model.sitedimentionsModel
-                                .totalAreaOfferedTextController.text,
-                            totalFrontage: _model.sitedimentionsModel
-                                .totalFrontageTextController.text,
-                            frontageOffered: _model.sitedimentionsModel
-                                .frontageOfferedTextController.text,
-                            lShape: _model.sitedimentionsModel.shapeSignage
-                                ?.toString(),
-                            vsat: _model.sitedimentionsModel.vsat?.toString(),
-                            token: FFAppState().Token,
-                            acodu: _model.sitedimentionsModel.acOduSpace
-                                ?.toString(),
-                            powerAvailability: _model
-                                .sitedimentionsModel.powerAvailabilityValue,
-                            hours: _model.sitedimentionsModel
-                                .noofHoursTextController.text,
-                            isTotempole: _model.sitedimentionsModel.totemPole
-                                ?.toString(),
-                            isRampAval: _model
-                                .sitedimentionsModel.rampAvailability
-                                ?.toString(),
-                            projectNote: _model.sitedimentionsModel
-                                .noteForProjectTISTextController.text,
-                            siteId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            iindent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            targetBank: null,
-                            district: null,
-                            centre: null,
-                            comment: null,
-                            lastModStamp: null,
-                            isHold: null,
-                            istage: null,
-                            iStageText: null,
-                            locationName: null,
-                            androidKey: null,
-                            errCnt: null,
-                            msg: null,
-                            isWB: null,
-                            companyName: null,
-                            employeeName: null,
-                            contactNumber: null,
-                            emailId: null,
-                          );
-                          if ((_model.oPENSIteDOADetailsFour?.succeeded ??
-                              true)) {
-                            context.pushNamed('open_site_photo');
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Alert(SitePhoto)'),
-                                  content: Text((_model
-                                          .oPENSIteDOADetailsFour?.bodyText ??
-                                      '')),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('open_site_commercial');
+                          },
+                          child: Icon(
+                            Icons.arrow_back_rounded,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 24.0,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              190.0, 0.0, 25.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              _model.oPENSIteDOADetailsFour =
+                                  await SqGroup.updateDOADetailsfourCall.call(
+                                indentId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                carpetArea: _model.sitedimentionsModel
+                                    .carpetAreaTextController.text,
+                                width: _model.sitedimentionsModel
+                                    .shopWidthTextController.text,
+                                height: _model.sitedimentionsModel
+                                    .shopHeightTextController.text,
+                                depth: _model.sitedimentionsModel
+                                    .shopDepthTextController.text,
+                                shopType:
+                                    _model.sitedimentionsModel.radioButtonValue,
+                                totalShopArea: _model.sitedimentionsModel
+                                    .totalShopAreaTextController.text,
+                                signWidth: _model.sitedimentionsModel
+                                    .singageWidthTextController.text,
+                                signHeight: _model.sitedimentionsModel
+                                    .singageHeightTextController.text,
+                                shopAreaOffered: _model.sitedimentionsModel
+                                    .totalAreaOfferedTextController.text,
+                                totalFrontage: _model.sitedimentionsModel
+                                    .totalFrontageTextController.text,
+                                frontageOffered: _model.sitedimentionsModel
+                                    .frontageOfferedTextController.text,
+                                lShape: _model.sitedimentionsModel.shapeSignage
+                                    ?.toString(),
+                                vsat:
+                                    _model.sitedimentionsModel.vsat?.toString(),
+                                token: FFAppState().Token,
+                                acodu: _model.sitedimentionsModel.acOduSpace
+                                    ?.toString(),
+                                powerAvailability: _model
+                                    .sitedimentionsModel.powerAvailabilityValue,
+                                hours: _model.sitedimentionsModel
+                                    .noofHoursTextController.text,
+                                isTotempole: _model
+                                    .sitedimentionsModel.totemPole
+                                    ?.toString(),
+                                isRampAval: _model
+                                    .sitedimentionsModel.rampAvailability
+                                    ?.toString(),
+                                projectNote: _model.sitedimentionsModel
+                                    .noteForProjectTISTextController.text,
+                                siteId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                iindent: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                errCnt: null,
+                                msg: null,
+                                isWB: null,
+                                companyName: null,
+                                employeeName: null,
+                                contactNumber: null,
+                                emailId: null,
+                              );
+                              if ((_model.oPENSIteDOADetailsFour?.succeeded ??
+                                  true)) {
+                                context.pushNamed('open_site_photo');
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert(SitePhoto)'),
+                                      content: Text((_model
+                                              .oPENSIteDOADetailsFour
+                                              ?.bodyText ??
+                                          '')),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
                                 );
-                              },
-                            );
-                          }
+                              }
 
-                          setState(() {});
-                        },
-                        text: 'Save & Next',
-                        options: FFButtonOptions(
-                          width: 118.0,
-                          height: 40.0,
-                          padding: EdgeInsets.all(0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFFF0026),
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
+                              setState(() {});
+                            },
+                            text: 'Save & Next',
+                            options: FFButtonOptions(
+                              width: 118.0,
+                              height: 40.0,
+                              padding: EdgeInsets.all(0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Color(0xFFFF0026),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(50.0),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

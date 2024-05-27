@@ -678,85 +678,112 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                   decoration: BoxDecoration(
                     color: Color(0xFF2D2D2D),
                   ),
-                  child: Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          _model.dOADetailsFive =
-                              await SqGroup.confirmDOADetailsubmissionCall.call(
-                            iindent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            stageComent: _model.textController.text,
-                            token: FFAppState().Token,
-                            errCnt: null,
-                            msg: null,
-                          );
-                          if ((_model.dOADetailsFive?.succeeded ?? true)) {
-                            if (Navigator.of(context).canPop()) {
-                              context.pop();
-                            }
-                            context.pushNamed(
-                              'indent_site_review',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Alert(InsidentSiteReview)'),
-                                  content: Text(
-                                      (_model.dOADetailsFive?.bodyText ?? '')),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('indent_site_remark');
+                          },
+                          child: Icon(
+                            Icons.arrow_back_rounded,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 24.0,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              190.0, 0.0, 25.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              _model.dOADetailsFive = await SqGroup
+                                  .confirmDOADetailsubmissionCall
+                                  .call(
+                                iindent: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                stageComent: _model.textController.text,
+                                token: FFAppState().Token,
+                                errCnt: null,
+                                msg: null,
+                              );
+                              if ((_model.dOADetailsFive?.succeeded ?? true)) {
+                                if (Navigator.of(context).canPop()) {
+                                  context.pop();
+                                }
+                                context.pushNamed(
+                                  'indent_site_review',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
                                     ),
-                                  ],
+                                  },
                                 );
-                              },
-                            );
-                          }
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert(InsidentSiteReview)'),
+                                      content: Text(
+                                          (_model.dOADetailsFive?.bodyText ??
+                                              '')),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
 
-                          setState(() {});
-                        },
-                        text: 'Save & Review',
-                        options: FFButtonOptions(
-                          width: 118.0,
-                          height: 40.0,
-                          padding: EdgeInsets.all(0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFFF0026),
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
+                              setState(() {});
+                            },
+                            text: 'Save & Review',
+                            options: FFButtonOptions(
+                              width: 118.0,
+                              height: 40.0,
+                              padding: EdgeInsets.all(0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Color(0xFFFF0026),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(50.0),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

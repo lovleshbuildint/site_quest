@@ -97,264 +97,201 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
-                child: Row(
+              Form(
+                key: _model.formKey,
+                autovalidateMode: AutovalidateMode.always,
+                child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.goNamed(
-                                'indent_review_details',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                  ),
-                                },
-                              );
-                            },
-                            child: Icon(
-                              Icons.arrow_back_rounded,
-                              color: Colors.black,
-                              size: 22.0,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                5.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Add Site Details',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          '1/8',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
-                child: Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  constraints: BoxConstraints(
-                    minHeight: 126.0,
-                  ),
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(
-                      color: Color(0x58404042),
-                      width: 1.0,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                        child: Container(
-                          width: 60.0,
-                          height: 60.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(8.0),
-                            border: Border.all(
-                              color: Color(0xFFD8D8D8),
-                              width: 1.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(5.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.network(
-                                'https://picsum.photos/seed/591/900',
-                                width: double.infinity,
-                                height: double.infinity,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 12.0, 25.0, 0.0),
-                          child: Column(
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        AutoSizeText(
-                                          'Customer',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: Colors.black,
-                                                fontSize: 12.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w300,
-                                              ),
+                              Align(
+                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.goNamed(
+                                      'indent_review_details',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
                                         ),
-                                        AutoSizeText(
-                                          getJsonField(
-                                            FFAppState().indentSelectedSite,
-                                            r'''$.CustomerBank''',
-                                          ).toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
+                                      },
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_rounded,
+                                    color: Colors.black,
+                                    size: 22.0,
                                   ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          AutoSizeText(
-                                            'Indent Number',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Colors.black,
-                                                  fontSize: 12.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w300,
-                                                ),
-                                          ),
-                                          AutoSizeText(
-                                            getJsonField(
-                                              FFAppState().indentSelectedSite,
-                                              r'''$.IndentId''',
-                                            ).toString(),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          AutoSizeText(
-                                            'Strategy',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Colors.black,
-                                                  fontSize: 12.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w300,
-                                                ),
-                                          ),
-                                          AutoSizeText(
-                                            getJsonField(
-                                              FFAppState().indentSelectedSite,
-                                              r'''$.Strategy''',
-                                            ).toString(),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
+                              Align(
+                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Add Site Details',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                '1/8',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            AutoSizeText(
-                                              'City',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        constraints: BoxConstraints(
+                          minHeight: 126.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          borderRadius: BorderRadius.circular(8.0),
+                          border: Border.all(
+                            color: Color(0x58404042),
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 0.0, 0.0, 0.0),
+                              child: Container(
+                                width: 60.0,
+                                height: 60.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  border: Border.all(
+                                    color: Color(0xFFD8D8D8),
+                                    width: 1.0,
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(5.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/591/900',
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 12.0, 25.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              AutoSizeText(
+                                                'Customer',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.black,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                        ),
+                                              ),
+                                              AutoSizeText(
+                                                getJsonField(
+                                                  FFAppState()
+                                                      .indentSelectedSite,
+                                                  r'''$.CustomerBank''',
+                                                ).toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                AutoSizeText(
+                                                  'Indent Number',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
@@ -364,14 +301,15 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
-                                            ),
-                                            AutoSizeText(
-                                              getJsonField(
-                                                FFAppState().indentSelectedSite,
-                                                r'''$.City''',
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                                ),
+                                                AutoSizeText(
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .indentSelectedSite,
+                                                    r'''$.IndentId''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
@@ -379,194 +317,297 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
+                                                ),
+                                              ],
                                             ),
-                                          ],
+                                          ),
                                         ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 15.0, 0.0, 12.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                AutoSizeText(
+                                                  'Strategy',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.black,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                ),
+                                                AutoSizeText(
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .indentSelectedSite,
+                                                    r'''$.Strategy''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Expanded(
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  AutoSizeText(
+                                                    'City',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.black,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                        ),
+                                                  ),
+                                                  AutoSizeText(
+                                                    getJsonField(
+                                                      FFAppState()
+                                                          .indentSelectedSite,
+                                                      r'''$.City''',
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Site Details',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'Site Details',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 10.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: Text(
+                              'Landlord Details',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Landlord Details',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 10.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Commercial',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Commercial',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 10.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Site Dimensions',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
+                          ),
+                        ],
                       ),
                     ),
-                    Expanded(
-                      child: Text(
-                        'Site Dimensions',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 10.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('indent_site_details');
+                              },
+                              child: Container(
+                                height: 2.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0x00FFFFFF),
+                                ),
+                              ),
                             ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0x00FFFFFF),
-                        ),
-                      ),
-                    ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFF07D95A),
-                      size: 20.0,
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('indent_site_landlord_details');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('indent_site_commercial');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('indent_site_dimensions');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD1D5DB),
-                        ),
+                          ),
+                          FaIcon(
+                            FontAwesomeIcons.dotCircle,
+                            color: Color(0xFF07D95A),
+                            size: 20.0,
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                          FaIcon(
+                            FontAwesomeIcons.dotCircle,
+                            color: Color(0xFFD1D5DB),
+                            size: 20.0,
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('indent_site_commercial');
+                            },
+                            child: FaIcon(
+                              FontAwesomeIcons.dotCircle,
+                              color: Color(0xFFD1D5DB),
+                              size: 20.0,
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('indent_site_dimensions');
+                            },
+                            child: FaIcon(
+                              FontAwesomeIcons.dotCircle,
+                              color: Color(0xFFD1D5DB),
+                              size: 20.0,
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 2.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD1D5DB),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -602,11 +643,34 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                           child: TextFormField(
                             controller: _model.customerbankTextController,
                             focusNode: _model.customerbankFocusNode,
+                            onFieldSubmitted: (_) async {
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Filed Required'),
+                                    content: Text('Please fill All deatils'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             readOnly: true,
                             obscureText: false,
                             decoration: InputDecoration(
+                              isDense: false,
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -700,6 +764,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'iSiteType',
                                     false);
                               });
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,

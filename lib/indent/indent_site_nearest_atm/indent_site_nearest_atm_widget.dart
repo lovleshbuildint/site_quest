@@ -426,31 +426,19 @@ class _IndentSiteNearestAtmWidgetState
                         ),
                       ),
                     ),
-                    Icon(
-                      Icons.check_circle_sharp,
-                      color: Color(0xFF07D95A),
-                      size: 20.0,
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF07D95A),
-                        ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_photo');
+                      },
+                      child: Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 2.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF07D95A),
-                        ),
-                      ),
-                    ),
-                    Icon(
-                      Icons.check_circle_sharp,
-                      color: Color(0xFF07D95A),
-                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -468,10 +456,49 @@ class _IndentSiteNearestAtmWidgetState
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFF07D95A),
-                      size: 20.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_nearest_branch');
+                      },
+                      child: Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF07D95A),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 2.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF07D95A),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_nearest_atm');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
+                      ),
                     ),
                     Expanded(
                       child: Container(
@@ -489,10 +516,19 @@ class _IndentSiteNearestAtmWidgetState
                         ),
                       ),
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.dotCircle,
-                      color: Color(0xFFD1D5DB),
-                      size: 20.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('indent_site_remark');
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
+                      ),
                     ),
                     Expanded(
                       child: Container(

@@ -483,6 +483,12 @@ class FFAppState extends ChangeNotifier {
   set SiteId(String _value) {
     _SiteId = _value;
   }
+
+  String _searchpage = '';
+  String get searchpage => _searchpage;
+  set searchpage(String _value) {
+    _searchpage = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

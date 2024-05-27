@@ -1,7 +1,10 @@
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -604,6 +607,78 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             ),
                                       ),
                                     ],
+                                  ),
+                                  FlutterFlowDropDown<String>(
+                                    controller:
+                                        _model.dropDownValueController ??=
+                                            FormFieldController<String>(
+                                      _model.dropDownValue ??=
+                                          FFAppState().State,
+                                    ),
+                                    options: (getJsonField(
+                                      mainPageDashboardResponse.jsonBody,
+                                      r'''$.States..State''',
+                                      true,
+                                    ) as List)
+                                        .map<String>((s) => s.toString())
+                                        .toList()!,
+                                    onChanged: (val) async {
+                                      setState(
+                                          () => _model.dropDownValue = val);
+                                      setState(() {
+                                        FFAppState().State =
+                                            _model.dropDownValue!;
+                                        FFAppState().istate =
+                                            functions.checkIndex(
+                                                mainPageDashboardResponse
+                                                    .jsonBody,
+                                                _model.dropDownValue,
+                                                'States',
+                                                'State',
+                                                'iState')!;
+                                      });
+                                    },
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.45,
+                                    height: 49.0,
+                                    searchHintTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                    searchTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintText: 'Select state',
+                                    searchHintText: 'Search for an item...',
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: Color(0xBAFFFFFF),
+                                    elevation: 2.0,
+                                    borderColor: Color(0xFFE1E2E6),
+                                    borderWidth: 2.0,
+                                    borderRadius: 20.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isSearchable: true,
+                                    isMultiSelect: false,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(

@@ -99,3 +99,12 @@ int? dropdowns(String dropdownvalue) {
     return 0;
   }
 }
+
+String? newCustomFunction(String? state) {
+  // if state is not select and user click any widget then show please select state
+  if (state != 'select') {
+    return null;
+  } else {
+    return 'please select state';
+  }
+}

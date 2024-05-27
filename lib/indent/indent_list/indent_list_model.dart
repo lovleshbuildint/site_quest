@@ -10,9 +10,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class IndentListModel extends FlutterFlowModel<IndentListWidget> {
+  ///  Local state fields for this page.
+
+  bool serachVisibilty = true;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -20,5 +28,7 @@ class IndentListModel extends FlutterFlowModel<IndentListWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 }

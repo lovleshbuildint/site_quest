@@ -58,6 +58,7 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for customerbank widget.
   FocusNode? customerbankFocusNode;
   TextEditingController? customerbankTextController;

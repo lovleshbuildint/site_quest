@@ -453,19 +453,10 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('indent_site_nearest_branch');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -483,19 +474,10 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('indent_site_nearest_atm');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -513,19 +495,10 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('indent_site_remark');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(

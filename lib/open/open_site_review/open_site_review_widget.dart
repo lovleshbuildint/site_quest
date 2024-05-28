@@ -149,7 +149,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                             Text(
                               getJsonField(
                                 FFAppState().indentSelectedSite,
-                                r'''$.SiteId''',
+                                r'''$.IndentId''',
                               ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

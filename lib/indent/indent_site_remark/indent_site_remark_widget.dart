@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -21,6 +22,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
   late IndentSiteRemarkModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -646,6 +648,12 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark1TextController,
                             focusNode: _model.remark1FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark1 =
+                                    _model.remark1TextController.text;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -705,6 +713,12 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark2TextController,
                             focusNode: _model.remark2FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark2 =
+                                    _model.remark2TextController.text;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -764,6 +778,12 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark3TextController,
                             focusNode: _model.remark3FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark3 =
+                                    _model.remark3TextController.text;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -823,6 +843,12 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark4TextController,
                             focusNode: _model.remark4FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark4 =
+                                    _model.remark4TextController.text;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -882,6 +908,12 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark5TextController,
                             focusNode: _model.remark5FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark5 =
+                                    _model.remark5TextController.text;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -977,14 +1009,62 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               190.0, 0.0, 25.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              currentUserLocationValue =
+                                  await getCurrentUserLocation(
+                                      defaultLocation: LatLng(0.0, 0.0));
                               _model.dOADeatilsfive =
                                   await SqGroup.updateDOADetailsfiveCall.call(
-                                remarks1: _model.remark1TextController.text,
-                                remarks2: _model.remark2TextController.text,
-                                remarks3: _model.remark3TextController.text,
-                                remarks4: _model.remark4TextController.text,
-                                remarks5: _model.remark5TextController.text,
+                                remarks1: FFAppState().Remark1,
+                                remarks2: FFAppState().Remark2,
+                                remarks3: FFAppState().Remark3,
+                                remarks4: FFAppState().Remark4,
+                                remarks5: FFAppState().Remark5,
                                 token: FFAppState().Token,
+                                indentId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                siteId: null,
+                                targetBank: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.CustomerBank''',
+                                ).toString(),
+                                district: FFAppState().District.toString(),
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                cRACoverage: FFAppState().CRACoverage,
+                                cRAAgency: FFAppState().CRAAgency,
+                                branchSOLID: FFAppState().BranchSOLID,
+                                nearestBranch: FFAppState().NearestBranch,
+                                distanceFromNearestBranch:
+                                    FFAppState().DistancefromtheNeearestBranch,
+                                videoURL: FFAppState().VideoURL,
+                                iCIT: null,
+                                latitude: functions
+                                    .latitudeFuntion(currentUserLocationValue!)
+                                    .toString(),
+                                longitude: functions
+                                    .longitudeFunction(
+                                        currentUserLocationValue!)
+                                    .toString(),
+                                errCnt: null,
+                                msg: null,
+                                isWB: null,
+                                companyName: null,
+                                employeeName: null,
+                                contactNumber: null,
+                                emailId: null,
+                                iindent: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                isFromSiteref: false,
                               );
                               if ((_model.dOADeatilsfive?.succeeded ?? true)) {
                                 context.pushNamed(

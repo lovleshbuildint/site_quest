@@ -489,6 +489,102 @@ class FFAppState extends ChangeNotifier {
   set searchpage(String _value) {
     _searchpage = _value;
   }
+
+  String _Remark1 = '';
+  String get Remark1 => _Remark1;
+  set Remark1(String _value) {
+    _Remark1 = _value;
+  }
+
+  String _Remark2 = '';
+  String get Remark2 => _Remark2;
+  set Remark2(String _value) {
+    _Remark2 = _value;
+  }
+
+  String _Remark3 = '';
+  String get Remark3 => _Remark3;
+  set Remark3(String _value) {
+    _Remark3 = _value;
+  }
+
+  String _Remark4 = '';
+  String get Remark4 => _Remark4;
+  set Remark4(String _value) {
+    _Remark4 = _value;
+  }
+
+  String _Remark5 = '';
+  String get Remark5 => _Remark5;
+  set Remark5(String _value) {
+    _Remark5 = _value;
+  }
+
+  String _CRACoverage = '';
+  String get CRACoverage => _CRACoverage;
+  set CRACoverage(String _value) {
+    _CRACoverage = _value;
+  }
+
+  String _CRAAgency = '';
+  String get CRAAgency => _CRAAgency;
+  set CRAAgency(String _value) {
+    _CRAAgency = _value;
+  }
+
+  String _BranchSOLID = '';
+  String get BranchSOLID => _BranchSOLID;
+  set BranchSOLID(String _value) {
+    _BranchSOLID = _value;
+  }
+
+  String _NearestBranch = '';
+  String get NearestBranch => _NearestBranch;
+  set NearestBranch(String _value) {
+    _NearestBranch = _value;
+  }
+
+  String _DistancefromtheNeearestBranch = '';
+  String get DistancefromtheNeearestBranch => _DistancefromtheNeearestBranch;
+  set DistancefromtheNeearestBranch(String _value) {
+    _DistancefromtheNeearestBranch = _value;
+  }
+
+  String _VideoURL = '';
+  String get VideoURL => _VideoURL;
+  set VideoURL(String _value) {
+    _VideoURL = _value;
+  }
+
+  String _Remark1open = '';
+  String get Remark1open => _Remark1open;
+  set Remark1open(String _value) {
+    _Remark1open = _value;
+  }
+
+  String _Remark2open = '';
+  String get Remark2open => _Remark2open;
+  set Remark2open(String _value) {
+    _Remark2open = _value;
+  }
+
+  String _Remark3open = '';
+  String get Remark3open => _Remark3open;
+  set Remark3open(String _value) {
+    _Remark3open = _value;
+  }
+
+  String _Remark4open = '';
+  String get Remark4open => _Remark4open;
+  set Remark4open(String _value) {
+    _Remark4open = _value;
+  }
+
+  String _Remark5open = '';
+  String get Remark5open => _Remark5open;
+  set Remark5open(String _value) {
+    _Remark5open = _value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

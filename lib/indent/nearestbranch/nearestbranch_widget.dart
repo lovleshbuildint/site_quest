@@ -90,6 +90,9 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   _model.cRACoverage =
                       functions.dropdown(_model.cRACoverageValue!);
                 });
+                setState(() {
+                  FFAppState().CRACoverage = _model.cRACoverageValue!;
+                });
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -163,8 +166,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   ) as List)
                       .map<String>((s) => s.toString())
                       .toList()!,
-                  onChanged: (val) =>
-                      setState(() => _model.cRAAgencyValue = val),
+                  onChanged: (val) async {
+                    setState(() => _model.cRAAgencyValue = val);
+                    setState(() {
+                      FFAppState().CRAAgency = _model.cRAAgencyValue!;
+                    });
+                  },
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -207,6 +214,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.branchSOLIDTextController,
               focusNode: _model.branchSOLIDFocusNode,
+              onFieldSubmitted: (_) async {
+                setState(() {
+                  FFAppState().BranchSOLID =
+                      _model.branchSOLIDTextController.text;
+                });
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -273,6 +286,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.nearestBranchstextTextController,
               focusNode: _model.nearestBranchstextFocusNode,
+              onFieldSubmitted: (_) async {
+                setState(() {
+                  FFAppState().NearestBranch =
+                      _model.nearestBranchstextTextController.text;
+                });
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -339,6 +358,12 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.distanceNearestBranchTextController,
               focusNode: _model.distanceNearestBranchFocusNode,
+              onFieldSubmitted: (_) async {
+                setState(() {
+                  FFAppState().DistancefromtheNeearestBranch =
+                      _model.distanceNearestBranchTextController.text;
+                });
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -410,6 +435,11 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: TextFormField(
               controller: _model.videoURLTextController,
               focusNode: _model.videoURLFocusNode,
+              onFieldSubmitted: (_) async {
+                setState(() {
+                  FFAppState().VideoURL = _model.videoURLTextController.text;
+                });
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,

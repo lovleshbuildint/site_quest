@@ -370,10 +370,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                             onPressed: () async {
                               _model.openSiteUpdateNearestATM =
                                   await SqGroup.updatenearestATMCall.call(
-                                indentId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                indentId: null,
                                 token: FFAppState().Token,
                                 atmid: _model
                                     .nearestatmModel.atmidTextController.text,
@@ -388,6 +385,32 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                     .avgOffusTextController.text,
                                 direction: _model.nearestatmModel
                                     .directionTextController.text,
+                                siteId: null,
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                isPrizm: null,
+                                iDevice: null,
+                                isBranch: null,
+                                avgtxns: _model.nearestatmModel
+                                    .avgApproxTxnsDayTextController.text,
+                                pinCode: null,
+                                errCnt: null,
+                                msg: null,
+                                isWB: null,
+                                companyName: null,
+                                employeeName: null,
+                                contactNumber: null,
+                                emailId: null,
+                                iindent: null,
+                                isFromSiteref: false,
                               );
                               if ((_model.openSiteUpdateNearestATM?.succeeded ??
                                   true)) {

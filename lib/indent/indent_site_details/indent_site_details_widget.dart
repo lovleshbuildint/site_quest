@@ -2931,14 +2931,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               FFAppState().indentSelectedSite,
                               r'''$.CustomerBank''',
                             ).toString(),
-                            siteId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            iindent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
+                            siteId: null,
+                            iindent: null,
                             mgrName: _model.mrgNameTextController.text,
                             mgrNo: _model.mrgNoTextController.text,
                             location: _model.locationNameTextController.text,

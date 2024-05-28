@@ -330,10 +330,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                             onPressed: () async {
                               _model.oPENSIteDOADetailsFour =
                                   await SqGroup.updateDOADetailsfourCall.call(
-                                indentId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                indentId: null,
                                 carpetArea: _model.sitedimentionsModel
                                     .carpetAreaTextController.text,
                                 width: _model.sitedimentionsModel
@@ -375,14 +372,8 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                     ?.toString(),
                                 projectNote: _model.sitedimentionsModel
                                     .noteForProjectTISTextController.text,
-                                siteId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
-                                iindent: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                siteId: null,
+                                iindent: null,
                                 targetBank: null,
                                 district: null,
                                 centre: null,

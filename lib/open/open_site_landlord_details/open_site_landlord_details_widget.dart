@@ -374,10 +374,7 @@ class _OpenSiteLandlordDetailsWidgetState
                               _model.updateDOADdeatilssecondwordSite =
                                   await SqGroup.dOADetailsstepSECONDworddocCall
                                       .call(
-                                indentId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                indentId: null,
                                 district:
                                     _model.landlordformModel.districtValue,
                                 token: FFAppState().Token,
@@ -421,14 +418,8 @@ class _OpenSiteLandlordDetailsWidgetState
                                     .siteReferralNameTextController.text,
                                 contactNumber: _model.landlordformModel
                                     .siteReferralNoTextController.text,
-                                siteId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
-                                iindent: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                siteId: null,
+                                iindent: null,
                                 targetBank: null,
                                 centre: null,
                                 comment: null,
@@ -444,6 +435,9 @@ class _OpenSiteLandlordDetailsWidgetState
                                 isWB: null,
                                 companyName: null,
                                 employeeName: null,
+                                errCnt: null,
+                                msg: null,
+                                isFromSiteref: false,
                               );
                               if ((_model.updateDOADdeatilssecondwordSite
                                       ?.succeeded ??

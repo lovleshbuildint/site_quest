@@ -603,21 +603,13 @@ class _IndentSiteNearestBranchWidgetState
                                   FFAppState().indentSelectedSite,
                                   r'''$.IndentId''',
                                 ).toString(),
-                                cRACoverage: _model
-                                    .nearestbranchModel.cRACoverage
-                                    ?.toString(),
-                                cRAAgency:
-                                    _model.nearestbranchModel.cRAAgencyValue,
-                                branchSOLID: _model.nearestbranchModel
-                                    .branchSOLIDTextController.text,
-                                nearestBranch: _model.nearestbranchModel
-                                    .nearestBranchstextTextController.text,
-                                distanceFromNearestBranch: _model
-                                    .nearestbranchModel
-                                    .distanceNearestBranchTextController
-                                    .text,
-                                videoURL: _model.nearestbranchModel
-                                    .videoURLTextController.text,
+                                cRACoverage: FFAppState().CRACoverage,
+                                cRAAgency: FFAppState().CRAAgency,
+                                branchSOLID: FFAppState().BranchSOLID,
+                                nearestBranch: FFAppState().NearestBranch,
+                                distanceFromNearestBranch:
+                                    FFAppState().DistancefromtheNeearestBranch,
+                                videoURL: FFAppState().VideoURL,
                                 token: FFAppState().Token,
                                 latitude: functions
                                     .latitudeFuntion(currentUserLocationValue!)
@@ -634,6 +626,30 @@ class _IndentSiteNearestBranchWidgetState
                                   FFAppState().indentSelectedSite,
                                   r'''$.IndentId''',
                                 ).toString(),
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                androidKey: null,
+                                lastModStamp: null,
+                                comment: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                isFromSiteref: false,
+                                emailId: null,
+                                contactNumber: null,
+                                employeeName: null,
+                                companyName: null,
+                                isWB: null,
+                                msg: null,
+                                errCnt: null,
+                                remarks1: FFAppState().Remark1,
+                                remarks2: FFAppState().Remark2,
+                                remarks3: FFAppState().Remark3,
+                                remarks4: FFAppState().Remark4,
+                                remarks5: FFAppState().Remark5,
+                                iCIT: null,
                               );
                               if ((_model.dOADetailsfive?.succeeded ?? true)) {
                                 context.pushNamed('indent_site_nearest_atm');

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestbranch/nearestbranch_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,6 +24,7 @@ class _OpenSiteNearestBranchWidgetState
   late OpenSiteNearestBranchModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -327,26 +329,53 @@ class _OpenSiteNearestBranchWidgetState
                               190.0, 0.0, 25.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              currentUserLocationValue =
+                                  await getCurrentUserLocation(
+                                      defaultLocation: LatLng(0.0, 0.0));
                               _model.oPENSiteDOADetailsfive =
                                   await SqGroup.updateDOADetailsfiveCall.call(
-                                indentId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
-                                cRACoverage:
-                                    _model.nearestbranchModel.cRACoverageValue,
-                                cRAAgency:
-                                    _model.nearestbranchModel.cRAAgencyValue,
-                                branchSOLID: _model.nearestbranchModel
-                                    .branchSOLIDTextController.text,
-                                nearestBranch: _model.nearestbranchModel
-                                    .nearestBranchstextTextController.text,
-                                distanceFromNearestBranch: _model
-                                    .nearestbranchModel
-                                    .distanceNearestBranchTextController
-                                    .text,
-                                videoURL: _model.nearestbranchModel
-                                    .videoURLTextController.text,
+                                indentId: null,
+                                cRACoverage: FFAppState().CRACoverage,
+                                cRAAgency: FFAppState().CRAAgency,
+                                branchSOLID: FFAppState().BranchSOLID,
+                                nearestBranch: FFAppState().NearestBranch,
+                                distanceFromNearestBranch:
+                                    FFAppState().DistancefromtheNeearestBranch,
+                                videoURL: FFAppState().VideoURL,
+                                token: FFAppState().Token,
+                                iindent: null,
+                                siteId: null,
+                                isFromSiteref: null,
+                                emailId: null,
+                                employeeName: null,
+                                contactNumber: null,
+                                companyName: null,
+                                isWB: null,
+                                msg: null,
+                                errCnt: null,
+                                iCIT: null,
+                                latitude: functions
+                                    .latitudeFuntion(currentUserLocationValue!)
+                                    .toString(),
+                                longitude: functions
+                                    .longitudeFunction(
+                                        currentUserLocationValue!)
+                                    .toString(),
+                                androidKey: null,
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                remarks1: FFAppState().Remark1,
+                                remarks2: FFAppState().Remark2,
+                                remarks3: FFAppState().Remark3,
+                                remarks4: FFAppState().Remark4,
+                                remarks5: FFAppState().Remark5,
                               );
                               if ((_model.oPENSiteDOADetailsfive?.succeeded ??
                                   true)) {

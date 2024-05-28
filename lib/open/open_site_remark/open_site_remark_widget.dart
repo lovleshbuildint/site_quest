@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +21,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
   late OpenSiteRemarkModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -363,6 +365,12 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark1TextController,
                             focusNode: _model.remark1FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark1open =
+                                    FFAppState().Remark1open;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -422,6 +430,12 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark2TextController,
                             focusNode: _model.remark2FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark2open =
+                                    FFAppState().Remark2open;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -481,6 +495,12 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark3TextController,
                             focusNode: _model.remark3FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark3open =
+                                    FFAppState().Remark3open;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -540,6 +560,12 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark4TextController,
                             focusNode: _model.remark4FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark4open =
+                                    FFAppState().Remark4open;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -599,6 +625,12 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           child: TextFormField(
                             controller: _model.remark5TextController,
                             focusNode: _model.remark5FocusNode,
+                            onFieldSubmitted: (_) async {
+                              setState(() {
+                                FFAppState().Remark5open =
+                                    FFAppState().Remark5open;
+                              });
+                            },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
                             obscureText: false,
@@ -694,6 +726,9 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                               190.0, 0.0, 25.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              currentUserLocationValue =
+                                  await getCurrentUserLocation(
+                                      defaultLocation: LatLng(0.0, 0.0));
                               _model.openUpdateDOADetailsFive =
                                   await SqGroup.updateDOADetailsfiveCall.call(
                                 indentId: getJsonField(
@@ -706,6 +741,41 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 remarks4: _model.remark4TextController.text,
                                 remarks5: _model.remark5TextController.text,
                                 token: FFAppState().Token,
+                                siteId: null,
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                cRACoverage: FFAppState().CRACoverage,
+                                cRAAgency: FFAppState().CRAAgency,
+                                branchSOLID: FFAppState().BranchSOLID,
+                                nearestBranch: FFAppState().NearestBranch,
+                                distanceFromNearestBranch:
+                                    FFAppState().DistancefromtheNeearestBranch,
+                                iCIT: null,
+                                latitude: functions
+                                    .latitudeFuntion(currentUserLocationValue!)
+                                    .toString(),
+                                longitude: functions
+                                    .longitudeFunction(
+                                        currentUserLocationValue!)
+                                    .toString(),
+                                videoURL: FFAppState().VideoURL,
+                                errCnt: null,
+                                msg: null,
+                                isWB: null,
+                                companyName: null,
+                                employeeName: null,
+                                contactNumber: null,
+                                emailId: null,
+                                iindent: null,
+                                isFromSiteref: false,
                               );
                               if ((_model.openUpdateDOADetailsFive?.succeeded ??
                                   true)) {

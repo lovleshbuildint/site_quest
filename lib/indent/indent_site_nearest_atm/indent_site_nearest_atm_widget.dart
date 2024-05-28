@@ -654,10 +654,7 @@ class _IndentSiteNearestAtmWidgetState
                                     .nearestatmModel.avgOnusTextController.text,
                                 avgtxns: _model.nearestatmModel
                                     .avgApproxTxnsDayTextController.text,
-                                siteId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                siteId: null,
                                 iindent: getJsonField(
                                   FFAppState().indentSelectedSite,
                                   r'''$.IndentId''',
@@ -685,6 +682,7 @@ class _IndentSiteNearestAtmWidgetState
                                 companyName: null,
                                 iDevice: null,
                                 isBranch: null,
+                                isFromSiteref: false,
                               );
                               if ((_model.updateNearestATM?.succeeded ??
                                   true)) {

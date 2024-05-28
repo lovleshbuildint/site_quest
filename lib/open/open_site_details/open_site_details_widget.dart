@@ -2593,20 +2593,11 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             iSecondSiteVisitedByName:
                                 _model.isecondsitevisitedbynames,
                             iProjType: _model.iprojecttypes,
-                            indentId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
+                            indentId: null,
                             mgrName: _model.mangerNameTextController.text,
                             mgrNo: _model.mangerNumberTextController.text,
-                            siteId: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
-                            iindent: getJsonField(
-                              FFAppState().indentSelectedSite,
-                              r'''$.IndentId''',
-                            ).toString(),
+                            siteId: null,
+                            iindent: null,
                             atmExisting: _model.aTMExistingTextController.text,
                             targetBank: null,
                             isFromSiteref: false,
@@ -2626,6 +2617,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             emailId: null,
                             isWB: null,
                             msg: null,
+                            errCnt: null,
                           );
                           if ((_model
                                   .updateDOAdetailsfirstwordsSites?.succeeded ??

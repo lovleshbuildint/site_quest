@@ -108,3 +108,27 @@ String? newCustomFunction(String? state) {
     return 'please select state';
   }
 }
+
+dynamic filter(
+  dynamic mainData,
+  String? searchValue,
+) {
+  if (searchValue == null || searchValue.isEmpty) {
+    return mainData['IndentsLists']
+        .where((data) => data['status'] == 'A')
+        .toList();
+  }
+
+  List<dynamic> filteredData = [];
+
+  for (dynamic data in mainData['IndentsLists']) {
+    String searchValueLowerCase = searchValue.toLowerCase();
+
+    if (data['CustomerBank'].toLowerCase().contains(searchValueLowerCase) &&
+        data['status'] == 'A') {
+      filteredData.add(data);
+    }
+  }
+
+  return filteredData;
+}

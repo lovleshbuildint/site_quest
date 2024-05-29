@@ -667,6 +667,25 @@ class _IndentSiteLandlordDetailsWidgetState
                                   FFAppState().indentSelectedSite,
                                   r'''$.IndentId''',
                                 ).toString(),
+                                targetBank: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.CustomerBank''',
+                                ).toString(),
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                refeId: null,
+                                errCnt: null,
+                                employeeName: null,
+                                companyName: null,
+                                isWB: null,
+                                msg: null,
+                                isFromSiteref: false,
                               );
                               if ((_model.updateDOADdeatils2?.succeeded ??
                                   true)) {

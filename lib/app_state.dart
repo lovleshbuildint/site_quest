@@ -47,9 +47,6 @@ class FFAppState extends ChangeNotifier {
       _UserName = prefs.getString('ff_UserName') ?? _UserName;
     });
     _safeInit(() {
-      _istate = prefs.getString('ff_istate') ?? _istate;
-    });
-    _safeInit(() {
       _State = prefs.getString('ff_State') ?? _State;
     });
     _safeInit(() {
@@ -61,6 +58,9 @@ class FFAppState extends ChangeNotifier {
           print("Can't decode persisted json. Error: $e.");
         }
       }
+    });
+    _safeInit(() {
+      _istate = prefs.getStringList('ff_istate') ?? _istate;
     });
   }
 
@@ -281,13 +281,6 @@ class FFAppState extends ChangeNotifier {
   set UserName(String _value) {
     _UserName = _value;
     prefs.setString('ff_UserName', _value);
-  }
-
-  String _istate = '';
-  String get istate => _istate;
-  set istate(String _value) {
-    _istate = _value;
-    prefs.setString('ff_istate', _value);
   }
 
   String _State = '0';
@@ -584,6 +577,41 @@ class FFAppState extends ChangeNotifier {
   String get Remark5open => _Remark5open;
   set Remark5open(String _value) {
     _Remark5open = _value;
+  }
+
+  List<String> _istate = [];
+  List<String> get istate => _istate;
+  set istate(List<String> _value) {
+    _istate = _value;
+    prefs.setStringList('ff_istate', _value);
+  }
+
+  void addToIstate(String _value) {
+    _istate.add(_value);
+    prefs.setStringList('ff_istate', _istate);
+  }
+
+  void removeFromIstate(String _value) {
+    _istate.remove(_value);
+    prefs.setStringList('ff_istate', _istate);
+  }
+
+  void removeAtIndexFromIstate(int _index) {
+    _istate.removeAt(_index);
+    prefs.setStringList('ff_istate', _istate);
+  }
+
+  void updateIstateAtIndex(
+    int _index,
+    String Function(String) updateFn,
+  ) {
+    _istate[_index] = updateFn(_istate[_index]);
+    prefs.setStringList('ff_istate', _istate);
+  }
+
+  void insertAtIndexInIstate(int _index, String _value) {
+    _istate.insert(_index, _value);
+    prefs.setStringList('ff_istate', _istate);
   }
 }
 

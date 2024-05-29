@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'main_page_widget.dart' show MainPageWidget;
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
@@ -36,14 +35,10 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ApiCallResponse? stateResponse;
   // Stores action output result for [Backend Call - API (circle)] action in MainPage widget.
   ApiCallResponse? circelResponse;
-  // Stores action output result for [Backend Call - API (master)] action in MainPage widget.
-  ApiCallResponse? masterResponse;
   // Stores action output result for [Backend Call - API (tis)] action in MainPage widget.
   ApiCallResponse? tisResponse;
   // Stores action output result for [Backend Call - API (GetPOITypeForSiteEvaluation)] action in MainPage widget.
   ApiCallResponse? poiType;
-  // Stores action output result for [Backend Call - API (DistrictAPis)] action in MainPage widget.
-  ApiCallResponse? districtApiResponse;
   // Stores action output result for [Backend Call - API (City)] action in MainPage widget.
   ApiCallResponse? cityresponse;
   // Stores action output result for [Backend Call - API (getsitevisiteddbydeptAPI)] action in MainPage widget.
@@ -55,8 +50,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   // Stores action output result for [Backend Call - API (getsitevisiteddbydeptAPI)] action in MainPage widget.
   ApiCallResponse? apiResultsitevisitedbydept;
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  List<String>? dropDownValue;
+  FormFieldController<List<String>>? dropDownValueController;
 
   @override
   void initState(BuildContext context) {}

@@ -780,7 +780,9 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
                                         future: SqGroup.districtAPisCall.call(
-                                          istate: FFAppState().istate,
+                                          istate:
+                                              (FFAppState().istate.isNotEmpty)
+                                                  .toString(),
                                           token: FFAppState().Token,
                                         ),
                                         builder: (context, snapshot) {

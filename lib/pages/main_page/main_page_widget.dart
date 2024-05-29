@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -290,17 +289,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.masterResponse = await SqGroup.masterCall.call(
-            token: FFAppState().Token,
-            state: FFAppState().istate,
-          );
-          if ((_model.masterResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().master = (_model.masterResponse?.jsonBody ?? '');
-            });
-          }
-        }),
-        Future(() async {
           _model.tisResponse = await SqGroup.tisCall.call(
             token: FFAppState().Token,
           );
@@ -350,18 +338,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                 );
               },
             );
-          }
-        }),
-        Future(() async {
-          _model.districtApiResponse = await SqGroup.districtAPisCall.call(
-            istate: FFAppState().istate,
-            token: FFAppState().Token,
-          );
-          if ((_model.districtApiResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().District =
-                  (_model.districtApiResponse?.jsonBody ?? '');
-            });
           }
         }),
         Future(() async {
@@ -609,35 +585,27 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                     ],
                                   ),
                                   FlutterFlowDropDown<String>(
-                                    controller:
+                                    multiSelectController:
                                         _model.dropDownValueController ??=
-                                            FormFieldController<String>(
-                                      _model.dropDownValue ??=
-                                          FFAppState().State,
-                                    ),
-                                    options: (getJsonField(
+                                            FormFieldController<List<String>>(
+                                                _model.dropDownValue ??=
+                                                    List<String>.from(
+                                      FFAppState().istate ?? [],
+                                    )),
+                                    options: List<String>.from((getJsonField(
+                                      mainPageDashboardResponse.jsonBody,
+                                      r'''$.States..iState''',
+                                      true,
+                                    ) as List)
+                                        .map<String>((s) => s.toString())
+                                        .toList()!),
+                                    optionLabels: (getJsonField(
                                       mainPageDashboardResponse.jsonBody,
                                       r'''$.States..State''',
                                       true,
                                     ) as List)
                                         .map<String>((s) => s.toString())
                                         .toList()!,
-                                    onChanged: (val) async {
-                                      setState(
-                                          () => _model.dropDownValue = val);
-                                      setState(() {
-                                        FFAppState().State =
-                                            _model.dropDownValue!;
-                                        FFAppState().istate =
-                                            functions.checkIndex(
-                                                mainPageDashboardResponse
-                                                    .jsonBody,
-                                                _model.dropDownValue,
-                                                'States',
-                                                'State',
-                                                'iState')!;
-                                      });
-                                    },
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.45,
                                     height: 49.0,
@@ -678,7 +646,17 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isSearchable: true,
-                                    isMultiSelect: false,
+                                    isMultiSelect: true,
+                                    onMultiSelectChanged: (val) async {
+                                      setState(
+                                          () => _model.dropDownValue = val);
+                                      setState(() {
+                                        FFAppState().istate = _model
+                                            .dropDownValue!
+                                            .toList()
+                                            .cast<String>();
+                                      });
+                                    },
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(

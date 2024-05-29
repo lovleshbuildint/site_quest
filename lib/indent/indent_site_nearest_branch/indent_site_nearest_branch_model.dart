@@ -17,6 +17,7 @@ class IndentSiteNearestBranchModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.

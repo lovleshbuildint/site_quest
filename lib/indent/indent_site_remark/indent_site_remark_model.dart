@@ -14,6 +14,7 @@ class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for Remark1 widget.
   FocusNode? remark1FocusNode;
   TextEditingController? remark1TextController;

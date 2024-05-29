@@ -15,6 +15,7 @@ class IndentSiteCommercialModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.

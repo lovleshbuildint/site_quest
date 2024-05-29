@@ -15,6 +15,7 @@ class IndentSiteDimensionsModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Model for sitedimentions component.
   late SitedimentionsModel sitedimentionsModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfour)] action in Button widget.

@@ -849,19 +849,24 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                       0.0, 0.0),
                                                               children: [
                                                                 CircularPercentIndicator(
-                                                                  percent: (getJsonField(
-                                                                            mainPageDashboardResponse.jsonBody,
-                                                                            r'''$.UserReview[3].Count''',
-                                                                          ) -
-                                                                          getJsonField(
-                                                                            mainPageDashboardResponse.jsonBody,
-                                                                            r'''$.UserReview[1].Count''',
-                                                                          )) /
-                                                                      getJsonField(
-                                                                        mainPageDashboardResponse
-                                                                            .jsonBody,
-                                                                        r'''$.UserReview[3].Count''',
-                                                                      ),
+                                                                  percent:
+                                                                      valueOrDefault<
+                                                                          double>(
+                                                                    (getJsonField(
+                                                                              mainPageDashboardResponse.jsonBody,
+                                                                              r'''$.UserReview[3].Count''',
+                                                                            ) -
+                                                                            getJsonField(
+                                                                              mainPageDashboardResponse.jsonBody,
+                                                                              r'''$.UserReview[1].Count''',
+                                                                            )) /
+                                                                        getJsonField(
+                                                                          mainPageDashboardResponse
+                                                                              .jsonBody,
+                                                                          r'''$.UserReview[3].Count''',
+                                                                        ),
+                                                                    10.0,
+                                                                  ),
                                                                   radius: 50.0,
                                                                   lineWidth:
                                                                       8.0,

@@ -65,6 +65,15 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   FocusNode? customerbankFocusNode;
   TextEditingController? customerbankTextController;
   String? Function(BuildContext, String?)? customerbankTextControllerValidator;
+  String? _customerbankTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for sitetype widget.
   String? sitetypeValue;
   FormFieldController<String>? sitetypeValueController;
@@ -93,15 +102,42 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   FocusNode? locationNameFocusNode;
   TextEditingController? locationNameTextController;
   String? Function(BuildContext, String?)? locationNameTextControllerValidator;
+  String? _locationNameTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for Distancefrominindent widget.
   FocusNode? distancefrominindentFocusNode;
   TextEditingController? distancefrominindentTextController;
   String? Function(BuildContext, String?)?
       distancefrominindentTextControllerValidator;
+  String? _distancefrominindentTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for SiteAddress widget.
   FocusNode? siteAddressFocusNode;
   TextEditingController? siteAddressTextController;
   String? Function(BuildContext, String?)? siteAddressTextControllerValidator;
+  String? _siteAddressTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for District widget.
   String? districtValue;
   FormFieldController<String>? districtValueController;
@@ -115,6 +151,14 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   FocusNode? pincodeFocusNode;
   TextEditingController? pincodeTextController;
   String? Function(BuildContext, String?)? pincodeTextControllerValidator;
+  String? _pincodeTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for circle widget.
   String? circleValue;
   FormFieldController<String>? circleValueController;
@@ -159,7 +203,14 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   ApiCallResponse? updateDOAdetailsfirst;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    customerbankTextControllerValidator = _customerbankTextControllerValidator;
+    locationNameTextControllerValidator = _locationNameTextControllerValidator;
+    distancefrominindentTextControllerValidator =
+        _distancefrominindentTextControllerValidator;
+    siteAddressTextControllerValidator = _siteAddressTextControllerValidator;
+    pincodeTextControllerValidator = _pincodeTextControllerValidator;
+  }
 
   @override
   void dispose() {

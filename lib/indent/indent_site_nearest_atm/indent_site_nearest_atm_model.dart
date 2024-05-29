@@ -15,6 +15,7 @@ class IndentSiteNearestAtmModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
   // Stores action output result for [Backend Call - API (UpdatenearestATM)] action in Button widget.

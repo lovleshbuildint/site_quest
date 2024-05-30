@@ -223,7 +223,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                   getJsonField(
                                                     FFAppState()
                                                         .indentSelectedSite,
-                                                    r'''$.BranchName''',
+                                                    r'''$..CustomerBank''',
                                                   ).toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)

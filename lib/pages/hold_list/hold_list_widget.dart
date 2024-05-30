@@ -217,7 +217,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                 getJsonField(
                                                   FFAppState()
                                                       .indentSelectedSite,
-                                                  r'''$.BranchName''',
+                                                  r'''$..CustomerBank''',
                                                 ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)

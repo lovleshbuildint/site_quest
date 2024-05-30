@@ -17,6 +17,7 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Stores action output result for [Backend Call - API (RBInew)] action in MainPage widget.
   ApiCallResponse? rbiresponse;
   // Stores action output result for [Backend Call - API (GetSite TypeFor SiteEvaluation )] action in MainPage widget.

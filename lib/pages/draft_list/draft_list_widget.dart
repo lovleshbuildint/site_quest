@@ -217,7 +217,7 @@ class _DraftListWidgetState extends State<DraftListWidget> {
                                                 getJsonField(
                                                   FFAppState()
                                                       .indentSelectedSite,
-                                                  r'''$.BranchName''',
+                                                  r'''$..CustomerBank''',
                                                 ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)

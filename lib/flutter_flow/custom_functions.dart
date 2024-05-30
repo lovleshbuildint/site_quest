@@ -114,18 +114,15 @@ dynamic filter(
   String? searchValue,
 ) {
   if (searchValue == null || searchValue.isEmpty) {
-    return mainData['IndentsLists']
-        .where((data) => data['status'] == 'A')
-        .toList();
+    return mainData['indents'].toList();
   }
 
   List<dynamic> filteredData = [];
 
-  for (dynamic data in mainData['IndentsLists']) {
+  for (dynamic data in mainData['indents']) {
     String searchValueLowerCase = searchValue.toLowerCase();
 
-    if (data['CustomerBank'].toLowerCase().contains(searchValueLowerCase) &&
-        data['status'] == 'A') {
+    if (data['CustomerBank'].toLowerCase().contains(searchValueLowerCase)) {
       filteredData.add(data);
     }
   }

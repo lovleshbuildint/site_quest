@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -22,6 +23,8 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   int? iCity;
 
   int? ilandlordbankname;
+
+  String? statefordistland;
 
   ///  State fields for stateful widgets in this component.
 

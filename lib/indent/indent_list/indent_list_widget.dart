@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -114,13 +115,24 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                         child: TextFormField(
                                           controller: _model.textController,
                                           focusNode: _model.textFieldFocusNode,
+                                          onChanged: (_) =>
+                                              EasyDebounce.debounce(
+                                            '_model.textController',
+                                            Duration(milliseconds: 2000),
+                                            () async {
+                                              setState(() {
+                                                _model.searchvaluepage =
+                                                    _model.textController.text;
+                                              });
+                                            },
+                                          ),
                                           onFieldSubmitted: (_) async {
                                             setState(() {
-                                              FFAppState().searchpage =
+                                              _model.searchvaluepage =
                                                   _model.textController.text;
                                             });
                                           },
-                                          autofocus: true,
+                                          autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Search Indent',

@@ -493,9 +493,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.stateValue = val);
-                                setState(() {
-                                  _model.statefordistland = _model.stateValue;
-                                });
+                                _model.statefordistland = _model.stateValue;
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -612,18 +611,17 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .toList()!,
                                 onChanged: (val) async {
                                   setState(() => _model.cityValue = val);
-                                  setState(() {
-                                    _model.iCity = functions.checkIndexint(
-                                        getJsonField(
-                                          FFAppState().master,
-                                          r'''$.cities..City''',
-                                        ),
-                                        _model.cityValue,
-                                        'cities',
-                                        'City',
-                                        'iCity',
-                                        false);
-                                  });
+                                  _model.iCity = functions.checkIndexint(
+                                      getJsonField(
+                                        FFAppState().master,
+                                        r'''$.cities..City''',
+                                      ),
+                                      _model.cityValue,
+                                      'cities',
+                                      'City',
+                                      'iCity',
+                                      false);
+                                  setState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,

@@ -101,12 +101,11 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Full Shop', 'Shop in Shop'].toList(),
               onChanged: (val) async {
                 setState(() {});
-                setState(() {
-                  _model.shopType = functions.dropdown(((String type) {
-                    return type == "Full Shop" ? 1 : 0;
-                  }(_model.radioButtonValue!))
-                      .toString());
-                });
+                _model.shopType = functions.dropdown(((String type) {
+                  return type == "Full Shop" ? 1 : 0;
+                }(_model.radioButtonValue!))
+                    .toString());
+                setState(() {});
               },
               controller: _model.radioButtonValueController ??=
                   FormFieldController<String>('Full Shop'),
@@ -940,10 +939,9 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.lShapeSingageValue = val);
-                setState(() {
-                  _model.shapeSignage =
-                      functions.dropdown(_model.lShapeSingageValue!);
-                });
+                _model.shapeSignage =
+                    functions.dropdown(_model.lShapeSingageValue!);
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -990,9 +988,8 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.vsatValue = val);
-                setState(() {
-                  _model.vsat = functions.dropdown(_model.vsatValue!);
-                });
+                _model.vsat = functions.dropdown(_model.vsatValue!);
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -1039,10 +1036,8 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.acODUSpaceValue = val);
-                setState(() {
-                  _model.acOduSpace =
-                      functions.dropdown(_model.acODUSpaceValue!);
-                });
+                _model.acOduSpace = functions.dropdown(_model.acODUSpaceValue!);
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -1104,10 +1099,9 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             onChanged: (val) async {
                               setState(
                                   () => _model.powerAvailabilityValue = val);
-                              setState(() {
-                                _model.powerAvailability = functions
-                                    .dropdown(_model.powerAvailabilityValue!);
-                              });
+                              _model.powerAvailability = functions
+                                  .dropdown(_model.powerAvailabilityValue!);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -1252,9 +1246,8 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.totemPoleValue = val);
-                setState(() {
-                  _model.totemPole = functions.dropdown(_model.totemPoleValue!);
-                });
+                _model.totemPole = functions.dropdown(_model.totemPoleValue!);
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -1313,10 +1306,9 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.rampAvailabilityValue = val);
-                setState(() {
-                  _model.rampAvailability =
-                      functions.dropdown(_model.rampAvailabilityValue!);
-                });
+                _model.rampAvailability =
+                    functions.dropdown(_model.rampAvailabilityValue!);
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,

@@ -120,17 +120,15 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             '_model.textController',
                                             Duration(milliseconds: 2000),
                                             () async {
-                                              setState(() {
-                                                _model.searchvaluepage =
-                                                    _model.textController.text;
-                                              });
+                                              _model.searchvaluepage =
+                                                  _model.textController.text;
+                                              setState(() {});
                                             },
                                           ),
                                           onFieldSubmitted: (_) async {
-                                            setState(() {
-                                              _model.searchvaluepage =
-                                                  _model.textController.text;
-                                            });
+                                            _model.searchvaluepage =
+                                                _model.textController.text;
+                                            setState(() {});
                                           },
                                           autofocus: false,
                                           obscureText: false,
@@ -213,9 +211,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          setState(() {
-                                            _model.serachVisibilty = false;
-                                          });
+                                          _model.serachVisibilty = false;
+                                          setState(() {});
                                         },
                                         child: Icon(
                                           Icons.close,
@@ -292,9 +289,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
-                                          _model.serachVisibilty = true;
-                                        });
+                                        _model.serachVisibilty = true;
+                                        setState(() {});
                                       },
                                       child: Icon(
                                         Icons.search,
@@ -358,17 +354,15 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                 },
                                               );
 
-                                              setState(() {
-                                                FFAppState()
-                                                        .indentSelectedSite =
-                                                    functions.jsonResponse(
-                                                        indentsDataIndex,
-                                                        getJsonField(
-                                                          indentListIndentsListResponse
-                                                              .jsonBody,
-                                                          r'''$.indents''',
-                                                        ))!;
-                                              });
+                                              FFAppState().indentSelectedSite =
+                                                  functions.jsonResponse(
+                                                      indentsDataIndex,
+                                                      getJsonField(
+                                                        indentListIndentsListResponse
+                                                            .jsonBody,
+                                                        r'''$.indents''',
+                                                      ))!;
+                                              setState(() {});
                                             },
                                             child: Container(
                                               width: 100.0,

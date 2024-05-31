@@ -366,10 +366,9 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             controller: _model.remark1TextController,
                             focusNode: _model.remark1FocusNode,
                             onFieldSubmitted: (_) async {
-                              setState(() {
-                                FFAppState().Remark1open =
-                                    FFAppState().Remark1open;
-                              });
+                              FFAppState().Remark1open =
+                                  FFAppState().Remark1open;
+                              setState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -431,10 +430,9 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             controller: _model.remark2TextController,
                             focusNode: _model.remark2FocusNode,
                             onFieldSubmitted: (_) async {
-                              setState(() {
-                                FFAppState().Remark2open =
-                                    FFAppState().Remark2open;
-                              });
+                              FFAppState().Remark2open =
+                                  FFAppState().Remark2open;
+                              setState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -496,10 +494,9 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             controller: _model.remark3TextController,
                             focusNode: _model.remark3FocusNode,
                             onFieldSubmitted: (_) async {
-                              setState(() {
-                                FFAppState().Remark3open =
-                                    FFAppState().Remark3open;
-                              });
+                              FFAppState().Remark3open =
+                                  FFAppState().Remark3open;
+                              setState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -561,10 +558,9 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             controller: _model.remark4TextController,
                             focusNode: _model.remark4FocusNode,
                             onFieldSubmitted: (_) async {
-                              setState(() {
-                                FFAppState().Remark4open =
-                                    FFAppState().Remark4open;
-                              });
+                              FFAppState().Remark4open =
+                                  FFAppState().Remark4open;
+                              setState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -626,10 +622,9 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             controller: _model.remark5TextController,
                             focusNode: _model.remark5FocusNode,
                             onFieldSubmitted: (_) async {
-                              setState(() {
-                                FFAppState().Remark5open =
-                                    FFAppState().Remark5open;
-                              });
+                              FFAppState().Remark5open =
+                                  FFAppState().Remark5open;
+                              setState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,

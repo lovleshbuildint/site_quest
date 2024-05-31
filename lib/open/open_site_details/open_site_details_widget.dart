@@ -451,15 +451,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .toList()!,
                             onChanged: (val) async {
                               setState(() => _model.sitetypeValue = val);
-                              setState(() {
-                                _model.isitetypes = functions.checkIndexint(
-                                    FFAppState().SiteType,
-                                    _model.sitetypeValue,
-                                    '-',
-                                    'SiteTypeName',
-                                    'iSiteType',
-                                    false);
-                              });
+                              _model.isitetypes = functions.checkIndexint(
+                                  FFAppState().SiteType,
+                                  _model.sitetypeValue,
+                                  '-',
+                                  'SiteTypeName',
+                                  'iSiteType',
+                                  false);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -524,16 +523,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .toList()!,
                             onChanged: (val) async {
                               setState(() => _model.cashDeviceValue = val);
-                              setState(() {
-                                _model.icashdevicetypes =
-                                    functions.checkIndexint(
-                                        FFAppState().CashDeviceType,
-                                        _model.cashDeviceValue,
-                                        '-',
-                                        'CashDeviceType',
-                                        'iCashDeviceType',
-                                        false);
-                              });
+                              _model.icashdevicetypes = functions.checkIndexint(
+                                  FFAppState().CashDeviceType,
+                                  _model.cashDeviceValue,
+                                  '-',
+                                  'CashDeviceType',
+                                  'iCashDeviceType',
+                                  false);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -600,16 +597,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             onChanged: (val) async {
                               setState(
                                   () => _model.cashDeviceMovementValue = val);
-                              setState(() {
-                                _model.ichasdevicemovementcategorys =
-                                    functions.checkIndexint(
-                                        FFAppState().CashDeviceMovementCategory,
-                                        _model.cashDeviceMovementValue,
-                                        '-',
-                                        'CashDeviceMovementCategory',
-                                        'iCashDeviceMovementCategory',
-                                        false);
-                              });
+                              _model.ichasdevicemovementcategorys =
+                                  functions.checkIndexint(
+                                      FFAppState().CashDeviceMovementCategory,
+                                      _model.cashDeviceMovementValue,
+                                      '-',
+                                      'CashDeviceMovementCategory',
+                                      'iCashDeviceMovementCategory',
+                                      false);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -674,15 +670,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .toList()!,
                             onChanged: (val) async {
                               setState(() => _model.tisTypeValue = val);
-                              setState(() {
-                                _model.iTisTypes = functions.checkIndexint(
-                                    FFAppState().TISType,
-                                    _model.tisTypeValue,
-                                    '-',
-                                    'CashDeviceMovementCategory',
-                                    'iCashDeviceMovementCategory',
-                                    false);
-                              });
+                              _model.iTisTypes = functions.checkIndexint(
+                                  FFAppState().TISType,
+                                  _model.tisTypeValue,
+                                  '-',
+                                  'CashDeviceMovementCategory',
+                                  'iCashDeviceMovementCategory',
+                                  false);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -747,15 +742,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .toList()!,
                             onChanged: (val) async {
                               setState(() => _model.projectTypeValue = val);
-                              setState(() {
-                                _model.iprojecttypes = functions.checkIndexint(
-                                    FFAppState().ProjectType,
-                                    _model.projectTypeValue,
-                                    '-',
-                                    'ProjectTypeName',
-                                    'iProjType',
-                                    false);
-                              });
+                              _model.iprojecttypes = functions.checkIndexint(
+                                  FFAppState().ProjectType,
+                                  _model.projectTypeValue,
+                                  '-',
+                                  'ProjectTypeName',
+                                  'iProjType',
+                                  false);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -820,15 +814,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .toList()!,
                             onChanged: (val) async {
                               setState(() => _model.businessTypeValue = val);
-                              setState(() {
-                                _model.ishoptypes = functions.checkIndexint(
-                                    FFAppState().BusinessType,
-                                    _model.businessTypeValue,
-                                    '-',
-                                    'ShopTypeName',
-                                    'iShopType',
-                                    false);
-                              });
+                              _model.ishoptypes = functions.checkIndexint(
+                                  FFAppState().BusinessType,
+                                  _model.businessTypeValue,
+                                  '-',
+                                  'ShopTypeName',
+                                  'iShopType',
+                                  false);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -1292,10 +1285,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             onChanged: (val) async {
                                               setState(() => _model
                                                   .stateDropdownValue = val);
-                                              setState(() {
-                                                _model.statefordsitopen =
-                                                    _model.stateDropdownValue;
-                                              });
+                                              _model.statefordsitopen =
+                                                  _model.stateDropdownValue;
+                                              setState(() {});
                                             },
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -1422,9 +1414,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.cityValue = val);
-                                                setState(() {
-                                                  _model.statefordsitopen = '';
-                                                });
+                                                _model.statefordsitopen = '';
+                                                setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -2094,11 +2085,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         onChanged: (val) async {
                                           setState(
                                               () => _model.oNOFSiteValue = val);
-                                          setState(() {
-                                            _model.oNOFsite =
-                                                functions.dropdown(
-                                                    _model.oNOFSiteValue!);
-                                          });
+                                          _model.oNOFsite = functions
+                                              .dropdown(_model.oNOFSiteValue!);
+                                          setState(() {});
                                         },
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -2309,10 +2298,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             options: ['Yes', 'No'],
                             onChanged: (val) async {
                               setState(() => _model.duplicateSiteValue = val);
-                              setState(() {
-                                _model.iduplicate = functions
-                                    .dropdown(_model.duplicateSiteValue!);
-                              });
+                              _model.iduplicate = functions
+                                  .dropdown(_model.duplicateSiteValue!);
+                              setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -2399,23 +2387,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 onChanged: (val) async {
                                   setState(
                                       () => _model.siteVisitedBYValue = val);
-                                  setState(() {
-                                    _model.isitevisitedbys =
-                                        functions.checkIndexint(
-                                            FFAppState().visitedbydeptapi,
-                                            _model.isitevisitedbys?.toString(),
-                                            '-',
-                                            'Department',
-                                            'idepartment',
-                                            false);
-                                    _model.isiteddeps = functions.checkIndexint(
-                                        FFAppState().SiteVisitedBy,
-                                        _model.siteVisitedBYValue,
-                                        '-',
-                                        'Department',
-                                        'idepartment',
-                                        false);
-                                  });
+                                  _model.isitevisitedbys =
+                                      functions.checkIndexint(
+                                          FFAppState().visitedbydeptapi,
+                                          _model.isitevisitedbys?.toString(),
+                                          '-',
+                                          'Department',
+                                          'idepartment',
+                                          false);
+                                  _model.isiteddeps = functions.checkIndexint(
+                                      FFAppState().SiteVisitedBy,
+                                      _model.siteVisitedBYValue,
+                                      '-',
+                                      'Department',
+                                      'idepartment',
+                                      false);
+                                  setState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
@@ -2509,17 +2496,16 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 onChanged: (val) async {
                                   setState(() =>
                                       _model.firstSiteVisitedByValue = val);
-                                  setState(() {
-                                    _model.isitevisitedbynames =
-                                        functions.checkIndexint(
-                                            firstSiteVisitedByGetDepartmentWiseUserAPIResponse
-                                                .jsonBody,
-                                            _model.firstSiteVisitedByValue,
-                                            '-',
-                                            'UserName',
-                                            'iUser',
-                                            false);
-                                  });
+                                  _model.isitevisitedbynames =
+                                      functions.checkIndexint(
+                                          firstSiteVisitedByGetDepartmentWiseUserAPIResponse
+                                              .jsonBody,
+                                          _model.firstSiteVisitedByValue,
+                                          '-',
+                                          'UserName',
+                                          'iUser',
+                                          false);
+                                  setState(() {});
                                 },
                                 width: 300.0,
                                 height: 56.0,
@@ -2609,17 +2595,16 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     .toList()!,
                                 onChanged: (val) async {
                                   setState(() => _model.dropDownValue = val);
-                                  setState(() {
-                                    _model.isecondsitevisitedbynames =
-                                        functions.checkIndexint(
-                                            dropDownGetSecondSiteVisitersResponse
-                                                .jsonBody,
-                                            _model.dropDownValue,
-                                            '-',
-                                            'UserName',
-                                            'iUser',
-                                            false);
-                                  });
+                                  _model.isecondsitevisitedbynames =
+                                      functions.checkIndexint(
+                                          dropDownGetSecondSiteVisitersResponse
+                                              .jsonBody,
+                                          _model.dropDownValue,
+                                          '-',
+                                          'UserName',
+                                          'iUser',
+                                          false);
+                                  setState(() {});
                                 },
                                 width: 300.0,
                                 height: 56.0,

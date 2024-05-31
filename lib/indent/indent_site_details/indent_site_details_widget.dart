@@ -797,15 +797,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               onChanged: (val) async {
                                 setState(
                                     () => _model.cashdevicetypeValue = val);
-                                setState(() {
-                                  _model.idevicetype = functions.checkIndexint(
-                                      FFAppState().CashDeviceType,
-                                      _model.cashdevicetypeValue,
-                                      '-',
-                                      'CashDeviceType',
-                                      'iCashDeviceType',
-                                      false);
-                                });
+                                _model.idevicetype = functions.checkIndexint(
+                                    FFAppState().CashDeviceType,
+                                    _model.cashdevicetypeValue,
+                                    '-',
+                                    'CashDeviceType',
+                                    'iCashDeviceType',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -870,17 +869,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.cashdevicemovValue = val);
-                                setState(() {
-                                  _model.icashdevicemov =
-                                      functions.checkIndexint(
-                                          FFAppState()
-                                              .CashDeviceMovementCategory,
-                                          _model.cashdevicemovValue,
-                                          '-',
-                                          'CashDeviceMovementCategory',
-                                          'iCashDeviceMovementCategory',
-                                          false);
-                                });
+                                _model.icashdevicemov = functions.checkIndexint(
+                                    FFAppState().CashDeviceMovementCategory,
+                                    _model.cashdevicemovValue,
+                                    '-',
+                                    'CashDeviceMovementCategory',
+                                    'iCashDeviceMovementCategory',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -944,15 +940,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.tistypeValue = val);
-                                setState(() {
-                                  _model.itistype = functions.checkIndexint(
-                                      FFAppState().TISType,
-                                      _model.tistypeValue,
-                                      '-',
-                                      'TISTypeName',
-                                      'iTISType',
-                                      false);
-                                });
+                                _model.itistype = functions.checkIndexint(
+                                    FFAppState().TISType,
+                                    _model.tistypeValue,
+                                    '-',
+                                    'TISTypeName',
+                                    'iTISType',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1016,15 +1011,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.projecttypeValue = val);
-                                setState(() {
-                                  _model.iprojecttype = functions.checkIndexint(
-                                      FFAppState().ProjectType,
-                                      _model.projecttypeValue,
-                                      '-',
-                                      'ProjectTypeName',
-                                      'iProjType',
-                                      false);
-                                });
+                                _model.iprojecttype = functions.checkIndexint(
+                                    FFAppState().ProjectType,
+                                    _model.projecttypeValue,
+                                    '-',
+                                    'ProjectTypeName',
+                                    'iProjType',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1088,15 +1082,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.businesstypeValue = val);
-                                setState(() {
-                                  _model.ishoptype = functions.checkIndexint(
-                                      FFAppState().BusinessType,
-                                      _model.businesstypeValue,
-                                      '-',
-                                      'ShopTypeName',
-                                      'iShopType',
-                                      false);
-                                });
+                                _model.ishoptype = functions.checkIndexint(
+                                    FFAppState().BusinessType,
+                                    _model.businesstypeValue,
+                                    '-',
+                                    'ShopTypeName',
+                                    'iShopType',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1161,15 +1154,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               onChanged: (val) async {
                                 setState(
                                     () => _model.strategyDropDwonValue = val);
-                                setState(() {
-                                  _model.istrategy = functions.checkIndexint(
-                                      FFAppState().Strategy,
-                                      _model.istrategy?.toString(),
-                                      'Strategies',
-                                      'Strategy',
-                                      'iStrategy',
-                                      false);
-                                });
+                                _model.istrategy = functions.checkIndexint(
+                                    FFAppState().Strategy,
+                                    _model.istrategy?.toString(),
+                                    'Strategies',
+                                    'Strategy',
+                                    'iStrategy',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1703,10 +1695,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.stateValue = val);
-                                                setState(() {
-                                                  _model.statefordist =
-                                                      _model.stateValue;
-                                                });
+                                                _model.statefordist =
+                                                    _model.stateValue;
+                                                setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -2236,15 +2227,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.rBICategoryValue = val);
-                                setState(() {
-                                  _model.iRBICategory = functions.checkIndexint(
-                                      FFAppState().RBICategory,
-                                      _model.iRBICategory?.toString(),
-                                      'RBICategories',
-                                      'Name',
-                                      'iCategory',
-                                      false);
-                                });
+                                _model.iRBICategory = functions.checkIndexint(
+                                    FFAppState().RBICategory,
+                                    _model.iRBICategory?.toString(),
+                                    'RBICategories',
+                                    'Name',
+                                    'iCategory',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -2424,12 +2414,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           onChanged: (val) async {
                                             setState(() =>
                                                 _model.onofsiteValue = val);
-                                            setState(() {
-                                              _model.onofSite = functions
-                                                  .dropdowns(
-                                                      _model.onofsiteValue!)
-                                                  .toString();
-                                            });
+                                            _model.onofSite = functions
+                                                .dropdowns(
+                                                    _model.onofsiteValue!)
+                                                .toString();
+                                            setState(() {});
                                           },
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -2643,13 +2632,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               options: ['Yes', 'No'],
                               onChanged: (val) async {
                                 setState(() => _model.duplicatesiteValue = val);
-                                setState(() {
-                                  _model.iduplicatesite = functions
-                                      .dropdown(_model.duplicatesiteValue!);
-                                  _model.duplicatestring = functions
-                                      .dropdown(_model.duplicatesiteValue!)
-                                      .toString();
-                                });
+                                _model.iduplicatesite = functions
+                                    .dropdown(_model.duplicatesiteValue!);
+                                _model.duplicatestring = functions
+                                    .dropdown(_model.duplicatesiteValue!)
+                                    .toString();
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -2714,23 +2702,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.sitevisitedbyValue = val);
-                                setState(() {
-                                  _model.isiteddep = functions.checkIndexint(
-                                      FFAppState().SiteVisitedBy,
-                                      _model.sitevisitedbyValue,
-                                      '-',
-                                      'Department',
-                                      'idepartment',
-                                      false);
-                                  _model.isitevisitedby =
-                                      functions.checkIndexint(
-                                          FFAppState().visitedbydeptapi,
-                                          _model.sitevisitedbyValue,
-                                          '-',
-                                          'Department',
-                                          'idepartment',
-                                          false);
-                                });
+                                _model.isiteddep = functions.checkIndexint(
+                                    FFAppState().SiteVisitedBy,
+                                    _model.sitevisitedbyValue,
+                                    '-',
+                                    'Department',
+                                    'idepartment',
+                                    false);
+                                _model.isitevisitedby = functions.checkIndexint(
+                                    FFAppState().visitedbydeptapi,
+                                    _model.sitevisitedbyValue,
+                                    '-',
+                                    'Department',
+                                    'idepartment',
+                                    false);
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -2822,17 +2808,16 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   onChanged: (val) async {
                                     setState(() =>
                                         _model.firstsitevisitedbyValue = val);
-                                    setState(() {
-                                      _model.iSiteVisitedByName =
-                                          functions.checkIndexint(
-                                              firstsitevisitedbyGetDepartmentWiseUserAPIResponse
-                                                  .jsonBody,
-                                              _model.firstsitevisitedbyValue,
-                                              '-',
-                                              'UserName',
-                                              'iUser',
-                                              false);
-                                    });
+                                    _model.iSiteVisitedByName =
+                                        functions.checkIndexint(
+                                            firstsitevisitedbyGetDepartmentWiseUserAPIResponse
+                                                .jsonBody,
+                                            _model.firstsitevisitedbyValue,
+                                            '-',
+                                            'UserName',
+                                            'iUser',
+                                            false);
+                                    setState(() {});
                                   },
                                   width: 300.0,
                                   height: 56.0,
@@ -2916,17 +2901,16 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   onChanged: (val) async {
                                     setState(() =>
                                         _model.secondsitevisitedbyValue = val);
-                                    setState(() {
-                                      _model.iSecondSiteVisitedByName =
-                                          functions.checkIndexint(
-                                              secondsitevisitedbyGetSecondSiteVisitersResponse
-                                                  .jsonBody,
-                                              _model.secondsitevisitedbyValue,
-                                              '-',
-                                              'UserName',
-                                              'iUser',
-                                              false);
-                                    });
+                                    _model.iSecondSiteVisitedByName =
+                                        functions.checkIndexint(
+                                            secondsitevisitedbyGetSecondSiteVisitersResponse
+                                                .jsonBody,
+                                            _model.secondsitevisitedbyValue,
+                                            '-',
+                                            'UserName',
+                                            'iUser',
+                                            false);
+                                    setState(() {});
                                   },
                                   width: 300.0,
                                   height: 56.0,

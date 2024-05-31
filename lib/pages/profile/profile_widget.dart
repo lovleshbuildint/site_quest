@@ -200,9 +200,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.dropDownValue = val);
-                                setState(() {
-                                  FFAppState().State = _model.dropDownValue!;
-                                });
+                                FFAppState().State = _model.dropDownValue!;
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 56.0,
@@ -241,10 +240,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               onTap: () async {
                                 context.pushNamed('LoginPage');
 
-                                setState(() {
-                                  FFAppState().Token = '';
-                                  FFAppState().State = '0';
-                                });
+                                FFAppState().Token = '';
+                                FFAppState().State = '0';
+                                setState(() {});
                               },
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,

@@ -86,13 +86,11 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.cRACoverageValue = val);
-                setState(() {
-                  _model.cRACoverage =
-                      functions.dropdown(_model.cRACoverageValue!);
-                });
-                setState(() {
-                  FFAppState().CRACoverage = _model.cRACoverageValue!;
-                });
+                _model.cRACoverage =
+                    functions.dropdown(_model.cRACoverageValue!);
+                setState(() {});
+                FFAppState().CRACoverage = _model.cRACoverageValue!;
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -168,9 +166,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                       .toList()!,
                   onChanged: (val) async {
                     setState(() => _model.cRAAgencyValue = val);
-                    setState(() {
-                      FFAppState().CRAAgency = _model.cRAAgencyValue!;
-                    });
+                    FFAppState().CRAAgency = _model.cRAAgencyValue!;
+                    setState(() {});
                   },
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
@@ -215,10 +212,9 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               controller: _model.branchSOLIDTextController,
               focusNode: _model.branchSOLIDFocusNode,
               onFieldSubmitted: (_) async {
-                setState(() {
-                  FFAppState().BranchSOLID =
-                      _model.branchSOLIDTextController.text;
-                });
+                FFAppState().BranchSOLID =
+                    _model.branchSOLIDTextController.text;
+                setState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -287,10 +283,9 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               controller: _model.nearestBranchstextTextController,
               focusNode: _model.nearestBranchstextFocusNode,
               onFieldSubmitted: (_) async {
-                setState(() {
-                  FFAppState().NearestBranch =
-                      _model.nearestBranchstextTextController.text;
-                });
+                FFAppState().NearestBranch =
+                    _model.nearestBranchstextTextController.text;
+                setState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -359,10 +354,9 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               controller: _model.distanceNearestBranchTextController,
               focusNode: _model.distanceNearestBranchFocusNode,
               onFieldSubmitted: (_) async {
-                setState(() {
-                  FFAppState().DistancefromtheNeearestBranch =
-                      _model.distanceNearestBranchTextController.text;
-                });
+                FFAppState().DistancefromtheNeearestBranch =
+                    _model.distanceNearestBranchTextController.text;
+                setState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -436,9 +430,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               controller: _model.videoURLTextController,
               focusNode: _model.videoURLFocusNode,
               onFieldSubmitted: (_) async {
-                setState(() {
-                  FFAppState().VideoURL = _model.videoURLTextController.text;
-                });
+                FFAppState().VideoURL = _model.videoURLTextController.text;
+                setState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,

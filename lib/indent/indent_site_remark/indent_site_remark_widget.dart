@@ -670,10 +670,9 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               controller: _model.remark1TextController,
                               focusNode: _model.remark1FocusNode,
                               onFieldSubmitted: (_) async {
-                                setState(() {
-                                  FFAppState().Remark1 =
-                                      _model.remark1TextController.text;
-                                });
+                                FFAppState().Remark1 =
+                                    _model.remark1TextController.text;
+                                setState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -735,10 +734,9 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               controller: _model.remark2TextController,
                               focusNode: _model.remark2FocusNode,
                               onFieldSubmitted: (_) async {
-                                setState(() {
-                                  FFAppState().Remark2 =
-                                      _model.remark2TextController.text;
-                                });
+                                FFAppState().Remark2 =
+                                    _model.remark2TextController.text;
+                                setState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -800,10 +798,9 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               controller: _model.remark3TextController,
                               focusNode: _model.remark3FocusNode,
                               onFieldSubmitted: (_) async {
-                                setState(() {
-                                  FFAppState().Remark3 =
-                                      _model.remark3TextController.text;
-                                });
+                                FFAppState().Remark3 =
+                                    _model.remark3TextController.text;
+                                setState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -865,10 +862,9 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               controller: _model.remark4TextController,
                               focusNode: _model.remark4FocusNode,
                               onFieldSubmitted: (_) async {
-                                setState(() {
-                                  FFAppState().Remark4 =
-                                      _model.remark4TextController.text;
-                                });
+                                FFAppState().Remark4 =
+                                    _model.remark4TextController.text;
+                                setState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -930,10 +926,9 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               controller: _model.remark5TextController,
                               focusNode: _model.remark5FocusNode,
                               onFieldSubmitted: (_) async {
-                                setState(() {
-                                  FFAppState().Remark5 =
-                                      _model.remark5TextController.text;
-                                });
+                                FFAppState().Remark5 =
+                                    _model.remark5TextController.text;
+                                setState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,

@@ -916,10 +916,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) async {
                               setState(() {});
-                              setState(() {
-                                _model.ebilling = functions
-                                    .dropdown(_model.eBillingRentAdvanceValue!);
-                              });
+                              _model.ebilling = functions
+                                  .dropdown(_model.eBillingRentAdvanceValue!);
+                              setState(() {});
                             },
                             controller:
                                 _model.eBillingRentAdvanceValueController ??=
@@ -1745,10 +1744,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) async {
                               setState(() {});
-                              setState(() {
-                                _model.ebillingrent = functions.dropdown(
-                                    _model.eBillIncludingRentSecurityValue!);
-                              });
+                              _model.ebillingrent = functions.dropdown(
+                                  _model.eBillIncludingRentSecurityValue!);
+                              setState(() {});
                             },
                             controller: _model
                                     .eBillIncludingRentSecurityValueController ??=

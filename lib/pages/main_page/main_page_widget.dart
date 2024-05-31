@@ -39,9 +39,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.rbiresponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().RBICategory = (_model.rbiresponse?.jsonBody ?? '');
-            });
+            FFAppState().RBICategory = (_model.rbiresponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -67,10 +66,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
           if ((_model.getsitetypeforsiteevaluationresponse?.succeeded ??
               true)) {
-            setState(() {
-              FFAppState().SiteType =
-                  (_model.getsitetypeforsiteevaluationresponse?.jsonBody ?? '');
-            });
+            FFAppState().SiteType =
+                (_model.getsitetypeforsiteevaluationresponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -96,10 +94,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.getcashdeviceapi?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().CashDeviceType =
-                  (_model.getcashdeviceapi?.jsonBody ?? '');
-            });
+            FFAppState().CashDeviceType =
+                (_model.getcashdeviceapi?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -124,10 +121,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.getProjecTypeResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().ProjectType =
-                  (_model.getProjecTypeResponse?.jsonBody ?? '');
-            });
+            FFAppState().ProjectType =
+                (_model.getProjecTypeResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -154,11 +150,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
           if ((_model.getCashDeviceMovementCategoryResponse?.succeeded ??
               true)) {
-            setState(() {
-              FFAppState().CashDeviceMovementCategory =
-                  (_model.getCashDeviceMovementCategoryResponse?.jsonBody ??
-                      '');
-            });
+            FFAppState().CashDeviceMovementCategory =
+                (_model.getCashDeviceMovementCategoryResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -185,10 +179,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.getShopTypeSiteResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().BusinessType =
-                  (_model.getShopTypeSiteResponse?.jsonBody ?? '');
-            });
+            FFAppState().BusinessType =
+                (_model.getShopTypeSiteResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -213,9 +206,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.straegtyResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().Strategy = (_model.straegtyResponse?.jsonBody ?? '');
-            });
+            FFAppState().Strategy = (_model.straegtyResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -239,11 +231,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.stateResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().State =
-                  (_model.stateResponse?.jsonBody ?? '').toString();
-              FFAppState().Stateapi = (_model.stateResponse?.jsonBody ?? '');
-            });
+            FFAppState().State =
+                (_model.stateResponse?.jsonBody ?? '').toString();
+            FFAppState().Stateapi = (_model.stateResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -267,9 +258,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.circelResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().Circle = (_model.circelResponse?.jsonBody ?? '');
-            });
+            FFAppState().Circle = (_model.circelResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -293,9 +283,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.tisResponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().TISType = (_model.tisResponse?.jsonBody ?? '');
-            });
+            FFAppState().TISType = (_model.tisResponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -319,9 +308,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.poiType?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().POIList = (_model.poiType?.jsonBody ?? '');
-            });
+            FFAppState().POIList = (_model.poiType?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -345,9 +333,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.cityresponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().City = (_model.cityresponse?.jsonBody ?? '');
-            });
+            FFAppState().City = (_model.cityresponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -372,10 +359,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.getsitevisitedbydeptapiresponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().SiteVisitedBy =
-                  (_model.getsitevisitedbydeptapiresponse?.jsonBody ?? '');
-            });
+            FFAppState().SiteVisitedBy =
+                (_model.getsitevisitedbydeptapiresponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -400,10 +386,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.listsitesresponse?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().Listsite =
-                  (_model.listsitesresponse?.jsonBody ?? '');
-            });
+            FFAppState().Listsite = (_model.listsitesresponse?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -428,10 +412,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.secondsiteVisiterNew?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().secondsitevisiterNew =
-                  (_model.secondsiteVisiterNew?.jsonBody ?? '');
-            });
+            FFAppState().secondsitevisiterNew =
+                (_model.secondsiteVisiterNew?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -456,10 +439,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             token: FFAppState().Token,
           );
           if ((_model.apiResultsitevisitedbydept?.succeeded ?? true)) {
-            setState(() {
-              FFAppState().visitedbydeptapi =
-                  (_model.apiResultsitevisitedbydept?.jsonBody ?? '');
-            });
+            FFAppState().visitedbydeptapi =
+                (_model.apiResultsitevisitedbydept?.jsonBody ?? '');
+            setState(() {});
           } else {
             await showDialog(
               context: context,
@@ -653,12 +635,11 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       onMultiSelectChanged: (val) async {
                                         setState(
                                             () => _model.dropDownValue = val);
-                                        setState(() {
-                                          FFAppState().istate = _model
-                                              .dropDownValue!
-                                              .toList()
-                                              .cast<String>();
-                                        });
+                                        FFAppState().istate = _model
+                                            .dropDownValue!
+                                            .toList()
+                                            .cast<String>();
+                                        setState(() {});
                                       },
                                     ),
                                     Padding(
@@ -866,17 +847,18 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                         valueOrDefault<
                                                                             double>(
                                                                       (getJsonField(
-                                                                                mainPageDashboardResponse.jsonBody,
-                                                                                r'''$.UserReview[3].Count''',
-                                                                              ) -
+                                                                                    mainPageDashboardResponse.jsonBody,
+                                                                                    r'''$.UserReview[3].Count''',
+                                                                                  ) -
+                                                                                  getJsonField(
+                                                                                    mainPageDashboardResponse.jsonBody,
+                                                                                    r'''$.UserReview[1].Count''',
+                                                                                  )) /
                                                                               getJsonField(
                                                                                 mainPageDashboardResponse.jsonBody,
-                                                                                r'''$.UserReview[1].Count''',
-                                                                              )) /
-                                                                          getJsonField(
-                                                                            mainPageDashboardResponse.jsonBody,
-                                                                            r'''$.UserReview[3].Count''',
-                                                                          ),
+                                                                                r'''$.UserReview[3].Count''',
+                                                                              ) +
+                                                                          10,
                                                                       10.0,
                                                                     ),
                                                                     radius:
@@ -904,13 +886,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                     child: Text(
                                                                       formatNumber(
                                                                         getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[3].Count''',
-                                                                            ) /
-                                                                            getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[2].Count''',
-                                                                            ),
+                                                                                  mainPageDashboardResponse.jsonBody,
+                                                                                  r'''$.UserReview[3].Count''',
+                                                                                ) /
+                                                                                getJsonField(
+                                                                                  mainPageDashboardResponse.jsonBody,
+                                                                                  r'''$.UserReview[2].Count''',
+                                                                                ) +
+                                                                            10,
                                                                         formatType:
                                                                             FormatType.percent,
                                                                       ),

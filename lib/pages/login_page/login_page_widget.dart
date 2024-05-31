@@ -415,15 +415,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             if ((_model
                                                     .loginResponse?.succeeded ??
                                                 true)) {
-                                              setState(() {
-                                                FFAppState().Token =
-                                                    getJsonField(
-                                                  (_model.loginResponse
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                  r'''$.Token''',
-                                                ).toString();
-                                              });
+                                              FFAppState().Token = getJsonField(
+                                                (_model.loginResponse
+                                                        ?.jsonBody ??
+                                                    ''),
+                                                r'''$.Token''',
+                                              ).toString();
+                                              setState(() {});
                                               if (FFAppState().Token == '') {
                                                 await showDialog(
                                                   context: context,
@@ -444,15 +442,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     );
                                                   },
                                                 );
-                                                setState(() {
-                                                  FFAppState().Token = '';
-                                                });
+                                                FFAppState().Token = '';
+                                                setState(() {});
                                               } else {
-                                                setState(() {
-                                                  FFAppState().UserName = _model
-                                                      .emailAddressTextController
-                                                      .text;
-                                                });
+                                                FFAppState().UserName = _model
+                                                    .emailAddressTextController
+                                                    .text;
+                                                setState(() {});
 
                                                 context.goNamed(
                                                   'MainPage',

@@ -844,23 +844,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                 children: [
                                                                   CircularPercentIndicator(
                                                                     percent:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      (getJsonField(
-                                                                                    mainPageDashboardResponse.jsonBody,
-                                                                                    r'''$.UserReview[3].Count''',
-                                                                                  ) -
-                                                                                  getJsonField(
-                                                                                    mainPageDashboardResponse.jsonBody,
-                                                                                    r'''$.UserReview[1].Count''',
-                                                                                  )) /
-                                                                              getJsonField(
-                                                                                mainPageDashboardResponse.jsonBody,
-                                                                                r'''$.UserReview[3].Count''',
-                                                                              ) +
-                                                                          10,
-                                                                      10.0,
-                                                                    ),
+                                                                        0.82,
                                                                     radius:
                                                                         50.0,
                                                                     lineWidth:

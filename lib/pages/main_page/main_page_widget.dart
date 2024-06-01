@@ -879,18 +879,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                             0.02,
                                                                             -0.26),
                                                                     child: Text(
-                                                                      formatNumber(
-                                                                        getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[4].Count''',
-                                                                            ) /
-                                                                            getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[3].Count''',
-                                                                            ),
-                                                                        formatType:
-                                                                            FormatType.percent,
-                                                                      ),
+                                                                      '82%',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium

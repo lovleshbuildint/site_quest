@@ -33,11 +33,111 @@ class IndentSiteLandlordDetailsModel
   @override
   void initState(BuildContext context) {
     landlordformModel = createModel(context, () => LandlordformModel());
+
+    landlordformModel.landoardNameTextControllerValidator =
+        _formTextFieldValidator1;
+    landlordformModel.percentTextControllerValidator = _formTextFieldValidator2;
+    landlordformModel.addressTextControllerValidator = _formTextFieldValidator3;
+    landlordformModel.pincodeTextControllerValidator = _formTextFieldValidator4;
+    landlordformModel.contactNameTextControllerValidator =
+        _formTextFieldValidator5;
+    landlordformModel.chequefieldTextControllerValidator =
+        _formTextFieldValidator6;
+    landlordformModel.lLchequefieldTextControllerValidator =
+        _formTextFieldValidator7;
+    landlordformModel.bankAccountNumberTextControllerValidator =
+        _formTextFieldValidator8;
+    landlordformModel.bankBranchTextControllerValidator =
+        _formTextFieldValidator9;
+    landlordformModel.panNumberTextControllerValidator =
+        _formTextFieldValidator10;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
     landlordformModel.dispose();
+  }
+
+  /// Additional helper methods.
+
+  String? _formTextFieldValidator1(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator2(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator3(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator4(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator5(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator6(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator7(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator8(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator9(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator10(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
   }
 }

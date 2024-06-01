@@ -26,11 +26,24 @@ class IndentSiteNearestBranchModel
   @override
   void initState(BuildContext context) {
     nearestbranchModel = createModel(context, () => NearestbranchModel());
+
+    nearestbranchModel.distanceNearestBranchTextControllerValidator =
+        _formTextFieldValidator;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
     nearestbranchModel.dispose();
+  }
+
+  /// Additional helper methods.
+
+  String? _formTextFieldValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
   }
 }

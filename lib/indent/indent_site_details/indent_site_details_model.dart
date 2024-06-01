@@ -166,6 +166,15 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   FocusNode? aTMExisitingFocusNode;
   TextEditingController? aTMExisitingTextController;
   String? Function(BuildContext, String?)? aTMExisitingTextControllerValidator;
+  String? _aTMExisitingTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for LandMarks widget.
   FocusNode? landMarksFocusNode;
   TextEditingController? landMarksTextController;
@@ -210,6 +219,7 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
         _distancefrominindentTextControllerValidator;
     siteAddressTextControllerValidator = _siteAddressTextControllerValidator;
     pincodeTextControllerValidator = _pincodeTextControllerValidator;
+    aTMExisitingTextControllerValidator = _aTMExisitingTextControllerValidator;
   }
 
   @override

@@ -24,11 +24,52 @@ class IndentSiteNearestAtmModel
   @override
   void initState(BuildContext context) {
     nearestatmModel = createModel(context, () => NearestatmModel());
+
+    nearestatmModel.atmidTextControllerValidator = _formTextFieldValidator1;
+    nearestatmModel.distanceKMTextControllerValidator =
+        _formTextFieldValidator2;
+    nearestatmModel.directionTextControllerValidator = _formTextFieldValidator3;
+    nearestatmModel.avgApproxTxnsDayTextControllerValidator =
+        _formTextFieldValidator4;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
     nearestatmModel.dispose();
+  }
+
+  /// Additional helper methods.
+
+  String? _formTextFieldValidator1(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator2(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator3(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator4(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
   }
 }

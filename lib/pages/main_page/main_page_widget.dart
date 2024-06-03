@@ -614,7 +614,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             fontFamily: 'Readex Pro',
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: 'Select state',
+                                      hintText: 'Select States',
                                       searchHintText: 'Search for an item...',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,

@@ -573,7 +573,19 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       multiSelectController:
                                           _model.dropDownValueController ??=
                                               FormFieldController<List<String>>(
-                                                  null),
+                                                  _model.dropDownValue ??=
+                                                      List<String>.from(
+                                        (getJsonField(
+                                              mainPageDashboardResponse
+                                                  .jsonBody,
+                                              r'''$.States..iState''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList() ??
+                                            [],
+                                      )),
                                       options: List<String>.from((getJsonField(
                                         mainPageDashboardResponse.jsonBody,
                                         r'''$.States..iState''',

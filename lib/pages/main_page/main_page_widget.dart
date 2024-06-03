@@ -573,10 +573,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       multiSelectController:
                                           _model.dropDownValueController ??=
                                               FormFieldController<List<String>>(
-                                                  _model.dropDownValue ??=
-                                                      List<String>.from(
-                                        FFAppState().istate ?? [],
-                                      )),
+                                                  null),
                                       options: List<String>.from((getJsonField(
                                         mainPageDashboardResponse.jsonBody,
                                         r'''$.States..iState''',

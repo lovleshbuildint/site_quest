@@ -240,8 +240,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               onTap: () async {
                                 context.pushNamed('LoginPage');
 
+                                FFAppState().deleteToken();
                                 FFAppState().Token = '';
+
+                                FFAppState().deleteState();
                                 FFAppState().State = '0';
+
                                 setState(() {});
                               },
                               child: Container(

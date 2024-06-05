@@ -442,7 +442,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     );
                                                   },
                                                 );
+                                                FFAppState().deleteToken();
                                                 FFAppState().Token = '';
+
                                                 setState(() {});
                                               } else {
                                                 FFAppState().UserName = _model

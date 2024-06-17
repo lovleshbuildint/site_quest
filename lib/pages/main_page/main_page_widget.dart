@@ -575,7 +575,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               FormFieldController<List<String>>(
                                                   _model.dropDownValue ??=
                                                       List<String>.from(
-                                        FFAppState().istatess ?? [],
+                                        FFAppState().istate ?? [],
                                       )),
                                       options: List<String>.from((getJsonField(
                                         mainPageDashboardResponse.jsonBody,

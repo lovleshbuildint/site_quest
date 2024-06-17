@@ -669,12 +669,6 @@ class FFAppState extends ChangeNotifier {
     istate.insert(index, value);
     secureStorage.setStringList('ff_istate', _istate);
   }
-
-  dynamic _istatess;
-  dynamic get istatess => _istatess;
-  set istatess(dynamic value) {
-    _istatess = value;
-  }
 }
 
 void _safeInit(Function() initializeField) {

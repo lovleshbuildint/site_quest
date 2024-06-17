@@ -24,7 +24,6 @@ class IndentSiteDimensionsModel
   @override
   void initState(BuildContext context) {
     sitedimentionsModel = createModel(context, () => SitedimentionsModel());
-
     sitedimentionsModel.totalShopAreaTextControllerValidator =
         _formTextFieldValidator1;
     sitedimentionsModel.totalAreaOfferedTextControllerValidator =

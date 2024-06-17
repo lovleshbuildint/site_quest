@@ -26,7 +26,6 @@ class IndentSiteNearestBranchModel
   @override
   void initState(BuildContext context) {
     nearestbranchModel = createModel(context, () => NearestbranchModel());
-
     nearestbranchModel.distanceNearestBranchTextControllerValidator =
         _formTextFieldValidator;
   }

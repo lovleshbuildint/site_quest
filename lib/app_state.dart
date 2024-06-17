@@ -82,234 +82,234 @@ class FFAppState extends ChangeNotifier {
 
   List<int> _chartx = [109, 125, 98, 115];
   List<int> get chartx => _chartx;
-  set chartx(List<int> _value) {
-    _chartx = _value;
+  set chartx(List<int> value) {
+    _chartx = value;
     secureStorage.setStringList(
-        'ff_chartx', _value.map((x) => x.toString()).toList());
+        'ff_chartx', value.map((x) => x.toString()).toList());
   }
 
   void deleteChartx() {
     secureStorage.delete(key: 'ff_chartx');
   }
 
-  void addToChartx(int _value) {
-    _chartx.add(_value);
+  void addToChartx(int value) {
+    chartx.add(value);
     secureStorage.setStringList(
         'ff_chartx', _chartx.map((x) => x.toString()).toList());
   }
 
-  void removeFromChartx(int _value) {
-    _chartx.remove(_value);
+  void removeFromChartx(int value) {
+    chartx.remove(value);
     secureStorage.setStringList(
         'ff_chartx', _chartx.map((x) => x.toString()).toList());
   }
 
-  void removeAtIndexFromChartx(int _index) {
-    _chartx.removeAt(_index);
+  void removeAtIndexFromChartx(int index) {
+    chartx.removeAt(index);
     secureStorage.setStringList(
         'ff_chartx', _chartx.map((x) => x.toString()).toList());
   }
 
   void updateChartxAtIndex(
-    int _index,
+    int index,
     int Function(int) updateFn,
   ) {
-    _chartx[_index] = updateFn(_chartx[_index]);
+    chartx[index] = updateFn(_chartx[index]);
     secureStorage.setStringList(
         'ff_chartx', _chartx.map((x) => x.toString()).toList());
   }
 
-  void insertAtIndexInChartx(int _index, int _value) {
-    _chartx.insert(_index, _value);
+  void insertAtIndexInChartx(int index, int value) {
+    chartx.insert(index, value);
     secureStorage.setStringList(
         'ff_chartx', _chartx.map((x) => x.toString()).toList());
   }
 
   List<int> _chartxx = [0, 1, 2, 3];
   List<int> get chartxx => _chartxx;
-  set chartxx(List<int> _value) {
-    _chartxx = _value;
+  set chartxx(List<int> value) {
+    _chartxx = value;
     secureStorage.setStringList(
-        'ff_chartxx', _value.map((x) => x.toString()).toList());
+        'ff_chartxx', value.map((x) => x.toString()).toList());
   }
 
   void deleteChartxx() {
     secureStorage.delete(key: 'ff_chartxx');
   }
 
-  void addToChartxx(int _value) {
-    _chartxx.add(_value);
+  void addToChartxx(int value) {
+    chartxx.add(value);
     secureStorage.setStringList(
         'ff_chartxx', _chartxx.map((x) => x.toString()).toList());
   }
 
-  void removeFromChartxx(int _value) {
-    _chartxx.remove(_value);
+  void removeFromChartxx(int value) {
+    chartxx.remove(value);
     secureStorage.setStringList(
         'ff_chartxx', _chartxx.map((x) => x.toString()).toList());
   }
 
-  void removeAtIndexFromChartxx(int _index) {
-    _chartxx.removeAt(_index);
+  void removeAtIndexFromChartxx(int index) {
+    chartxx.removeAt(index);
     secureStorage.setStringList(
         'ff_chartxx', _chartxx.map((x) => x.toString()).toList());
   }
 
   void updateChartxxAtIndex(
-    int _index,
+    int index,
     int Function(int) updateFn,
   ) {
-    _chartxx[_index] = updateFn(_chartxx[_index]);
+    chartxx[index] = updateFn(_chartxx[index]);
     secureStorage.setStringList(
         'ff_chartxx', _chartxx.map((x) => x.toString()).toList());
   }
 
-  void insertAtIndexInChartxx(int _index, int _value) {
-    _chartxx.insert(_index, _value);
+  void insertAtIndexInChartxx(int index, int value) {
+    chartxx.insert(index, value);
     secureStorage.setStringList(
         'ff_chartxx', _chartxx.map((x) => x.toString()).toList());
   }
 
   List<int> _chartybar1 = [55, 48, 20, 53];
   List<int> get chartybar1 => _chartybar1;
-  set chartybar1(List<int> _value) {
-    _chartybar1 = _value;
+  set chartybar1(List<int> value) {
+    _chartybar1 = value;
     secureStorage.setStringList(
-        'ff_chartybar1', _value.map((x) => x.toString()).toList());
+        'ff_chartybar1', value.map((x) => x.toString()).toList());
   }
 
   void deleteChartybar1() {
     secureStorage.delete(key: 'ff_chartybar1');
   }
 
-  void addToChartybar1(int _value) {
-    _chartybar1.add(_value);
+  void addToChartybar1(int value) {
+    chartybar1.add(value);
     secureStorage.setStringList(
         'ff_chartybar1', _chartybar1.map((x) => x.toString()).toList());
   }
 
-  void removeFromChartybar1(int _value) {
-    _chartybar1.remove(_value);
+  void removeFromChartybar1(int value) {
+    chartybar1.remove(value);
     secureStorage.setStringList(
         'ff_chartybar1', _chartybar1.map((x) => x.toString()).toList());
   }
 
-  void removeAtIndexFromChartybar1(int _index) {
-    _chartybar1.removeAt(_index);
+  void removeAtIndexFromChartybar1(int index) {
+    chartybar1.removeAt(index);
     secureStorage.setStringList(
         'ff_chartybar1', _chartybar1.map((x) => x.toString()).toList());
   }
 
   void updateChartybar1AtIndex(
-    int _index,
+    int index,
     int Function(int) updateFn,
   ) {
-    _chartybar1[_index] = updateFn(_chartybar1[_index]);
+    chartybar1[index] = updateFn(_chartybar1[index]);
     secureStorage.setStringList(
         'ff_chartybar1', _chartybar1.map((x) => x.toString()).toList());
   }
 
-  void insertAtIndexInChartybar1(int _index, int _value) {
-    _chartybar1.insert(_index, _value);
+  void insertAtIndexInChartybar1(int index, int value) {
+    chartybar1.insert(index, value);
     secureStorage.setStringList(
         'ff_chartybar1', _chartybar1.map((x) => x.toString()).toList());
   }
 
   List<String> _chartxbar1 = ['07Mar', '08Mar', '09Mar', '10Mar'];
   List<String> get chartxbar1 => _chartxbar1;
-  set chartxbar1(List<String> _value) {
-    _chartxbar1 = _value;
-    secureStorage.setStringList('ff_chartxbar1', _value);
+  set chartxbar1(List<String> value) {
+    _chartxbar1 = value;
+    secureStorage.setStringList('ff_chartxbar1', value);
   }
 
   void deleteChartxbar1() {
     secureStorage.delete(key: 'ff_chartxbar1');
   }
 
-  void addToChartxbar1(String _value) {
-    _chartxbar1.add(_value);
+  void addToChartxbar1(String value) {
+    chartxbar1.add(value);
     secureStorage.setStringList('ff_chartxbar1', _chartxbar1);
   }
 
-  void removeFromChartxbar1(String _value) {
-    _chartxbar1.remove(_value);
+  void removeFromChartxbar1(String value) {
+    chartxbar1.remove(value);
     secureStorage.setStringList('ff_chartxbar1', _chartxbar1);
   }
 
-  void removeAtIndexFromChartxbar1(int _index) {
-    _chartxbar1.removeAt(_index);
+  void removeAtIndexFromChartxbar1(int index) {
+    chartxbar1.removeAt(index);
     secureStorage.setStringList('ff_chartxbar1', _chartxbar1);
   }
 
   void updateChartxbar1AtIndex(
-    int _index,
+    int index,
     String Function(String) updateFn,
   ) {
-    _chartxbar1[_index] = updateFn(_chartxbar1[_index]);
+    chartxbar1[index] = updateFn(_chartxbar1[index]);
     secureStorage.setStringList('ff_chartxbar1', _chartxbar1);
   }
 
-  void insertAtIndexInChartxbar1(int _index, String _value) {
-    _chartxbar1.insert(_index, _value);
+  void insertAtIndexInChartxbar1(int index, String value) {
+    chartxbar1.insert(index, value);
     secureStorage.setStringList('ff_chartxbar1', _chartxbar1);
   }
 
   List<int> _chartybar2 = [16, 22, 25, 10];
   List<int> get chartybar2 => _chartybar2;
-  set chartybar2(List<int> _value) {
-    _chartybar2 = _value;
+  set chartybar2(List<int> value) {
+    _chartybar2 = value;
     secureStorage.setStringList(
-        'ff_chartybar2', _value.map((x) => x.toString()).toList());
+        'ff_chartybar2', value.map((x) => x.toString()).toList());
   }
 
   void deleteChartybar2() {
     secureStorage.delete(key: 'ff_chartybar2');
   }
 
-  void addToChartybar2(int _value) {
-    _chartybar2.add(_value);
+  void addToChartybar2(int value) {
+    chartybar2.add(value);
     secureStorage.setStringList(
         'ff_chartybar2', _chartybar2.map((x) => x.toString()).toList());
   }
 
-  void removeFromChartybar2(int _value) {
-    _chartybar2.remove(_value);
+  void removeFromChartybar2(int value) {
+    chartybar2.remove(value);
     secureStorage.setStringList(
         'ff_chartybar2', _chartybar2.map((x) => x.toString()).toList());
   }
 
-  void removeAtIndexFromChartybar2(int _index) {
-    _chartybar2.removeAt(_index);
+  void removeAtIndexFromChartybar2(int index) {
+    chartybar2.removeAt(index);
     secureStorage.setStringList(
         'ff_chartybar2', _chartybar2.map((x) => x.toString()).toList());
   }
 
   void updateChartybar2AtIndex(
-    int _index,
+    int index,
     int Function(int) updateFn,
   ) {
-    _chartybar2[_index] = updateFn(_chartybar2[_index]);
+    chartybar2[index] = updateFn(_chartybar2[index]);
     secureStorage.setStringList(
         'ff_chartybar2', _chartybar2.map((x) => x.toString()).toList());
   }
 
-  void insertAtIndexInChartybar2(int _index, int _value) {
-    _chartybar2.insert(_index, _value);
+  void insertAtIndexInChartybar2(int index, int value) {
+    chartybar2.insert(index, value);
     secureStorage.setStringList(
         'ff_chartybar2', _chartybar2.map((x) => x.toString()).toList());
   }
 
   int _dd1 = 0;
   int get dd1 => _dd1;
-  set dd1(int _value) {
-    _dd1 = _value;
+  set dd1(int value) {
+    _dd1 = value;
   }
 
   String _Token = '';
   String get Token => _Token;
-  set Token(String _value) {
-    _Token = _value;
-    secureStorage.setString('ff_Token', _value);
+  set Token(String value) {
+    _Token = value;
+    secureStorage.setString('ff_Token', value);
   }
 
   void deleteToken() {
@@ -318,9 +318,9 @@ class FFAppState extends ChangeNotifier {
 
   String _UserName = '';
   String get UserName => _UserName;
-  set UserName(String _value) {
-    _UserName = _value;
-    secureStorage.setString('ff_UserName', _value);
+  set UserName(String value) {
+    _UserName = value;
+    secureStorage.setString('ff_UserName', value);
   }
 
   void deleteUserName() {
@@ -329,9 +329,9 @@ class FFAppState extends ChangeNotifier {
 
   String _State = '0';
   String get State => _State;
-  set State(String _value) {
-    _State = _value;
-    secureStorage.setString('ff_State', _value);
+  set State(String value) {
+    _State = value;
+    secureStorage.setString('ff_State', value);
   }
 
   void deleteState() {
@@ -340,9 +340,9 @@ class FFAppState extends ChangeNotifier {
 
   dynamic _indentSelectedSite;
   dynamic get indentSelectedSite => _indentSelectedSite;
-  set indentSelectedSite(dynamic _value) {
-    _indentSelectedSite = _value;
-    secureStorage.setString('ff_indentSelectedSite', jsonEncode(_value));
+  set indentSelectedSite(dynamic value) {
+    _indentSelectedSite = value;
+    secureStorage.setString('ff_indentSelectedSite', jsonEncode(value));
   }
 
   void deleteIndentSelectedSite() {
@@ -351,323 +351,329 @@ class FFAppState extends ChangeNotifier {
 
   String _EmailId = '';
   String get EmailId => _EmailId;
-  set EmailId(String _value) {
-    _EmailId = _value;
+  set EmailId(String value) {
+    _EmailId = value;
   }
 
   dynamic _CustomerBank;
   dynamic get CustomerBank => _CustomerBank;
-  set CustomerBank(dynamic _value) {
-    _CustomerBank = _value;
+  set CustomerBank(dynamic value) {
+    _CustomerBank = value;
   }
 
   dynamic _SiteType;
   dynamic get SiteType => _SiteType;
-  set SiteType(dynamic _value) {
-    _SiteType = _value;
+  set SiteType(dynamic value) {
+    _SiteType = value;
   }
 
   dynamic _TISType;
   dynamic get TISType => _TISType;
-  set TISType(dynamic _value) {
-    _TISType = _value;
+  set TISType(dynamic value) {
+    _TISType = value;
   }
 
   dynamic _ProjectType;
   dynamic get ProjectType => _ProjectType;
-  set ProjectType(dynamic _value) {
-    _ProjectType = _value;
+  set ProjectType(dynamic value) {
+    _ProjectType = value;
   }
 
   dynamic _BusinessType;
   dynamic get BusinessType => _BusinessType;
-  set BusinessType(dynamic _value) {
-    _BusinessType = _value;
+  set BusinessType(dynamic value) {
+    _BusinessType = value;
   }
 
   dynamic _Strategy;
   dynamic get Strategy => _Strategy;
-  set Strategy(dynamic _value) {
-    _Strategy = _value;
+  set Strategy(dynamic value) {
+    _Strategy = value;
   }
 
   dynamic _POIList;
   dynamic get POIList => _POIList;
-  set POIList(dynamic _value) {
-    _POIList = _value;
+  set POIList(dynamic value) {
+    _POIList = value;
   }
 
   dynamic _Stateapi;
   dynamic get Stateapi => _Stateapi;
-  set Stateapi(dynamic _value) {
-    _Stateapi = _value;
+  set Stateapi(dynamic value) {
+    _Stateapi = value;
   }
 
   dynamic _District;
   dynamic get District => _District;
-  set District(dynamic _value) {
-    _District = _value;
+  set District(dynamic value) {
+    _District = value;
   }
 
   dynamic _City;
   dynamic get City => _City;
-  set City(dynamic _value) {
-    _City = _value;
+  set City(dynamic value) {
+    _City = value;
   }
 
   dynamic _Pincode;
   dynamic get Pincode => _Pincode;
-  set Pincode(dynamic _value) {
-    _Pincode = _value;
+  set Pincode(dynamic value) {
+    _Pincode = value;
   }
 
   dynamic _Circle;
   dynamic get Circle => _Circle;
-  set Circle(dynamic _value) {
-    _Circle = _value;
+  set Circle(dynamic value) {
+    _Circle = value;
   }
 
   dynamic _RBICategory;
   dynamic get RBICategory => _RBICategory;
-  set RBICategory(dynamic _value) {
-    _RBICategory = _value;
+  set RBICategory(dynamic value) {
+    _RBICategory = value;
   }
 
   dynamic _Duplicatesite;
   dynamic get Duplicatesite => _Duplicatesite;
-  set Duplicatesite(dynamic _value) {
-    _Duplicatesite = _value;
+  set Duplicatesite(dynamic value) {
+    _Duplicatesite = value;
   }
 
   dynamic _SiteVisitedBy;
   dynamic get SiteVisitedBy => _SiteVisitedBy;
-  set SiteVisitedBy(dynamic _value) {
-    _SiteVisitedBy = _value;
+  set SiteVisitedBy(dynamic value) {
+    _SiteVisitedBy = value;
   }
 
   dynamic _FirstSiteVisitedBy;
   dynamic get FirstSiteVisitedBy => _FirstSiteVisitedBy;
-  set FirstSiteVisitedBy(dynamic _value) {
-    _FirstSiteVisitedBy = _value;
+  set FirstSiteVisitedBy(dynamic value) {
+    _FirstSiteVisitedBy = value;
   }
 
   dynamic _SecondSiteVisitedBY;
   dynamic get SecondSiteVisitedBY => _SecondSiteVisitedBY;
-  set SecondSiteVisitedBY(dynamic _value) {
-    _SecondSiteVisitedBY = _value;
+  set SecondSiteVisitedBY(dynamic value) {
+    _SecondSiteVisitedBY = value;
   }
 
   int _department = 0;
   int get department => _department;
-  set department(int _value) {
-    _department = _value;
+  set department(int value) {
+    _department = value;
   }
 
   dynamic _CashDeviceType;
   dynamic get CashDeviceType => _CashDeviceType;
-  set CashDeviceType(dynamic _value) {
-    _CashDeviceType = _value;
+  set CashDeviceType(dynamic value) {
+    _CashDeviceType = value;
   }
 
   dynamic _CashDeviceMovementCategory;
   dynamic get CashDeviceMovementCategory => _CashDeviceMovementCategory;
-  set CashDeviceMovementCategory(dynamic _value) {
-    _CashDeviceMovementCategory = _value;
+  set CashDeviceMovementCategory(dynamic value) {
+    _CashDeviceMovementCategory = value;
   }
 
   String _districts = '';
   String get districts => _districts;
-  set districts(String _value) {
-    _districts = _value;
+  set districts(String value) {
+    _districts = value;
   }
 
   String _sitetypess = '';
   String get sitetypess => _sitetypess;
-  set sitetypess(String _value) {
-    _sitetypess = _value;
+  set sitetypess(String value) {
+    _sitetypess = value;
   }
 
   dynamic _master;
   dynamic get master => _master;
-  set master(dynamic _value) {
-    _master = _value;
+  set master(dynamic value) {
+    _master = value;
   }
 
   int _icust = 0;
   int get icust => _icust;
-  set icust(int _value) {
-    _icust = _value;
+  set icust(int value) {
+    _icust = value;
   }
 
   dynamic _departmentswiseuser;
   dynamic get departmentswiseuser => _departmentswiseuser;
-  set departmentswiseuser(dynamic _value) {
-    _departmentswiseuser = _value;
+  set departmentswiseuser(dynamic value) {
+    _departmentswiseuser = value;
   }
 
   dynamic _visitedbydeptapi;
   dynamic get visitedbydeptapi => _visitedbydeptapi;
-  set visitedbydeptapi(dynamic _value) {
-    _visitedbydeptapi = _value;
+  set visitedbydeptapi(dynamic value) {
+    _visitedbydeptapi = value;
   }
 
   dynamic _Listsite;
   dynamic get Listsite => _Listsite;
-  set Listsite(dynamic _value) {
-    _Listsite = _value;
+  set Listsite(dynamic value) {
+    _Listsite = value;
   }
 
   dynamic _secondsitevisiterNew;
   dynamic get secondsitevisiterNew => _secondsitevisiterNew;
-  set secondsitevisiterNew(dynamic _value) {
-    _secondsitevisiterNew = _value;
+  set secondsitevisiterNew(dynamic value) {
+    _secondsitevisiterNew = value;
   }
 
   String _SiteId = '';
   String get SiteId => _SiteId;
-  set SiteId(String _value) {
-    _SiteId = _value;
+  set SiteId(String value) {
+    _SiteId = value;
   }
 
   String _searchpage = '';
   String get searchpage => _searchpage;
-  set searchpage(String _value) {
-    _searchpage = _value;
+  set searchpage(String value) {
+    _searchpage = value;
   }
 
   String _Remark1 = '';
   String get Remark1 => _Remark1;
-  set Remark1(String _value) {
-    _Remark1 = _value;
+  set Remark1(String value) {
+    _Remark1 = value;
   }
 
   String _Remark2 = '';
   String get Remark2 => _Remark2;
-  set Remark2(String _value) {
-    _Remark2 = _value;
+  set Remark2(String value) {
+    _Remark2 = value;
   }
 
   String _Remark3 = '';
   String get Remark3 => _Remark3;
-  set Remark3(String _value) {
-    _Remark3 = _value;
+  set Remark3(String value) {
+    _Remark3 = value;
   }
 
   String _Remark4 = '';
   String get Remark4 => _Remark4;
-  set Remark4(String _value) {
-    _Remark4 = _value;
+  set Remark4(String value) {
+    _Remark4 = value;
   }
 
   String _Remark5 = '';
   String get Remark5 => _Remark5;
-  set Remark5(String _value) {
-    _Remark5 = _value;
+  set Remark5(String value) {
+    _Remark5 = value;
   }
 
   String _CRACoverage = '';
   String get CRACoverage => _CRACoverage;
-  set CRACoverage(String _value) {
-    _CRACoverage = _value;
+  set CRACoverage(String value) {
+    _CRACoverage = value;
   }
 
   String _CRAAgency = '';
   String get CRAAgency => _CRAAgency;
-  set CRAAgency(String _value) {
-    _CRAAgency = _value;
+  set CRAAgency(String value) {
+    _CRAAgency = value;
   }
 
   String _BranchSOLID = '';
   String get BranchSOLID => _BranchSOLID;
-  set BranchSOLID(String _value) {
-    _BranchSOLID = _value;
+  set BranchSOLID(String value) {
+    _BranchSOLID = value;
   }
 
   String _NearestBranch = '';
   String get NearestBranch => _NearestBranch;
-  set NearestBranch(String _value) {
-    _NearestBranch = _value;
+  set NearestBranch(String value) {
+    _NearestBranch = value;
   }
 
   String _DistancefromtheNeearestBranch = '';
   String get DistancefromtheNeearestBranch => _DistancefromtheNeearestBranch;
-  set DistancefromtheNeearestBranch(String _value) {
-    _DistancefromtheNeearestBranch = _value;
+  set DistancefromtheNeearestBranch(String value) {
+    _DistancefromtheNeearestBranch = value;
   }
 
   String _VideoURL = '';
   String get VideoURL => _VideoURL;
-  set VideoURL(String _value) {
-    _VideoURL = _value;
+  set VideoURL(String value) {
+    _VideoURL = value;
   }
 
   String _Remark1open = '';
   String get Remark1open => _Remark1open;
-  set Remark1open(String _value) {
-    _Remark1open = _value;
+  set Remark1open(String value) {
+    _Remark1open = value;
   }
 
   String _Remark2open = '';
   String get Remark2open => _Remark2open;
-  set Remark2open(String _value) {
-    _Remark2open = _value;
+  set Remark2open(String value) {
+    _Remark2open = value;
   }
 
   String _Remark3open = '';
   String get Remark3open => _Remark3open;
-  set Remark3open(String _value) {
-    _Remark3open = _value;
+  set Remark3open(String value) {
+    _Remark3open = value;
   }
 
   String _Remark4open = '';
   String get Remark4open => _Remark4open;
-  set Remark4open(String _value) {
-    _Remark4open = _value;
+  set Remark4open(String value) {
+    _Remark4open = value;
   }
 
   String _Remark5open = '';
   String get Remark5open => _Remark5open;
-  set Remark5open(String _value) {
-    _Remark5open = _value;
+  set Remark5open(String value) {
+    _Remark5open = value;
   }
 
   List<String> _istate = ['0'];
   List<String> get istate => _istate;
-  set istate(List<String> _value) {
-    _istate = _value;
-    secureStorage.setStringList('ff_istate', _value);
+  set istate(List<String> value) {
+    _istate = value;
+    secureStorage.setStringList('ff_istate', value);
   }
 
   void deleteIstate() {
     secureStorage.delete(key: 'ff_istate');
   }
 
-  void addToIstate(String _value) {
-    _istate.add(_value);
+  void addToIstate(String value) {
+    istate.add(value);
     secureStorage.setStringList('ff_istate', _istate);
   }
 
-  void removeFromIstate(String _value) {
-    _istate.remove(_value);
+  void removeFromIstate(String value) {
+    istate.remove(value);
     secureStorage.setStringList('ff_istate', _istate);
   }
 
-  void removeAtIndexFromIstate(int _index) {
-    _istate.removeAt(_index);
+  void removeAtIndexFromIstate(int index) {
+    istate.removeAt(index);
     secureStorage.setStringList('ff_istate', _istate);
   }
 
   void updateIstateAtIndex(
-    int _index,
+    int index,
     String Function(String) updateFn,
   ) {
-    _istate[_index] = updateFn(_istate[_index]);
+    istate[index] = updateFn(_istate[index]);
     secureStorage.setStringList('ff_istate', _istate);
   }
 
-  void insertAtIndexInIstate(int _index, String _value) {
-    _istate.insert(_index, _value);
+  void insertAtIndexInIstate(int index, String value) {
+    istate.insert(index, value);
     secureStorage.setStringList('ff_istate', _istate);
+  }
+
+  dynamic _istatess;
+  dynamic get istatess => _istatess;
+  set istatess(dynamic value) {
+    _istatess = value;
   }
 }
 

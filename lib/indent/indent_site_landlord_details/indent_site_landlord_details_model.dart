@@ -33,7 +33,6 @@ class IndentSiteLandlordDetailsModel
   @override
   void initState(BuildContext context) {
     landlordformModel = createModel(context, () => LandlordformModel());
-
     landlordformModel.landoardNameTextControllerValidator =
         _formTextFieldValidator1;
     landlordformModel.percentTextControllerValidator = _formTextFieldValidator2;

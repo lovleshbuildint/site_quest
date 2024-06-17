@@ -170,6 +170,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                                     .text) ??
                                                 0))
                                         .toString();
+                                    _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                            ?.selection =
+                                        TextSelection.collapsed(
+                                            offset: _model
+                                                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                                .text
+                                                .length);
                                   });
                                 },
                               ),
@@ -333,6 +340,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
+                          _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                  ?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                      .text
+                                      .length);
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -482,6 +496,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
+                          _model.advanceAmountAdvanceTextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .advanceAmountAdvanceTextController!
+                                      .text
+                                      .length);
                         });
                         setState(() {
                           _model.balanceAmountAdvanceTextController
@@ -494,6 +514,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
+                          _model.balanceAmountAdvanceTextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .balanceAmountAdvanceTextController!
+                                      .text
+                                      .length);
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1014,6 +1040,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                                     .text) ??
                                                 0))
                                         .toString();
+                                    _model.totalSecurityDepositTextController
+                                            ?.selection =
+                                        TextSelection.collapsed(
+                                            offset: _model
+                                                .totalSecurityDepositTextController!
+                                                .text
+                                                .length);
                                   });
                                 },
                               ),
@@ -1308,6 +1341,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
+                          _model.advanceSDAmountSecurityTextController
+                                  ?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .advanceSDAmountSecurityTextController!
+                                      .text
+                                      .length);
                         });
                         setState(() {
                           _model.balanceSDAmountSecurityTextController
@@ -1320,6 +1360,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
+                          _model.balanceSDAmountSecurityTextController
+                                  ?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .balanceSDAmountSecurityTextController!
+                                      .text
+                                      .length);
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,

@@ -575,7 +575,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               FormFieldController<List<String>>(
                                                   _model.dropDownValue ??=
                                                       List<String>.from(
-                                        FFAppState().istate ?? [],
+                                        FFAppState().istatess ?? [],
                                       )),
                                       options: List<String>.from((getJsonField(
                                         mainPageDashboardResponse.jsonBody,
@@ -630,6 +630,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
+                                      isOverButton: false,
                                       isSearchable: true,
                                       isMultiSelect: true,
                                       onMultiSelectChanged: (val) async {

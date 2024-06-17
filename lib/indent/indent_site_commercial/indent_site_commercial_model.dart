@@ -27,7 +27,6 @@ class IndentSiteCommercialModel
   void initState(BuildContext context) {
     commercialAdvanceModel =
         createModel(context, () => CommercialAdvanceModel());
-
     commercialAdvanceModel.advanceRentAmountRENTTextControllerValidator =
         _formTextFieldValidator1;
     commercialAdvanceModel

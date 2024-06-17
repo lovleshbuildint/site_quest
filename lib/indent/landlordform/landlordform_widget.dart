@@ -1258,10 +1258,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 _model.landoardNameTextController.text,
                                 'Name',
                               );
+                              _model.chequefieldTextController?.selection =
+                                  TextSelection.collapsed(
+                                      offset: _model.chequefieldTextController!
+                                          .text.length);
                             });
                           } else {
                             setState(() {
                               _model.chequefieldTextController?.text = '';
+                              _model.chequefieldTextController?.selection =
+                                  TextSelection.collapsed(
+                                      offset: _model.chequefieldTextController!
+                                          .text.length);
                             });
                           }
                         },

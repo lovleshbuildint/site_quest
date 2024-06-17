@@ -24,7 +24,6 @@ class IndentSiteNearestAtmModel
   @override
   void initState(BuildContext context) {
     nearestatmModel = createModel(context, () => NearestatmModel());
-
     nearestatmModel.atmidTextControllerValidator = _formTextFieldValidator1;
     nearestatmModel.distanceKMTextControllerValidator =
         _formTextFieldValidator2;

@@ -631,7 +631,7 @@ class FFAppState extends ChangeNotifier {
     _Remark5open = value;
   }
 
-  List<String> _istate = ['0'];
+  List<String> _istate = ['1'];
   List<String> get istate => _istate;
   set istate(List<String> value) {
     _istate = value;

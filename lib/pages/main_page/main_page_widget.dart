@@ -586,7 +586,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       ],
                                     ),
                                     FutureBuilder<ApiCallResponse>(
-                                      future: SqGroup.statenewCall.call(
+                                      future: SqGroup.stateListCall.call(
                                         token: FFAppState().Token,
                                       ),
                                       builder: (context, snapshot) {
@@ -607,7 +607,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             ),
                                           );
                                         }
-                                        final dropDownStatenewResponse =
+                                        final dropDownStateListResponse =
                                             snapshot.data!;
                                         return FlutterFlowDropDown<String>(
                                           multiSelectController: _model

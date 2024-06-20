@@ -36,8 +36,6 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ApiCallResponse? stateResponse;
   // Stores action output result for [Backend Call - API (circle)] action in MainPage widget.
   ApiCallResponse? circelResponse;
-  // Stores action output result for [Backend Call - API (State List)] action in MainPage widget.
-  ApiCallResponse? statelist;
   // Stores action output result for [Backend Call - API (tis)] action in MainPage widget.
   ApiCallResponse? tisResponse;
   // Stores action output result for [Backend Call - API (GetPOITypeForSiteEvaluation)] action in MainPage widget.

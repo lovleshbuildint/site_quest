@@ -288,32 +288,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
-          _model.statelist = await SqGroup.stateListCall.call(
-            token: FFAppState().Token,
-          );
-
-          if ((_model.statelist?.succeeded ?? true)) {
-            FFAppState().istate = _model.dropDownValue!.toList().cast<String>();
-            setState(() {});
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('State Alert'),
-                  content: Text((_model.statelist?.bodyText ?? '')),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
-          }
-        }),
-        Future(() async {
           _model.tisResponse = await SqGroup.tisCall.call(
             token: FFAppState().Token,
           );

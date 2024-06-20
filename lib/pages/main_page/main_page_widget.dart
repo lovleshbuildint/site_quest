@@ -618,7 +618,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             FFAppState().istate ?? [],
                                           )),
                                           options: List<String>.from(
-                                              ['0', '5', '10', '15', '20']),
+                                              (getJsonField(
+                                            dropDownStateListResponse.jsonBody,
+                                            r'''$.States..iState''',
+                                            true,
+                                          ) as List)
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             dropDownStateListResponse.jsonBody,
                                             r'''$.States..State''',

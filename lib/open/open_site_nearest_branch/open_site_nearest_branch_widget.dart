@@ -377,6 +377,7 @@ class _OpenSiteNearestBranchWidgetState
                                 remarks4: FFAppState().Remark4,
                                 remarks5: FFAppState().Remark5,
                               );
+
                               if ((_model.oPENSiteDOADetailsfive?.succeeded ??
                                   true)) {
                                 context.pushNamed('open_site_nearest_atm');

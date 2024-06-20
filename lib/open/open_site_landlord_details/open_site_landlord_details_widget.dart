@@ -439,6 +439,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                 msg: null,
                                 isFromSiteref: false,
                               );
+
                               if ((_model.updateDOADdeatilssecondwordSite
                                       ?.succeeded ??
                                   true)) {

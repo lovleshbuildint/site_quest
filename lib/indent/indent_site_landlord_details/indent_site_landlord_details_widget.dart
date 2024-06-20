@@ -708,6 +708,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   msg: null,
                                   isFromSiteref: false,
                                 );
+
                                 if ((_model.updateDOADdeatils2?.succeeded ??
                                     true)) {
                                   context.goNamed('indent_site_commercial');

@@ -772,6 +772,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 iindent: null,
                                 isFromSiteref: false,
                               );
+
                               if ((_model.openUpdateDOADetailsFive?.succeeded ??
                                   true)) {
                                 context.pushNamed(

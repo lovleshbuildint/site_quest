@@ -230,6 +230,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               await SqGroup.updateDOADetailsfiveCall.call(
                             comment: _model.textController.text,
                           );
+
                           _shouldSetState = true;
                           if ((_model.apiResult1j6?.succeeded ?? true)) {
                             setState(() {});

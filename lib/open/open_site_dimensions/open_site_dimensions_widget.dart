@@ -392,6 +392,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 contactNumber: null,
                                 emailId: null,
                               );
+
                               if ((_model.oPENSIteDOADetailsFour?.succeeded ??
                                   true)) {
                                 context.pushNamed('open_site_photo');

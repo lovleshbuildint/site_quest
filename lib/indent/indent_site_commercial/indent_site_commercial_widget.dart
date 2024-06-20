@@ -660,6 +660,7 @@ class _IndentSiteCommercialWidgetState
                                     contactNumber: null,
                                     emailId: null,
                                   );
+
                                   _shouldSetState = true;
                                   if ((_model.dOADetailsThirdWordAdvance
                                           ?.succeeded ??
@@ -769,6 +770,7 @@ class _IndentSiteCommercialWidgetState
                                     contactNumber: null,
                                     emailId: null,
                                   );
+
                                   _shouldSetState = true;
                                   if ((_model.dOADetailsThirdWordsecur
                                           ?.succeeded ??

@@ -345,6 +345,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 r'''$.Longitude''',
                                               ).toString(),
                                             );
+
                                             _shouldSetState = true;
                                             if ((_model
                                                     .apiResultqf6?.succeeded ??
@@ -411,6 +412,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               password: _model
                                                   .passwordTextController.text,
                                             );
+
                                             _shouldSetState = true;
                                             if ((_model
                                                     .loginResponse?.succeeded ??

@@ -719,6 +719,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                 errCnt: null,
                                 msg: null,
                               );
+
                               if ((_model.dOADetailsFive?.succeeded ?? true)) {
                                 if (Navigator.of(context).canPop()) {
                                   context.pop();

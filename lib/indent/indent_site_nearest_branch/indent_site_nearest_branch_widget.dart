@@ -673,6 +673,7 @@ class _IndentSiteNearestBranchWidgetState
                                   remarks5: FFAppState().Remark5,
                                   iCIT: null,
                                 );
+
                                 if ((_model.dOADetailsfive?.succeeded ??
                                     true)) {
                                   context.pushNamed('indent_site_nearest_atm');

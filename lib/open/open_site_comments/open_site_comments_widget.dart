@@ -464,6 +464,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                 comment: _model.textController.text,
                                 token: FFAppState().Token,
                               );
+
                               if ((_model.openSiteDOADetailsFive?.succeeded ??
                                   true)) {
                                 if (Navigator.of(context).canPop()) {

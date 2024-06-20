@@ -387,6 +387,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   contactNumber: null,
                                   emailId: null,
                                 );
+
                                 _shouldSetState = true;
                                 if ((_model.tDOADetailsThirdWordAdvance
                                         ?.succeeded ??
@@ -477,6 +478,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   contactNumber: null,
                                   emailId: null,
                                 );
+
                                 _shouldSetState = true;
                                 if ((_model
                                         .dOADetailsThirdWordsecur?.succeeded ??

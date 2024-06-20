@@ -688,6 +688,7 @@ class _IndentSiteDimensionsWidgetState
                                   contactNumber: null,
                                   emailId: null,
                                 );
+
                                 if ((_model.dOADetailsFour?.succeeded ??
                                     true)) {
                                   context.pushNamed('indent_site_photo');

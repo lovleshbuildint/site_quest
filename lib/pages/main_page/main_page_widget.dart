@@ -38,6 +38,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.rbiresponse = await SqGroup.rBInewCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.rbiresponse?.succeeded ?? true)) {
             FFAppState().RBICategory = (_model.rbiresponse?.jsonBody ?? '');
             setState(() {});
@@ -64,6 +65,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               await SqGroup.getSiteTypeForSiteEvaluationCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.getsitetypeforsiteevaluationresponse?.succeeded ??
               true)) {
             FFAppState().SiteType =
@@ -93,6 +95,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.getcashdeviceapi = await SqGroup.getCashDeviceApiCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.getcashdeviceapi?.succeeded ?? true)) {
             FFAppState().CashDeviceType =
                 (_model.getcashdeviceapi?.jsonBody ?? '');
@@ -120,6 +123,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             icust: FFAppState().icust,
             token: FFAppState().Token,
           );
+
           if ((_model.getProjecTypeResponse?.succeeded ?? true)) {
             FFAppState().ProjectType =
                 (_model.getProjecTypeResponse?.jsonBody ?? '');
@@ -148,6 +152,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               .call(
             token: FFAppState().Token,
           );
+
           if ((_model.getCashDeviceMovementCategoryResponse?.succeeded ??
               true)) {
             FFAppState().CashDeviceMovementCategory =
@@ -178,6 +183,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               await SqGroup.getShopTypeSiteCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.getShopTypeSiteResponse?.succeeded ?? true)) {
             FFAppState().BusinessType =
                 (_model.getShopTypeSiteResponse?.jsonBody ?? '');
@@ -205,6 +211,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.straegtyResponse = await SqGroup.staregtyCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.straegtyResponse?.succeeded ?? true)) {
             FFAppState().Strategy = (_model.straegtyResponse?.jsonBody ?? '');
             setState(() {});
@@ -230,6 +237,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.stateResponse = await SqGroup.statenewCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.stateResponse?.succeeded ?? true)) {
             FFAppState().State =
                 (_model.stateResponse?.jsonBody ?? '').toString();
@@ -257,6 +265,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.circelResponse = await SqGroup.circleCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.circelResponse?.succeeded ?? true)) {
             FFAppState().Circle = (_model.circelResponse?.jsonBody ?? '');
             setState(() {});
@@ -282,6 +291,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.tisResponse = await SqGroup.tisCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.tisResponse?.succeeded ?? true)) {
             FFAppState().TISType = (_model.tisResponse?.jsonBody ?? '');
             setState(() {});
@@ -307,6 +317,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.poiType = await SqGroup.getPOITypeForSiteEvaluationCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.poiType?.succeeded ?? true)) {
             FFAppState().POIList = (_model.poiType?.jsonBody ?? '');
             setState(() {});
@@ -332,6 +343,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.cityresponse = await SqGroup.cityCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.cityresponse?.succeeded ?? true)) {
             FFAppState().City = (_model.cityresponse?.jsonBody ?? '');
             setState(() {});
@@ -358,6 +370,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               await SqGroup.getsitevisiteddbydeptAPICall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.getsitevisitedbydeptapiresponse?.succeeded ?? true)) {
             FFAppState().SiteVisitedBy =
                 (_model.getsitevisitedbydeptapiresponse?.jsonBody ?? '');
@@ -385,6 +398,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           _model.listsitesresponse = await SqGroup.listSitesCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.listsitesresponse?.succeeded ?? true)) {
             FFAppState().Listsite = (_model.listsitesresponse?.jsonBody ?? '');
             setState(() {});
@@ -411,6 +425,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               await SqGroup.secondSiteVisitersNEWCall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.secondsiteVisiterNew?.succeeded ?? true)) {
             FFAppState().secondsitevisiterNew =
                 (_model.secondsiteVisiterNew?.jsonBody ?? '');
@@ -438,6 +453,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               await SqGroup.getsitevisiteddbydeptAPICall.call(
             token: FFAppState().Token,
           );
+
           if ((_model.apiResultsitevisitedbydept?.succeeded ?? true)) {
             FFAppState().visitedbydeptapi =
                 (_model.apiResultsitevisitedbydept?.jsonBody ?? '');
@@ -569,78 +585,110 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                       ],
                                     ),
-                                    FlutterFlowDropDown<String>(
-                                      multiSelectController:
-                                          _model.dropDownValueController ??=
-                                              FormFieldController<List<String>>(
+                                    FutureBuilder<ApiCallResponse>(
+                                      future: SqGroup.stateListCall.call(
+                                        token: FFAppState().Token,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final dropDownStateListResponse =
+                                            snapshot.data!;
+                                        return FlutterFlowDropDown<String>(
+                                          multiSelectController: _model
+                                                  .dropDownValueController ??=
+                                              FormListFieldController<String>(
                                                   _model.dropDownValue ??=
                                                       List<String>.from(
-                                        FFAppState().istate ?? [],
-                                      )),
-                                      options: List<String>.from((getJsonField(
-                                        mainPageDashboardResponse.jsonBody,
-                                        r'''$.States..iState''',
-                                        true,
-                                      ) as List)
-                                          .map<String>((s) => s.toString())
-                                          .toList()!),
-                                      optionLabels: (getJsonField(
-                                        mainPageDashboardResponse.jsonBody,
-                                        r'''$.States..State''',
-                                        true,
-                                      ) as List)
-                                          .map<String>((s) => s.toString())
-                                          .toList()!,
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.45,
-                                      height: 49.0,
-                                      searchHintTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                letterSpacing: 0.0,
-                                              ),
-                                      searchTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                letterSpacing: 0.0,
-                                              ),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            letterSpacing: 0.0,
+                                            FFAppState().istate ?? [],
+                                          )),
+                                          options: List<String>.from(
+                                              (getJsonField(
+                                            mainPageDashboardResponse.jsonBody,
+                                            r'''$.States..iState''',
+                                            true,
+                                          ) as List)
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
+                                          optionLabels: (getJsonField(
+                                            mainPageDashboardResponse.jsonBody,
+                                            r'''$.States..State''',
+                                            true,
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.45,
+                                          height: 49.0,
+                                          searchHintTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          searchTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Select States',
+                                          searchHintText:
+                                              'Search for an item...',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
                                           ),
-                                      hintText: 'Select States',
-                                      searchHintText: 'Search for an item...',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
-                                      fillColor: Color(0xBAFFFFFF),
-                                      elevation: 2.0,
-                                      borderColor: Color(0xFFE1E2E6),
-                                      borderWidth: 2.0,
-                                      borderRadius: 20.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isOverButton: false,
-                                      isSearchable: true,
-                                      isMultiSelect: true,
-                                      onMultiSelectChanged: (val) async {
-                                        setState(
-                                            () => _model.dropDownValue = val);
-                                        FFAppState().istate = _model
-                                            .dropDownValue!
-                                            .toList()
-                                            .cast<String>();
-                                        setState(() {});
+                                          fillColor: Color(0xBAFFFFFF),
+                                          elevation: 2.0,
+                                          borderColor: Color(0xFFE1E2E6),
+                                          borderWidth: 2.0,
+                                          borderRadius: 20.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: true,
+                                          isMultiSelect: true,
+                                          onMultiSelectChanged: (val) async {
+                                            setState(() =>
+                                                _model.dropDownValue = val);
+                                            FFAppState().istate = _model
+                                                .dropDownValue!
+                                                .toList()
+                                                .cast<String>();
+                                            setState(() {});
+                                          },
+                                        );
                                       },
                                     ),
                                     Padding(

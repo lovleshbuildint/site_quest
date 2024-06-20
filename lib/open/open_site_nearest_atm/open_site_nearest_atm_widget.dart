@@ -412,6 +412,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 iindent: null,
                                 isFromSiteref: false,
                               );
+
                               if ((_model.openSiteUpdateNearestATM?.succeeded ??
                                   true)) {
                                 if (Navigator.of(context).canPop()) {

@@ -705,6 +705,7 @@ class _IndentSiteNearestAtmWidgetState
                                   isBranch: null,
                                   isFromSiteref: false,
                                 );
+
                                 if ((_model.updateNearestATM?.succeeded ??
                                     true)) {
                                   if (Navigator.of(context).canPop()) {

@@ -2715,6 +2715,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             msg: null,
                             errCnt: null,
                           );
+
                           if ((_model
                                   .updateDOAdetailsfirstwordsSites?.succeeded ??
                               true)) {

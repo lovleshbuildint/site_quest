@@ -626,13 +626,13 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .map<String>(
                                                       (s) => s.toString())
                                                   .toList()!),
-                                          optionLabels: (getJsonField(
-                                            mainPageDashboardResponse.jsonBody,
-                                            r'''$.States..State''',
-                                            true,
-                                          ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                          optionLabels: SqGroup.stateListCall
+                                              .states(
+                                                dropDownStateListResponse
+                                                    .jsonBody,
+                                              )!
+                                              .map((e) => e.toString())
+                                              .toList(),
                                           width:
                                               MediaQuery.sizeOf(context).width *
                                                   0.45,

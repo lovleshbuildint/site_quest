@@ -495,7 +495,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
-      future: SqGroup.dashboardCall.call(
+      future: SqGroup.stateListCall.call(
         token: FFAppState().Token,
       ),
       builder: (context, snapshot) {
@@ -516,7 +516,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             ),
           );
         }
-        final mainPageDashboardResponse = snapshot.data!;
+        final mainPageStateListResponse = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -619,7 +619,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           )),
                                           options: List<String>.from(
                                               (getJsonField(
-                                            mainPageDashboardResponse.jsonBody,
+                                            mainPageStateListResponse.jsonBody,
                                             r'''$.States..iState''',
                                             true,
                                           ) as List)
@@ -627,7 +627,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                       (s) => s.toString())
                                                   .toList()!),
                                           optionLabels: (getJsonField(
-                                            mainPageDashboardResponse.jsonBody,
+                                            mainPageStateListResponse.jsonBody,
                                             r'''$.States..State''',
                                             true,
                                           ) as List)
@@ -893,15 +893,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                 children: [
                                                                   CircularPercentIndicator(
                                                                     percent: (getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
+                                                                              mainPageStateListResponse.jsonBody,
                                                                               r'''$.UserReview[3].Count''',
                                                                             ) -
                                                                             getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
+                                                                              mainPageStateListResponse.jsonBody,
                                                                               r'''$.UserReview[1].Count''',
                                                                             )) /
                                                                         getJsonField(
-                                                                          mainPageDashboardResponse
+                                                                          mainPageStateListResponse
                                                                               .jsonBody,
                                                                           r'''$.UserReview[3].Count''',
                                                                         ),
@@ -930,11 +930,11 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                     child: Text(
                                                                       formatNumber(
                                                                         getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
+                                                                              mainPageStateListResponse.jsonBody,
                                                                               r'''$.UserReview[4].Count''',
                                                                             ) /
                                                                             getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
+                                                                              mainPageStateListResponse.jsonBody,
                                                                               r'''$.UserReview[3].Count''',
                                                                             ),
                                                                         formatType:
@@ -1139,7 +1139,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                               ),
                                                               Text(
                                                                 getJsonField(
-                                                                  mainPageDashboardResponse
+                                                                  mainPageStateListResponse
                                                                       .jsonBody,
                                                                   r'''$.UserReview[2].Count''',
                                                                 ).toString(),
@@ -1277,7 +1277,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                               ),
                                                               Text(
                                                                 getJsonField(
-                                                                  mainPageDashboardResponse
+                                                                  mainPageStateListResponse
                                                                       .jsonBody,
                                                                   r'''$.UserReview[3].Count''',
                                                                 ).toString(),
@@ -1415,7 +1415,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                               ),
                                                               Text(
                                                                 getJsonField(
-                                                                  mainPageDashboardResponse
+                                                                  mainPageStateListResponse
                                                                       .jsonBody,
                                                                   r'''$.UserReview[0].Count''',
                                                                 ).toString(),
@@ -1877,7 +1877,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                         0.0),
                                                             child: Text(
                                                               getJsonField(
-                                                                mainPageDashboardResponse
+                                                                mainPageStateListResponse
                                                                     .jsonBody,
                                                                 r'''$.UserReview[4].Count''',
                                                               ).toString(),
@@ -2113,7 +2113,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                           0.0),
                                                               child: Text(
                                                                 getJsonField(
-                                                                  mainPageDashboardResponse
+                                                                  mainPageStateListResponse
                                                                       .jsonBody,
                                                                   r'''$.UserReview[3].Count''',
                                                                 ).toString(),
@@ -2348,7 +2348,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                           0.0),
                                                               child: Text(
                                                                 getJsonField(
-                                                                  mainPageDashboardResponse
+                                                                  mainPageStateListResponse
                                                                       .jsonBody,
                                                                   r'''$.UserReview[1].Count''',
                                                                 ).toString(),

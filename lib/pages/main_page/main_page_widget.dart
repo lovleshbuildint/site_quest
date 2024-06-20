@@ -620,7 +620,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           options: List<String>.from(
                                               (getJsonField(
                                             mainPageDashboardResponse.jsonBody,
-                                            r'''$.States[0]..iState''',
+                                            r'''$.States..iState''',
                                             true,
                                           ) as List)
                                                   .map<String>(
@@ -628,7 +628,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .toList()!),
                                           optionLabels: (getJsonField(
                                             mainPageDashboardResponse.jsonBody,
-                                            r'''$.States[0]..State''',
+                                            r'''$.States..State''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())

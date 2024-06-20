@@ -628,7 +628,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .toList()!),
                                           optionLabels: (getJsonField(
                                             mainPageDashboardResponse.jsonBody,
-                                            r'''$.States[0].State''',
+                                            r'''$.States[0]..State''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())

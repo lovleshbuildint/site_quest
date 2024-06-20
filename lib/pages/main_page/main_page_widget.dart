@@ -618,21 +618,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             FFAppState().istate ?? [],
                                           )),
                                           options: List<String>.from(
-                                              (getJsonField(
-                                            mainPageDashboardResponse.jsonBody,
-                                            r'''$.States..iState''',
+                                              ['0', '5', '10', '15', '20']),
+                                          optionLabels: (getJsonField(
+                                            dropDownStateListResponse.jsonBody,
+                                            r'''$.States..State''',
                                             true,
                                           ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()!),
-                                          optionLabels: SqGroup.stateListCall
-                                              .states(
-                                                dropDownStateListResponse
-                                                    .jsonBody,
-                                              )!
-                                              .map((e) => e.toString())
-                                              .toList(),
+                                              .map<String>((s) => s.toString())
+                                              .toList()!,
                                           width:
                                               MediaQuery.sizeOf(context).width *
                                                   0.45,

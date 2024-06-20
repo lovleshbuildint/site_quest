@@ -91,7 +91,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        if (_model.serachVisibilty)
+                        if (!_model.serachVisibilty)
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),

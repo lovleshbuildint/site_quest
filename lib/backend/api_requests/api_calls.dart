@@ -336,13 +336,12 @@ class LoginAPICall {
 
 class IndentsListCall {
   Future<ApiCallResponse> call({
-    List<String>? stateList,
+    String? state = '',
     String? token = '',
   }) async {
     final baseUrl = SqGroup.getBaseUrl(
       token: token,
     );
-    final state = _serializeList(stateList);
 
     return ApiManager.instance.makeApiCall(
       callName: 'Indents List',

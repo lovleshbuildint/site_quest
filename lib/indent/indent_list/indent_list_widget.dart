@@ -46,8 +46,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
-      future: SqGroup.indentsListCall.call(
-        stateList: FFAppState().istate,
+      future: SqGroup.getIndentsByStatesnewCall.call(
+        istateList: FFAppState().istate,
         token: FFAppState().Token,
       ),
       builder: (context, snapshot) {
@@ -68,7 +68,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
             ),
           );
         }
-        final indentListIndentsListResponse = snapshot.data!;
+        final indentListGetIndentsByStatesnewResponse = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -322,7 +322,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                   child: Builder(
                                     builder: (context) {
                                       final indentsData = getJsonField(
-                                        indentListIndentsListResponse.jsonBody,
+                                        indentListGetIndentsByStatesnewResponse
+                                            .jsonBody,
                                         r'''$.indents''',
                                       ).toList();
                                       return ListView.builder(
@@ -358,7 +359,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                   functions.jsonResponse(
                                                       indentsDataIndex,
                                                       getJsonField(
-                                                        indentListIndentsListResponse
+                                                        indentListGetIndentsByStatesnewResponse
                                                             .jsonBody,
                                                         r'''$.indents''',
                                                       ))!;

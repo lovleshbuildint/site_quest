@@ -91,6 +91,8 @@ class SqGroup {
   static SecondSiteVisitersNEWCall secondSiteVisitersNEWCall =
       SecondSiteVisitersNEWCall();
   static GetCRAAgencCall getCRAAgencCall = GetCRAAgencCall();
+  static GetIndentsByStatesnewCall getIndentsByStatesnewCall =
+      GetIndentsByStatesnewCall();
 }
 
 class DashboardCall {
@@ -2163,6 +2165,32 @@ class GetCRAAgencCall {
   }
 }
 
+class GetIndentsByStatesnewCall {
+  Future<ApiCallResponse> call({
+    List<String>? istateList,
+    String? token = '',
+  }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+    final istate = _serializeList(istateList);
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'GetIndentsByStatesnew',
+      apiUrl: '${baseUrl}/GetIndentsByStates/state=${istate}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SQ Group Code
 
 class LoginCheckCall {
@@ -2196,8 +2224,10 @@ class LoginCheckCall {
 
 class GetIndentsByStatesCall {
   static Future<ApiCallResponse> call({
-    String? state = '',
+    List<String>? stateList,
   }) async {
+    final state = _serializeList(stateList);
+
     return ApiManager.instance.makeApiCall(
       callName: 'GetIndentsByStates',
       apiUrl:

@@ -1459,7 +1459,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      FFAppState().istate.length.toString(),
+                                      FFAppState()
+                                          .istate
+                                          .take(6)
+                                          .toList()
+                                          .length
+                                          .toString(),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

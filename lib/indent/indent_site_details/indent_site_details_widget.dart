@@ -1815,7 +1815,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         null),
                                                 options: (getJsonField(
                                                   cityMasterResponse.jsonBody,
-                                                  r'''$.Cities..City''',
+                                                  r'''$.cities..City''',
                                                   true,
                                                 ) as List)
                                                     .map<String>(

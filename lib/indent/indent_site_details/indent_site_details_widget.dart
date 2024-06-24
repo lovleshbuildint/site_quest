@@ -1813,7 +1813,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     FormFieldController<String>(
                                                   _model.cityValue ??=
                                                       getJsonField(
-                                                    FFAppState().master,
+                                                    cityCityResponse.jsonBody,
                                                     r'''$.Cities[0].City''',
                                                   ).toString(),
                                                 ),

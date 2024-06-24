@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -572,7 +571,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'Welcome Back 👋',
+                                          (List<String> var1) {
+                                            return var1.join(',');
+                                          }(FFAppState().istate.toList()),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -690,61 +691,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           },
                                         );
                                       },
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.goNamed(
-                                            'notification',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 0),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: badges.Badge(
-                                          badgeContent: Text(
-                                            '1',
-                                            textAlign: TextAlign.justify,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleSmall
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Colors.white,
-                                                  fontSize: 6.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w300,
-                                                ),
-                                          ),
-                                          showBadge: true,
-                                          shape: badges.BadgeShape.circle,
-                                          badgeColor: Color(0xFFED1D35),
-                                          elevation: 1.0,
-                                          padding: EdgeInsets.all(5.0),
-                                          position:
-                                              badges.BadgePosition.topEnd(),
-                                          animationType:
-                                              badges.BadgeAnimationType.scale,
-                                          toAnimate: true,
-                                          child: Icon(
-                                            Icons.notifications,
-                                            color: Colors.black,
-                                            size: 24.0,
-                                          ),
-                                        ),
-                                      ),
                                     ),
                                   ],
                                 ),

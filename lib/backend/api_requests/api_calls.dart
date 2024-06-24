@@ -2166,7 +2166,7 @@ class GetCRAAgencCall {
 
 class GetIndentsByStatesnewCall {
   Future<ApiCallResponse> call({
-    List<String>? istateList,
+    List<int>? istateList,
     String? token = '',
   }) async {
     final baseUrl = SqGroup.getBaseUrl(

@@ -47,7 +47,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: SqGroup.getIndentsByStatesnewCall.call(
-        istateList: FFAppState().istate,
+        istateList: FFAppState().istate.toList().map(int.parse).toList(),
         token: FFAppState().Token,
       ),
       builder: (context, snapshot) {

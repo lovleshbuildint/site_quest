@@ -1684,11 +1684,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       .map<String>(
                                                           (s) => s.toString())
                                                       .toList()!),
-                                              optionLabels: [
-                                                'Maharashtra',
-                                                'Gujarat',
-                                                'Telengana'
-                                              ],
+                                              optionLabels: (getJsonField(
+                                                stateStatenewResponse.jsonBody,
+                                                r'''$.states..State''',
+                                                true,
+                                              ) as List)
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!,
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.stateValue = val);

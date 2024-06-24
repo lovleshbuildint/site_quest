@@ -1677,7 +1677,7 @@ class ListSitesCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'ListSites',
-      apiUrl: '${baseUrl}/ListSites',
+      apiUrl: '${baseUrl}/ListSites/Token=${token}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

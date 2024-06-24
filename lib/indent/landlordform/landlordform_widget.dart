@@ -455,7 +455,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
-                          future: SqGroup.statenewCall.call(
+                          future: SqGroup.stateListCall.call(
                             token: FFAppState().Token,
                           ),
                           builder: (context, snapshot) {
@@ -473,7 +473,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 ),
                               );
                             }
-                            final stateStatenewResponse = snapshot.data!;
+                            final stateStateListResponse = snapshot.data!;
                             return FlutterFlowDropDown<String>(
                               controller: _model.stateValueController ??=
                                   FormFieldController<String>(null),

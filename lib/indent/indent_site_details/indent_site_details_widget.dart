@@ -1677,7 +1677,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       null),
                                               options: List<String>.from(
                                                   (getJsonField(
-                                                stateStatenewResponse.jsonBody,
+                                                FFAppState().master,
                                                 r'''$.states..iState''',
                                                 true,
                                               ) as List)
@@ -1685,7 +1685,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           (s) => s.toString())
                                                       .toList()!),
                                               optionLabels: (getJsonField(
-                                                stateStatenewResponse.jsonBody,
+                                                FFAppState().master,
                                                 r'''$.states..State''',
                                                 true,
                                               ) as List)

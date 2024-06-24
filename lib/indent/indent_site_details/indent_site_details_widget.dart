@@ -1564,7 +1564,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     FormFieldController<String>(
                                                         null),
                                                 options: (getJsonField(
-                                                  FFAppState().District,
+                                                  districtDistrictAPisResponse
+                                                      .jsonBody,
                                                   r'''$.District..DistrictName''',
                                                   true,
                                                 ) as List)

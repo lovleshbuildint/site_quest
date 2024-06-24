@@ -1814,7 +1814,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   _model.cityValue ??=
                                                       getJsonField(
                                                     FFAppState().master,
-                                                    r'''$.cities[0].City''',
+                                                    r'''$.Cities[0].City''',
                                                   ).toString(),
                                                 ),
                                                 options: (getJsonField(

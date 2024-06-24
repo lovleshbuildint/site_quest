@@ -1677,21 +1677,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       null),
                                               options: List<String>.from(
                                                   (getJsonField(
-                                                FFAppState().master,
+                                                stateStatenewResponse.jsonBody,
                                                 r'''$.states..iState''',
                                                 true,
                                               ) as List)
                                                       .map<String>(
                                                           (s) => s.toString())
                                                       .toList()!),
-                                              optionLabels: (getJsonField(
-                                                FFAppState().master,
-                                                r'''$.states..State''',
-                                                true,
-                                              ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()!,
+                                              optionLabels: [
+                                                'Maharashtra',
+                                                'Gujarat',
+                                                'Telengana'
+                                              ],
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.stateValue = val);

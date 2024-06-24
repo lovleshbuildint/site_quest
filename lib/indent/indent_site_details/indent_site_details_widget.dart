@@ -1794,7 +1794,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: FutureBuilder<ApiCallResponse>(
-                                            future: SqGroup.cityCall.call(
+                                            future: SqGroup.masterCall.call(
+                                              state: _model.statefordist,
                                               token: FFAppState().Token,
                                             ),
                                             builder: (context, snapshot) {
@@ -1804,21 +1805,16 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   '',
                                                 );
                                               }
-                                              final cityCityResponse =
+                                              final cityMasterResponse =
                                                   snapshot.data!;
                                               return FlutterFlowDropDown<
                                                   String>(
                                                 controller: _model
                                                         .cityValueController ??=
                                                     FormFieldController<String>(
-                                                  _model.cityValue ??=
-                                                      getJsonField(
-                                                    cityCityResponse.jsonBody,
-                                                    r'''$.Cities[0].City''',
-                                                  ).toString(),
-                                                ),
+                                                        null),
                                                 options: (getJsonField(
-                                                  cityCityResponse.jsonBody,
+                                                  cityMasterResponse.jsonBody,
                                                   r'''$.Cities..City''',
                                                   true,
                                                 ) as List)

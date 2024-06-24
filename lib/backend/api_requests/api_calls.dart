@@ -2166,13 +2166,12 @@ class GetCRAAgencCall {
 
 class GetIndentsByStatesnewCall {
   Future<ApiCallResponse> call({
-    List<int>? istateList,
+    String? istate = '',
     String? token = '',
   }) async {
     final baseUrl = SqGroup.getBaseUrl(
       token: token,
     );
-    final istate = _serializeList(istateList);
 
     return ApiManager.instance.makeApiCall(
       callName: 'GetIndentsByStatesnew',

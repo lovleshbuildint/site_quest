@@ -71,6 +71,10 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _istate = await secureStorage.getStringList('ff_istate') ?? _istate;
     });
+    await _safeInitAsync(() async {
+      _istatenewtry =
+          await secureStorage.getString('ff_istatenewtry') ?? _istatenewtry;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -668,6 +672,17 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInIstate(int index, String value) {
     istate.insert(index, value);
     secureStorage.setStringList('ff_istate', _istate);
+  }
+
+  String _istatenewtry = '';
+  String get istatenewtry => _istatenewtry;
+  set istatenewtry(String value) {
+    _istatenewtry = value;
+    secureStorage.setString('ff_istatenewtry', value);
+  }
+
+  void deleteIstatenewtry() {
+    secureStorage.delete(key: 'ff_istatenewtry');
   }
 }
 

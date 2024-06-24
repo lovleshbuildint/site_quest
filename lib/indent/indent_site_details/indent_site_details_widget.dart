@@ -3152,6 +3152,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   },
                                 );
                               }
+
+                              context.pushNamed('indent_site_landlord_details');
                             }
 
                             setState(() {});

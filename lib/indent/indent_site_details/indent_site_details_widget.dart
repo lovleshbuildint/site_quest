@@ -1688,7 +1688,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               options: List<String>.from(
                                                   (getJsonField(
                                                 stateStateListResponse.jsonBody,
-                                                r'''$.States..State''',
+                                                r'''$.States..iState''',
                                                 true,
                                               ) as List)
                                                       .map<String>(
@@ -1696,7 +1696,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       .toList()!),
                                               optionLabels: (getJsonField(
                                                 stateStateListResponse.jsonBody,
-                                                r'''$.States..iState''',
+                                                r'''$.States..State''',
                                                 true,
                                               ) as List)
                                                   .map<String>(

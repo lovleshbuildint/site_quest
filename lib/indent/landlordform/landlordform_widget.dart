@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -610,20 +609,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) async {
-                                  setState(() => _model.cityValue = val);
-                                  _model.iCity = functions.checkIndexint(
-                                      getJsonField(
-                                        FFAppState().master,
-                                        r'''$.cities..City''',
-                                      ),
-                                      _model.cityValue,
-                                      'cities',
-                                      'City',
-                                      'iCity',
-                                      false);
-                                  setState(() {});
-                                },
+                                onChanged: (val) =>
+                                    setState(() => _model.cityValue = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 searchHintTextStyle:

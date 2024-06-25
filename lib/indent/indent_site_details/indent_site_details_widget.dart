@@ -1654,8 +1654,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.istate?.toString(),
-                                            '90jm',
+                                            _model.trys,
+                                            'd',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

@@ -731,8 +731,17 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               ) as List)
                                   .map<String>((s) => s.toString())
                                   .toList()!,
-                              onChanged: (val) =>
-                                  setState(() => _model.sitetypeValue = val),
+                              onChanged: (val) async {
+                                setState(() => _model.sitetypeValue = val);
+                                _model.isitetype = functions.checkIndexint(
+                                    FFAppState().SiteType,
+                                    _model.sitetypeValue,
+                                    '-',
+                                    'SiteTypeName',
+                                    'iSiteType',
+                                    false);
+                                setState(() {});
+                              },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
                               textStyle: FlutterFlowTheme.of(context)

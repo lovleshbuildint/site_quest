@@ -91,7 +91,7 @@ int? dropdown(String dropdownValue) {
   }
 }
 
-int? dropdowns(String dropdownvalue) {
+int? dropdownsONSITE(String dropdownvalue) {
   // in dropdown value is yes then show 1 or in dropdown values is no then show 0
   if (dropdownvalue == "Onsite") {
     return 1;

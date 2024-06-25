@@ -2420,10 +2420,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           onChanged: (val) async {
                                             setState(() =>
                                                 _model.onofsiteValue = val);
-                                            _model.onofSite = functions
-                                                .dropdownsONSITE(
-                                                    _model.onofsiteValue!)
-                                                ?.toString();
+                                            _model.onofSite = formatNumber(
+                                              functions.dropdownsONSITE(
+                                                  _model.onofsiteValue!),
+                                              formatType: FormatType.custom,
+                                              format: '\"1\"',
+                                              locale: '',
+                                            );
                                             setState(() {});
                                           },
                                           width:

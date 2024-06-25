@@ -1705,13 +1705,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   .map<String>(
                                                       (s) => s.toString())
                                                   .toList()!,
-                                              onChanged: (val) async {
-                                                setState(() =>
-                                                    _model.stateValue = val);
-                                                _model.statefordist =
-                                                    _model.stateValue;
-                                                setState(() {});
-                                              },
+                                              onChanged: (val) => setState(() =>
+                                                  _model.stateValue = val),
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,

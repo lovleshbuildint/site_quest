@@ -1654,8 +1654,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.statefordist,
-                                            'Maharashtra',
+                                            _model.stateValue,
+                                            'maharastra',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

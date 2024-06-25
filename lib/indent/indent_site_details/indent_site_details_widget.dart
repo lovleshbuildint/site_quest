@@ -3000,7 +3000,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               landMark: _model.aTMExisitingTextController.text,
                               rBICategory: _model.rBICategoryValue,
                               sitesourcedby: _model.siteSourcedValue,
-                              isOnSite: _model.onofsiteValue,
+                              isOnSite: valueOrDefault<String>(
+                                _model.onofSite,
+                                '1',
+                              ),
                               isDuplicateSite:
                                   _model.iduplicatesite?.toString(),
                               iSiteVisitedBy: _model.isitevisitedby,

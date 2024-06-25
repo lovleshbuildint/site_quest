@@ -1653,10 +1653,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          valueOrDefault<String>(
-                                            FFAppState().stateforindent,
-                                            'mahara',
-                                          ),
+                                          'State',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1699,7 +1696,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       .toList()!),
                                               optionLabels: (getJsonField(
                                                 stateStateListResponse.jsonBody,
-                                                r'''$.States..State''',
+                                                r'''$.States..iState''',
                                                 true,
                                               ) as List)
                                                   .map<String>(
@@ -1710,9 +1707,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     _model.stateValue = val);
                                                 _model.statefordist =
                                                     _model.stateValue;
-                                                setState(() {});
-                                                FFAppState().stateforindent =
-                                                    _model.stateValue!;
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)

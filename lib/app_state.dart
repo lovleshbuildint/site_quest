@@ -71,10 +71,6 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _istate = await secureStorage.getStringList('ff_istate') ?? _istate;
     });
-    await _safeInitAsync(() async {
-      _stateforindent =
-          await secureStorage.getString('ff_stateforindent') ?? _stateforindent;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -672,17 +668,6 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInIstate(int index, String value) {
     istate.insert(index, value);
     secureStorage.setStringList('ff_istate', _istate);
-  }
-
-  String _stateforindent = '';
-  String get stateforindent => _stateforindent;
-  set stateforindent(String value) {
-    _stateforindent = value;
-    secureStorage.setString('ff_stateforindent', value);
-  }
-
-  void deleteStateforindent() {
-    secureStorage.delete(key: 'ff_stateforindent');
   }
 }
 

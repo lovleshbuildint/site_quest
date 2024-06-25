@@ -1654,8 +1654,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.stateValue,
-                                            'e',
+                                            _model.istate?.toString(),
+                                            '90jm',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1710,6 +1710,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     _model.stateValue = val);
                                                 _model.statefordist =
                                                     _model.stateValue;
+                                                _model.trys = getJsonField(
+                                                  stateStateListResponse
+                                                      .jsonBody,
+                                                  r'''$.States..State''',
+                                                ).toString();
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)

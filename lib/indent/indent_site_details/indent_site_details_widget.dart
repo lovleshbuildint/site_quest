@@ -2958,12 +2958,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onDoubleTap: () async {
+                        child: FFButtonWidget(
+                          onPressed: () async {
                             _model.updateDOAdetailsfirstdouble = await SqGroup
                                 .dOADetailsstepFIRSTworddocCall
                                 .call(
@@ -3032,7 +3028,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               errCnt: null,
                             );
 
-                            if ((_model.updateDOAdetailsfirst?.succeeded ??
+                            if ((_model
+                                    .updateDOAdetailsfirstdouble?.succeeded ??
                                 true)) {
                               context.pushNamed('indent_site_landlord_details');
                             } else {
@@ -3043,7 +3040,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     title:
                                         Text('Alert (UpdateDOAdetailsfirst)'),
                                     content: Text((_model
-                                            .updateDOAdetailsfirst?.bodyText ??
+                                            .updateDOAdetailsfirstdouble
+                                            ?.bodyText ??
                                         '')),
                                     actions: [
                                       TextButton(
@@ -3059,235 +3057,29 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
 
                             setState(() {});
                           },
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              if (_model.ideparmrnt == 1) {
-                                if ((_model.customerbankTextController.text != null && _model.customerbankTextController.text != '') &&
-                                    (_model.strategyDropDwonValue != null &&
-                                        _model.strategyDropDwonValue != '') &&
-                                    (_model.locationNameTextController.text != null &&
-                                        _model.locationNameTextController.text !=
-                                            '') &&
-                                    (_model.distancefrominindentTextController.text !=
-                                            null &&
-                                        _model.distancefrominindentTextController
-                                                .text !=
-                                            '') &&
-                                    (_model.stateValue != null &&
-                                        _model.stateValue != '') &&
-                                    (_model.cityValue != null &&
-                                        _model.cityValue != '') &&
-                                    (_model.circleValue != null &&
-                                        _model.circleValue != '') &&
-                                    (_model.pincodeTextController.text != null &&
-                                        _model.pincodeTextController.text !=
-                                            '') &&
-                                    (_model.siteAddressTextController.text != null &&
-                                        _model.siteAddressTextController.text !=
-                                            '') &&
-                                    (_model.rBICategoryValue != null &&
-                                        _model.rBICategoryValue != '') &&
-                                    (_model.siteSourcedValue != null &&
-                                        _model.siteSourcedValue != '') &&
-                                    (_model.onofsiteValue != null &&
-                                        _model.onofsiteValue != '') &&
-                                    (_model.districtValue != null &&
-                                        _model.districtValue != '') &&
-                                    (_model.projecttypeValue != null &&
-                                        _model.projecttypeValue != '') &&
-                                    (_model.sitevisitedbyValue != null &&
-                                        _model.sitevisitedbyValue != '') &&
-                                    (_model.tistypeValue != null &&
-                                        _model.tistypeValue != '') &&
-                                    (_model.projecttypeValue != null &&
-                                        _model.projecttypeValue != '') &&
-                                    (_model.duplicatesiteValue != null &&
-                                        _model.duplicatesiteValue != '')) {
-                                  setState(() {});
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Alert'),
-                                        content: Text('Please fill Details'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                }
-
-                                _model.updateDOAdetailsfirst = await SqGroup
-                                    .dOADetailsstepFIRSTworddocCall
-                                    .call(
-                                  customerBank:
-                                      _model.customerbankTextController.text,
-                                  district: _model.districtValue,
-                                  strategy: _model.strategyDropDwonValue,
-                                  circle: _model.circleValue,
-                                  city: _model.cityValue,
-                                  iSiteType: _model.isitetype,
-                                  iCashDeviceType: _model.idevicetype,
-                                  iCashDeviceMovementCategory:
-                                      _model.icashdevicemov,
-                                  iTisType: _model.itistype,
-                                  iShopType: _model.ishoptype,
-                                  token: FFAppState().Token,
-                                  locationName:
-                                      _model.locationNameTextController.text,
-                                  distance: _model
-                                      .distancefrominindentTextController.text,
-                                  address:
-                                      _model.siteAddressTextController.text,
-                                  state: _model.stateValue,
-                                  pincode: _model.pincodeTextController.text,
-                                  atmExisting:
-                                      _model.aTMExisitingTextController.text,
-                                  landMark:
-                                      _model.aTMExisitingTextController.text,
-                                  rBICategory: _model.rBICategoryValue,
-                                  sitesourcedby: _model.siteSourcedValue,
-                                  isOnSite: _model.onofsiteValue,
-                                  isDuplicateSite:
-                                      _model.iduplicatesite?.toString(),
-                                  iSiteVisitedBy: _model.isitevisitedby,
-                                  iSiteVisitedByName: _model.iSiteVisitedByName,
-                                  iSecondSiteVisitedByName:
-                                      _model.iSecondSiteVisitedByName,
-                                  iProjType: _model.iprojecttype,
-                                  indentId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
-                                  targetBank: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.CustomerBank''',
-                                  ).toString(),
-                                  siteId: null,
-                                  iindent: null,
-                                  mgrName: _model.mrgNameTextController.text,
-                                  mgrNo: _model.mrgNoTextController.text,
-                                  location:
-                                      _model.locationNameTextController.text,
-                                  isFromSiteref: false,
-                                  centre: null,
-                                  comment: null,
-                                  lastModStamp: null,
-                                  isHold: null,
-                                  istage: null,
-                                  iStageText: null,
-                                  androidKey: null,
-                                  waterlog: null,
-                                  atmaval: null,
-                                  companyName: null,
-                                  employeeName: null,
-                                  contactNumber: null,
-                                  emailId: null,
-                                  isWB: null,
-                                  msg: null,
-                                  errCnt: null,
-                                );
-
-                                if ((_model.updateDOAdetailsfirst?.succeeded ??
-                                    true)) {
-                                  context.pushNamed(
-                                      'indent_site_landlord_details');
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text(
-                                            'Alert (UpdateDOAdetailsfirst)'),
-                                        content: Text((_model
-                                                .updateDOAdetailsfirst
-                                                ?.bodyText ??
-                                            '')),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                }
-                              } else {
-                                if ((_model.sitetypeValue != null &&
-                                        _model.sitetypeValue != '') &&
-                                    (_model.tistypeValue != null &&
-                                        _model.tistypeValue != '') &&
-                                    (_model.projecttypeValue != null &&
-                                        _model.projecttypeValue != '') &&
-                                    (_model.cashdevicetypeValue != null &&
-                                        _model.cashdevicetypeValue != '') &&
-                                    (_model.sitevisitedbyValue != null &&
-                                        _model.sitevisitedbyValue != '') &&
-                                    (_model.cashdevicemovValue != null &&
-                                        _model.cashdevicemovValue != '') &&
-                                    (_model.firstsitevisitedbyValue != null &&
-                                        _model.firstsitevisitedbyValue != '')) {
-                                  setState(() {});
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Alert'),
-                                        content: Text('Please fill Field'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                }
-
-                                context
-                                    .pushNamed('indent_site_landlord_details');
-
-                                _model.apiResultefx =
-                                    await SqGroup.dashboardCall.call();
-                              }
-
-                              setState(() {});
-                            },
-                            text: 'Save & Next',
-                            options: FFButtonOptions(
-                              width: 118.0,
-                              height: 40.0,
-                              padding: EdgeInsets.all(0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: Color(0xFFFF0026),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(50.0),
+                          text: 'Save & Next',
+                          options: FFButtonOptions(
+                            width: 118.0,
+                            height: 40.0,
+                            padding: EdgeInsets.all(0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: Color(0xFFFF0026),
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                  fontSize: 14.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                            elevation: 3.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
                             ),
+                            borderRadius: BorderRadius.circular(50.0),
                           ),
                         ),
                       ),

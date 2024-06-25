@@ -2423,7 +2423,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             _model.onofSite = functions
                                                 .dropdownsONSITE(
                                                     _model.onofsiteValue!)
-                                                .toString();
+                                                ?.toString();
                                             setState(() {});
                                           },
                                           width:
@@ -2990,7 +2990,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
-                              state: _model.statefordist,
+                              state: _model.stateValue,
                               pincode: _model.pincodeTextController.text,
                               atmExisting:
                                   _model.aTMExisitingTextController.text,

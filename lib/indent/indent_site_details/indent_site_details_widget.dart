@@ -1655,7 +1655,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         child: Text(
                                           valueOrDefault<String>(
                                             _model.stateValue,
-                                            'maharastra',
+                                            'maharastrass',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1705,8 +1705,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   .map<String>(
                                                       (s) => s.toString())
                                                   .toList()!,
-                                              onChanged: (val) => setState(() =>
-                                                  _model.stateValue = val),
+                                              onChanged: (val) async {
+                                                setState(() =>
+                                                    _model.stateValue = val);
+                                                FFAppState().stateforindent =
+                                                    _model.stateValue!;
+                                                setState(() {});
+                                              },
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,

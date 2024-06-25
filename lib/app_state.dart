@@ -327,7 +327,7 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_UserName');
   }
 
-  String _State = '20';
+  String _State = '';
   String get State => _State;
   set State(String value) {
     _State = value;

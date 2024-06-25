@@ -244,7 +244,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 FFAppState().Token = '';
 
                                 FFAppState().deleteState();
-                                FFAppState().State = '20';
+                                FFAppState().State = '';
 
                                 setState(() {});
                               },

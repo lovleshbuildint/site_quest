@@ -1655,7 +1655,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         child: Text(
                                           valueOrDefault<String>(
                                             _model.stateValue,
-                                            's',
+                                            'ssza',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -2996,7 +2996,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
-                              state: _model.stateValue,
+                              state: FFAppState().State,
                               pincode: _model.pincodeTextController.text,
                               atmExisting:
                                   _model.aTMExisitingTextController.text,

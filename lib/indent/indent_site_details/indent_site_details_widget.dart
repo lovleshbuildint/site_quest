@@ -1653,7 +1653,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          FFAppState().widgetforstate,
+                                          'State',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1705,9 +1705,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.stateValue = val);
-                                                FFAppState().widgetforstate =
-                                                    _model.stateValue!;
-                                                setState(() {});
                                                 _model.statefordist =
                                                     _model.stateValue;
                                                 setState(() {});
@@ -2996,7 +2993,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
-                              state: FFAppState().widgetforstate,
+                              state: _model.istate?.toString(),
                               pincode: _model.pincodeTextController.text,
                               atmExisting:
                                   _model.aTMExisitingTextController.text,

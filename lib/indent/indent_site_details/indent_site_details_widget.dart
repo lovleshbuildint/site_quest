@@ -1705,6 +1705,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.stateValue = val);
+                                                FFAppState().widgetforstate =
+                                                    _model.stateValue!;
+                                                setState(() {});
                                                 _model.statefordist =
                                                     _model.stateValue;
                                                 setState(() {});
@@ -2993,7 +2996,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
-                              state: _model.stateValue,
+                              state: FFAppState().State,
                               pincode: _model.pincodeTextController.text,
                               atmExisting:
                                   _model.aTMExisitingTextController.text,

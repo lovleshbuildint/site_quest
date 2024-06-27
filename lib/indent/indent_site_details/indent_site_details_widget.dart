@@ -1818,8 +1818,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: FutureBuilder<ApiCallResponse>(
-                                            future: SqGroup.masterCall.call(
-                                              state: _model.statefordist,
+                                            future: SqGroup
+                                                .citiesAPIforStatenDistCall
+                                                .call(
+                                              istate: _model.statefordist,
+                                              idistrict: _model.district,
                                               token: FFAppState().Token,
                                             ),
                                             builder: (context, snapshot) {
@@ -1829,7 +1832,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   '',
                                                 );
                                               }
-                                              final cityMasterResponse =
+                                              final cityCitiesAPIforStatenDistResponse =
                                                   snapshot.data!;
                                               return FlutterFlowDropDown<
                                                   String>(
@@ -1838,7 +1841,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     FormFieldController<String>(
                                                         null),
                                                 options: (getJsonField(
-                                                  cityMasterResponse.jsonBody,
+                                                  cityCitiesAPIforStatenDistResponse
+                                                      .jsonBody,
                                                   r'''$.cities..City''',
                                                   true,
                                                 ) as List)

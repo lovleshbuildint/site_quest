@@ -1521,7 +1521,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          'District',
+                                          valueOrDefault<String>(
+                                            _model.district,
+                                            '1',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1845,7 +1848,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     (getJsonField(
                                                   cityCitiesAPIforStatenDistResponse
                                                       .jsonBody,
-                                                  r'''$.cities..iCity''',
+                                                  r'''$.Cities..iCity''',
                                                   true,
                                                 ) as List)
                                                         .map<String>(

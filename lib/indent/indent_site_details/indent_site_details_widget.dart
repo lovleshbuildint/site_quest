@@ -2380,19 +2380,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       .siteSourcedValueController ??=
                                                   FormFieldController<String>(
                                                 _model.siteSourcedValue ??=
-                                                    getJsonField(
-                                                  FFAppState().visitedbydeptapi,
-                                                  r'''$[0].Department''',
-                                                ).toString(),
+                                                    'HPY',
                                               ),
-                                              options: (getJsonField(
-                                                FFAppState().visitedbydeptapi,
-                                                r'''$..Department''',
-                                                true,
-                                              ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()!,
+                                              options: ['HPY', 'Bank', 'SSM'],
                                               onChanged: (val) => setState(() =>
                                                   _model.siteSourcedValue =
                                                       val),

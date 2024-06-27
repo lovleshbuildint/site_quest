@@ -3027,7 +3027,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               district: _model.trydistrict,
                               strategy: _model.strategyDropDwonValue,
                               circle: _model.circleValue,
-                              city: _model.cityValue,
+                              city: _model.trycity,
                               iSiteType: _model.isitetype,
                               iCashDeviceType: _model.idevicetype,
                               iCashDeviceMovementCategory:

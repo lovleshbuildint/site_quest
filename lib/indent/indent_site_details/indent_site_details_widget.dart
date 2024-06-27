@@ -1839,11 +1839,22 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 controller: _model
                                                         .cityValueController ??=
                                                     FormFieldController<String>(
-                                                        null),
-                                                options: (getJsonField(
+                                                  _model.cityValue ??= '',
+                                                ),
+                                                options: List<String>.from(
+                                                    (getJsonField(
                                                   cityCitiesAPIforStatenDistResponse
                                                       .jsonBody,
-                                                  r'''$.cities..City''',
+                                                  r'''$.cities..iCity''',
+                                                  true,
+                                                ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!),
+                                                optionLabels: (getJsonField(
+                                                  cityCitiesAPIforStatenDistResponse
+                                                      .jsonBody,
+                                                  r'''$.Cities..City''',
                                                   true,
                                                 ) as List)
                                                     .map<String>(

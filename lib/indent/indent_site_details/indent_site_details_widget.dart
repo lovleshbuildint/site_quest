@@ -1601,6 +1601,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   _model.district =
                                                       _model.districtValue;
                                                   setState(() {});
+                                                  _model.trydistrict = functions
+                                                      .istatetostatevalue(
+                                                          FFAppState().District,
+                                                          _model.districtValue,
+                                                          'District',
+                                                          'iDistrict',
+                                                          'DistrictName');
+                                                  setState(() {});
                                                 },
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -1863,9 +1871,18 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .map<String>(
                                                         (s) => s.toString())
                                                     .toList()!,
-                                                onChanged: (val) => setState(
-                                                    () =>
-                                                        _model.cityValue = val),
+                                                onChanged: (val) async {
+                                                  setState(() =>
+                                                      _model.cityValue = val);
+                                                  _model.trycity = functions
+                                                      .istatetostatevalue(
+                                                          FFAppState().City,
+                                                          _model.cityValue,
+                                                          'Cities',
+                                                          'iCity',
+                                                          'City');
+                                                  setState(() {});
+                                                },
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
@@ -3007,7 +3024,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 .call(
                               customerBank:
                                   _model.customerbankTextController.text,
-                              district: _model.districtValue,
+                              district: _model.trydistrict,
                               strategy: _model.strategyDropDwonValue,
                               circle: _model.circleValue,
                               city: _model.cityValue,
@@ -3022,12 +3039,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
-                              state: functions.istatetostatevalue(
-                                  <String?, dynamic>{},
-                                  _model.stateValue,
-                                  'States',
-                                  'iState',
-                                  'State'),
+                              state: _model.trystate,
                               pincode: _model.pincodeTextController.text,
                               atmExisting:
                                   _model.aTMExisitingTextController.text,

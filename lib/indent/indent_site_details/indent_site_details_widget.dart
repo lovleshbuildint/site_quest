@@ -1598,9 +1598,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 onChanged: (val) async {
                                                   setState(() => _model
                                                       .districtValue = val);
-                                                  _model.district =
-                                                      _model.districtValue;
-                                                  setState(() {});
                                                   _model.trydistrict = functions
                                                       .istatetostatevalue(
                                                           FFAppState().District,
@@ -1608,6 +1605,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           'District',
                                                           'iDistrict',
                                                           'DistrictName');
+                                                  setState(() {});
+                                                  _model.district =
+                                                      _model.districtValue;
                                                   setState(() {});
                                                 },
                                                 width:

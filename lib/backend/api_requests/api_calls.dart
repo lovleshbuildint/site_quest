@@ -93,6 +93,8 @@ class SqGroup {
   static GetCRAAgencCall getCRAAgencCall = GetCRAAgencCall();
   static GetIndentsByStatesnewCall getIndentsByStatesnewCall =
       GetIndentsByStatesnewCall();
+  static CitiesAPIforStatenDistCall citiesAPIforStatenDistCall =
+      CitiesAPIforStatenDistCall();
 }
 
 class DashboardCall {
@@ -1771,7 +1773,7 @@ class DOADetailsstepFIRSTworddocCall {
     String? indentId = '',
     String? siteId = '',
     String? targetBank = '',
-    String? district = '',
+    String? districts = '',
     String? centre = '',
     String? comment = '',
     String? lastModStamp = '',
@@ -1817,6 +1819,7 @@ class DOADetailsstepFIRSTworddocCall {
     String? msg = '',
     bool? isFromSiteref,
     String? errCnt = '',
+    String? district = '',
     String? token = '',
   }) async {
     final baseUrl = SqGroup.getBaseUrl(
@@ -1828,7 +1831,7 @@ class DOADetailsstepFIRSTworddocCall {
   "IndentId": "${indentId}",
   "SiteId": "${siteId}",
   "TargetBank": "${targetBank}",
-  "District": "${district}",
+  "Districts": "${districts}",
   "Centre": "${centre}",
   "Comment": "${comment}",
   "LastModStamp": "${lastModStamp}",
@@ -2176,6 +2179,33 @@ class GetIndentsByStatesnewCall {
     return ApiManager.instance.makeApiCall(
       callName: 'GetIndentsByStatesnew',
       apiUrl: '${baseUrl}/GetIndentsByStates/state=${istate}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CitiesAPIforStatenDistCall {
+  Future<ApiCallResponse> call({
+    String? istate = '',
+    String? idistrict = '',
+    String? token = '',
+  }) async {
+    final baseUrl = SqGroup.getBaseUrl(
+      token: token,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'CitiesAPIforStatenDist',
+      apiUrl:
+          '${baseUrl}/CitiesAPI/Token=${token}&istate=${istate}&idistrict=${idistrict}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

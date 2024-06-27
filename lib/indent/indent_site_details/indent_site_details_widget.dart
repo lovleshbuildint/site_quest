@@ -1571,8 +1571,19 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 controller: _model
                                                         .districtValueController ??=
                                                     FormFieldController<String>(
-                                                        null),
-                                                options: (getJsonField(
+                                                  _model.districtValue ??= '',
+                                                ),
+                                                options: List<String>.from(
+                                                    (getJsonField(
+                                                  districtDistrictAPisResponse
+                                                      .jsonBody,
+                                                  r'''$.District..iDistrict''',
+                                                  true,
+                                                ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!),
+                                                optionLabels: (getJsonField(
                                                   districtDistrictAPisResponse
                                                       .jsonBody,
                                                   r'''$.District..DistrictName''',
@@ -1581,9 +1592,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     .map<String>(
                                                         (s) => s.toString())
                                                     .toList()!,
-                                                onChanged: (val) => setState(
-                                                    () => _model.districtValue =
-                                                        val),
+                                                onChanged: (val) async {
+                                                  setState(() => _model
+                                                      .districtValue = val);
+                                                  _model.district =
+                                                      _model.districtValue;
+                                                  setState(() {});
+                                                },
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
@@ -2988,8 +3003,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               iTisType: _model.itistype,
                               iShopType: _model.ishoptype,
                               token: FFAppState().Token,
-                              locationName:
-                                  _model.locationNameTextController.text,
+                              locationName: null,
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
@@ -3015,10 +3029,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 FFAppState().indentSelectedSite,
                                 r'''$.IndentId''',
                               ).toString(),
-                              targetBank: getJsonField(
-                                FFAppState().indentSelectedSite,
-                                r'''$.CustomerBank''',
-                              ).toString(),
+                              targetBank: null,
                               siteId: null,
                               iindent: null,
                               mgrName: _model.mrgNameTextController.text,
@@ -3041,6 +3052,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               isWB: null,
                               msg: null,
                               errCnt: null,
+                              districts: null,
                             );
 
                             if ((_model

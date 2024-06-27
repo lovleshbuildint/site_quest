@@ -1522,7 +1522,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.district,
+                                            _model.trydistrict,
                                             '1',
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -3071,7 +3071,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               employeeName: null,
                               contactNumber: null,
                               emailId: null,
-                              isWB: null,
+                              isWB: '0',
                               msg: null,
                               errCnt: null,
                               districts: null,

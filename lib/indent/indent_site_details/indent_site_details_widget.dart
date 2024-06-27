@@ -1842,19 +1842,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 controller: _model
                                                         .cityValueController ??=
                                                     FormFieldController<String>(
-                                                  _model.cityValue ??= '',
-                                                ),
-                                                options: List<String>.from(
-                                                    (getJsonField(
-                                                  cityCitiesAPIforStatenDistResponse
-                                                      .jsonBody,
-                                                  r'''$.Cities..iCity''',
-                                                  true,
-                                                ) as List)
-                                                        .map<String>(
-                                                            (s) => s.toString())
-                                                        .toList()!),
-                                                optionLabels: (getJsonField(
+                                                        null),
+                                                options: (getJsonField(
                                                   cityCitiesAPIforStatenDistResponse
                                                       .jsonBody,
                                                   r'''$.Cities..City''',
@@ -3025,7 +3014,12 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               distance: _model
                                   .distancefrominindentTextController.text,
                               address: _model.siteAddressTextController.text,
-                              state: _model.districtValue,
+                              state: functions.istatetostatevalue(
+                                  <String?, dynamic>{},
+                                  _model.stateValue,
+                                  'States',
+                                  'iState',
+                                  'State'),
                               pincode: _model.pincodeTextController.text,
                               atmExisting:
                                   _model.aTMExisitingTextController.text,

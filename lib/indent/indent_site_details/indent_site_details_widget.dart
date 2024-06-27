@@ -1671,15 +1671,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          valueOrDefault<String>(
-                                            functions.istatetostatevalue(
-                                                <String, dynamic>{},
-                                                _model.stateValue,
-                                                'States',
-                                                'iState',
-                                                'State'),
-                                            '1',
-                                          ),
+                                          'State',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

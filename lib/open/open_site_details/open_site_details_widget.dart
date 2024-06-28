@@ -1475,7 +1475,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               _model.districtValue ??= '',
                                             ),
                                             options: List<String>.from(
-                                                ['Name', '2', '2']),
+                                                (getJsonField(
+                                              districtDistrictAPisResponse
+                                                  .jsonBody,
+                                              r'''$.District..iDistrict''',
+                                              true,
+                                            ) as List)
+                                                    .map<String>(
+                                                        (s) => s.toString())
+                                                    .toList()!),
                                             optionLabels: (getJsonField(
                                               districtDistrictAPisResponse
                                                   .jsonBody,

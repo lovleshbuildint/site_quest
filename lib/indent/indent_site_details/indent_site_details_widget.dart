@@ -38,9 +38,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     ).toString().toString());
     _model.customerbankFocusNode ??= FocusNode();
 
-    _model.locationNameTextController ??= TextEditingController();
-    _model.locationNameFocusNode ??= FocusNode();
-
     _model.distancefrominindentTextController ??= TextEditingController();
     _model.distancefrominindentFocusNode ??= FocusNode();
 
@@ -1279,81 +1276,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: Text(
-                              'Location Name',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 8.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.locationNameTextController,
-                              focusNode: _model.locationNameFocusNode,
-                              autofocus: false,
-                              textCapitalization: TextCapitalization.words,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: 'Enter Location',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFE1E2E6),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFFF0026),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: Colors.transparent,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model
-                                  .locationNameTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
-                            child: Text(
                               'Distance from th Indent (mtrs.)',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -1679,10 +1601,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          valueOrDefault<String>(
-                                            _model.trystate,
-                                            '1',
-                                          ),
+                                          'State',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1822,10 +1741,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          valueOrDefault<String>(
-                                            _model.cityValue,
-                                            'a',
-                                          ),
+                                          'City',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -3059,7 +2975,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               iindent: null,
                               mgrName: _model.mrgNameTextController.text,
                               mgrNo: _model.mrgNoTextController.text,
-                              location: _model.locationNameTextController.text,
+                              location: _model.siteAddressTextController.text,
                               isFromSiteref: false,
                               centre: null,
                               comment: null,

@@ -106,19 +106,6 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   // State field(s) for poitype widget.
   String? poitypeValue;
   FormFieldController<String>? poitypeValueController;
-  // State field(s) for LocationName widget.
-  FocusNode? locationNameFocusNode;
-  TextEditingController? locationNameTextController;
-  String? Function(BuildContext, String?)? locationNameTextControllerValidator;
-  String? _locationNameTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
   // State field(s) for Distancefrominindent widget.
   FocusNode? distancefrominindentFocusNode;
   TextEditingController? distancefrominindentTextController;
@@ -222,7 +209,6 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   @override
   void initState(BuildContext context) {
     customerbankTextControllerValidator = _customerbankTextControllerValidator;
-    locationNameTextControllerValidator = _locationNameTextControllerValidator;
     distancefrominindentTextControllerValidator =
         _distancefrominindentTextControllerValidator;
     siteAddressTextControllerValidator = _siteAddressTextControllerValidator;
@@ -235,9 +221,6 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
     unfocusNode.dispose();
     customerbankFocusNode?.dispose();
     customerbankTextController?.dispose();
-
-    locationNameFocusNode?.dispose();
-    locationNameTextController?.dispose();
 
     distancefrominindentFocusNode?.dispose();
     distancefrominindentTextController?.dispose();

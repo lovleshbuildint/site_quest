@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -380,8 +381,19 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.districtValue = val),
+                                onChanged: (val) async {
+                                  setState(() => _model.districtValue = val);
+                                  _model.district = _model.districtValue;
+                                  setState(() {});
+                                  _model.trydistrict =
+                                      functions.istatetostatevalue(
+                                          FFAppState().District,
+                                          _model.districtValue,
+                                          'District',
+                                          'iDistrict',
+                                          'DistrictName');
+                                  setState(() {});
+                                },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 searchHintTextStyle:
@@ -494,6 +506,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 setState(() => _model.stateValue = val);
                                 _model.statefordistland = _model.stateValue;
                                 setState(() {});
+                                _model.trystate = functions.istatetostatevalue(
+                                    FFAppState().Stateapi,
+                                    _model.stateValue,
+                                    'States',
+                                    'iState',
+                                    'State');
+                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -574,8 +593,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.masterCall.call(
-                              state: _model.statefordistland,
+                            future: SqGroup.citiesAPIforStatenDistCall.call(
+                              istate: _model.statefordistland,
+                              idistrict: _model.district,
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -593,7 +613,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   ),
                                 );
                               }
-                              final cityMasterResponse = snapshot.data!;
+                              final cityCitiesAPIforStatenDistResponse =
+                                  snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.cityValueController ??=
                                     FormFieldController<String>(
@@ -609,8 +630,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.cityValue = val),
+                                onChanged: (val) async {
+                                  setState(() => _model.cityValue = val);
+                                  _model.trycity = '';
+                                  setState(() {});
+                                },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 searchHintTextStyle:

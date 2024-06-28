@@ -29,9 +29,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     super.initState();
     _model = createModel(context, () => OpenSiteDetailsModel());
 
-    _model.locationNameTextController ??= TextEditingController();
-    _model.locationNameFocusNode ??= FocusNode();
-
     _model.distanceFromIndentsTextController ??= TextEditingController();
     _model.distanceFromIndentsFocusNode ??= FocusNode();
 
@@ -982,81 +979,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Location Name',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.black,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.locationNameTextController,
-                            focusNode: _model.locationNameFocusNode,
-                            autofocus: false,
-                            textCapitalization: TextCapitalization.words,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Enter Location',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFE1E2E6),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFFFF0026),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.transparent,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
-                            validator: _model
-                                .locationNameTextControllerValidator
-                                .asValidator(context),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 12.0, 0.0, 0.0),
-                          child: Text(
                             'Distance from th Indent (mtrs.)',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -1235,7 +1157,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.statenewCall.call(
+                                        future: SqGroup.stateListCall.call(
                                           token: FFAppState().Token,
                                         ),
                                         builder: (context, snapshot) {
@@ -1257,7 +1179,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final stateDropdownStatenewResponse =
+                                          final stateDropdownStateListResponse =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
@@ -1287,6 +1209,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                   .stateDropdownValue = val);
                                               _model.statefordsitopen =
                                                   _model.stateDropdownValue;
+                                              setState(() {});
+                                              _model.trystate =
+                                                  functions.istatetostatevalue(
+                                                      FFAppState().Stateapi,
+                                                      _model.stateDropdownValue,
+                                                      'States',
+                                                      'iState',
+                                                      'State');
                                               setState(() {});
                                             },
                                             width: MediaQuery.sizeOf(context)
@@ -1373,7 +1303,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
                                         child: FutureBuilder<ApiCallResponse>(
-                                          future: SqGroup.cityCall.call(
+                                          future: SqGroup
+                                              .citiesAPIforStatenDistCall
+                                              .call(
                                             token: FFAppState().Token,
                                           ),
                                           builder: (context, snapshot) {
@@ -1396,7 +1328,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 ),
                                               );
                                             }
-                                            final cityCityResponse =
+                                            final cityCitiesAPIforStatenDistResponse =
                                                 snapshot.data!;
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
@@ -1414,7 +1346,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               onChanged: (val) async {
                                                 setState(() =>
                                                     _model.cityValue = val);
-                                                _model.statefordsitopen = '';
+                                                _model.trycity = functions
+                                                    .istatetostatevalue(
+                                                        FFAppState().City,
+                                                        _model.cityValue,
+                                                        'Cities',
+                                                        'iCity',
+                                                        'City');
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
@@ -1541,8 +1479,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 .map<String>(
                                                     (s) => s.toString())
                                                 .toList()!,
-                                            onChanged: (val) => setState(() =>
-                                                _model.districtValue = val),
+                                            onChanged: (val) async {
+                                              setState(() =>
+                                                  _model.districtValue = val);
+                                              _model.district =
+                                                  _model.districtValue;
+                                              setState(() {});
+                                              _model.trydistrict =
+                                                  functions.istatetostatevalue(
+                                                      FFAppState().District,
+                                                      _model.districtValue,
+                                                      'District',
+                                                      'iDistrict',
+                                                      'DistrictName');
+                                              setState(() {});
+                                            },
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -2672,8 +2623,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             iTisType: _model.iTisTypes,
                             iShopType: _model.ishoptypes,
                             token: FFAppState().Token,
-                            locationName:
-                                _model.locationNameTextController.text,
+                            locationName: null,
                             distance:
                                 _model.distanceFromIndentsTextController.text,
                             address: _model.addressTextController.text,

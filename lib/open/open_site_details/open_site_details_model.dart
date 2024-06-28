@@ -44,6 +44,14 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
   String? statefordsitopen;
 
+  String? trystate;
+
+  String? district;
+
+  String? trydistrict;
+
+  String? trycity;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -74,10 +82,6 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for POIList widget.
   String? pOIListValue;
   FormFieldController<String>? pOIListValueController;
-  // State field(s) for locationName widget.
-  FocusNode? locationNameFocusNode;
-  TextEditingController? locationNameTextController;
-  String? Function(BuildContext, String?)? locationNameTextControllerValidator;
   // State field(s) for DistanceFromIndents widget.
   FocusNode? distanceFromIndentsFocusNode;
   TextEditingController? distanceFromIndentsTextController;
@@ -149,9 +153,6 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    locationNameFocusNode?.dispose();
-    locationNameTextController?.dispose();
-
     distanceFromIndentsFocusNode?.dispose();
     distanceFromIndentsTextController?.dispose();
 

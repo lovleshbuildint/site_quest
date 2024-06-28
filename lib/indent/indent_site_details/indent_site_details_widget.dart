@@ -1522,8 +1522,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.trydistrict,
-                                            '1',
+                                            _model.district,
+                                            '1q',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1823,8 +1823,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.trycity,
-                                            'q2',
+                                            _model.cityValue,
+                                            'a',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

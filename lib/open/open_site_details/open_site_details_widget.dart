@@ -1142,7 +1142,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        'State',
+                                        valueOrDefault<String>(
+                                          _model.trystate,
+                                          's',
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1428,7 +1431,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      'District',
+                                      valueOrDefault<String>(
+                                        _model.trydistrict,
+                                        's',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1969,19 +1975,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         controller: _model
                                                 .siteSourcedValueController ??=
                                             FormFieldController<String>(
-                                          _model.siteSourcedValue ??=
-                                              getJsonField(
-                                            FFAppState().visitedbydeptapi,
-                                            r'''$[0].Department''',
-                                          ).toString(),
+                                          _model.siteSourcedValue ??= 'HPY',
                                         ),
-                                        options: (getJsonField(
-                                          FFAppState().visitedbydeptapi,
-                                          r'''$..Department''',
-                                          true,
-                                        ) as List)
-                                            .map<String>((s) => s.toString())
-                                            .toList()!,
+                                        options: ['HPY', 'Bank', 'SSM'],
                                         onChanged: (val) => setState(() =>
                                             _model.siteSourcedValue = val),
                                         width:
@@ -2643,7 +2639,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             distance:
                                 _model.distanceFromIndentsTextController.text,
                             address: _model.addressTextController.text,
-                            state: _model.stateDropdownValue,
+                            state: _model.trystate,
                             pincode: _model.pincodeTextController.text,
                             landMark: _model.aTMExistingTextController.text,
                             rBICategory: _model.rBICategoryValue,
@@ -2680,6 +2676,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             isWB: null,
                             msg: null,
                             errCnt: null,
+                            districts: null,
                           );
 
                           if ((_model

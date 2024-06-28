@@ -1522,8 +1522,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.district,
-                                            '1q',
+                                            _model.districtValue,
+                                            'aa',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -3020,7 +3020,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               district: _model.trydistrict,
                               strategy: _model.strategyDropDwonValue,
                               circle: _model.circleValue,
-                              city: _model.trycity,
+                              city: _model.cityValue,
                               iSiteType: _model.isitetype,
                               iCashDeviceType: _model.idevicetype,
                               iCashDeviceMovementCategory:

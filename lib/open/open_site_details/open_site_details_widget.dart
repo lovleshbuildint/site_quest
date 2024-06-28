@@ -1472,9 +1472,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             controller: _model
                                                     .districtValueController ??=
                                                 FormFieldController<String>(
-                                                    null),
-                                            options: (getJsonField(
-                                              FFAppState().District,
+                                              _model.districtValue ??= '',
+                                            ),
+                                            options: List<String>.from(
+                                                ['Name', '2', '2']),
+                                            optionLabels: (getJsonField(
+                                              districtDistrictAPisResponse
+                                                  .jsonBody,
                                               r'''$.District..DistrictName''',
                                               true,
                                             ) as List)

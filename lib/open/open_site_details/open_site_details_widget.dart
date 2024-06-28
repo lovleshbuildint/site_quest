@@ -1308,6 +1308,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               .citiesAPIforStatenDistCall
                                               .call(
                                             token: FFAppState().Token,
+                                            istate: _model.statefordsitopen,
+                                            idistrict: _model.district,
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.

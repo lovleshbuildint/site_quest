@@ -638,10 +638,7 @@ class _IndentSiteCommercialWidgetState
                                       FFAppState().indentSelectedSite,
                                       r'''$.IndentId''',
                                     ).toString(),
-                                    iindent: getJsonField(
-                                      FFAppState().indentSelectedSite,
-                                      r'''$.IndentId''',
-                                    ).toString(),
+                                    iindent: null,
                                     targetBank: null,
                                     district: null,
                                     centre: null,
@@ -654,7 +651,7 @@ class _IndentSiteCommercialWidgetState
                                     androidKey: null,
                                     months: _model.commercialAdvanceModel
                                         .intialAdvanceValue,
-                                    isWB: null,
+                                    isWB: '0',
                                     employeeName: null,
                                     companyName: null,
                                     contactNumber: null,

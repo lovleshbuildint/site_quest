@@ -632,7 +632,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .toList()!,
                                 onChanged: (val) async {
                                   setState(() => _model.cityValue = val);
-                                  _model.trycity = '';
+                                  _model.trycity = functions.istatetostatevalue(
+                                      FFAppState().City,
+                                      _model.cityValue,
+                                      'Cities',
+                                      'iCity',
+                                      'City');
                                   setState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,

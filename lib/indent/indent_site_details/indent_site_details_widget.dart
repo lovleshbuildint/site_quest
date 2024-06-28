@@ -2999,7 +2999,22 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             if ((_model
                                     .updateDOAdetailsfirstdouble?.succeeded ??
                                 true)) {
-                              context.pushNamed('indent_site_landlord_details');
+                              _model.postResponse = getJsonField(
+                                (_model.updateDOAdetailsfirstdouble?.jsonBody ??
+                                    ''),
+                                r'''$.SiteId''',
+                              ).toString();
+                              setState(() {});
+
+                              context.pushNamed(
+                                'indent_site_landlord_details',
+                                queryParameters: {
+                                  'siteId': serializeParam(
+                                    _model.postResponse,
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                              );
                             } else {
                               await showDialog(
                                 context: context,

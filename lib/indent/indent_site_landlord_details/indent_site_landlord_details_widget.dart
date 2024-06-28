@@ -12,7 +12,12 @@ import 'indent_site_landlord_details_model.dart';
 export 'indent_site_landlord_details_model.dart';
 
 class IndentSiteLandlordDetailsWidget extends StatefulWidget {
-  const IndentSiteLandlordDetailsWidget({super.key});
+  const IndentSiteLandlordDetailsWidget({
+    super.key,
+    this.siteId,
+  });
+
+  final String? siteId;
 
   @override
   State<IndentSiteLandlordDetailsWidget> createState() =>
@@ -613,7 +618,7 @@ class _IndentSiteLandlordDetailsWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('indent_site_details');
+                              context.safePop();
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

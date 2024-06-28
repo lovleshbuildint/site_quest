@@ -1185,20 +1185,21 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             controller: _model
                                                     .stateDropdownValueController ??=
                                                 FormFieldController<String>(
-                                              _model.stateDropdownValue ??= '1',
-                                            ),
+                                                    null),
                                             options: List<String>.from(
                                                 (getJsonField(
-                                              FFAppState().master,
-                                              r'''$.states..iState''',
+                                              stateDropdownStateListResponse
+                                                  .jsonBody,
+                                              r'''$.States..iState''',
                                               true,
                                             ) as List)
                                                     .map<String>(
                                                         (s) => s.toString())
                                                     .toList()!),
                                             optionLabels: (getJsonField(
-                                              FFAppState().master,
-                                              r'''$.states..State''',
+                                              stateDropdownStateListResponse
+                                                  .jsonBody,
+                                              r'''$.States..State''',
                                               true,
                                             ) as List)
                                                 .map<String>(
@@ -1336,8 +1337,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                   FormFieldController<String>(
                                                       null),
                                               options: (getJsonField(
-                                                FFAppState().master,
-                                                r'''$.cities..City''',
+                                                cityCitiesAPIforStatenDistResponse
+                                                    .jsonBody,
+                                                r'''$.Cities..City''',
                                                 true,
                                               ) as List)
                                                   .map<String>(

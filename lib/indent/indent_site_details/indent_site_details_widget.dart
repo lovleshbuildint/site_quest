@@ -1603,7 +1603,11 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   setState(() {});
                                                   _model.trydistrict = functions
                                                       .istatetostatevalue(
-                                                          FFAppState().District,
+                                                          getJsonField(
+                                                            FFAppState()
+                                                                .District,
+                                                            r'''$.District..iDistrict''',
+                                                          ),
                                                           _model.districtValue,
                                                           'District',
                                                           'iDistrict',

@@ -2352,15 +2352,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .toList()!,
                             onChanged: (val) async {
                               setState(() => _model.siteVisitedBYValue = val);
-                              _model.isitevisitedbys = functions.checkIndexint(
-                                  FFAppState().visitedbydeptapi,
-                                  _model.isitevisitedbys?.toString(),
+                              _model.isiteddeps = functions.checkIndexint(
+                                  FFAppState().SiteVisitedBy,
+                                  _model.siteVisitedBYValue,
                                   '-',
                                   'Department',
                                   'idepartment',
                                   false);
-                              _model.isiteddeps = functions.checkIndexint(
-                                  FFAppState().SiteVisitedBy,
+                              _model.isitevisitedbys = functions.checkIndexint(
+                                  FFAppState().visitedbydeptapi,
                                   _model.siteVisitedBYValue,
                                   '-',
                                   'Department',

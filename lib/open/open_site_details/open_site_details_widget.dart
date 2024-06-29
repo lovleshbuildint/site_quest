@@ -2335,91 +2335,65 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.getsitevisiteddbydeptAPICall.call(
-                              token: FFAppState().Token,
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.siteVisitedBYValueController ??=
+                                FormFieldController<String>(
+                              _model.siteVisitedBYValue ??= getJsonField(
+                                FFAppState().departmentswiseuser,
+                                r'''$[0].Department''',
+                              ).toString(),
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              final siteVisitedBYGetsitevisiteddbydeptAPIResponse =
-                                  snapshot.data!;
-                              return FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.siteVisitedBYValueController ??=
-                                        FormFieldController<String>(
-                                  _model.siteVisitedBYValue ??= getJsonField(
-                                    FFAppState().departmentswiseuser,
-                                    r'''$[0].Department''',
-                                  ).toString(),
-                                ),
-                                options: (getJsonField(
+                            options: (getJsonField(
+                              FFAppState().visitedbydeptapi,
+                              r'''$..Department''',
+                              true,
+                            ) as List)
+                                .map<String>((s) => s.toString())
+                                .toList()!,
+                            onChanged: (val) async {
+                              setState(() => _model.siteVisitedBYValue = val);
+                              _model.isitevisitedbys = functions.checkIndexint(
                                   FFAppState().visitedbydeptapi,
-                                  r'''$..Department''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) async {
-                                  setState(
-                                      () => _model.siteVisitedBYValue = val);
-                                  _model.isitevisitedbys =
-                                      functions.checkIndexint(
-                                          FFAppState().visitedbydeptapi,
-                                          _model.isitevisitedbys?.toString(),
-                                          '-',
-                                          'Department',
-                                          'idepartment',
-                                          false);
-                                  _model.isiteddeps = functions.checkIndexint(
-                                      FFAppState().SiteVisitedBy,
-                                      _model.siteVisitedBYValue,
-                                      '-',
-                                      'Department',
-                                      'idepartment',
-                                      false);
-                                  setState(() {});
-                                },
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Please select...',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              );
+                                  _model.isitevisitedbys?.toString(),
+                                  '-',
+                                  'Department',
+                                  'idepartment',
+                                  false);
+                              _model.isiteddeps = functions.checkIndexint(
+                                  FFAppState().SiteVisitedBy,
+                                  _model.siteVisitedBYValue,
+                                  '-',
+                                  'Department',
+                                  'idepartment',
+                                  false);
+                              setState(() {});
                             },
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'Please select...',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFFE1E2E6),
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Color(0xFFE1E2E6),
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
                           ),
                         ),
                         Padding(
@@ -2669,7 +2643,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             landMark: _model.aTMExistingTextController.text,
                             rBICategory: _model.rBICategoryValue,
                             sitesourcedby: _model.siteSourcedValue,
-                            isOnSite: _model.oNOFSiteValue,
+                            isOnSite: _model.oNOFsite?.toString(),
                             isDuplicateSite: _model.iduplicate?.toString(),
                             iSiteVisitedBy: _model.isitevisitedbys,
                             iSiteVisitedByName: _model.isitevisitedbynames,

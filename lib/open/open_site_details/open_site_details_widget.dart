@@ -695,8 +695,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   FFAppState().TISType,
                                   _model.tisTypeValue,
                                   '-',
-                                  'CashDeviceMovementCategory',
-                                  'iCashDeviceMovementCategory',
+                                  'TISTypeName',
+                                  'iTISType',
                                   false);
                               setState(() {});
                             },
@@ -2072,8 +2072,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         onChanged: (val) async {
                                           setState(
                                               () => _model.oNOFSiteValue = val);
-                                          _model.oNOFsite = functions
-                                              .dropdown(_model.oNOFSiteValue!);
+                                          _model.oNOFsite =
+                                              functions.dropdownsONSITE(
+                                                  _model.oNOFSiteValue!);
                                           setState(() {});
                                         },
                                         width:

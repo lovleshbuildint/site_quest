@@ -396,13 +396,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     _model.customerBankValueController ??=
                                         FormFieldController<String>(
                                   _model.customerBankValue ??= getJsonField(
-                                    customerBankGetCustomerBankResponse
-                                        .jsonBody,
+                                    FFAppState().getCustomerbank,
                                     r'''$.CustomerBanks[0].Name''',
                                   ).toString(),
                                 ),
                                 options: (getJsonField(
-                                  customerBankGetCustomerBankResponse.jsonBody,
+                                  FFAppState().getCustomerbank,
                                   r'''$.CustomerBanks..Name''',
                                   true,
                                 ) as List)
@@ -2698,7 +2697,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             employeeName: null,
                             contactNumber: null,
                             emailId: null,
-                            isWB: null,
+                            isWB: '0',
                             msg: null,
                             errCnt: null,
                             districts: null,

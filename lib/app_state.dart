@@ -669,6 +669,12 @@ class FFAppState extends ChangeNotifier {
     istate.insert(index, value);
     secureStorage.setStringList('ff_istate', _istate);
   }
+
+  dynamic _getCustomerbank;
+  dynamic get getCustomerbank => _getCustomerbank;
+  set getCustomerbank(dynamic value) {
+    _getCustomerbank = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

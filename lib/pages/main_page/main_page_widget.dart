@@ -339,6 +339,31 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
+          _model.getCustomerBank = await SqGroup.getCustomerBankCall.call();
+
+          if ((_model.getCustomerBank?.succeeded ?? true)) {
+            FFAppState().getCustomerbank =
+                (_model.getCustomerBank?.jsonBody ?? '');
+            setState(() {});
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(GetCustomerBank)'),
+                  content: Text((_model.getCustomerBank?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
           _model.cityresponse = await SqGroup.cityCall.call(
             token: FFAppState().Token,
           );

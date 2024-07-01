@@ -186,7 +186,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'Percent',
+              getJsonField(
+                FFAppState().siteIDresponse,
+                r'''$.SiteId''',
+              ).toString(),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,

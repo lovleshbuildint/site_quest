@@ -415,7 +415,10 @@ class _OpenSiteLandlordDetailsWidgetState
                                 refeName: _model.landlordformModel
                                     .siteReferralNameTextController.text,
                                 contactNumber: null,
-                                siteId: null,
+                                siteId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.SiteId''',
+                                ).toString(),
                                 iindent: null,
                                 targetBank: null,
                                 centre: null,

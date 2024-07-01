@@ -2653,7 +2653,23 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           if ((_model
                                   .updateDOAdetailsfirstwordsSites?.succeeded ??
                               true)) {
-                            context.goNamed('open_site_landlord_details');
+                            _model.postResponse = getJsonField(
+                              (_model.updateDOAdetailsfirstwordsSites
+                                      ?.jsonBody ??
+                                  ''),
+                              r'''$.SiteId''',
+                            );
+                            setState(() {});
+
+                            context.pushNamed(
+                              'indent_site_landlord_details',
+                              queryParameters: {
+                                'siteId': serializeParam(
+                                  _model.postResponse?.toString(),
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
                           } else {
                             await showDialog(
                               context: context,

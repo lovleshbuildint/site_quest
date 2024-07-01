@@ -52,6 +52,8 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
   String? trycity;
 
+  dynamic postResponse;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

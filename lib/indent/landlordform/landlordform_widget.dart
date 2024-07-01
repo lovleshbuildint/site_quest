@@ -456,7 +456,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
-                          'State',
+                          valueOrDefault<String>(
+                            _model.stateValue,
+                            's',
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',

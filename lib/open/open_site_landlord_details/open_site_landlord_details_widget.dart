@@ -378,14 +378,12 @@ class _OpenSiteLandlordDetailsWidgetState
                                 district:
                                     _model.landlordformModel.districtValue,
                                 token: FFAppState().Token,
-                                iCity:
-                                    _model.landlordformModel.iCity?.toString(),
+                                iCity: _model.landlordformModel.cityValue,
                                 lLPercent: _model.landlordformModel
                                     .lLchequefieldTextController.text,
                                 address: _model.landlordformModel
                                     .addressTextController.text,
-                                iState:
-                                    _model.landlordformModel.istate?.toString(),
+                                iState: _model.landlordformModel.stateValue,
                                 pincode: _model.landlordformModel
                                     .pincodeTextController.text,
                                 landMark: _model.landlordformModel
@@ -416,8 +414,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                     .landoardNameTextController.text,
                                 refeName: _model.landlordformModel
                                     .siteReferralNameTextController.text,
-                                contactNumber: _model.landlordformModel
-                                    .siteReferralNoTextController.text,
+                                contactNumber: null,
                                 siteId: null,
                                 iindent: null,
                                 targetBank: null,
@@ -432,7 +429,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                     .percentTextController.text,
                                 androidKey: null,
                                 refeId: null,
-                                isWB: null,
+                                isWB: '0',
                                 companyName: null,
                                 employeeName: null,
                                 errCnt: null,

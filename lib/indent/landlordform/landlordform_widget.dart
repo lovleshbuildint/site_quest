@@ -510,13 +510,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 setState(() => _model.stateValue = val);
                                 _model.statefordistland = _model.stateValue;
                                 setState(() {});
-                                _model.trystate = functions.istatetostatevalue(
-                                    FFAppState().Stateapi,
-                                    _model.stateValue,
-                                    'States',
-                                    'iState',
-                                    'State');
-                                setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,

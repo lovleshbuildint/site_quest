@@ -2653,7 +2653,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           if ((_model
                                   .updateDOAdetailsfirstwordsSites?.succeeded ??
                               true)) {
-                            _model.postResponse = getJsonField(
+                            FFAppState().siteIDresponse = getJsonField(
                               (_model.updateDOAdetailsfirstwordsSites
                                       ?.jsonBody ??
                                   ''),
@@ -2665,7 +2665,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               'indent_site_landlord_details',
                               queryParameters: {
                                 'siteId': serializeParam(
-                                  _model.postResponse?.toString(),
+                                  FFAppState().siteIDresponse.toString(),
                                   ParamType.String,
                                 ),
                               }.withoutNulls,

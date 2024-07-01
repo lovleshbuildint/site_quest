@@ -374,9 +374,8 @@ class _OpenSiteLandlordDetailsWidgetState
                               _model.updateDOADdeatilssecondwordSite =
                                   await SqGroup.dOADetailsstepSECONDworddocCall
                                       .call(
-                                indentId: null,
-                                district:
-                                    _model.landlordformModel.districtValue,
+                                indentId: 'null',
+                                district: _model.landlordformModel.trydistrict,
                                 token: FFAppState().Token,
                                 iCity:
                                     _model.landlordformModel.iCity?.toString(),

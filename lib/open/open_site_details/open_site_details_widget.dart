@@ -39,11 +39,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     ).toString().toString());
     _model.addressFocusNode ??= FocusNode();
 
-    _model.pincodeTextController ??= TextEditingController(
-        text: getJsonField(
-      FFAppState().indentSelectedSite,
-      r'''$.Pincode''',
-    ).toString().toString());
+    _model.pincodeTextController ??= TextEditingController();
     _model.pincodeFocusNode ??= FocusNode();
 
     _model.aTMExistingTextController ??= TextEditingController();

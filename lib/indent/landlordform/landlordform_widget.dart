@@ -369,14 +369,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.districtValueController ??=
                                     FormFieldController<String>(
-                                  _model.districtValue ??= getJsonField(
-                                    FFAppState().District,
-                                    r'''$[0].DistrictName''',
-                                  ).toString(),
+                                  _model.districtValue ??= 'Option 1',
                                 ),
-                                options: (getJsonField(
-                                  FFAppState().District,
+                                options: List<String>.from((getJsonField(
+                                  districtDistrictAPisResponse.jsonBody,
                                   r'''$.District..DistrictName''',
+                                  true,
+                                ) as List)
+                                    .map<String>((s) => s.toString())
+                                    .toList()!),
+                                optionLabels: (getJsonField(
+                                  districtDistrictAPisResponse.jsonBody,
+                                  r'''$.District..iDistrict''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -489,15 +493,15 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               controller: _model.stateValueController ??=
                                   FormFieldController<String>(null),
                               options: List<String>.from((getJsonField(
-                                FFAppState().master,
-                                r'''$.states..iState''',
+                                stateStateListResponse.jsonBody,
+                                r'''$.States..iState''',
                                 true,
                               ) as List)
                                   .map<String>((s) => s.toString())
                                   .toList()!),
                               optionLabels: (getJsonField(
-                                FFAppState().master,
-                                r'''$.states..State''',
+                                stateStateListResponse.jsonBody,
+                                r'''$.States..State''',
                                 true,
                               ) as List)
                                   .map<String>((s) => s.toString())
@@ -617,15 +621,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.cityValueController ??=
-                                    FormFieldController<String>(
-                                  _model.cityValue ??= getJsonField(
-                                    FFAppState().master,
-                                    r'''$[0].City''',
-                                  ).toString(),
-                                ),
+                                    FormFieldController<String>(null),
                                 options: (getJsonField(
-                                  FFAppState().master,
-                                  r'''$.cities..City''',
+                                  cityCitiesAPIforStatenDistResponse.jsonBody,
+                                  r'''$.Cities..City''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

@@ -378,7 +378,8 @@ class _OpenSiteLandlordDetailsWidgetState
                                 district:
                                     _model.landlordformModel.districtValue,
                                 token: FFAppState().Token,
-                                iCity: _model.landlordformModel.cityValue,
+                                iCity:
+                                    _model.landlordformModel.iCity?.toString(),
                                 lLPercent: _model.landlordformModel
                                     .lLchequefieldTextController.text,
                                 address: _model.landlordformModel

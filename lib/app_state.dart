@@ -71,16 +71,6 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _istate = await secureStorage.getStringList('ff_istate') ?? _istate;
     });
-    await _safeInitAsync(() async {
-      if (await secureStorage.read(key: 'ff_siteIDresponse') != null) {
-        try {
-          _siteIDresponse = jsonDecode(
-              await secureStorage.getString('ff_siteIDresponse') ?? '');
-        } catch (e) {
-          print("Can't decode persisted json. Error: $e.");
-        }
-      }
-    });
   }
 
   void update(VoidCallback callback) {
@@ -684,17 +674,6 @@ class FFAppState extends ChangeNotifier {
   dynamic get getCustomerbank => _getCustomerbank;
   set getCustomerbank(dynamic value) {
     _getCustomerbank = value;
-  }
-
-  dynamic _siteIDresponse;
-  dynamic get siteIDresponse => _siteIDresponse;
-  set siteIDresponse(dynamic value) {
-    _siteIDresponse = value;
-    secureStorage.setString('ff_siteIDresponse', jsonEncode(value));
-  }
-
-  void deleteSiteIDresponse() {
-    secureStorage.delete(key: 'ff_siteIDresponse');
   }
 }
 

@@ -9,7 +9,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'landlordform_model.dart';
 export 'landlordform_model.dart';
@@ -186,10 +185,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              getJsonField(
-                FFAppState().siteIDresponse,
-                r'''$.SiteId''',
-              ).toString(),
+              'Percent',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -973,7 +969,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               keyboardType: TextInputType.number,
               validator: _model.contactNameTextControllerValidator
                   .asValidator(context),
-              inputFormatters: [_model.contactNameMask],
             ),
           ),
           Padding(
@@ -1040,7 +1035,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               keyboardType: TextInputType.number,
               validator: _model.alernativenumberTextControllerValidator
                   .asValidator(context),
-              inputFormatters: [_model.alernativenumberMask],
             ),
           ),
           Padding(

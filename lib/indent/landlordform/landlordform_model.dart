@@ -10,7 +10,6 @@ import 'landlordform_widget.dart' show LandlordformWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
@@ -72,12 +71,10 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   // State field(s) for ContactName widget.
   FocusNode? contactNameFocusNode;
   TextEditingController? contactNameTextController;
-  final contactNameMask = MaskTextInputFormatter(mask: '+91##########');
   String? Function(BuildContext, String?)? contactNameTextControllerValidator;
   // State field(s) for Alernativenumber widget.
   FocusNode? alernativenumberFocusNode;
   TextEditingController? alernativenumberTextController;
-  final alernativenumberMask = MaskTextInputFormatter(mask: '+91##########');
   String? Function(BuildContext, String?)?
       alernativenumberTextControllerValidator;
   // State field(s) for Emailid widget.

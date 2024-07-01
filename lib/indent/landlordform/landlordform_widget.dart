@@ -380,7 +380,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .toList()!),
                                 optionLabels: (getJsonField(
                                   districtDistrictAPisResponse.jsonBody,
-                                  r'''$.District..iDistrict''',
+                                  r'''$.District..DistrictName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())

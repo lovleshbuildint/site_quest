@@ -705,11 +705,15 @@ class _IndentSiteLandlordDetailsWidgetState
                                   iStageText: null,
                                   locationName: null,
                                   androidKey: null,
-                                  refeId: null,
+                                  refeId: valueOrDefault<String>(
+                                    _model.landlordformModel
+                                        .siteReferralNoTextController.text,
+                                    '1',
+                                  ),
                                   errCnt: null,
                                   employeeName: null,
                                   companyName: null,
-                                  isWB: null,
+                                  isWB: '0',
                                   msg: null,
                                   isFromSiteref: false,
                                 );

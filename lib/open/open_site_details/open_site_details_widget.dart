@@ -2651,7 +2651,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             );
                             setState(() {});
 
-                            context.pushNamed('open_site_landlord_details');
+                            context.pushNamed(
+                              'indent_site_landlord_details',
+                              queryParameters: {
+                                'siteId': serializeParam(
+                                  _model.postResponse?.toString(),
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
                           } else {
                             await showDialog(
                               context: context,

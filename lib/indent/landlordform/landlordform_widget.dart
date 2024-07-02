@@ -500,6 +500,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               onChanged: (val) async {
                                 setState(() => _model.stateValue = val);
                                 _model.statefordistland = _model.stateValue;
+                                _model.trystate = functions.istatetostatevalue(
+                                    FFAppState().Stateapi,
+                                    _model.stateValue,
+                                    'States',
+                                    'iState',
+                                    'State');
                                 setState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -606,16 +612,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.cityValueController ??=
                                     FormFieldController<String>(
-                                  _model.cityValue ??= '',
+                                  _model.cityValue ??= getJsonField(
+                                    cityCitiesAPIforStatenDistResponse.jsonBody,
+                                    r'''$.Cities..City''',
+                                  ).toString(),
                                 ),
-                                options: List<String>.from((getJsonField(
-                                  cityCitiesAPIforStatenDistResponse.jsonBody,
-                                  r'''$.Cities..iCity''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!),
-                                optionLabels: (getJsonField(
+                                options: (getJsonField(
                                   cityCitiesAPIforStatenDistResponse.jsonBody,
                                   r'''$.Cities..City''',
                                   true,
@@ -624,7 +626,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .toList()!,
                                 onChanged: (val) async {
                                   setState(() => _model.cityValue = val);
-                                  _model.iCity = _model.iCity;
+                                  _model.trycity = functions.istatetostatevalue(
+                                      FFAppState().City,
+                                      _model.cityValue,
+                                      'Cities',
+                                      'iCity',
+                                      'City');
                                   setState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,

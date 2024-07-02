@@ -642,7 +642,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',
                                   ).toString(),
-                                  district:
+                                  districts:
                                       _model.landlordformModel.districtValue,
                                   token: FFAppState().Token,
                                   iCity: _model.iCity?.toString(),
@@ -677,7 +677,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                       .panNumberTextController.text,
                                   aadharcard: _model.landlordformModel
                                       .aAdharcardNoTextController.text,
-                                  landLordName: _model.landlordformModel
+                                  landLordNames: _model.landlordformModel
                                       .landoardNameTextController.text,
                                   refeName: _model.landlordformModel
                                       .siteReferralNameTextController.text,
@@ -697,8 +697,8 @@ class _IndentSiteLandlordDetailsWidgetState
                                     FFAppState().indentSelectedSite,
                                     r'''$.CustomerBank''',
                                   ).toString(),
-                                  centre: null,
-                                  comment: null,
+                                  centres: null,
+                                  comments: null,
                                   lastModStamp: null,
                                   isHold: null,
                                   istage: null,

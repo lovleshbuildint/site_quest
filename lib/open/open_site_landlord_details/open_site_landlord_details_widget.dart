@@ -375,15 +375,14 @@ class _OpenSiteLandlordDetailsWidgetState
                                   await SqGroup.dOADetailsstepSECONDworddocCall
                                       .call(
                                 indentId: 'null',
-                                district: _model.landlordformModel.trydistrict,
+                                districts: _model.landlordformModel.trydistrict,
                                 token: FFAppState().Token,
-                                iCity:
-                                    _model.landlordformModel.iCity?.toString(),
+                                iCity: _model.landlordformModel.trycity,
                                 lLPercent: _model.landlordformModel
                                     .lLchequefieldTextController.text,
                                 address: _model.landlordformModel
                                     .addressTextController.text,
-                                iState: _model.landlordformModel.stateValue,
+                                iState: _model.landlordformModel.trystate,
                                 pincode: _model.landlordformModel
                                     .pincodeTextController.text,
                                 landMark: _model.landlordformModel
@@ -410,7 +409,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                     .panNumberTextController.text,
                                 aadharcard: _model.landlordformModel
                                     .aAdharcardNoTextController.text,
-                                landLordName: _model.landlordformModel
+                                landLordNames: _model.landlordformModel
                                     .landoardNameTextController.text,
                                 refeName: _model.landlordformModel
                                     .siteReferralNameTextController.text,
@@ -421,8 +420,8 @@ class _OpenSiteLandlordDetailsWidgetState
                                 ).toString(),
                                 iindent: null,
                                 targetBank: null,
-                                centre: null,
-                                comment: null,
+                                centres: null,
+                                comments: null,
                                 lastModStamp: null,
                                 isHold: null,
                                 istage: null,

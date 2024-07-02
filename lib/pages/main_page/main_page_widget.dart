@@ -903,14 +903,13 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                           String>(
                                                                         formatNumber(
                                                                           getJsonField(
-                                                                                    mainPageDashboardResponse.jsonBody,
-                                                                                    r'''$.UserReview[4].Count''',
-                                                                                  ) /
-                                                                                  getJsonField(
-                                                                                    mainPageDashboardResponse.jsonBody,
-                                                                                    r'''$.UserReview[3].Count''',
-                                                                                  ) +
-                                                                              1,
+                                                                                mainPageDashboardResponse.jsonBody,
+                                                                                r'''$.UserReview[4].Count''',
+                                                                              ) /
+                                                                              getJsonField(
+                                                                                mainPageDashboardResponse.jsonBody,
+                                                                                r'''$.UserReview[3].Count''',
+                                                                              ),
                                                                           formatType:
                                                                               FormatType.percent,
                                                                         ),

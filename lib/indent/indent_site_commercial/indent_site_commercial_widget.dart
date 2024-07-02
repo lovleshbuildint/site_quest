@@ -600,15 +600,9 @@ class _IndentSiteCommercialWidgetState
                                         .text,
                                     advanceDeposit: _model
                                         .commercialAdvanceModel
-                                        .advanceAmountAdvanceTextController
-                                        .text,
-                                    totalDeposit: _model
-                                        .commercialAdvanceModel
-                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                        .text,
-                                    securityDeposit: _model
-                                        .commercialAdvanceModel
                                         .advanceRentMonthRentOrSecurityMonthsValue,
+                                    totalDeposit: null,
+                                    securityDeposit: null,
                                     agreementPeriod: _model
                                         .commercialAdvanceModel
                                         .agreementPeriodsAdvanceValue,
@@ -621,14 +615,8 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .balanceAmountAdvanceTextController
                                         .text,
-                                    oneMonthDeposit: _model
-                                        .commercialAdvanceModel
-                                        .advanceRentAmountRENTTextController
-                                        .text,
-                                    balanceDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceAmountAdvanceTextController
-                                        .text,
+                                    oneMonthDeposit: null,
+                                    balanceDeposit: null,
                                     totalAdvSec: _model.commercialAdvanceModel
                                         .advanceRentMonthRentOrSecurityMonthsValue,
                                     rentEscalation: _model
@@ -699,39 +687,30 @@ class _IndentSiteCommercialWidgetState
                                     rentFreePeriod: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodsSecurityValue,
-                                    rentalType: _model
-                                        .commercialAdvanceModel.rentaltypeValue,
+                                    rentalType: 'Security Deposit',
                                     token: FFAppState().Token,
                                     rent: _model
                                         .commercialAdvanceModel
-                                        .advanceRentAmountRENTTextController
+                                        .securityRentRentPerMonthTextController
                                         .text,
-                                    advanceDeposit: _model
-                                        .commercialAdvanceModel
-                                        .securityDepositValue,
-                                    totalDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    advanceDeposit: null,
+                                    totalDeposit: null,
                                     securityDeposit: _model
                                         .commercialAdvanceModel
                                         .securityDepositValue,
                                     agreementPeriod: _model
                                         .commercialAdvanceModel
-                                        .agreementPeriodsAdvanceValue,
+                                        .agreementPeriodsSecurityValue,
                                     escalationPeriod: _model
                                         .commercialAdvanceModel
-                                        .escalationPeriodAdvanceValue,
+                                        .escalationPeriodSecurityValue,
                                     isAdvance: _model
                                         .commercialAdvanceModel.rentaltypeValue,
                                     fullDeposit: _model
                                         .commercialAdvanceModel
-                                        .balanceAmountAdvanceTextController
+                                        .totalSecurityDepositTextController
                                         .text,
-                                    oneMonthDeposit: _model
-                                        .commercialAdvanceModel
-                                        .securityRentRentPerMonthTextController
-                                        .text,
+                                    oneMonthDeposit: null,
                                     balanceDeposit: _model
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
@@ -740,7 +719,7 @@ class _IndentSiteCommercialWidgetState
                                         .intialAdvancemonthSecurityValue,
                                     rentEscalation: _model
                                         .commercialAdvanceModel
-                                        .rentEscaltionAdvanceValue,
+                                        .rentEscalationPerSecurityValue,
                                     siteId: getJsonField(
                                       FFAppState().indentSelectedSite,
                                       r'''$.IndentId''',

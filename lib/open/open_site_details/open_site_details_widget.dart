@@ -32,11 +32,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     _model.distanceFromIndentsTextController ??= TextEditingController();
     _model.distanceFromIndentsFocusNode ??= FocusNode();
 
-    _model.addressTextController ??= TextEditingController(
-        text: getJsonField(
-      FFAppState().indentSelectedSite,
-      r'''$.Address''',
-    ).toString().toString());
+    _model.addressTextController ??= TextEditingController();
     _model.addressFocusNode ??= FocusNode();
 
     _model.pincodeTextController ??= TextEditingController();
@@ -1138,10 +1134,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        valueOrDefault<String>(
-                                          _model.trystate,
-                                          's',
-                                        ),
+                                        'State',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1427,10 +1420,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      valueOrDefault<String>(
-                                        _model.trydistrict,
-                                        's',
-                                      ),
+                                      'District',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -2661,15 +2651,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             );
                             setState(() {});
 
-                            context.pushNamed(
-                              'indent_site_landlord_details',
-                              queryParameters: {
-                                'siteId': serializeParam(
-                                  _model.postResponse?.toString(),
-                                  ParamType.String,
-                                ),
-                              }.withoutNulls,
-                            );
+                            context.pushNamed('open_site_landlord_details');
                           } else {
                             await showDialog(
                               context: context,

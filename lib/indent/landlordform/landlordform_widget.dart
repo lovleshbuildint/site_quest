@@ -46,11 +46,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    _model.pincodeTextController ??= TextEditingController(
-        text: getJsonField(
-      FFAppState().indentSelectedSite,
-      r'''$.Pincode''',
-    ).toString().toString());
+    _model.pincodeTextController ??= TextEditingController();
     _model.pincodeFocusNode ??= FocusNode();
 
     _model.landmarksTextController ??= TextEditingController();
@@ -451,10 +447,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
-                          valueOrDefault<String>(
-                            _model.stateValue,
-                            's',
-                          ),
+                          'State',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -770,6 +763,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           controller: _model.pincodeTextController,
                           focusNode: _model.pincodeFocusNode,
                           autofocus: false,
+                          textCapitalization: TextCapitalization.none,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Enter Pincode ',
@@ -816,6 +810,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     fontFamily: 'Readex Pro',
                                     letterSpacing: 0.0,
                                   ),
+                          maxLength: 6,
                           keyboardType: TextInputType.number,
                           validator: _model.pincodeTextControllerValidator
                               .asValidator(context),

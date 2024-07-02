@@ -600,7 +600,8 @@ class _IndentSiteCommercialWidgetState
                                         .text,
                                     advanceDeposit: _model
                                         .commercialAdvanceModel
-                                        .advanceRentMonthRentOrSecurityMonthsValue,
+                                        .advanceAmountAdvanceTextController
+                                        .text,
                                     totalDeposit: null,
                                     securityDeposit: null,
                                     agreementPeriod: _model
@@ -617,8 +618,10 @@ class _IndentSiteCommercialWidgetState
                                         .text,
                                     oneMonthDeposit: null,
                                     balanceDeposit: null,
-                                    totalAdvSec: _model.commercialAdvanceModel
-                                        .advanceRentMonthRentOrSecurityMonthsValue,
+                                    totalAdvSec: _model
+                                        .commercialAdvanceModel
+                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                        .text,
                                     rentEscalation: _model
                                         .commercialAdvanceModel
                                         .rentEscaltionAdvanceValue,
@@ -644,6 +647,7 @@ class _IndentSiteCommercialWidgetState
                                     companyName: null,
                                     contactNumber: null,
                                     emailId: null,
+                                    isExl: '0',
                                   );
 
                                   _shouldSetState = true;
@@ -693,7 +697,10 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .securityRentRentPerMonthTextController
                                         .text,
-                                    advanceDeposit: null,
+                                    advanceDeposit: _model
+                                        .commercialAdvanceModel
+                                        .advanceSDAmountSecurityTextController
+                                        .text,
                                     totalDeposit: null,
                                     securityDeposit: _model
                                         .commercialAdvanceModel
@@ -708,15 +715,17 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel.rentaltypeValue,
                                     fullDeposit: _model
                                         .commercialAdvanceModel
-                                        .totalSecurityDepositTextController
+                                        .balanceSDAmountSecurityTextController
                                         .text,
                                     oneMonthDeposit: null,
                                     balanceDeposit: _model
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    totalAdvSec: _model.commercialAdvanceModel
-                                        .intialAdvancemonthSecurityValue,
+                                    totalAdvSec: _model
+                                        .commercialAdvanceModel
+                                        .totalSecurityDepositTextController
+                                        .text,
                                     rentEscalation: _model
                                         .commercialAdvanceModel
                                         .rentEscalationPerSecurityValue,
@@ -729,7 +738,7 @@ class _IndentSiteCommercialWidgetState
                                       r'''$.IndentId''',
                                     ).toString(),
                                     months: _model.commercialAdvanceModel
-                                        .securityDepositValue,
+                                        .intialAdvancemonthSecurityValue,
                                     targetBank: null,
                                     district: null,
                                     centre: null,
@@ -745,6 +754,7 @@ class _IndentSiteCommercialWidgetState
                                     employeeName: null,
                                     contactNumber: null,
                                     emailId: null,
+                                    isExl: '0',
                                   );
 
                                   _shouldSetState = true;

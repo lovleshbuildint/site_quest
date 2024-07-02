@@ -2057,6 +2057,7 @@ class DOADetailsstepTHIRDworddocCall {
     String? contactNumber = '',
     String? emailId = '',
     String? iindent = '',
+    String? isExl = '',
     String? token = '',
   }) async {
     final baseUrl = SqGroup.getBaseUrl(
@@ -2093,6 +2094,7 @@ class DOADetailsstepTHIRDworddocCall {
   "isAdvance": "${isAdvance}",
   "TotalAdvSec": "${totalAdvSec}",
   "Months": "${months}",
+  "isExl":"${isExl}",
   "isWB": "${isWB}",
   
   "companyName": "${companyName}",

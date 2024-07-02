@@ -901,13 +901,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                     child: Text(
                                                                       formatNumber(
                                                                         getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[4].Count''',
-                                                                            ) /
-                                                                            getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[3].Count''',
-                                                                            ),
+                                                                                  mainPageDashboardResponse.jsonBody,
+                                                                                  r'''$.UserReview[4].Count''',
+                                                                                ) /
+                                                                                getJsonField(
+                                                                                  mainPageDashboardResponse.jsonBody,
+                                                                                  r'''$.UserReview[3].Count''',
+                                                                                ) +
+                                                                            1,
                                                                         formatType:
                                                                             FormatType.percent,
                                                                       ),

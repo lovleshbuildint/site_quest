@@ -386,6 +386,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   companyName: null,
                                   contactNumber: null,
                                   emailId: null,
+                                  isExl: '0',
+                                  monthlybpcltranslitefee: null,
+                                  commType: null,
+                                  commDeposite: null,
+                                  errCnt: null,
+                                  isFromSiteref: null,
+                                  msg: null,
                                 );
 
                                 _shouldSetState = true;
@@ -477,6 +484,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   employeeName: null,
                                   contactNumber: null,
                                   emailId: null,
+                                  isExl: '0',
+                                  monthlybpcltranslitefee: null,
+                                  errCnt: null,
+                                  commType: null,
+                                  commDeposite: null,
+                                  msg: null,
+                                  isFromSiteref: null,
                                 );
 
                                 _shouldSetState = true;

@@ -581,14 +581,11 @@ class _IndentSiteCommercialWidgetState
                                 if (_model.commercialAdvanceModel
                                         .rentaltypeValue ==
                                     'Advance Rent ') {
-                                  _model.dOADetailsThirdWordAdvance =
+                                  _model.tDOADetailsThirdWordAdvance =
                                       await SqGroup
                                           .dOADetailsstepTHIRDworddocCall
                                           .call(
-                                    indentId: getJsonField(
-                                      FFAppState().indentSelectedSite,
-                                      r'''$.IndentId''',
-                                    ).toString(),
+                                    indentId: null,
                                     rentFreePeriod: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodAdvanceValue,
@@ -602,8 +599,13 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .advanceAmountAdvanceTextController
                                         .text,
-                                    totalDeposit: null,
-                                    securityDeposit: null,
+                                    totalDeposit: _model
+                                        .commercialAdvanceModel
+                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                        .text,
+                                    securityDeposit: _model
+                                        .commercialAdvanceModel
+                                        .advanceRentMonthRentOrSecurityMonthsValue,
                                     agreementPeriod: _model
                                         .commercialAdvanceModel
                                         .agreementPeriodsAdvanceValue,
@@ -616,19 +618,20 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .balanceAmountAdvanceTextController
                                         .text,
-                                    oneMonthDeposit: null,
-                                    balanceDeposit: null,
-                                    totalAdvSec: _model
+                                    oneMonthDeposit: _model
                                         .commercialAdvanceModel
-                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                        .advanceRentAmountRENTTextController
                                         .text,
+                                    balanceDeposit: _model
+                                        .commercialAdvanceModel
+                                        .balanceAmountAdvanceTextController
+                                        .text,
+                                    totalAdvSec: _model.commercialAdvanceModel
+                                        .advanceRentMonthRentOrSecurityMonthsValue,
                                     rentEscalation: _model
                                         .commercialAdvanceModel
-                                        .rentEscaltionAdvanceValue,
-                                    siteId: getJsonField(
-                                      FFAppState().indentSelectedSite,
-                                      r'''$.IndentId''',
-                                    ).toString(),
+                                        .rentFreePeriodAdvanceValue,
+                                    siteId: null,
                                     iindent: null,
                                     targetBank: null,
                                     district: null,
@@ -642,16 +645,22 @@ class _IndentSiteCommercialWidgetState
                                     androidKey: null,
                                     months: _model.commercialAdvanceModel
                                         .intialAdvanceValue,
-                                    isWB: '0',
+                                    isWB: null,
                                     employeeName: null,
                                     companyName: null,
                                     contactNumber: null,
                                     emailId: null,
                                     isExl: '0',
+                                    monthlybpcltranslitefee: null,
+                                    commType: null,
+                                    commDeposite: null,
+                                    errCnt: null,
+                                    isFromSiteref: null,
+                                    msg: null,
                                   );
 
                                   _shouldSetState = true;
-                                  if ((_model.dOADetailsThirdWordAdvance
+                                  if ((_model.tDOADetailsThirdWordAdvance
                                           ?.succeeded ??
                                       true)) {
                                     context.goNamed('indent_site_dimensions');
@@ -662,7 +671,7 @@ class _IndentSiteCommercialWidgetState
                                         return AlertDialog(
                                           title: Text('Alert (Dimesions)'),
                                           content: Text((_model
-                                                  .dOADetailsThirdWordAdvance
+                                                  .tDOADetailsThirdWordAdvance
                                                   ?.bodyText ??
                                               '')),
                                           actions: [
@@ -684,24 +693,20 @@ class _IndentSiteCommercialWidgetState
                                       await SqGroup
                                           .dOADetailsstepTHIRDworddocCall
                                           .call(
-                                    indentId: getJsonField(
-                                      FFAppState().indentSelectedSite,
-                                      r'''$.IndentId''',
-                                    ).toString(),
+                                    indentId: null,
                                     rentFreePeriod: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodsSecurityValue,
-                                    rentalType: 'Security Deposit',
+                                    rentalType: _model
+                                        .commercialAdvanceModel.rentaltypeValue,
                                     token: FFAppState().Token,
-                                    rent: _model
+                                    rent: _model.commercialAdvanceModel
+                                        .securityDepositValue,
+                                    advanceDeposit: null,
+                                    totalDeposit: _model
                                         .commercialAdvanceModel
-                                        .securityRentRentPerMonthTextController
+                                        .balanceSDAmountSecurityTextController
                                         .text,
-                                    advanceDeposit: _model
-                                        .commercialAdvanceModel
-                                        .advanceSDAmountSecurityTextController
-                                        .text,
-                                    totalDeposit: null,
                                     securityDeposit: _model
                                         .commercialAdvanceModel
                                         .securityDepositValue,
@@ -717,28 +722,25 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    oneMonthDeposit: null,
+                                    oneMonthDeposit: _model
+                                        .commercialAdvanceModel
+                                        .securityRentRentPerMonthTextController
+                                        .text,
                                     balanceDeposit: _model
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    totalAdvSec: _model
-                                        .commercialAdvanceModel
-                                        .totalSecurityDepositTextController
-                                        .text,
+                                    totalAdvSec: _model.commercialAdvanceModel
+                                        .intialAdvancemonthSecurityValue,
                                     rentEscalation: _model
                                         .commercialAdvanceModel
                                         .rentEscalationPerSecurityValue,
-                                    siteId: getJsonField(
-                                      FFAppState().indentSelectedSite,
-                                      r'''$.IndentId''',
-                                    ).toString(),
-                                    iindent: getJsonField(
-                                      FFAppState().indentSelectedSite,
-                                      r'''$.IndentId''',
-                                    ).toString(),
-                                    months: _model.commercialAdvanceModel
-                                        .intialAdvancemonthSecurityValue,
+                                    siteId: null,
+                                    iindent: null,
+                                    months: _model
+                                        .commercialAdvanceModel
+                                        .totalSecurityDepositTextController
+                                        .text,
                                     targetBank: null,
                                     district: null,
                                     centre: null,
@@ -755,6 +757,12 @@ class _IndentSiteCommercialWidgetState
                                     contactNumber: null,
                                     emailId: null,
                                     isExl: '0',
+                                    monthlybpcltranslitefee: null,
+                                    errCnt: null,
+                                    commType: null,
+                                    commDeposite: null,
+                                    msg: null,
+                                    isFromSiteref: null,
                                   );
 
                                   _shouldSetState = true;

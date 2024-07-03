@@ -19,7 +19,7 @@ class IndentSiteCommercialModel
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
-  ApiCallResponse? dOADetailsThirdWordAdvance;
+  ApiCallResponse? tDOADetailsThirdWordAdvance;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
   ApiCallResponse? dOADetailsThirdWordsecur;
 

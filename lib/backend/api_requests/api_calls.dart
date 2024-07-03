@@ -2103,9 +2103,11 @@ class DOADetailsstepTHIRDworddocCall {
     "Months": "${months}",
     "isExl": "${isExl}",
     "monthlybpcltranslitefee": "${monthlybpcltranslitefee}",
-    "commType": "${commType}"
+    "commType": "${commType}",
+    "CommDeposite": "${commDeposite}"
   },
   "errCnt": "${errCnt}",
+  "Msg": "${msg}",
   "isWB": "${isWB}",
   "isFromSiteref": "${isFromSiteref}",
   "referalpersondetails": {

@@ -431,13 +431,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   indentId: null,
                                   rentFreePeriod: _model.commercialAdvanceModel
                                       .rentFreePeriodsSecurityValue,
-                                  rentalType: _model
-                                      .commercialAdvanceModel.rentaltypeValue,
+                                  rentalType: 'Security Deposit',
                                   token: FFAppState().Token,
-                                  rent: _model.commercialAdvanceModel
-                                      .advanceRentAmountRENTTextController.text,
-                                  advanceDeposit: _model.commercialAdvanceModel
-                                      .securityDepositValue,
+                                  rent: _model
+                                      .commercialAdvanceModel
+                                      .securityRentRentPerMonthTextController
+                                      .text,
+                                  advanceDeposit: null,
                                   totalDeposit: _model
                                       .commercialAdvanceModel
                                       .balanceSDAmountSecurityTextController
@@ -445,14 +445,16 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   securityDeposit: _model.commercialAdvanceModel
                                       .securityDepositValue,
                                   agreementPeriod: _model.commercialAdvanceModel
-                                      .agreementPeriodsAdvanceValue,
+                                      .agreementPeriodsSecurityValue,
                                   escalationPeriod: _model
                                       .commercialAdvanceModel
-                                      .escalationPeriodAdvanceValue,
+                                      .escalationPeriodSecurityValue,
                                   isAdvance: _model
                                       .commercialAdvanceModel.rentaltypeValue,
-                                  fullDeposit: _model.commercialAdvanceModel
-                                      .balanceAmountAdvanceTextController.text,
+                                  fullDeposit: _model
+                                      .commercialAdvanceModel
+                                      .balanceSDAmountSecurityTextController
+                                      .text,
                                   oneMonthDeposit: _model
                                       .commercialAdvanceModel
                                       .securityRentRentPerMonthTextController
@@ -462,13 +464,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .balanceSDAmountSecurityTextController
                                       .text,
                                   totalAdvSec: _model.commercialAdvanceModel
-                                      .intialAdvancemonthSecurityValue,
+                                      .totalSecurityDepositTextController.text,
                                   rentEscalation: _model.commercialAdvanceModel
-                                      .rentEscaltionAdvanceValue,
+                                      .rentEscalationPerSecurityValue,
                                   siteId: null,
                                   iindent: null,
                                   months: _model.commercialAdvanceModel
-                                      .securityDepositValue,
+                                      .intialAdvancemonthSecurityValue,
                                   targetBank: null,
                                   district: null,
                                   centre: null,

@@ -697,11 +697,12 @@ class _IndentSiteCommercialWidgetState
                                     rentFreePeriod: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodsSecurityValue,
-                                    rentalType: _model
-                                        .commercialAdvanceModel.rentaltypeValue,
+                                    rentalType: 'Security Deposit',
                                     token: FFAppState().Token,
-                                    rent: _model.commercialAdvanceModel
-                                        .securityDepositValue,
+                                    rent: _model
+                                        .commercialAdvanceModel
+                                        .securityRentRentPerMonthTextController
+                                        .text,
                                     advanceDeposit: null,
                                     totalDeposit: _model
                                         .commercialAdvanceModel
@@ -730,17 +731,17 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    totalAdvSec: _model.commercialAdvanceModel
-                                        .intialAdvancemonthSecurityValue,
+                                    totalAdvSec: _model
+                                        .commercialAdvanceModel
+                                        .totalSecurityDepositTextController
+                                        .text,
                                     rentEscalation: _model
                                         .commercialAdvanceModel
                                         .rentEscalationPerSecurityValue,
                                     siteId: null,
                                     iindent: null,
-                                    months: _model
-                                        .commercialAdvanceModel
-                                        .totalSecurityDepositTextController
-                                        .text,
+                                    months: _model.commercialAdvanceModel
+                                        .intialAdvancemonthSecurityValue,
                                     targetBank: null,
                                     district: null,
                                     centre: null,

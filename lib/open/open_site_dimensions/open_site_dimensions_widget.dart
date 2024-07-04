@@ -386,11 +386,12 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 androidKey: null,
                                 errCnt: null,
                                 msg: null,
-                                isWB: null,
+                                isWB: '0',
                                 companyName: null,
                                 employeeName: null,
                                 contactNumber: null,
                                 emailId: null,
+                                isFromSiteref: 'false',
                               );
 
                               if ((_model.oPENSIteDOADetailsFour?.succeeded ??

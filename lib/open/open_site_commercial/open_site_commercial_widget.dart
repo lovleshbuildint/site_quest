@@ -438,10 +438,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .securityRentRentPerMonthTextController
                                       .text,
                                   advanceDeposit: null,
-                                  totalDeposit: _model
-                                      .commercialAdvanceModel
-                                      .balanceSDAmountSecurityTextController
-                                      .text,
+                                  totalDeposit: valueOrDefault<String>(
+                                    _model
+                                        .commercialAdvanceModel
+                                        .balanceSDAmountSecurityTextController
+                                        .text,
+                                    'null',
+                                  ),
                                   securityDeposit: _model.commercialAdvanceModel
                                       .securityDepositValue,
                                   agreementPeriod: _model.commercialAdvanceModel
@@ -451,18 +454,24 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .escalationPeriodSecurityValue,
                                   isAdvance: _model
                                       .commercialAdvanceModel.rentaltypeValue,
-                                  fullDeposit: _model
-                                      .commercialAdvanceModel
-                                      .balanceSDAmountSecurityTextController
-                                      .text,
+                                  fullDeposit: valueOrDefault<String>(
+                                    _model
+                                        .commercialAdvanceModel
+                                        .balanceSDAmountSecurityTextController
+                                        .text,
+                                    'null',
+                                  ),
                                   oneMonthDeposit: _model
                                       .commercialAdvanceModel
                                       .securityRentRentPerMonthTextController
                                       .text,
-                                  balanceDeposit: _model
-                                      .commercialAdvanceModel
-                                      .balanceSDAmountSecurityTextController
-                                      .text,
+                                  balanceDeposit: valueOrDefault<String>(
+                                    _model
+                                        .commercialAdvanceModel
+                                        .balanceSDAmountSecurityTextController
+                                        .text,
+                                    'null',
+                                  ),
                                   totalAdvSec: _model.commercialAdvanceModel
                                       .totalSecurityDepositTextController.text,
                                   rentEscalation: _model.commercialAdvanceModel

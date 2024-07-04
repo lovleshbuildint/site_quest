@@ -359,8 +359,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .commercialAdvanceModel.rentaltypeValue,
                                   fullDeposit: _model.commercialAdvanceModel
                                       .balanceAmountAdvanceTextController.text,
-                                  oneMonthDeposit: _model.commercialAdvanceModel
-                                      .advanceRentAmountRENTTextController.text,
+                                  oneMonthDeposit: null,
                                   balanceDeposit: _model.commercialAdvanceModel
                                       .balanceAmountAdvanceTextController.text,
                                   totalAdvSec: _model.commercialAdvanceModel

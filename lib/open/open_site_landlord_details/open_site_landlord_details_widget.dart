@@ -443,7 +443,7 @@ class _OpenSiteLandlordDetailsWidgetState
                               if ((_model.updateDOADdeatilssecondwordSite
                                       ?.succeeded ??
                                   true)) {
-                                context.goNamed('open_site_commercial');
+                                context.pushNamed('open_site_commercial');
                               } else {
                                 await showDialog(
                                   context: context,

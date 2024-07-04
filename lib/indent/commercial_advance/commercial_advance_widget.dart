@@ -87,7 +87,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
           ),
           FlutterFlowRadioButton(
             options: ['Advance Rent', 'Security Deposit'].toList(),
-            onChanged: (val) => setState(() {}),
+            onChanged: (val) async {
+              setState(() {});
+              _model.rentaltype =
+                  functions.radioButton(_model.rentaltypeValue!);
+              setState(() {});
+            },
             controller: _model.rentaltypeValueController ??=
                 FormFieldController<String>('Advance Rent'),
             optionHeight: 32.0,
@@ -1791,8 +1796,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) async {
                               setState(() {});
-                              _model.ebillingrent = functions.dropdown(
-                                  _model.eBillIncludingRentSecurityValue!);
+                              _model.ebillingrent =
+                                  functions.dropdown(valueOrDefault<String>(
+                                _model.eBillIncludingRentSecurityValue,
+                                '0',
+                              ));
                               setState(() {});
                             },
                             controller: _model

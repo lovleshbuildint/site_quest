@@ -399,7 +399,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 if ((_model.tDOADetailsThirdWordAdvance
                                         ?.succeeded ??
                                     true)) {
-                                  context.goNamed('indent_site_dimensions');
+                                  context.pushNamed('open_site_dimensions');
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -460,7 +460,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    'null',
+                                    '00',
                                   ),
                                   oneMonthDeposit: valueOrDefault<String>(
                                     _model
@@ -474,7 +474,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    'null',
+                                    '00',
                                   ),
                                   totalAdvSec: _model.commercialAdvanceModel
                                       .totalSecurityDepositTextController.text,

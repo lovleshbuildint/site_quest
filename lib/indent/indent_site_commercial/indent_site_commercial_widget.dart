@@ -613,7 +613,8 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .escalationPeriodAdvanceValue,
                                     isAdvance: _model
-                                        .commercialAdvanceModel.rentaltypeValue,
+                                        .commercialAdvanceModel.rentaltype
+                                        ?.toString(),
                                     fullDeposit: _model
                                         .commercialAdvanceModel
                                         .balanceAmountAdvanceTextController
@@ -718,7 +719,8 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .escalationPeriodSecurityValue,
                                     isAdvance: _model
-                                        .commercialAdvanceModel.rentaltypeValue,
+                                        .commercialAdvanceModel.rentaltype
+                                        ?.toString(),
                                     fullDeposit: _model
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController

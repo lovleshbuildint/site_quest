@@ -356,7 +356,8 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .commercialAdvanceModel
                                       .escalationPeriodAdvanceValue,
                                   isAdvance: _model
-                                      .commercialAdvanceModel.rentaltypeValue,
+                                      .commercialAdvanceModel.rentaltype
+                                      ?.toString(),
                                   fullDeposit: _model.commercialAdvanceModel
                                       .balanceAmountAdvanceTextController.text,
                                   oneMonthDeposit: null,
@@ -452,7 +453,8 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .commercialAdvanceModel
                                       .escalationPeriodSecurityValue,
                                   isAdvance: _model
-                                      .commercialAdvanceModel.rentaltypeValue,
+                                      .commercialAdvanceModel.rentaltype
+                                      ?.toString(),
                                   fullDeposit: valueOrDefault<String>(
                                     _model
                                         .commercialAdvanceModel

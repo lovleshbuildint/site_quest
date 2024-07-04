@@ -706,11 +706,14 @@ class _IndentSiteCommercialWidgetState
                                         .commercialAdvanceModel
                                         .securityRentRentPerMonthTextController
                                         .text,
-                                    advanceDeposit: null,
-                                    totalDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    advanceDeposit: '00',
+                                    totalDeposit: valueOrDefault<String>(
+                                      _model
+                                          .commercialAdvanceModel
+                                          .balanceSDAmountSecurityTextController
+                                          .text,
+                                      '00',
+                                    ),
                                     securityDeposit: _model
                                         .commercialAdvanceModel
                                         .securityDepositValue,
@@ -725,18 +728,24 @@ class _IndentSiteCommercialWidgetState
                                           ?.toString(),
                                       '1',
                                     ),
-                                    fullDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    fullDeposit: valueOrDefault<String>(
+                                      _model
+                                          .commercialAdvanceModel
+                                          .balanceSDAmountSecurityTextController
+                                          .text,
+                                      '00',
+                                    ),
                                     oneMonthDeposit: _model
                                         .commercialAdvanceModel
                                         .securityRentRentPerMonthTextController
                                         .text,
-                                    balanceDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    balanceDeposit: valueOrDefault<String>(
+                                      _model
+                                          .commercialAdvanceModel
+                                          .balanceSDAmountSecurityTextController
+                                          .text,
+                                      '00',
+                                    ),
                                     totalAdvSec: _model
                                         .commercialAdvanceModel
                                         .totalSecurityDepositTextController
@@ -746,8 +755,11 @@ class _IndentSiteCommercialWidgetState
                                         .rentEscalationPerSecurityValue,
                                     siteId: null,
                                     iindent: null,
-                                    months: _model.commercialAdvanceModel
-                                        .intialAdvancemonthSecurityValue,
+                                    months: valueOrDefault<String>(
+                                      _model.commercialAdvanceModel
+                                          .intialAdvancemonthSecurityValue,
+                                      '0',
+                                    ),
                                     targetBank: null,
                                     district: null,
                                     centre: null,
@@ -769,7 +781,7 @@ class _IndentSiteCommercialWidgetState
                                     commType: null,
                                     commDeposite: null,
                                     msg: null,
-                                    isFromSiteref: null,
+                                    isFromSiteref: '0',
                                   );
 
                                   _shouldSetState = true;

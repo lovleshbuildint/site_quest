@@ -2217,6 +2217,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
+                            keyboardType: TextInputType.number,
                             validator: _model
                                 .mangerNumberTextControllerValidator
                                 .asValidator(context),

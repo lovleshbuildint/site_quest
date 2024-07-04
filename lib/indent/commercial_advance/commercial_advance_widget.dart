@@ -250,7 +250,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      'Rent Free Period (in Days)',
+                      valueOrDefault<String>(
+                        _model.rentFreePeriodAdvanceValue,
+                        's',
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,

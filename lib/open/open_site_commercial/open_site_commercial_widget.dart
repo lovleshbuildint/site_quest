@@ -437,13 +437,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .commercialAdvanceModel
                                       .securityRentRentPerMonthTextController
                                       .text,
-                                  advanceDeposit: null,
+                                  advanceDeposit: '00',
                                   totalDeposit: valueOrDefault<String>(
                                     _model
                                         .commercialAdvanceModel
                                         .balanceSDAmountSecurityTextController
                                         .text,
-                                    'null',
+                                    '00',
                                   ),
                                   securityDeposit: _model.commercialAdvanceModel
                                       .securityDepositValue,
@@ -462,10 +462,13 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                         .text,
                                     'null',
                                   ),
-                                  oneMonthDeposit: _model
-                                      .commercialAdvanceModel
-                                      .securityRentRentPerMonthTextController
-                                      .text,
+                                  oneMonthDeposit: valueOrDefault<String>(
+                                    _model
+                                        .commercialAdvanceModel
+                                        .securityRentRentPerMonthTextController
+                                        .text,
+                                    'null',
+                                  ),
                                   balanceDeposit: valueOrDefault<String>(
                                     _model
                                         .commercialAdvanceModel

@@ -1118,6 +1118,7 @@ class UpdateDOADetailsfourCall {
     String? contactNumber = '',
     String? emailId = '',
     String? iindent = '',
+    String? isFromSiteref = 'false',
     String? token = '',
   }) async {
     final baseUrl = SqGroup.getBaseUrl(
@@ -1163,7 +1164,7 @@ class UpdateDOADetailsfourCall {
   "errCnt": "${errCnt}",
   "Msg": "${msg}",
   "isWB": "${isWB}",
-  "isFromSiteref": "<isFromSiteref>",
+  "isFromSiteref": "${isFromSiteref}",
   "referalpersondetails": {
     "companyName": "${companyName}",
     "EmployeeName": "${employeeName}",

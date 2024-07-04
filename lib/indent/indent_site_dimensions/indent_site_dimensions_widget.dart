@@ -682,11 +682,12 @@ class _IndentSiteDimensionsWidgetState
                                   androidKey: null,
                                   errCnt: null,
                                   msg: null,
-                                  isWB: null,
+                                  isWB: '0',
                                   companyName: null,
                                   employeeName: null,
                                   contactNumber: null,
                                   emailId: null,
+                                  isFromSiteref: 'false',
                                 );
 
                                 if ((_model.dOADetailsFour?.succeeded ??

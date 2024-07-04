@@ -492,7 +492,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   commType: null,
                                   commDeposite: null,
                                   msg: null,
-                                  isFromSiteref: null,
+                                  isFromSiteref: '0',
                                 );
 
                                 _shouldSetState = true;

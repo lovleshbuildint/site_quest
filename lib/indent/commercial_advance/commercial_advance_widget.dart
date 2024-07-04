@@ -77,7 +77,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
         scrollDirection: Axis.vertical,
         children: [
           Text(
-            'Rental Type',
+            _model.rentaltype.toString(),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,

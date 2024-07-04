@@ -512,7 +512,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 if ((_model
                                         .dOADetailsThirdWordsecur?.succeeded ??
                                     true)) {
-                                  context.goNamed('indent_site_dimensions');
+                                  context.pushNamed('open_site_dimensions');
                                 } else {
                                   await showDialog(
                                     context: context,

@@ -1072,7 +1072,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                       .toString(),
                                   errCnt: null,
                                   msg: null,
-                                  isWB: null,
+                                  isWB: '0',
                                   companyName: null,
                                   employeeName: null,
                                   contactNumber: null,

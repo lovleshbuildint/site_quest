@@ -164,7 +164,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   ),
                   options: (getJsonField(
                     cRAAgencyGetCRAAgencResponse.jsonBody,
-                    r'''$..CITName''',
+                    r'''$..CITCode''',
                     true,
                   ) as List)
                       .map<String>((s) => s.toString())

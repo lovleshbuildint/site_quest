@@ -102,7 +102,7 @@ int? dropdown(String dropdownValue) {
 
 int? dropdownsONSITE(String dropdownvalue) {
   // in dropdown value is yes then show 1 or in dropdown values is no then show 0
-  if (dropdownvalue == "Onsite") {
+  if (dropdownvalue == "Onsite" || dropdownvalue == "Yes") {
     return 1;
   } else {
     return 0;

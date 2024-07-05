@@ -1184,8 +1184,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 ).toString(),
               ),
               options: (getJsonField(
-                FFAppState().getindentBank,
-                r'''$.IndentBanks..Name''',
+                FFAppState().CustomerBank,
+                r'''$.CustomerBanks..Name''',
                 true,
               ) as List)
                   .map<String>((s) => s.toString())

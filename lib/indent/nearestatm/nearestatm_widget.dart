@@ -147,7 +147,10 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'ATM Name',
+              getJsonField(
+                FFAppState().indentSelectedSite,
+                r'''$.Pincode''',
+              ).toString(),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -162,13 +165,13 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               controller: _model.aTMNameValueController ??=
                   FormFieldController<String>(
                 _model.aTMNameValue ??= getJsonField(
-                  FFAppState().getCustomerbank,
-                  r'''$.CustomerBanks[0].Name''',
+                  FFAppState().getindentBank,
+                  r'''$[0].IndentBanks''',
                 ).toString(),
               ),
               options: (getJsonField(
-                FFAppState().getCustomerbank,
-                r'''$.CustomerBanks..Name''',
+                FFAppState().getindentBank,
+                r'''$.IndentBanks..Name''',
                 true,
               ) as List)
                   .map<String>((s) => s.toString())

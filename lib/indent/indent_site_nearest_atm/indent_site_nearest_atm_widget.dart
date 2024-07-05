@@ -657,10 +657,7 @@ class _IndentSiteNearestAtmWidgetState
                               onPressed: () async {
                                 _model.updateNearestATM =
                                     await SqGroup.updatenearestATMCall.call(
-                                  indentId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  indentId: null,
                                   token: FFAppState().Token,
                                   atmid: _model
                                       .nearestatmModel.atmidTextController.text,
@@ -676,10 +673,7 @@ class _IndentSiteNearestAtmWidgetState
                                   avgtxns: _model.nearestatmModel
                                       .avgApproxTxnsDayTextController.text,
                                   siteId: null,
-                                  iindent: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  iindent: null,
                                   avgTotaltransDA: _model.nearestatmModel
                                       .avgApproxTotalDayTextController.text,
                                   targetBank: null,

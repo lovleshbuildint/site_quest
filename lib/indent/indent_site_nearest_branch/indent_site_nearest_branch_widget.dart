@@ -624,9 +624,11 @@ class _IndentSiteNearestBranchWidgetState
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',
                                   ).toString(),
-                                  cRACoverage: _model
-                                      .nearestbranchModel.cRACoverage
-                                      .toString(),
+                                  cRACoverage: valueOrDefault<String>(
+                                    _model.nearestbranchModel.cRACoverage
+                                        .toString(),
+                                    '0',
+                                  ),
                                   cRAAgency: FFAppState().CRAAgency,
                                   branchSOLID: FFAppState().BranchSOLID,
                                   nearestBranch: FFAppState().NearestBranch,

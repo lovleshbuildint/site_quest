@@ -358,8 +358,11 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 vsat:
                                     _model.sitedimentionsModel.vsat?.toString(),
                                 token: FFAppState().Token,
-                                acodu: _model.sitedimentionsModel.acOduSpace
-                                    ?.toString(),
+                                acodu: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.acOduSpace
+                                      .toString(),
+                                  '1',
+                                ),
                                 powerAvailability: _model
                                     .sitedimentionsModel.powerAvailabilityValue,
                                 hours: _model.sitedimentionsModel

@@ -693,7 +693,10 @@ class _IndentSiteNearestAtmWidgetState
                                   locationName: null,
                                   androidKey: null,
                                   isPrizm: '0',
-                                  pinCode: null,
+                                  pinCode: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.Pincode''',
+                                  ).toString(),
                                   errCnt: null,
                                   isWB: '0',
                                   msg: null,

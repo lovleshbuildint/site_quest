@@ -137,12 +137,10 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
               validator:
                   _model.atmidTextControllerValidator.asValidator(context),
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
               ],
             ),
           ),

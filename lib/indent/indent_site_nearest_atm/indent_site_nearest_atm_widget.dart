@@ -702,8 +702,11 @@ class _IndentSiteNearestAtmWidgetState
                                   employeeName: null,
                                   companyName: null,
                                   iDevice: null,
-                                  isBranch: _model.nearestatmModel.atmStatus
-                                      ?.toString(),
+                                  isBranch: valueOrDefault<String>(
+                                    _model.nearestatmModel.atmStatus
+                                        ?.toString(),
+                                    '1',
+                                  ),
                                   isFromSiteref: false,
                                 );
 

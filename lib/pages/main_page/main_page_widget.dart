@@ -287,6 +287,30 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           }
         }),
         Future(() async {
+          _model.getindentBank = await SqGroup.getIndentBankCall.call();
+
+          if ((_model.getindentBank?.succeeded ?? true)) {
+            FFAppState().getindentBank = (_model.getindentBank?.jsonBody ?? '');
+            setState(() {});
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Alert(GetIndentBank)'),
+                  content: Text((_model.getindentBank?.bodyText ?? '')),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        }),
+        Future(() async {
           _model.tisResponse = await SqGroup.tisCall.call(
             token: FFAppState().Token,
           );

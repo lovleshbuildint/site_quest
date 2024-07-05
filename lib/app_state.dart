@@ -675,6 +675,12 @@ class FFAppState extends ChangeNotifier {
   set getCustomerbank(dynamic value) {
     _getCustomerbank = value;
   }
+
+  dynamic _getindentBank;
+  dynamic get getindentBank => _getindentBank;
+  set getindentBank(dynamic value) {
+    _getindentBank = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

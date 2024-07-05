@@ -1175,79 +1175,56 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-            child: FutureBuilder<ApiCallResponse>(
-              future: SqGroup.getIndentBankCall.call(
-                token: FFAppState().Token,
+            child: FlutterFlowDropDown<String>(
+              controller: _model.landlordBankNameValueController ??=
+                  FormFieldController<String>(
+                _model.landlordBankNameValue ??= getJsonField(
+                  FFAppState().getindentBank,
+                  r'''$[0].IndentBanks''',
+                ).toString(),
               ),
-              builder: (context, snapshot) {
-                // Customize what your widget looks like when it's loading.
-                if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                    ),
-                  );
-                }
-                final landlordBankNameGetIndentBankResponse = snapshot.data!;
-                return FlutterFlowDropDown<String>(
-                  controller: _model.landlordBankNameValueController ??=
-                      FormFieldController<String>(
-                    _model.landlordBankNameValue ??= getJsonField(
-                      landlordBankNameGetIndentBankResponse.jsonBody,
-                      r'''$[0].IndentBanks''',
-                    ).toString(),
-                  ),
-                  options: (getJsonField(
-                    landlordBankNameGetIndentBankResponse.jsonBody,
-                    r'''$.IndentBanks..Name''',
-                    true,
-                  ) as List)
-                      .map<String>((s) => s.toString())
-                      .toList()!,
-                  onChanged: (val) =>
-                      setState(() => _model.landlordBankNameValue = val),
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 50.0,
-                  searchHintTextStyle:
-                      FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w300,
-                          ),
-                  searchTextStyle:
-                      FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            letterSpacing: 0.0,
-                          ),
-                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+              options: (getJsonField(
+                FFAppState().getindentBank,
+                r'''$.IndentBanks..Name''',
+                true,
+              ) as List)
+                  .map<String>((s) => s.toString())
+                  .toList()!,
+              onChanged: (val) =>
+                  setState(() => _model.landlordBankNameValue = val),
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              height: 50.0,
+              searchHintTextStyle:
+                  FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Poppins',
-                        color: Colors.black,
+                        fontSize: 10.0,
                         letterSpacing: 0.0,
+                        fontWeight: FontWeight.w300,
                       ),
-                  searchHintText: 'Search Bank...',
-                  icon: Icon(
-                    Icons.keyboard_arrow_down_rounded,
-                    color: Color(0xFFE1E2E6),
-                    size: 24.0,
+              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
                   ),
-                  fillColor: Colors.white,
-                  elevation: 2.0,
-                  borderColor: Color(0xFFE1E2E6),
-                  borderWidth: 2.0,
-                  borderRadius: 8.0,
-                  margin: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 16.0, 4.0),
-                  hidesUnderline: true,
-                  isSearchable: true,
-                  isMultiSelect: false,
-                );
-              },
+              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.black,
+                    letterSpacing: 0.0,
+                  ),
+              searchHintText: 'Search Bank...',
+              icon: Icon(
+                Icons.keyboard_arrow_down_rounded,
+                color: Color(0xFFE1E2E6),
+                size: 24.0,
+              ),
+              fillColor: Colors.white,
+              elevation: 2.0,
+              borderColor: Color(0xFFE1E2E6),
+              borderWidth: 2.0,
+              borderRadius: 8.0,
+              margin: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 16.0, 4.0),
+              hidesUnderline: true,
+              isSearchable: true,
+              isMultiSelect: false,
             ),
           ),
           Padding(

@@ -1051,7 +1051,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   iStageText: null,
                                   locationName: null,
                                   androidKey: null,
-                                  cRACoverage: FFAppState().CRACoverage,
+                                  cRACoverage: valueOrDefault<String>(
+                                    FFAppState().trycracoverage,
+                                    '0',
+                                  ),
                                   cRAAgency: FFAppState().CRAAgency,
                                   branchSOLID: FFAppState().BranchSOLID,
                                   nearestBranch: FFAppState().NearestBranch,

@@ -139,9 +139,6 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   ),
               validator:
                   _model.atmidTextControllerValidator.asValidator(context),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
-              ],
             ),
           ),
           Padding(

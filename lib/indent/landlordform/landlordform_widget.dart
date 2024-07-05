@@ -1179,8 +1179,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               controller: _model.landlordBankNameValueController ??=
                   FormFieldController<String>(
                 _model.landlordBankNameValue ??= getJsonField(
-                  FFAppState().getindentBank,
-                  r'''$[0].IndentBanks''',
+                  FFAppState().CustomerBank,
+                  r'''$.CustomerBanks[0].Name''',
                 ).toString(),
               ),
               options: (getJsonField(

@@ -67,7 +67,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'CRA Coverage',
+              FFAppState().CRACoverage,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,

@@ -1036,10 +1036,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   remarks4: FFAppState().Remark4,
                                   remarks5: FFAppState().Remark5,
                                   token: FFAppState().Token,
-                                  indentId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  indentId: null,
                                   siteId: null,
                                   targetBank: getJsonField(
                                     FFAppState().indentSelectedSite,
@@ -1077,10 +1074,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   employeeName: null,
                                   contactNumber: null,
                                   emailId: null,
-                                  iindent: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  iindent: null,
                                   isFromSiteref: false,
                                 );
 

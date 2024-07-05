@@ -71,6 +71,10 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _istate = await secureStorage.getStringList('ff_istate') ?? _istate;
     });
+    await _safeInitAsync(() async {
+      _trycracoverage =
+          await secureStorage.getString('ff_trycracoverage') ?? _trycracoverage;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -680,6 +684,17 @@ class FFAppState extends ChangeNotifier {
   dynamic get getindentBank => _getindentBank;
   set getindentBank(dynamic value) {
     _getindentBank = value;
+  }
+
+  String _trycracoverage = '';
+  String get trycracoverage => _trycracoverage;
+  set trycracoverage(String value) {
+    _trycracoverage = value;
+    secureStorage.setString('ff_trycracoverage', value);
+  }
+
+  void deleteTrycracoverage() {
+    secureStorage.delete(key: 'ff_trycracoverage');
   }
 }
 

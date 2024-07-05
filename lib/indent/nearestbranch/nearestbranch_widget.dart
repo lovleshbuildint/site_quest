@@ -91,6 +91,8 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 setState(() {});
                 FFAppState().CRACoverage = _model.cRACoverageValue!;
                 setState(() {});
+                FFAppState().trycracoverage = _model.cRACoverage.toString();
+                setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,

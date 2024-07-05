@@ -695,7 +695,7 @@ class _IndentSiteNearestAtmWidgetState
                                   isPrizm: null,
                                   pinCode: null,
                                   errCnt: null,
-                                  isWB: null,
+                                  isWB: '0',
                                   msg: null,
                                   emailId: null,
                                   contactNumber: null,

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -213,7 +214,10 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'ATM Status',
+              valueOrDefault<String>(
+                _model.atmStatus?.toString(),
+                '2',
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -224,7 +228,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           ),
           FlutterFlowRadioButton(
             options: ['ONSITE', 'OFFSITE'].toList(),
-            onChanged: (val) => setState(() {}),
+            onChanged: (val) async {
+              setState(() {});
+              _model.atmStatus = functions.radioButton(_model.aTMSTatusValue!);
+              setState(() {});
+            },
             controller: _model.aTMSTatusValueController ??=
                 FormFieldController<String>('ONSITE'),
             optionHeight: 37.0,

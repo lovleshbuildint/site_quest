@@ -692,7 +692,7 @@ class _IndentSiteNearestAtmWidgetState
                                   iStageText: null,
                                   locationName: null,
                                   androidKey: null,
-                                  isPrizm: null,
+                                  isPrizm: '0',
                                   pinCode: null,
                                   errCnt: null,
                                   isWB: '0',

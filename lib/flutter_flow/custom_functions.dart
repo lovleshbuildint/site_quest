@@ -57,7 +57,7 @@ double? latitudeFuntion(LatLng latLong) {
 
 int? radioButton(String dropdownvalue) {
   // in dropdown value is yes then show 1 or in dropdown values is no then show 0
-  if (dropdownvalue == "Advance Rent") {
+  if (dropdownvalue == "Advance Rent" || dropdownvalue == "ONSITE") {
     return 1;
   } else {
     return 0;

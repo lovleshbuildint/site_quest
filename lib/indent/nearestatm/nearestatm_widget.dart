@@ -184,13 +184,13 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                   controller: _model.aTMNameValueController ??=
                       FormFieldController<String>(
                     _model.aTMNameValue ??= getJsonField(
-                      FFAppState().CustomerBank,
-                      r'''$[0].customerbank''',
+                      FFAppState().getCustomerbank,
+                      r'''$.CustomerBanks[0].Name''',
                     ).toString(),
                   ),
                   options: (getJsonField(
                     aTMNameGetCustomerBankResponse.jsonBody,
-                    r'''$.customerbank..Name''',
+                    r'''$.CustomerBanks..Name''',
                     true,
                   ) as List)
                       .map<String>((s) => s.toString())

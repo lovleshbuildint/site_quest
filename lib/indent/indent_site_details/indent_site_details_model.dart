@@ -59,13 +59,11 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   String? district;
 
-  String? trystate;
-
-  String? trydistrict;
-
   String? trycity;
 
   String? postResponse;
+
+  String? trystate;
 
   ///  State fields for stateful widgets in this page.
 

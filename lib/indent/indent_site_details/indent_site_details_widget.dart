@@ -1444,8 +1444,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            _model.trydistrict,
-                                            '9',
+                                            _model.district,
+                                            '0',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1522,14 +1522,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       .districtValue = val);
                                                   _model.district =
                                                       _model.districtValue;
-                                                  setState(() {});
-                                                  _model.trydistrict =
-                                                      functions.checkIndex(
-                                                          FFAppState().District,
-                                                          _model.districtValue,
-                                                          'District',
-                                                          'DistrictName',
-                                                          'iDistrict');
                                                   setState(() {});
                                                 },
                                                 width:
@@ -1655,14 +1647,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     _model.stateValue = val);
                                                 _model.statefordist =
                                                     _model.stateValue;
-                                                setState(() {});
-                                                _model.trystate = functions
-                                                    .istatetostatevalue(
-                                                        FFAppState().Stateapi,
-                                                        _model.stateValue,
-                                                        'States',
-                                                        'iState',
-                                                        'State');
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)

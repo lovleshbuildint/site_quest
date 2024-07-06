@@ -1761,7 +1761,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             future: SqGroup
                                                 .citiesAPIforStatenDistCall
                                                 .call(
-                                              istate: _model.statefordist,
+                                              istate: _model.stateValue,
                                               idistrict: _model.district,
                                               token: FFAppState().Token,
                                             ),

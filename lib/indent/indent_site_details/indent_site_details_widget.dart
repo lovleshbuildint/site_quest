@@ -1502,7 +1502,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     (getJsonField(
                                                   districtDistrictAPisResponse
                                                       .jsonBody,
-                                                  r'''$.District..iDistrict''',
+                                                  r'''$.District..DistrictName''',
                                                   true,
                                                 ) as List)
                                                         .map<String>(
@@ -2928,117 +2928,315 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            _model.updateDOAdetailsfirstdouble = await SqGroup
-                                .dOADetailsstepFIRSTworddocCall
-                                .call(
-                              customerBank:
-                                  _model.customerbankTextController.text,
-                              district: _model.trydistrict,
-                              strategy: _model.strategyDropDwonValue,
-                              circle: _model.circleValue,
-                              city: _model.cityValue,
-                              iSiteType: _model.isitetype,
-                              iCashDeviceType: _model.idevicetype,
-                              iCashDeviceMovementCategory:
-                                  _model.icashdevicemov,
-                              iTisType: _model.itistype,
-                              iShopType: _model.ishoptype,
-                              token: FFAppState().Token,
-                              locationName: null,
-                              distance: _model
-                                  .distancefrominindentTextController.text,
-                              address: _model.siteAddressTextController.text,
-                              state: _model.trystate,
-                              pincode: _model.pincodeTextController.text,
-                              atmExisting:
-                                  _model.aTMExisitingTextController.text,
-                              landMark: _model.aTMExisitingTextController.text,
-                              rBICategory: _model.rBICategoryValue,
-                              sitesourcedby: _model.siteSourcedValue,
-                              isOnSite: valueOrDefault<String>(
-                                _model.onofSite,
-                                '1',
-                              ),
-                              isDuplicateSite:
-                                  _model.iduplicatesite?.toString(),
-                              iSiteVisitedBy: _model.isitevisitedby,
-                              iSiteVisitedByName: _model.iSiteVisitedByName,
-                              iSecondSiteVisitedByName:
-                                  _model.iSecondSiteVisitedByName,
-                              iProjType: _model.iprojecttype,
-                              indentId: getJsonField(
-                                FFAppState().indentSelectedSite,
-                                r'''$.IndentId''',
-                              ).toString(),
-                              targetBank: null,
-                              siteId: null,
-                              iindent: null,
-                              mgrName: _model.mrgNameTextController.text,
-                              mgrNo: _model.mrgNoTextController.text,
-                              location: _model.siteAddressTextController.text,
-                              isFromSiteref: false,
-                              centre: null,
-                              comment: null,
-                              lastModStamp: null,
-                              isHold: null,
-                              istage: null,
-                              iStageText: null,
-                              androidKey: null,
-                              waterlog: null,
-                              atmaval: null,
-                              companyName: null,
-                              employeeName: null,
-                              contactNumber: null,
-                              emailId: null,
-                              isWB: '0',
-                              msg: null,
-                              errCnt: null,
-                              districts: null,
-                            );
+                            var _shouldSetState = false;
+                            if (_model.ideparmrnt == 1) {
+                              if ((_model.customerbankTextController.text != null &&
+                                      _model.customerbankTextController.text !=
+                                          '') &&
+                                  (_model.strategyDropDwonValue != null &&
+                                      _model.strategyDropDwonValue != '') &&
+                                  (_model.siteAddressTextController.text != null &&
+                                      _model.siteAddressTextController.text !=
+                                          '') &&
+                                  (_model.distancefrominindentTextController.text !=
+                                          null &&
+                                      _model.distancefrominindentTextController.text !=
+                                          '') &&
+                                  (_model.stateValue != null &&
+                                      _model.stateValue != '') &&
+                                  (_model.cityValue != null &&
+                                      _model.cityValue != '') &&
+                                  (_model.circleValue != null &&
+                                      _model.circleValue != '') &&
+                                  (_model.pincodeTextController.text != null &&
+                                      _model.pincodeTextController.text !=
+                                          '') &&
+                                  (_model.siteAddressTextController.text != null &&
+                                      _model.siteAddressTextController.text !=
+                                          '') &&
+                                  (_model.rBICategoryValue != null &&
+                                      _model.rBICategoryValue != '') &&
+                                  (_model.siteSourcedValue != null &&
+                                      _model.siteSourcedValue != '') &&
+                                  (_model.onofsiteValue != null &&
+                                      _model.onofsiteValue != '') &&
+                                  (_model.districtValue != null &&
+                                      _model.districtValue != '') &&
+                                  (_model.projecttypeValue != null &&
+                                      _model.projecttypeValue != '') &&
+                                  (_model.sitevisitedbyValue != null &&
+                                      _model.sitevisitedbyValue != '') &&
+                                  (_model.tistypeValue != null &&
+                                      _model.tistypeValue != '') &&
+                                  (_model.projecttypeValue != null &&
+                                      _model.projecttypeValue != '') &&
+                                  (_model.duplicatesiteValue != null &&
+                                      _model.duplicatesiteValue != '')) {
+                                _model.updateDOAdetailsfirstdept = await SqGroup
+                                    .dOADetailsstepFIRSTworddocCall
+                                    .call(
+                                  customerBank:
+                                      _model.customerbankTextController.text,
+                                  district: _model.districtValue,
+                                  strategy: _model.strategyDropDwonValue,
+                                  circle: _model.circleValue,
+                                  city: _model.cityValue,
+                                  iSiteType: _model.isitetype,
+                                  iCashDeviceType: _model.idevicetype,
+                                  iCashDeviceMovementCategory:
+                                      _model.icashdevicemov,
+                                  iTisType: _model.itistype,
+                                  iShopType: _model.ishoptype,
+                                  token: FFAppState().Token,
+                                  locationName: null,
+                                  distance: _model
+                                      .distancefrominindentTextController.text,
+                                  address:
+                                      _model.siteAddressTextController.text,
+                                  state: _model.stateValue,
+                                  pincode: _model.pincodeTextController.text,
+                                  atmExisting:
+                                      _model.aTMExisitingTextController.text,
+                                  landMark:
+                                      _model.aTMExisitingTextController.text,
+                                  rBICategory: _model.rBICategoryValue,
+                                  sitesourcedby: _model.siteSourcedValue,
+                                  isOnSite: _model.onofsiteValue,
+                                  isDuplicateSite:
+                                      _model.iduplicatesite?.toString(),
+                                  iSiteVisitedBy: _model.isitevisitedby,
+                                  iSiteVisitedByName: _model.iSiteVisitedByName,
+                                  iSecondSiteVisitedByName:
+                                      _model.iSecondSiteVisitedByName,
+                                  iProjType: _model.iprojecttype,
+                                  indentId: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.IndentId''',
+                                  ).toString(),
+                                  targetBank: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.CustomerBank''',
+                                  ).toString(),
+                                  siteId: null,
+                                  iindent: null,
+                                  mgrName: _model.mrgNameTextController.text,
+                                  mgrNo: _model.mrgNoTextController.text,
+                                  location:
+                                      _model.siteAddressTextController.text,
+                                  isFromSiteref: false,
+                                  centre: null,
+                                  comment: null,
+                                  lastModStamp: null,
+                                  isHold: null,
+                                  istage: null,
+                                  iStageText: null,
+                                  androidKey: null,
+                                  waterlog: null,
+                                  atmaval: null,
+                                  companyName: null,
+                                  employeeName: null,
+                                  contactNumber: null,
+                                  emailId: null,
+                                  isWB: null,
+                                  msg: null,
+                                  errCnt: null,
+                                );
 
-                            if ((_model
-                                    .updateDOAdetailsfirstdouble?.succeeded ??
-                                true)) {
-                              _model.postResponse = getJsonField(
-                                (_model.updateDOAdetailsfirstdouble?.jsonBody ??
-                                    ''),
-                                r'''$.SiteId''',
-                              ).toString();
-                              setState(() {});
+                                _shouldSetState = true;
+                                if ((_model.updateDOAdetailsfirst?.succeeded ??
+                                    true)) {
+                                  FFAppState().SiteId = getJsonField(
+                                    (_model.updateDOAdetailsfirstdept
+                                            ?.jsonBody ??
+                                        ''),
+                                    r'''$.SiteId''',
+                                  ).toString();
+                                  setState(() {});
 
-                              context.pushNamed(
-                                'indent_site_landlord_details',
-                                queryParameters: {
-                                  'siteId': serializeParam(
-                                    _model.postResponse,
-                                    ParamType.String,
-                                  ),
-                                }.withoutNulls,
-                              );
-                            } else {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title:
-                                        Text('Alert (UpdateDOAdetailsfirst)'),
-                                    content: Text((_model
-                                            .updateDOAdetailsfirstdouble
-                                            ?.bodyText ??
-                                        '')),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
+                                  context.pushNamed(
+                                      'indent_site_landlord_details');
+                                } else {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(
+                                            'Alert (UpdateDOAdetailsfirst)'),
+                                        content: Text((_model
+                                                .updateDOAdetailsfirstdept
+                                                ?.bodyText ??
+                                            '')),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   );
-                                },
-                              );
+                                }
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert'),
+                                      content: Text('Please fill Details'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                if (_shouldSetState) setState(() {});
+                                return;
+                              }
+                            } else {
+                              if ((_model.sitetypeValue != null &&
+                                      _model.sitetypeValue != '') &&
+                                  (_model.tistypeValue != null &&
+                                      _model.tistypeValue != '') &&
+                                  (_model.projecttypeValue != null &&
+                                      _model.projecttypeValue != '') &&
+                                  (_model.cashdevicetypeValue != null &&
+                                      _model.cashdevicetypeValue != '') &&
+                                  (_model.sitevisitedbyValue != null &&
+                                      _model.sitevisitedbyValue != '') &&
+                                  (_model.cashdevicemovValue != null &&
+                                      _model.cashdevicemovValue != '') &&
+                                  (_model.firstsitevisitedbyValue != null &&
+                                      _model.firstsitevisitedbyValue != '')) {
+                                _model.updateDOAdetailsfirst = await SqGroup
+                                    .dOADetailsstepFIRSTworddocCall
+                                    .call(
+                                  customerBank:
+                                      _model.customerbankTextController.text,
+                                  district: _model.districtValue,
+                                  strategy: _model.strategyDropDwonValue,
+                                  circle: _model.circleValue,
+                                  city: _model.cityValue,
+                                  iSiteType: _model.isitetype,
+                                  iCashDeviceType: _model.idevicetype,
+                                  iCashDeviceMovementCategory:
+                                      _model.icashdevicemov,
+                                  iTisType: _model.itistype,
+                                  iShopType: _model.ishoptype,
+                                  token: FFAppState().Token,
+                                  locationName: null,
+                                  distance: _model
+                                      .distancefrominindentTextController.text,
+                                  address:
+                                      _model.siteAddressTextController.text,
+                                  state: _model.stateValue,
+                                  pincode: _model.pincodeTextController.text,
+                                  atmExisting:
+                                      _model.aTMExisitingTextController.text,
+                                  landMark:
+                                      _model.aTMExisitingTextController.text,
+                                  rBICategory: _model.rBICategoryValue,
+                                  sitesourcedby: _model.siteSourcedValue,
+                                  isOnSite: _model.onofsiteValue,
+                                  isDuplicateSite:
+                                      _model.iduplicatesite?.toString(),
+                                  iSiteVisitedBy: _model.isitevisitedby,
+                                  iSiteVisitedByName: _model.iSiteVisitedByName,
+                                  iSecondSiteVisitedByName:
+                                      _model.iSecondSiteVisitedByName,
+                                  iProjType: _model.iprojecttype,
+                                  indentId: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.IndentId''',
+                                  ).toString(),
+                                  targetBank: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.CustomerBank''',
+                                  ).toString(),
+                                  siteId: null,
+                                  iindent: null,
+                                  mgrName: _model.mrgNameTextController.text,
+                                  mgrNo: _model.mrgNoTextController.text,
+                                  location:
+                                      _model.siteAddressTextController.text,
+                                  isFromSiteref: false,
+                                  centre: null,
+                                  comment: null,
+                                  lastModStamp: null,
+                                  isHold: null,
+                                  istage: null,
+                                  iStageText: null,
+                                  androidKey: null,
+                                  waterlog: null,
+                                  atmaval: null,
+                                  companyName: null,
+                                  employeeName: null,
+                                  contactNumber: null,
+                                  emailId: null,
+                                  isWB: null,
+                                  msg: null,
+                                  errCnt: null,
+                                );
+
+                                _shouldSetState = true;
+                                if ((_model.updateDOAdetailsfirst?.succeeded ??
+                                    true)) {
+                                  FFAppState().SiteId = getJsonField(
+                                    (_model.updateDOAdetailsfirst?.jsonBody ??
+                                        ''),
+                                    r'''$.SiteId''',
+                                  ).toString();
+                                  setState(() {});
+
+                                  context.pushNamed(
+                                      'indent_site_landlord_details');
+                                } else {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(
+                                            'Alert (UpdateDOAdetailsfirst)'),
+                                        content: Text((_model
+                                                .updateDOAdetailsfirst
+                                                ?.bodyText ??
+                                            '')),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                }
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert'),
+                                      content: Text('Please fill Field'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
                             }
 
-                            setState(() {});
+                            if (_shouldSetState) setState(() {});
                           },
                           text: 'Save & Next',
                           options: FFButtonOptions(

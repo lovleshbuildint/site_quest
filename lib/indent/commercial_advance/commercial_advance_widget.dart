@@ -1202,8 +1202,23 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '11',
                         '12'
                       ],
-                      onChanged: (val) =>
-                          setState(() => _model.securityDepositValue = val),
+                      onChanged: (val) async {
+                        setState(() => _model.securityDepositValue = val);
+                        setState(() {
+                          _model.totalSecurityDepositTextController
+                              ?.text = ((int.parse(_model
+                                      .securityRentRentPerMonthTextController
+                                      .text) *
+                                  int.parse((_model.securityDepositValue!)))
+                              .toString());
+                          _model.totalSecurityDepositTextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .totalSecurityDepositTextController!
+                                      .text
+                                      .length);
+                        });
+                      },
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:

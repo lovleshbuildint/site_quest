@@ -644,10 +644,7 @@ class _IndentSiteNearestBranchWidgetState
                                       .longitudeFunction(
                                           currentUserLocationValue!)
                                       .toString(),
-                                  siteId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  siteId: FFAppState().SiteId,
                                   iindent: getJsonField(
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',

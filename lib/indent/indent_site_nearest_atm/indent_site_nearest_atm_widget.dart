@@ -655,79 +655,116 @@ class _IndentSiteNearestAtmWidgetState
                                 190.0, 0.0, 25.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                _model.updateNearestATM =
-                                    await SqGroup.updatenearestATMCall.call(
-                                  indentId: null,
-                                  token: FFAppState().Token,
-                                  atmid: _model
-                                      .nearestatmModel.atmidTextController.text,
-                                  bankName: _model.nearestatmModel.aTMNameValue,
-                                  distance: _model.nearestatmModel
-                                      .distanceKMTextController.text,
-                                  direction: _model.nearestatmModel
-                                      .directionTextController.text,
-                                  avgOffusTransDA: _model.nearestatmModel
-                                      .avgOffusTextController.text,
-                                  avgOnusTransDA: _model.nearestatmModel
-                                      .avgOnusTextController.text,
-                                  avgtxns: _model.nearestatmModel
-                                      .avgApproxTxnsDayTextController.text,
-                                  siteId: null,
-                                  iindent: null,
-                                  avgTotaltransDA: _model.nearestatmModel
-                                      .avgApproxTotalDayTextController.text,
-                                  targetBank: null,
-                                  district: null,
-                                  centre: null,
-                                  comment: null,
-                                  lastModStamp: null,
-                                  isHold: null,
-                                  istage: null,
-                                  iStageText: null,
-                                  locationName: null,
-                                  androidKey: null,
-                                  isPrizm: '0',
-                                  pinCode: getJsonField(
+                                var _shouldSetState = false;
+                                _model.dOADeatilsseven =
+                                    await SqGroup.dOADetailsstepsevenCall.call(
+                                  iIndent: getJsonField(
                                     FFAppState().indentSelectedSite,
-                                    r'''$.Pincode''',
+                                    r'''$.IndentId''',
                                   ).toString(),
-                                  errCnt: null,
-                                  isWB: '0',
-                                  msg: null,
-                                  emailId: null,
-                                  contactNumber: null,
-                                  employeeName: null,
-                                  companyName: null,
-                                  iDevice: null,
-                                  isBranch: valueOrDefault<String>(
-                                    _model.nearestatmModel.atmStatus
-                                        ?.toString(),
-                                    '1',
-                                  ),
-                                  isFromSiteref: false,
+                                  token: FFAppState().Token,
                                 );
 
-                                if ((_model.updateNearestATM?.succeeded ??
+                                _shouldSetState = true;
+                                if ((_model.dOADeatilsseven?.succeeded ??
                                     true)) {
-                                  if (Navigator.of(context).canPop()) {
-                                    context.pop();
-                                  }
-                                  context.pushNamed(
-                                    'indent_site_remark',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
-                                      ),
-                                    },
+                                  _model.updateNearestATM =
+                                      await SqGroup.updatenearestATMCall.call(
+                                    indentId: null,
+                                    token: FFAppState().Token,
+                                    atmid: _model.nearestatmModel
+                                        .atmidTextController.text,
+                                    bankName:
+                                        _model.nearestatmModel.aTMNameValue,
+                                    distance: _model.nearestatmModel
+                                        .distanceKMTextController.text,
+                                    direction: _model.nearestatmModel
+                                        .directionTextController.text,
+                                    avgOffusTransDA: _model.nearestatmModel
+                                        .avgOffusTextController.text,
+                                    avgOnusTransDA: _model.nearestatmModel
+                                        .avgOnusTextController.text,
+                                    avgtxns: _model.nearestatmModel
+                                        .avgApproxTxnsDayTextController.text,
+                                    siteId: FFAppState().SiteId,
+                                    iindent: null,
+                                    avgTotaltransDA: _model.nearestatmModel
+                                        .avgApproxTotalDayTextController.text,
+                                    targetBank: null,
+                                    district: null,
+                                    centre: null,
+                                    comment: null,
+                                    lastModStamp: null,
+                                    isHold: null,
+                                    istage: null,
+                                    iStageText: null,
+                                    locationName: null,
+                                    androidKey: null,
+                                    isPrizm: '0',
+                                    pinCode: getJsonField(
+                                      FFAppState().indentSelectedSite,
+                                      r'''$.Pincode''',
+                                    ).toString(),
+                                    errCnt: null,
+                                    isWB: '0',
+                                    msg: null,
+                                    emailId: null,
+                                    contactNumber: null,
+                                    employeeName: null,
+                                    companyName: null,
+                                    iDevice: null,
+                                    isBranch: valueOrDefault<String>(
+                                      _model.nearestatmModel.atmStatus
+                                          ?.toString(),
+                                      '1',
+                                    ),
+                                    isFromSiteref: false,
                                   );
+
+                                  _shouldSetState = true;
+                                  if ((_model.updateNearestATM?.succeeded ??
+                                      true)) {
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
+                                    context.pushNamed(
+                                      'indent_site_remark',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title:
+                                              Text('Alert(UpdateNearestATM)'),
+                                          content: Text((_model
+                                                  .updateNearestATM?.bodyText ??
+                                              '')),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }
                                 } else {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        title: Text('Alert(UpdateNearestATM)'),
+                                        title: Text('Alert (Device Id )'),
                                         content: Text((_model
                                                 .updateNearestATM?.bodyText ??
                                             '')),
@@ -741,9 +778,11 @@ class _IndentSiteNearestAtmWidgetState
                                       );
                                     },
                                   );
+                                  if (_shouldSetState) setState(() {});
+                                  return;
                                 }
 
-                                setState(() {});
+                                if (_shouldSetState) setState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

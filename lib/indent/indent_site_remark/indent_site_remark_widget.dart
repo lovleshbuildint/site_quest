@@ -1037,7 +1037,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   remarks5: FFAppState().Remark5,
                                   token: FFAppState().Token,
                                   indentId: null,
-                                  siteId: null,
+                                  siteId: FFAppState().SiteId,
                                   targetBank: null,
                                   district: FFAppState().District.toString(),
                                   centre: null,

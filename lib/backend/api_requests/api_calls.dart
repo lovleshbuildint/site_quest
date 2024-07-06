@@ -1483,7 +1483,7 @@ class DOADetailsstepsevenCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepseven',
-      apiUrl: '${baseUrl}/DOADetails_step7',
+      apiUrl: '${baseUrl}/DOADetails_step7/Token=${token}&iIndent=${iIndent}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

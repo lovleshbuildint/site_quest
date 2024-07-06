@@ -46,10 +46,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.balanceAmountAdvanceTextController ??= TextEditingController();
     _model.balanceAmountAdvanceFocusNode ??= FocusNode();
 
-    _model.securityRentRentPerMonthTextController ??= TextEditingController();
+    _model.securityRentRentPerMonthTextController ??=
+        TextEditingController(text: '0');
     _model.securityRentRentPerMonthFocusNode ??= FocusNode();
 
-    _model.totalSecurityDepositTextController ??= TextEditingController();
+    _model.totalSecurityDepositTextController ??= TextEditingController(
+        text: (int.parse(_model.securityRentRentPerMonthTextController.text) *
+                int.parse((_model.securityDepositValue!)))
+            .toString());
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
     _model.advanceSDAmountSecurityTextController ??= TextEditingController();
@@ -1186,7 +1190,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller: _model.securityDepositValueController ??=
                           FormFieldController<String>(
-                        _model.securityDepositValue ??= '4',
+                        _model.securityDepositValue ??= '1',
                       ),
                       options: [
                         '1',

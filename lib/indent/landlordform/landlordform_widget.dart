@@ -584,7 +584,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.citiesAPIforStatenDistCall.call(
-                              istate: _model.statefordistland,
+                              istate: _model.stateValue,
                               idistrict: _model.district,
                               token: FFAppState().Token,
                             ),

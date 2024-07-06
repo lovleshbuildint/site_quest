@@ -392,7 +392,16 @@ class _OpenSiteNearestBranchWidgetState
                               );
 
                               if ((_model.dOADetailsfive?.succeeded ?? true)) {
-                                context.pushNamed('indent_site_nearest_atm');
+                                context.pushNamed(
+                                  'open_site_nearest_atm',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
                               } else {
                                 await showDialog(
                                   context: context,

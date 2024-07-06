@@ -337,7 +337,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: SqGroup.districtAPisCall.call(
-                              istate: _model.statefordistland,
+                              istate: _model.stateValue,
                               token: FFAppState().Token,
                             ),
                             builder: (context, snapshot) {
@@ -364,7 +364,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 ),
                                 options: List<String>.from((getJsonField(
                                   districtDistrictAPisResponse.jsonBody,
-                                  r'''$.District..iDistrict''',
+                                  r'''$.District..DistrictName''',
                                   true,
                                 ) as List)
                                     .map<String>((s) => s.toString())
@@ -378,15 +378,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .toList()!,
                                 onChanged: (val) async {
                                   setState(() => _model.districtValue = val);
-                                  _model.district = _model.districtValue;
-                                  setState(() {});
-                                  _model.trydistrict =
-                                      functions.istatetostatevalue(
-                                          FFAppState().District,
-                                          _model.districtValue,
-                                          'District',
-                                          'iDistrict',
-                                          'DistrictName');
+                                  _model.district = functions.checkIndex(
+                                      districtDistrictAPisResponse.jsonBody,
+                                      _model.districtValue,
+                                      'District',
+                                      'DistrictName',
+                                      'iDistrict');
                                   setState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -499,9 +496,8 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   .toList()!,
                               onChanged: (val) async {
                                 setState(() => _model.stateValue = val);
-                                _model.statefordistland = _model.stateValue;
-                                _model.trystate = functions.istatetostatevalue(
-                                    FFAppState().Stateapi,
+                                _model.statefordistland = functions.checkIndex(
+                                    stateStateListResponse.jsonBody,
                                     _model.stateValue,
                                     'States',
                                     'iState',
@@ -611,12 +607,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.cityValueController ??=
-                                    FormFieldController<String>(
-                                  _model.cityValue ??= getJsonField(
-                                    cityCitiesAPIforStatenDistResponse.jsonBody,
-                                    r'''$.Cities..City''',
-                                  ).toString(),
-                                ),
+                                    FormFieldController<String>(null),
                                 options: (getJsonField(
                                   cityCitiesAPIforStatenDistResponse.jsonBody,
                                   r'''$.Cities..City''',
@@ -1110,55 +1101,79 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-            child: TextFormField(
-              controller: _model.faxTextController,
-              focusNode: _model.faxFocusNode,
-              autofocus: false,
-              textCapitalization: TextCapitalization.words,
-              obscureText: false,
-              decoration: InputDecoration(
-                hintText: 'Enter Fax',
-                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
-                      color: Colors.black,
-                      letterSpacing: 0.0,
-                    ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFFE1E2E6),
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFFFF0026),
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                filled: true,
-                fillColor: Colors.transparent,
+            child: FutureBuilder<ApiCallResponse>(
+              future: SqGroup.getIndentBankCall.call(
+                token: FFAppState().Token,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          FlutterFlowTheme.of(context).primary,
+                        ),
+                      ),
+                    ),
+                  );
+                }
+                final faxGetIndentBankResponse = snapshot.data!;
+                return TextFormField(
+                  controller: _model.faxTextController,
+                  focusNode: _model.faxFocusNode,
+                  autofocus: false,
+                  textCapitalization: TextCapitalization.words,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Enter Fax',
+                    hintStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              letterSpacing: 0.0,
+                            ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFE1E2E6),
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFFF0026),
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    filled: true,
+                    fillColor: Colors.transparent,
                   ),
-              validator: _model.faxTextControllerValidator.asValidator(context),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                  validator:
+                      _model.faxTextControllerValidator.asValidator(context),
+                );
+              },
             ),
           ),
           Padding(

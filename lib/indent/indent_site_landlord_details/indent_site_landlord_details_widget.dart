@@ -685,10 +685,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                       .siteReferralNoTextController.text,
                                   chequePercent: _model.landlordformModel
                                       .percentTextController.text,
-                                  siteId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.SiteId''',
-                                  ).toString(),
+                                  siteId: FFAppState().SiteId,
                                   iindent: getJsonField(
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',

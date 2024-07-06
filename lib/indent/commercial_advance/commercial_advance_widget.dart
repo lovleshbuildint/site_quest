@@ -33,7 +33,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     super.initState();
     _model = createModel(context, () => CommercialAdvanceModel());
 
-    _model.advanceRentAmountRENTTextController ??= TextEditingController();
+    _model.advanceRentAmountRENTTextController ??=
+        TextEditingController(text: '0');
     _model.advanceRentAmountRENTFocusNode ??= FocusNode();
 
     _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController ??=
@@ -50,10 +51,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
         TextEditingController(text: '0');
     _model.securityRentRentPerMonthFocusNode ??= FocusNode();
 
-    _model.totalSecurityDepositTextController ??= TextEditingController(
-        text: (int.parse(_model.securityRentRentPerMonthTextController.text) *
-                int.parse((_model.securityDepositValue!)))
-            .toString());
+    _model.totalSecurityDepositTextController ??= TextEditingController();
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
     _model.advanceSDAmountSecurityTextController ??= TextEditingController();
@@ -1044,14 +1042,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 () async {
                                   setState(() {
                                     _model.totalSecurityDepositTextController
-                                        ?.text = ((int.tryParse((_model
-                                                    .securityDepositValue!)) ??
-                                                0) *
-                                            (int.tryParse(_model
-                                                    .securityRentRentPerMonthTextController
-                                                    .text) ??
-                                                0))
-                                        .toString();
+                                        ?.text = ((int.parse(_model
+                                                .securityRentRentPerMonthTextController
+                                                .text) *
+                                            int.parse(
+                                                (_model.securityDepositValue!)))
+                                        .toString());
                                     _model.totalSecurityDepositTextController
                                             ?.selection =
                                         TextSelection.collapsed(

@@ -1521,7 +1521,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   setState(() => _model
                                                       .districtValue = val);
                                                   _model.district =
-                                                      _model.districtValue;
+                                                      functions.checkIndex(
+                                                          districtDistrictAPisResponse
+                                                              .jsonBody,
+                                                          _model.districtValue,
+                                                          'District',
+                                                          'DistrictName',
+                                                          'iDistrict');
                                                   setState(() {});
                                                 },
                                                 width:

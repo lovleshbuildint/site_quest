@@ -1765,7 +1765,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 .citiesAPIforStatenDistCall
                                                 .call(
                                               istate: _model.statefordist,
-                                              idistrict: _model.trydistrict,
+                                              idistrict: _model.district,
                                               token: FFAppState().Token,
                                             ),
                                             builder: (context, snapshot) {

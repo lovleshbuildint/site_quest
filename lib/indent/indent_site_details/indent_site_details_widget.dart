@@ -1599,7 +1599,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          'State',
+                                          valueOrDefault<String>(
+                                            _model.statefordist,
+                                            '0',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1652,7 +1655,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 setState(() =>
                                                     _model.stateValue = val);
                                                 _model.statefordist =
-                                                    _model.stateValue;
+                                                    functions.checkIndex(
+                                                        stateStateListResponse
+                                                            .jsonBody,
+                                                        _model.stateValue,
+                                                        'States',
+                                                        'iState',
+                                                        'State');
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
@@ -2983,7 +2992,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       .distancefrominindentTextController.text,
                                   address:
                                       _model.siteAddressTextController.text,
-                                  state: _model.stateValue,
+                                  state: _model.statefordist,
                                   pincode: _model.pincodeTextController.text,
                                   atmExisting:
                                       _model.aTMExisitingTextController.text,
@@ -3123,7 +3132,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       .distancefrominindentTextController.text,
                                   address:
                                       _model.siteAddressTextController.text,
-                                  state: _model.stateValue,
+                                  state: _model.statefordist,
                                   pincode: _model.pincodeTextController.text,
                                   atmExisting:
                                       _model.aTMExisitingTextController.text,

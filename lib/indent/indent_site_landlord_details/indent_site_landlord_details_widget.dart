@@ -645,7 +645,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   districts:
                                       _model.landlordformModel.districtValue,
                                   token: FFAppState().Token,
-                                  iCity: _model.iCity?.toString(),
+                                  iCity: _model.landlordformModel.cityValue,
                                   lLPercent: _model.landlordformModel
                                       .lLchequefieldTextController.text,
                                   address: _model.landlordformModel

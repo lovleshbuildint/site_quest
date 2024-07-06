@@ -607,7 +607,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   snapshot.data!;
                               return FlutterFlowDropDown<String>(
                                 controller: _model.cityValueController ??=
-                                    FormFieldController<String>(null),
+                                    FormFieldController<String>(
+                                  _model.cityValue ??= getJsonField(
+                                    cityCitiesAPIforStatenDistResponse.jsonBody,
+                                    r'''$.Cities..City''',
+                                  ).toString(),
+                                ),
                                 options: (getJsonField(
                                   cityCitiesAPIforStatenDistResponse.jsonBody,
                                   r'''$.Cities..City''',

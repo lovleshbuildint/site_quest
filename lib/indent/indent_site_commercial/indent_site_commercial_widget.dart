@@ -580,7 +580,7 @@ class _IndentSiteCommercialWidgetState
                                 var _shouldSetState = false;
                                 if (_model.commercialAdvanceModel
                                         .rentaltypeValue ==
-                                    'Advance Rent ') {
+                                    'Advance Rent') {
                                   _model.tDOADetailsThirdWordAdvance =
                                       await SqGroup
                                           .dOADetailsstepTHIRDworddocCall

@@ -3147,7 +3147,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       _model.aTMExisitingTextController.text,
                                   rBICategory: _model.rBICategoryValue,
                                   sitesourcedby: _model.siteSourcedValue,
-                                  isOnSite: _model.onofsiteValue,
+                                  isOnSite: _model.onofSite,
                                   isDuplicateSite:
                                       _model.iduplicatesite?.toString(),
                                   iSiteVisitedBy: _model.isitevisitedby,
@@ -3159,10 +3159,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',
                                   ).toString(),
-                                  targetBank: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.CustomerBank''',
-                                  ).toString(),
+                                  targetBank: null,
                                   siteId: null,
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
@@ -3183,9 +3180,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   employeeName: null,
                                   contactNumber: null,
                                   emailId: null,
-                                  isWB: null,
+                                  isWB: '0',
                                   msg: null,
                                   errCnt: null,
+                                  districts: null,
                                 );
 
                                 _shouldSetState = true;

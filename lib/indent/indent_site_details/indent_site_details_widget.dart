@@ -3000,7 +3000,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       _model.aTMExisitingTextController.text,
                                   rBICategory: _model.rBICategoryValue,
                                   sitesourcedby: _model.siteSourcedValue,
-                                  isOnSite: _model.onofsiteValue,
+                                  isOnSite: _model.onofSite,
                                   isDuplicateSite:
                                       _model.iduplicatesite?.toString(),
                                   iSiteVisitedBy: _model.isitevisitedby,
@@ -3012,10 +3012,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',
                                   ).toString(),
-                                  targetBank: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.CustomerBank''',
-                                  ).toString(),
+                                  targetBank: null,
                                   siteId: null,
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
@@ -3036,14 +3033,23 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   employeeName: null,
                                   contactNumber: null,
                                   emailId: null,
-                                  isWB: null,
+                                  isWB: '0',
                                   msg: null,
                                   errCnt: null,
+                                  districts: null,
                                 );
 
                                 _shouldSetState = true;
-                                if ((_model.updateDOAdetailsfirst?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-1 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.updateDOAdetailsfirstdept?.jsonBody ??
+                                      ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   FFAppState().SiteId = getJsonField(
                                     (_model.updateDOAdetailsfirstdept
                                             ?.jsonBody ??
@@ -3062,9 +3068,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         title: Text(
                                             'Alert (UpdateDOAdetailsfirst)'),
                                         content: Text((_model
-                                                .updateDOAdetailsfirstdept
-                                                ?.bodyText ??
-                                            '')),
+                                                    .updateDOAdetailsfirstdept
+                                                    ?.jsonBody ??
+                                                '')
+                                            .toString()),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
@@ -3182,8 +3189,16 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 );
 
                                 _shouldSetState = true;
-                                if ((_model.updateDOAdetailsfirst?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-1 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.updateDOAdetailsfirst?.jsonBody ??
+                                      ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   FFAppState().SiteId = getJsonField(
                                     (_model.updateDOAdetailsfirst?.jsonBody ??
                                         ''),
@@ -3201,9 +3216,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         title: Text(
                                             'Alert (UpdateDOAdetailsfirst)'),
                                         content: Text((_model
-                                                .updateDOAdetailsfirst
-                                                ?.bodyText ??
-                                            '')),
+                                                    .updateDOAdetailsfirst
+                                                    ?.jsonBody ??
+                                                '')
+                                            .toString()),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(

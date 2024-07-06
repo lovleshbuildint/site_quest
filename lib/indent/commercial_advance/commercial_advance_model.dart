@@ -19,6 +19,8 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
 
   int? rentaltype;
 
+  String totalSecurityDeposit = '0';
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for rentaltype widget.

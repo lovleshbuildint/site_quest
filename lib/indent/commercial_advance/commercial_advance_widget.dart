@@ -51,7 +51,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
         TextEditingController(text: '0');
     _model.securityRentRentPerMonthFocusNode ??= FocusNode();
 
-    _model.totalSecurityDepositTextController ??= TextEditingController();
+    _model.totalSecurityDepositTextController ??=
+        TextEditingController(text: _model.totalSecurityDeposit);
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
     _model.advanceSDAmountSecurityTextController ??= TextEditingController();
@@ -1040,22 +1041,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 '_model.securityRentRentPerMonthTextController',
                                 Duration(milliseconds: 2000),
                                 () async {
-                                  setState(() {
-                                    _model.totalSecurityDepositTextController
-                                        ?.text = ((int.parse(_model
-                                                .securityRentRentPerMonthTextController
-                                                .text) *
-                                            int.parse(
-                                                (_model.securityDepositValue!)))
-                                        .toString());
-                                    _model.totalSecurityDepositTextController
-                                            ?.selection =
-                                        TextSelection.collapsed(
-                                            offset: _model
-                                                .totalSecurityDepositTextController!
-                                                .text
-                                                .length);
-                                  });
+                                  _model
+                                      .totalSecurityDeposit = (int.parse(_model
+                                              .securityRentRentPerMonthTextController
+                                              .text) *
+                                          int.parse(
+                                              (_model.securityDepositValue!)))
+                                      .toString();
+                                  setState(() {});
                                 },
                               ),
                               autofocus: false,
@@ -1204,20 +1197,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       ],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositValue = val);
-                        setState(() {
-                          _model.totalSecurityDepositTextController
-                              ?.text = ((int.parse(_model
-                                      .securityRentRentPerMonthTextController
-                                      .text) *
-                                  int.parse((_model.securityDepositValue!)))
-                              .toString());
-                          _model.totalSecurityDepositTextController?.selection =
-                              TextSelection.collapsed(
-                                  offset: _model
-                                      .totalSecurityDepositTextController!
-                                      .text
-                                      .length);
-                        });
+                        _model.totalSecurityDeposit = (int.parse(_model
+                                    .securityRentRentPerMonthTextController
+                                    .text) *
+                                int.parse((_model.securityDepositValue!)))
+                            .toString();
+                        setState(() {});
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,

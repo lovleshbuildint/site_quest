@@ -1038,10 +1038,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   token: FFAppState().Token,
                                   indentId: null,
                                   siteId: null,
-                                  targetBank: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.CustomerBank''',
-                                  ).toString(),
+                                  targetBank: null,
                                   district: FFAppState().District.toString(),
                                   centre: null,
                                   comment: null,

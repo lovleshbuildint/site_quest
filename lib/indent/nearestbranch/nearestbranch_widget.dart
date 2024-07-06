@@ -159,7 +159,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                       FormFieldController<String>(
                     _model.cRAAgencyValue ??= getJsonField(
                       cRAAgencyGetCRAAgencResponse.jsonBody,
-                      r'''$[0].CITName''',
+                      r'''$[0].CITCode''',
                     ).toString(),
                   ),
                   options: (getJsonField(

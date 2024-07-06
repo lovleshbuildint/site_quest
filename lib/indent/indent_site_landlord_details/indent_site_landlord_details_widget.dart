@@ -650,7 +650,8 @@ class _IndentSiteLandlordDetailsWidgetState
                                       .lLchequefieldTextController.text,
                                   address: _model.landlordformModel
                                       .addressTextController.text,
-                                  iState: _model.landlordformModel.stateValue,
+                                  iState:
+                                      _model.landlordformModel.statefordistland,
                                   pincode: _model.landlordformModel
                                       .pincodeTextController.text,
                                   landMark: _model.landlordformModel

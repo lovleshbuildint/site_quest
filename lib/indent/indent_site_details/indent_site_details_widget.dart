@@ -1599,10 +1599,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          valueOrDefault<String>(
-                                            _model.statefordist,
-                                            '0',
-                                          ),
+                                          'State',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1655,13 +1652,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 setState(() =>
                                                     _model.stateValue = val);
                                                 _model.statefordist =
-                                                    functions.checkIndex(
-                                                        stateStateListResponse
-                                                            .jsonBody,
-                                                        _model.stateValue,
-                                                        'States',
-                                                        'State',
-                                                        'iState');
+                                                    _model.stateValue;
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)

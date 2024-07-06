@@ -1528,8 +1528,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           FFAppState().District,
                                                           _model.districtValue,
                                                           'District',
-                                                          'dsj',
-                                                          'dsd',
+                                                          'DistrictName',
+                                                          'iDistrict',
                                                           false)
                                                       .toString();
                                                   setState(() {});
@@ -1765,7 +1765,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 .citiesAPIforStatenDistCall
                                                 .call(
                                               istate: _model.statefordist,
-                                              idistrict: _model.district,
+                                              idistrict: _model.trydistrict,
                                               token: FFAppState().Token,
                                             ),
                                             builder: (context, snapshot) {

@@ -662,10 +662,7 @@ class _IndentSiteDimensionsWidgetState
                                       ?.toString(),
                                   projectNote: _model.sitedimentionsModel
                                       .noteForProjectTISTextController.text,
-                                  siteId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  siteId: FFAppState().SiteId,
                                   targetBank: null,
                                   iindent: getJsonField(
                                     FFAppState().indentSelectedSite,

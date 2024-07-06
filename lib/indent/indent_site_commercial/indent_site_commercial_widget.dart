@@ -585,7 +585,10 @@ class _IndentSiteCommercialWidgetState
                                       await SqGroup
                                           .dOADetailsstepTHIRDworddocCall
                                           .call(
-                                    indentId: null,
+                                    indentId: getJsonField(
+                                      FFAppState().indentSelectedSite,
+                                      r'''$.IndentId''',
+                                    ).toString(),
                                     rentFreePeriod: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodAdvanceValue,
@@ -634,7 +637,7 @@ class _IndentSiteCommercialWidgetState
                                     rentEscalation: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodAdvanceValue,
-                                    siteId: null,
+                                    siteId: FFAppState().SiteId,
                                     iindent: null,
                                     targetBank: null,
                                     district: null,
@@ -696,7 +699,10 @@ class _IndentSiteCommercialWidgetState
                                       await SqGroup
                                           .dOADetailsstepTHIRDworddocCall
                                           .call(
-                                    indentId: null,
+                                    indentId: getJsonField(
+                                      FFAppState().indentSelectedSite,
+                                      r'''$.IndentId''',
+                                    ).toString(),
                                     rentFreePeriod: _model
                                         .commercialAdvanceModel
                                         .rentFreePeriodsSecurityValue,
@@ -753,7 +759,7 @@ class _IndentSiteCommercialWidgetState
                                     rentEscalation: _model
                                         .commercialAdvanceModel
                                         .rentEscalationPerSecurityValue,
-                                    siteId: null,
+                                    siteId: FFAppState().SiteId,
                                     iindent: null,
                                     months: valueOrDefault<String>(
                                       _model.commercialAdvanceModel

@@ -368,7 +368,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                               190.0, 0.0, 25.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              _model.openSiteUpdateNearestATM =
+                              _model.updateNearestATM =
                                   await SqGroup.updatenearestATMCall.call(
                                 indentId: null,
                                 token: FFAppState().Token,
@@ -377,15 +377,18 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 bankName: _model.nearestatmModel.aTMNameValue,
                                 distance: _model.nearestatmModel
                                     .distanceKMTextController.text,
-                                avgTotaltransDA: _model.nearestatmModel
-                                    .avgApproxTxnsDayTextController.text,
-                                avgOnusTransDA: _model
-                                    .nearestatmModel.avgOnusTextController.text,
-                                avgOffusTransDA: _model.nearestatmModel
-                                    .avgOffusTextController.text,
                                 direction: _model.nearestatmModel
                                     .directionTextController.text,
+                                avgOffusTransDA: _model
+                                    .nearestatmModel.avgOnusTextController.text,
+                                avgOnusTransDA: _model
+                                    .nearestatmModel.avgOnusTextController.text,
+                                avgtxns: _model.nearestatmModel
+                                    .avgApproxTxnsDayTextController.text,
                                 siteId: null,
+                                iindent: null,
+                                avgTotaltransDA: _model.nearestatmModel
+                                    .avgApproxTotalDayTextController.text,
                                 targetBank: null,
                                 district: null,
                                 centre: null,
@@ -396,24 +399,27 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 iStageText: null,
                                 locationName: null,
                                 androidKey: null,
-                                isPrizm: null,
-                                iDevice: null,
-                                isBranch: null,
-                                avgtxns: _model.nearestatmModel
-                                    .avgApproxTxnsDayTextController.text,
-                                pinCode: null,
+                                isPrizm: '0',
+                                pinCode: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.Pincode''',
+                                ).toString(),
                                 errCnt: null,
+                                isWB: '0',
                                 msg: null,
-                                isWB: null,
-                                companyName: null,
-                                employeeName: null,
-                                contactNumber: null,
                                 emailId: null,
-                                iindent: null,
+                                contactNumber: null,
+                                employeeName: null,
+                                companyName: null,
+                                iDevice: null,
+                                isBranch: valueOrDefault<String>(
+                                  _model.nearestatmModel.atmStatus.toString(),
+                                  '1',
+                                ),
                                 isFromSiteref: false,
                               );
 
-                              if ((_model.openSiteUpdateNearestATM?.succeeded ??
+                              if ((_model.updateNearestATM?.succeeded ??
                                   true)) {
                                 if (Navigator.of(context).canPop()) {
                                   context.pop();
@@ -433,12 +439,10 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title:
-                                          Text('Alert(OpenUpdateNearestATM)'),
-                                      content: Text((_model
-                                              .openSiteUpdateNearestATM
-                                              ?.bodyText ??
-                                          '')),
+                                      title: Text('Alert(UpdateNearestATM)'),
+                                      content: Text(
+                                          (_model.updateNearestATM?.bodyText ??
+                                              '')),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>

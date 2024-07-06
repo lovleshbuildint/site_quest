@@ -1466,7 +1466,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                           child: FutureBuilder<ApiCallResponse>(
                                             future:
                                                 SqGroup.districtAPisCall.call(
-                                              istate: _model.statefordist,
+                                              istate: _model.stateValue,
                                               token: FFAppState().Token,
                                             ),
                                             builder: (context, snapshot) {
@@ -1652,7 +1652,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                 setState(() =>
                                                     _model.stateValue = val);
                                                 _model.statefordist =
-                                                    _model.stateValue;
+                                                    functions.checkIndex(
+                                                        stateStateListResponse
+                                                            .jsonBody,
+                                                        _model.stateValue,
+                                                        'States',
+                                                        'State',
+                                                        'iState');
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)

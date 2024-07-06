@@ -726,10 +726,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                       defaultLocation: LatLng(0.0, 0.0));
                               _model.openUpdateDOADetailsFive =
                                   await SqGroup.updateDOADetailsfiveCall.call(
-                                indentId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                indentId: null,
                                 remarks1: _model.remark1TextController.text,
                                 remarks2: _model.remark2TextController.text,
                                 remarks3: _model.remark3TextController.text,
@@ -747,7 +744,10 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 iStageText: null,
                                 locationName: null,
                                 androidKey: null,
-                                cRACoverage: FFAppState().CRACoverage,
+                                cRACoverage: valueOrDefault<String>(
+                                  FFAppState().trycracoverage,
+                                  '1',
+                                ),
                                 cRAAgency: FFAppState().CRAAgency,
                                 branchSOLID: FFAppState().BranchSOLID,
                                 nearestBranch: FFAppState().NearestBranch,
@@ -764,7 +764,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 videoURL: FFAppState().VideoURL,
                                 errCnt: null,
                                 msg: null,
-                                isWB: null,
+                                isWB: '0',
                                 companyName: null,
                                 employeeName: null,
                                 contactNumber: null,

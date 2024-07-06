@@ -1524,12 +1524,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       _model.districtValue;
                                                   setState(() {});
                                                   _model.trydistrict = functions
-                                                      .istatetostatevalue(
+                                                      .checkIndexint(
                                                           FFAppState().District,
                                                           _model.districtValue,
                                                           'District',
-                                                          'iDistrict',
-                                                          'DistrictName');
+                                                          'dsj',
+                                                          'dsd',
+                                                          false)
+                                                      .toString();
                                                   setState(() {});
                                                 },
                                                 width:

@@ -332,10 +332,17 @@ class _OpenSiteNearestBranchWidgetState
                               currentUserLocationValue =
                                   await getCurrentUserLocation(
                                       defaultLocation: LatLng(0.0, 0.0));
-                              _model.oPENSiteDOADetailsfive =
+                              _model.dOADetailsfive =
                                   await SqGroup.updateDOADetailsfiveCall.call(
-                                indentId: null,
-                                cRACoverage: FFAppState().CRACoverage,
+                                indentId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                cRACoverage: valueOrDefault<String>(
+                                  _model.nearestbranchModel.cRACoverage
+                                      .toString(),
+                                  '0',
+                                ),
                                 cRAAgency: FFAppState().CRAAgency,
                                 branchSOLID: FFAppState().BranchSOLID,
                                 nearestBranch: FFAppState().NearestBranch,
@@ -343,17 +350,6 @@ class _OpenSiteNearestBranchWidgetState
                                     FFAppState().DistancefromtheNeearestBranch,
                                 videoURL: FFAppState().VideoURL,
                                 token: FFAppState().Token,
-                                iindent: null,
-                                siteId: null,
-                                isFromSiteref: null,
-                                emailId: null,
-                                employeeName: null,
-                                contactNumber: null,
-                                companyName: null,
-                                isWB: null,
-                                msg: null,
-                                errCnt: null,
-                                iCIT: null,
                                 latitude: functions
                                     .latitudeFuntion(currentUserLocationValue!)
                                     .toString(),
@@ -361,36 +357,51 @@ class _OpenSiteNearestBranchWidgetState
                                     .longitudeFunction(
                                         currentUserLocationValue!)
                                     .toString(),
-                                androidKey: null,
+                                siteId: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
+                                iindent: getJsonField(
+                                  FFAppState().indentSelectedSite,
+                                  r'''$.IndentId''',
+                                ).toString(),
                                 targetBank: null,
                                 district: null,
                                 centre: null,
-                                comment: null,
+                                androidKey: null,
                                 lastModStamp: null,
+                                comment: null,
                                 isHold: null,
                                 istage: null,
                                 iStageText: null,
                                 locationName: null,
+                                isFromSiteref: false,
+                                emailId: null,
+                                contactNumber: null,
+                                employeeName: null,
+                                companyName: null,
+                                isWB: null,
+                                msg: null,
+                                errCnt: null,
                                 remarks1: FFAppState().Remark1,
                                 remarks2: FFAppState().Remark2,
                                 remarks3: FFAppState().Remark3,
                                 remarks4: FFAppState().Remark4,
                                 remarks5: FFAppState().Remark5,
+                                iCIT: null,
                               );
 
-                              if ((_model.oPENSiteDOADetailsfive?.succeeded ??
-                                  true)) {
-                                context.pushNamed('open_site_nearest_atm');
+                              if ((_model.dOADetailsfive?.succeeded ?? true)) {
+                                context.pushNamed('indent_site_nearest_atm');
                               } else {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: Text('Alert(OpenSiteNearestAtm)'),
-                                      content: Text((_model
-                                              .oPENSiteDOADetailsfive
-                                              ?.bodyText ??
-                                          '')),
+                                      title: Text('Alert(IndenSiteNearestAtm)'),
+                                      content: Text(
+                                          (_model.dOADetailsfive?.bodyText ??
+                                              '')),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>

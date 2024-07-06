@@ -18,7 +18,7 @@ class OpenSiteNearestBranchModel
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.
-  ApiCallResponse? oPENSiteDOADetailsfive;
+  ApiCallResponse? dOADetailsfive;
 
   @override
   void initState(BuildContext context) {

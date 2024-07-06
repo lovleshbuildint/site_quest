@@ -1464,7 +1464,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'open_site_nearest_branch',
+                                          'indent_site_landlord_details',
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,

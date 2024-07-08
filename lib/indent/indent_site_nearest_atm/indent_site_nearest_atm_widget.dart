@@ -717,7 +717,7 @@ class _IndentSiteNearestAtmWidgetState
                                     companyName: null,
                                     iDevice: getJsonField(
                                       (_model.dOADeatilsseven?.jsonBody ?? ''),
-                                      r'''$.iDevice''',
+                                      r'''$.indents[0].iDevice''',
                                     ).toString(),
                                     isBranch: valueOrDefault<String>(
                                       _model.nearestatmModel.atmStatus

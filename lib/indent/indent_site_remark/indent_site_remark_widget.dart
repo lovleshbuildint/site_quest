@@ -116,7 +116,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Add Site Remarks',
+                                FFAppState().deviceIdNearestATM,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

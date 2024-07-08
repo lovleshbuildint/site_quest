@@ -696,6 +696,12 @@ class FFAppState extends ChangeNotifier {
   void deleteTrycracoverage() {
     secureStorage.delete(key: 'ff_trycracoverage');
   }
+
+  String _deviceIdNearestATM = '';
+  String get deviceIdNearestATM => _deviceIdNearestATM;
+  set deviceIdNearestATM(String value) {
+    _deviceIdNearestATM = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

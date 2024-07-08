@@ -668,6 +668,12 @@ class _IndentSiteNearestAtmWidgetState
                                 _shouldSetState = true;
                                 if ((_model.dOADeatilsseven?.succeeded ??
                                     true)) {
+                                  FFAppState().deviceIdNearestATM =
+                                      getJsonField(
+                                    (_model.dOADeatilsseven?.jsonBody ?? ''),
+                                    r'''$.indents[0].iDevice''',
+                                  ).toString();
+                                  setState(() {});
                                   _model.updateNearestATM =
                                       await SqGroup.updatenearestATMCall.call(
                                     indentId: null,

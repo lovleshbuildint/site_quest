@@ -1201,11 +1201,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               setState(() => _model
                                                   .stateDropdownValue = val);
                                               _model.statefordsitopen =
-                                                  _model.stateDropdownValue;
-                                              setState(() {});
-                                              _model.trystate =
-                                                  functions.istatetostatevalue(
-                                                      FFAppState().Stateapi,
+                                                  functions.checkIndex(
+                                                      stateDropdownStateListResponse
+                                                          .jsonBody,
                                                       _model.stateDropdownValue,
                                                       'States',
                                                       'iState',
@@ -1438,7 +1436,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FutureBuilder<ApiCallResponse>(
                                         future: SqGroup.districtAPisCall.call(
-                                          istate: _model.statefordsitopen,
+                                          istate: _model.stateDropdownValue,
                                           token: FFAppState().Token,
                                         ),
                                         builder: (context, snapshot) {
@@ -1472,7 +1470,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 (getJsonField(
                                               districtDistrictAPisResponse
                                                   .jsonBody,
-                                              r'''$.District..iDistrict''',
+                                              r'''$.District..DistrictName''',
                                               true,
                                             ) as List)
                                                     .map<String>(
@@ -1491,15 +1489,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               setState(() =>
                                                   _model.districtValue = val);
                                               _model.district =
-                                                  _model.districtValue;
-                                              setState(() {});
-                                              _model.trydistrict =
-                                                  functions.istatetostatevalue(
-                                                      FFAppState().District,
+                                                  functions.checkIndex(
+                                                      districtDistrictAPisResponse
+                                                          .jsonBody,
                                                       _model.districtValue,
                                                       'District',
-                                                      'iDistrict',
-                                                      'DistrictName');
+                                                      'DistrictName',
+                                                      'iDistrict');
                                               setState(() {});
                                             },
                                             width: MediaQuery.sizeOf(context)

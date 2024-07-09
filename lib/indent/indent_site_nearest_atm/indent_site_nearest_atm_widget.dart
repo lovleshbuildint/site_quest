@@ -658,7 +658,7 @@ class _IndentSiteNearestAtmWidgetState
                                 var _shouldSetState = false;
                                 _model.dOADeatilsseven =
                                     await SqGroup.dOADetailsstepsevenCall.call(
-                                  iIndent: '201393139',
+                                  iIndent: FFAppState().SiteId,
                                   token: FFAppState().Token,
                                 );
 
@@ -673,7 +673,10 @@ class _IndentSiteNearestAtmWidgetState
                                   setState(() {});
                                   _model.updateNearestATM =
                                       await SqGroup.updatenearestATMCall.call(
-                                    indentId: null,
+                                    indentId: getJsonField(
+                                      FFAppState().indentSelectedSite,
+                                      r'''$.IndentId''',
+                                    ).toString(),
                                     token: FFAppState().Token,
                                     atmid: _model.nearestatmModel
                                         .atmidTextController.text,

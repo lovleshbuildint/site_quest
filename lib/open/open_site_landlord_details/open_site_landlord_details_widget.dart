@@ -396,8 +396,11 @@ class _OpenSiteLandlordDetailsWidgetState
                                     .emailidTextController.text,
                                 fax: _model
                                     .landlordformModel.faxTextController.text,
-                                lLBankName: _model
-                                    .landlordformModel.landlordBankNameValue,
+                                lLBankName: valueOrDefault<String>(
+                                  _model
+                                      .landlordformModel.landlordBankNameValue,
+                                  '1',
+                                ),
                                 landLordNameonCheque: _model.landlordformModel
                                     .chequefieldTextController.text,
                                 bankAcNo: _model.landlordformModel

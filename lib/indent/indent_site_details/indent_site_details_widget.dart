@@ -2977,15 +2977,36 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   customerBank:
                                       _model.customerbankTextController.text,
                                   district: _model.districtValue,
-                                  strategy: _model.strategyDropDwonValue,
-                                  circle: _model.circleValue,
+                                  strategy: valueOrDefault<String>(
+                                    _model.strategyDropDwonValue,
+                                    '14',
+                                  ),
+                                  circle: valueOrDefault<String>(
+                                    _model.circleValue,
+                                    '30',
+                                  ),
                                   city: _model.cityValue,
-                                  iSiteType: _model.isitetype,
-                                  iCashDeviceType: _model.idevicetype,
+                                  iSiteType: valueOrDefault<int>(
+                                    _model.isitetype,
+                                    1,
+                                  ),
+                                  iCashDeviceType: valueOrDefault<int>(
+                                    _model.idevicetype,
+                                    1,
+                                  ),
                                   iCashDeviceMovementCategory:
-                                      _model.icashdevicemov,
-                                  iTisType: _model.itistype,
-                                  iShopType: _model.ishoptype,
+                                      valueOrDefault<int>(
+                                    _model.icashdevicemov,
+                                    1,
+                                  ),
+                                  iTisType: valueOrDefault<int>(
+                                    _model.itistype,
+                                    1,
+                                  ),
+                                  iShopType: valueOrDefault<int>(
+                                    _model.ishoptype,
+                                    1,
+                                  ),
                                   token: FFAppState().Token,
                                   locationName: null,
                                   distance: _model
@@ -2998,16 +3019,35 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       _model.aTMExisitingTextController.text,
                                   landMark:
                                       _model.aTMExisitingTextController.text,
-                                  rBICategory: _model.rBICategoryValue,
+                                  rBICategory: valueOrDefault<String>(
+                                    _model.rBICategoryValue,
+                                    '1',
+                                  ),
                                   sitesourcedby: _model.siteSourcedValue,
-                                  isOnSite: _model.onofSite,
-                                  isDuplicateSite:
-                                      _model.iduplicatesite?.toString(),
-                                  iSiteVisitedBy: _model.isitevisitedby,
-                                  iSiteVisitedByName: _model.iSiteVisitedByName,
-                                  iSecondSiteVisitedByName:
-                                      _model.iSecondSiteVisitedByName,
-                                  iProjType: _model.iprojecttype,
+                                  isOnSite: valueOrDefault<String>(
+                                    _model.onofSite,
+                                    '1',
+                                  ),
+                                  isDuplicateSite: valueOrDefault<String>(
+                                    _model.iduplicatesite.toString(),
+                                    '1',
+                                  ),
+                                  iSiteVisitedBy: valueOrDefault<int>(
+                                    _model.isitevisitedby,
+                                    2,
+                                  ),
+                                  iSiteVisitedByName: valueOrDefault<int>(
+                                    _model.iSiteVisitedByName,
+                                    2966,
+                                  ),
+                                  iSecondSiteVisitedByName: valueOrDefault<int>(
+                                    _model.iSecondSiteVisitedByName,
+                                    2966,
+                                  ),
+                                  iProjType: valueOrDefault<int>(
+                                    _model.iprojecttype,
+                                    4,
+                                  ),
                                   indentId: getJsonField(
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',
@@ -3124,15 +3164,36 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   customerBank:
                                       _model.customerbankTextController.text,
                                   district: _model.districtValue,
-                                  strategy: _model.strategyDropDwonValue,
-                                  circle: _model.circleValue,
+                                  strategy: valueOrDefault<String>(
+                                    _model.strategyDropDwonValue,
+                                    '14',
+                                  ),
+                                  circle: valueOrDefault<String>(
+                                    _model.circleValue,
+                                    '30',
+                                  ),
                                   city: _model.cityValue,
-                                  iSiteType: _model.isitetype,
-                                  iCashDeviceType: _model.idevicetype,
+                                  iSiteType: valueOrDefault<int>(
+                                    _model.isitetype,
+                                    1,
+                                  ),
+                                  iCashDeviceType: valueOrDefault<int>(
+                                    _model.idevicetype,
+                                    1,
+                                  ),
                                   iCashDeviceMovementCategory:
-                                      _model.icashdevicemov,
-                                  iTisType: _model.itistype,
-                                  iShopType: _model.ishoptype,
+                                      valueOrDefault<int>(
+                                    _model.icashdevicemov,
+                                    1,
+                                  ),
+                                  iTisType: valueOrDefault<int>(
+                                    _model.itistype,
+                                    1,
+                                  ),
+                                  iShopType: valueOrDefault<int>(
+                                    _model.ishoptype,
+                                    1,
+                                  ),
                                   token: FFAppState().Token,
                                   locationName: null,
                                   distance: _model
@@ -3145,16 +3206,38 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       _model.aTMExisitingTextController.text,
                                   landMark:
                                       _model.aTMExisitingTextController.text,
-                                  rBICategory: _model.rBICategoryValue,
-                                  sitesourcedby: _model.siteSourcedValue,
-                                  isOnSite: _model.onofSite,
-                                  isDuplicateSite:
-                                      _model.iduplicatesite?.toString(),
-                                  iSiteVisitedBy: _model.isitevisitedby,
-                                  iSiteVisitedByName: _model.iSiteVisitedByName,
-                                  iSecondSiteVisitedByName:
-                                      _model.iSecondSiteVisitedByName,
-                                  iProjType: _model.iprojecttype,
+                                  rBICategory: valueOrDefault<String>(
+                                    _model.rBICategoryValue,
+                                    '1',
+                                  ),
+                                  sitesourcedby: valueOrDefault<String>(
+                                    _model.siteSourcedValue,
+                                    'HPY',
+                                  ),
+                                  isOnSite: valueOrDefault<String>(
+                                    _model.onofSite,
+                                    '1',
+                                  ),
+                                  isDuplicateSite: valueOrDefault<String>(
+                                    _model.iduplicatesite.toString(),
+                                    '1',
+                                  ),
+                                  iSiteVisitedBy: valueOrDefault<int>(
+                                    _model.isitevisitedby,
+                                    2,
+                                  ),
+                                  iSiteVisitedByName: valueOrDefault<int>(
+                                    _model.iSiteVisitedByName,
+                                    2966,
+                                  ),
+                                  iSecondSiteVisitedByName: valueOrDefault<int>(
+                                    _model.iSecondSiteVisitedByName,
+                                    2966,
+                                  ),
+                                  iProjType: valueOrDefault<int>(
+                                    _model.iprojecttype,
+                                    4,
+                                  ),
                                   indentId: getJsonField(
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',

@@ -339,8 +339,10 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                     .shopHeightTextController.text,
                                 depth: _model.sitedimentionsModel
                                     .shopDepthTextController.text,
-                                shopType:
-                                    _model.sitedimentionsModel.radioButtonValue,
+                                shopType: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.radioButtonValue,
+                                  'Full Shop',
+                                ),
                                 totalShopArea: _model.sitedimentionsModel
                                     .totalShopAreaTextController.text,
                                 signWidth: _model.sitedimentionsModel
@@ -353,18 +355,34 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                     .totalFrontageTextController.text,
                                 frontageOffered: _model.sitedimentionsModel
                                     .frontageOfferedTextController.text,
-                                lShape: _model.sitedimentionsModel.shapeSignage,
-                                vsat: _model.sitedimentionsModel.vsat,
+                                lShape: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.shapeSignage,
+                                  'false',
+                                ),
+                                vsat: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.vsat,
+                                  'false',
+                                ),
                                 token: FFAppState().Token,
-                                acodu: _model.sitedimentionsModel.acOduSpace,
-                                powerAvailability: _model
-                                    .sitedimentionsModel.powerAvailabilityValue,
+                                acodu: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.acOduSpace,
+                                  'true',
+                                ),
+                                powerAvailability: valueOrDefault<String>(
+                                  _model.sitedimentionsModel
+                                      .powerAvailabilityValue,
+                                  'true',
+                                ),
                                 hours: _model.sitedimentionsModel
                                     .noofHoursTextController.text,
-                                isTotempole:
-                                    _model.sitedimentionsModel.totemPole,
-                                isRampAval:
-                                    _model.sitedimentionsModel.rampAvailability,
+                                isTotempole: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.totemPole,
+                                  'false',
+                                ),
+                                isRampAval: valueOrDefault<String>(
+                                  _model.sitedimentionsModel.rampAvailability,
+                                  'false',
+                                ),
                                 projectNote: _model.sitedimentionsModel
                                     .noteForProjectTISTextController.text,
                                 siteId: FFAppState().SiteId,

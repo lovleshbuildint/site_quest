@@ -374,7 +374,10 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 token: FFAppState().Token,
                                 atmid: _model
                                     .nearestatmModel.atmidTextController.text,
-                                bankName: _model.nearestatmModel.aTMNameValue,
+                                bankName: valueOrDefault<String>(
+                                  _model.nearestatmModel.aTMNameValue,
+                                  '1',
+                                ),
                                 distance: _model.nearestatmModel
                                     .distanceKMTextController.text,
                                 direction: _model.nearestatmModel

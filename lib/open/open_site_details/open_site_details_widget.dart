@@ -2597,7 +2597,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             distance:
                                 _model.distanceFromIndentsTextController.text,
                             address: _model.addressTextController.text,
-                            state: _model.trystate,
+                            state: _model.statefordsitopen,
                             pincode: _model.pincodeTextController.text,
                             landMark: _model.aTMExistingTextController.text,
                             rBICategory: _model.rBICategoryValue,

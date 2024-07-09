@@ -651,7 +651,7 @@ class _IndentSiteCommercialWidgetState
                                     androidKey: null,
                                     months: _model.commercialAdvanceModel
                                         .intialAdvanceValue,
-                                    isWB: null,
+                                    isWB: '0',
                                     employeeName: null,
                                     companyName: null,
                                     contactNumber: null,

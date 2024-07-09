@@ -2671,11 +2671,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               builder: (alertDialogContext) {
                                 return AlertDialog(
                                   title: Text('Alert (UpdateDOAdetailsfirst)'),
-                                  content: Text((_model
-                                              .updateDOAdetailsfirstwordsSites
-                                              ?.jsonBody ??
-                                          '')
-                                      .toString()),
+                                  content: Text(getJsonField(
+                                    (_model.updateDOAdetailsfirstwordsSites
+                                            ?.jsonBody ??
+                                        ''),
+                                    r'''$.Msg''',
+                                  ).toString()),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>

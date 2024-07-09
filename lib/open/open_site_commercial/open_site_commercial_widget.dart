@@ -331,11 +331,14 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                               var _shouldSetState = false;
                               if (_model
                                       .commercialAdvanceModel.rentaltypeValue ==
-                                  'Advance Rent ') {
+                                  'Advance Rent') {
                                 _model.tDOADetailsThirdWordAdvance =
                                     await SqGroup.dOADetailsstepTHIRDworddocCall
                                         .call(
-                                  indentId: null,
+                                  indentId: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.IndentId''',
+                                  ).toString(),
                                   rentFreePeriod: _model.commercialAdvanceModel
                                       .rentFreePeriodAdvanceValue,
                                   rentalType: 'Advance Rent',
@@ -355,19 +358,22 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   escalationPeriod: _model
                                       .commercialAdvanceModel
                                       .escalationPeriodAdvanceValue,
-                                  isAdvance: _model
-                                      .commercialAdvanceModel.rentaltype
-                                      ?.toString(),
+                                  isAdvance: valueOrDefault<String>(
+                                    _model.commercialAdvanceModel.rentaltype
+                                        .toString(),
+                                    '1',
+                                  ),
                                   fullDeposit: _model.commercialAdvanceModel
                                       .balanceAmountAdvanceTextController.text,
-                                  oneMonthDeposit: null,
+                                  oneMonthDeposit: _model.commercialAdvanceModel
+                                      .advanceRentAmountRENTTextController.text,
                                   balanceDeposit: _model.commercialAdvanceModel
                                       .balanceAmountAdvanceTextController.text,
                                   totalAdvSec: _model.commercialAdvanceModel
                                       .advanceRentMonthRentOrSecurityMonthsValue,
                                   rentEscalation: _model.commercialAdvanceModel
                                       .rentFreePeriodAdvanceValue,
-                                  siteId: null,
+                                  siteId: FFAppState().SiteId,
                                   iindent: null,
                                   targetBank: null,
                                   district: null,
@@ -381,7 +387,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   androidKey: null,
                                   months: _model.commercialAdvanceModel
                                       .intialAdvanceValue,
-                                  isWB: null,
+                                  isWB: '0',
                                   employeeName: null,
                                   companyName: null,
                                   contactNumber: null,
@@ -391,7 +397,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   commType: null,
                                   commDeposite: null,
                                   errCnt: null,
-                                  isFromSiteref: '0',
+                                  isFromSiteref: null,
                                   msg: null,
                                 );
 
@@ -399,7 +405,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 if ((_model.tDOADetailsThirdWordAdvance
                                         ?.succeeded ??
                                     true)) {
-                                  context.pushNamed('open_site_dimensions');
+                                  context.goNamed('indent_site_dimensions');
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -428,7 +434,10 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 _model.dOADetailsThirdWordsecur = await SqGroup
                                     .dOADetailsstepTHIRDworddocCall
                                     .call(
-                                  indentId: null,
+                                  indentId: getJsonField(
+                                    FFAppState().indentSelectedSite,
+                                    r'''$.IndentId''',
+                                  ).toString(),
                                   rentFreePeriod: _model.commercialAdvanceModel
                                       .rentFreePeriodsSecurityValue,
                                   rentalType: 'Security Deposit',
@@ -438,13 +447,10 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .securityRentRentPerMonthTextController
                                       .text,
                                   advanceDeposit: '00',
-                                  totalDeposit: valueOrDefault<String>(
-                                    _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
-                                    '00',
-                                  ),
+                                  totalDeposit: _model
+                                      .commercialAdvanceModel
+                                      .balanceSDAmountSecurityTextController
+                                      .text,
                                   securityDeposit: _model.commercialAdvanceModel
                                       .securityDepositValue,
                                   agreementPeriod: _model.commercialAdvanceModel
@@ -452,35 +458,28 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   escalationPeriod: _model
                                       .commercialAdvanceModel
                                       .escalationPeriodSecurityValue,
-                                  isAdvance: _model
-                                      .commercialAdvanceModel.rentaltype
-                                      ?.toString(),
-                                  fullDeposit: valueOrDefault<String>(
-                                    _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
-                                    '00',
+                                  isAdvance: valueOrDefault<String>(
+                                    _model.commercialAdvanceModel.rentaltype
+                                        .toString(),
+                                    '0',
                                   ),
-                                  oneMonthDeposit: valueOrDefault<String>(
-                                    _model
-                                        .commercialAdvanceModel
-                                        .securityRentRentPerMonthTextController
-                                        .text,
-                                    'null',
-                                  ),
-                                  balanceDeposit: valueOrDefault<String>(
-                                    _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
-                                    '00',
-                                  ),
+                                  fullDeposit: _model
+                                      .commercialAdvanceModel
+                                      .balanceSDAmountSecurityTextController
+                                      .text,
+                                  oneMonthDeposit: _model
+                                      .commercialAdvanceModel
+                                      .securityRentRentPerMonthTextController
+                                      .text,
+                                  balanceDeposit: _model
+                                      .commercialAdvanceModel
+                                      .balanceSDAmountSecurityTextController
+                                      .text,
                                   totalAdvSec: _model.commercialAdvanceModel
                                       .totalSecurityDepositTextController.text,
                                   rentEscalation: _model.commercialAdvanceModel
                                       .rentEscalationPerSecurityValue,
-                                  siteId: null,
+                                  siteId: FFAppState().SiteId,
                                   iindent: null,
                                   months: _model.commercialAdvanceModel
                                       .intialAdvancemonthSecurityValue,
@@ -512,7 +511,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 if ((_model
                                         .dOADetailsThirdWordsecur?.succeeded ??
                                     true)) {
-                                  context.pushNamed('open_site_dimensions');
+                                  context.goNamed('indent_site_dimensions');
                                 } else {
                                   await showDialog(
                                     context: context,

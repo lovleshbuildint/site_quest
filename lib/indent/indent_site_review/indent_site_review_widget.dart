@@ -87,7 +87,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(100.0, 4.0, 0.0, 0.0),
                       child: Text(
-                        'HPY Code : ',
+                        'IndentId  Code : ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               letterSpacing: 0.0,
@@ -140,10 +140,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                     ),
                               ),
                               Text(
-                                getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.IndentId''',
-                                ).toString(),
+                                FFAppState().SiteId,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

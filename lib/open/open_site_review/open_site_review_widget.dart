@@ -89,7 +89,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             100.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'HYP Code:',
+                          'SiteId Code:',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -103,10 +103,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        getJsonField(
-                          FFAppState().indentSelectedSite,
-                          r'''$.IndentId''',
-                        ).toString(),
+                        FFAppState().SiteId,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               letterSpacing: 0.0,
@@ -147,10 +144,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
                                   ),
                             ),
                             Text(
-                              getJsonField(
-                                FFAppState().indentSelectedSite,
-                                r'''$.IndentId''',
-                              ).toString(),
+                              FFAppState().SiteId,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

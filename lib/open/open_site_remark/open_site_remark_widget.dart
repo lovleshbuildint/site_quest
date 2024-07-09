@@ -733,7 +733,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 remarks4: _model.remark4TextController.text,
                                 remarks5: _model.remark5TextController.text,
                                 token: FFAppState().Token,
-                                siteId: null,
+                                siteId: FFAppState().SiteId,
                                 targetBank: null,
                                 district: null,
                                 centre: null,

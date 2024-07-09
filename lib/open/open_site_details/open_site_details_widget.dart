@@ -2637,18 +2637,34 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             districts: null,
                           );
 
-                          if ((_model
-                                  .updateDOAdetailsfirstwordsSites?.succeeded ??
-                              true)) {
-                            _model.postResponse = getJsonField(
+                          if ((String var1) {
+                            return var1 ==
+                                    "Data for Step-1 Successfully Updated."
+                                ? true
+                                : false;
+                          }(getJsonField(
+                            (_model.updateDOAdetailsfirstwordsSites?.jsonBody ??
+                                ''),
+                            r'''$.Msg''',
+                          ).toString())) {
+                            FFAppState().SiteId = getJsonField(
                               (_model.updateDOAdetailsfirstwordsSites
                                       ?.jsonBody ??
                                   ''),
                               r'''$.SiteId''',
-                            );
+                            ).toString();
                             setState(() {});
 
-                            context.pushNamed('open_site_landlord_details');
+                            context.pushNamed(
+                              'open_site_landlord_details',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           } else {
                             await showDialog(
                               context: context,
@@ -2656,9 +2672,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 return AlertDialog(
                                   title: Text('Alert (UpdateDOAdetailsfirst)'),
                                   content: Text((_model
-                                          .updateDOAdetailsfirstwordsSites
-                                          ?.bodyText ??
-                                      '')),
+                                              .updateDOAdetailsfirstwordsSites
+                                              ?.jsonBody ??
+                                          '')
+                                      .toString()),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>

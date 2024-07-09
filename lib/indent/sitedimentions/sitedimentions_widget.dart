@@ -940,7 +940,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               onChanged: (val) async {
                 setState(() => _model.lShapeSingageValue = val);
                 _model.shapeSignage =
-                    functions.dropdown(_model.lShapeSingageValue!);
+                    functions.sitedimensiondropdown(_model.lShapeSingageValue!);
                 setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -988,7 +988,8 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.vsatValue = val);
-                _model.vsat = functions.dropdown(_model.vsatValue!);
+                _model.vsat =
+                    functions.sitedimensiondropdown(_model.vsatValue!);
                 setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1036,7 +1037,8 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.acODUSpaceValue = val);
-                _model.acOduSpace = functions.dropdown(_model.acODUSpaceValue!);
+                _model.acOduSpace =
+                    functions.sitedimensiondropdown(_model.acODUSpaceValue!);
                 setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1099,8 +1101,9 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             onChanged: (val) async {
                               setState(
                                   () => _model.powerAvailabilityValue = val);
-                              _model.powerAvailability = functions
-                                  .dropdown(_model.powerAvailabilityValue!);
+                              _model.powerAvailability =
+                                  functions.sitedimensiondropdown(
+                                      _model.powerAvailabilityValue!);
                               setState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1246,7 +1249,8 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.totemPoleValue = val);
-                _model.totemPole = functions.dropdown(_model.totemPoleValue!);
+                _model.totemPole =
+                    functions.sitedimensiondropdown(_model.totemPoleValue!);
                 setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1306,8 +1310,9 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.rampAvailabilityValue = val);
-                _model.rampAvailability =
-                    functions.dropdown(_model.rampAvailabilityValue!);
+                _model.rampAvailability = functions
+                    .dropdown(_model.rampAvailabilityValue!)
+                    ?.toString();
                 setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,

@@ -353,26 +353,18 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                     .totalFrontageTextController.text,
                                 frontageOffered: _model.sitedimentionsModel
                                     .frontageOfferedTextController.text,
-                                lShape: _model.sitedimentionsModel.shapeSignage
-                                    ?.toString(),
-                                vsat:
-                                    _model.sitedimentionsModel.vsat?.toString(),
+                                lShape: _model.sitedimentionsModel.shapeSignage,
+                                vsat: _model.sitedimentionsModel.vsat,
                                 token: FFAppState().Token,
-                                acodu: valueOrDefault<String>(
-                                  _model.sitedimentionsModel.acOduSpace
-                                      .toString(),
-                                  '1',
-                                ),
+                                acodu: _model.sitedimentionsModel.acOduSpace,
                                 powerAvailability: _model
                                     .sitedimentionsModel.powerAvailabilityValue,
                                 hours: _model.sitedimentionsModel
                                     .noofHoursTextController.text,
-                                isTotempole: _model
-                                    .sitedimentionsModel.totemPole
-                                    ?.toString(),
-                                isRampAval: _model
-                                    .sitedimentionsModel.rampAvailability
-                                    ?.toString(),
+                                isTotempole:
+                                    _model.sitedimentionsModel.totemPole,
+                                isRampAval:
+                                    _model.sitedimentionsModel.rampAvailability,
                                 projectNote: _model.sitedimentionsModel
                                     .noteForProjectTISTextController.text,
                                 siteId: null,

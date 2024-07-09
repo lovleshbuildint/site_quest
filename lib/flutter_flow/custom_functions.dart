@@ -51,6 +51,14 @@ int? sub2arg(
   return fstArg - scndarg;
 }
 
+String? sitedimensiondropdown(String dropdownValue) {
+  if (dropdownValue == "Yes") {
+    return "true";
+  } else {
+    return "false";
+  }
+}
+
 double? latitudeFuntion(LatLng latLong) {
   return latLong.latitude;
 }
@@ -92,7 +100,6 @@ dynamic jsonResponse(
 }
 
 int? dropdown(String dropdownValue) {
-  // in dropdown value is yes then show 1 or in dropdown values is no then show 0
   if (dropdownValue == "Yes") {
     return 1;
   } else {

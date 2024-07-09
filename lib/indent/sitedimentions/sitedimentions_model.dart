@@ -13,17 +13,17 @@ import 'package:provider/provider.dart';
 class SitedimentionsModel extends FlutterFlowModel<SitedimentionsWidget> {
   ///  Local state fields for this component.
 
-  int? shapeSignage;
+  String? shapeSignage;
 
-  int? vsat;
+  String? vsat;
 
-  int? acOduSpace;
+  String? acOduSpace;
 
-  int? powerAvailability;
+  String? powerAvailability;
 
-  int? totemPole;
+  String? totemPole;
 
-  int? rampAvailability;
+  String? rampAvailability;
 
   int? shopType;
 

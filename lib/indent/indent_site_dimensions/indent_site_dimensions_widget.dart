@@ -641,25 +641,19 @@ class _IndentSiteDimensionsWidgetState
                                       .totalFrontageTextController.text,
                                   frontageOffered: _model.sitedimentionsModel
                                       .frontageOfferedTextController.text,
-                                  lShape: _model
-                                      .sitedimentionsModel.shapeSignage
-                                      ?.toString(),
-                                  vsat: _model.sitedimentionsModel.vsat
-                                      ?.toString(),
+                                  lShape:
+                                      _model.sitedimentionsModel.shapeSignage,
+                                  vsat: _model.sitedimentionsModel.vsat,
                                   token: FFAppState().Token,
-                                  acodu: _model.sitedimentionsModel.acOduSpace
-                                      ?.toString(),
+                                  acodu: _model.sitedimentionsModel.acOduSpace,
                                   powerAvailability: _model
-                                      .sitedimentionsModel.powerAvailability
-                                      ?.toString(),
+                                      .sitedimentionsModel.powerAvailability,
                                   hours: _model.sitedimentionsModel
                                       .noofHoursTextController.text,
-                                  isTotempole: _model
-                                      .sitedimentionsModel.totemPole
-                                      ?.toString(),
+                                  isTotempole:
+                                      _model.sitedimentionsModel.totemPole,
                                   isRampAval: _model
-                                      .sitedimentionsModel.rampAvailability
-                                      ?.toString(),
+                                      .sitedimentionsModel.rampAvailability,
                                   projectNote: _model.sitedimentionsModel
                                       .noteForProjectTISTextController.text,
                                   siteId: FFAppState().SiteId,

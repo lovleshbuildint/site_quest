@@ -1298,7 +1298,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               .citiesAPIforStatenDistCall
                                               .call(
                                             token: FFAppState().Token,
-                                            istate: _model.statefordsitopen,
+                                            istate: _model.stateDropdownValue,
                                             idistrict: _model.district,
                                           ),
                                           builder: (context, snapshot) {

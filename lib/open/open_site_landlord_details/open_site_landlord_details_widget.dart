@@ -375,14 +375,16 @@ class _OpenSiteLandlordDetailsWidgetState
                                   await SqGroup.dOADetailsstepSECONDworddocCall
                                       .call(
                                 indentId: 'null',
-                                districts: _model.landlordformModel.trydistrict,
+                                districts:
+                                    _model.landlordformModel.districtValue,
                                 token: FFAppState().Token,
-                                iCity: _model.landlordformModel.trycity,
+                                iCity: _model.landlordformModel.cityValue,
                                 lLPercent: _model.landlordformModel
                                     .lLchequefieldTextController.text,
                                 address: _model.landlordformModel
                                     .addressTextController.text,
-                                iState: _model.landlordformModel.trystate,
+                                iState:
+                                    _model.landlordformModel.statefordistland,
                                 pincode: _model.landlordformModel
                                     .pincodeTextController.text,
                                 landMark: _model.landlordformModel
@@ -438,6 +440,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                 errCnt: null,
                                 msg: null,
                                 isFromSiteref: false,
+                                emailIds: null,
                               );
 
                               if ((_model.updateDOADdeatilssecondwordSite

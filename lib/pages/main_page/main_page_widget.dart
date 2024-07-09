@@ -565,6 +565,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           );
         }
         final mainPageDashboardResponse = snapshot.data!;
+
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -659,6 +660,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         }
                                         final dropDownStateListResponse =
                                             snapshot.data!;
+
                                         return FlutterFlowDropDown<String>(
                                           multiSelectController: _model
                                                   .dropDownValueController ??=

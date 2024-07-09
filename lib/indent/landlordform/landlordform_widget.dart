@@ -52,7 +52,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    _model.pincodeTextController ??= TextEditingController();
+    _model.pincodeTextController ??= TextEditingController(
+        text: (String var1) {
+      return var1 = (var1 != " ?") ? var1 : " ";
+    }(getJsonField(
+      FFAppState().indentSelectedSite,
+      r'''$.Pincode''',
+    ).toString().toString()));
     _model.pincodeFocusNode ??= FocusNode();
 
     _model.landmarksTextController ??= TextEditingController();
@@ -265,9 +271,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.addressFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
+              readOnly: true,
               obscureText: false,
               decoration: InputDecoration(
-                hintText: 'Enter Address',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
@@ -363,6 +369,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               }
                               final districtDistrictAPisResponse =
                                   snapshot.data!;
+
                               return FlutterFlowDropDown<String>(
                                 controller: _model.districtValueController ??=
                                     FormFieldController<String>(
@@ -483,6 +490,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               );
                             }
                             final stateStateListResponse = snapshot.data!;
+
                             return FlutterFlowDropDown<String>(
                               controller: _model.stateValueController ??=
                                   FormFieldController<String>(null),
@@ -611,6 +619,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               }
                               final cityCitiesAPIforStatenDistResponse =
                                   snapshot.data!;
+
                               return FlutterFlowDropDown<String>(
                                 controller: _model.cityValueController ??=
                                     FormFieldController<String>(
@@ -1132,6 +1141,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   );
                 }
                 final faxGetIndentBankResponse = snapshot.data!;
+
                 return TextFormField(
                   controller: _model.faxTextController,
                   focusNode: _model.faxFocusNode,
@@ -1221,6 +1231,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   );
                 }
                 final landlordBankNameGetIndentBankResponse = snapshot.data!;
+
                 return FlutterFlowDropDown<String>(
                   controller: _model.landlordBankNameValueController ??=
                       FormFieldController<String>(

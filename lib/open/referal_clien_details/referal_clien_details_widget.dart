@@ -689,6 +689,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           }
                                           final dropDownStateListResponse =
                                               snapshot.data!;
+
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownValueController1 ??=
@@ -806,6 +807,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           }
                                           final dropDownDistrictAPisResponse =
                                               snapshot.data!;
+
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownValueController2 ??=
@@ -1097,6 +1099,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           }
                                           final dropDownCityResponse =
                                               snapshot.data!;
+
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownValueController3 ??=

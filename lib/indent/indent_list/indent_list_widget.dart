@@ -71,6 +71,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
           );
         }
         final indentListGetIndentsByStatesnewResponse = snapshot.data!;
+
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -328,6 +329,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             .jsonBody,
                                         r'''$.indents''',
                                       ).toList();
+
                                       return ListView.builder(
                                         padding: EdgeInsets.zero,
                                         shrinkWrap: true,

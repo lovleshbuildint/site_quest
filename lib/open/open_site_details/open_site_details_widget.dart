@@ -1173,6 +1173,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           }
                                           final stateDropdownStateListResponse =
                                               snapshot.data!;
+
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .stateDropdownValueController ??=
@@ -1323,6 +1324,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             }
                                             final cityCitiesAPIforStatenDistResponse =
                                                 snapshot.data!;
+
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .cityValueController ??=
@@ -1460,6 +1462,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           }
                                           final districtDistrictAPisResponse =
                                               snapshot.data!;
+
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .districtValueController ??=
@@ -2395,6 +2398,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               }
                               final firstSiteVisitedByGetDepartmentWiseUserAPIResponse =
                                   snapshot.data!;
+
                               return FlutterFlowDropDown<String>(
                                 controller:
                                     _model.firstSiteVisitedByValueController ??=
@@ -2499,6 +2503,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               }
                               final dropDownGetSecondSiteVisitersResponse =
                                   snapshot.data!;
+
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController ??=
                                     FormFieldController<String>(

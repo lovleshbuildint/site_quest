@@ -1311,8 +1311,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               onChanged: (val) async {
                 setState(() => _model.rampAvailabilityValue = val);
                 _model.rampAvailability = functions
-                    .dropdown(_model.rampAvailabilityValue!)
-                    ?.toString();
+                    .sitedimensiondropdown(_model.rampAvailabilityValue!);
                 setState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,

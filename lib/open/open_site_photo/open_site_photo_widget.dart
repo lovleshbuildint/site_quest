@@ -1126,8 +1126,17 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               190.0, 0.0, 25.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(
+                                'open_site_nearest_branch',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: 'Save & Next',
                             options: FFButtonOptions(

@@ -367,7 +367,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                     _model.sitedimentionsModel.rampAvailability,
                                 projectNote: _model.sitedimentionsModel
                                     .noteForProjectTISTextController.text,
-                                siteId: null,
+                                siteId: FFAppState().SiteId,
                                 iindent: null,
                                 targetBank: null,
                                 district: null,

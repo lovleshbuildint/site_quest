@@ -385,7 +385,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                     .nearestatmModel.avgOnusTextController.text,
                                 avgtxns: _model.nearestatmModel
                                     .avgApproxTxnsDayTextController.text,
-                                siteId: null,
+                                siteId: FFAppState().SiteId,
                                 iindent: null,
                                 avgTotaltransDA: _model.nearestatmModel
                                     .avgApproxTotalDayTextController.text,

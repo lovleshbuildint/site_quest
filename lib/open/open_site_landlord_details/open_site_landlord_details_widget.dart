@@ -375,8 +375,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                   await SqGroup.dOADetailsstepSECONDworddocCall
                                       .call(
                                 indentId: 'null',
-                                districts:
-                                    _model.landlordformModel.districtValue,
+                                districts: null,
                                 token: FFAppState().Token,
                                 iCity: _model.landlordformModel.cityValue,
                                 lLPercent: _model.landlordformModel
@@ -416,10 +415,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                 refeName: _model.landlordformModel
                                     .siteReferralNameTextController.text,
                                 contactNumber: null,
-                                siteId: getJsonField(
-                                  FFAppState().indentSelectedSite,
-                                  r'''$.SiteId''',
-                                ).toString(),
+                                siteId: FFAppState().SiteId,
                                 iindent: null,
                                 targetBank: null,
                                 centres: null,

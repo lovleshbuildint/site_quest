@@ -1464,7 +1464,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'indent_site_review',
+                                          'open_site_dimensions',
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,

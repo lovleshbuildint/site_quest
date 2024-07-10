@@ -407,8 +407,15 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 isFromSiteref: 'false',
                               );
 
-                              if ((_model.oPENSIteDOADetailsFour?.succeeded ??
-                                  true)) {
+                              if ((String var1) {
+                                return var1 ==
+                                        "Data for Step-4 Successfully Updated."
+                                    ? true
+                                    : false;
+                              }(getJsonField(
+                                (_model.oPENSIteDOADetailsFour?.jsonBody ?? ''),
+                                r'''$.Msg''',
+                              ).toString())) {
                                 context.pushNamed('open_site_photo');
                               } else {
                                 await showDialog(

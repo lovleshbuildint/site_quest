@@ -144,10 +144,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              getJsonField(
-                FFAppState().indentSelectedSite,
-                r'''$.Pincode''',
-              ).toString(),
+              'ATM Name',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -212,10 +209,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              valueOrDefault<String>(
-                _model.atmStatus?.toString(),
-                '2',
-              ),
+              'ATM Status',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,

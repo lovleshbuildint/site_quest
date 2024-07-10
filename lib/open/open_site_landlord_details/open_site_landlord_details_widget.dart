@@ -442,9 +442,17 @@ class _OpenSiteLandlordDetailsWidgetState
                                 emailIds: null,
                               );
 
-                              if ((_model.updateDOADdeatilssecondwordSite
-                                      ?.succeeded ??
-                                  true)) {
+                              if ((String var1) {
+                                return var1 ==
+                                        "Data for Step-2 Successfully Updated."
+                                    ? true
+                                    : false;
+                              }(getJsonField(
+                                (_model.updateDOADdeatilssecondwordSite
+                                        ?.jsonBody ??
+                                    ''),
+                                r'''$.Msg''',
+                              ).toString())) {
                                 context.pushNamed('open_site_commercial');
                               } else {
                                 await showDialog(

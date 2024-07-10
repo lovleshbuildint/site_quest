@@ -422,8 +422,12 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 isFromSiteref: false,
                               );
 
-                              if ((_model.updateNearestATM?.succeeded ??
-                                  true)) {
+                              if ((String var1) {
+                                return var1 == "DATA ADDED" ? true : false;
+                              }(getJsonField(
+                                (_model.updateNearestATM?.jsonBody ?? ''),
+                                r'''$.Msg''',
+                              ).toString())) {
                                 if (Navigator.of(context).canPop()) {
                                   context.pop();
                                 }

@@ -773,8 +773,16 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 isFromSiteref: false,
                               );
 
-                              if ((_model.openUpdateDOADetailsFive?.succeeded ??
-                                  true)) {
+                              if ((String var1) {
+                                return var1 ==
+                                        "Data for Step-5 Successfully Updated."
+                                    ? true
+                                    : false;
+                              }(getJsonField(
+                                (_model.openUpdateDOADetailsFive?.jsonBody ??
+                                    ''),
+                                r'''$.Msg''',
+                              ).toString())) {
                                 context.pushNamed(
                                   'open_site_review',
                                   extra: <String, dynamic>{

@@ -42,7 +42,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
     _model.addressTextController ??= TextEditingController(
         text: (String var1) {
-      return var1 = (var1 != " ?") ? var1 : " ";
+      return var1 != "" ? var1 : "";
     }(getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Address''',
@@ -54,7 +54,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
     _model.pincodeTextController ??= TextEditingController(
         text: (String var1) {
-      return var1 = (var1 != " ?") ? var1 : " ";
+      return var1 != "" ? var1 : "";
     }(getJsonField(
       FFAppState().indentSelectedSite,
       r'''$.Pincode''',

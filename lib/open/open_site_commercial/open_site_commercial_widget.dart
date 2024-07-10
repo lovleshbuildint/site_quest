@@ -402,9 +402,17 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 );
 
                                 _shouldSetState = true;
-                                if ((_model.tDOADetailsThirdWordAdvance
-                                        ?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-3 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.tDOADetailsThirdWordAdvance
+                                          ?.jsonBody ??
+                                      ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   context.goNamed('indent_site_dimensions');
                                 } else {
                                   await showDialog(
@@ -508,9 +516,16 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 );
 
                                 _shouldSetState = true;
-                                if ((_model
-                                        .dOADetailsThirdWordsecur?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-3 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.dOADetailsThirdWordsecur?.jsonBody ??
+                                      ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   context.goNamed('indent_site_dimensions');
                                 } else {
                                   await showDialog(

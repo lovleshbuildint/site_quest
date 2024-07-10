@@ -271,7 +271,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.addressFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
-              readOnly: true,
               obscureText: false,
               decoration: InputDecoration(
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(

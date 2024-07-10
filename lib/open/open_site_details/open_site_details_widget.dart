@@ -2586,17 +2586,40 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         onPressed: () async {
                           _model.updateDOAdetailsfirstwordsSites =
                               await SqGroup.dOADetailsstepFIRSTworddocCall.call(
-                            customerBank: _model.customerBankValue,
+                            customerBank: valueOrDefault<String>(
+                              _model.customerBankValue,
+                              'Abhyudaya Cooperative Bank Ltd',
+                            ),
                             district: _model.districtValue,
-                            strategy: _model.strategyDropDwonValue,
-                            circle: _model.circleValue,
+                            strategy: valueOrDefault<String>(
+                              _model.strategyDropDwonValue,
+                              'Additional',
+                            ),
+                            circle: valueOrDefault<String>(
+                              _model.circleValue,
+                              'Agra',
+                            ),
                             city: _model.cityValue,
-                            iSiteType: _model.isitetypes,
-                            iCashDeviceType: _model.icashdevicetypes,
-                            iCashDeviceMovementCategory:
-                                _model.ichasdevicemovementcategorys,
-                            iTisType: _model.iTisTypes,
-                            iShopType: _model.ishoptypes,
+                            iSiteType: valueOrDefault<int>(
+                              _model.isitetypes,
+                              1,
+                            ),
+                            iCashDeviceType: valueOrDefault<int>(
+                              _model.icashdevicetypes,
+                              1,
+                            ),
+                            iCashDeviceMovementCategory: valueOrDefault<int>(
+                              _model.ichasdevicemovementcategorys,
+                              1,
+                            ),
+                            iTisType: valueOrDefault<int>(
+                              _model.iTisTypes,
+                              1,
+                            ),
+                            iShopType: valueOrDefault<int>(
+                              _model.ishoptypes,
+                              1,
+                            ),
                             token: FFAppState().Token,
                             locationName: null,
                             distance:
@@ -2606,14 +2629,34 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             pincode: _model.pincodeTextController.text,
                             landMark: _model.aTMExistingTextController.text,
                             rBICategory: _model.rBICategoryValue,
-                            sitesourcedby: _model.siteSourcedValue,
-                            isOnSite: _model.oNOFsite?.toString(),
-                            isDuplicateSite: _model.iduplicate?.toString(),
-                            iSiteVisitedBy: _model.isitevisitedbys,
-                            iSiteVisitedByName: _model.isitevisitedbynames,
-                            iSecondSiteVisitedByName:
-                                _model.isecondsitevisitedbynames,
-                            iProjType: _model.iprojecttypes,
+                            sitesourcedby: valueOrDefault<String>(
+                              _model.siteSourcedValue,
+                              'HPY',
+                            ),
+                            isOnSite: valueOrDefault<String>(
+                              _model.oNOFsite.toString(),
+                              '1',
+                            ),
+                            isDuplicateSite: valueOrDefault<String>(
+                              _model.iduplicate.toString(),
+                              '1',
+                            ),
+                            iSiteVisitedBy: valueOrDefault<int>(
+                              _model.isitevisitedbys,
+                              2,
+                            ),
+                            iSiteVisitedByName: valueOrDefault<int>(
+                              _model.isitevisitedbynames,
+                              1,
+                            ),
+                            iSecondSiteVisitedByName: valueOrDefault<int>(
+                              _model.isecondsitevisitedbynames,
+                              2966,
+                            ),
+                            iProjType: valueOrDefault<int>(
+                              _model.iprojecttypes,
+                              4,
+                            ),
                             indentId: null,
                             mgrName: _model.mangerNameTextController.text,
                             mgrNo: _model.mangerNumberTextController.text,

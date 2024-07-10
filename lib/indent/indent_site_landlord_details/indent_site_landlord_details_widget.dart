@@ -719,8 +719,15 @@ class _IndentSiteLandlordDetailsWidgetState
                                   isFromSiteref: false,
                                 );
 
-                                if ((_model.updateDOADdeatils2?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-1 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.updateDOADdeatils2?.jsonBody ?? ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   context.goNamed('indent_site_commercial');
                                 } else {
                                   await showDialog(

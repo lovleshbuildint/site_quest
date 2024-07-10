@@ -1078,8 +1078,15 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   isFromSiteref: false,
                                 );
 
-                                if ((_model.dOADeatilsfive?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-5 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.dOADeatilsfive?.jsonBody ?? ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   context.pushNamed(
                                     'indent_site_review',
                                     extra: <String, dynamic>{

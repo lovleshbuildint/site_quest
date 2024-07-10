@@ -699,8 +699,15 @@ class _IndentSiteDimensionsWidgetState
                                   isFromSiteref: 'false',
                                 );
 
-                                if ((_model.dOADetailsFour?.succeeded ??
-                                    true)) {
+                                if ((String var1) {
+                                  return var1 ==
+                                          "Data for Step-4 Successfully Updated."
+                                      ? true
+                                      : false;
+                                }(getJsonField(
+                                  (_model.dOADetailsFour?.jsonBody ?? ''),
+                                  r'''$.Msg''',
+                                ).toString())) {
                                   context.pushNamed('indent_site_photo');
                                 } else {
                                   await showDialog(

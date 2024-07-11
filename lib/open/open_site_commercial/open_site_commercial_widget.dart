@@ -335,10 +335,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 _model.tDOADetailsThirdWordAdvance =
                                     await SqGroup.dOADetailsstepTHIRDworddocCall
                                         .call(
-                                  indentId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  indentId: null,
                                   rentFreePeriod: _model.commercialAdvanceModel
                                       .rentFreePeriodAdvanceValue,
                                   rentalType: 'Advance Rent',
@@ -442,19 +439,19 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 _model.dOADetailsThirdWordsecur = await SqGroup
                                     .dOADetailsstepTHIRDworddocCall
                                     .call(
-                                  indentId: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
+                                  indentId: null,
                                   rentFreePeriod: _model.commercialAdvanceModel
                                       .rentFreePeriodsSecurityValue,
                                   rentalType: 'Security Deposit',
                                   token: FFAppState().Token,
                                   rent: _model
                                       .commercialAdvanceModel
-                                      .securityRentRentPerMonthTextController
+                                      .securityRentRentPerMonthssssTextController
                                       .text,
-                                  advanceDeposit: '00',
+                                  advanceDeposit: _model
+                                      .commercialAdvanceModel
+                                      .advanceSDAmountSecurityTextController
+                                      .text,
                                   totalDeposit: _model
                                       .commercialAdvanceModel
                                       .balanceSDAmountSecurityTextController
@@ -477,7 +474,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .text,
                                   oneMonthDeposit: _model
                                       .commercialAdvanceModel
-                                      .securityRentRentPerMonthTextController
+                                      .securityRentRentPerMonthssssTextController
                                       .text,
                                   balanceDeposit: _model
                                       .commercialAdvanceModel

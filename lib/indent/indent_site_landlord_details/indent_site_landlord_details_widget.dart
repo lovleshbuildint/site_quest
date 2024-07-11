@@ -642,8 +642,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     FFAppState().indentSelectedSite,
                                     r'''$.IndentId''',
                                   ).toString(),
-                                  districts:
-                                      _model.landlordformModel.districtValue,
+                                  districts: null,
                                   token: FFAppState().Token,
                                   iCity: _model.landlordformModel.cityValue,
                                   lLPercent: _model.landlordformModel
@@ -685,19 +684,12 @@ class _IndentSiteLandlordDetailsWidgetState
                                       .landoardNameTextController.text,
                                   refeName: _model.landlordformModel
                                       .siteReferralNameTextController.text,
-                                  contactNumber: _model.landlordformModel
-                                      .siteReferralNoTextController.text,
+                                  contactNumber: null,
                                   chequePercent: _model.landlordformModel
                                       .percentTextController.text,
                                   siteId: FFAppState().SiteId,
-                                  iindent: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.IndentId''',
-                                  ).toString(),
-                                  targetBank: getJsonField(
-                                    FFAppState().indentSelectedSite,
-                                    r'''$.CustomerBank''',
-                                  ).toString(),
+                                  iindent: null,
+                                  targetBank: null,
                                   centres: null,
                                   comments: null,
                                   lastModStamp: null,
@@ -717,6 +709,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   isWB: '0',
                                   msg: null,
                                   isFromSiteref: false,
+                                  emailIds: null,
                                 );
 
                                 if ((String var1) {

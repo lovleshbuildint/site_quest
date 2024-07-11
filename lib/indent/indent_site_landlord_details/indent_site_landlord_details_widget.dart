@@ -714,7 +714,7 @@ class _IndentSiteLandlordDetailsWidgetState
 
                                 if ((String var1) {
                                   return var1 ==
-                                          "Data for Step-1 Successfully Updated."
+                                          "Data for Step-2 Successfully Updated."
                                       ? true
                                       : false;
                                 }(getJsonField(

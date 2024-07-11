@@ -80,7 +80,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
         scrollDirection: Axis.vertical,
         children: [
           Text(
-            _model.rentaltype.toString(),
+            'Rental Type',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,
@@ -253,10 +253,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      valueOrDefault<String>(
-                        _model.rentFreePeriodAdvanceValue,
-                        's',
-                      ),
+                      'Rent Free Period (in Days)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,

@@ -661,7 +661,7 @@ class _IndentSiteCommercialWidgetState
                                     commType: null,
                                     commDeposite: null,
                                     errCnt: null,
-                                    isFromSiteref: null,
+                                    isFromSiteref: false.toString(),
                                     msg: null,
                                   );
 
@@ -683,7 +683,7 @@ class _IndentSiteCommercialWidgetState
                                       context: context,
                                       builder: (alertDialogContext) {
                                         return AlertDialog(
-                                          title: Text('Alert (Dimesions)'),
+                                          title: Text('Alert (commerical)'),
                                           content: Text((_model
                                                   .tDOADetailsThirdWordAdvance
                                                   ?.bodyText ??
@@ -795,7 +795,7 @@ class _IndentSiteCommercialWidgetState
                                     commType: null,
                                     commDeposite: null,
                                     msg: null,
-                                    isFromSiteref: '0',
+                                    isFromSiteref: false.toString(),
                                   );
 
                                   _shouldSetState = true;

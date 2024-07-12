@@ -1267,7 +1267,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       focusNode: _model.totalSecurityDepositFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
                         '_model.totalSecurityDepositTextController',
-                        Duration(milliseconds: 1),
+                        Duration(milliseconds: 10),
                         () => setState(() {}),
                       ),
                       autofocus: false,

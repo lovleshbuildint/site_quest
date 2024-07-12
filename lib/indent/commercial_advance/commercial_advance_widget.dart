@@ -73,6 +73,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(
@@ -1186,10 +1188,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      valueOrDefault<String>(
-                        _model.securityDepositsdfghjValue,
-                        'xyr',
-                      ),
+                      FFAppState().securtiydepositwidget,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
@@ -1207,6 +1206,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       options: ['1', '2', '3'],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositsdfghjValue = val);
+                        FFAppState().securtiydepositwidget =
+                            _model.securityDepositsdfghjValue!;
+                        setState(() {});
                         setState(() {
                           _model.totalSecurityDepositTextController
                               ?.text = ((int.tryParse((_model

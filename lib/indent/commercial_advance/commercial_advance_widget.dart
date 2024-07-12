@@ -1187,8 +1187,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       valueOrDefault<String>(
-                        _model.securityDepositsdfghjValue,
-                        'n',
+                        _model.secritydeposit,
+                        'v',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
@@ -1207,6 +1207,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       options: ['1', '2', '3'],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositsdfghjValue = val);
+                        _model.secritydeposit =
+                            _model.securityDepositsdfghjValue!;
+                        setState(() {});
                         setState(() {
                           _model.totalSecurityDepositTextController
                               ?.text = ((int.tryParse((_model

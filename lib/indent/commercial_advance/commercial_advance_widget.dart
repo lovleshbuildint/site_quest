@@ -312,7 +312,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      'Advance Rental (Months)',
+                      valueOrDefault<String>(
+                        _model.advanceRentMonthRentOrSecurityMonthsValue,
+                        'uyf',
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
@@ -1243,6 +1246,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       margin:
                           EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                       hidesUnderline: true,
+                      isOverButton: true,
                       isSearchable: false,
                       isMultiSelect: false,
                     ),

@@ -75,11 +75,6 @@ class FFAppState extends ChangeNotifier {
       _trycracoverage =
           await secureStorage.getString('ff_trycracoverage') ?? _trycracoverage;
     });
-    await _safeInitAsync(() async {
-      _securtiydepositwidget =
-          await secureStorage.getString('ff_securtiydepositwidget') ??
-              _securtiydepositwidget;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -706,17 +701,6 @@ class FFAppState extends ChangeNotifier {
   String get deviceIdNearestATM => _deviceIdNearestATM;
   set deviceIdNearestATM(String value) {
     _deviceIdNearestATM = value;
-  }
-
-  String _securtiydepositwidget = '';
-  String get securtiydepositwidget => _securtiydepositwidget;
-  set securtiydepositwidget(String value) {
-    _securtiydepositwidget = value;
-    secureStorage.setString('ff_securtiydepositwidget', value);
-  }
-
-  void deleteSecurtiydepositwidget() {
-    secureStorage.delete(key: 'ff_securtiydepositwidget');
   }
 }
 

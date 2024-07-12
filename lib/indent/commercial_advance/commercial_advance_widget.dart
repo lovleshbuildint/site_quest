@@ -51,6 +51,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
         TextEditingController(text: '0');
     _model.securityRentRentPerMonthssssFocusNode ??= FocusNode();
 
+    _model.textController6 ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
+
     _model.totalSecurityDepositTextController ??=
         TextEditingController(text: '0');
     _model.totalSecurityDepositFocusNode ??= FocusNode();
@@ -73,8 +76,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: ListView(
@@ -1188,7 +1189,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      FFAppState().securtiydepositwidget,
+                      _model.textController6.text,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
@@ -1206,9 +1207,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       options: ['1', '2', '3'],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositsdfghjValue = val);
-                        FFAppState().securtiydepositwidget =
-                            _model.securityDepositsdfghjValue!;
-                        setState(() {});
                         setState(() {
                           _model.totalSecurityDepositTextController
                               ?.text = ((int.tryParse((_model
@@ -1258,6 +1256,64 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 fontFamily: 'Readex Pro',
                                 letterSpacing: 0.0,
                               ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.textController6,
+                      focusNode: _model.textFieldFocusNode,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: 'Hello World',
+                        labelStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        errorBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedErrorBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                            fontFamily: 'Outfit',
+                            letterSpacing: 0.0,
+                          ),
+                      validator:
+                          _model.textController6Validator.asValidator(context),
                     ),
                   ),
                   Padding(

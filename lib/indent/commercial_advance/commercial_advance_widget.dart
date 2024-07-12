@@ -1047,7 +1047,26 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               onChanged: (_) => EasyDebounce.debounce(
                                 '_model.securityRentRentPerMonthssssTextController',
                                 Duration(milliseconds: 2000),
-                                () async {},
+                                () async {
+                                  setState(() {
+                                    _model.totalSecurityDepositTextController
+                                        ?.text = ((int.tryParse((_model
+                                                    .securityDepositValue!)) ??
+                                                0) *
+                                            (int.tryParse(_model
+                                                    .securityRentRentPerMonthssssTextController
+                                                    .text) ??
+                                                0))
+                                        .toString();
+                                    _model.totalSecurityDepositTextController
+                                            ?.selection =
+                                        TextSelection.collapsed(
+                                            offset: _model
+                                                .totalSecurityDepositTextController!
+                                                .text
+                                                .length);
+                                  });
+                                },
                               ),
                               autofocus: false,
                               obscureText: false,
@@ -1197,12 +1216,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         setState(() => _model.securityDepositValue = val);
                         setState(() {
                           _model.totalSecurityDepositTextController
-                              ?.text = ((int.tryParse(_model
+                              ?.text = ((int.tryParse(
+                                          (_model.securityDepositValue!)) ??
+                                      0) *
+                                  (int.tryParse(_model
                                           .securityRentRentPerMonthssssTextController
                                           .text) ??
-                                      0) *
-                                  (int.tryParse(
-                                          (_model.securityDepositValue!)) ??
                                       0))
                               .toString();
                           _model.totalSecurityDepositTextController?.selection =

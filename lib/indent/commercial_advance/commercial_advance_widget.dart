@@ -1216,12 +1216,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         setState(() => _model.securityDepositValue = val);
                         setState(() {
                           _model.totalSecurityDepositTextController
-                              ?.text = ((int.tryParse(
-                                          (_model.securityDepositValue!)) ??
-                                      0) *
-                                  (int.tryParse(_model
+                              ?.text = ((int.tryParse(_model
                                           .securityRentRentPerMonthssssTextController
                                           .text) ??
+                                      0) *
+                                  (int.tryParse(
+                                          (_model.securityDepositValue!)) ??
                                       0))
                               .toString();
                           _model.totalSecurityDepositTextController?.selection =

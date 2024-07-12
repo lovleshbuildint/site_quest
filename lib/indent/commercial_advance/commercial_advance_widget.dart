@@ -1201,20 +1201,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           FormFieldController<String>(
                         _model.securityDepositValue ??= '1',
                       ),
-                      options: [
-                        '1',
-                        '2',
-                        '3',
-                        '4',
-                        '5',
-                        '6',
-                        '7',
-                        '8',
-                        '9',
-                        '10',
-                        '11',
-                        '12'
-                      ],
+                      options: ['1', '2', '9', '10', '11', '12'],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositValue = val);
                         setState(() {

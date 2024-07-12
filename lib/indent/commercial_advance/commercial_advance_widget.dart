@@ -125,7 +125,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    _model.advanceRentAmountRENTTextController.text,
+                    'Rent (per month)',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: Colors.black,
@@ -995,7 +995,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    _model.securityRentRentPerMonthssssTextController.text,
+                    'Rent (per month)',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: Colors.black,

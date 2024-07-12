@@ -270,7 +270,17 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               FormFieldController<String>(
                         _model.rentFreePeriodAdvanceValue ??= '30',
                       ),
-                      options: ['30', '45', '60'],
+                      options: [
+                        '15',
+                        '30',
+                        '45',
+                        '60',
+                        '75',
+                        '90',
+                        '120',
+                        '150',
+                        '365'
+                      ],
                       onChanged: (val) => setState(
                           () => _model.rentFreePeriodAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1038,16 +1048,24 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 '_model.securityRentRentPerMonthssssTextController',
                                 Duration(milliseconds: 2000),
                                 () async {
-                                  _model.totalSecurityDeposit = ((int.tryParse(
-                                                  (_model
-                                                      .securityDepositValue!)) ??
-                                              0) *
-                                          (int.tryParse(_model
-                                                  .securityRentRentPerMonthssssTextController
-                                                  .text) ??
-                                              0))
-                                      .toString();
-                                  setState(() {});
+                                  setState(() {
+                                    _model.totalSecurityDepositTextController
+                                        ?.text = ((int.tryParse((_model
+                                                    .securityDepositValue!)) ??
+                                                0) *
+                                            (int.tryParse(_model
+                                                    .securityRentRentPerMonthssssTextController
+                                                    .text) ??
+                                                0))
+                                        .toString();
+                                    _model.totalSecurityDepositTextController
+                                            ?.selection =
+                                        TextSelection.collapsed(
+                                            offset: _model
+                                                .totalSecurityDepositTextController!
+                                                .text
+                                                .length);
+                                  });
                                 },
                               ),
                               autofocus: false,

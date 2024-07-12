@@ -78,7 +78,7 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   // State field(s) for SecurityDeposit widget.
   String? securityDepositValue;
   FormFieldController<String>? securityDepositValueController;
-  // State field(s) for TotalSecurityDeposit widget.
+  // State field(s) for totalSecurityDeposit widget.
   FocusNode? totalSecurityDepositFocusNode;
   TextEditingController? totalSecurityDepositTextController;
   String? Function(BuildContext, String?)?

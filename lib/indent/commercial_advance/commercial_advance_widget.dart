@@ -1215,8 +1215,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         setState(() => _model.securityDepositValue = val);
                         setState(() {
-                          _model
-                              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                          _model.totalSecurityDepositTextController
                               ?.text = ((int.tryParse(
                                           (_model.securityDepositValue!)) ??
                                       0) *
@@ -1225,11 +1224,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                  ?.selection =
+                          _model.totalSecurityDepositTextController?.selection =
                               TextSelection.collapsed(
                                   offset: _model
-                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                      .totalSecurityDepositTextController!
                                       .text
                                       .length);
                         });

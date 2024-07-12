@@ -52,7 +52,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.securityRentRentPerMonthssssFocusNode ??= FocusNode();
 
     _model.totalSecurityDepositTextController ??=
-        TextEditingController(text: _model.totalSecurityDeposit);
+        TextEditingController(text: '0');
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
     _model.advanceSDAmountSecurityTextController ??= TextEditingController();

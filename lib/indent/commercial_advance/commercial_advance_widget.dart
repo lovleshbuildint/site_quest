@@ -1054,7 +1054,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   setState(() {
                                     _model.totalSecurityDepositTextController
                                         ?.text = ((int.tryParse((_model
-                                                    .securityDepositValue!)) ??
+                                                    .securityDepositsdfghjValue!)) ??
                                                 0) *
                                             (int.tryParse(_model
                                                     .securityRentRentPerMonthssssTextController
@@ -1187,8 +1187,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       valueOrDefault<String>(
-                        _model.securityDepositValue,
-                        'a',
+                        _model.securityDepositsdfghjValue,
+                        'n',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
@@ -1201,15 +1201,16 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.securityDepositValueController ??=
-                          FormFieldController<String>(null),
+                      controller:
+                          _model.securityDepositsdfghjValueController ??=
+                              FormFieldController<String>(null),
                       options: ['1', '2', '3'],
                       onChanged: (val) async {
-                        setState(() => _model.securityDepositValue = val);
+                        setState(() => _model.securityDepositsdfghjValue = val);
                         setState(() {
                           _model.totalSecurityDepositTextController
-                              ?.text = ((int.tryParse(
-                                          (_model.securityDepositValue!)) ??
+                              ?.text = ((int.tryParse((_model
+                                          .securityDepositsdfghjValue!)) ??
                                       0) *
                                   (int.tryParse(_model
                                           .securityRentRentPerMonthssssTextController

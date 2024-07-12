@@ -457,7 +457,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .balanceSDAmountSecurityTextController
                                       .text,
                                   securityDeposit: _model.commercialAdvanceModel
-                                      .securityDepositValue,
+                                      .securityDepositsdfghjValue,
                                   agreementPeriod: _model.commercialAdvanceModel
                                       .agreementPeriodsSecurityValue,
                                   escalationPeriod: _model

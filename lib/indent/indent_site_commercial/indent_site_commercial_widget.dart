@@ -730,7 +730,7 @@ class _IndentSiteCommercialWidgetState
                                     ),
                                     securityDeposit: _model
                                         .commercialAdvanceModel
-                                        .securityDepositValue,
+                                        .securityDepositsdfghjValue,
                                     agreementPeriod: _model
                                         .commercialAdvanceModel
                                         .agreementPeriodsSecurityValue,

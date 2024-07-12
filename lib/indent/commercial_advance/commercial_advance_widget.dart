@@ -1203,9 +1203,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller:
                           _model.securityDepositsdfghjValueController ??=
-                              FormFieldController<String>(
-                        _model.securityDepositsdfghjValue ??= '1',
-                      ),
+                              FormFieldController<String>(null),
                       options: ['1', '2', '3'],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositsdfghjValue = val);
@@ -1235,6 +1233,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: '1',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),

@@ -1188,7 +1188,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       valueOrDefault<String>(
                         _model.secritydeposit,
-                        'v',
+                        '00',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',

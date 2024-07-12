@@ -1054,7 +1054,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   setState(() {
                                     _model.totalSecurityDepositTextController
                                         ?.text = ((int.tryParse((_model
-                                                    .totalSecurityDepositValue!)) ??
+                                                    .securityDepositValue!)) ??
                                                 0) *
                                             (int.tryParse(_model
                                                     .securityRentRentPerMonthssssTextController
@@ -1120,6 +1120,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              maxLines: null,
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
@@ -1186,7 +1187,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       valueOrDefault<String>(
-                        _model.totalSecurityDepositValue,
+                        _model.securityDepositValue,
                         'a',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1200,17 +1201,15 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.totalSecurityDepositValueController ??=
-                          FormFieldController<String>(
-                        _model.totalSecurityDepositValue ??= '3',
-                      ),
+                      controller: _model.securityDepositValueController ??=
+                          FormFieldController<String>(null),
                       options: ['1', '2', '3'],
                       onChanged: (val) async {
-                        setState(() => _model.totalSecurityDepositValue = val);
+                        setState(() => _model.securityDepositValue = val);
                         setState(() {
                           _model.totalSecurityDepositTextController
-                              ?.text = ((int.tryParse((_model
-                                          .totalSecurityDepositValue!)) ??
+                              ?.text = ((int.tryParse(
+                                          (_model.securityDepositValue!)) ??
                                       0) *
                                   (int.tryParse(_model
                                           .securityRentRentPerMonthssssTextController

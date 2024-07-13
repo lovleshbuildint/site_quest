@@ -121,7 +121,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.textController',
-                                            Duration(milliseconds: 2000),
+                                            Duration(milliseconds: 0),
                                             () async {
                                               _model.searchvaluepage =
                                                   _model.textController.text;
@@ -216,6 +216,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                         onTap: () async {
                                           _model.serachVisibilty = false;
                                           setState(() {});
+                                          FFAppState().searchpage = '';
+                                          setState(() {});
                                         },
                                         child: Icon(
                                           Icons.close,
@@ -233,7 +235,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                         if (!_model.serachVisibilty)
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 0.0),
+                                20.0, 10.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

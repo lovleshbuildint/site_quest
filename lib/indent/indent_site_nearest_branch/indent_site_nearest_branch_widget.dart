@@ -598,7 +598,7 @@ class _IndentSiteNearestBranchWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('indent_site_photo');
+                              context.safePop();
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

@@ -246,7 +246,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.goNamed(
+                                      context.pushNamed(
                                         'MainPage',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(

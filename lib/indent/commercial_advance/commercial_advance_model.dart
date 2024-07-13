@@ -78,10 +78,6 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   // State field(s) for SecurityDepositsdfghj widget.
   String? securityDepositsdfghjValue;
   FormFieldController<String>? securityDepositsdfghjValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
   // State field(s) for totalSecurityDeposit widget.
   FocusNode? totalSecurityDepositFocusNode;
   TextEditingController? totalSecurityDepositTextController;
@@ -131,9 +127,6 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
 
     securityRentRentPerMonthssssFocusNode?.dispose();
     securityRentRentPerMonthssssTextController?.dispose();
-
-    textFieldFocusNode?.dispose();
-    textController6?.dispose();
 
     totalSecurityDepositFocusNode?.dispose();
     totalSecurityDepositTextController?.dispose();

@@ -1382,7 +1382,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('indent_site_dimensions');
+                              context.safePop();
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

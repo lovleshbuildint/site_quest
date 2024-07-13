@@ -690,7 +690,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('indent_site_remark');
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

@@ -354,7 +354,7 @@ class _OpenSiteLandlordDetailsWidgetState
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('open_site_details');
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

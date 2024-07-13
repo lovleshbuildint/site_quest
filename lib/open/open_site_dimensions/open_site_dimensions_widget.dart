@@ -311,7 +311,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('open_site_commercial');
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

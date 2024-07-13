@@ -596,7 +596,7 @@ class _IndentSiteDimensionsWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('indent_site_commercial');
+                              context.safePop();
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

@@ -351,7 +351,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('open_site_nearest_branch');
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

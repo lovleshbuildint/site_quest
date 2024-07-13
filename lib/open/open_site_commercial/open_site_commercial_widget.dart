@@ -311,7 +311,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('open_site_landlord_details');
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

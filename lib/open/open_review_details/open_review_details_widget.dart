@@ -67,16 +67,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.goNamed(
-                              'MainPage',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

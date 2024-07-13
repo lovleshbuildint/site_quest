@@ -1110,7 +1110,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('open_site_dimensions');
+                            context.safePop();
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

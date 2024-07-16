@@ -47,12 +47,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.balanceAmountAdvanceTextController ??= TextEditingController();
     _model.balanceAmountAdvanceFocusNode ??= FocusNode();
 
-    _model.securityRentRentPerMonthssssTextController ??=
+    _model.securityRentRentPerMonthTextController ??=
         TextEditingController(text: '0');
-    _model.securityRentRentPerMonthssssFocusNode ??= FocusNode();
+    _model.securityRentRentPerMonthFocusNode ??= FocusNode();
 
-    _model.totalSecurityDepositTextController ??=
-        TextEditingController(text: '0');
+    _model.totalSecurityDepositTextController ??= TextEditingController();
     _model.totalSecurityDepositFocusNode ??= FocusNode();
 
     _model.advanceSDAmountSecurityTextController ??= TextEditingController();
@@ -1000,7 +999,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                 ],
               ),
             ),
-          if (_model.rentaltypeValue == 'Security Deposit')
+          if (_model.rentaltypeValue == 'Advance Rent')
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Column(
@@ -1031,7 +1030,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
-                              'assets/images/Asset_1india.png',
+                              'assets/images/Site_Quest.png',
                               width: 20.0,
                               height: 20.0,
                               fit: BoxFit.fitHeight,
@@ -1043,21 +1042,21 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model
-                                  .securityRentRentPerMonthssssTextController,
+                              controller:
+                                  _model.securityRentRentPerMonthTextController,
                               focusNode:
-                                  _model.securityRentRentPerMonthssssFocusNode,
+                                  _model.securityRentRentPerMonthFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
-                                '_model.securityRentRentPerMonthssssTextController',
+                                '_model.securityRentRentPerMonthTextController',
                                 Duration(milliseconds: 2000),
                                 () async {
                                   setState(() {
                                     _model.totalSecurityDepositTextController
                                         ?.text = ((int.tryParse((_model
-                                                    .securityDepositsdfghjValue!)) ??
+                                                    .securityDepositValue!)) ??
                                                 0) *
                                             (int.tryParse(_model
-                                                    .securityRentRentPerMonthssssTextController
+                                                    .securityRentRentPerMonthTextController
                                                     .text) ??
                                                 0))
                                         .toString();
@@ -1120,12 +1119,11 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
-                              maxLines: null,
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
                               validator: _model
-                                  .securityRentRentPerMonthssssTextControllerValidator
+                                  .securityRentRentPerMonthTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -1154,7 +1152,17 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               FormFieldController<String>(
                         _model.rentFreePeriodsSecurityValue ??= '30',
                       ),
-                      options: ['30', '45', '60'],
+                      options: [
+                        '15',
+                        '30',
+                        '45',
+                        '60',
+                        '75',
+                        '90',
+                        '120',
+                        '150',
+                        '365'
+                      ],
                       onChanged: (val) => setState(
                           () => _model.rentFreePeriodsSecurityValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1186,10 +1194,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      valueOrDefault<String>(
-                        _model.securityDepositsdfghjValue,
-                        'x',
-                      ),
+                      'Security Deposit (Months)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
@@ -1201,10 +1206,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller:
-                          _model.securityDepositsdfghjValueController ??=
-                              FormFieldController<String>(
-                        _model.securityDepositsdfghjValue ??= '3',
+                      controller: _model.securityDepositValueController ??=
+                          FormFieldController<String>(
+                        _model.securityDepositValue ??= '3',
                       ),
                       options: [
                         '1',
@@ -1221,14 +1225,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.securityDepositsdfghjValue = val);
+                        setState(() => _model.securityDepositValue = val);
                         setState(() {
                           _model.totalSecurityDepositTextController
-                              ?.text = ((int.tryParse((_model
-                                          .securityDepositsdfghjValue!)) ??
+                              ?.text = ((int.tryParse(
+                                          (_model.securityDepositValue!)) ??
                                       0) *
                                   (int.tryParse(_model
-                                          .securityRentRentPerMonthssssTextController
+                                          .securityRentRentPerMonthTextController
                                           .text) ??
                                       0))
                               .toString();
@@ -1285,7 +1289,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       focusNode: _model.totalSecurityDepositFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
                         '_model.totalSecurityDepositTextController',
-                        Duration(milliseconds: 10),
+                        Duration(milliseconds: 1),
                         () => setState(() {}),
                       ),
                       autofocus: false,
@@ -1383,7 +1387,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .intialAdvancemonthSecurityValue!)) ??
                                       0) *
                                   (int.tryParse(_model
-                                          .securityRentRentPerMonthssssTextController
+                                          .securityRentRentPerMonthTextController
                                           .text) ??
                                       0))
                               .toString();
@@ -1423,7 +1427,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
-                      hintText: '5',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),
@@ -1837,11 +1840,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) async {
                               setState(() {});
-                              _model.ebillingrent =
-                                  functions.dropdown(valueOrDefault<String>(
-                                _model.eBillIncludingRentSecurityValue,
-                                '0',
-                              ));
+                              _model.ebilling = functions.dropdown(
+                                  _model.eBillIncludingRentSecurityValue!);
                               setState(() {});
                             },
                             controller: _model

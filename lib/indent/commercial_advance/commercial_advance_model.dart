@@ -67,18 +67,18 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FormFieldController<String>? agreementPeriodsAdvanceValueController;
   // State field(s) for E-billingRent-Advance widget.
   FormFieldController<String>? eBillingRentAdvanceValueController;
-  // State field(s) for securityRent-RentPerMonthssss widget.
-  FocusNode? securityRentRentPerMonthssssFocusNode;
-  TextEditingController? securityRentRentPerMonthssssTextController;
+  // State field(s) for securityRent-RentPerMonth widget.
+  FocusNode? securityRentRentPerMonthFocusNode;
+  TextEditingController? securityRentRentPerMonthTextController;
   String? Function(BuildContext, String?)?
-      securityRentRentPerMonthssssTextControllerValidator;
+      securityRentRentPerMonthTextControllerValidator;
   // State field(s) for RentFreePeriods-Security widget.
   String? rentFreePeriodsSecurityValue;
   FormFieldController<String>? rentFreePeriodsSecurityValueController;
-  // State field(s) for SecurityDepositsdfghj widget.
-  String? securityDepositsdfghjValue;
-  FormFieldController<String>? securityDepositsdfghjValueController;
-  // State field(s) for totalSecurityDeposit widget.
+  // State field(s) for SecurityDeposit widget.
+  String? securityDepositValue;
+  FormFieldController<String>? securityDepositValueController;
+  // State field(s) for TotalSecurityDeposit widget.
   FocusNode? totalSecurityDepositFocusNode;
   TextEditingController? totalSecurityDepositTextController;
   String? Function(BuildContext, String?)?
@@ -125,8 +125,8 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
     balanceAmountAdvanceFocusNode?.dispose();
     balanceAmountAdvanceTextController?.dispose();
 
-    securityRentRentPerMonthssssFocusNode?.dispose();
-    securityRentRentPerMonthssssTextController?.dispose();
+    securityRentRentPerMonthFocusNode?.dispose();
+    securityRentRentPerMonthTextController?.dispose();
 
     totalSecurityDepositFocusNode?.dispose();
     totalSecurityDepositTextController?.dispose();

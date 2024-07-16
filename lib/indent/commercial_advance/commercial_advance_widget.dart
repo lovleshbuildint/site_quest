@@ -999,7 +999,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                 ],
               ),
             ),
-          if (_model.rentaltypeValue == 'Advance Rent')
+          if (_model.rentaltypeValue == 'Security Deposit')
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Column(

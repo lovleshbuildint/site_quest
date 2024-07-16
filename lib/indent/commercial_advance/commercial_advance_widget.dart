@@ -1223,21 +1223,19 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         setState(() => _model.securityDepositsdfghjValue = val);
                         setState(() {
-                          _model
-                              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                          _model.totalSecurityDepositTextController
                               ?.text = ((int.tryParse((_model
                                           .securityDepositsdfghjValue!)) ??
                                       0) *
                                   (int.tryParse(_model
-                                          .advanceRentAmountRENTTextController
+                                          .securityRentRentPerMonthssssTextController
                                           .text) ??
                                       0))
                               .toString();
-                          _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                  ?.selection =
+                          _model.totalSecurityDepositTextController?.selection =
                               TextSelection.collapsed(
                                   offset: _model
-                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                      .totalSecurityDepositTextController!
                                       .text
                                       .length);
                         });

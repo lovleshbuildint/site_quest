@@ -718,16 +718,19 @@ class _IndentSiteCommercialWidgetState
                                     token: FFAppState().Token,
                                     rent: _model
                                         .commercialAdvanceModel
-                                        .securityRentRentPerMonthTextController
+                                        .securityRentRentPerMonthssssTextController
                                         .text,
                                     advanceDeposit: '00',
-                                    totalDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    totalDeposit: valueOrDefault<String>(
+                                      _model
+                                          .commercialAdvanceModel
+                                          .balanceSDAmountSecurityTextController
+                                          .text,
+                                      '00',
+                                    ),
                                     securityDeposit: _model
                                         .commercialAdvanceModel
-                                        .securityDepositValue,
+                                        .securityDepositsdfghjValue,
                                     agreementPeriod: _model
                                         .commercialAdvanceModel
                                         .agreementPeriodsSecurityValue,
@@ -739,18 +742,24 @@ class _IndentSiteCommercialWidgetState
                                           ?.toString(),
                                       '1',
                                     ),
-                                    fullDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    fullDeposit: valueOrDefault<String>(
+                                      _model
+                                          .commercialAdvanceModel
+                                          .balanceSDAmountSecurityTextController
+                                          .text,
+                                      '00',
+                                    ),
                                     oneMonthDeposit: _model
                                         .commercialAdvanceModel
-                                        .securityRentRentPerMonthTextController
+                                        .securityRentRentPerMonthssssTextController
                                         .text,
-                                    balanceDeposit: _model
-                                        .commercialAdvanceModel
-                                        .balanceSDAmountSecurityTextController
-                                        .text,
+                                    balanceDeposit: valueOrDefault<String>(
+                                      _model
+                                          .commercialAdvanceModel
+                                          .balanceSDAmountSecurityTextController
+                                          .text,
+                                      '00',
+                                    ),
                                     totalAdvSec: _model
                                         .commercialAdvanceModel
                                         .totalSecurityDepositTextController
@@ -760,8 +769,11 @@ class _IndentSiteCommercialWidgetState
                                         .rentEscalationPerSecurityValue,
                                     siteId: FFAppState().SiteId,
                                     iindent: null,
-                                    months: _model.commercialAdvanceModel
-                                        .intialAdvancemonthSecurityValue,
+                                    months: valueOrDefault<String>(
+                                      _model.commercialAdvanceModel
+                                          .intialAdvancemonthSecurityValue,
+                                      '0',
+                                    ),
                                     targetBank: null,
                                     district: null,
                                     centre: null,

@@ -1188,7 +1188,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       valueOrDefault<String>(
                         _model.securityDepositsdfghjValue,
-                        'ttrd',
+                        'x',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
@@ -1204,25 +1204,40 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       controller:
                           _model.securityDepositsdfghjValueController ??=
                               FormFieldController<String>(
-                        _model.securityDepositsdfghjValue ??= '1',
+                        _model.securityDepositsdfghjValue ??= '3',
                       ),
-                      options: ['1', '2', '3', '4'],
+                      options: [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12'
+                      ],
                       onChanged: (val) async {
                         setState(() => _model.securityDepositsdfghjValue = val);
                         setState(() {
-                          _model.totalSecurityDepositTextController
+                          _model
+                              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                               ?.text = ((int.tryParse((_model
                                           .securityDepositsdfghjValue!)) ??
                                       0) *
                                   (int.tryParse(_model
-                                          .securityRentRentPerMonthssssTextController
+                                          .advanceRentAmountRENTTextController
                                           .text) ??
                                       0))
                               .toString();
-                          _model.totalSecurityDepositTextController?.selection =
+                          _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                  ?.selection =
                               TextSelection.collapsed(
                                   offset: _model
-                                      .totalSecurityDepositTextController!
+                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
                                       .text
                                       .length);
                         });
@@ -1235,7 +1250,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
-                      hintText: '1',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),
@@ -1249,15 +1263,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       margin:
                           EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                       hidesUnderline: true,
-                      isOverButton: true,
                       isSearchable: false,
                       isMultiSelect: false,
-                      labelText: '',
-                      labelTextStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
                     ),
                   ),
                   Padding(
@@ -1868,13 +1875,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         ),
                       ],
                     ),
-                  ),
-                  Text(
-                    'Hello World',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
                   ),
                 ],
               ),

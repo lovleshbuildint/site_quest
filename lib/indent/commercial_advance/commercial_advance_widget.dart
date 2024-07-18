@@ -291,7 +291,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               .advanceRentMonthRentOrSecurityMonthsValueController ??=
                           FormFieldController<String>(
                         _model.advanceRentMonthRentOrSecurityMonthsValue ??=
-                            '3',
+                            '1',
                       ),
                       options: [
                         '1',
@@ -452,9 +452,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
                       controller: _model.intialAdvanceValueController ??=
-                          FormFieldController<String>(
-                        _model.intialAdvanceValue ??= '3',
-                      ),
+                          FormFieldController<String>(null),
                       options: [
                         '1',
                         '2',

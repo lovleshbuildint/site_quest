@@ -67,46 +67,6 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   FormFieldController<String>? agreementPeriodsAdvanceValueController;
   // State field(s) for E-billingRent-Advance widget.
   FormFieldController<String>? eBillingRentAdvanceValueController;
-  // State field(s) for securityRent-RentPerMonths widget.
-  FocusNode? securityRentRentPerMonthsFocusNode;
-  TextEditingController? securityRentRentPerMonthsTextController;
-  String? Function(BuildContext, String?)?
-      securityRentRentPerMonthsTextControllerValidator;
-  // State field(s) for RentFreePeriods-Security widget.
-  String? rentFreePeriodsSecurityValue;
-  FormFieldController<String>? rentFreePeriodsSecurityValueController;
-  // State field(s) for SecurityDepositmonth widget.
-  String? securityDepositmonthValue;
-  FormFieldController<String>? securityDepositmonthValueController;
-  // State field(s) for totalSecurityDeposit widget.
-  FocusNode? totalSecurityDepositFocusNode;
-  TextEditingController? totalSecurityDepositTextController;
-  String? Function(BuildContext, String?)?
-      totalSecurityDepositTextControllerValidator;
-  // State field(s) for IntialAdvancemonth-Security widget.
-  String? intialAdvancemonthSecurityValue;
-  FormFieldController<String>? intialAdvancemonthSecurityValueController;
-  // State field(s) for AdvanceSDAmount-Security widget.
-  FocusNode? advanceSDAmountSecurityFocusNode;
-  TextEditingController? advanceSDAmountSecurityTextController;
-  String? Function(BuildContext, String?)?
-      advanceSDAmountSecurityTextControllerValidator;
-  // State field(s) for BalanceSDAmount-Security widget.
-  FocusNode? balanceSDAmountSecurityFocusNode;
-  TextEditingController? balanceSDAmountSecurityTextController;
-  String? Function(BuildContext, String?)?
-      balanceSDAmountSecurityTextControllerValidator;
-  // State field(s) for RentEscalation-per-Security widget.
-  String? rentEscalationPerSecurityValue;
-  FormFieldController<String>? rentEscalationPerSecurityValueController;
-  // State field(s) for EscalationPeriod-Security widget.
-  String? escalationPeriodSecurityValue;
-  FormFieldController<String>? escalationPeriodSecurityValueController;
-  // State field(s) for AgreementPeriods-Security widget.
-  String? agreementPeriodsSecurityValue;
-  FormFieldController<String>? agreementPeriodsSecurityValueController;
-  // State field(s) for E-BillIncludingRent-Security widget.
-  FormFieldController<String>? eBillIncludingRentSecurityValueController;
 
   @override
   void initState(BuildContext context) {}
@@ -124,24 +84,10 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
 
     balanceAmountAdvanceFocusNode?.dispose();
     balanceAmountAdvanceTextController?.dispose();
-
-    securityRentRentPerMonthsFocusNode?.dispose();
-    securityRentRentPerMonthsTextController?.dispose();
-
-    totalSecurityDepositFocusNode?.dispose();
-    totalSecurityDepositTextController?.dispose();
-
-    advanceSDAmountSecurityFocusNode?.dispose();
-    advanceSDAmountSecurityTextController?.dispose();
-
-    balanceSDAmountSecurityFocusNode?.dispose();
-    balanceSDAmountSecurityTextController?.dispose();
   }
 
   /// Additional helper methods.
   String? get rentaltypeValue => rentaltypeValueController?.value;
   String? get eBillingRentAdvanceValue =>
       eBillingRentAdvanceValueController?.value;
-  String? get eBillIncludingRentSecurityValue =>
-      eBillIncludingRentSecurityValueController?.value;
 }

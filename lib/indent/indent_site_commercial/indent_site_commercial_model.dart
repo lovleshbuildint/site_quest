@@ -20,8 +20,6 @@ class IndentSiteCommercialModel
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
   ApiCallResponse? tDOADetailsThirdWordAdvance;
-  // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
-  ApiCallResponse? dOADetailsThirdWordsecur;
 
   @override
   void initState(BuildContext context) {
@@ -36,12 +34,6 @@ class IndentSiteCommercialModel
         _formTextFieldValidator3;
     commercialAdvanceModel.balanceAmountAdvanceTextControllerValidator =
         _formTextFieldValidator4;
-    commercialAdvanceModel.securityRentRentPerMonthsTextControllerValidator =
-        _formTextFieldValidator5;
-    commercialAdvanceModel.totalSecurityDepositTextControllerValidator =
-        _formTextFieldValidator6;
-    commercialAdvanceModel.advanceSDAmountSecurityTextControllerValidator =
-        _formTextFieldValidator7;
   }
 
   @override
@@ -77,30 +69,6 @@ class IndentSiteCommercialModel
   }
 
   String? _formTextFieldValidator4(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
-  String? _formTextFieldValidator5(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
-  String? _formTextFieldValidator6(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
-  String? _formTextFieldValidator7(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
     }

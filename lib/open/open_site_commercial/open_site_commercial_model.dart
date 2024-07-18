@@ -18,8 +18,6 @@ class OpenSiteCommercialModel
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
   ApiCallResponse? tDOADetailsThirdWordAdvance;
-  // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.
-  ApiCallResponse? dOADetailsThirdWordsecur;
 
   @override
   void initState(BuildContext context) {

@@ -329,223 +329,107 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                           child: FFButtonWidget(
                             onPressed: () async {
                               var _shouldSetState = false;
-                              if (_model
-                                      .commercialAdvanceModel.rentaltypeValue ==
-                                  'Advance Rent') {
-                                _model.tDOADetailsThirdWordAdvance =
-                                    await SqGroup.dOADetailsstepTHIRDworddocCall
-                                        .call(
-                                  indentId: null,
-                                  rentFreePeriod: _model.commercialAdvanceModel
-                                      .rentFreePeriodAdvanceValue,
-                                  rentalType: 'Advance Rent',
-                                  token: FFAppState().Token,
-                                  rent: _model.commercialAdvanceModel
-                                      .advanceRentAmountRENTTextController.text,
-                                  advanceDeposit: _model.commercialAdvanceModel
-                                      .advanceAmountAdvanceTextController.text,
-                                  totalDeposit: _model
-                                      .commercialAdvanceModel
-                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                      .text,
-                                  securityDeposit: _model.commercialAdvanceModel
-                                      .advanceRentMonthRentOrSecurityMonthsValue,
-                                  agreementPeriod: _model.commercialAdvanceModel
-                                      .agreementPeriodsAdvanceValue,
-                                  escalationPeriod: _model
-                                      .commercialAdvanceModel
-                                      .escalationPeriodAdvanceValue,
-                                  isAdvance: valueOrDefault<String>(
-                                    _model.commercialAdvanceModel.rentaltype
-                                        .toString(),
-                                    '1',
-                                  ),
-                                  fullDeposit: _model.commercialAdvanceModel
-                                      .balanceAmountAdvanceTextController.text,
-                                  oneMonthDeposit: _model.commercialAdvanceModel
-                                      .advanceRentAmountRENTTextController.text,
-                                  balanceDeposit: _model.commercialAdvanceModel
-                                      .balanceAmountAdvanceTextController.text,
-                                  totalAdvSec: _model.commercialAdvanceModel
-                                      .advanceRentMonthRentOrSecurityMonthsValue,
-                                  rentEscalation: _model.commercialAdvanceModel
-                                      .rentFreePeriodAdvanceValue,
-                                  siteId: FFAppState().SiteId,
-                                  iindent: null,
-                                  targetBank: null,
-                                  district: null,
-                                  centre: null,
-                                  comment: null,
-                                  lastModStamp: null,
-                                  isHold: null,
-                                  istage: null,
-                                  iStageText: null,
-                                  locationName: null,
-                                  androidKey: null,
-                                  months: _model.commercialAdvanceModel
-                                      .intialAdvanceValue,
-                                  isWB: '0',
-                                  employeeName: null,
-                                  companyName: null,
-                                  contactNumber: null,
-                                  emailId: null,
-                                  isExl: '0',
-                                  monthlybpcltranslitefee: null,
-                                  commType: null,
-                                  commDeposite: null,
-                                  errCnt: null,
-                                  isFromSiteref: '0',
-                                  msg: null,
-                                );
+                              _model.tDOADetailsThirdWordAdvance = await SqGroup
+                                  .dOADetailsstepTHIRDworddocCall
+                                  .call(
+                                indentId: null,
+                                rentFreePeriod: _model.commercialAdvanceModel
+                                    .rentFreePeriodAdvanceValue,
+                                rentalType: _model
+                                    .commercialAdvanceModel.rentaltypeValue,
+                                token: FFAppState().Token,
+                                rent: _model.commercialAdvanceModel
+                                    .advanceRentAmountRENTTextController.text,
+                                advanceDeposit: _model.commercialAdvanceModel
+                                    .advanceAmountAdvanceTextController.text,
+                                totalDeposit: _model
+                                    .commercialAdvanceModel
+                                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                    .text,
+                                securityDeposit: _model.commercialAdvanceModel
+                                    .advanceRentMonthRentOrSecurityMonthsValue,
+                                agreementPeriod: _model.commercialAdvanceModel
+                                    .agreementPeriodsAdvanceValue,
+                                escalationPeriod: _model.commercialAdvanceModel
+                                    .escalationPeriodAdvanceValue,
+                                isAdvance: valueOrDefault<String>(
+                                  _model.commercialAdvanceModel.rentaltype
+                                      .toString(),
+                                  '1',
+                                ),
+                                fullDeposit: _model.commercialAdvanceModel
+                                    .balanceAmountAdvanceTextController.text,
+                                oneMonthDeposit: _model.commercialAdvanceModel
+                                    .advanceRentAmountRENTTextController.text,
+                                balanceDeposit: _model.commercialAdvanceModel
+                                    .balanceAmountAdvanceTextController.text,
+                                totalAdvSec: _model.commercialAdvanceModel
+                                    .advanceRentMonthRentOrSecurityMonthsValue,
+                                rentEscalation: _model.commercialAdvanceModel
+                                    .rentFreePeriodAdvanceValue,
+                                siteId: FFAppState().SiteId,
+                                iindent: null,
+                                targetBank: null,
+                                district: null,
+                                centre: null,
+                                comment: null,
+                                lastModStamp: null,
+                                isHold: null,
+                                istage: null,
+                                iStageText: null,
+                                locationName: null,
+                                androidKey: null,
+                                months: _model
+                                    .commercialAdvanceModel.intialAdvanceValue,
+                                isWB: '0',
+                                employeeName: null,
+                                companyName: null,
+                                contactNumber: null,
+                                emailId: null,
+                                isExl: '0',
+                                monthlybpcltranslitefee: null,
+                                commType: null,
+                                commDeposite: null,
+                                errCnt: null,
+                                isFromSiteref: '0',
+                                msg: null,
+                              );
 
-                                _shouldSetState = true;
-                                if ((String var1) {
-                                  return var1 ==
-                                          "Data for Step-3 Successfully Updated."
-                                      ? true
-                                      : false;
-                                }(getJsonField(
-                                  (_model.tDOADetailsThirdWordAdvance
-                                          ?.jsonBody ??
-                                      ''),
-                                  r'''$.Msg''',
-                                ).toString())) {
-                                  context.goNamed('indent_site_dimensions');
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Alert (Dimesions)'),
-                                        content: Text((_model
-                                                .tDOADetailsThirdWordAdvance
-                                                ?.bodyText ??
-                                            '')),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                }
+                              _shouldSetState = true;
+                              if ((String var1) {
+                                return var1 ==
+                                        "Data for Step-3 Successfully Updated."
+                                    ? true
+                                    : false;
+                              }(getJsonField(
+                                (_model.tDOADetailsThirdWordAdvance?.jsonBody ??
+                                    ''),
+                                r'''$.Msg''',
+                              ).toString())) {
+                                context.goNamed('indent_site_dimensions');
 
                                 if (_shouldSetState) setState(() {});
                                 return;
                               } else {
-                                _model.dOADetailsThirdWordsecur = await SqGroup
-                                    .dOADetailsstepTHIRDworddocCall
-                                    .call(
-                                  indentId: null,
-                                  rentFreePeriod: _model.commercialAdvanceModel
-                                      .rentFreePeriodsSecurityValue,
-                                  rentalType: 'Security Deposit',
-                                  token: FFAppState().Token,
-                                  rent: _model
-                                      .commercialAdvanceModel
-                                      .securityRentRentPerMonthsTextController
-                                      .text,
-                                  advanceDeposit: _model
-                                      .commercialAdvanceModel
-                                      .advanceSDAmountSecurityTextController
-                                      .text,
-                                  totalDeposit: _model
-                                      .commercialAdvanceModel
-                                      .balanceSDAmountSecurityTextController
-                                      .text,
-                                  securityDeposit: _model.commercialAdvanceModel
-                                      .securityDepositmonthValue,
-                                  agreementPeriod: _model.commercialAdvanceModel
-                                      .agreementPeriodsSecurityValue,
-                                  escalationPeriod: _model
-                                      .commercialAdvanceModel
-                                      .escalationPeriodSecurityValue,
-                                  isAdvance: valueOrDefault<String>(
-                                    _model.commercialAdvanceModel.rentaltype
-                                        .toString(),
-                                    '0',
-                                  ),
-                                  fullDeposit: _model
-                                      .commercialAdvanceModel
-                                      .balanceSDAmountSecurityTextController
-                                      .text,
-                                  oneMonthDeposit: _model
-                                      .commercialAdvanceModel
-                                      .securityRentRentPerMonthsTextController
-                                      .text,
-                                  balanceDeposit: _model
-                                      .commercialAdvanceModel
-                                      .balanceSDAmountSecurityTextController
-                                      .text,
-                                  totalAdvSec: _model.commercialAdvanceModel
-                                      .totalSecurityDepositTextController.text,
-                                  rentEscalation: _model.commercialAdvanceModel
-                                      .rentEscalationPerSecurityValue,
-                                  siteId: FFAppState().SiteId,
-                                  iindent: null,
-                                  months: _model.commercialAdvanceModel
-                                      .intialAdvancemonthSecurityValue,
-                                  targetBank: null,
-                                  district: null,
-                                  centre: null,
-                                  comment: null,
-                                  lastModStamp: null,
-                                  isHold: null,
-                                  istage: null,
-                                  iStageText: null,
-                                  locationName: null,
-                                  androidKey: null,
-                                  isWB: null,
-                                  companyName: null,
-                                  employeeName: null,
-                                  contactNumber: null,
-                                  emailId: null,
-                                  isExl: '0',
-                                  monthlybpcltranslitefee: null,
-                                  errCnt: null,
-                                  commType: null,
-                                  commDeposite: null,
-                                  msg: null,
-                                  isFromSiteref: '0',
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Alert (Dimesions)'),
+                                      content: Text((_model
+                                              .tDOADetailsThirdWordAdvance
+                                              ?.bodyText ??
+                                          '')),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
                                 );
-
-                                _shouldSetState = true;
-                                if ((String var1) {
-                                  return var1 ==
-                                          "Data for Step-3 Successfully Updated."
-                                      ? true
-                                      : false;
-                                }(getJsonField(
-                                  (_model.dOADetailsThirdWordsecur?.jsonBody ??
-                                      ''),
-                                  r'''$.Msg''',
-                                ).toString())) {
-                                  context.goNamed('indent_site_dimensions');
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Alert (Dimesions)'),
-                                        content: Text((_model
-                                                .dOADetailsThirdWordsecur
-                                                ?.bodyText ??
-                                            '')),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                }
-
                                 if (_shouldSetState) setState(() {});
                                 return;
                               }

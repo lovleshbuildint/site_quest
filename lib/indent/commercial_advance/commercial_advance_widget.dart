@@ -145,7 +145,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             focusNode: _model.advanceRentAmountRENTFocusNode,
                             onChanged: (_) => EasyDebounce.debounce(
                               '_model.advanceRentAmountRENTTextController',
-                              Duration(milliseconds: 2000),
+                              Duration(milliseconds: 0),
                               () async {
                                 setState(() {
                                   _model
@@ -290,10 +290,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      valueOrDefault<String>(
-                        _model.advanceRentMonthRentOrSecurityMonthsValue,
-                        'uyf',
-                      ),
+                      'Advance Rental (Months)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
@@ -1143,7 +1140,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       valueOrDefault<String>(
-                        _model.securityDepositmonthValue,
+                        _model.securityDepositmonth1Value,
                         'x',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1152,6 +1149,55 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: FlutterFlowDropDown<String>(
+                      controller:
+                          _model.securityDepositmonth1ValueController ??=
+                              FormFieldController<String>(
+                        _model.securityDepositmonth1Value ??= '3',
+                      ),
+                      options: [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12'
+                      ],
+                      onChanged: (val) => setState(
+                          () => _model.securityDepositmonth1Value = val),
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 50.0,
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                letterSpacing: 0.0,
+                              ),
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: Color(0xFFE1E2E6),
+                        size: 24.0,
+                      ),
+                      fillColor: Colors.white,
+                      elevation: 2.0,
+                      borderColor: Color(0xFFE1E2E6),
+                      borderWidth: 2.0,
+                      borderRadius: 8.0,
+                      margin:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                      hidesUnderline: true,
+                      isSearchable: false,
+                      isMultiSelect: false,
                     ),
                   ),
                   Padding(

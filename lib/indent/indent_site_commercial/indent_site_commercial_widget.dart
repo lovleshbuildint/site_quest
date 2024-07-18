@@ -718,7 +718,7 @@ class _IndentSiteCommercialWidgetState
                                     token: FFAppState().Token,
                                     rent: _model
                                         .commercialAdvanceModel
-                                        .securityRentRentPerMonthssssTextController
+                                        .securityRentRentPerMonthsTextController
                                         .text,
                                     advanceDeposit: '00',
                                     totalDeposit: valueOrDefault<String>(
@@ -730,7 +730,7 @@ class _IndentSiteCommercialWidgetState
                                     ),
                                     securityDeposit: _model
                                         .commercialAdvanceModel
-                                        .securityDepositsdfghjValue,
+                                        .securityDepositmonthValue,
                                     agreementPeriod: _model
                                         .commercialAdvanceModel
                                         .agreementPeriodsSecurityValue,
@@ -751,7 +751,7 @@ class _IndentSiteCommercialWidgetState
                                     ),
                                     oneMonthDeposit: _model
                                         .commercialAdvanceModel
-                                        .securityRentRentPerMonthssssTextController
+                                        .securityRentRentPerMonthsTextController
                                         .text,
                                     balanceDeposit: valueOrDefault<String>(
                                       _model

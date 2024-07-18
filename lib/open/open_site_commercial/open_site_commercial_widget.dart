@@ -446,7 +446,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   token: FFAppState().Token,
                                   rent: _model
                                       .commercialAdvanceModel
-                                      .securityRentRentPerMonthssssTextController
+                                      .securityRentRentPerMonthsTextController
                                       .text,
                                   advanceDeposit: _model
                                       .commercialAdvanceModel
@@ -457,7 +457,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .balanceSDAmountSecurityTextController
                                       .text,
                                   securityDeposit: _model.commercialAdvanceModel
-                                      .securityDepositsdfghjValue,
+                                      .securityDepositmonthValue,
                                   agreementPeriod: _model.commercialAdvanceModel
                                       .agreementPeriodsSecurityValue,
                                   escalationPeriod: _model
@@ -474,7 +474,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                       .text,
                                   oneMonthDeposit: _model
                                       .commercialAdvanceModel
-                                      .securityRentRentPerMonthssssTextController
+                                      .securityRentRentPerMonthsTextController
                                       .text,
                                   balanceDeposit: _model
                                       .commercialAdvanceModel

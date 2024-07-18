@@ -36,7 +36,7 @@ class IndentSiteCommercialModel
         _formTextFieldValidator3;
     commercialAdvanceModel.balanceAmountAdvanceTextControllerValidator =
         _formTextFieldValidator4;
-    commercialAdvanceModel.securityRentRentPerMonthssssTextControllerValidator =
+    commercialAdvanceModel.securityRentRentPerMonthsTextControllerValidator =
         _formTextFieldValidator5;
     commercialAdvanceModel.totalSecurityDepositTextControllerValidator =
         _formTextFieldValidator6;

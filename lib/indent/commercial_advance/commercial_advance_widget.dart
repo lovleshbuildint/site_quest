@@ -47,9 +47,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.balanceAmountAdvanceTextController ??= TextEditingController();
     _model.balanceAmountAdvanceFocusNode ??= FocusNode();
 
-    _model.securityRentRentPerMonthssssTextController ??=
+    _model.securityRentRentPerMonthsTextController ??=
         TextEditingController(text: '0');
-    _model.securityRentRentPerMonthssssFocusNode ??= FocusNode();
+    _model.securityRentRentPerMonthsFocusNode ??= FocusNode();
 
     _model.totalSecurityDepositTextController ??=
         TextEditingController(text: '0');
@@ -138,112 +138,90 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Container(
-                          width: 90.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFF2F2F2),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.network(
-                              'https://picsum.photos/seed/591/900',
-                              width: 20.0,
-                              height: 20.0,
-                              fit: BoxFit.fitHeight,
-                            ),
-                          ),
-                        ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.advanceRentAmountRENTTextController,
-                              focusNode: _model.advanceRentAmountRENTFocusNode,
-                              onChanged: (_) => EasyDebounce.debounce(
-                                '_model.advanceRentAmountRENTTextController',
-                                Duration(milliseconds: 2000),
-                                () async {
-                                  setState(() {
-                                    _model
-                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                        ?.text = ((int.tryParse((_model
-                                                    .advanceRentMonthRentOrSecurityMonthsValue!)) ??
-                                                0) *
-                                            (int.tryParse(_model
-                                                    .advanceRentAmountRENTTextController
-                                                    .text) ??
-                                                0))
-                                        .toString();
-                                    _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                            ?.selection =
-                                        TextSelection.collapsed(
-                                            offset: _model
-                                                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                                                .text
-                                                .length);
-                                  });
-                                },
-                              ),
-                              autofocus: false,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: 'Enter Rent',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFE1E2E6),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFFF0026),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: Colors.transparent,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                          child: TextFormField(
+                            controller:
+                                _model.advanceRentAmountRENTTextController,
+                            focusNode: _model.advanceRentAmountRENTFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.advanceRentAmountRENTTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                setState(() {
+                                  _model
+                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                      ?.text = ((int.tryParse((_model
+                                                  .advanceRentMonthRentOrSecurityMonthsValue!)) ??
+                                              0) *
+                                          (int.tryParse(_model
+                                                  .advanceRentAmountRENTTextController
+                                                  .text) ??
+                                              0))
+                                      .toString();
+                                  _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                          ?.selection =
+                                      TextSelection.collapsed(
+                                          offset: _model
+                                              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                              .text
+                                              .length);
+                                });
+                              },
+                            ),
+                            autofocus: false,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              hintText: 'Enter Rent',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
-                              keyboardType:
-                                  const TextInputType.numberWithOptions(
-                                      decimal: true),
-                              validator: _model
-                                  .advanceRentAmountRENTTextControllerValidator
-                                  .asValidator(context),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFE1E2E6),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFFF0026),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              filled: true,
+                              fillColor: Colors.transparent,
                             ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            validator: _model
+                                .advanceRentAmountRENTTextControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                       ],
@@ -1021,113 +999,91 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Container(
-                          width: 90.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFF2F2F2),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset(
-                              'assets/images/Asset_1india.png',
-                              width: 20.0,
-                              height: 20.0,
-                              fit: BoxFit.fitHeight,
-                            ),
-                          ),
-                        ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller: _model
-                                  .securityRentRentPerMonthssssTextController,
-                              focusNode:
-                                  _model.securityRentRentPerMonthssssFocusNode,
-                              onChanged: (_) => EasyDebounce.debounce(
-                                '_model.securityRentRentPerMonthssssTextController',
-                                Duration(milliseconds: 2000),
-                                () async {
-                                  setState(() {
-                                    _model.totalSecurityDepositTextController
-                                        ?.text = ((int.tryParse((_model
-                                                    .securityDepositsdfghjValue!)) ??
-                                                0) *
-                                            (int.tryParse(_model
-                                                    .securityRentRentPerMonthssssTextController
-                                                    .text) ??
-                                                0))
-                                        .toString();
-                                    _model.totalSecurityDepositTextController
-                                            ?.selection =
-                                        TextSelection.collapsed(
-                                            offset: _model
-                                                .totalSecurityDepositTextController!
-                                                .text
-                                                .length);
-                                  });
-                                },
-                              ),
-                              autofocus: false,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: 'Enter Rent',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFE1E2E6),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFFF0026),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: Colors.transparent,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                          child: TextFormField(
+                            controller:
+                                _model.securityRentRentPerMonthsTextController,
+                            focusNode:
+                                _model.securityRentRentPerMonthsFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.securityRentRentPerMonthsTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                setState(() {
+                                  _model.totalSecurityDepositTextController
+                                      ?.text = ((int.tryParse((_model
+                                                  .securityDepositmonthValue!)) ??
+                                              0) *
+                                          (int.tryParse(_model
+                                                  .securityRentRentPerMonthsTextController
+                                                  .text) ??
+                                              0))
+                                      .toString();
+                                  _model.totalSecurityDepositTextController
+                                          ?.selection =
+                                      TextSelection.collapsed(
+                                          offset: _model
+                                              .totalSecurityDepositTextController!
+                                              .text
+                                              .length);
+                                });
+                              },
+                            ),
+                            autofocus: false,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              hintText: 'Enter Rent',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
-                              maxLines: null,
-                              keyboardType:
-                                  const TextInputType.numberWithOptions(
-                                      decimal: true),
-                              validator: _model
-                                  .securityRentRentPerMonthssssTextControllerValidator
-                                  .asValidator(context),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFE1E2E6),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFFF0026),
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              filled: true,
+                              fillColor: Colors.transparent,
                             ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  letterSpacing: 0.0,
+                                ),
+                            maxLines: null,
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            validator: _model
+                                .securityRentRentPerMonthsTextControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                       ],
@@ -1187,7 +1143,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       valueOrDefault<String>(
-                        _model.securityDepositsdfghjValue,
+                        _model.securityDepositmonthValue,
                         'x',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1201,10 +1157,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller:
-                          _model.securityDepositsdfghjValueController ??=
-                              FormFieldController<String>(
-                        _model.securityDepositsdfghjValue ??= '3',
+                      controller: _model.securityDepositmonthValueController ??=
+                          FormFieldController<String>(
+                        _model.securityDepositmonthValue ??= '3',
                       ),
                       options: [
                         '1',
@@ -1221,14 +1176,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.securityDepositsdfghjValue = val);
+                        setState(() => _model.securityDepositmonthValue = val);
                         setState(() {
                           _model.totalSecurityDepositTextController
                               ?.text = ((int.tryParse((_model
-                                          .securityDepositsdfghjValue!)) ??
+                                          .securityDepositmonthValue!)) ??
                                       0) *
                                   (int.tryParse(_model
-                                          .securityRentRentPerMonthssssTextController
+                                          .securityRentRentPerMonthsTextController
                                           .text) ??
                                       0))
                               .toString();
@@ -1383,7 +1338,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .intialAdvancemonthSecurityValue!)) ??
                                       0) *
                                   (int.tryParse(_model
-                                          .securityRentRentPerMonthssssTextController
+                                          .securityRentRentPerMonthsTextController
                                           .text) ??
                                       0))
                               .toString();

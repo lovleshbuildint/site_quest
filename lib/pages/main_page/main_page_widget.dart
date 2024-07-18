@@ -621,9 +621,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               ),
                                         ),
                                         Text(
-                                          (List<String> var1) {
-                                            return var1.join(',');
-                                          }(FFAppState().istate.toList()),
+                                          'Welcome Back 👋',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

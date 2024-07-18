@@ -1007,7 +1007,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 _model.securityRentRentPerMonthsFocusNode,
                             onChanged: (_) => EasyDebounce.debounce(
                               '_model.securityRentRentPerMonthsTextController',
-                              Duration(milliseconds: 2000),
+                              Duration(milliseconds: 0),
                               () async {
                                 setState(() {
                                   _model.totalSecurityDepositTextController
@@ -1159,9 +1159,23 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller: _model.securityDepositmonthValueController ??=
                           FormFieldController<String>(
-                        _model.securityDepositmonthValue ??= '3',
+                        _model.securityDepositmonthValue ??= '2',
                       ),
-                      options: [
+                      options: List<String>.from([
+                        '0',
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11'
+                      ]),
+                      optionLabels: [
                         '1',
                         '2',
                         '3',

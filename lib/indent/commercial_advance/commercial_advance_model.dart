@@ -75,9 +75,6 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   // State field(s) for RentFreePeriods-Security widget.
   String? rentFreePeriodsSecurityValue;
   FormFieldController<String>? rentFreePeriodsSecurityValueController;
-  // State field(s) for SecurityDepositmonth1 widget.
-  String? securityDepositmonth1Value;
-  FormFieldController<String>? securityDepositmonth1ValueController;
   // State field(s) for SecurityDepositmonth widget.
   String? securityDepositmonthValue;
   FormFieldController<String>? securityDepositmonthValueController;

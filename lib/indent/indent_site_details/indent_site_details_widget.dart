@@ -748,6 +748,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -821,6 +822,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please  Select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),

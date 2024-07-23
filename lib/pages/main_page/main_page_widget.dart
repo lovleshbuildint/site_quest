@@ -928,11 +928,11 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                         formatNumber(
                                                                           getJsonField(
                                                                                 mainPageDashboardResponse.jsonBody,
-                                                                                r'''$.UserReview[4].Count''',
+                                                                                r'''$.UserReview[3].Count''',
                                                                               ) /
                                                                               getJsonField(
                                                                                 mainPageDashboardResponse.jsonBody,
-                                                                                r'''$.UserReview[3].Count''',
+                                                                                r'''$.UserReview[2].Count''',
                                                                               ),
                                                                           formatType:
                                                                               FormatType.percent,

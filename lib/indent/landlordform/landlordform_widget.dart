@@ -421,6 +421,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please select',
                                 searchHintText: 'Search District...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -540,6 +541,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               searchHintText: 'Search State...',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -668,6 +670,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please select',
                                 searchHintText: 'Search City...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1233,12 +1236,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
                 return FlutterFlowDropDown<String>(
                   controller: _model.landlordBankNameValueController ??=
-                      FormFieldController<String>(
-                    _model.landlordBankNameValue ??= getJsonField(
-                      FFAppState().CustomerBank,
-                      r'''$[0].IndentBanks''',
-                    ).toString(),
-                  ),
+                      FormFieldController<String>(null),
                   options: (getJsonField(
                     landlordBankNameGetIndentBankResponse.jsonBody,
                     r'''$.IndentBanks..Name''',
@@ -1267,6 +1265,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
+                  hintText: 'Please select',
                   searchHintText: 'Search Bank...',
                   icon: Icon(
                     Icons.keyboard_arrow_down_rounded,

@@ -157,12 +157,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.aTMNameValueController ??=
-                  FormFieldController<String>(
-                _model.aTMNameValue ??= getJsonField(
-                  FFAppState().getindentBank,
-                  r'''$[0].IndentBanks''',
-                ).toString(),
-              ),
+                  FormFieldController<String>(null),
               options: (getJsonField(
                 FFAppState().getindentBank,
                 r'''$.IndentBanks..Name''',
@@ -189,6 +184,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               searchHintText: 'Search Bank...',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -262,9 +258,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.hitachiATMValueController ??=
-                  FormFieldController<String>(
-                _model.hitachiATMValue ??= 'Yes',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) => setState(() => _model.hitachiATMValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -274,6 +268,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: Color(0xFFE1E2E6),

@@ -80,9 +80,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.cRACoverageValueController ??=
-                  FormFieldController<String>(
-                _model.cRACoverageValue ??= 'No',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.cRACoverageValue = val);
@@ -101,6 +99,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: Color(0xFFE1E2E6),
@@ -154,12 +153,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
 
                 return FlutterFlowDropDown<String>(
                   controller: _model.cRAAgencyValueController ??=
-                      FormFieldController<String>(
-                    _model.cRAAgencyValue ??= getJsonField(
-                      cRAAgencyGetCRAAgencResponse.jsonBody,
-                      r'''$[0].CITCode''',
-                    ).toString(),
-                  ),
+                      FormFieldController<String>(null),
                   options: (getJsonField(
                     cRAAgencyGetCRAAgencResponse.jsonBody,
                     r'''$..CITCode''',
@@ -179,6 +173,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
+                  hintText: 'Please select',
                   icon: Icon(
                     Icons.keyboard_arrow_down_rounded,
                     color: Color(0xFFE1E2E6),

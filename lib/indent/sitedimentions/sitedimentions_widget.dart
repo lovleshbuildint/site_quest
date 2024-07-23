@@ -933,9 +933,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.lShapeSingageValueController ??=
-                  FormFieldController<String>(
-                _model.lShapeSingageValue ??= 'No',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.lShapeSingageValue = val);
@@ -950,6 +948,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: Color(0xFFE1E2E6),
@@ -982,9 +981,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.vsatValueController ??=
-                  FormFieldController<String>(
-                _model.vsatValue ??= 'No',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.vsatValue = val);
@@ -999,6 +996,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: Color(0xFFE1E2E6),
@@ -1031,9 +1029,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.acODUSpaceValueController ??=
-                  FormFieldController<String>(
-                _model.acODUSpaceValue ??= 'Yes',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.acODUSpaceValue = val);
@@ -1048,6 +1044,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: Color(0xFFE1E2E6),
@@ -1094,9 +1091,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller:
                                 _model.powerAvailabilityValueController ??=
-                                    FormFieldController<String>(
-                              _model.powerAvailabilityValue ??= 'Yes',
-                            ),
+                                    FormFieldController<String>(null),
                             options: ['Yes', 'No'],
                             onChanged: (val) async {
                               setState(
@@ -1115,6 +1110,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1243,9 +1239,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.totemPoleValueController ??=
-                  FormFieldController<String>(
-                _model.totemPoleValue ??= 'No',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.totemPoleValue = val);
@@ -1271,6 +1265,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               searchHintText: 'Search Bank...',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -1304,9 +1299,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: FlutterFlowDropDown<String>(
               controller: _model.rampAvailabilityValueController ??=
-                  FormFieldController<String>(
-                _model.rampAvailabilityValue ??= 'No',
-              ),
+                  FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
                 setState(() => _model.rampAvailabilityValue = val);
@@ -1321,6 +1314,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
+              hintText: 'Please select',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: Color(0xFFE1E2E6),

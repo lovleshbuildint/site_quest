@@ -355,12 +355,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.customerBankValueController ??=
-                                FormFieldController<String>(
-                              _model.customerBankValue ??= getJsonField(
-                                FFAppState().getCustomerbank,
-                                r'''$.CustomerBanks[0].Name''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().getCustomerbank,
                               r'''$.CustomerBanks..Name''',
@@ -379,6 +374,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),
@@ -1950,9 +1946,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
                                                 .siteSourcedValueController ??=
-                                            FormFieldController<String>(
-                                          _model.siteSourcedValue ??= 'HPY',
-                                        ),
+                                            FormFieldController<String>(null),
                                         options: ['HPY', 'Bank', 'SSM'],
                                         onChanged: (val) => setState(() =>
                                             _model.siteSourcedValue = val),
@@ -1967,6 +1961,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
+                                        hintText: 'Please select',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: Color(0xFFE1E2E6),
@@ -2015,11 +2010,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.oNOFSiteValueController ??=
-                                                FormFieldController<String>(
-                                          _model.oNOFSiteValue ??= 'Onsite',
-                                        ),
+                                        controller: _model
+                                                .oNOFSiteValueController ??=
+                                            FormFieldController<String>(null),
                                         options: ['Onsite', 'Offsite'],
                                         onChanged: (val) async {
                                           setState(
@@ -2040,6 +2033,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                             ),
+                                        hintText: 'Please select',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: Color(0xFFE1E2E6),
@@ -2233,9 +2227,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.duplicateSiteValueController ??=
-                                FormFieldController<String>(
-                              _model.duplicateSiteValue ??= 'Yes',
-                            ),
+                                FormFieldController<String>(null),
                             options: ['Yes', 'No'],
                             onChanged: (val) async {
                               setState(() => _model.duplicateSiteValue = val);
@@ -2252,6 +2244,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
+                            hintText: 'Please select',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFFE1E2E6),

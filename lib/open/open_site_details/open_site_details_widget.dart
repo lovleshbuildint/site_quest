@@ -2693,6 +2693,32 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               r'''$.SiteId''',
                             ).toString();
                             setState(() {});
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text(getJsonField(
+                                    (_model.updateDOAdetailsfirstwordsSites
+                                            ?.jsonBody ??
+                                        ''),
+                                    r'''$.SiteId''',
+                                  ).toString()),
+                                  content: Text(getJsonField(
+                                    (_model.updateDOAdetailsfirstwordsSites
+                                            ?.jsonBody ??
+                                        ''),
+                                    r'''$.Msg''',
+                                  ).toString()),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
 
                             context.pushNamed(
                               'open_site_landlord_details',

@@ -887,19 +887,25 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                         0.0),
                                                                 children: [
                                                                   CircularPercentIndicator(
-                                                                    percent: (getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[3].Count''',
-                                                                            ) -
-                                                                            getJsonField(
-                                                                              mainPageDashboardResponse.jsonBody,
-                                                                              r'''$.UserReview[1].Count''',
-                                                                            )) /
+                                                                    percent: (int
+                                                                                dropped,
+                                                                            int submitted) {
+                                                                      return (submitted >
+                                                                              0
+                                                                          ? (submitted - dropped) /
+                                                                              submitted
+                                                                          : 0.0);
+                                                                    }(
+                                                                        getJsonField(
+                                                                          mainPageDashboardResponse
+                                                                              .jsonBody,
+                                                                          r'''$.UserReview[1].Count''',
+                                                                        ),
                                                                         getJsonField(
                                                                           mainPageDashboardResponse
                                                                               .jsonBody,
                                                                           r'''$.UserReview[3].Count''',
-                                                                        ),
+                                                                        )),
                                                                     radius:
                                                                         50.0,
                                                                     lineWidth:
@@ -925,15 +931,18 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                                     child: Text(
                                                                       valueOrDefault<
                                                                           String>(
-                                                                        (getJsonField(
-                                                                                  mainPageDashboardResponse.jsonBody,
-                                                                                  r'''$.UserReview[3].Count''',
-                                                                                ) /
-                                                                                getJsonField(
-                                                                                  mainPageDashboardResponse.jsonBody,
-                                                                                  r'''$.UserReview[2].Count''',
-                                                                                ))
-                                                                            .toString(),
+                                                                        formatNumber(
+                                                                          getJsonField(
+                                                                                mainPageDashboardResponse.jsonBody,
+                                                                                r'''$.UserReview[3].Count''',
+                                                                              ) /
+                                                                              getJsonField(
+                                                                                mainPageDashboardResponse.jsonBody,
+                                                                                r'''$.UserReview[2].Count''',
+                                                                              ),
+                                                                          formatType:
+                                                                              FormatType.percent,
+                                                                        ),
                                                                         '100',
                                                                       ),
                                                                       style: FlutterFlowTheme.of(

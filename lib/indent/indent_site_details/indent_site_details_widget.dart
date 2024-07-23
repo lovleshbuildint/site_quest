@@ -3097,6 +3097,32 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.SiteId''',
                                   ).toString();
                                   setState(() {});
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(getJsonField(
+                                          (_model.updateDOAdetailsfirstdept
+                                                  ?.jsonBody ??
+                                              ''),
+                                          r'''$.SiteId''',
+                                        ).toString()),
+                                        content: Text(getJsonField(
+                                          (_model.updateDOAdetailsfirstdept
+                                                  ?.jsonBody ??
+                                              ''),
+                                          r'''$.Msg''',
+                                        ).toString()),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
 
                                   context.pushNamed(
                                       'indent_site_landlord_details');
@@ -3286,6 +3312,32 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.SiteId''',
                                   ).toString();
                                   setState(() {});
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(getJsonField(
+                                          (_model.updateDOAdetailsfirst
+                                                  ?.jsonBody ??
+                                              ''),
+                                          r'''$.SiteId''',
+                                        ).toString()),
+                                        content: Text(getJsonField(
+                                          (_model.updateDOAdetailsfirst
+                                                  ?.jsonBody ??
+                                              ''),
+                                          r'''$.Msg''',
+                                        ).toString()),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
 
                                   context.pushNamed(
                                       'indent_site_landlord_details');

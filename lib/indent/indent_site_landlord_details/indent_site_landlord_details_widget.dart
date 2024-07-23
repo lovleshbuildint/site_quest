@@ -728,9 +728,12 @@ class _IndentSiteLandlordDetailsWidgetState
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
                                         title: Text('Alert(Insident LandLord)'),
-                                        content: Text((_model
-                                                .updateDOADdeatils2?.bodyText ??
-                                            '')),
+                                        content: Text(getJsonField(
+                                          (_model.updateDOADdeatils2
+                                                  ?.jsonBody ??
+                                              ''),
+                                          r'''$.Msg''',
+                                        ).toString()),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(

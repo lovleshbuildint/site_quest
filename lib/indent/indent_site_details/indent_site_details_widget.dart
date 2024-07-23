@@ -783,12 +783,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller:
                                   _model.cashdevicetypeValueController ??=
-                                      FormFieldController<String>(
-                                _model.cashdevicetypeValue ??= getJsonField(
-                                  FFAppState().CashDeviceType,
-                                  r'''$[0].CashDeviceType''',
-                                ).toString(),
-                              ),
+                                      FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().CashDeviceType,
                                 r'''$..CashDeviceType''',
@@ -857,12 +852,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller:
                                   _model.cashdevicemovValueController ??=
-                                      FormFieldController<String>(
-                                _model.cashdevicemovValue ??= getJsonField(
-                                  FFAppState().CashDeviceMovementCategory,
-                                  r'''$[0].CashDeviceMovementCategory''',
-                                ).toString(),
-                              ),
+                                      FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().CashDeviceMovementCategory,
                                 r'''$..CashDeviceMovementCategory''',
@@ -890,6 +880,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -928,12 +919,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.tistypeValueController ??=
-                                  FormFieldController<String>(
-                                _model.tistypeValue ??= getJsonField(
-                                  FFAppState().TISType,
-                                  r'''$[0].TISTypeName''',
-                                ).toString(),
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().TISType,
                                 r'''$..TISTypeName''',
@@ -961,6 +947,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -999,12 +986,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.projecttypeValueController ??=
-                                  FormFieldController<String>(
-                                _model.projecttypeValue ??= getJsonField(
-                                  FFAppState().ProjectType,
-                                  r'''$[0].ProjectTypeName''',
-                                ).toString(),
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().ProjectType,
                                 r'''$..ProjectTypeName''',
@@ -1032,6 +1014,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -1070,12 +1053,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.businesstypeValueController ??=
-                                  FormFieldController<String>(
-                                _model.businesstypeValue ??= getJsonField(
-                                  FFAppState().BusinessType,
-                                  r'''$[0].ShopTypeName''',
-                                ).toString(),
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().BusinessType,
                                 r'''$..ShopTypeName''',
@@ -1103,6 +1081,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -1141,12 +1120,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller:
                                   _model.strategyDropDwonValueController ??=
-                                      FormFieldController<String>(
-                                _model.strategyDropDwonValue ??= getJsonField(
-                                  FFAppState().Strategy,
-                                  r'''$.Strategies[0].Strategy''',
-                                ).toString(),
-                              ),
+                                      FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().Strategy,
                                 r'''$.Strategies..Strategy''',
@@ -1187,6 +1161,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               searchHintText: 'Search for an item...',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -1227,12 +1202,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   0.0, 8.0, 0.0, 0.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.poitypeValueController ??=
-                                    FormFieldController<String>(
-                                  _model.poitypeValue ??= getJsonField(
-                                    FFAppState().POIList,
-                                    r'''$[0].poiTypeName''',
-                                  ).toString(),
-                                ),
+                                    FormFieldController<String>(null),
                                 options: (getJsonField(
                                   FFAppState().POIList,
                                   r'''$..poiTypeName''',
@@ -1251,6 +1221,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
+                                hintText: 'Please select',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: Color(0xFFE1E2E6),
@@ -1554,6 +1525,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           color: Colors.black,
                                                           letterSpacing: 0.0,
                                                         ),
+                                                hintText: 'Please select',
                                                 searchHintText:
                                                     'Search district...',
                                                 icon: Icon(
@@ -1687,6 +1659,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
+                                              hintText: 'Please select',
                                               searchHintText: 'Search',
                                               icon: Icon(
                                                 Icons
@@ -1824,6 +1797,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           color: Colors.black,
                                                           letterSpacing: 0.0,
                                                         ),
+                                                hintText: 'Please select',
                                                 searchHintText:
                                                     'Search City...',
                                                 icon: Icon(
@@ -1971,10 +1945,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller: _model.circleValueController ??=
                                   FormFieldController<String>(
-                                _model.circleValue ??= getJsonField(
-                                  FFAppState().Circle,
-                                  r'''$.Circles_app1[0].CircleName''',
-                                ).toString(),
+                                _model.circleValue ??= 'NA',
                               ),
                               options: (getJsonField(
                                 FFAppState().Circle,
@@ -1994,6 +1965,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -2181,10 +2153,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller: _model.rBICategoryValueController ??=
                                   FormFieldController<String>(
-                                _model.rBICategoryValue ??= getJsonField(
-                                  FFAppState().RBICategory,
-                                  r'''$.RBICategories[0].Name''',
-                                ).toString(),
+                                _model.rBICategoryValue ??= 'Urban',
                               ),
                               options: (getJsonField(
                                 FFAppState().RBICategory,
@@ -2292,9 +2261,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               controller: _model
                                                       .siteSourcedValueController ??=
                                                   FormFieldController<String>(
-                                                _model.siteSourcedValue ??=
-                                                    'HPY',
-                                              ),
+                                                      null),
                                               options: ['HPY', 'Bank', 'SSM'],
                                               onChanged: (val) => setState(() =>
                                                   _model.siteSourcedValue =
@@ -2311,6 +2278,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         color: Colors.black,
                                                         letterSpacing: 0.0,
                                                       ),
+                                              hintText: 'Please select',
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -2364,11 +2332,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
                                         child: FlutterFlowDropDown<String>(
-                                          controller:
-                                              _model.onofsiteValueController ??=
-                                                  FormFieldController<String>(
-                                            _model.onofsiteValue ??= 'Onsite',
-                                          ),
+                                          controller: _model
+                                                  .onofsiteValueController ??=
+                                              FormFieldController<String>(null),
                                           options: ['Onsite', 'Offsite'],
                                           onChanged: (val) async {
                                             setState(() =>
@@ -2391,6 +2357,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                     color: Colors.black,
                                                     letterSpacing: 0.0,
                                                   ),
+                                          hintText: 'Please select',
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
                                             color: Color(0xFFE1E2E6),
@@ -2585,9 +2552,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller:
                                   _model.duplicatesiteValueController ??=
-                                      FormFieldController<String>(
-                                _model.duplicatesiteValue ??= 'Yes',
-                              ),
+                                      FormFieldController<String>(null),
                               options: ['Yes', 'No'],
                               onChanged: (val) async {
                                 setState(() => _model.duplicatesiteValue = val);
@@ -2607,6 +2572,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -2646,12 +2612,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                             child: FlutterFlowDropDown<String>(
                               controller:
                                   _model.sitevisitedbyValueController ??=
-                                      FormFieldController<String>(
-                                _model.sitevisitedbyValue ??= getJsonField(
-                                  FFAppState().visitedbydeptapi,
-                                  r'''$[0].Department''',
-                                ).toString(),
-                              ),
+                                      FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().visitedbydeptapi,
                                 r'''$..Department''',
@@ -2686,6 +2647,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Please select',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: Color(0xFFE1E2E6),
@@ -2749,14 +2711,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 return FlutterFlowDropDown<String>(
                                   controller: _model
                                           .firstsitevisitedbyValueController ??=
-                                      FormFieldController<String>(
-                                    _model.firstsitevisitedbyValue ??=
-                                        getJsonField(
-                                      firstsitevisitedbyGetDepartmentWiseUserAPIResponse
-                                          .jsonBody,
-                                      r'''$[0].UserName''',
-                                    ).toString(),
-                                  ),
+                                      FormFieldController<String>(null),
                                   options: (getJsonField(
                                     firstsitevisitedbyGetDepartmentWiseUserAPIResponse
                                         .jsonBody,
@@ -2787,6 +2742,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         fontFamily: 'Readex Pro',
                                         letterSpacing: 0.0,
                                       ),
+                                  hintText: 'Please select',
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -2845,13 +2801,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 return FlutterFlowDropDown<String>(
                                   controller: _model
                                           .secondsitevisitedbyValueController ??=
-                                      FormFieldController<String>(
-                                    _model.secondsitevisitedbyValue ??=
-                                        getJsonField(
-                                      FFAppState().secondsitevisiterNew,
-                                      r'''$[0].UserName''',
-                                    ).toString(),
-                                  ),
+                                      FormFieldController<String>(null),
                                   options: (getJsonField(
                                     FFAppState().secondsitevisiterNew,
                                     r'''$..UserName''',
@@ -2881,6 +2831,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         fontFamily: 'Readex Pro',
                                         letterSpacing: 0.0,
                                       ),
+                                  hintText: 'Please select',
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)

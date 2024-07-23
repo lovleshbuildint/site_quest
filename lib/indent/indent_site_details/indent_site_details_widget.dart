@@ -715,12 +715,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.sitetypeValueController ??=
-                                  FormFieldController<String>(
-                                _model.sitetypeValue ??= getJsonField(
-                                  FFAppState().SiteType,
-                                  r'''$[0].SiteTypeName''',
-                                ).toString(),
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().SiteType,
                                 r'''$..SiteTypeName''',

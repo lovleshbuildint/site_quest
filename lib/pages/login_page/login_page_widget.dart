@@ -327,62 +327,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            _model.loginResponses =
-                                                await LoginCheckCall.call(
-                                              userName: _model
-                                                  .emailAddressTextController
-                                                  .text,
-                                              password: _model
-                                                  .passwordTextController.text,
-                                            );
-
-                                            if ((_model.loginResponses
-                                                    ?.succeeded ??
-                                                true)) {
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text('Alert'),
-                                                    content: Text((_model
-                                                            .loginResponse
-                                                            ?.bodyText ??
-                                                        '')),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                            } else {
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text('Alert'),
-                                                    content: Text((_model
-                                                            .loginResponse
-                                                            ?.bodyText ??
-                                                        '')),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                            }
-
+                                            FFAppState().Token =
+                                                '185CBA82-24DB-4728-A6E5-9675ED7A055B';
                                             setState(() {});
+
+                                            context.goNamed('MainPage');
                                           },
                                           child: Text(
                                             'Reset Password?',

@@ -22,8 +22,8 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
-  // Stores action output result for [Backend Call - API (ForgotPwd)] action in Text widget.
-  ApiCallResponse? apiResultqf6;
+  // Stores action output result for [Backend Call - API (LoginCheck)] action in Text widget.
+  ApiCallResponse? loginResponses;
   // Stores action output result for [Backend Call - API (LoginCheck)] action in Button-Login widget.
   ApiCallResponse? loginResponse;
 

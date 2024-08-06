@@ -327,38 +327,62 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            var _shouldSetState = false;
-                                            _model.apiResultqf6 = await SqGroup
-                                                .forgotPwdCall
-                                                .call(
-                                              userName: FFAppState().UserName,
-                                              email: _model
+                                            _model.loginResponses =
+                                                await LoginCheckCall.call(
+                                              userName: _model
                                                   .emailAddressTextController
                                                   .text,
-                                              token: FFAppState().Token,
-                                              lattitude: getJsonField(
-                                                FFAppState().indentSelectedSite,
-                                                r'''$.Lattitude''',
-                                              ).toString(),
-                                              longitude: getJsonField(
-                                                FFAppState().indentSelectedSite,
-                                                r'''$.Longitude''',
-                                              ).toString(),
+                                              password: _model
+                                                  .passwordTextController.text,
                                             );
 
-                                            _shouldSetState = true;
-                                            if ((_model
-                                                    .apiResultqf6?.succeeded ??
+                                            if ((_model.loginResponses
+                                                    ?.succeeded ??
                                                 true)) {
-                                              context.pushNamed('LoginPage');
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text('Alert'),
+                                                    content: Text((_model
+                                                            .loginResponse
+                                                            ?.bodyText ??
+                                                        '')),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
                                             } else {
-                                              if (_shouldSetState)
-                                                setState(() {});
-                                              return;
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text('Alert'),
+                                                    content: Text((_model
+                                                            .loginResponse
+                                                            ?.bodyText ??
+                                                        '')),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
                                             }
 
-                                            if (_shouldSetState)
-                                              setState(() {});
+                                            setState(() {});
                                           },
                                           child: Text(
                                             'Reset Password?',

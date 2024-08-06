@@ -404,7 +404,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   _model.passwordTextController
                                                           .text !=
                                                       '')) {
-                                            _model.loginResponse =
+                                            _model.loginResponses =
                                                 await LoginCheckCall.call(
                                               userName: _model
                                                   .emailAddressTextController
@@ -414,11 +414,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             );
 
                                             _shouldSetState = true;
-                                            if ((_model
-                                                    .loginResponse?.succeeded ??
+                                            if ((_model.loginResponses
+                                                    ?.succeeded ??
                                                 true)) {
                                               FFAppState().Token = getJsonField(
-                                                (_model.loginResponse
+                                                (_model.loginResponses
                                                         ?.jsonBody ??
                                                     ''),
                                                 r'''$.Token''',
@@ -470,7 +470,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 );
                                               }
                                             } else {
-                                              if ((_model.loginResponse
+                                              if ((_model.loginResponses
                                                       ?.jsonBody ??
                                                   '')) {
                                                 await showDialog(
@@ -480,7 +480,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     return AlertDialog(
                                                       title: Text('Alert'),
                                                       content: Text((_model
-                                                                  .loginResponse
+                                                                  .loginResponses
                                                                   ?.jsonBody ??
                                                               '')
                                                           .toString()),

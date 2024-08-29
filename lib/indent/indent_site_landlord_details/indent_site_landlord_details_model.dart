@@ -106,7 +106,7 @@ class IndentSiteLandlordDetailsModel
     }
 
     if (!RegExp(
-            '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
+            '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*@yahoo\\.in|.*@yahoo\\.co.in|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
         .hasMatch(val)) {
       return 'Please  use vaild Email Id';
     }

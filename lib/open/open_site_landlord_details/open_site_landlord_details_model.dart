@@ -15,6 +15,7 @@ class OpenSiteLandlordDetailsModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepSECONDworddoc)] action in Button widget.

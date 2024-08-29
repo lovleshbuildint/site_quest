@@ -615,7 +615,7 @@ class _IndentSiteCommercialWidgetState
                                   balanceDeposit: _model.commercialAdvanceModel
                                       .balanceAmountAdvanceTextController.text,
                                   totalAdvSec: _model.commercialAdvanceModel
-                                      .advanceRentMonthRentOrSecurityMonthsValue,
+                                      .advanceAmountAdvanceTextController.text,
                                   rentEscalation: _model.commercialAdvanceModel
                                       .rentFreePeriodAdvanceValue,
                                   siteId: FFAppState().SiteId,

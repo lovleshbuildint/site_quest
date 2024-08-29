@@ -362,7 +362,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 balanceDeposit: _model.commercialAdvanceModel
                                     .balanceAmountAdvanceTextController.text,
                                 totalAdvSec: _model.commercialAdvanceModel
-                                    .advanceRentMonthRentOrSecurityMonthsValue,
+                                    .advanceAmountAdvanceTextController.text,
                                 rentEscalation: _model.commercialAdvanceModel
                                     .rentFreePeriodAdvanceValue,
                                 siteId: FFAppState().SiteId,

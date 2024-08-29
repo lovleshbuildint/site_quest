@@ -865,7 +865,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '6',
                         '7',
                         '8',
-                        '9'
+                        '9',
+                        '10'
                       ],
                       onChanged: (val) => setState(
                           () => _model.agreementPeriodsAdvanceValue = val),

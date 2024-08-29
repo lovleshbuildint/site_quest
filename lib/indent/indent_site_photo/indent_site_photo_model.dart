@@ -30,7 +30,5 @@ class IndentSitePhotoModel extends FlutterFlowModel<IndentSitePhotoWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

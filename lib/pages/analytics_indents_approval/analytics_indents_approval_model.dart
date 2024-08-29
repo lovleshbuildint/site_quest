@@ -19,7 +19,5 @@ class AnalyticsIndentsApprovalModel
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

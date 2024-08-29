@@ -16,7 +16,5 @@ class NotificationModel extends FlutterFlowModel<NotificationWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -32,7 +32,6 @@ class IndentSiteNearestBranchModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     nearestbranchModel.dispose();
   }
 

@@ -16,7 +16,5 @@ class DraftListModel extends FlutterFlowModel<DraftListWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

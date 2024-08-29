@@ -16,7 +16,5 @@ class HoldListModel extends FlutterFlowModel<HoldListWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -26,7 +26,6 @@ class IndentSiteCommentsModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

@@ -65,9 +65,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -1110,147 +1108,139 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
-                                      child: Text(
-                                        'State',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 12.0, 0.0, 0.0),
+                                    child: Text(
+                                      'State',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.black,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 0.0),
-                                      child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.stateListCall.call(
-                                          token: FFAppState().Token,
-                                        ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 0.0, 0.0),
+                                    child: FutureBuilder<ApiCallResponse>(
+                                      future: SqGroup.stateListCall.call(
+                                        token: FFAppState().Token,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                                 ),
                                               ),
-                                            );
-                                          }
-                                          final stateDropdownStateListResponse =
-                                              snapshot.data!;
-
-                                          return FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .stateDropdownValueController ??=
-                                                FormFieldController<String>(
-                                                    null),
-                                            options: List<String>.from(
-                                                (getJsonField(
-                                              stateDropdownStateListResponse
-                                                  .jsonBody,
-                                              r'''$.States..iState''',
-                                              true,
-                                            ) as List)
-                                                    .map<String>(
-                                                        (s) => s.toString())
-                                                    .toList()!),
-                                            optionLabels: (getJsonField(
-                                              stateDropdownStateListResponse
-                                                  .jsonBody,
-                                              r'''$.States..State''',
-                                              true,
-                                            ) as List)
-                                                .map<String>(
-                                                    (s) => s.toString())
-                                                .toList()!,
-                                            onChanged: (val) async {
-                                              setState(() => _model
-                                                  .stateDropdownValue = val);
-                                              _model.statefordsitopen =
-                                                  functions.checkIndex(
-                                                      stateDropdownStateListResponse
-                                                          .jsonBody,
-                                                      _model.stateDropdownValue,
-                                                      'States',
-                                                      'iState',
-                                                      'State');
-                                              setState(() {});
-                                            },
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
-                                            height: 50.0,
-                                            searchHintTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      fontSize: 10.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w300,
-                                                    ),
-                                            searchTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: Colors.black,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            hintText: 'Please select...',
-                                            searchHintText: 'Search Bank...',
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color: Color(0xFFE1E2E6),
-                                              size: 24.0,
                                             ),
-                                            fillColor: Colors.white,
-                                            elevation: 2.0,
-                                            borderColor: Color(0xFFE1E2E6),
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 4.0, 16.0, 4.0),
-                                            hidesUnderline: true,
-                                            isSearchable: true,
-                                            isMultiSelect: false,
                                           );
-                                        },
-                                      ),
+                                        }
+                                        final stateDropdownStateListResponse =
+                                            snapshot.data!;
+
+                                        return FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .stateDropdownValueController ??=
+                                              FormFieldController<String>(null),
+                                          options: List<String>.from(
+                                              (getJsonField(
+                                            stateDropdownStateListResponse
+                                                .jsonBody,
+                                            r'''$.States..iState''',
+                                            true,
+                                          ) as List)
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
+                                          optionLabels: (getJsonField(
+                                            stateDropdownStateListResponse
+                                                .jsonBody,
+                                            r'''$.States..State''',
+                                            true,
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!,
+                                          onChanged: (val) async {
+                                            setState(() => _model
+                                                .stateDropdownValue = val);
+                                            _model.statefordsitopen =
+                                                functions.checkIndex(
+                                                    stateDropdownStateListResponse
+                                                        .jsonBody,
+                                                    _model.stateDropdownValue,
+                                                    'States',
+                                                    'iState',
+                                                    'State');
+                                            setState(() {});
+                                          },
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: 50.0,
+                                          searchHintTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    fontSize: 10.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                          searchTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: Colors.black,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Please select...',
+                                          searchHintText: 'Search Bank...',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: Color(0xFFE1E2E6),
+                                            size: 24.0,
+                                          ),
+                                          fillColor: Colors.white,
+                                          elevation: 2.0,
+                                          borderColor: Color(0xFFE1E2E6),
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isSearchable: true,
+                                          isMultiSelect: false,
+                                        );
+                                      },
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             Expanded(
@@ -1265,7 +1255,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        'City',
+                                        'District',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1276,18 +1266,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             ),
                                       ),
                                     ),
-                                    if (_model.districtValue != null &&
-                                        _model.districtValue != '')
+                                    if (_model.statefordsitopen != null &&
+                                        _model.statefordsitopen != '')
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
                                         child: FutureBuilder<ApiCallResponse>(
-                                          future: SqGroup
-                                              .citiesAPIforStatenDistCall
-                                              .call(
-                                            token: FFAppState().Token,
+                                          future: SqGroup.districtAPisCall.call(
                                             istate: _model.stateDropdownValue,
-                                            idistrict: _model.district,
+                                            token: FFAppState().Token,
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -1309,18 +1296,29 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 ),
                                               );
                                             }
-                                            final cityCitiesAPIforStatenDistResponse =
+                                            final districtDistrictAPisResponse =
                                                 snapshot.data!;
 
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
-                                                      .cityValueController ??=
+                                                      .districtValueController ??=
                                                   FormFieldController<String>(
-                                                      null),
-                                              options: (getJsonField(
-                                                cityCitiesAPIforStatenDistResponse
+                                                _model.districtValue ??= '',
+                                              ),
+                                              options: List<String>.from(
+                                                  (getJsonField(
+                                                districtDistrictAPisResponse
                                                     .jsonBody,
-                                                r'''$.Cities..City''',
+                                                r'''$.District..DistrictName''',
+                                                true,
+                                              ) as List)
+                                                      .map<String>(
+                                                          (s) => s.toString())
+                                                      .toList()!),
+                                              optionLabels: (getJsonField(
+                                                districtDistrictAPisResponse
+                                                    .jsonBody,
+                                                r'''$.District..DistrictName''',
                                                 true,
                                               ) as List)
                                                   .map<String>(
@@ -1328,14 +1326,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                   .toList()!,
                                               onChanged: (val) async {
                                                 setState(() =>
-                                                    _model.cityValue = val);
-                                                _model.trycity = functions
-                                                    .istatetostatevalue(
-                                                        FFAppState().City,
-                                                        _model.cityValue,
-                                                        'Cities',
-                                                        'iCity',
-                                                        'City');
+                                                    _model.districtValue = val);
+                                                _model.district =
+                                                    functions.checkIndex(
+                                                        districtDistrictAPisResponse
+                                                            .jsonBody,
+                                                        _model.districtValue,
+                                                        'District',
+                                                        'DistrictName',
+                                                        'iDistrict');
                                                 setState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
@@ -1367,7 +1366,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               hintText: 'Please select...',
-                                              searchHintText: 'Search City...',
+                                              searchHintText:
+                                                  'Search district...',
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -1399,15 +1399,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 0.0, 0.0),
-                                    child: Text(
-                                      'District',
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'City',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1417,16 +1417,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                  ),
-                                  if (_model.statefordsitopen != null &&
-                                      _model.statefordsitopen != '')
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 0.0),
-                                      child: FutureBuilder<ApiCallResponse>(
-                                        future: SqGroup.districtAPisCall.call(
-                                          istate: _model.stateDropdownValue,
+                                    if (_model.districtValue != null &&
+                                        _model.districtValue != '')
+                                      FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup
+                                            .citiesAPIforStatenDistCall
+                                            .call(
                                           token: FFAppState().Token,
+                                          istate: _model.stateDropdownValue,
+                                          idistrict: _model.district,
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -1447,45 +1446,33 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final districtDistrictAPisResponse =
+                                          final cityCitiesAPIforStatenDistResponse =
                                               snapshot.data!;
 
                                           return FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .districtValueController ??=
-                                                FormFieldController<String>(
-                                              _model.districtValue ??= '',
-                                            ),
-                                            options: List<String>.from(
-                                                (getJsonField(
-                                              districtDistrictAPisResponse
+                                            controller:
+                                                _model.cityValueController ??=
+                                                    FormFieldController<String>(
+                                                        null),
+                                            options: (getJsonField(
+                                              cityCitiesAPIforStatenDistResponse
                                                   .jsonBody,
-                                              r'''$.District..DistrictName''',
-                                              true,
-                                            ) as List)
-                                                    .map<String>(
-                                                        (s) => s.toString())
-                                                    .toList()!),
-                                            optionLabels: (getJsonField(
-                                              districtDistrictAPisResponse
-                                                  .jsonBody,
-                                              r'''$.District..DistrictName''',
+                                              r'''$.Cities..City''',
                                               true,
                                             ) as List)
                                                 .map<String>(
                                                     (s) => s.toString())
                                                 .toList()!,
                                             onChanged: (val) async {
-                                              setState(() =>
-                                                  _model.districtValue = val);
-                                              _model.district =
-                                                  functions.checkIndex(
-                                                      districtDistrictAPisResponse
-                                                          .jsonBody,
-                                                      _model.districtValue,
-                                                      'District',
-                                                      'DistrictName',
-                                                      'iDistrict');
+                                              setState(
+                                                  () => _model.cityValue = val);
+                                              _model.trycity =
+                                                  functions.istatetostatevalue(
+                                                      FFAppState().City,
+                                                      _model.cityValue,
+                                                      'Cities',
+                                                      'iCity',
+                                                      'City');
                                               setState(() {});
                                             },
                                             width: MediaQuery.sizeOf(context)
@@ -1515,8 +1502,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: 'Please select...',
-                                            searchHintText:
-                                                'Search district...',
+                                            searchHintText: 'Search City...',
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color: Color(0xFFE1E2E6),
@@ -1536,8 +1522,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           );
                                         },
                                       ),
-                                    ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             Expanded(
@@ -1575,6 +1561,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             TextCapitalization.words,
                                         obscureText: false,
                                         decoration: InputDecoration(
+                                          labelText: 'ENter Pincode',
                                           hintText: 'Enter Pincode',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
@@ -2201,6 +2188,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
+                            maxLength: 10,
                             keyboardType: TextInputType.number,
                             validator: _model
                                 .mangerNumberTextControllerValidator

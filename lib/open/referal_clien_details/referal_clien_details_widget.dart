@@ -73,9 +73,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -406,6 +404,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
+                            maxLength: 10,
                             keyboardType: TextInputType.number,
                             validator: _model.textController2Validator
                                 .asValidator(context),

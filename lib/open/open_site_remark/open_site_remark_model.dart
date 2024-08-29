@@ -41,7 +41,6 @@ class OpenSiteRemarkModel extends FlutterFlowModel<OpenSiteRemarkWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     remark1FocusNode?.dispose();
     remark1TextController?.dispose();
 

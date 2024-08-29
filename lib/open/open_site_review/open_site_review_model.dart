@@ -15,7 +15,5 @@ class OpenSiteReviewModel extends FlutterFlowModel<OpenSiteReviewWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

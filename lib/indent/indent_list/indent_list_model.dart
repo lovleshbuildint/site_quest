@@ -30,7 +30,6 @@ class IndentListModel extends FlutterFlowModel<IndentListWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

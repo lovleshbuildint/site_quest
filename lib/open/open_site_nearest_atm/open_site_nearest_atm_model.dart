@@ -26,7 +26,6 @@ class OpenSiteNearestAtmModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     nearestatmModel.dispose();
   }
 }

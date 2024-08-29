@@ -27,7 +27,6 @@ class OpenSiteNearestBranchModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     nearestbranchModel.dispose();
   }
 }

@@ -15,7 +15,5 @@ class IndentSiteReviewModel extends FlutterFlowModel<IndentSiteReviewWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

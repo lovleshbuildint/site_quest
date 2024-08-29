@@ -50,7 +50,6 @@ class ReferalSurveyDetailsModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 

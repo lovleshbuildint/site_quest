@@ -15,7 +15,5 @@ class ReferalSubmitModel extends FlutterFlowModel<ReferalSubmitWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

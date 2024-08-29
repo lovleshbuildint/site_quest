@@ -24,7 +24,6 @@ class OpenSiteCommentsModel extends FlutterFlowModel<OpenSiteCommentsWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

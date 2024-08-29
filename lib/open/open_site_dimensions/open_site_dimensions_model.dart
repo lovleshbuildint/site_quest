@@ -26,7 +26,6 @@ class OpenSiteDimensionsModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sitedimentionsModel.dispose();
   }
 }

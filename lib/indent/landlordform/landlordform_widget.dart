@@ -972,6 +972,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
+              maxLength: 10,
               keyboardType: TextInputType.number,
               validator: _model.contactNameTextControllerValidator
                   .asValidator(context),
@@ -1038,6 +1039,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
+              maxLength: 10,
               keyboardType: TextInputType.number,
               validator: _model.alernativenumberTextControllerValidator
                   .asValidator(context),
@@ -1750,6 +1752,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
+              maxLength: 10,
               validator:
                   _model.panNumberTextControllerValidator.asValidator(context),
             ),
@@ -2065,6 +2068,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
+              maxLength: 12,
               keyboardType: TextInputType.number,
               validator: _model.aAdharcardNoTextControllerValidator
                   .asValidator(context),

@@ -17,7 +17,5 @@ class SubmitedListModel extends FlutterFlowModel<SubmitedListWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

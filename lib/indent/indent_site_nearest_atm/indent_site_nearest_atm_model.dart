@@ -36,7 +36,6 @@ class IndentSiteNearestAtmModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     nearestatmModel.dispose();
   }
 

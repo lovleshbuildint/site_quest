@@ -23,7 +23,6 @@ class FeedbackModel extends FlutterFlowModel<FeedbackWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

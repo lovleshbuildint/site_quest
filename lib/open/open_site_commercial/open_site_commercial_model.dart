@@ -27,7 +27,6 @@ class OpenSiteCommercialModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     commercialAdvanceModel.dispose();
   }
 }

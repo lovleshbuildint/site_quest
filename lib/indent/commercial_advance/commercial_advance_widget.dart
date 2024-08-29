@@ -226,9 +226,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller:
                           _model.rentFreePeriodAdvanceValueController ??=
-                              FormFieldController<String>(
-                        _model.rentFreePeriodAdvanceValue ??= '30',
-                      ),
+                              FormFieldController<String>(null),
                       options: [
                         '15',
                         '30',
@@ -250,6 +248,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: 'Please Select',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),
@@ -289,10 +288,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller: _model
                               .advanceRentMonthRentOrSecurityMonthsValueController ??=
-                          FormFieldController<String>(
-                        _model.advanceRentMonthRentOrSecurityMonthsValue ??=
-                            '1',
-                      ),
+                          FormFieldController<String>(null),
                       options: [
                         '1',
                         '2',
@@ -338,6 +334,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: 'Please Select',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),
@@ -750,9 +747,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
                       controller: _model.rentEscaltionAdvanceValueController ??=
-                          FormFieldController<String>(
-                        _model.rentEscaltionAdvanceValue ??= '20',
-                      ),
+                          FormFieldController<String>(null),
                       options: ['0', '5', '10', '15', '20', '25'],
                       onChanged: (val) => setState(
                           () => _model.rentEscaltionAdvanceValue = val),
@@ -764,6 +759,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: 'Please Select',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),
@@ -799,9 +795,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller:
                           _model.escalationPeriodAdvanceValueController ??=
-                              FormFieldController<String>(
-                        _model.escalationPeriodAdvanceValue ??= '5',
-                      ),
+                              FormFieldController<String>(null),
                       options: [
                         '0',
                         '1',
@@ -824,6 +818,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: 'Please Select',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),
@@ -859,9 +854,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: FlutterFlowDropDown<String>(
                       controller:
                           _model.agreementPeriodsAdvanceValueController ??=
-                              FormFieldController<String>(
-                        _model.agreementPeriodsAdvanceValue ??= '5',
-                      ),
+                              FormFieldController<String>(null),
                       options: [
                         '0',
                         '1',
@@ -884,6 +877,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
+                      hintText: 'Please Select',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFFE1E2E6),

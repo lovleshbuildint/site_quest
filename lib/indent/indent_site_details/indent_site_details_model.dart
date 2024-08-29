@@ -220,7 +220,6 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     customerbankFocusNode?.dispose();
     customerbankTextController?.dispose();
 

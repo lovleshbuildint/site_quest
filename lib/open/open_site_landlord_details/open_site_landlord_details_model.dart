@@ -27,7 +27,6 @@ class OpenSiteLandlordDetailsModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     landlordformModel.dispose();
   }
 }

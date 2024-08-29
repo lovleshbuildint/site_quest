@@ -40,21 +40,21 @@ class IndentSiteLandlordDetailsModel
     landlordformModel.pincodeTextControllerValidator = _formTextFieldValidator4;
     landlordformModel.contactNameTextControllerValidator =
         _formTextFieldValidator5;
+    landlordformModel.emailidTextControllerValidator = _formTextFieldValidator6;
     landlordformModel.chequefieldTextControllerValidator =
-        _formTextFieldValidator6;
-    landlordformModel.lLchequefieldTextControllerValidator =
         _formTextFieldValidator7;
-    landlordformModel.bankAccountNumberTextControllerValidator =
+    landlordformModel.lLchequefieldTextControllerValidator =
         _formTextFieldValidator8;
-    landlordformModel.bankBranchTextControllerValidator =
+    landlordformModel.bankAccountNumberTextControllerValidator =
         _formTextFieldValidator9;
-    landlordformModel.panNumberTextControllerValidator =
+    landlordformModel.bankBranchTextControllerValidator =
         _formTextFieldValidator10;
+    landlordformModel.panNumberTextControllerValidator =
+        _formTextFieldValidator11;
   }
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     landlordformModel.dispose();
   }
 
@@ -105,6 +105,11 @@ class IndentSiteLandlordDetailsModel
       return 'Field is required';
     }
 
+    if (!RegExp(
+            '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
+        .hasMatch(val)) {
+      return 'Please  use vaild Email Id';
+    }
     return null;
   }
 
@@ -133,6 +138,14 @@ class IndentSiteLandlordDetailsModel
   }
 
   String? _formTextFieldValidator10(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator11(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
     }

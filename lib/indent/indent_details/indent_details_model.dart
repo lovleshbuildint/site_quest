@@ -20,7 +20,5 @@ class IndentDetailsModel extends FlutterFlowModel<IndentDetailsWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -61,7 +61,5 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

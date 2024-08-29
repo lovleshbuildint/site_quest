@@ -43,7 +43,6 @@ class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     remark1FocusNode?.dispose();
     remark1TextController?.dispose();
 

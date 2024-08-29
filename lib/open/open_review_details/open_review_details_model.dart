@@ -17,7 +17,5 @@ class OpenReviewDetailsModel extends FlutterFlowModel<OpenReviewDetailsWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

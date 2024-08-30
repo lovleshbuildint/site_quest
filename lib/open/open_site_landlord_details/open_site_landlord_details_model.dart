@@ -24,10 +24,42 @@ class OpenSiteLandlordDetailsModel
   @override
   void initState(BuildContext context) {
     landlordformModel = createModel(context, () => LandlordformModel());
+    landlordformModel.emailidTextControllerValidator = _formTextFieldValidator1;
+    landlordformModel.faxTextControllerValidator = _formTextFieldValidator2;
   }
 
   @override
   void dispose() {
     landlordformModel.dispose();
+  }
+
+  /// Additional helper methods.
+
+  String? _formTextFieldValidator1(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (!RegExp(
+            '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*@yahoo\\.in|.*@yahoo\\.co.in|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
+        .hasMatch(val)) {
+      return 'Please Use Vaild EMail Id';
+    }
+    return null;
+  }
+
+  String? _formTextFieldValidator2(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (val.length < 10) {
+      return 'Requires at least 10 characters.';
+    }
+    if (val.length > 10) {
+      return 'Maximum 10 characters allowed, currently ${val.length}.';
+    }
+
+    return null;
   }
 }

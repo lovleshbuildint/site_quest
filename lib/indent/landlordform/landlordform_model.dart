@@ -35,6 +35,7 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
 
   ///  State fields for stateful widgets in this component.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for LandoardName widget.
   FocusNode? landoardNameFocusNode;
   TextEditingController? landoardNameTextController;
@@ -145,9 +146,23 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   TextEditingController? siteReferralNoTextController;
   String? Function(BuildContext, String?)?
       siteReferralNoTextControllerValidator;
+  String? _siteReferralNoTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Email invalid';
+    }
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    siteReferralNoTextControllerValidator =
+        _siteReferralNoTextControllerValidator;
+  }
 
   @override
   void dispose() {

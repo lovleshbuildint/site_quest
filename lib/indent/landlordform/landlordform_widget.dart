@@ -1096,9 +1096,11 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              keyboardType: TextInputType.emailAddress,
               validator:
                   _model.emailidTextControllerValidator.asValidator(context),
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
+              ],
             ),
           ),
           Padding(
@@ -2396,62 +2398,66 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   ),
             ),
           ),
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 35.0),
-            child: TextFormField(
-              controller: _model.siteReferralNoTextController,
-              focusNode: _model.siteReferralNoFocusNode,
-              autofocus: false,
-              textCapitalization: TextCapitalization.none,
-              obscureText: false,
-              decoration: InputDecoration(
-                hintText: 'Enter No.',
-                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
-                      color: Colors.black,
+          Form(
+            key: _model.formKey,
+            autovalidateMode: AutovalidateMode.disabled,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 35.0),
+              child: TextFormField(
+                controller: _model.siteReferralNoTextController,
+                focusNode: _model.siteReferralNoFocusNode,
+                autofocus: false,
+                textCapitalization: TextCapitalization.none,
+                obscureText: false,
+                decoration: InputDecoration(
+                  hintText: 'Enter No.',
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.black,
+                        letterSpacing: 0.0,
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFE1E2E6),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFFF0026),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.transparent,
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
                       letterSpacing: 0.0,
                     ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFFE1E2E6),
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFFFF0026),
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                filled: true,
-                fillColor: Colors.transparent,
+                keyboardType: TextInputType.number,
+                validator: _model.siteReferralNoTextControllerValidator
+                    .asValidator(context),
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                ],
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
-                  ),
-              keyboardType: TextInputType.number,
-              validator: _model.siteReferralNoTextControllerValidator
-                  .asValidator(context),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-              ],
             ),
           ),
         ],

@@ -40,25 +40,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.percentTextController ??= TextEditingController();
     _model.percentFocusNode ??= FocusNode();
 
-    _model.addressTextController ??= TextEditingController(
-        text: (String var1) {
-      return var1 != "" ? var1 : "";
-    }(getJsonField(
-      FFAppState().indentSelectedSite,
-      r'''$.Address''',
-    ).toString().toString()));
+    _model.addressTextController ??= TextEditingController();
     _model.addressFocusNode ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    _model.pincodeTextController ??= TextEditingController(
-        text: (String var1) {
-      return var1 != "" ? var1 : "";
-    }(getJsonField(
-      FFAppState().indentSelectedSite,
-      r'''$.Pincode''',
-    ).toString().toString()));
+    _model.pincodeTextController ??= TextEditingController();
     _model.pincodeFocusNode ??= FocusNode();
 
     _model.landmarksTextController ??= TextEditingController();
@@ -273,6 +261,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
+                hintText: 'Enter Address',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
                       color: Colors.black,
@@ -1107,6 +1096,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
+              keyboardType: TextInputType.emailAddress,
               validator:
                   _model.emailidTextControllerValidator.asValidator(context),
             ),

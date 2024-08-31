@@ -1561,7 +1561,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             TextCapitalization.words,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelText: 'ENter Pincode',
                                           hintText: 'Enter Pincode',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)

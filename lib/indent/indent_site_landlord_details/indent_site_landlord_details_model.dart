@@ -42,17 +42,19 @@ class IndentSiteLandlordDetailsModel
     landlordformModel.pincodeTextControllerValidator = _formTextFieldValidator4;
     landlordformModel.contactNameTextControllerValidator =
         _formTextFieldValidator5;
-    landlordformModel.emailidTextControllerValidator = _formTextFieldValidator6;
+    landlordformModel.alernativenumberTextControllerValidator =
+        _formTextFieldValidator6;
+    landlordformModel.emailidTextControllerValidator = _formTextFieldValidator7;
     landlordformModel.chequefieldTextControllerValidator =
-        _formTextFieldValidator7;
-    landlordformModel.lLchequefieldTextControllerValidator =
         _formTextFieldValidator8;
-    landlordformModel.bankAccountNumberTextControllerValidator =
+    landlordformModel.lLchequefieldTextControllerValidator =
         _formTextFieldValidator9;
-    landlordformModel.bankBranchTextControllerValidator =
+    landlordformModel.bankAccountNumberTextControllerValidator =
         _formTextFieldValidator10;
-    landlordformModel.panNumberTextControllerValidator =
+    landlordformModel.bankBranchTextControllerValidator =
         _formTextFieldValidator11;
+    landlordformModel.panNumberTextControllerValidator =
+        _formTextFieldValidator12;
   }
 
   @override
@@ -113,11 +115,7 @@ class IndentSiteLandlordDetailsModel
     if (val.length > 10) {
       return 'Only 10 Digit';
     }
-    if (!RegExp(
-            '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*@yahoo\\.in|.*@yahoo\\.co.in|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
-        .hasMatch(val)) {
-      return 'Please  use vaild Email Id';
-    }
+
     return null;
   }
 
@@ -126,6 +124,11 @@ class IndentSiteLandlordDetailsModel
       return 'Field is required';
     }
 
+    if (!RegExp(
+            '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*@yahoo\\.in|.*@yahoo\\.co.in|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
+        .hasMatch(val)) {
+      return 'Please  use vaild Email Id';
+    }
     return null;
   }
 
@@ -154,6 +157,14 @@ class IndentSiteLandlordDetailsModel
   }
 
   String? _formTextFieldValidator11(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator12(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
     }

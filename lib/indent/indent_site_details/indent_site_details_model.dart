@@ -191,6 +191,21 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
   FocusNode? mrgNoFocusNode;
   TextEditingController? mrgNoTextController;
   String? Function(BuildContext, String?)? mrgNoTextControllerValidator;
+  String? _mrgNoTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (val.length < 10) {
+      return 'Minimum 10 Digits required';
+    }
+    if (val.length > 10) {
+      return 'You have already fill 10 digits';
+    }
+
+    return null;
+  }
+
   // State field(s) for Duplicatesite widget.
   String? duplicatesiteValue;
   FormFieldController<String>? duplicatesiteValueController;
@@ -216,6 +231,7 @@ class IndentSiteDetailsModel extends FlutterFlowModel<IndentSiteDetailsWidget> {
     siteAddressTextControllerValidator = _siteAddressTextControllerValidator;
     pincodeTextControllerValidator = _pincodeTextControllerValidator;
     aTMExisitingTextControllerValidator = _aTMExisitingTextControllerValidator;
+    mrgNoTextControllerValidator = _mrgNoTextControllerValidator;
   }
 
   @override

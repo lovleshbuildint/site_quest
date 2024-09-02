@@ -710,6 +710,80 @@ class _IndentSiteLandlordDetailsWidgetState
                                   emailIds: null,
                                 );
 
+                                _model.please = true;
+                                if (_model.formKey.currentState == null ||
+                                    !_model.formKey.currentState!.validate()) {
+                                  setState(() => _model.please = false);
+                                  return;
+                                }
+                                if (_model.landlordformModel.stateValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text('Please Select State'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  _model.please = false;
+                                  setState(() {});
+                                  return;
+                                }
+                                if (_model.landlordformModel.cityValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text('Please Select City'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  _model.please = false;
+                                  setState(() {});
+                                  return;
+                                }
+                                if (_model.landlordformModel
+                                        .landlordBankNameValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text(
+                                            'Please Select Landlord Bank Name'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  _model.please = false;
+                                  setState(() {});
+                                  return;
+                                }
                                 if ((String var1) {
                                   return var1 ==
                                           "Data for Step-2 Successfully Updated."

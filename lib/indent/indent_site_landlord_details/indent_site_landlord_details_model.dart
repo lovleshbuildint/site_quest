@@ -29,6 +29,8 @@ class IndentSiteLandlordDetailsModel
   late LandlordformModel landlordformModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepSECONDworddoc)] action in Button widget.
   ApiCallResponse? updateDOADdeatils2;
+  // Stores action output result for [Validate Form] action in Button widget.
+  bool? please;
 
   @override
   void initState(BuildContext context) {

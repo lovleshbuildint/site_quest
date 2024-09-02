@@ -1456,22 +1456,22 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             setState(() => _model.checkboxValue2 = newValue!);
                             if (newValue!) {
                               setState(() {
-                                _model.chequefieldTextController?.text =
+                                _model.lLchequefieldTextController?.text =
                                     _model.percentTextController.text;
-                                _model.chequefieldTextController?.selection =
+                                _model.lLchequefieldTextController?.selection =
                                     TextSelection.collapsed(
                                         offset: _model
-                                            .chequefieldTextController!
+                                            .lLchequefieldTextController!
                                             .text
                                             .length);
                               });
                             } else {
                               setState(() {
-                                _model.chequefieldTextController?.text = '';
-                                _model.chequefieldTextController?.selection =
+                                _model.lLchequefieldTextController?.text = '';
+                                _model.lLchequefieldTextController?.selection =
                                     TextSelection.collapsed(
                                         offset: _model
-                                            .chequefieldTextController!
+                                            .lLchequefieldTextController!
                                             .text
                                             .length);
                               });

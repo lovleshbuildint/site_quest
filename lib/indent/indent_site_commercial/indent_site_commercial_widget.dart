@@ -647,6 +647,103 @@ class _IndentSiteCommercialWidgetState
                                 );
 
                                 _shouldSetState = true;
+                                if (_model.formKey.currentState == null ||
+                                    !_model.formKey.currentState!.validate()) {
+                                  return;
+                                }
+                                if (_model.commercialAdvanceModel
+                                        .rentaltypeValue ==
+                                    null) {
+                                  return;
+                                }
+                                if (_model.commercialAdvanceModel
+                                        .rentFreePeriodAdvanceValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text(
+                                            'Please Select Rent Free Period'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  return;
+                                }
+                                if (_model.commercialAdvanceModel
+                                        .intialAdvanceValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text(
+                                            'Please Select  Intials Advance'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  return;
+                                }
+                                if (_model.commercialAdvanceModel
+                                        .rentEscaltionAdvanceValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text(
+                                            'Please Select  Rent Escaltion'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  return;
+                                }
+                                if (_model.commercialAdvanceModel
+                                        .escalationPeriodAdvanceValue ==
+                                    null) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Alert'),
+                                        content: Text(
+                                            'Please Select Escalation periods'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  return;
+                                }
                                 if ((String var1) {
                                   return var1 ==
                                           "Data for Step-3 Successfully Updated."

@@ -1028,7 +1028,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              maxLength: 10,
               keyboardType: TextInputType.number,
               validator: _model.alernativenumberTextControllerValidator
                   .asValidator(context),
@@ -1098,9 +1097,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   ),
               validator:
                   _model.emailidTextControllerValidator.asValidator(context),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
-              ],
             ),
           ),
           Padding(

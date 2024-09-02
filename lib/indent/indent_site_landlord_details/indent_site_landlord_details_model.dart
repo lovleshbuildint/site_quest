@@ -107,6 +107,12 @@ class IndentSiteLandlordDetailsModel
       return 'Field is required';
     }
 
+    if (val.length < 10) {
+      return 'Please fill full contact';
+    }
+    if (val.length > 10) {
+      return 'Only 10 Digit';
+    }
     if (!RegExp(
             '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*@yahoo\\.in|.*@yahoo\\.co.in|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
         .hasMatch(val)) {

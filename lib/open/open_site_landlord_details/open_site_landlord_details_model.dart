@@ -24,8 +24,10 @@ class OpenSiteLandlordDetailsModel
   @override
   void initState(BuildContext context) {
     landlordformModel = createModel(context, () => LandlordformModel());
-    landlordformModel.emailidTextControllerValidator = _formTextFieldValidator1;
-    landlordformModel.faxTextControllerValidator = _formTextFieldValidator2;
+    landlordformModel.alernativenumberTextControllerValidator =
+        _formTextFieldValidator1;
+    landlordformModel.emailidTextControllerValidator = _formTextFieldValidator2;
+    landlordformModel.faxTextControllerValidator = _formTextFieldValidator3;
   }
 
   @override
@@ -40,6 +42,21 @@ class OpenSiteLandlordDetailsModel
       return 'Field is required';
     }
 
+    if (val.length < 10) {
+      return 'Please fill full contact number';
+    }
+    if (val.length > 10) {
+      return 'Only 10 Digit';
+    }
+
+    return null;
+  }
+
+  String? _formTextFieldValidator2(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
     if (!RegExp(
             '(?!.*@outlook\\.com|.*@gmail\\.com|.*@yahoo\\.com|.*@yahoo\\.in|.*@yahoo\\.co.in|.*hitachi-payments\\.com)(\\w[\\w\\.]*@\\w+\\.[\\w\\.]+)')
         .hasMatch(val)) {
@@ -48,7 +65,7 @@ class OpenSiteLandlordDetailsModel
     return null;
   }
 
-  String? _formTextFieldValidator2(BuildContext context, String? val) {
+  String? _formTextFieldValidator3(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
     }

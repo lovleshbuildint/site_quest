@@ -451,6 +451,10 @@ class _OpenSiteLandlordDetailsWidgetState
                                   emailIds: null,
                                 );
 
+                                if (_model.formKey.currentState == null ||
+                                    !_model.formKey.currentState!.validate()) {
+                                  return;
+                                }
                                 if ((String var1) {
                                   return var1 ==
                                           "Data for Step-2 Successfully Updated."

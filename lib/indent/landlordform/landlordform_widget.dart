@@ -1028,6 +1028,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
+              maxLength: 10,
               keyboardType: TextInputType.number,
               validator: _model.alernativenumberTextControllerValidator
                   .asValidator(context),
@@ -1309,9 +1310,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         unselectedWidgetColor: Color(0xFF6C6B6B),
                       ),
                       child: Checkbox(
-                        value: _model.checkboxValue ??= false,
+                        value: _model.checkboxValue1 ??= false,
                         onChanged: (newValue) async {
-                          setState(() => _model.checkboxValue = newValue!);
+                          setState(() => _model.checkboxValue1 = newValue!);
                           if (newValue!) {
                             setState(() {
                               _model.chequefieldTextController?.text =
@@ -1363,7 +1364,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.chequefieldFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
-              readOnly: _model.checkboxValue == true,
+              readOnly: _model.checkboxValue1 == true,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Name',
@@ -1374,7 +1375,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: _model.checkboxValue == true
+                    color: _model.checkboxValue1 == true
                         ? Colors.transparent
                         : Color(0xFFE1E2E6),
                     width: 2.0,
@@ -1403,7 +1404,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: _model.checkboxValue == true
+                fillColor: _model.checkboxValue1 == true
                     ? Color(0xFFF2F2F2)
                     : Colors.transparent,
               ),
@@ -1417,14 +1418,86 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-            child: Text(
-              'Landlord Cheque Percentage',
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.black,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.w500,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Landlord Cheque Percentage',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.black,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: AlignmentDirectional(1.0, 0.0),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                      child: Theme(
+                        data: ThemeData(
+                          checkboxTheme: CheckboxThemeData(
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                          ),
+                          unselectedWidgetColor: Color(0xFF6C6B6B),
+                        ),
+                        child: Checkbox(
+                          value: _model.checkboxValue2 ??= false,
+                          onChanged: (newValue) async {
+                            setState(() => _model.checkboxValue2 = newValue!);
+                            if (newValue!) {
+                              setState(() {
+                                _model.chequefieldTextController?.text =
+                                    _model.percentTextController.text;
+                                _model.chequefieldTextController?.selection =
+                                    TextSelection.collapsed(
+                                        offset: _model
+                                            .chequefieldTextController!
+                                            .text
+                                            .length);
+                              });
+                            } else {
+                              setState(() {
+                                _model.chequefieldTextController?.text = '';
+                                _model.chequefieldTextController?.selection =
+                                    TextSelection.collapsed(
+                                        offset: _model
+                                            .chequefieldTextController!
+                                            .text
+                                            .length);
+                              });
+                            }
+                          },
+                          side: BorderSide(
+                            width: 2,
+                            color: Color(0xFF6C6B6B),
+                          ),
+                          activeColor: Color(0xFFFF0026),
+                          checkColor: FlutterFlowTheme.of(context).info,
+                        ),
+                      ),
+                    ),
                   ),
+                ),
+                Text(
+                  'Same as above',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: Color(0xFF6C6B6B),
+                        fontSize: 12.0,
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ],
             ),
           ),
           Padding(

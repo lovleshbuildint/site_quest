@@ -2524,6 +2524,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     fontFamily: 'Readex Pro',
                                     letterSpacing: 0.0,
                                   ),
+                              maxLength: 10,
                               keyboardType: TextInputType.number,
                               validator: _model.mrgNoTextControllerValidator
                                   .asValidator(context),

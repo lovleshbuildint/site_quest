@@ -614,12 +614,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.tisTypeValueController ??=
-                                FormFieldController<String>(
-                              _model.tisTypeValue ??= getJsonField(
-                                FFAppState().TISType,
-                                r'''$[0].TISTypeName''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().TISType,
                               r'''$..TISTypeName''',
@@ -686,12 +681,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.projectTypeValueController ??=
-                                FormFieldController<String>(
-                              _model.projectTypeValue ??= getJsonField(
-                                FFAppState().ProjectType,
-                                r'''$[0].ProjectTypeName''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().ProjectType,
                               r'''$..ProjectTypeName''',
@@ -758,12 +748,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.businessTypeValueController ??=
-                                FormFieldController<String>(
-                              _model.businessTypeValue ??= getJsonField(
-                                FFAppState().BusinessType,
-                                r'''$[0].ShopTypeName''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().BusinessType,
                               r'''$..ShopTypeName''',
@@ -830,12 +815,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller:
                                 _model.strategyDropDwonValueController ??=
-                                    FormFieldController<String>(
-                              _model.strategyDropDwonValue ??= getJsonField(
-                                FFAppState().Strategy,
-                                r'''$.Strategies[0].Strategy''',
-                              ).toString(),
-                            ),
+                                    FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().Strategy,
                               r'''$.Strategies..Strategy''',
@@ -894,12 +874,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.pOIListValueController ??=
-                                  FormFieldController<String>(
-                                _model.pOIListValue ??= getJsonField(
-                                  FFAppState().POIList,
-                                  r'''$[0].poiTypeName''',
-                                ).toString(),
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().POIList,
                                 r'''$..poiTypeName''',
@@ -1633,12 +1608,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.circleValueController ??=
-                                FormFieldController<String>(
-                              _model.circleValue ??= getJsonField(
-                                FFAppState().Circle,
-                                r'''$.Circles_app1[0].CircleName''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().Circle,
                               r'''$.Circles_app1..CircleName''',
@@ -1843,12 +1813,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.rBICategoryValueController ??=
-                                FormFieldController<String>(
-                              _model.rBICategoryValue ??= getJsonField(
-                                FFAppState().RBICategory,
-                                r'''$.RBICategories[0].Name''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().RBICategory,
                               r'''$.RBICategories..Name''',
@@ -2255,12 +2220,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.siteVisitedBYValueController ??=
-                                FormFieldController<String>(
-                              _model.siteVisitedBYValue ??= getJsonField(
-                                FFAppState().departmentswiseuser,
-                                r'''$[0].Department''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().visitedbydeptapi,
                               r'''$..Department''',
@@ -2358,14 +2318,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller:
                                     _model.firstSiteVisitedByValueController ??=
-                                        FormFieldController<String>(
-                                  _model.firstSiteVisitedByValue ??=
-                                      getJsonField(
-                                    firstSiteVisitedByGetDepartmentWiseUserAPIResponse
-                                        .jsonBody,
-                                    r'''$[0].UserName''',
-                                  ).toString(),
-                                ),
+                                        FormFieldController<String>(null),
                                 options: (getJsonField(
                                   firstSiteVisitedByGetDepartmentWiseUserAPIResponse
                                       .jsonBody,
@@ -2462,12 +2415,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue ??= getJsonField(
-                                    FFAppState().secondsitevisiterNew,
-                                    r'''$[0].UserName''',
-                                  ).toString(),
-                                ),
+                                    FormFieldController<String>(null),
                                 options: (getJsonField(
                                   FFAppState().secondsitevisiterNew,
                                   r'''$..UserName''',

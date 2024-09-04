@@ -384,7 +384,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             borderWidth: 2.0,
                             borderRadius: 8.0,
                             margin: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 4.0, 16.0, 4.0),
+                                10.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isSearchable: false,
                             isMultiSelect: false,
@@ -410,12 +410,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.sitetypeValueController ??=
-                                FormFieldController<String>(
-                              _model.sitetypeValue ??= getJsonField(
-                                FFAppState().SiteType,
-                                r'''$[0].SiteTypeName''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().SiteType,
                               r'''$..SiteTypeName''',
@@ -482,12 +477,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               0.0, 8.0, 0.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.cashDeviceValueController ??=
-                                FormFieldController<String>(
-                              _model.cashDeviceValue ??= getJsonField(
-                                FFAppState().CashDeviceType,
-                                r'''$[0].CashDeviceType''',
-                              ).toString(),
-                            ),
+                                FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().CashDeviceType,
                               r'''$..CashDeviceType''',
@@ -555,12 +545,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller:
                                 _model.cashDeviceMovementValueController ??=
-                                    FormFieldController<String>(
-                              _model.cashDeviceMovementValue ??= getJsonField(
-                                FFAppState().CashDeviceMovementCategory,
-                                r'''$[0].CashDeviceMovementCategory''',
-                              ).toString(),
-                            ),
+                                    FormFieldController<String>(null),
                             options: (getJsonField(
                               FFAppState().CashDeviceMovementCategory,
                               r'''$..CashDeviceMovementCategory''',
@@ -1232,7 +1217,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           borderRadius: 8.0,
                                           margin:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 16.0, 4.0),
+                                                  10.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: true,
                                           isMultiSelect: false,
@@ -1381,7 +1366,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               borderRadius: 8.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 4.0, 16.0, 4.0),
+                                                      10.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
                                               isSearchable: true,
                                               isMultiSelect: false,
@@ -1515,7 +1500,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             borderRadius: 8.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 4.0, 16.0, 4.0),
+                                                    10.0, 4.0, 16.0, 4.0),
                                             hidesUnderline: true,
                                             isSearchable: true,
                                             isMultiSelect: false,

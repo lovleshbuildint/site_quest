@@ -309,7 +309,16 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.safePop();
+                            context.pushNamed(
+                              'open_site_landlord_details',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

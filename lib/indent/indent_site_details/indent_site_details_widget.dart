@@ -1942,9 +1942,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.circleValueController ??=
-                                  FormFieldController<String>(
-                                _model.circleValue ??= 'NA',
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().Circle,
                                 r'''$.Circles_app1..CircleName''',

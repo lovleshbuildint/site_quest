@@ -2254,9 +2254,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.rBICategoryValueController ??=
-                                  FormFieldController<String>(
-                                _model.rBICategoryValue ??= 'Urban',
-                              ),
+                                  FormFieldController<String>(null),
                               options: (getJsonField(
                                 FFAppState().RBICategory,
                                 r'''$.RBICategories..Name''',
@@ -3643,7 +3641,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.IndentId''',
                                   ).toString(),
                                   targetBank: null,
-                                  siteId: null,
+                                  siteId: widget!.siteId.toString(),
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
                                   mgrNo: _model.mrgNoTextController.text,

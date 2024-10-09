@@ -3105,7 +3105,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.IndentId''',
                                   ).toString(),
                                   targetBank: null,
-                                  siteId: widget!.siteId.toString(),
+                                  siteId: widget!.siteId > 0
+                                      ? widget!.siteId.toString()
+                                      : null,
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
                                   mgrNo: _model.mrgNoTextController.text,
@@ -3641,7 +3643,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.IndentId''',
                                   ).toString(),
                                   targetBank: null,
-                                  siteId: widget!.siteId.toString(),
+                                  siteId: widget!.siteId > 0
+                                      ? widget!.siteId.toString()
+                                      : null,
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
                                   mgrNo: _model.mrgNoTextController.text,

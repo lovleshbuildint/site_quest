@@ -75,6 +75,9 @@ class FFAppState extends ChangeNotifier {
       _trycracoverage =
           await secureStorage.getString('ff_trycracoverage') ?? _trycracoverage;
     });
+    await _safeInitAsync(() async {
+      _siteidint = await secureStorage.getInt('ff_siteidint') ?? _siteidint;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -701,6 +704,17 @@ class FFAppState extends ChangeNotifier {
   String get deviceIdNearestATM => _deviceIdNearestATM;
   set deviceIdNearestATM(String value) {
     _deviceIdNearestATM = value;
+  }
+
+  int _siteidint = 0;
+  int get siteidint => _siteidint;
+  set siteidint(int value) {
+    _siteidint = value;
+    secureStorage.setInt('ff_siteidint', value);
+  }
+
+  void deleteSiteidint() {
+    secureStorage.delete(key: 'ff_siteidint');
   }
 }
 

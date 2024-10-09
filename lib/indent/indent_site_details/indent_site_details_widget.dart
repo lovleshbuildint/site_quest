@@ -39,7 +39,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().SiteId == null || FFAppState().SiteId == '') {
+      if (widget!.siteId > 0) {
         _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
           iIndent: widget!.siteId.toString(),
           token: FFAppState().Token,
@@ -725,7 +725,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         scrollDirection: Axis.vertical,
                         children: [
                           Text(
-                            FFAppState().SiteId,
+                            FFAppState().siteidint.toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -3470,6 +3470,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ''),
                                     r'''$.SiteId''',
                                   ).toString();
+                                  safeSetState(() {});
+                                  FFAppState().siteidint = getJsonField(
+                                    (_model.updateDOAdetailsfirstdept
+                                            ?.jsonBody ??
+                                        ''),
+                                    r'''$.SiteId''',
+                                  );
                                   safeSetState(() {});
                                   await showDialog(
                                     context: context,

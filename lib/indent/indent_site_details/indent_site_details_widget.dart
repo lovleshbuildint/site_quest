@@ -3107,7 +3107,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.IndentId''',
                                   ).toString(),
                                   targetBank: null,
-                                  siteId: null,
+                                  siteId: widget!.siteId.toString(),
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
                                   mgrNo: _model.mrgNoTextController.text,

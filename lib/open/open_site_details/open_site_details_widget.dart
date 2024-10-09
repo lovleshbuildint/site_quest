@@ -50,7 +50,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     _model.mangerNumberTextController ??= TextEditingController();
     _model.mangerNumberFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -361,8 +361,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) =>
-                                setState(() => _model.customerBankValue = val),
+                            onChanged: (val) => safeSetState(
+                                () => _model.customerBankValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -419,7 +419,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(() => _model.sitetypeValue = val);
+                              safeSetState(() => _model.sitetypeValue = val);
                               _model.isitetypes = functions.checkIndexint(
                                   FFAppState().SiteType,
                                   _model.sitetypeValue,
@@ -427,7 +427,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   'SiteTypeName',
                                   'iSiteType',
                                   false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -486,7 +486,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(() => _model.cashDeviceValue = val);
+                              safeSetState(() => _model.cashDeviceValue = val);
                               _model.icashdevicetypes = functions.checkIndexint(
                                   FFAppState().CashDeviceType,
                                   _model.cashDeviceValue,
@@ -494,7 +494,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   'CashDeviceType',
                                   'iCashDeviceType',
                                   false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -554,7 +554,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(
+                              safeSetState(
                                   () => _model.cashDeviceMovementValue = val);
                               _model.ichasdevicemovementcategorys =
                                   functions.checkIndexint(
@@ -564,7 +564,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       'CashDeviceMovementCategory',
                                       'iCashDeviceMovementCategory',
                                       false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -623,7 +623,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(() => _model.tisTypeValue = val);
+                              safeSetState(() => _model.tisTypeValue = val);
                               _model.iTisTypes = functions.checkIndexint(
                                   FFAppState().TISType,
                                   _model.tisTypeValue,
@@ -631,7 +631,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   'TISTypeName',
                                   'iTISType',
                                   false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -690,7 +690,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(() => _model.projectTypeValue = val);
+                              safeSetState(() => _model.projectTypeValue = val);
                               _model.iprojecttypes = functions.checkIndexint(
                                   FFAppState().ProjectType,
                                   _model.projectTypeValue,
@@ -698,7 +698,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   'ProjectTypeName',
                                   'iProjType',
                                   false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -757,7 +757,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(() => _model.businessTypeValue = val);
+                              safeSetState(
+                                  () => _model.businessTypeValue = val);
                               _model.ishoptypes = functions.checkIndexint(
                                   FFAppState().BusinessType,
                                   _model.businessTypeValue,
@@ -765,7 +766,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   'ShopTypeName',
                                   'iShopType',
                                   false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -823,7 +824,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) => setState(
+                            onChanged: (val) => safeSetState(
                                 () => _model.strategyDropDwonValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -883,7 +884,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) =>
-                                  setState(() => _model.pOIListValue = val),
+                                  safeSetState(() => _model.pOIListValue = val),
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1138,7 +1139,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           onChanged: (val) async {
-                                            setState(() => _model
+                                            safeSetState(() => _model
                                                 .stateDropdownValue = val);
                                             _model.statefordsitopen =
                                                 functions.checkIndex(
@@ -1148,7 +1149,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                     'States',
                                                     'iState',
                                                     'State');
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -1285,7 +1286,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       (s) => s.toString())
                                                   .toList()!,
                                               onChanged: (val) async {
-                                                setState(() =>
+                                                safeSetState(() =>
                                                     _model.districtValue = val);
                                                 _model.district =
                                                     functions.checkIndex(
@@ -1295,7 +1296,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                         'District',
                                                         'DistrictName',
                                                         'iDistrict');
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1424,7 +1425,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                     (s) => s.toString())
                                                 .toList()!,
                                             onChanged: (val) async {
-                                              setState(
+                                              safeSetState(
                                                   () => _model.cityValue = val);
                                               _model.trycity =
                                                   functions.istatetostatevalue(
@@ -1433,7 +1434,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       'Cities',
                                                       'iCity',
                                                       'City');
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -1617,7 +1618,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) =>
-                                setState(() => _model.circleValue = val),
+                                safeSetState(() => _model.circleValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1821,8 +1822,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             ) as List)
                                 .map<String>((s) => s.toString())
                                 .toList()!,
-                            onChanged: (val) =>
-                                setState(() => _model.rBICategoryValue = val),
+                            onChanged: (val) => safeSetState(
+                                () => _model.rBICategoryValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1884,7 +1885,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 .siteSourcedValueController ??=
                                             FormFieldController<String>(null),
                                         options: ['HPY', 'Bank', 'SSM'],
-                                        onChanged: (val) => setState(() =>
+                                        onChanged: (val) => safeSetState(() =>
                                             _model.siteSourcedValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -1951,12 +1952,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             FormFieldController<String>(null),
                                         options: ['Onsite', 'Offsite'],
                                         onChanged: (val) async {
-                                          setState(
+                                          safeSetState(
                                               () => _model.oNOFSiteValue = val);
                                           _model.oNOFsite =
                                               functions.dropdownsONSITE(
                                                   _model.oNOFSiteValue!);
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -2167,10 +2168,11 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 FormFieldController<String>(null),
                             options: ['Yes', 'No'],
                             onChanged: (val) async {
-                              setState(() => _model.duplicateSiteValue = val);
+                              safeSetState(
+                                  () => _model.duplicateSiteValue = val);
                               _model.iduplicate = functions
                                   .dropdown(_model.duplicateSiteValue!);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -2229,7 +2231,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 .map<String>((s) => s.toString())
                                 .toList()!,
                             onChanged: (val) async {
-                              setState(() => _model.siteVisitedBYValue = val);
+                              safeSetState(
+                                  () => _model.siteVisitedBYValue = val);
                               _model.isiteddeps = functions.checkIndexint(
                                   FFAppState().SiteVisitedBy,
                                   _model.siteVisitedBYValue,
@@ -2244,7 +2247,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   'Department',
                                   'idepartment',
                                   false);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -2328,7 +2331,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) async {
-                                  setState(() =>
+                                  safeSetState(() =>
                                       _model.firstSiteVisitedByValue = val);
                                   _model.isitevisitedbynames =
                                       functions.checkIndexint(
@@ -2339,7 +2342,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           'UserName',
                                           'iUser',
                                           false);
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 width: 300.0,
                                 height: 56.0,
@@ -2424,7 +2427,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) async {
-                                  setState(() => _model.dropDownValue = val);
+                                  safeSetState(
+                                      () => _model.dropDownValue = val);
                                   _model.isecondsitevisitedbynames =
                                       functions.checkIndexint(
                                           dropDownGetSecondSiteVisitersResponse
@@ -2434,7 +2438,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           'UserName',
                                           'iUser',
                                           false);
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 width: 300.0,
                                 height: 56.0,
@@ -2605,7 +2609,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ''),
                               r'''$.SiteId''',
                             ).toString();
-                            setState(() {});
+                            safeSetState(() {});
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2667,7 +2671,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             );
                           }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

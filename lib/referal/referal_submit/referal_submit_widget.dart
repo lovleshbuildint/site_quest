@@ -24,7 +24,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
     super.initState();
     _model = createModel(context, () => ReferalSubmitModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

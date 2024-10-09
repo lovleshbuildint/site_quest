@@ -146,7 +146,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'indent_site_details',
           path: '/indentSiteDetails',
-          builder: (context, params) => IndentSiteDetailsWidget(),
+          builder: (context, params) => IndentSiteDetailsWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_landlord_details',
@@ -154,44 +159,79 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => IndentSiteLandlordDetailsWidget(
             siteId: params.getParam(
               'siteId',
-              ParamType.String,
+              ParamType.int,
             ),
           ),
         ),
         FFRoute(
           name: 'indent_site_commercial',
           path: '/indentSiteCommercial',
-          builder: (context, params) => IndentSiteCommercialWidget(),
+          builder: (context, params) => IndentSiteCommercialWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_dimensions',
           path: '/indentSiteDimensions',
-          builder: (context, params) => IndentSiteDimensionsWidget(),
+          builder: (context, params) => IndentSiteDimensionsWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_photo',
           path: '/indentSitePhoto',
-          builder: (context, params) => IndentSitePhotoWidget(),
+          builder: (context, params) => IndentSitePhotoWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_nearest_branch',
           path: '/indentSiteNearestBranch',
-          builder: (context, params) => IndentSiteNearestBranchWidget(),
+          builder: (context, params) => IndentSiteNearestBranchWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_nearest_atm',
           path: '/indentSiteNearestAtm',
-          builder: (context, params) => IndentSiteNearestAtmWidget(),
+          builder: (context, params) => IndentSiteNearestAtmWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_remark',
           path: '/indentSiteRemark',
-          builder: (context, params) => IndentSiteRemarkWidget(),
+          builder: (context, params) => IndentSiteRemarkWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_comments',
           path: '/indentSiteComments',
-          builder: (context, params) => IndentSiteCommentsWidget(),
+          builder: (context, params) => IndentSiteCommentsWidget(
+            siteId: params.getParam(
+              'siteId',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_review',

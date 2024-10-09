@@ -28,7 +28,7 @@ class _AnalyticsOverviewOverviewWidgetState
     super.initState();
     _model = createModel(context, () => AnalyticsOverviewOverviewModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -91,7 +91,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model.siteReferralNoTextController ??= TextEditingController();
     _model.siteReferralNoFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -378,14 +378,15 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) async {
-                                  setState(() => _model.districtValue = val);
+                                  safeSetState(
+                                      () => _model.districtValue = val);
                                   _model.district = functions.checkIndex(
                                       districtDistrictAPisResponse.jsonBody,
                                       _model.districtValue,
                                       'District',
                                       'DistrictName',
                                       'iDistrict');
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
@@ -498,14 +499,14 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.stateValue = val);
+                                safeSetState(() => _model.stateValue = val);
                                 _model.statefordistland = functions.checkIndex(
                                     stateStateListResponse.jsonBody,
                                     _model.stateValue,
                                     'States',
                                     'iState',
                                     'State');
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -626,14 +627,14 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) async {
-                                  setState(() => _model.cityValue = val);
+                                  safeSetState(() => _model.cityValue = val);
                                   _model.trycity = functions.istatetostatevalue(
                                       FFAppState().City,
                                       _model.cityValue,
                                       'Cities',
                                       'iCity',
                                       'City');
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
@@ -1238,7 +1239,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                       .map<String>((s) => s.toString())
                       .toList()!,
                   onChanged: (val) =>
-                      setState(() => _model.landlordBankNameValue = val),
+                      safeSetState(() => _model.landlordBankNameValue = val),
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
                   searchHintTextStyle:
@@ -1312,9 +1313,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                       child: Checkbox(
                         value: _model.checkboxValue1 ??= false,
                         onChanged: (newValue) async {
-                          setState(() => _model.checkboxValue1 = newValue!);
+                          safeSetState(() => _model.checkboxValue1 = newValue!);
                           if (newValue!) {
-                            setState(() {
+                            safeSetState(() {
                               _model.chequefieldTextController?.text =
                                   valueOrDefault<String>(
                                 _model.landoardNameTextController.text,
@@ -1326,7 +1327,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                           .text.length);
                             });
                           } else {
-                            setState(() {
+                            safeSetState(() {
                               _model.chequefieldTextController?.text = '';
                               _model.chequefieldTextController?.selection =
                                   TextSelection.collapsed(
@@ -1453,9 +1454,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         child: Checkbox(
                           value: _model.checkboxValue2 ??= false,
                           onChanged: (newValue) async {
-                            setState(() => _model.checkboxValue2 = newValue!);
+                            safeSetState(
+                                () => _model.checkboxValue2 = newValue!);
                             if (newValue!) {
-                              setState(() {
+                              safeSetState(() {
                                 _model.lLchequefieldTextController?.text =
                                     _model.percentTextController.text;
                                 _model.lLchequefieldTextController?.selection =
@@ -1466,7 +1468,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                             .length);
                               });
                             } else {
-                              setState(() {
+                              safeSetState(() {
                                 _model.lLchequefieldTextController?.text = '';
                                 _model.lLchequefieldTextController?.selection =
                                     TextSelection.collapsed(
@@ -1861,7 +1863,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isDataUploading1 = true);
+                          safeSetState(() => _model.isDataUploading1 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
 
                           try {
@@ -1879,12 +1881,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           }
                           if (selectedUploadedFiles.length ==
                               selectedMedia.length) {
-                            setState(() {
+                            safeSetState(() {
                               _model.uploadedLocalFile1 =
                                   selectedUploadedFiles.first;
                             });
                           } else {
-                            setState(() {});
+                            safeSetState(() {});
                             return;
                           }
                         }
@@ -1976,7 +1978,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isDataUploading2 = true);
+                          safeSetState(() => _model.isDataUploading2 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
 
                           try {
@@ -1994,12 +1996,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           }
                           if (selectedUploadedFiles.length ==
                               selectedMedia.length) {
-                            setState(() {
+                            safeSetState(() {
                               _model.uploadedLocalFile2 =
                                   selectedUploadedFiles.first;
                             });
                           } else {
-                            setState(() {});
+                            safeSetState(() {});
                             return;
                           }
                         }
@@ -2181,7 +2183,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isDataUploading3 = true);
+                          safeSetState(() => _model.isDataUploading3 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
 
                           try {
@@ -2199,12 +2201,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           }
                           if (selectedUploadedFiles.length ==
                               selectedMedia.length) {
-                            setState(() {
+                            safeSetState(() {
                               _model.uploadedLocalFile3 =
                                   selectedUploadedFiles.first;
                             });
                           } else {
-                            setState(() {});
+                            safeSetState(() {});
                             return;
                           }
                         }
@@ -2296,7 +2298,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isDataUploading4 = true);
+                          safeSetState(() => _model.isDataUploading4 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
 
                           try {
@@ -2314,12 +2316,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           }
                           if (selectedUploadedFiles.length ==
                               selectedMedia.length) {
-                            setState(() {
+                            safeSetState(() {
                               _model.uploadedLocalFile4 =
                                   selectedUploadedFiles.first;
                             });
                           } else {
-                            setState(() {});
+                            safeSetState(() {});
                             return;
                           }
                         }

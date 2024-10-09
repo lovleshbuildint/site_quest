@@ -44,7 +44,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
     _model.videoURLTextController ??= TextEditingController();
     _model.videoURLFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -83,14 +83,14 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
-                setState(() => _model.cRACoverageValue = val);
+                safeSetState(() => _model.cRACoverageValue = val);
                 _model.cRACoverage =
                     functions.dropdown(_model.cRACoverageValue!);
-                setState(() {});
+                safeSetState(() {});
                 FFAppState().CRACoverage = _model.cRACoverageValue!;
-                setState(() {});
+                safeSetState(() {});
                 FFAppState().trycracoverage = _model.cRACoverage.toString();
-                setState(() {});
+                safeSetState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -162,9 +162,9 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                       .map<String>((s) => s.toString())
                       .toList()!,
                   onChanged: (val) async {
-                    setState(() => _model.cRAAgencyValue = val);
+                    safeSetState(() => _model.cRAAgencyValue = val);
                     FFAppState().CRAAgency = _model.cRAAgencyValue!;
-                    setState(() {});
+                    safeSetState(() {});
                   },
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
@@ -212,7 +212,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               onFieldSubmitted: (_) async {
                 FFAppState().BranchSOLID =
                     _model.branchSOLIDTextController.text;
-                setState(() {});
+                safeSetState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -283,7 +283,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               onFieldSubmitted: (_) async {
                 FFAppState().NearestBranch =
                     _model.nearestBranchstextTextController.text;
-                setState(() {});
+                safeSetState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -354,7 +354,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               onFieldSubmitted: (_) async {
                 FFAppState().DistancefromtheNeearestBranch =
                     _model.distanceNearestBranchTextController.text;
-                setState(() {});
+                safeSetState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
@@ -429,7 +429,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               focusNode: _model.videoURLFocusNode,
               onFieldSubmitted: (_) async {
                 FFAppState().VideoURL = _model.videoURLTextController.text;
-                setState(() {});
+                safeSetState(() {});
               },
               autofocus: false,
               textCapitalization: TextCapitalization.words,

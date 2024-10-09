@@ -31,7 +31,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -123,13 +123,13 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             () async {
                                               _model.searchvaluepage =
                                                   _model.textController.text;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                           ),
                                           onFieldSubmitted: (_) async {
                                             _model.searchvaluepage =
                                                 _model.textController.text;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           autofocus: false,
                                           obscureText: false,
@@ -213,9 +213,9 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           _model.serachVisibilty = false;
-                                          setState(() {});
+                                          safeSetState(() {});
                                           FFAppState().searchpage = '';
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         child: Icon(
                                           Icons.close,
@@ -293,7 +293,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         _model.serachVisibilty = true;
-                                        setState(() {});
+                                        safeSetState(() {});
                                       },
                                       child: Icon(
                                         Icons.search,
@@ -367,7 +367,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                             .jsonBody,
                                                         r'''$.indents''',
                                                       ))!;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             child: Container(
                                               width: 100.0,

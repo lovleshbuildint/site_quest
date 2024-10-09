@@ -28,7 +28,7 @@ class _AnalyticsOpensitesRejectedWidgetState
     super.initState();
     _model = createModel(context, () => AnalyticsOpensitesRejectedModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

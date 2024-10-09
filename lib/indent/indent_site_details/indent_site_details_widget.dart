@@ -7,6 +7,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,12 @@ import 'indent_site_details_model.dart';
 export 'indent_site_details_model.dart';
 
 class IndentSiteDetailsWidget extends StatefulWidget {
-  const IndentSiteDetailsWidget({super.key});
+  const IndentSiteDetailsWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteDetailsWidget> createState() =>
@@ -30,6 +36,103 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => IndentSiteDetailsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.siteId > 0) {
+        _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
+          iIndent: widget!.siteId.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResults7x?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.customerbankTextController?.text =
+                '\$.indents[0].CustomerName';
+            _model.customerbankTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.customerbankTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.distancefrominindentTextController?.text =
+                '\$.indents[0].DistFromIndent';
+            _model.distancefrominindentTextController?.selection =
+                TextSelection.collapsed(
+                    offset:
+                        _model.distancefrominindentTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.siteAddressTextController?.text =
+                '\$.indents[0].LocationName';
+            _model.siteAddressTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.siteAddressTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.pincodeTextController?.text = '\$.indents[0].PinCode';
+            _model.pincodeTextController?.selection = TextSelection.collapsed(
+                offset: _model.pincodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.aTMExisitingTextController?.text =
+                '\$.indents[0].ATMID_Existing';
+            _model.aTMExisitingTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.aTMExisitingTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitetypeValueController?.value =
+                '\$.indents[0].SiteTypeName';
+          });
+          safeSetState(() {
+            _model.landMarksTextController?.text = '\$.indents[0].LandMark';
+            _model.landMarksTextController?.selection = TextSelection.collapsed(
+                offset: _model.landMarksTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.cashdevicetypeValueController?.value =
+                '\$.indents[0].CashDeviceType';
+          });
+          safeSetState(() {
+            _model.cashdevicemovValueController?.value =
+                '\$.indents[0].CashDeviceMovementCategory';
+          });
+          safeSetState(() {
+            _model.tistypeValueController?.value = '\$.indents[0].iTisType';
+          });
+          safeSetState(() {
+            _model.projecttypeValueController?.value =
+                '\$.indents[0].ProjectTypeName';
+          });
+          safeSetState(() {
+            _model.strategyDropDwonValueController?.value =
+                '\$.indents[0].DOAStrategyName';
+          });
+          safeSetState(() {
+            _model.districtValueController?.value = '\$..indents[0].District';
+          });
+          safeSetState(() {
+            _model.stateValueController?.value = '\$.indents[0].StateName';
+          });
+          safeSetState(() {
+            _model.cityValueController?.value = '\$.indents[0].CityName';
+          });
+          safeSetState(() {
+            _model.circleValueController?.value = '\$.indents[0].Circle';
+          });
+          safeSetState(() {
+            _model.rBICategoryValueController?.value =
+                '\$..indents[0].RBICategoryName';
+          });
+          safeSetState(() {
+            _model.siteSourcedValueController?.value =
+                '\$.indents[0].SiteSourcedBy';
+          });
+        }
+      } else {
+        return;
+      }
+    });
 
     _model.customerbankTextController ??= TextEditingController(
         text: getJsonField(
@@ -67,7 +170,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     _model.mrgNoTextController ??= TextEditingController();
     _model.mrgNoFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -722,7 +825,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.sitetypeValue = val);
+                                safeSetState(() => _model.sitetypeValue = val);
                                 _model.isitetype = functions.checkIndexint(
                                     FFAppState().SiteType,
                                     _model.sitetypeValue,
@@ -730,7 +833,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'SiteTypeName',
                                     'iSiteType',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -790,7 +893,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(
+                                safeSetState(
                                     () => _model.cashdevicetypeValue = val);
                                 _model.idevicetype = functions.checkIndexint(
                                     FFAppState().CashDeviceType,
@@ -799,7 +902,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'CashDeviceType',
                                     'iCashDeviceType',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -859,7 +962,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.cashdevicemovValue = val);
+                                safeSetState(
+                                    () => _model.cashdevicemovValue = val);
                                 _model.icashdevicemov = functions.checkIndexint(
                                     FFAppState().CashDeviceMovementCategory,
                                     _model.cashdevicemovValue,
@@ -867,7 +971,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'CashDeviceMovementCategory',
                                     'iCashDeviceMovementCategory',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -926,7 +1030,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.tistypeValue = val);
+                                safeSetState(() => _model.tistypeValue = val);
                                 _model.itistype = functions.checkIndexint(
                                     FFAppState().TISType,
                                     _model.tistypeValue,
@@ -934,7 +1038,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'TISTypeName',
                                     'iTISType',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -993,7 +1097,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.projecttypeValue = val);
+                                safeSetState(
+                                    () => _model.projecttypeValue = val);
                                 _model.iprojecttype = functions.checkIndexint(
                                     FFAppState().ProjectType,
                                     _model.projecttypeValue,
@@ -1001,7 +1106,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'ProjectTypeName',
                                     'iProjType',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1060,7 +1165,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.businesstypeValue = val);
+                                safeSetState(
+                                    () => _model.businesstypeValue = val);
                                 _model.ishoptype = functions.checkIndexint(
                                     FFAppState().BusinessType,
                                     _model.businesstypeValue,
@@ -1068,7 +1174,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'ShopTypeName',
                                     'iShopType',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1127,7 +1233,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(
+                                safeSetState(
                                     () => _model.strategyDropDwonValue = val);
                                 _model.istrategy = functions.checkIndexint(
                                     FFAppState().Strategy,
@@ -1136,7 +1242,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'Strategy',
                                     'iStrategy',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -1208,8 +1314,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                 ) as List)
                                     .map<String>((s) => s.toString())
                                     .toList()!,
-                                onChanged: (val) =>
-                                    setState(() => _model.poitypeValue = val),
+                                onChanged: (val) => safeSetState(
+                                    () => _model.poitypeValue = val),
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1482,7 +1588,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         (s) => s.toString())
                                                     .toList()!,
                                                 onChanged: (val) async {
-                                                  setState(() => _model
+                                                  safeSetState(() => _model
                                                       .districtValue = val);
                                                   _model.district =
                                                       functions.checkIndex(
@@ -1492,7 +1598,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           'District',
                                                           'DistrictName',
                                                           'iDistrict');
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 },
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -1615,7 +1721,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                       (s) => s.toString())
                                                   .toList()!,
                                               onChanged: (val) async {
-                                                setState(() =>
+                                                safeSetState(() =>
                                                     _model.stateValue = val);
                                                 _model.statefordist =
                                                     functions.checkIndex(
@@ -1625,7 +1731,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         'States',
                                                         'iState',
                                                         'State');
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1755,7 +1861,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                         (s) => s.toString())
                                                     .toList()!,
                                                 onChanged: (val) async {
-                                                  setState(() =>
+                                                  safeSetState(() =>
                                                       _model.cityValue = val);
                                                   _model.trycity = functions
                                                       .istatetostatevalue(
@@ -1764,7 +1870,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                           'Cities',
                                                           'iCity',
                                                           'City');
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 },
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -1951,7 +2057,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) =>
-                                  setState(() => _model.circleValue = val),
+                                  safeSetState(() => _model.circleValue = val),
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
                               textStyle: FlutterFlowTheme.of(context)
@@ -2159,7 +2265,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.rBICategoryValue = val);
+                                safeSetState(
+                                    () => _model.rBICategoryValue = val);
                                 _model.iRBICategory = functions.checkIndexint(
                                     FFAppState().RBICategory,
                                     _model.iRBICategory?.toString(),
@@ -2167,7 +2274,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'Name',
                                     'iCategory',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -2259,9 +2366,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                                   FormFieldController<String>(
                                                       null),
                                               options: ['HPY', 'Bank', 'SSM'],
-                                              onChanged: (val) => setState(() =>
-                                                  _model.siteSourcedValue =
-                                                      val),
+                                              onChanged: (val) => safeSetState(
+                                                  () => _model
+                                                      .siteSourcedValue = val),
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
@@ -2333,13 +2440,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                               FormFieldController<String>(null),
                                           options: ['Onsite', 'Offsite'],
                                           onChanged: (val) async {
-                                            setState(() =>
+                                            safeSetState(() =>
                                                 _model.onofsiteValue = val);
                                             _model.onofSite = functions
                                                 .dropdownsONSITE(
                                                     _model.onofsiteValue!)
                                                 .toString();
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -2552,13 +2659,14 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       FormFieldController<String>(null),
                               options: ['Yes', 'No'],
                               onChanged: (val) async {
-                                setState(() => _model.duplicatesiteValue = val);
+                                safeSetState(
+                                    () => _model.duplicatesiteValue = val);
                                 _model.iduplicatesite = functions
                                     .dropdown(_model.duplicatesiteValue!);
                                 _model.duplicatestring = functions
                                     .dropdown(_model.duplicatesiteValue!)
                                     .toString();
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -2618,7 +2726,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.sitevisitedbyValue = val);
+                                safeSetState(
+                                    () => _model.sitevisitedbyValue = val);
                                 _model.isiteddep = functions.checkIndexint(
                                     FFAppState().SiteVisitedBy,
                                     _model.sitevisitedbyValue,
@@ -2633,7 +2742,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     'Department',
                                     'idepartment',
                                     false);
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 50.0,
@@ -2718,7 +2827,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       .map<String>((s) => s.toString())
                                       .toList()!,
                                   onChanged: (val) async {
-                                    setState(() =>
+                                    safeSetState(() =>
                                         _model.firstsitevisitedbyValue = val);
                                     _model.iSiteVisitedByName =
                                         functions.checkIndexint(
@@ -2729,7 +2838,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             'UserName',
                                             'iUser',
                                             false);
-                                    setState(() {});
+                                    safeSetState(() {});
                                   },
                                   width: 300.0,
                                   height: 56.0,
@@ -2807,7 +2916,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       .map<String>((s) => s.toString())
                                       .toList()!,
                                   onChanged: (val) async {
-                                    setState(() =>
+                                    safeSetState(() =>
                                         _model.secondsitevisitedbyValue = val);
                                     _model.iSecondSiteVisitedByName =
                                         functions.checkIndexint(
@@ -2818,7 +2927,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                             'UserName',
                                             'iUser',
                                             false);
-                                    setState(() {});
+                                    safeSetState(() {});
                                   },
                                   width: 300.0,
                                   height: 56.0,
@@ -3361,7 +3470,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ''),
                                     r'''$.SiteId''',
                                   ).toString();
-                                  setState(() {});
+                                  safeSetState(() {});
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
@@ -3431,7 +3540,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     );
                                   },
                                 );
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
                             } else {
@@ -3896,7 +4005,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ''),
                                     r'''$.SiteId''',
                                   ).toString();
-                                  setState(() {});
+                                  safeSetState(() {});
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
@@ -3969,7 +4078,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                               }
                             }
 
-                            if (_shouldSetState) setState(() {});
+                            if (_shouldSetState) safeSetState(() {});
                           },
                           text: 'Save & Next',
                           options: FFButtonOptions(

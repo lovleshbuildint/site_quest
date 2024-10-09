@@ -28,7 +28,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -231,13 +231,13 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
 
                           _shouldSetState = true;
                           if ((_model.apiResult1j6?.succeeded ?? true)) {
-                            setState(() {});
+                            safeSetState(() {});
                           } else {
-                            if (_shouldSetState) setState(() {});
+                            if (_shouldSetState) safeSetState(() {});
                             return;
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: 'Submit',
                         options: FFButtonOptions(

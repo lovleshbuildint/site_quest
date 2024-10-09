@@ -28,7 +28,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
     super.initState();
     _model = createModel(context, () => OpenSiteCommercialModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -284,7 +284,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                   ),
                   child: wrapWithModel(
                     model: _model.commercialAdvanceModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: CommercialAdvanceWidget(),
                   ),
                 ),
@@ -415,7 +415,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                               ).toString())) {
                                 context.goNamed('indent_site_dimensions');
 
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else {
                                 await showDialog(
@@ -437,11 +437,11 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                     );
                                   },
                                 );
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
 
-                              if (_shouldSetState) setState(() {});
+                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: 'Save & Next',
                             options: FFButtonOptions(

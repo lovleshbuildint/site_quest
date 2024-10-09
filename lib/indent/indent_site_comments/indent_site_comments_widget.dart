@@ -11,7 +11,12 @@ import 'indent_site_comments_model.dart';
 export 'indent_site_comments_model.dart';
 
 class IndentSiteCommentsWidget extends StatefulWidget {
-  const IndentSiteCommentsWidget({super.key});
+  const IndentSiteCommentsWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteCommentsWidget> createState() =>
@@ -31,7 +36,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -753,7 +758,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                 );
                               }
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'Save & Review',
                             options: FFButtonOptions(

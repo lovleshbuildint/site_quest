@@ -14,7 +14,6 @@ class OpenSiteNearestBranchModel
     extends FlutterFlowModel<OpenSiteNearestBranchWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.

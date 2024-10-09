@@ -28,7 +28,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
     super.initState();
     _model = createModel(context, () => OpenSiteNearestAtmModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -324,7 +324,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                   ),
                   child: wrapWithModel(
                     model: _model.nearestatmModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: NearestatmWidget(),
                   ),
                 ),
@@ -460,7 +460,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 );
                               }
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'Save & Next',
                             options: FFButtonOptions(

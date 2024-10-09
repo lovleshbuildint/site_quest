@@ -6,6 +6,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'indent_site_remark_widget.dart' show IndentSiteRemarkWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,8 +14,9 @@ import 'package:provider/provider.dart';
 class IndentSiteRemarkModel extends FlutterFlowModel<IndentSiteRemarkWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - API (DOADetailsstepfive)] action in indent_site_remark widget.
+  ApiCallResponse? apiResultuyr;
   // State field(s) for Remark1 widget.
   FocusNode? remark1FocusNode;
   TextEditingController? remark1TextController;

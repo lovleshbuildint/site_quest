@@ -26,7 +26,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
     super.initState();
     _model = createModel(context, () => OpenSitePhotoModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -315,7 +315,8 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                setState(() => _model.isDataUploading1 = true);
+                                safeSetState(
+                                    () => _model.isDataUploading1 = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 try {
@@ -333,12 +334,12 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                 }
                                 if (selectedUploadedFiles.length ==
                                     selectedMedia.length) {
-                                  setState(() {
+                                  safeSetState(() {
                                     _model.uploadedLocalFile1 =
                                         selectedUploadedFiles.first;
                                   });
                                 } else {
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                               }
@@ -422,7 +423,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     selectedMedia.every((m) =>
                                         validateFileFormat(
                                             m.storagePath, context))) {
-                                  setState(
+                                  safeSetState(
                                       () => _model.isDataUploading2 = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
@@ -443,12 +444,12 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                   }
                                   if (selectedUploadedFiles.length ==
                                       selectedMedia.length) {
-                                    setState(() {
+                                    safeSetState(() {
                                       _model.uploadedLocalFile2 =
                                           selectedUploadedFiles.first;
                                     });
                                   } else {
-                                    setState(() {});
+                                    safeSetState(() {});
                                     return;
                                   }
                                 }
@@ -534,7 +535,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     selectedMedia.every((m) =>
                                         validateFileFormat(
                                             m.storagePath, context))) {
-                                  setState(
+                                  safeSetState(
                                       () => _model.isDataUploading3 = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
@@ -555,12 +556,12 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                   }
                                   if (selectedUploadedFiles.length ==
                                       selectedMedia.length) {
-                                    setState(() {
+                                    safeSetState(() {
                                       _model.uploadedLocalFile3 =
                                           selectedUploadedFiles.first;
                                     });
                                   } else {
-                                    setState(() {});
+                                    safeSetState(() {});
                                     return;
                                   }
                                 }

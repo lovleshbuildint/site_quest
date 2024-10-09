@@ -27,7 +27,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     super.initState();
     _model = createModel(context, () => ProfileModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -198,9 +198,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   .map<String>((s) => s.toString())
                                   .toList()!,
                               onChanged: (val) async {
-                                setState(() => _model.dropDownValue = val);
+                                safeSetState(() => _model.dropDownValue = val);
                                 FFAppState().State = _model.dropDownValue!;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 56.0,
@@ -245,7 +245,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 FFAppState().deleteState();
                                 FFAppState().State = '';
 
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,

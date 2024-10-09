@@ -13,7 +13,6 @@ class OpenSiteNearestAtmModel
     extends FlutterFlowModel<OpenSiteNearestAtmWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
   // Stores action output result for [Backend Call - API (UpdatenearestATM)] action in Button widget.

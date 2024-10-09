@@ -11,10 +11,6 @@ import 'package:provider/provider.dart';
 
 class AnalyticsIndentsPendingsModel
     extends FlutterFlowModel<AnalyticsIndentsPendingsWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
   @override
   void initState(BuildContext context) {}
 

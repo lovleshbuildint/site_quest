@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/landlordform/landlordform_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -14,10 +15,10 @@ export 'indent_site_landlord_details_model.dart';
 class IndentSiteLandlordDetailsWidget extends StatefulWidget {
   const IndentSiteLandlordDetailsWidget({
     super.key,
-    this.siteId,
-  });
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
 
-  final String? siteId;
+  final int siteId;
 
   @override
   State<IndentSiteLandlordDetailsWidget> createState() =>
@@ -35,7 +36,179 @@ class _IndentSiteLandlordDetailsWidgetState
     super.initState();
     _model = createModel(context, () => IndentSiteLandlordDetailsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.siteId > 0) {
+        _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
+          iIndent: widget!.siteId.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultfoa?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.landlordformModel.landoardNameTextController?.text =
+                '\$.indents[0].LandLordName';
+            _model.landlordformModel.landoardNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.landoardNameTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.percentTextController?.text =
+                '\$.indents[0].LandLordPercentage';
+            _model.landlordformModel.percentTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.percentTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.addressTextController?.text =
+                '\$.indents[0].Address1';
+            _model.landlordformModel.addressTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.addressTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.pincodeTextController?.text =
+                '\$.indents[0].Pincode';
+            _model.landlordformModel.pincodeTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.pincodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.landmarksTextController?.text =
+                '\$.indents[0].LandMark';
+            _model.landlordformModel.landmarksTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.landmarksTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.contactNameTextController?.text =
+                '\$.indents[0].Contact1';
+            _model.landlordformModel.contactNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.contactNameTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.alernativenumberTextController?.text =
+                '\$.indents[0].Contact2';
+            _model.landlordformModel.alernativenumberTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .alernativenumberTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.emailidTextController?.text =
+                '\$.indents[0].EmailId';
+            _model.landlordformModel.emailidTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.emailidTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.faxTextController?.text =
+                '\$.indents[0].Fax';
+            _model.landlordformModel.faxTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.faxTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.chequefieldTextController?.text =
+                '\$.indents[0].ChequeInFavour';
+            _model.landlordformModel.chequefieldTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.chequefieldTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.lLchequefieldTextController?.text =
+                '\$.indents[0].LandLordPercentage';
+            _model.landlordformModel.lLchequefieldTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .lLchequefieldTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.bankAccountNumberTextController?.text =
+                '\$.indents[0].AccountNo';
+            _model.landlordformModel.bankAccountNumberTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .bankAccountNumberTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.bankBranchTextController?.text =
+                '\$.indents[0].BranchName';
+            _model.landlordformModel.bankBranchTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.bankBranchTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.iFSCCodeTextController?.text =
+                '\$.indents[0].IFSCCode';
+            _model.landlordformModel.iFSCCodeTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.iFSCCodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.panNumberTextController?.text =
+                '\$.indents[0].PANCard';
+            _model.landlordformModel.panNumberTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.panNumberTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.aAdharcardNoTextController?.text =
+                '\$.indents[0].Aadharcard';
+            _model.landlordformModel.aAdharcardNoTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.aAdharcardNoTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.siteReferralNameTextController?.text =
+                '\$.indents[0].RefeName';
+            _model.landlordformModel.siteReferralNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .siteReferralNameTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.siteReferralNoTextController?.text =
+                '\$.indents[0].RefeId';
+            _model.landlordformModel.siteReferralNoTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .siteReferralNoTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.stateValueController?.value =
+                '\$.indents[0].StateName';
+          });
+          safeSetState(() {
+            _model.landlordformModel.cityValueController?.value =
+                '\$.indents[0].CityName';
+          });
+          safeSetState(() {
+            _model.landlordformModel.landlordBankNameValueController?.value =
+                '\$.indents[0].IndentBank';
+          });
+        }
+      } else {
+        return;
+      }
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -590,7 +763,7 @@ class _IndentSiteLandlordDetailsWidgetState
                       },
                       child: wrapWithModel(
                         model: _model.landlordformModel,
-                        updateCallback: () => setState(() {}),
+                        updateCallback: () => safeSetState(() {}),
                         child: LandlordformWidget(),
                       ),
                     ),
@@ -713,7 +886,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                 _model.please = true;
                                 if (_model.formKey.currentState == null ||
                                     !_model.formKey.currentState!.validate()) {
-                                  setState(() => _model.please = false);
+                                  safeSetState(() => _model.please = false);
                                   return;
                                 }
                                 if (_model.landlordformModel.stateValue ==
@@ -735,7 +908,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     },
                                   );
                                   _model.please = false;
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                                 if (_model.landlordformModel.cityValue ==
@@ -757,7 +930,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     },
                                   );
                                   _model.please = false;
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                                 if (_model.landlordformModel
@@ -781,7 +954,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     },
                                   );
                                   _model.please = false;
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                                 if ((String var1) {
@@ -818,7 +991,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   );
                                 }
 
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

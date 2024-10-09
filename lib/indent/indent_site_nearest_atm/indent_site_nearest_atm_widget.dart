@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestatm/nearestatm_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,12 @@ import 'indent_site_nearest_atm_model.dart';
 export 'indent_site_nearest_atm_model.dart';
 
 class IndentSiteNearestAtmWidget extends StatefulWidget {
-  const IndentSiteNearestAtmWidget({super.key});
+  const IndentSiteNearestAtmWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteNearestAtmWidget> createState() =>
@@ -30,7 +36,10 @@ class _IndentSiteNearestAtmWidgetState
     super.initState();
     _model = createModel(context, () => IndentSiteNearestAtmModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -611,7 +620,7 @@ class _IndentSiteNearestAtmWidgetState
                     ),
                     child: wrapWithModel(
                       model: _model.nearestatmModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: NearestatmWidget(),
                     ),
                   ),
@@ -668,7 +677,7 @@ class _IndentSiteNearestAtmWidgetState
                                     (_model.dOADeatilsseven?.jsonBody ?? ''),
                                     r'''$.indents[0].iDevice''',
                                   ).toString();
-                                  setState(() {});
+                                  safeSetState(() {});
                                   _model.updateNearestATM =
                                       await SqGroup.updatenearestATMCall.call(
                                     indentId: getJsonField(
@@ -789,11 +798,11 @@ class _IndentSiteNearestAtmWidgetState
                                       );
                                     },
                                   );
-                                  if (_shouldSetState) setState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
 
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

@@ -58,7 +58,7 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
     _model.textController7 ??= TextEditingController();
     _model.textFieldFocusNode7 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -502,8 +502,9 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                               'Nashik',
                                               'Other...'
                                             ],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue1 = val),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropDownValue1 =
+                                                    val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -693,8 +694,9 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                                               'Navi Mumbai',
                                               'Other...'
                                             ],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue2 = val),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropDownValue2 =
+                                                    val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -1165,11 +1167,11 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
                               },
                             );
                           } else {
-                            if (_shouldSetState) setState(() {});
+                            if (_shouldSetState) safeSetState(() {});
                             return;
                           }
 
-                          if (_shouldSetState) setState(() {});
+                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

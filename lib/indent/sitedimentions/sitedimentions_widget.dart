@@ -68,7 +68,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
     _model.noteForProjectTISTextController ??= TextEditingController();
     _model.noteForProjectTISFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -100,12 +100,12 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: FlutterFlowRadioButton(
               options: ['Full Shop', 'Shop in Shop'].toList(),
               onChanged: (val) async {
-                setState(() {});
+                safeSetState(() {});
                 _model.shopType = functions.dropdown(((String type) {
                   return type == "Full Shop" ? 1 : 0;
                 }(_model.radioButtonValue!))
                     .toString());
-                setState(() {});
+                safeSetState(() {});
               },
               controller: _model.radioButtonValueController ??=
                   FormFieldController<String>('Full Shop'),
@@ -936,10 +936,10 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
-                setState(() => _model.lShapeSingageValue = val);
+                safeSetState(() => _model.lShapeSingageValue = val);
                 _model.shapeSignage =
                     functions.sitedimensiondropdown(_model.lShapeSingageValue!);
-                setState(() {});
+                safeSetState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -984,10 +984,10 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
-                setState(() => _model.vsatValue = val);
+                safeSetState(() => _model.vsatValue = val);
                 _model.vsat =
                     functions.sitedimensiondropdown(_model.vsatValue!);
-                setState(() {});
+                safeSetState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -1032,10 +1032,10 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
-                setState(() => _model.acODUSpaceValue = val);
+                safeSetState(() => _model.acODUSpaceValue = val);
                 _model.acOduSpace =
                     functions.sitedimensiondropdown(_model.acODUSpaceValue!);
-                setState(() {});
+                safeSetState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -1094,12 +1094,12 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                     FormFieldController<String>(null),
                             options: ['Yes', 'No'],
                             onChanged: (val) async {
-                              setState(
+                              safeSetState(
                                   () => _model.powerAvailabilityValue = val);
                               _model.powerAvailability =
                                   functions.sitedimensiondropdown(
                                       _model.powerAvailabilityValue!);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
@@ -1242,10 +1242,10 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
-                setState(() => _model.totemPoleValue = val);
+                safeSetState(() => _model.totemPoleValue = val);
                 _model.totemPole =
                     functions.sitedimensiondropdown(_model.totemPoleValue!);
-                setState(() {});
+                safeSetState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
@@ -1302,10 +1302,10 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
               onChanged: (val) async {
-                setState(() => _model.rampAvailabilityValue = val);
+                safeSetState(() => _model.rampAvailabilityValue = val);
                 _model.rampAvailability = functions
                     .sitedimensiondropdown(_model.rampAvailabilityValue!);
-                setState(() {});
+                safeSetState(() {});
               },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,

@@ -29,7 +29,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -501,7 +501,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                 );
                               }
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'Save & Review',
                             options: FFButtonOptions(

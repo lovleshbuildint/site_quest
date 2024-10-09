@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/sitedimentions/sitedimentions_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,12 @@ import 'indent_site_dimensions_model.dart';
 export 'indent_site_dimensions_model.dart';
 
 class IndentSiteDimensionsWidget extends StatefulWidget {
-  const IndentSiteDimensionsWidget({super.key});
+  const IndentSiteDimensionsWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteDimensionsWidget> createState() =>
@@ -30,7 +36,116 @@ class _IndentSiteDimensionsWidgetState
     super.initState();
     _model = createModel(context, () => IndentSiteDimensionsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.siteId > 0) {
+        _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
+          iIndent: widget!.siteId.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.dOADFour?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.sitedimentionsModel.totalShopAreaTextController?.text =
+                '\$.indents[0].TotalShopArea';
+            _model.sitedimentionsModel.totalShopAreaTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .totalShopAreaTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
+                '\$.indents[0].OfferedShopArea';
+            _model.sitedimentionsModel.totalAreaOfferedTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .totalAreaOfferedTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.carpetAreaTextController?.text =
+                '\$.indents[0].CarpetArea';
+            _model.sitedimentionsModel.carpetAreaTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.carpetAreaTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.shopDepthTextController?.text =
+                '\$.indents[0].ShopDepth';
+            _model.sitedimentionsModel.shopDepthTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.shopDepthTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.shopWidthTextController?.text =
+                '\$.indents[0].ShopWidth';
+            _model.sitedimentionsModel.shopWidthTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.shopWidthTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.shopHeightTextController?.text =
+                '\$.indents[0].ShopHeight';
+            _model.sitedimentionsModel.shopHeightTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.shopHeightTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.totalFrontageTextController?.text =
+                '\$.indents[0].TotalFrontage';
+            _model.sitedimentionsModel.totalFrontageTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .totalFrontageTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.frontageOfferedTextController?.text =
+                '\$.indents[0].OfferedFrontage';
+            _model.sitedimentionsModel.frontageOfferedTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .frontageOfferedTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.singageWidthTextController?.text =
+                '\$.indents[0].SignageWidth';
+            _model.sitedimentionsModel.singageWidthTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .singageWidthTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.singageHeightTextController?.text =
+                '\$.indents[0].SignageHeight';
+            _model.sitedimentionsModel.singageHeightTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .singageHeightTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.noofHoursTextController?.text =
+                '\$.indents[0].SavedTime';
+            _model.sitedimentionsModel.noofHoursTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.noofHoursTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.powerAvailabilityValueController?.value =
+                '\$.indents[0].PowerAvailHours';
+          });
+        }
+      } else {
+        return;
+      }
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -569,7 +684,7 @@ class _IndentSiteDimensionsWidgetState
                     ),
                     child: wrapWithModel(
                       model: _model.sitedimentionsModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: SitedimentionsWidget(),
                     ),
                   ),
@@ -823,7 +938,7 @@ class _IndentSiteDimensionsWidgetState
                                   );
                                 }
 
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

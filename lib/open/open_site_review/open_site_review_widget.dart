@@ -24,7 +24,7 @@ class _OpenSiteReviewWidgetState extends State<OpenSiteReviewWidget> {
     super.initState();
     _model = createModel(context, () => OpenSiteReviewModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

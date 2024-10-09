@@ -12,7 +12,6 @@ import 'package:provider/provider.dart';
 class OpenSiteRemarkModel extends FlutterFlowModel<OpenSiteRemarkWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Remark1 widget.
   FocusNode? remark1FocusNode;
   TextEditingController? remark1TextController;

@@ -24,7 +24,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
     super.initState();
     _model = createModel(context, () => IndentSiteReviewModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

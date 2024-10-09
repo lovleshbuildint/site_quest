@@ -49,7 +49,7 @@ class _ReferalSurveyDetailsWidgetState
     _model.textController7 ??= TextEditingController();
     _model.textFieldFocusNode6 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

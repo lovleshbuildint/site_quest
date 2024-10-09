@@ -14,7 +14,6 @@ class ReferalSiteDetailsModel
     extends FlutterFlowModel<ReferalSiteDetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;

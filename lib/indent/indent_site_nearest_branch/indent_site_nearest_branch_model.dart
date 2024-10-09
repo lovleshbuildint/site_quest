@@ -8,6 +8,7 @@ import 'indent_site_nearest_branch_widget.dart'
     show IndentSiteNearestBranchWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +17,9 @@ class IndentSiteNearestBranchModel
     extends FlutterFlowModel<IndentSiteNearestBranchWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - API (DOADetailsstepfive)] action in indent_site_nearest_branch widget.
+  ApiCallResponse? apiResultuyr;
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.

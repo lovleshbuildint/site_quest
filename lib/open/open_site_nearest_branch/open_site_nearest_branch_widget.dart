@@ -31,7 +31,7 @@ class _OpenSiteNearestBranchWidgetState
     super.initState();
     _model = createModel(context, () => OpenSiteNearestBranchModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -285,7 +285,7 @@ class _OpenSiteNearestBranchWidgetState
                   ),
                   child: wrapWithModel(
                     model: _model.nearestbranchModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: NearestbranchWidget(),
                   ),
                 ),
@@ -418,7 +418,7 @@ class _OpenSiteNearestBranchWidgetState
                                 );
                               }
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'Save & Next',
                             options: FFButtonOptions(

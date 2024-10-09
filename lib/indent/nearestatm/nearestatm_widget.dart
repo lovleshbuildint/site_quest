@@ -55,7 +55,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
     _model.avgOffusTextController ??= TextEditingController();
     _model.avgOffusFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -165,7 +165,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               ) as List)
                   .map<String>((s) => s.toString())
                   .toList()!,
-              onChanged: (val) => setState(() => _model.aTMNameValue = val),
+              onChanged: (val) => safeSetState(() => _model.aTMNameValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               searchHintTextStyle:
@@ -217,9 +217,9 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
           FlutterFlowRadioButton(
             options: ['ONSITE', 'OFFSITE'].toList(),
             onChanged: (val) async {
-              setState(() {});
+              safeSetState(() {});
               _model.atmStatus = functions.radioButton(_model.aTMSTatusValue!);
-              setState(() {});
+              safeSetState(() {});
             },
             controller: _model.aTMSTatusValueController ??=
                 FormFieldController<String>('ONSITE'),
@@ -260,7 +260,8 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               controller: _model.hitachiATMValueController ??=
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
-              onChanged: (val) => setState(() => _model.hitachiATMValue = val),
+              onChanged: (val) =>
+                  safeSetState(() => _model.hitachiATMValue = val),
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -781,7 +782,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isDataUploading = true);
+                          safeSetState(() => _model.isDataUploading = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
 
                           try {
@@ -799,12 +800,12 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                           }
                           if (selectedUploadedFiles.length ==
                               selectedMedia.length) {
-                            setState(() {
+                            safeSetState(() {
                               _model.uploadedLocalFile =
                                   selectedUploadedFiles.first;
                             });
                           } else {
-                            setState(() {});
+                            safeSetState(() {});
                             return;
                           }
                         }

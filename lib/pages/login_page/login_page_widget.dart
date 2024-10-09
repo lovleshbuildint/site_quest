@@ -40,7 +40,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -271,7 +271,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       .fromSTEB(16.0, 24.0,
                                                           24.0, 24.0),
                                               suffixIcon: InkWell(
-                                                onTap: () => setState(
+                                                onTap: () => safeSetState(
                                                   () => _model
                                                           .passwordVisibility =
                                                       !_model
@@ -327,7 +327,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           onTap: () async {
                                             FFAppState().Token =
                                                 '185CBA82-24DB-4728-A6E5-9675ED7A055B';
-                                            setState(() {});
+                                            safeSetState(() {});
 
                                             context.goNamed('MainPage');
                                           },
@@ -394,7 +394,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     ''),
                                                 r'''$.Token''',
                                               ).toString();
-                                              setState(() {});
+                                              safeSetState(() {});
                                               if (FFAppState().Token == '') {
                                                 await showDialog(
                                                   context: context,
@@ -418,12 +418,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 FFAppState().deleteToken();
                                                 FFAppState().Token = '';
 
-                                                setState(() {});
+                                                safeSetState(() {});
                                               } else {
                                                 FFAppState().UserName = _model
                                                     .emailAddressTextController
                                                     .text;
-                                                setState(() {});
+                                                safeSetState(() {});
 
                                                 context.goNamed(
                                                   'MainPage',
@@ -515,11 +515,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               ),
                                             );
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           }
 
-                                          if (_shouldSetState) setState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                         },
                                         text: 'Login',
                                         options: FFButtonOptions(

@@ -28,7 +28,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
     super.initState();
     _model = createModel(context, () => OpenSiteDimensionsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -284,7 +284,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                   ),
                   child: wrapWithModel(
                     model: _model.sitedimentionsModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: SitedimentionsWidget(),
                   ),
                 ),
@@ -437,7 +437,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 );
                               }
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'Save & Next',
                             options: FFButtonOptions(

@@ -11,10 +11,6 @@ import 'package:provider/provider.dart';
 
 class AnalyticsOverviewUnderprocessModel
     extends FlutterFlowModel<AnalyticsOverviewUnderprocessWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
   @override
   void initState(BuildContext context) {}
 

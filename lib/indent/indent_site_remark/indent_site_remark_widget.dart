@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,12 @@ import 'indent_site_remark_model.dart';
 export 'indent_site_remark_model.dart';
 
 class IndentSiteRemarkWidget extends StatefulWidget {
-  const IndentSiteRemarkWidget({super.key});
+  const IndentSiteRemarkWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteRemarkWidget> createState() => _IndentSiteRemarkWidgetState();
@@ -29,6 +35,46 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
     super.initState();
     _model = createModel(context, () => IndentSiteRemarkModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.siteId > 0) {
+        _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
+          iIndent: widget!.siteId.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultuyr?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.remark1TextController?.text = '\$.indents[0].Remarks1';
+            _model.remark1TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark1TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark2TextController?.text = '\$.indents[0].Remarks2';
+            _model.remark2TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark2TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark3TextController?.text = '\$.indents[0].Remarks3';
+            _model.remark3TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark3TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark4TextController?.text = '\$.indents[0].Remarks4';
+            _model.remark4TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark4TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark5TextController?.text = '\$..indents[0].Remarks5';
+            _model.remark5TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark5TextController!.text.length);
+          });
+        }
+      } else {
+        return;
+      }
+    });
+
     _model.remark1TextController ??= TextEditingController();
     _model.remark1FocusNode ??= FocusNode();
 
@@ -44,7 +90,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
     _model.remark5TextController ??= TextEditingController();
     _model.remark5FocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -670,7 +716,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               onFieldSubmitted: (_) async {
                                 FFAppState().Remark1 =
                                     _model.remark1TextController.text;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -734,7 +780,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               onFieldSubmitted: (_) async {
                                 FFAppState().Remark2 =
                                     _model.remark2TextController.text;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -798,7 +844,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               onFieldSubmitted: (_) async {
                                 FFAppState().Remark3 =
                                     _model.remark3TextController.text;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -862,7 +908,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               onFieldSubmitted: (_) async {
                                 FFAppState().Remark4 =
                                     _model.remark4TextController.text;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -926,7 +972,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                               onFieldSubmitted: (_) async {
                                 FFAppState().Remark5 =
                                     _model.remark5TextController.text;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
@@ -1116,7 +1162,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                                   );
                                 }
 
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               text: 'Save & Review',
                               options: FFButtonOptions(

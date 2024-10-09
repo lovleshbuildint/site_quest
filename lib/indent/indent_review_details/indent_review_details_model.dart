@@ -10,10 +10,6 @@ import 'package:provider/provider.dart';
 
 class IndentReviewDetailsModel
     extends FlutterFlowModel<IndentReviewDetailsWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
   @override
   void initState(BuildContext context) {}
 

@@ -40,7 +40,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.rbiresponse?.succeeded ?? true)) {
             FFAppState().RBICategory = (_model.rbiresponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -69,7 +69,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               true)) {
             FFAppState().SiteType =
                 (_model.getsitetypeforsiteevaluationresponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -98,7 +98,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.getcashdeviceapi?.succeeded ?? true)) {
             FFAppState().CashDeviceType =
                 (_model.getcashdeviceapi?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -126,7 +126,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.getProjecTypeResponse?.succeeded ?? true)) {
             FFAppState().ProjectType =
                 (_model.getProjecTypeResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -156,7 +156,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
               true)) {
             FFAppState().CashDeviceMovementCategory =
                 (_model.getCashDeviceMovementCategoryResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -186,7 +186,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.getShopTypeSiteResponse?.succeeded ?? true)) {
             FFAppState().BusinessType =
                 (_model.getShopTypeSiteResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -213,7 +213,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.straegtyResponse?.succeeded ?? true)) {
             FFAppState().Strategy = (_model.straegtyResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -241,7 +241,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             FFAppState().State =
                 (_model.stateResponse?.jsonBody ?? '').toString();
             FFAppState().Stateapi = (_model.stateResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -267,7 +267,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.circelResponse?.succeeded ?? true)) {
             FFAppState().Circle = (_model.circelResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -291,7 +291,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.getindentBank?.succeeded ?? true)) {
             FFAppState().getindentBank = (_model.getindentBank?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -317,7 +317,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.tisResponse?.succeeded ?? true)) {
             FFAppState().TISType = (_model.tisResponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -343,7 +343,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.poiType?.succeeded ?? true)) {
             FFAppState().POIList = (_model.poiType?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -368,7 +368,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.getCustomerBank?.succeeded ?? true)) {
             FFAppState().getCustomerbank =
                 (_model.getCustomerBank?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -394,7 +394,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.cityresponse?.succeeded ?? true)) {
             FFAppState().City = (_model.cityresponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -422,7 +422,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.getsitevisitedbydeptapiresponse?.succeeded ?? true)) {
             FFAppState().SiteVisitedBy =
                 (_model.getsitevisitedbydeptapiresponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -449,7 +449,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
           if ((_model.listsitesresponse?.succeeded ?? true)) {
             FFAppState().Listsite = (_model.listsitesresponse?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -477,7 +477,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.secondsiteVisiterNew?.succeeded ?? true)) {
             FFAppState().secondsitevisiterNew =
                 (_model.secondsiteVisiterNew?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -505,7 +505,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           if ((_model.apiResultsitevisitedbydept?.succeeded ?? true)) {
             FFAppState().visitedbydeptapi =
                 (_model.apiResultsitevisitedbydept?.jsonBody ?? '');
-            setState(() {});
+            safeSetState(() {});
           } else {
             await showDialog(
               context: context,
@@ -528,7 +528,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
       ]);
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -728,13 +728,13 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           isSearchable: true,
                                           isMultiSelect: true,
                                           onMultiSelectChanged: (val) async {
-                                            setState(() =>
+                                            safeSetState(() =>
                                                 _model.dropDownValue = val);
                                             FFAppState().istate = _model
                                                 .dropDownValue!
                                                 .toList()
                                                 .cast<String>();
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                         );
                                       },

@@ -56,7 +56,6 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for CustomerBank widget.
   String? customerBankValue;
   FormFieldController<String>? customerBankValueController;

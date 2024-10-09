@@ -11,7 +11,6 @@ import 'package:provider/provider.dart';
 class OpenSitePhotoModel extends FlutterFlowModel<OpenSitePhotoWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));

@@ -58,7 +58,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
     _model.textController9 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -696,8 +696,9 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                               _model.dropDownValue1 ??= 'Name',
                                             ),
                                             options: ['Name'],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue1 = val),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropDownValue1 =
+                                                    val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -814,8 +815,9 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                               _model.dropDownValue2 ??= 'Name',
                                             ),
                                             options: ['Name', 'Other...'],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue2 = val),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropDownValue2 =
+                                                    val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
@@ -1106,8 +1108,9 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                               _model.dropDownValue3 ??= 'Name',
                                             ),
                                             options: ['Name', 'Other...'],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue3 = val),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropDownValue3 =
+                                                    val),
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,

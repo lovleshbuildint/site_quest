@@ -13,7 +13,6 @@ class OpenSiteDimensionsModel
     extends FlutterFlowModel<OpenSiteDimensionsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sitedimentions component.
   late SitedimentionsModel sitedimentionsModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfour)] action in Button widget.

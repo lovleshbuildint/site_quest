@@ -6,6 +6,7 @@ import '/indent/nearestbranch/nearestbranch_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,12 @@ import 'indent_site_nearest_branch_model.dart';
 export 'indent_site_nearest_branch_model.dart';
 
 class IndentSiteNearestBranchWidget extends StatefulWidget {
-  const IndentSiteNearestBranchWidget({super.key});
+  const IndentSiteNearestBranchWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteNearestBranchWidget> createState() =>
@@ -32,7 +38,29 @@ class _IndentSiteNearestBranchWidgetState
     super.initState();
     _model = createModel(context, () => IndentSiteNearestBranchModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.siteId > 0) {
+        _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
+          iIndent: widget!.siteId.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultuyr?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.nearestbranchModel.cRACoverageValueController?.value =
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Is_CRACoverage''',
+            ).toString().toString()));
+          });
+        }
+      }
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -571,7 +599,7 @@ class _IndentSiteNearestBranchWidgetState
                     ),
                     child: wrapWithModel(
                       model: _model.nearestbranchModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: NearestbranchWidget(),
                     ),
                   ),
@@ -698,7 +726,7 @@ class _IndentSiteNearestBranchWidgetState
                                   );
                                 }
 
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

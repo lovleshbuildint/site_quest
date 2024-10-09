@@ -29,7 +29,7 @@ class _OpenSiteLandlordDetailsWidgetState
     super.initState();
     _model = createModel(context, () => OpenSiteLandlordDetailsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -337,7 +337,7 @@ class _OpenSiteLandlordDetailsWidgetState
                     ),
                     child: wrapWithModel(
                       model: _model.landlordformModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: LandlordformWidget(),
                     ),
                   ),
@@ -489,7 +489,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                   );
                                 }
 
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

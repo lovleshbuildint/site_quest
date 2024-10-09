@@ -11,7 +11,12 @@ import 'indent_site_photo_model.dart';
 export 'indent_site_photo_model.dart';
 
 class IndentSitePhotoWidget extends StatefulWidget {
-  const IndentSitePhotoWidget({super.key});
+  const IndentSitePhotoWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSitePhotoWidget> createState() => _IndentSitePhotoWidgetState();
@@ -27,7 +32,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
     super.initState();
     _model = createModel(context, () => IndentSitePhotoModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -566,7 +571,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                     selectedMedia.every((m) =>
                                         validateFileFormat(
                                             m.storagePath, context))) {
-                                  setState(
+                                  safeSetState(
                                       () => _model.isDataUploading1 = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
@@ -587,12 +592,12 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                   }
                                   if (selectedUploadedFiles.length ==
                                       selectedMedia.length) {
-                                    setState(() {
+                                    safeSetState(() {
                                       _model.uploadedLocalFile1 =
                                           selectedUploadedFiles.first;
                                     });
                                   } else {
-                                    setState(() {});
+                                    safeSetState(() {});
                                     return;
                                   }
                                 }
@@ -677,7 +682,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                       selectedMedia.every((m) =>
                                           validateFileFormat(
                                               m.storagePath, context))) {
-                                    setState(
+                                    safeSetState(
                                         () => _model.isDataUploading2 = true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
@@ -699,12 +704,12 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                     }
                                     if (selectedUploadedFiles.length ==
                                         selectedMedia.length) {
-                                      setState(() {
+                                      safeSetState(() {
                                         _model.uploadedLocalFile2 =
                                             selectedUploadedFiles.first;
                                       });
                                     } else {
-                                      setState(() {});
+                                      safeSetState(() {});
                                       return;
                                     }
                                   }
@@ -792,7 +797,7 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                       selectedMedia.every((m) =>
                                           validateFileFormat(
                                               m.storagePath, context))) {
-                                    setState(
+                                    safeSetState(
                                         () => _model.isDataUploading3 = true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
@@ -814,12 +819,12 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                     }
                                     if (selectedUploadedFiles.length ==
                                         selectedMedia.length) {
-                                      setState(() {
+                                      safeSetState(() {
                                         _model.uploadedLocalFile3 =
                                             selectedUploadedFiles.first;
                                       });
                                     } else {
-                                      setState(() {});
+                                      safeSetState(() {});
                                       return;
                                     }
                                   }

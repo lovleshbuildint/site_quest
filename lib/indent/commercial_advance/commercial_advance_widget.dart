@@ -47,7 +47,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
     _model.balanceAmountAdvanceTextController ??= TextEditingController();
     _model.balanceAmountAdvanceFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,7 +76,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
             ),
             FlutterFlowRadioButton(
               options: ['Advance Rent', 'Security Deposit'].toList(),
-              onChanged: (val) => setState(() {}),
+              onChanged: (val) => safeSetState(() {}),
               controller: _model.rentaltypeValueController ??=
                   FormFieldController<String>('Advance Rent'),
               optionHeight: 32.0,
@@ -128,7 +128,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               '_model.advanceRentAmountRENTTextController',
                               Duration(milliseconds: 0),
                               () async {
-                                setState(() {
+                                safeSetState(() {
                                   _model
                                       .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                                       ?.text = ((int.tryParse((_model
@@ -238,7 +238,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '150',
                         '365'
                       ],
-                      onChanged: (val) => setState(
+                      onChanged: (val) => safeSetState(
                           () => _model.rentFreePeriodAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
@@ -304,9 +304,9 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model
+                        safeSetState(() => _model
                             .advanceRentMonthRentOrSecurityMonthsValue = val);
-                        setState(() {
+                        safeSetState(() {
                           _model
                               .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                               ?.text = ((int.tryParse((_model
@@ -379,7 +379,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (_) => EasyDebounce.debounce(
                         '_model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController',
                         Duration(milliseconds: 1),
-                        () => setState(() {}),
+                        () => safeSetState(() {}),
                       ),
                       autofocus: false,
                       textCapitalization: TextCapitalization.words,
@@ -465,8 +465,8 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '12'
                       ],
                       onChanged: (val) async {
-                        setState(() => _model.intialAdvanceValue = val);
-                        setState(() {
+                        safeSetState(() => _model.intialAdvanceValue = val);
+                        safeSetState(() {
                           _model.advanceAmountAdvanceTextController
                               ?.text = ((int.tryParse(
                                           (_model.intialAdvanceValue!)) ??
@@ -483,7 +483,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       .text
                                       .length);
                         });
-                        setState(() {
+                        safeSetState(() {
                           _model.balanceAmountAdvanceTextController
                               ?.text = ((int.tryParse(_model
                                           .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
@@ -563,7 +563,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.advanceAmountAdvanceTextController',
                                       Duration(milliseconds: 1),
-                                      () => setState(() {}),
+                                      () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
                                     textCapitalization:
@@ -660,7 +660,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.balanceAmountAdvanceTextController',
                                       Duration(milliseconds: 1),
-                                      () => setState(() {}),
+                                      () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
                                     textCapitalization:
@@ -749,7 +749,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       controller: _model.rentEscaltionAdvanceValueController ??=
                           FormFieldController<String>(null),
                       options: ['0', '5', '10', '15', '20', '25'],
-                      onChanged: (val) => setState(
+                      onChanged: (val) => safeSetState(
                           () => _model.rentEscaltionAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
@@ -808,7 +808,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '8',
                         '9'
                       ],
-                      onChanged: (val) => setState(
+                      onChanged: (val) => safeSetState(
                           () => _model.escalationPeriodAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
@@ -868,7 +868,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '9',
                         '10'
                       ],
-                      onChanged: (val) => setState(
+                      onChanged: (val) => safeSetState(
                           () => _model.agreementPeriodsAdvanceValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
@@ -919,10 +919,10 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                           child: FlutterFlowRadioButton(
                             options: ['Yes', 'No'].toList(),
                             onChanged: (val) async {
-                              setState(() {});
+                              safeSetState(() {});
                               _model.ebilling = functions
                                   .dropdown(_model.eBillingRentAdvanceValue!);
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             controller:
                                 _model.eBillingRentAdvanceValueController ??=

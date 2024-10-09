@@ -43,7 +43,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
     _model.remark5TextController ??= TextEditingController();
     _model.remark5FocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -366,7 +366,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             onFieldSubmitted: (_) async {
                               FFAppState().Remark1open =
                                   FFAppState().Remark1open;
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -430,7 +430,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             onFieldSubmitted: (_) async {
                               FFAppState().Remark2open =
                                   FFAppState().Remark2open;
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -494,7 +494,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             onFieldSubmitted: (_) async {
                               FFAppState().Remark3open =
                                   FFAppState().Remark3open;
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -558,7 +558,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             onFieldSubmitted: (_) async {
                               FFAppState().Remark4open =
                                   FFAppState().Remark4open;
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -622,7 +622,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                             onFieldSubmitted: (_) async {
                               FFAppState().Remark5open =
                                   FFAppState().Remark5open;
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             textCapitalization: TextCapitalization.words,
@@ -813,7 +813,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                 );
                               }
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'Save & Review',
                             options: FFButtonOptions(

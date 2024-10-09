@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/commercial_advance/commercial_advance_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,12 @@ import 'indent_site_commercial_model.dart';
 export 'indent_site_commercial_model.dart';
 
 class IndentSiteCommercialWidget extends StatefulWidget {
-  const IndentSiteCommercialWidget({super.key});
+  const IndentSiteCommercialWidget({
+    super.key,
+    int? siteId,
+  }) : this.siteId = siteId ?? 0;
+
+  final int siteId;
 
   @override
   State<IndentSiteCommercialWidget> createState() =>
@@ -30,7 +36,10 @@ class _IndentSiteCommercialWidgetState
     super.initState();
     _model = createModel(context, () => IndentSiteCommercialModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -533,7 +542,7 @@ class _IndentSiteCommercialWidgetState
                     ),
                     child: wrapWithModel(
                       model: _model.commercialAdvanceModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: CommercialAdvanceWidget(),
                     ),
                   ),
@@ -757,7 +766,7 @@ class _IndentSiteCommercialWidgetState
                                 ).toString())) {
                                   context.goNamed('indent_site_dimensions');
 
-                                  if (_shouldSetState) setState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 } else {
                                   await showDialog(
@@ -779,11 +788,11 @@ class _IndentSiteCommercialWidgetState
                                       );
                                     },
                                   );
-                                  if (_shouldSetState) setState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
 
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

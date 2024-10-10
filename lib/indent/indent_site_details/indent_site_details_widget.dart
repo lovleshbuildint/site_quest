@@ -3471,13 +3471,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.SiteId''',
                                   ).toString();
                                   safeSetState(() {});
-                                  FFAppState().siteidint = getJsonField(
-                                    (_model.updateDOAdetailsfirstdept
-                                            ?.jsonBody ??
-                                        ''),
-                                    r'''$.SiteId''',
-                                  );
-                                  safeSetState(() {});
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
@@ -4014,12 +4007,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                         ''),
                                     r'''$.SiteId''',
                                   ).toString();
-                                  safeSetState(() {});
-                                  FFAppState().siteidint = getJsonField(
-                                    (_model.updateDOAdetailsfirst?.jsonBody ??
-                                        ''),
-                                    r'''$.SiteId''',
-                                  );
                                   safeSetState(() {});
                                   await showDialog(
                                     context: context,

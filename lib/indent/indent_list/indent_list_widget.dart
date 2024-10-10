@@ -368,6 +368,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                         r'''$.indents''',
                                                       ))!;
                                               safeSetState(() {});
+                                              FFAppState().siteidint = 0;
+                                              safeSetState(() {});
                                             },
                                             child: Container(
                                               width: 100.0,

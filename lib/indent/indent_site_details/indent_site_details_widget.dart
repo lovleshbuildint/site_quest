@@ -3105,8 +3105,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.IndentId''',
                                   ).toString(),
                                   targetBank: null,
-                                  siteId: widget!.siteId > 0
-                                      ? widget!.siteId.toString()
+                                  siteId: FFAppState().siteidint > 0
+                                      ? FFAppState().siteidint.toString()
                                       : null,
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,
@@ -3650,8 +3650,8 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                     r'''$.IndentId''',
                                   ).toString(),
                                   targetBank: null,
-                                  siteId: widget!.siteId > 0
-                                      ? widget!.siteId.toString()
+                                  siteId: FFAppState().siteidint > 0
+                                      ? FFAppState().siteidint.toString()
                                       : null,
                                   iindent: null,
                                   mgrName: _model.mrgNameTextController.text,

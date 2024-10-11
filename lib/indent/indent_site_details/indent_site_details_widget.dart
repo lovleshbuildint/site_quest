@@ -4003,12 +4003,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       ''),
                                   r'''$.Msg''',
                                 ).toString())) {
-                                  FFAppState().SiteId = getJsonField(
+                                  FFAppState().siteidint =
+                                      int.parse(getJsonField(
                                     (_model.updateDOAdetailsfirst?.jsonBody ??
                                         ''),
                                     r'''$.SiteId''',
-                                  ).toString();
-                                  safeSetState(() {});
+                                  ).toString());
+                                  FFAppState().update(() {});
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {

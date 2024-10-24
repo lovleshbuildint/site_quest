@@ -276,7 +276,7 @@ class _IndentSiteLandlordDetailsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFAppState().SiteId,
+                                FFAppState().siteidint.toString(),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -856,7 +856,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   contactNumber: null,
                                   chequePercent: _model.landlordformModel
                                       .percentTextController.text,
-                                  siteId: FFAppState().SiteId,
+                                  siteId: FFAppState().siteidint.toString(),
                                   iindent: null,
                                   targetBank: null,
                                   centres: null,

@@ -169,8 +169,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
 
     _model.mrgNoTextController ??= TextEditingController();
     _model.mrgNoFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

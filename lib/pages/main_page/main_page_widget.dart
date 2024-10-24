@@ -527,8 +527,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         }),
       ]);
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -25,8 +25,6 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSitePhotoModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

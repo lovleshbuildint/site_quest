@@ -24,8 +24,6 @@ class _HoldListWidgetState extends State<HoldListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HoldListModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

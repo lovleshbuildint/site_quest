@@ -25,8 +25,6 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SubmitedListModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

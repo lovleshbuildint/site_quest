@@ -59,8 +59,6 @@ class _IndentSiteNearestBranchWidgetState
         }
       }
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

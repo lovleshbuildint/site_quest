@@ -144,8 +144,6 @@ class _IndentSiteDimensionsWidgetState
         return;
       }
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

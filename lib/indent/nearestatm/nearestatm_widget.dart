@@ -54,8 +54,6 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
 
     _model.avgOffusTextController ??= TextEditingController();
     _model.avgOffusFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

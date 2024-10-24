@@ -57,8 +57,6 @@ class _ReferalSiteDetailsWidgetState extends State<ReferalSiteDetailsWidget> {
 
     _model.textController7 ??= TextEditingController();
     _model.textFieldFocusNode7 ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

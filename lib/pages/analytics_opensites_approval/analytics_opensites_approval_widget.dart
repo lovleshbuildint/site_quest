@@ -27,8 +27,6 @@ class _AnalyticsOpensitesApprovalWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AnalyticsOpensitesApprovalModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

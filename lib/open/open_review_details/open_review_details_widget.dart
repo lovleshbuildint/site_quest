@@ -26,8 +26,6 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenReviewDetailsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -27,8 +27,6 @@ class _AnalyticsIndentsRejectedWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AnalyticsIndentsRejectedModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -43,8 +43,6 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
 
     _model.videoURLTextController ??= TextEditingController();
     _model.videoURLFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

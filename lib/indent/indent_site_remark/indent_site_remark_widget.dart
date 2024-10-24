@@ -89,8 +89,6 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
 
     _model.remark5TextController ??= TextEditingController();
     _model.remark5FocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

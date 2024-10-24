@@ -27,8 +27,6 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteDimensionsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

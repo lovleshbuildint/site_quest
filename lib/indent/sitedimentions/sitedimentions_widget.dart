@@ -67,8 +67,6 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
 
     _model.noteForProjectTISTextController ??= TextEditingController();
     _model.noteForProjectTISFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

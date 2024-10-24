@@ -46,8 +46,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
 
     _model.balanceAmountAdvanceTextController ??= TextEditingController();
     _model.balanceAmountAdvanceFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -30,8 +30,6 @@ class _OpenSiteNearestBranchWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteNearestBranchModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

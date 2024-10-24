@@ -28,8 +28,6 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -49,8 +49,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
     _model.mangerNumberTextController ??= TextEditingController();
     _model.mangerNumberFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

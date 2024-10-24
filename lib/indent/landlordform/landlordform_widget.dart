@@ -90,8 +90,6 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
 
     _model.siteReferralNoTextController ??= TextEditingController();
     _model.siteReferralNoFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

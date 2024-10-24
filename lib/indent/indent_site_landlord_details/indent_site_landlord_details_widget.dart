@@ -207,8 +207,6 @@ class _IndentSiteLandlordDetailsWidgetState
         return;
       }
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

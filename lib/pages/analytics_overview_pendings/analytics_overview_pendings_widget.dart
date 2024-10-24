@@ -27,8 +27,6 @@ class _AnalyticsOverviewPendingsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AnalyticsOverviewPendingsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

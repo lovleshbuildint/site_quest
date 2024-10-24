@@ -28,8 +28,6 @@ class _OpenSiteLandlordDetailsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteLandlordDetailsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -856,7 +856,9 @@ class _IndentSiteLandlordDetailsWidgetState
                                   contactNumber: null,
                                   chequePercent: _model.landlordformModel
                                       .percentTextController.text,
-                                  siteId: FFAppState().siteidint.toString(),
+                                  siteId: FFAppState().siteidint > 0
+                                      ? FFAppState().siteidint.toString()
+                                      : null,
                                   iindent: null,
                                   targetBank: null,
                                   centres: null,

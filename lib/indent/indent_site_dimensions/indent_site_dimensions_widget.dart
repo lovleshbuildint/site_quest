@@ -38,7 +38,7 @@ class _IndentSiteDimensionsWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.siteId > 0) {
+      if (FFAppState().siteidint > 0) {
         _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
           iIndent: widget!.siteId.toString(),
           token: FFAppState().Token,
@@ -138,6 +138,22 @@ class _IndentSiteDimensionsWidgetState
           safeSetState(() {
             _model.sitedimentionsModel.powerAvailabilityValueController?.value =
                 '\$.indents[0].PowerAvailHours';
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.lShapeSingageValueController?.value =
+                '\$.indents[0].Is_L_Shape';
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.vsatValueController?.value =
+                '\$.indents[0].Is_VSAT';
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.acODUSpaceValueController?.value =
+                '\$.indents[0].Is_AC_ODU';
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.totemPoleValueController?.value =
+                '\$.indents[0].IsTotempole';
           });
         }
       } else {

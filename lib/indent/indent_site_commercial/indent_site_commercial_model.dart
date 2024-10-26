@@ -16,6 +16,8 @@ class IndentSiteCommercialModel
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - API (UpdateDOADetailsthree)] action in indent_site_commercial widget.
+  ApiCallResponse? apiResultuyr;
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.

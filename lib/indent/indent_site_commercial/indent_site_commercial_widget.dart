@@ -37,7 +37,95 @@ class _IndentSiteCommercialWidgetState
     _model = createModel(context, () => IndentSiteCommercialModel());
 
     // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().siteidint > 0) {
+        _model.apiResultuyr = await SqGroup.updateDOADetailsthreeCall.call();
+
+        if ((_model.apiResultuyr?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentaltypeValueController?.value =
+                '\$.indents[0].isAdvance';
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.eBillingRentAdvanceValueController
+                ?.value = '\$.indents[0].isEnclEB';
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                ?.text = '\$.indents[0].Rent';
+            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.commercialAdvanceModel
+                        .advanceRentAmountRENTTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentFreePeriodAdvanceValueController
+                ?.value = '\$.indents[0].RentFreePeriod';
+          });
+          safeSetState(() {
+            _model
+                .commercialAdvanceModel
+                .advanceRentMonthRentOrSecurityMonthsValueController
+                ?.value = '\$.indents[0].EscalationPeriod';
+          });
+          safeSetState(() {
+            _model
+                .commercialAdvanceModel
+                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                ?.text = '\$.indents[0].TotalDeposit';
+            _model
+                    .commercialAdvanceModel
+                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .commercialAdvanceModel
+                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                        .text
+                        .length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.intialAdvanceValueController?.value =
+                '\$.indents[0].SecurityDeposit';
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                ?.text = '\$.indents[0].AdvanceDeposit';
+            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.commercialAdvanceModel
+                        .advanceAmountAdvanceTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                ?.text = '\$.indents[0].AdvanceDeposit';
+            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.commercialAdvanceModel
+                        .balanceAmountAdvanceTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+                ?.value = '\$..indents[0].RentEscalation';
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+                ?.value = '\$..indents[0].RentFreePeriod';
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.agreementPeriodsAdvanceValueController
+                ?.value = '\$..indents[0].AgreementPeriod';
+          });
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    });
   }
 
   @override

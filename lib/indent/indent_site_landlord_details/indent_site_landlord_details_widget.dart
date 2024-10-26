@@ -38,7 +38,7 @@ class _IndentSiteLandlordDetailsWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.siteId > 0) {
+      if (FFAppState().siteidint > 0) {
         _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
           iIndent: widget!.siteId.toString(),
           token: FFAppState().Token,

@@ -625,7 +625,7 @@ class _IndentSiteCommercialWidgetState
                                       .advanceAmountAdvanceTextController.text,
                                   rentEscalation: _model.commercialAdvanceModel
                                       .rentFreePeriodAdvanceValue,
-                                  siteId: FFAppState().SiteId,
+                                  siteId: FFAppState().siteidint.toString(),
                                   iindent: null,
                                   targetBank: null,
                                   district: null,

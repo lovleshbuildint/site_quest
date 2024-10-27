@@ -1464,20 +1464,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       focusColor: Colors.transparent,
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'indent_site_nearest_branch',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 0),
-                                            ),
-                                          },
-                                        );
-                                      },
+                                      onTap: () async {},
                                       child: Text(
                                         'Action',
                                         style: FlutterFlowTheme.of(context)

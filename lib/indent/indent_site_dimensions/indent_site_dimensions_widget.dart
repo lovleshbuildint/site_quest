@@ -129,7 +129,7 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.noofHoursTextController?.text =
-                '\$.indents[0].SavedTime';
+                '\$.indents[0].PowerAvailHours';
             _model.sitedimentionsModel.noofHoursTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel.noofHoursTextController!
@@ -137,23 +137,47 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.powerAvailabilityValueController?.value =
-                '\$.indents[0].PowerAvailHours';
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_Power''',
+            ).toString().toString()));
           });
           safeSetState(() {
             _model.sitedimentionsModel.lShapeSingageValueController?.value =
-                '\$.indents[0].Is_L_Shape';
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_L_Shape''',
+            ).toString().toString()));
           });
           safeSetState(() {
             _model.sitedimentionsModel.vsatValueController?.value =
-                '\$.indents[0].Is_VSAT';
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_VSAT''',
+            ).toString().toString()));
           });
           safeSetState(() {
             _model.sitedimentionsModel.acODUSpaceValueController?.value =
-                '\$.indents[0].Is_AC_ODU';
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_AC_ODU''',
+            ).toString().toString()));
           });
           safeSetState(() {
             _model.sitedimentionsModel.totemPoleValueController?.value =
                 '\$.indents[0].IsTotempole';
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.radioButtonValueController?.value =
+                '\$.indents[0].ShopType';
           });
         }
       } else {

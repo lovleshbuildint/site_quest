@@ -37,7 +37,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.siteId > 0) {
+      if (FFAppState().siteidint > 0) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
           iIndent: widget!.siteId.toString(),
           token: FFAppState().Token,

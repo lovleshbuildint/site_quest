@@ -40,7 +40,7 @@ class _IndentSiteNearestBranchWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.siteId > 0) {
+      if (FFAppState().siteidint > 0) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
           iIndent: widget!.siteId.toString(),
           token: FFAppState().Token,
@@ -55,6 +55,40 @@ class _IndentSiteNearestBranchWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Is_CRACoverage''',
             ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.branchSOLIDTextController?.text =
+                '\$.indents[0].BranchSOLID';
+            _model.nearestbranchModel.branchSOLIDTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel.branchSOLIDTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.nearestBranchstextTextController?.text =
+                '\$.indents[0].BranchName';
+            _model.nearestbranchModel.nearestBranchstextTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel
+                        .nearestBranchstextTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.distanceNearestBranchTextController
+                ?.text = '\$.indents[0].DistanceFromBranch';
+            _model.nearestbranchModel.distanceNearestBranchTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel
+                        .distanceNearestBranchTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.videoURLTextController?.text =
+                '\$.indents[0].VideoURL';
+            _model.nearestbranchModel.videoURLTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel.videoURLTextController!
+                        .text.length);
           });
         }
       }

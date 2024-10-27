@@ -37,7 +37,74 @@ class _IndentSiteNearestAtmWidgetState
     _model = createModel(context, () => IndentSiteNearestAtmModel());
 
     // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().siteidint > 0) {
+        _model.apiResultuyr = await SqGroup.dOADetailsstepsevenCall.call();
+
+        if ((_model.apiResultuyr?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.nearestatmModel.atmidTextController?.text =
+                '\$.indents[0].iDevice';
+            _model.nearestatmModel.atmidTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .nearestatmModel.atmidTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestatmModel.aTMNameValueController?.value =
+                '\$.indents[0].IndentBank';
+          });
+          safeSetState(() {
+            _model.nearestatmModel.distanceKMTextController?.text =
+                '\$.indents[0].Distance';
+            _model.nearestatmModel.distanceKMTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .nearestatmModel.distanceKMTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestatmModel.directionTextController?.text =
+                '\$.indents[0].Direction';
+            _model.nearestatmModel.directionTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .nearestatmModel.directionTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
+                '\$.indents[0].AvgTotalTrans';
+            _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestatmModel
+                        .avgApproxTxnsDayTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestatmModel.avgApproxTotalDayTextController?.text =
+                '.indents[0].AvgTotalTrans_DA';
+            _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestatmModel
+                        .avgApproxTotalDayTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestatmModel.avgOnusTextController?.text =
+                '\$.indents[0].AvgOnusTrans_DA';
+            _model.nearestatmModel.avgOnusTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .nearestatmModel.avgOnusTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestatmModel.avgOffusTextController?.text =
+                '\$.indents[0].AvgOffusTrans_DA';
+            _model.nearestatmModel.avgOffusTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .nearestatmModel.avgOffusTextController!.text.length);
+          });
+        }
+      }
+    });
   }
 
   @override
@@ -697,7 +764,7 @@ class _IndentSiteNearestAtmWidgetState
                                         .avgOnusTextController.text,
                                     avgtxns: _model.nearestatmModel
                                         .avgApproxTxnsDayTextController.text,
-                                    siteId: FFAppState().SiteId,
+                                    siteId: FFAppState().siteidint.toString(),
                                     iindent: null,
                                     avgTotaltransDA: _model.nearestatmModel
                                         .avgApproxTotalDayTextController.text,

@@ -133,7 +133,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
         scrollDirection: Axis.vertical,
         children: [
           Text(
-            'Landlord Name',
+            getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandLordName''',
+            ).toString(),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.black,

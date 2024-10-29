@@ -723,7 +723,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         scrollDirection: Axis.vertical,
                         children: [
                           Text(
-                            FFAppState().siteidint.toString(),
+                            widget!.siteId.toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

@@ -1332,9 +1332,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                         unselectedWidgetColor: Color(0xFF6C6B6B),
                       ),
                       child: Checkbox(
-                        value: _model.checkboxValue1 ??= false,
+                        value: _model.checkbox1Value ??= false,
                         onChanged: (newValue) async {
-                          safeSetState(() => _model.checkboxValue1 = newValue!);
+                          safeSetState(() => _model.checkbox1Value = newValue!);
                           if (newValue!) {
                             safeSetState(() {
                               _model.chequefieldTextController?.text =
@@ -1386,7 +1386,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.chequefieldFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
-              readOnly: _model.checkboxValue1 == true,
+              readOnly: _model.checkbox1Value == true,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Name',
@@ -1397,7 +1397,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: _model.checkboxValue1 == true
+                    color: _model.checkbox1Value == true
                         ? Colors.transparent
                         : Color(0xFFE1E2E6),
                     width: 2.0,
@@ -1426,7 +1426,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: _model.checkboxValue1 == true
+                fillColor: _model.checkbox1Value == true
                     ? Color(0xFFF2F2F2)
                     : Colors.transparent,
               ),
@@ -1473,10 +1473,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           unselectedWidgetColor: Color(0xFF6C6B6B),
                         ),
                         child: Checkbox(
-                          value: _model.checkboxValue2 ??= false,
+                          value: _model.checkboxValue ??= false,
                           onChanged: (newValue) async {
                             safeSetState(
-                                () => _model.checkboxValue2 = newValue!);
+                                () => _model.checkboxValue = newValue!);
                             if (newValue!) {
                               safeSetState(() {
                                 _model.lLchequefieldTextController?.text =
@@ -1530,6 +1530,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.lLchequefieldFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
+              readOnly: _model.checkbox1Value == true,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Percentage',
@@ -1540,7 +1541,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(0xFFE1E2E6),
+                    color: _model.checkbox1Value == true
+                        ? Colors.transparent
+                        : Color(0xFFE1E2E6),
                     width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
@@ -1567,7 +1570,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: Colors.transparent,
+                fillColor: _model.checkbox1Value == true
+                    ? Color(0xFFF2F2F2)
+                    : Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',

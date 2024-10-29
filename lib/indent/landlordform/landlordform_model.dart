@@ -92,14 +92,14 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   // State field(s) for LandlordBankName widget.
   String? landlordBankNameValue;
   FormFieldController<String>? landlordBankNameValueController;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue1;
+  // State field(s) for Checkbox1 widget.
+  bool? checkbox1Value;
   // State field(s) for chequefield widget.
   FocusNode? chequefieldFocusNode;
   TextEditingController? chequefieldTextController;
   String? Function(BuildContext, String?)? chequefieldTextControllerValidator;
   // State field(s) for Checkbox widget.
-  bool? checkboxValue2;
+  bool? checkboxValue;
   // State field(s) for LLchequefield widget.
   FocusNode? lLchequefieldFocusNode;
   TextEditingController? lLchequefieldTextController;

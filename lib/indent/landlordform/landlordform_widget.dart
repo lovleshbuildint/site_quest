@@ -7,6 +7,7 @@ import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -33,6 +34,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LandlordformModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     _model.landoardNameTextController ??= TextEditingController();
     _model.landoardNameFocusNode ??= FocusNode();

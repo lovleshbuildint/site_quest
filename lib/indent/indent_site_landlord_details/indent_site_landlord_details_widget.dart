@@ -40,7 +40,7 @@ class _IndentSiteLandlordDetailsWidgetState
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().siteidint > 0) {
         _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
-          iIndent: widget!.siteId.toString(),
+          iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
         );
 

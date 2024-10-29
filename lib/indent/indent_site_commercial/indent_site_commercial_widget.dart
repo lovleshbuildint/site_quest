@@ -13,12 +13,7 @@ import 'indent_site_commercial_model.dart';
 export 'indent_site_commercial_model.dart';
 
 class IndentSiteCommercialWidget extends StatefulWidget {
-  const IndentSiteCommercialWidget({
-    super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
-
-  final int siteId;
+  const IndentSiteCommercialWidget({super.key});
 
   @override
   State<IndentSiteCommercialWidget> createState() =>
@@ -653,7 +648,16 @@ class _IndentSiteCommercialWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.safePop();
+                              context.pushNamed(
+                                'indent_site_landlord_details',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

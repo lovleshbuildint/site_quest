@@ -276,10 +276,7 @@ class _IndentSiteLandlordDetailsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                getJsonField(
-                                  (_model.updateDOADdeatils2?.jsonBody ?? ''),
-                                  r'''$.indents[0].LandLordName''',
-                                ).toString(),
+                                FFAppState().SiteId,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

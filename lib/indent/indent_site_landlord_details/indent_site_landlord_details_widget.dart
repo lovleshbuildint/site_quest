@@ -292,8 +292,7 @@ class _IndentSiteLandlordDetailsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                (_model.apiResultfoa?.succeeded ?? true)
-                                    .toString(),
+                                'Add Landlord Details',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

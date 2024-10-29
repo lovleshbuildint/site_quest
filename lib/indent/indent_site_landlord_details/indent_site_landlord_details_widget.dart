@@ -47,7 +47,10 @@ class _IndentSiteLandlordDetailsWidgetState
         if ((_model.apiResultfoa?.succeeded ?? true)) {
           safeSetState(() {
             _model.landlordformModel.landoardNameTextController?.text =
-                '\$.indents[0].LandLordName';
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandLordName''',
+            ).toString().toString();
             _model.landlordformModel.landoardNameTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.landlordformModel.landoardNameTextController!

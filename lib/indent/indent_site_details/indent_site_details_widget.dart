@@ -15,12 +15,7 @@ import 'indent_site_details_model.dart';
 export 'indent_site_details_model.dart';
 
 class IndentSiteDetailsWidget extends StatefulWidget {
-  const IndentSiteDetailsWidget({
-    super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
-
-  final int siteId;
+  const IndentSiteDetailsWidget({super.key});
 
   @override
   State<IndentSiteDetailsWidget> createState() =>
@@ -41,7 +36,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().siteidint > 0) {
         _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
-          iIndent: widget!.siteId.toString(),
+          iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
         );
 
@@ -723,7 +718,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         scrollDirection: Axis.vertical,
                         children: [
                           Text(
-                            widget!.siteId.toString(),
+                            FFAppState().siteidint.toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

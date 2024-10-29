@@ -276,7 +276,8 @@ class _IndentSiteLandlordDetailsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFAppState().SiteId,
+                                (_model.apiResultfoa?.succeeded ?? true)
+                                    .toString(),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

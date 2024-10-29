@@ -146,12 +146,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'indent_site_details',
           path: '/indentSiteDetails',
-          builder: (context, params) => IndentSiteDetailsWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
-            ),
-          ),
+          builder: (context, params) => IndentSiteDetailsWidget(),
         ),
         FFRoute(
           name: 'indent_site_landlord_details',

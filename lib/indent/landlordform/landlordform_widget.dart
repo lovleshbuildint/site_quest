@@ -36,7 +36,26 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
     _model = createModel(context, () => LandlordformModel());
 
     // On component load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().siteidint > 0) {
+        _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultfoa?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.landoardNameTextController?.text =
+                '\$.indents[0].LandLordName';
+            _model.landoardNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landoardNameTextController!.text.length);
+          });
+        }
+      } else {
+        return;
+      }
+    });
 
     _model.landoardNameTextController ??= TextEditingController();
     _model.landoardNameFocusNode ??= FocusNode();

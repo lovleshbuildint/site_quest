@@ -37,6 +37,8 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - API (DOADetailssteptwo)] action in landlordform widget.
+  ApiCallResponse? apiResultfoa;
   // State field(s) for LandoardName widget.
   FocusNode? landoardNameFocusNode;
   TextEditingController? landoardNameTextController;

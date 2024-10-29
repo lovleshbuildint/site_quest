@@ -202,6 +202,22 @@ class _IndentSiteLandlordDetailsWidgetState
             _model.landlordformModel.landlordBankNameValueController?.value =
                 '\$.indents[0].IndentBank';
           });
+        } else {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: Text('Alert'),
+                content: Text('Not able to procced'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
         }
       } else {
         return;

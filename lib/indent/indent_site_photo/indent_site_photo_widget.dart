@@ -13,10 +13,10 @@ export 'indent_site_photo_model.dart';
 class IndentSitePhotoWidget extends StatefulWidget {
   const IndentSitePhotoWidget({
     super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
+    required this.updateData,
+  });
 
-  final int siteId;
+  final bool? updateData;
 
   @override
   State<IndentSitePhotoWidget> createState() => _IndentSitePhotoWidgetState();
@@ -445,19 +445,10 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_photo');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -1405,6 +1396,12 @@ class _IndentSitePhotoWidgetState extends State<IndentSitePhotoWidget> {
                                 }
                                 context.pushNamed(
                                   'indent_site_nearest_branch',
+                                  queryParameters: {
+                                    'updateData': serializeParam(
+                                      false,
+                                      ParamType.bool,
+                                    ),
+                                  }.withoutNulls,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

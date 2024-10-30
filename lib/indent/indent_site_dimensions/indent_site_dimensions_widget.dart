@@ -661,19 +661,10 @@ class _IndentSiteDimensionsWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_details');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -1005,7 +996,15 @@ class _IndentSiteDimensionsWidgetState
                                   (_model.dOADetailsFour?.jsonBody ?? ''),
                                   r'''$.Msg''',
                                 ).toString())) {
-                                  context.pushNamed('indent_site_photo');
+                                  context.pushNamed(
+                                    'indent_site_photo',
+                                    queryParameters: {
+                                      'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                  );
                                 } else {
                                   await showDialog(
                                     context: context,

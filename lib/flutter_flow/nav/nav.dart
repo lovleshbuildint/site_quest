@@ -182,9 +182,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'indent_site_photo',
           path: '/indentSitePhoto',
           builder: (context, params) => IndentSitePhotoWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
             ),
           ),
         ),
@@ -192,9 +192,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'indent_site_nearest_branch',
           path: '/indentSiteNearestBranch',
           builder: (context, params) => IndentSiteNearestBranchWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
             ),
           ),
         ),
@@ -202,9 +202,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'indent_site_nearest_atm',
           path: '/indentSiteNearestAtm',
           builder: (context, params) => IndentSiteNearestAtmWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
             ),
           ),
         ),

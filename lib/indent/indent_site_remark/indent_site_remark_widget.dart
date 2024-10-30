@@ -503,19 +503,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_photo');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -533,19 +524,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_nearest_branch');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -563,19 +545,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_nearest_atm');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -1050,7 +1023,15 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.safePop();
+                              context.pushNamed(
+                                'indent_site_nearest_atm',
+                                queryParameters: {
+                                  'updateData': serializeParam(
+                                    true,
+                                    ParamType.bool,
+                                  ),
+                                }.withoutNulls,
+                              );
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

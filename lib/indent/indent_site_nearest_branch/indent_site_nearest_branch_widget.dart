@@ -16,10 +16,10 @@ export 'indent_site_nearest_branch_model.dart';
 class IndentSiteNearestBranchWidget extends StatefulWidget {
   const IndentSiteNearestBranchWidget({
     super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
+    required this.updateData,
+  });
 
-  final int siteId;
+  final bool? updateData;
 
   @override
   State<IndentSiteNearestBranchWidget> createState() =>
@@ -40,9 +40,17 @@ class _IndentSiteNearestBranchWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().siteidint > 0) {
+      if (() {
+        if (widget!.updateData!) {
+          return true;
+        } else if (FFAppState().siteidint > 0) {
+          return true;
+        } else {
+          return true;
+        }
+      }()) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
-          iIndent: widget!.siteId.toString(),
+          iIndent: widget!.updateData?.toString(),
           token: FFAppState().Token,
         );
 
@@ -58,7 +66,10 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.branchSOLIDTextController?.text =
-                '\$.indents[0].BranchSOLID';
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].BranchSOLID''',
+            ).toString().toString();
             _model.nearestbranchModel.branchSOLIDTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestbranchModel.branchSOLIDTextController!
@@ -66,7 +77,10 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.nearestBranchstextTextController?.text =
-                '\$.indents[0].BranchName';
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].BranchName''',
+            ).toString().toString();
             _model.nearestbranchModel.nearestBranchstextTextController
                     ?.selection =
                 TextSelection.collapsed(
@@ -75,7 +89,10 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.distanceNearestBranchTextController
-                ?.text = '\$.indents[0].DistanceFromBranch';
+                ?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].DistanceFromBranch''',
+            ).toString().toString();
             _model.nearestbranchModel.distanceNearestBranchTextController
                     ?.selection =
                 TextSelection.collapsed(
@@ -84,13 +101,35 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.videoURLTextController?.text =
-                '\$.indents[0].VideoURL';
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].VideoURL''',
+            ).toString().toString();
             _model.nearestbranchModel.videoURLTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestbranchModel.videoURLTextController!
                         .text.length);
           });
+        } else {
+          return;
         }
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text('Data is not able to Fetch'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+        return;
       }
     });
   }
@@ -507,19 +546,10 @@ class _IndentSiteNearestBranchWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_photo');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -537,19 +567,10 @@ class _IndentSiteNearestBranchWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_nearest_branch');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -567,19 +588,10 @@ class _IndentSiteNearestBranchWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_nearest_atm');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFFD1D5DB),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -597,19 +609,10 @@ class _IndentSiteNearestBranchWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_remark');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFFD1D5DB),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -656,7 +659,15 @@ class _IndentSiteNearestBranchWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.safePop();
+                              context.pushNamed(
+                                'indent_site_photo',
+                                queryParameters: {
+                                  'updateData': serializeParam(
+                                    true,
+                                    ParamType.bool,
+                                  ),
+                                }.withoutNulls,
+                              );
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,
@@ -735,7 +746,22 @@ class _IndentSiteNearestBranchWidgetState
 
                                 if ((_model.dOADetailsfive?.succeeded ??
                                     true)) {
-                                  context.pushNamed('indent_site_nearest_atm');
+                                  context.pushNamed(
+                                    'indent_site_nearest_atm',
+                                    queryParameters: {
+                                      'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 } else {
                                   await showDialog(
                                     context: context,

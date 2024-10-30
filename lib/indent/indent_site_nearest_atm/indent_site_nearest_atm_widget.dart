@@ -15,10 +15,10 @@ export 'indent_site_nearest_atm_model.dart';
 class IndentSiteNearestAtmWidget extends StatefulWidget {
   const IndentSiteNearestAtmWidget({
     super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
+    required this.updateData,
+  });
 
-  final int siteId;
+  final bool? updateData;
 
   @override
   State<IndentSiteNearestAtmWidget> createState() =>
@@ -38,33 +38,53 @@ class _IndentSiteNearestAtmWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().siteidint > 0) {
-        _model.apiResultuyr = await SqGroup.dOADetailsstepsevenCall.call();
+      if (() {
+        if (widget!.updateData!) {
+          return true;
+        } else if (FFAppState().siteidint > 0) {
+          return true;
+        } else {
+          return true;
+        }
+      }()) {
+        _model.apiResultuyr = await SqGroup.dOADetailsstepsevenCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
 
         if ((_model.apiResultuyr?.succeeded ?? true)) {
           safeSetState(() {
-            _model.nearestatmModel.atmidTextController?.text =
-                '\$.indents[0].iDevice';
+            _model.nearestatmModel.atmidTextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].iDevice''',
+            ).toString().toString();
             _model.nearestatmModel.atmidTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
                         .nearestatmModel.atmidTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.aTMNameValueController?.value =
-                '\$.indents[0].IndentBank';
+            _model.nearestatmModel.aTMNameValueController?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].IndentBank''',
+            ).toString().toString();
           });
           safeSetState(() {
             _model.nearestatmModel.distanceKMTextController?.text =
-                '\$.indents[0].Distance';
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Distance''',
+            ).toString().toString();
             _model.nearestatmModel.distanceKMTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
                         .nearestatmModel.distanceKMTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.directionTextController?.text =
-                '\$.indents[0].Direction';
+            _model.nearestatmModel.directionTextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Direction''',
+            ).toString().toString();
             _model.nearestatmModel.directionTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
@@ -72,7 +92,10 @@ class _IndentSiteNearestAtmWidgetState
           });
           safeSetState(() {
             _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
-                '\$.indents[0].AvgTotalTrans';
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AvgTotalTrans''',
+            ).toString().toString();
             _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestatmModel
@@ -80,23 +103,30 @@ class _IndentSiteNearestAtmWidgetState
           });
           safeSetState(() {
             _model.nearestatmModel.avgApproxTotalDayTextController?.text =
-                '.indents[0].AvgTotalTrans_DA';
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AvgTotalTrans_DA''',
+            ).toString().toString();
             _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestatmModel
                         .avgApproxTotalDayTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.avgOnusTextController?.text =
-                '\$.indents[0].AvgOnusTrans_DA';
+            _model.nearestatmModel.avgOnusTextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AvgOnusTrans_DA''',
+            ).toString().toString();
             _model.nearestatmModel.avgOnusTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
                         .nearestatmModel.avgOnusTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.avgOffusTextController?.text =
-                '\$.indents[0].AvgOffusTrans_DA';
+            _model.nearestatmModel.avgOffusTextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AvgOffusTrans_DA''',
+            ).toString().toString();
             _model.nearestatmModel.avgOffusTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
@@ -519,19 +549,10 @@ class _IndentSiteNearestAtmWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_photo');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -549,19 +570,10 @@ class _IndentSiteNearestAtmWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_nearest_branch');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -579,19 +591,10 @@ class _IndentSiteNearestAtmWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_nearest_atm');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -710,7 +713,15 @@ class _IndentSiteNearestAtmWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.safePop();
+                              context.pushNamed(
+                                'indent_site_nearest_atm',
+                                queryParameters: {
+                                  'updateData': serializeParam(
+                                    true,
+                                    ParamType.bool,
+                                  ),
+                                }.withoutNulls,
+                              );
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

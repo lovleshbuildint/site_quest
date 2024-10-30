@@ -1077,7 +1077,22 @@ class _IndentSiteLandlordDetailsWidgetState
                                   (_model.updateDOADdeatils2?.jsonBody ?? ''),
                                   r'''$.Msg''',
                                 ).toString())) {
-                                  context.goNamed('indent_site_commercial');
+                                  context.goNamed(
+                                    'indent_site_commercial',
+                                    queryParameters: {
+                                      'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 } else {
                                   await showDialog(
                                     context: context,

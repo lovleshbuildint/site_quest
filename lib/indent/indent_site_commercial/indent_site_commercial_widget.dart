@@ -13,7 +13,12 @@ import 'indent_site_commercial_model.dart';
 export 'indent_site_commercial_model.dart';
 
 class IndentSiteCommercialWidget extends StatefulWidget {
-  const IndentSiteCommercialWidget({super.key});
+  const IndentSiteCommercialWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<IndentSiteCommercialWidget> createState() =>
@@ -33,7 +38,15 @@ class _IndentSiteCommercialWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().siteidint > 0) {
+      if (() {
+        if (widget!.updateData!) {
+          return true;
+        } else if (FFAppState().siteidint > 0) {
+          return true;
+        } else {
+          return true;
+        }
+      }()) {
         _model.apiResultuyr = await SqGroup.updateDOADetailsthreeCall.call();
 
         if ((_model.apiResultuyr?.succeeded ?? true)) {
@@ -118,6 +131,21 @@ class _IndentSiteCommercialWidgetState
           return;
         }
       } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text('Data Not able to fetch'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
         return;
       }
     });

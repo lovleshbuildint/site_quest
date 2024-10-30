@@ -649,19 +649,10 @@ class _IndentSiteDimensionsWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_commercial');
-                        },
-                        child: Icon(
-                          Icons.check_circle_sharp,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      Icon(
+                        Icons.check_circle_sharp,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -738,7 +729,22 @@ class _IndentSiteDimensionsWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.safePop();
+                              context.pushNamed(
+                                'indent_site_commercial',
+                                queryParameters: {
+                                  'updateData': serializeParam(
+                                    true,
+                                    ParamType.bool,
+                                  ),
+                                }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

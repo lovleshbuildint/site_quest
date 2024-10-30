@@ -161,7 +161,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'indent_site_commercial',
           path: '/indentSiteCommercial',
-          builder: (context, params) => IndentSiteCommercialWidget(),
+          builder: (context, params) => IndentSiteCommercialWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'indent_site_dimensions',

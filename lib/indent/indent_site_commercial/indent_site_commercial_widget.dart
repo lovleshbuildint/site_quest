@@ -41,7 +41,7 @@ class _IndentSiteCommercialWidgetState
       if (() {
         if (widget!.updateData!) {
           return true;
-        } else if (FFAppState().siteidint > 0) {
+        } else if (FFAppState().siteidint == 0) {
           return true;
         } else {
           return true;

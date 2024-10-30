@@ -172,9 +172,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'indent_site_dimensions',
           path: '/indentSiteDimensions',
           builder: (context, params) => IndentSiteDimensionsWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
             ),
           ),
         ),

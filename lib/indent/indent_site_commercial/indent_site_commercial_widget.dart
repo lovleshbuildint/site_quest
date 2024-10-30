@@ -924,7 +924,15 @@ class _IndentSiteCommercialWidgetState
                                       ''),
                                   r'''$.Msg''',
                                 ).toString())) {
-                                  context.goNamed('indent_site_dimensions');
+                                  context.goNamed(
+                                    'indent_site_dimensions',
+                                    queryParameters: {
+                                      'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                  );
 
                                   if (_shouldSetState) safeSetState(() {});
                                   return;

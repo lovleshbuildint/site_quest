@@ -15,10 +15,10 @@ export 'indent_site_dimensions_model.dart';
 class IndentSiteDimensionsWidget extends StatefulWidget {
   const IndentSiteDimensionsWidget({
     super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
+    required this.updateData,
+  });
 
-  final int siteId;
+  final bool? updateData;
 
   @override
   State<IndentSiteDimensionsWidget> createState() =>
@@ -38,16 +38,27 @@ class _IndentSiteDimensionsWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().siteidint > 0) {
+      if (() {
+        if (widget!.updateData!) {
+          return true;
+        } else if (FFAppState().siteidint > 0) {
+          return true;
+        } else {
+          return true;
+        }
+      }()) {
         _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
-          iIndent: widget!.siteId.toString(),
+          iIndent: widget!.updateData?.toString(),
           token: FFAppState().Token,
         );
 
         if ((_model.dOADFour?.succeeded ?? true)) {
           safeSetState(() {
             _model.sitedimentionsModel.totalShopAreaTextController?.text =
-                '\$.indents[0].TotalShopArea';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].TotalShopArea''',
+            ).toString().toString();
             _model.sitedimentionsModel.totalShopAreaTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel
@@ -55,7 +66,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
-                '\$.indents[0].OfferedShopArea';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].OfferedShopArea''',
+            ).toString().toString();
             _model.sitedimentionsModel.totalAreaOfferedTextController
                     ?.selection =
                 TextSelection.collapsed(
@@ -64,7 +78,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.carpetAreaTextController?.text =
-                '\$.indents[0].CarpetArea';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].CarpetArea''',
+            ).toString().toString();
             _model.sitedimentionsModel.carpetAreaTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel.carpetAreaTextController!
@@ -72,7 +89,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.shopDepthTextController?.text =
-                '\$.indents[0].ShopDepth';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopDepth''',
+            ).toString().toString();
             _model.sitedimentionsModel.shopDepthTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel.shopDepthTextController!
@@ -80,7 +100,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.shopWidthTextController?.text =
-                '\$.indents[0].ShopWidth';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopWidth''',
+            ).toString().toString();
             _model.sitedimentionsModel.shopWidthTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel.shopWidthTextController!
@@ -88,7 +111,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.shopHeightTextController?.text =
-                '\$.indents[0].ShopHeight';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopHeight''',
+            ).toString().toString();
             _model.sitedimentionsModel.shopHeightTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel.shopHeightTextController!
@@ -96,7 +122,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.totalFrontageTextController?.text =
-                '\$.indents[0].TotalFrontage';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].TotalFrontage''',
+            ).toString().toString();
             _model.sitedimentionsModel.totalFrontageTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel
@@ -104,7 +133,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.frontageOfferedTextController?.text =
-                '\$.indents[0].OfferedFrontage';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].OfferedFrontage''',
+            ).toString().toString();
             _model.sitedimentionsModel.frontageOfferedTextController
                     ?.selection =
                 TextSelection.collapsed(
@@ -113,7 +145,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.singageWidthTextController?.text =
-                '\$.indents[0].SignageWidth';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].SignageWidth''',
+            ).toString().toString();
             _model.sitedimentionsModel.singageWidthTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel
@@ -121,7 +156,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.singageHeightTextController?.text =
-                '\$.indents[0].SignageHeight';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].SignageHeight''',
+            ).toString().toString();
             _model.sitedimentionsModel.singageHeightTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel
@@ -129,7 +167,10 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.noofHoursTextController?.text =
-                '\$.indents[0].PowerAvailHours';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].PowerAvailHours''',
+            ).toString().toString();
             _model.sitedimentionsModel.noofHoursTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.sitedimentionsModel.noofHoursTextController!
@@ -173,15 +214,37 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.totemPoleValueController?.value =
-                '\$.indents[0].IsTotempole';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].IsTotempole''',
+            ).toString().toString();
           });
           safeSetState(() {
             _model.sitedimentionsModel.radioButtonValueController?.value =
-                '\$.indents[0].ShopType';
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopType''',
+            ).toString().toString();
           });
+        } else {
+          return;
         }
       } else {
-        return;
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text('Data not able to fetch'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
       }
     });
   }
@@ -670,19 +733,10 @@ class _IndentSiteDimensionsWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_dimensions');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(

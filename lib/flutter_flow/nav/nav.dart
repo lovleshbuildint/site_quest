@@ -212,9 +212,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'indent_site_remark',
           path: '/indentSiteRemark',
           builder: (context, params) => IndentSiteRemarkWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
             ),
           ),
         ),

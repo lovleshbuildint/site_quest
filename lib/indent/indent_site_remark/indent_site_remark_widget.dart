@@ -15,10 +15,10 @@ export 'indent_site_remark_model.dart';
 class IndentSiteRemarkWidget extends StatefulWidget {
   const IndentSiteRemarkWidget({
     super.key,
-    int? siteId,
-  }) : this.siteId = siteId ?? 0;
+    required this.updateData,
+  });
 
-  final int siteId;
+  final bool? updateData;
 
   @override
   State<IndentSiteRemarkWidget> createState() => _IndentSiteRemarkWidgetState();
@@ -39,7 +39,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().siteidint > 0) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
-          iIndent: widget!.siteId.toString(),
+          iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
         );
 

@@ -518,6 +518,12 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                       onPressed: () async {
                         context.goNamed(
                           'indent_site_remark',
+                          queryParameters: {
+                            'updateData': serializeParam(
+                              true,
+                              ParamType.bool,
+                            ),
+                          }.withoutNulls,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,

@@ -612,19 +612,10 @@ class _IndentSiteNearestAtmWidgetState
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('indent_site_remark');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFFD1D5DB),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFFD1D5DB),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(
@@ -825,6 +816,12 @@ class _IndentSiteNearestAtmWidgetState
                                     }
                                     context.pushNamed(
                                       'indent_site_remark',
+                                      queryParameters: {
+                                        'updateData': serializeParam(
+                                          false,
+                                          ParamType.bool,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

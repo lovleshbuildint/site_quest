@@ -78,10 +78,7 @@ class _IndentSiteLandlordDetailsWidgetState
             });
             safeSetState(() {
               _model.landlordformModel.stateValueController?.value =
-                  getJsonField(
-                (_model.apiResultfoa?.jsonBody ?? ''),
-                r'''$.indents[0].StateName''',
-              ).toString().toString();
+                  '\$.indents[0].iState';
             });
             safeSetState(() {
               _model.landlordformModel.cityValueController?.value =

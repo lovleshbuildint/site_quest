@@ -1511,7 +1511,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               focusNode: _model.lLchequefieldFocusNode,
               autofocus: false,
               textCapitalization: TextCapitalization.words,
-              readOnly: _model.checkbox1Value == true,
+              readOnly: _model.checkboxValue == true,
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Enter Percentage',

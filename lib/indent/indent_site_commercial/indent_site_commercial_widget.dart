@@ -149,21 +149,21 @@ class _IndentSiteCommercialWidgetState
             _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
                 ?.value = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$..indents[0].RentEscalation''',
+              r'''$.indents[0].RentEscalation''',
             ).toString().toString();
           });
           safeSetState(() {
             _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
                 ?.value = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$..indents[0].RentFreePeriod''',
+              r'''$.indents[0].RentFreePeriod''',
             ).toString().toString();
           });
           safeSetState(() {
             _model.commercialAdvanceModel.agreementPeriodsAdvanceValueController
                 ?.value = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$..indents[0].AgreementPeriod''',
+              r'''$.indents[0].AgreementPeriod''',
             ).toString().toString();
           });
         } else {

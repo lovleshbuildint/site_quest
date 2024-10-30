@@ -650,6 +650,12 @@ class _IndentSiteCommercialWidgetState
                             onTap: () async {
                               context.pushNamed(
                                 'indent_site_landlord_details',
+                                queryParameters: {
+                                  'updateData': serializeParam(
+                                    true,
+                                    ParamType.bool,
+                                  ),
+                                }.withoutNulls,
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,

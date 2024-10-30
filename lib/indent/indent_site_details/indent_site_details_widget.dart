@@ -3493,7 +3493,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   );
 
                                   context.pushNamed(
-                                      'indent_site_landlord_details');
+                                    'indent_site_landlord_details',
+                                    queryParameters: {
+                                      'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -4031,7 +4045,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                   );
 
                                   context.pushNamed(
-                                      'indent_site_landlord_details');
+                                    'indent_site_landlord_details',
+                                    queryParameters: {
+                                      'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 } else {
                                   await showDialog(
                                     context: context,

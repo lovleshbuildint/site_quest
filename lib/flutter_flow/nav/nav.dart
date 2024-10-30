@@ -152,9 +152,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'indent_site_landlord_details',
           path: '/indentSiteLandlordDetails',
           builder: (context, params) => IndentSiteLandlordDetailsWidget(
-            siteId: params.getParam(
-              'siteId',
-              ParamType.int,
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
             ),
           ),
         ),

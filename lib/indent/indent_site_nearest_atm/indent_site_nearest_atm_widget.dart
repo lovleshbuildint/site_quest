@@ -705,7 +705,7 @@ class _IndentSiteNearestAtmWidgetState
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               context.pushNamed(
-                                'indent_site_nearest_atm',
+                                'indent_site_nearest_branch',
                                 queryParameters: {
                                   'updateData': serializeParam(
                                     true,

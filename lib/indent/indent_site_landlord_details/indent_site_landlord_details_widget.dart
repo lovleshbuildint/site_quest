@@ -288,10 +288,7 @@ class _IndentSiteLandlordDetailsWidgetState
             });
             safeSetState(() {
               _model.landlordformModel.landlordBankNameValueController?.value =
-                  getJsonField(
-                (_model.apiResultfoa?.jsonBody ?? ''),
-                r'''$.indents[0].IndentBank''',
-              ).toString().toString();
+                  '\$.indents[0].IndentBank';
             });
           } else {
             await showDialog(

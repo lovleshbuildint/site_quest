@@ -1433,7 +1433,7 @@ class DOADetailsstepfourCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepfour',
-      apiUrl: '${baseUrl}/DOADetails_step4',
+      apiUrl: '${baseUrl}/DOADetails_step4/Token=${token}&iIndent=${iIndent}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1458,7 +1458,7 @@ class DOADetailsstepfiveCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'DOADetailsstepfive',
-      apiUrl: '${baseUrl}/DOADetails_step5',
+      apiUrl: '${baseUrl}/DOADetails_step5/Token=${token}&iIndent=${iIndent}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

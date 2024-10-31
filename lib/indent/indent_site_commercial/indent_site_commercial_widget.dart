@@ -55,10 +55,7 @@ class _IndentSiteCommercialWidgetState
         if ((_model.apiResultuyr?.succeeded ?? true)) {
           safeSetState(() {
             _model.commercialAdvanceModel.rentaltypeValueController?.value =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].isAdvance''',
-            ).toString().toString();
+                _model.commercialAdvanceModel.rentaltypeValue!;
           });
           safeSetState(() {
             _model.commercialAdvanceModel.eBillingRentAdvanceValueController

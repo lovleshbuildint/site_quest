@@ -1522,7 +1522,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: _model.checkbox1Value == true
+                    color: _model.checkboxValue == true
                         ? Colors.transparent
                         : Color(0xFFE1E2E6),
                     width: 2.0,
@@ -1551,7 +1551,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: _model.checkbox1Value == true
+                fillColor: _model.checkboxValue == true
                     ? Color(0xFFF2F2F2)
                     : Colors.transparent,
               ),

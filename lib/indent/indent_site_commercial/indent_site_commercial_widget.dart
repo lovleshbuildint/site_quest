@@ -41,10 +41,10 @@ class _IndentSiteCommercialWidgetState
       if (() {
         if (widget!.updateData!) {
           return true;
-        } else if (FFAppState().siteidint == 0) {
+        } else if (FFAppState().siteidint > 0) {
           return true;
         } else {
-          return true;
+          return false;
         }
       }()) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepthreeCall.call(
@@ -932,6 +932,13 @@ class _IndentSiteCommercialWidgetState
                                         ParamType.bool,
                                       ),
                                     }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
 
                                   if (_shouldSetState) safeSetState(() {});

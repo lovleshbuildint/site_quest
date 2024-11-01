@@ -44,7 +44,7 @@ class _IndentSiteDimensionsWidgetState
         } else if (FFAppState().siteidint > 0) {
           return true;
         } else {
-          return true;
+          return false;
         }
       }()) {
         _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
@@ -774,7 +774,7 @@ class _IndentSiteDimensionsWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed(
+                              context.goNamed(
                                 'indent_site_commercial',
                                 queryParameters: {
                                   'updateData': serializeParam(

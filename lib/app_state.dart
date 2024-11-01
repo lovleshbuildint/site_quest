@@ -78,6 +78,20 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _siteidint = await secureStorage.getInt('ff_siteidint') ?? _siteidint;
     });
+    await _safeInitAsync(() async {
+      _DirectionNrATM =
+          await secureStorage.getString('ff_DirectionNrATM') ?? _DirectionNrATM;
+    });
+    await _safeInitAsync(() async {
+      _AvgapproxtxnsdyNrATM =
+          await secureStorage.getString('ff_AvgapproxtxnsdyNrATM') ??
+              _AvgapproxtxnsdyNrATM;
+    });
+    await _safeInitAsync(() async {
+      _agtotaltxnsdyNrATM =
+          await secureStorage.getString('ff_agtotaltxnsdyNrATM') ??
+              _agtotaltxnsdyNrATM;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -715,6 +729,45 @@ class FFAppState extends ChangeNotifier {
 
   void deleteSiteidint() {
     secureStorage.delete(key: 'ff_siteidint');
+  }
+
+  String _distanceNrATM = '';
+  String get distanceNrATM => _distanceNrATM;
+  set distanceNrATM(String value) {
+    _distanceNrATM = value;
+  }
+
+  String _DirectionNrATM = '';
+  String get DirectionNrATM => _DirectionNrATM;
+  set DirectionNrATM(String value) {
+    _DirectionNrATM = value;
+    secureStorage.setString('ff_DirectionNrATM', value);
+  }
+
+  void deleteDirectionNrATM() {
+    secureStorage.delete(key: 'ff_DirectionNrATM');
+  }
+
+  String _AvgapproxtxnsdyNrATM = '';
+  String get AvgapproxtxnsdyNrATM => _AvgapproxtxnsdyNrATM;
+  set AvgapproxtxnsdyNrATM(String value) {
+    _AvgapproxtxnsdyNrATM = value;
+    secureStorage.setString('ff_AvgapproxtxnsdyNrATM', value);
+  }
+
+  void deleteAvgapproxtxnsdyNrATM() {
+    secureStorage.delete(key: 'ff_AvgapproxtxnsdyNrATM');
+  }
+
+  String _agtotaltxnsdyNrATM = '';
+  String get agtotaltxnsdyNrATM => _agtotaltxnsdyNrATM;
+  set agtotaltxnsdyNrATM(String value) {
+    _agtotaltxnsdyNrATM = value;
+    secureStorage.setString('ff_agtotaltxnsdyNrATM', value);
+  }
+
+  void deleteAgtotaltxnsdyNrATM() {
+    secureStorage.delete(key: 'ff_agtotaltxnsdyNrATM');
   }
 }
 

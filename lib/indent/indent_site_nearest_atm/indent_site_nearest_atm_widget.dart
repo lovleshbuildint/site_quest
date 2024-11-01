@@ -63,10 +63,7 @@ class _IndentSiteNearestAtmWidgetState
           });
           safeSetState(() {
             _model.nearestatmModel.distanceKMTextController?.text =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].Distance''',
-            ).toString().toString();
+                FFAppState().distanceNrATM;
             _model.nearestatmModel.distanceKMTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
@@ -84,10 +81,7 @@ class _IndentSiteNearestAtmWidgetState
           });
           safeSetState(() {
             _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AvgTotalTrans''',
-            ).toString().toString();
+                FFAppState().AvgapproxtxnsdyNrATM;
             _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestatmModel
@@ -95,10 +89,7 @@ class _IndentSiteNearestAtmWidgetState
           });
           safeSetState(() {
             _model.nearestatmModel.avgApproxTotalDayTextController?.text =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AvgTotalTrans_DA''',
-            ).toString().toString();
+                FFAppState().agtotaltxnsdyNrATM;
             _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestatmModel

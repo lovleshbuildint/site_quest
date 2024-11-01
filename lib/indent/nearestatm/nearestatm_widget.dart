@@ -301,6 +301,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.distanceKMTextController,
               focusNode: _model.distanceKMFocusNode,
+              onFieldSubmitted: (_) async {
+                FFAppState().distanceNrATM =
+                    _model.distanceKMTextController.text;
+                safeSetState(() {});
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -438,6 +443,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.avgApproxTxnsDayTextController,
               focusNode: _model.avgApproxTxnsDayFocusNode,
+              onFieldSubmitted: (_) async {
+                FFAppState().AvgapproxtxnsdyNrATM =
+                    _model.avgApproxTxnsDayTextController.text;
+                safeSetState(() {});
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -509,6 +519,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.avgApproxTotalDayTextController,
               focusNode: _model.avgApproxTotalDayFocusNode,
+              onFieldSubmitted: (_) async {
+                FFAppState().agtotaltxnsdyNrATM =
+                    _model.avgApproxTotalDayTextController.text;
+                safeSetState(() {});
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,

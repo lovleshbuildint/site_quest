@@ -92,6 +92,26 @@ class FFAppState extends ChangeNotifier {
           await secureStorage.getString('ff_agtotaltxnsdyNrATM') ??
               _agtotaltxnsdyNrATM;
     });
+    await _safeInitAsync(() async {
+      _avgonusNrATM =
+          await secureStorage.getString('ff_avgonusNrATM') ?? _avgonusNrATM;
+    });
+    await _safeInitAsync(() async {
+      _avgoffNrATM =
+          await secureStorage.getString('ff_avgoffNrATM') ?? _avgoffNrATM;
+    });
+    await _safeInitAsync(() async {
+      _hitachiAtmNrATM = await secureStorage.getString('ff_hitachiAtmNrATM') ??
+          _hitachiAtmNrATM;
+    });
+    await _safeInitAsync(() async {
+      _ATMnameNrATM =
+          await secureStorage.getString('ff_ATMnameNrATM') ?? _ATMnameNrATM;
+    });
+    await _safeInitAsync(() async {
+      _ATMIDNrATM =
+          await secureStorage.getString('ff_ATMIDNrATM') ?? _ATMIDNrATM;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -768,6 +788,61 @@ class FFAppState extends ChangeNotifier {
 
   void deleteAgtotaltxnsdyNrATM() {
     secureStorage.delete(key: 'ff_agtotaltxnsdyNrATM');
+  }
+
+  String _avgonusNrATM = '';
+  String get avgonusNrATM => _avgonusNrATM;
+  set avgonusNrATM(String value) {
+    _avgonusNrATM = value;
+    secureStorage.setString('ff_avgonusNrATM', value);
+  }
+
+  void deleteAvgonusNrATM() {
+    secureStorage.delete(key: 'ff_avgonusNrATM');
+  }
+
+  String _avgoffNrATM = '';
+  String get avgoffNrATM => _avgoffNrATM;
+  set avgoffNrATM(String value) {
+    _avgoffNrATM = value;
+    secureStorage.setString('ff_avgoffNrATM', value);
+  }
+
+  void deleteAvgoffNrATM() {
+    secureStorage.delete(key: 'ff_avgoffNrATM');
+  }
+
+  String _hitachiAtmNrATM = '';
+  String get hitachiAtmNrATM => _hitachiAtmNrATM;
+  set hitachiAtmNrATM(String value) {
+    _hitachiAtmNrATM = value;
+    secureStorage.setString('ff_hitachiAtmNrATM', value);
+  }
+
+  void deleteHitachiAtmNrATM() {
+    secureStorage.delete(key: 'ff_hitachiAtmNrATM');
+  }
+
+  String _ATMnameNrATM = '';
+  String get ATMnameNrATM => _ATMnameNrATM;
+  set ATMnameNrATM(String value) {
+    _ATMnameNrATM = value;
+    secureStorage.setString('ff_ATMnameNrATM', value);
+  }
+
+  void deleteATMnameNrATM() {
+    secureStorage.delete(key: 'ff_ATMnameNrATM');
+  }
+
+  String _ATMIDNrATM = '';
+  String get ATMIDNrATM => _ATMIDNrATM;
+  set ATMIDNrATM(String value) {
+    _ATMIDNrATM = value;
+    secureStorage.setString('ff_ATMIDNrATM', value);
+  }
+
+  void deleteATMIDNrATM() {
+    secureStorage.delete(key: 'ff_ATMIDNrATM');
   }
 }
 

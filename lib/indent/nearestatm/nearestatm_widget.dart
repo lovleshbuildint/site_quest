@@ -90,6 +90,10 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.atmidTextController,
               focusNode: _model.atmidFocusNode,
+              onFieldSubmitted: (_) async {
+                FFAppState().ATMIDNrATM = _model.atmidTextController.text;
+                safeSetState(() {});
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,
@@ -163,7 +167,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               ) as List)
                   .map<String>((s) => s.toString())
                   .toList()!,
-              onChanged: (val) => safeSetState(() => _model.aTMNameValue = val),
+              onChanged: (val) async {
+                safeSetState(() => _model.aTMNameValue = val);
+                FFAppState().ATMnameNrATM = _model.aTMNameValue!;
+                safeSetState(() {});
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               searchHintTextStyle:
@@ -258,8 +266,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               controller: _model.hitachiATMValueController ??=
                   FormFieldController<String>(null),
               options: ['Yes', 'No'],
-              onChanged: (val) =>
-                  safeSetState(() => _model.hitachiATMValue = val),
+              onChanged: (val) async {
+                safeSetState(() => _model.hitachiATMValue = val);
+                FFAppState().hitachiAtmNrATM = _model.hitachiATMValue!;
+                safeSetState(() {});
+              },
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -377,6 +388,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: TextFormField(
               controller: _model.directionTextController,
               focusNode: _model.directionFocusNode,
+              onFieldSubmitted: (_) async {
+                FFAppState().DirectionNrATM =
+                    _model.directionTextController.text;
+                safeSetState(() {});
+              },
               autofocus: false,
               textCapitalization: TextCapitalization.words,
               obscureText: false,

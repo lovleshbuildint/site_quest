@@ -46,10 +46,8 @@ class _IndentSiteNearestAtmWidgetState
 
         if ((_model.apiResultuyr?.succeeded ?? true)) {
           safeSetState(() {
-            _model.nearestatmModel.atmidTextController?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].iDevice''',
-            ).toString().toString();
+            _model.nearestatmModel.atmidTextController?.text =
+                FFAppState().ATMIDNrATM;
             _model.nearestatmModel.atmidTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
@@ -70,10 +68,8 @@ class _IndentSiteNearestAtmWidgetState
                         .nearestatmModel.distanceKMTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.directionTextController?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].Direction''',
-            ).toString().toString();
+            _model.nearestatmModel.directionTextController?.text =
+                FFAppState().DirectionNrATM;
             _model.nearestatmModel.directionTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
@@ -96,20 +92,16 @@ class _IndentSiteNearestAtmWidgetState
                         .avgApproxTotalDayTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.avgOnusTextController?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AvgOnusTrans_DA''',
-            ).toString().toString();
+            _model.nearestatmModel.avgOnusTextController?.text =
+                FFAppState().avgonusNrATM;
             _model.nearestatmModel.avgOnusTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model
                         .nearestatmModel.avgOnusTextController!.text.length);
           });
           safeSetState(() {
-            _model.nearestatmModel.avgOffusTextController?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AvgOffusTrans_DA''',
-            ).toString().toString();
+            _model.nearestatmModel.avgOffusTextController?.text =
+                FFAppState().avgoffNrATM;
             _model.nearestatmModel.avgOffusTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model

@@ -50,7 +50,7 @@ class _IndentSiteNearestBranchWidgetState
           safeSetState(() {
             _model.nearestbranchModel.cRACoverageValueController?.value =
                 ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
+              return var1 == 'True' ? 'Yes' : 'No';
             }(getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Is_CRACoverage''',
@@ -101,6 +101,13 @@ class _IndentSiteNearestBranchWidgetState
                 TextSelection.collapsed(
                     offset: _model.nearestbranchModel.videoURLTextController!
                         .text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.cRAAgencyValueController?.value =
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.CRARemarks.CRAAgency''',
+            ).toString().toString();
           });
         } else {
           return;

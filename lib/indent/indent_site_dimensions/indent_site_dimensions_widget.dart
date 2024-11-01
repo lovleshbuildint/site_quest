@@ -221,10 +221,7 @@ class _IndentSiteDimensionsWidgetState
           });
           safeSetState(() {
             _model.sitedimentionsModel.radioButtonValueController?.value =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].ShopType''',
-            ).toString().toString();
+                '\$.indents[0].ShopType';
           });
         } else {
           return;
@@ -245,6 +242,7 @@ class _IndentSiteDimensionsWidgetState
             );
           },
         );
+        return;
       }
     });
   }
@@ -1004,6 +1002,13 @@ class _IndentSiteDimensionsWidgetState
                                         ParamType.bool,
                                       ),
                                     }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 } else {
                                   await showDialog(

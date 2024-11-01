@@ -69,14 +69,18 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                 offset: _model.remark3TextController!.text.length);
           });
           safeSetState(() {
-            _model.remark4TextController?.text =
-                _model.remark5TextController.text;
+            _model.remark4TextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Remarks4''',
+            ).toString().toString();
             _model.remark4TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark4TextController!.text.length);
           });
           safeSetState(() {
-            _model.remark5TextController?.text =
-                _model.remark5TextController.text;
+            _model.remark5TextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Remarks5''',
+            ).toString().toString();
             _model.remark5TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark5TextController!.text.length);
           });

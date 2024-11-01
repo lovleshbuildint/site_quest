@@ -66,10 +66,7 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.nearestBranchstextTextController?.text =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].BranchName''',
-            ).toString().toString();
+                FFAppState().NearestBranch;
             _model.nearestbranchModel.nearestBranchstextTextController
                     ?.selection =
                 TextSelection.collapsed(
@@ -78,10 +75,7 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.distanceNearestBranchTextController
-                ?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].DistanceFromBranch''',
-            ).toString().toString();
+                ?.text = FFAppState().DistancefromtheNeearestBranch;
             _model.nearestbranchModel.distanceNearestBranchTextController
                     ?.selection =
                 TextSelection.collapsed(
@@ -90,10 +84,7 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.videoURLTextController?.text =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].VideoURL''',
-            ).toString().toString();
+                FFAppState().VideoURL;
             _model.nearestbranchModel.videoURLTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestbranchModel.videoURLTextController!

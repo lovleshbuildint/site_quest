@@ -1464,7 +1464,17 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       focusColor: Colors.transparent,
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
-                                      onTap: () async {},
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'indent_site_nearest_branch',
+                                          queryParameters: {
+                                            'updateData': serializeParam(
+                                              false,
+                                              ParamType.bool,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
                                       child: Text(
                                         'Action',
                                         style: FlutterFlowTheme.of(context)

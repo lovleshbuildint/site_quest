@@ -107,6 +107,15 @@ class _IndentSiteNearestAtmWidgetState
                     offset: _model
                         .nearestatmModel.avgOffusTextController!.text.length);
           });
+          safeSetState(() {
+            _model.nearestatmModel.hitachiATMValueController?.value =
+                ((String var1) {
+              return var1 == 'True' ? 'Yes' : 'No';
+            }(getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].IsBranch''',
+            ).toString().toString()));
+          });
         }
       }
     });

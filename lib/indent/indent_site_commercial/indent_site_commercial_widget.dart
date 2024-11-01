@@ -38,15 +38,7 @@ class _IndentSiteCommercialWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (() {
-        if (widget!.updateData!) {
-          return false;
-        } else if (FFAppState().siteidint > 0) {
-          return true;
-        } else {
-          return false;
-        }
-      }()) {
+      if (widget!.updateData! && (FFAppState().siteidint > 0)) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepthreeCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
@@ -171,7 +163,7 @@ class _IndentSiteCommercialWidgetState
           context: context,
           builder: (alertDialogContext) {
             return AlertDialog(
-              title: Text('Alert'),
+              title: Text('Alert '),
               content: Text('Data Not able to fetch'),
               actions: [
                 TextButton(

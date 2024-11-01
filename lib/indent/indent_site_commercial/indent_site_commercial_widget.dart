@@ -159,21 +159,6 @@ class _IndentSiteCommercialWidgetState
           return;
         }
       } else {
-        await showDialog(
-          context: context,
-          builder: (alertDialogContext) {
-            return AlertDialog(
-              title: Text('Alert '),
-              content: Text('Data Not able to fetch'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: Text('Ok'),
-                ),
-              ],
-            );
-          },
-        );
         return;
       }
     });

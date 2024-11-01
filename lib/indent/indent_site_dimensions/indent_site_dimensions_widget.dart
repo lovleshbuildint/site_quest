@@ -38,15 +38,7 @@ class _IndentSiteDimensionsWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (() {
-        if (widget!.updateData!) {
-          return true;
-        } else if (FFAppState().siteidint > 0) {
-          return true;
-        } else {
-          return false;
-        }
-      }()) {
+      if (widget!.updateData! && (FFAppState().siteidint > 0)) {
         _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
           iIndent: widget!.updateData?.toString(),
           token: FFAppState().Token,
@@ -226,23 +218,6 @@ class _IndentSiteDimensionsWidgetState
         } else {
           return;
         }
-      } else {
-        await showDialog(
-          context: context,
-          builder: (alertDialogContext) {
-            return AlertDialog(
-              title: Text('Alert'),
-              content: Text('Data not able to fetch'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: Text('Ok'),
-                ),
-              ],
-            );
-          },
-        );
-        return;
       }
     });
   }

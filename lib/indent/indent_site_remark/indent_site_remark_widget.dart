@@ -37,7 +37,7 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().siteidint > 0) {
+      if (widget!.updateData! && (FFAppState().siteidint > 0)) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
@@ -70,8 +70,6 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                 offset: _model.remark5TextController!.text.length);
           });
         }
-      } else {
-        return;
       }
     });
 

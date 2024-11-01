@@ -38,15 +38,7 @@ class _IndentSiteNearestAtmWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (() {
-        if (widget!.updateData!) {
-          return true;
-        } else if (FFAppState().siteidint > 0) {
-          return true;
-        } else {
-          return true;
-        }
-      }()) {
+      if (widget!.updateData! && (FFAppState().siteidint != null)) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepsevenCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,

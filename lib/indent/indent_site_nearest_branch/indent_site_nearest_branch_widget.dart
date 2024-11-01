@@ -40,15 +40,7 @@ class _IndentSiteNearestBranchWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (() {
-        if (widget!.updateData!) {
-          return true;
-        } else if (FFAppState().siteidint > 0) {
-          return true;
-        } else {
-          return true;
-        }
-      }()) {
+      if (widget!.updateData! && (FFAppState().siteidint > 0)) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
           iIndent: widget!.updateData?.toString(),
           token: FFAppState().Token,
@@ -113,23 +105,6 @@ class _IndentSiteNearestBranchWidgetState
         } else {
           return;
         }
-      } else {
-        await showDialog(
-          context: context,
-          builder: (alertDialogContext) {
-            return AlertDialog(
-              title: Text('Alert'),
-              content: Text('Data is not able to Fetch'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: Text('Ok'),
-                ),
-              ],
-            );
-          },
-        );
-        return;
       }
     });
   }

@@ -45,27 +45,38 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
 
         if ((_model.apiResultuyr?.succeeded ?? true)) {
           safeSetState(() {
-            _model.remark1TextController?.text = '\$.indents[0].Remarks1';
+            _model.remark1TextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Remarks1''',
+            ).toString().toString();
             _model.remark1TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark1TextController!.text.length);
           });
           safeSetState(() {
-            _model.remark2TextController?.text = '\$.indents[0].Remarks2';
+            _model.remark2TextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Remarks2''',
+            ).toString().toString();
             _model.remark2TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark2TextController!.text.length);
           });
           safeSetState(() {
-            _model.remark3TextController?.text = '\$.indents[0].Remarks3';
+            _model.remark3TextController?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Remarks3''',
+            ).toString().toString();
             _model.remark3TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark3TextController!.text.length);
           });
           safeSetState(() {
-            _model.remark4TextController?.text = '\$.indents[0].Remarks4';
+            _model.remark4TextController?.text =
+                _model.remark5TextController.text;
             _model.remark4TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark4TextController!.text.length);
           });
           safeSetState(() {
-            _model.remark5TextController?.text = '\$..indents[0].Remarks5';
+            _model.remark5TextController?.text =
+                _model.remark5TextController.text;
             _model.remark5TextController?.selection = TextSelection.collapsed(
                 offset: _model.remark5TextController!.text.length);
           });

@@ -700,7 +700,7 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                         scrollDirection: Axis.vertical,
                         children: [
                           Text(
-                            FFAppState().siteidint.toString(),
+                            'Customer Bank',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

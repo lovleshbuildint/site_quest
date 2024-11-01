@@ -426,7 +426,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 borderWidth: 2.0,
                                 borderRadius: 8.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 16.0, 4.0),
+                                    10.0, 4.0, 16.0, 4.0),
                                 hidesUnderline: true,
                                 isSearchable: true,
                                 isMultiSelect: false,
@@ -546,7 +546,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               borderWidth: 2.0,
                               borderRadius: 8.0,
                               margin: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 16.0, 4.0),
+                                  10.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isSearchable: true,
                               isMultiSelect: false,
@@ -675,7 +675,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 borderWidth: 2.0,
                                 borderRadius: 8.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 16.0, 4.0),
+                                    10.0, 4.0, 16.0, 4.0),
                                 hidesUnderline: true,
                                 isSearchable: true,
                                 isMultiSelect: false,
@@ -1273,7 +1273,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   borderColor: Color(0xFFE1E2E6),
                   borderWidth: 2.0,
                   borderRadius: 8.0,
-                  margin: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 16.0, 4.0),
+                  margin: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 16.0, 4.0),
                   hidesUnderline: true,
                   isSearchable: true,
                   isMultiSelect: false,

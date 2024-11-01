@@ -254,6 +254,12 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                               }
                                               context.pushNamed(
                                                 'open_site_details',
+                                                queryParameters: {
+                                                  'updateData': serializeParam(
+                                                    false,
+                                                    ParamType.bool,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(

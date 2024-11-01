@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,12 @@ import 'open_site_details_model.dart';
 export 'open_site_details_model.dart';
 
 class OpenSiteDetailsWidget extends StatefulWidget {
-  const OpenSiteDetailsWidget({super.key});
+  const OpenSiteDetailsWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteDetailsWidget> createState() => _OpenSiteDetailsWidgetState();
@@ -28,6 +34,54 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteDetailsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.updateData! && (FFAppState().siteidint > 0)) {
+        _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResults7x?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.customerBankValueController?.value =
+                '\$.indents[0].CustomerName';
+          });
+          safeSetState(() {
+            _model.sitetypeValueController?.value =
+                '\$.indents[0].SiteTypeName';
+          });
+          safeSetState(() {
+            _model.cashDeviceValueController?.value =
+                '\$.indents[0].CashDeviceType';
+          });
+          safeSetState(() {
+            _model.cashDeviceMovementValueController?.value =
+                '\$.indents[0].CashDeviceMovementCategory';
+          });
+          safeSetState(() {
+            _model.tisTypeValueController?.value = '\$.indents[0].TISTypeName';
+          });
+          safeSetState(() {
+            _model.projectTypeValueController?.value =
+                '\$.indents[0].ProjectTypeName';
+          });
+          safeSetState(() {
+            _model.businessTypeValueController?.value =
+                '\$.indents[0].ShopTypeName';
+          });
+          safeSetState(() {
+            _model.strategyDropDwonValueController?.value =
+                '\$.indents[0].DOAStrategyName';
+          });
+          safeSetState(() {
+            _model.stateDropdownValueController?.value =
+                '\$.indents[0].StateName';
+          });
+        }
+      }
+    });
 
     _model.distanceFromIndentsTextController ??= TextEditingController();
     _model.distanceFromIndentsFocusNode ??= FocusNode();
@@ -207,19 +261,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('open_site_details');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFF07D95A),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFF07D95A),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(

@@ -724,7 +724,7 @@ class _IndentSiteNearestAtmWidgetState
                                 var _shouldSetState = false;
                                 _model.dOADeatilsseven =
                                     await SqGroup.dOADetailsstepsevenCall.call(
-                                  iIndent: FFAppState().SiteId,
+                                  iIndent: FFAppState().siteidint.toString(),
                                   token: FFAppState().Token,
                                 );
 

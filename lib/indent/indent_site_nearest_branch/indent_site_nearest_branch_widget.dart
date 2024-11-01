@@ -58,10 +58,7 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.branchSOLIDTextController?.text =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].BranchSOLID''',
-            ).toString().toString();
+                FFAppState().BranchSOLID;
             _model.nearestbranchModel.branchSOLIDTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.nearestbranchModel.branchSOLIDTextController!
@@ -104,10 +101,7 @@ class _IndentSiteNearestBranchWidgetState
           });
           safeSetState(() {
             _model.nearestbranchModel.cRAAgencyValueController?.value =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.CRARemarks.CRAAgency''',
-            ).toString().toString();
+                _model.nearestbranchModel.cRAAgencyValue!;
           });
         } else {
           return;

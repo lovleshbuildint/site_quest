@@ -49,8 +49,38 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                 '\$.indents[0].CustomerName';
           });
           safeSetState(() {
+            _model.distanceFromIndentsTextController?.text =
+                '\$.indents[0].DistFromIndent';
+            _model.distanceFromIndentsTextController?.selection =
+                TextSelection.collapsed(
+                    offset:
+                        _model.distanceFromIndentsTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.addressTextController?.text = '\$.indents[0].LocationName';
+            _model.addressTextController?.selection = TextSelection.collapsed(
+                offset: _model.addressTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.pincodeTextController?.text = '\$.indents[0].PinCode';
+            _model.pincodeTextController?.selection = TextSelection.collapsed(
+                offset: _model.pincodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.aTMExistingTextController?.text =
+                '\$.indents[0].ATMID_Existing';
+            _model.aTMExistingTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.aTMExistingTextController!.text.length);
+          });
+          safeSetState(() {
             _model.sitetypeValueController?.value =
                 '\$.indents[0].SiteTypeName';
+          });
+          safeSetState(() {
+            _model.landMarksTextController?.text = '\$.indents[0].LandMark';
+            _model.landMarksTextController?.selection = TextSelection.collapsed(
+                offset: _model.landMarksTextController!.text.length);
           });
           safeSetState(() {
             _model.cashDeviceValueController?.value =
@@ -68,18 +98,69 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                 '\$.indents[0].ProjectTypeName';
           });
           safeSetState(() {
-            _model.businessTypeValueController?.value =
-                '\$.indents[0].ShopTypeName';
-          });
-          safeSetState(() {
             _model.strategyDropDwonValueController?.value =
                 '\$.indents[0].DOAStrategyName';
+          });
+          safeSetState(() {
+            _model.districtValueController?.value = '\$..indents[0].District';
           });
           safeSetState(() {
             _model.stateDropdownValueController?.value =
                 '\$.indents[0].StateName';
           });
+          safeSetState(() {
+            _model.cityValueController?.value = '\$.indents[0].CityName';
+          });
+          safeSetState(() {
+            _model.circleValueController?.value = '\$.indents[0].Circle';
+          });
+          safeSetState(() {
+            _model.rBICategoryValueController?.value =
+                '\$..indents[0].RBICategoryName';
+          });
+          safeSetState(() {
+            _model.siteSourcedValueController?.value =
+                '\$.indents[0].SiteSourcedBy';
+          });
+          safeSetState(() {
+            _model.businessTypeValueController?.value =
+                '\$.indents[0].ShopTypeName';
+          });
+        } else {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: Text('ALert'),
+                content: Text('Data not able to fetch'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
+          return;
         }
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('alert'),
+              content: Text('Get Data is not fetch'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+        return;
       }
     });
 

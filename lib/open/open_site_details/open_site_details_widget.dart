@@ -37,7 +37,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! ? false : true) {
+      if (widget!.updateData! ? false : false) {
         _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,

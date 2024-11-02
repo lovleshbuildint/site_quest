@@ -2685,12 +2685,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ''),
                             r'''$.Msg''',
                           ).toString())) {
-                            FFAppState().SiteId = getJsonField(
-                              (_model.updateDOAdetailsfirstwordsSites
-                                      ?.jsonBody ??
-                                  ''),
+                            FFAppState().siteidint = int.parse(getJsonField(
+                              (_model.apiResults7x?.jsonBody ?? ''),
                               r'''$.SiteId''',
-                            ).toString();
+                            ).toString());
                             safeSetState(() {});
                             await showDialog(
                               context: context,

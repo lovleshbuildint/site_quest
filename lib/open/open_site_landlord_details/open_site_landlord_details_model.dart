@@ -6,6 +6,7 @@ import '/indent/landlordform/landlordform_widget.dart';
 import 'open_site_landlord_details_widget.dart'
     show OpenSiteLandlordDetailsWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,8 @@ class OpenSiteLandlordDetailsModel
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - API (DOADetailssteptwo)] action in open_site_landlord_details widget.
+  ApiCallResponse? apiResultfoa;
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepSECONDworddoc)] action in Button widget.

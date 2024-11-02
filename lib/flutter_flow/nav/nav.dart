@@ -251,7 +251,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'open_site_landlord_details',
           path: '/openSiteLandlordDetails',
-          builder: (context, params) => OpenSiteLandlordDetailsWidget(),
+          builder: (context, params) => OpenSiteLandlordDetailsWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'open_site_commercial',

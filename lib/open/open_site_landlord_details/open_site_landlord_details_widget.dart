@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/landlordform/landlordform_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,12 @@ import 'open_site_landlord_details_model.dart';
 export 'open_site_landlord_details_model.dart';
 
 class OpenSiteLandlordDetailsWidget extends StatefulWidget {
-  const OpenSiteLandlordDetailsWidget({super.key});
+  const OpenSiteLandlordDetailsWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteLandlordDetailsWidget> createState() =>
@@ -28,6 +34,280 @@ class _OpenSiteLandlordDetailsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteLandlordDetailsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if ((FFAppState().siteidint > 0) || widget!.updateData!) {
+        _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultfoa?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.landlordformModel.landoardNameTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandLordName''',
+            ).toString().toString();
+            _model.landlordformModel.landoardNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.landoardNameTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.landoardNameTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandLordName''',
+            ).toString().toString();
+            _model.landlordformModel.landoardNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.landoardNameTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.percentTextController?.text = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandLordPercentage''',
+            ).toString().toString();
+            _model.landlordformModel.percentTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.percentTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.stateValueController?.value = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].iState''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.landlordformModel.cityValueController?.value = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].iCity''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.landlordformModel.addressTextController?.text = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].Address1''',
+            ).toString().toString();
+            _model.landlordformModel.addressTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.addressTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.pincodeTextController?.text = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].Pincode''',
+            ).toString().toString();
+            _model.landlordformModel.pincodeTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.pincodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.landmarksTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandMark''',
+            ).toString().toString();
+            _model.landlordformModel.landmarksTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.landmarksTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.contactNameTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].Contact1''',
+            ).toString().toString();
+            _model.landlordformModel.contactNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.contactNameTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.alernativenumberTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].Contact2''',
+            ).toString().toString();
+            _model.landlordformModel.alernativenumberTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .alernativenumberTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.emailidTextController?.text = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].EmailId''',
+            ).toString().toString();
+            _model.landlordformModel.emailidTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.emailidTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.faxTextController?.text = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].Fax''',
+            ).toString().toString();
+            _model.landlordformModel.faxTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.faxTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.chequefieldTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].ChequeInFavour''',
+            ).toString().toString();
+            _model.landlordformModel.chequefieldTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.chequefieldTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.landlordBankNameValueController?.value =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].IndentBank''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.landlordformModel.lLchequefieldTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].LandLordPercentage''',
+            ).toString().toString();
+            _model.landlordformModel.lLchequefieldTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .lLchequefieldTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.bankAccountNumberTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].AccountNo''',
+            ).toString().toString();
+            _model.landlordformModel.bankAccountNumberTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .bankAccountNumberTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.bankBranchTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].BranchName''',
+            ).toString().toString();
+            _model.landlordformModel.bankBranchTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.bankBranchTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.iFSCCodeTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].IFSCCode''',
+            ).toString().toString();
+            _model.landlordformModel.iFSCCodeTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .landlordformModel.iFSCCodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.panNumberTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].PANCard''',
+            ).toString().toString();
+            _model.landlordformModel.panNumberTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.panNumberTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.aAdharcardNoTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].Aadharcard''',
+            ).toString().toString();
+            _model.landlordformModel.aAdharcardNoTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.aAdharcardNoTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.siteReferralNameTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].RefeName''',
+            ).toString().toString();
+            _model.landlordformModel.siteReferralNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .siteReferralNameTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.siteReferralNoTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].RefeId''',
+            ).toString().toString();
+            _model.landlordformModel.siteReferralNoTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel
+                        .siteReferralNoTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.landlordformModel.stateValueController?.value =
+                _model.landlordformModel.statefordistland!;
+          });
+          safeSetState(() {
+            _model.landlordformModel.cityValueController?.value = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].CityName''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.landlordformModel.landoardNameTextController?.text =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].IndentBank''',
+            ).toString().toString();
+            _model.landlordformModel.landoardNameTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.landlordformModel.landoardNameTextController!
+                        .text.length);
+          });
+        } else {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: Text('Alert'),
+                content: Text('Not able to procced'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
+        }
+      }
+    });
   }
 
   @override

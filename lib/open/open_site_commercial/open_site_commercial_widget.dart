@@ -309,6 +309,12 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                           onTap: () async {
                             context.pushNamed(
                               'open_site_landlord_details',
+                              queryParameters: {
+                                'updateData': serializeParam(
+                                  true,
+                                  ParamType.bool,
+                                ),
+                              }.withoutNulls,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,

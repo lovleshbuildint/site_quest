@@ -74,10 +74,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                     offset: _model.aTMExistingTextController!.text.length);
           });
           safeSetState(() {
-            _model.sitetypeValueController?.value = functions
-                .checkIndexint(FFAppState().SiteType, _model.sitetypeValue, '-',
-                    'SiteTypeName', 'iSiteType', false)!
-                .toString();
+            _model.sitetypeValueController?.value =
+                _model.isitetypes!.toString();
           });
           safeSetState(() {
             _model.landMarksTextController?.text = '\$.indents[0].LandMark';
@@ -2723,6 +2721,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
                             context.pushNamed(
                               'open_site_landlord_details',
+                              queryParameters: {
+                                'updateData': serializeParam(
+                                  false,
+                                  ParamType.bool,
+                                ),
+                              }.withoutNulls,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,

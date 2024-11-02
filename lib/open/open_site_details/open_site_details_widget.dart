@@ -145,21 +145,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
           return;
         }
       } else {
-        await showDialog(
-          context: context,
-          builder: (alertDialogContext) {
-            return AlertDialog(
-              title: Text('Alert'),
-              content: Text('test'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: Text('Ok'),
-                ),
-              ],
-            );
-          },
-        );
         return;
       }
     });

@@ -37,7 +37,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData! ? false : true) {
         _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
@@ -149,8 +149,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
           context: context,
           builder: (alertDialogContext) {
             return AlertDialog(
-              title: Text('alert'),
-              content: Text('Get Data is not fetch'),
+              title: Text('Alert'),
+              content: Text('test'),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(alertDialogContext),

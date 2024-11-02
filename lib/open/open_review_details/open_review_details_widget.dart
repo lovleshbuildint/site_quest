@@ -248,11 +248,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                               size: 24.0,
                                             ),
                                             onPressed: () async {
-                                              if (Navigator.of(context)
-                                                  .canPop()) {
-                                                context.pop();
-                                              }
-                                              context.pushNamed(
+                                              context.goNamed(
                                                 'open_site_details',
                                                 queryParameters: {
                                                   'updateData': serializeParam(

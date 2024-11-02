@@ -37,7 +37,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! && (FFAppState().siteidint > 0)) {
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
         _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
@@ -363,19 +363,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('open_site_landlord_details');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -393,19 +384,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('open_site_commercial');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -423,19 +405,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('open_site_dimensions');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(

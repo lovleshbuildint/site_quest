@@ -74,8 +74,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                     offset: _model.aTMExistingTextController!.text.length);
           });
           safeSetState(() {
-            _model.sitetypeValueController?.value =
-                '\$.indents[0].SiteTypeName';
+            _model.sitetypeValueController?.value = functions
+                .checkIndexint(FFAppState().SiteType, _model.sitetypeValue, '-',
+                    'SiteTypeName', 'iSiteType', false)!
+                .toString();
           });
           safeSetState(() {
             _model.landMarksTextController?.text = '\$.indents[0].LandMark';

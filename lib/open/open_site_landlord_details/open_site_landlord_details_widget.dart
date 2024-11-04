@@ -723,7 +723,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                   refeName: _model.landlordformModel
                                       .siteReferralNameTextController.text,
                                   contactNumber: null,
-                                  siteId: FFAppState().SiteId,
+                                  siteId: FFAppState().siteidint.toString(),
                                   iindent: null,
                                   targetBank: null,
                                   centres: null,

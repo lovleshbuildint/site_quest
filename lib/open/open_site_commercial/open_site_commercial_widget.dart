@@ -502,7 +502,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                     .advanceAmountAdvanceTextController.text,
                                 rentEscalation: _model.commercialAdvanceModel
                                     .rentFreePeriodAdvanceValue,
-                                siteId: FFAppState().SiteId,
+                                siteId: FFAppState().siteidint.toString(),
                                 iindent: null,
                                 targetBank: null,
                                 district: null,

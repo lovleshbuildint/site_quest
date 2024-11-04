@@ -596,7 +596,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 ),
                                 projectNote: _model.sitedimentionsModel
                                     .noteForProjectTISTextController.text,
-                                siteId: FFAppState().SiteId,
+                                siteId: FFAppState().siteidint.toString(),
                                 iindent: null,
                                 targetBank: null,
                                 district: null,

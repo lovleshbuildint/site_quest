@@ -2685,6 +2685,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 ''),
                             r'''$.Msg''',
                           ).toString())) {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('tests'),
+                                  content: Text('test'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                             FFAppState().siteidint = int.parse(getJsonField(
                               (_model.apiResults7x?.jsonBody ?? ''),
                               r'''$.SiteId''',

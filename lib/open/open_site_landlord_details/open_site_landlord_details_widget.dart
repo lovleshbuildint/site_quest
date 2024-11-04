@@ -37,7 +37,7 @@ class _OpenSiteLandlordDetailsWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData == true) {
         _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,

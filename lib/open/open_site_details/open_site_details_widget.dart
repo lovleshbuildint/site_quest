@@ -2717,7 +2717,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               },
                             );
 
-                            context.goNamed(
+                            context.pushNamed(
                               'open_site_landlord_details',
                               queryParameters: {
                                 'updateData': serializeParam(

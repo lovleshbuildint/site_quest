@@ -261,12 +261,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'open_site_commercial',
           path: '/openSiteCommercial',
-          builder: (context, params) => OpenSiteCommercialWidget(),
+          builder: (context, params) => OpenSiteCommercialWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'open_site_dimensions',
           path: '/openSiteDimensions',
-          builder: (context, params) => OpenSiteDimensionsWidget(),
+          builder: (context, params) => OpenSiteDimensionsWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'open_site_photo',
@@ -276,22 +286,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'open_site_nearest_branch',
           path: '/openSiteNearestBranch',
-          builder: (context, params) => OpenSiteNearestBranchWidget(),
+          builder: (context, params) => OpenSiteNearestBranchWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'open_site_nearest_atm',
           path: '/openSiteNearestAtm',
-          builder: (context, params) => OpenSiteNearestAtmWidget(),
-        ),
-        FFRoute(
-          name: 'open_site_remark',
-          path: '/openSiteRemark',
-          builder: (context, params) => OpenSiteRemarkWidget(),
+          builder: (context, params) => OpenSiteNearestAtmWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'open_site_comments',
           path: '/openSiteComments',
-          builder: (context, params) => OpenSiteCommentsWidget(),
+          builder: (context, params) => OpenSiteCommentsWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'open_site_review',
@@ -347,6 +367,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Profile',
           path: '/profile',
           builder: (context, params) => ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'open_site_remark',
+          path: '/openSiteRemark',
+          builder: (context, params) => OpenSiteRemarkWidget(
+            updateData: params.getParam(
+              'updateData',
+              ParamType.bool,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

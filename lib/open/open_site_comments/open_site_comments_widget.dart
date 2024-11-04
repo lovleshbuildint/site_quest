@@ -10,7 +10,12 @@ import 'open_site_comments_model.dart';
 export 'open_site_comments_model.dart';
 
 class OpenSiteCommentsWidget extends StatefulWidget {
-  const OpenSiteCommentsWidget({super.key});
+  const OpenSiteCommentsWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteCommentsWidget> createState() => _OpenSiteCommentsWidgetState();
@@ -265,6 +270,12 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                       onPressed: () async {
                         context.goNamed(
                           'open_site_remark',
+                          queryParameters: {
+                            'updateData': serializeParam(
+                              true,
+                              ParamType.bool,
+                            ),
+                          }.withoutNulls,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
@@ -358,6 +369,11 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
+                              onFieldSubmitted: (_) async {
+                                FFAppState().commentopen =
+                                    FFAppState().commentopen;
+                                safeSetState(() {});
+                              },
                               autofocus: false,
                               textCapitalization: TextCapitalization.words,
                               obscureText: false,
@@ -438,7 +454,22 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('open_site_remark');
+                            context.pushNamed(
+                              'open_site_nearest_atm',
+                              queryParameters: {
+                                'updateData': serializeParam(
+                                  true,
+                                  ParamType.bool,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

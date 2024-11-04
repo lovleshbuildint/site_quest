@@ -57,8 +57,8 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 96.0, 0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      'https://picsum.photos/seed/591/900',
+                    child: Image.asset(
+                      'assets/images/complete_sitequest.jpeg',
                       width: 220.0,
                       height: 179.0,
                       fit: BoxFit.cover,

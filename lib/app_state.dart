@@ -112,6 +112,10 @@ class FFAppState extends ChangeNotifier {
       _ATMIDNrATM =
           await secureStorage.getString('ff_ATMIDNrATM') ?? _ATMIDNrATM;
     });
+    await _safeInitAsync(() async {
+      _commentopen =
+          await secureStorage.getString('ff_commentopen') ?? _commentopen;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -843,6 +847,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteATMIDNrATM() {
     secureStorage.delete(key: 'ff_ATMIDNrATM');
+  }
+
+  String _commentopen = '';
+  String get commentopen => _commentopen;
+  set commentopen(String value) {
+    _commentopen = value;
+    secureStorage.setString('ff_commentopen', value);
+  }
+
+  void deleteCommentopen() {
+    secureStorage.delete(key: 'ff_commentopen');
   }
 }
 

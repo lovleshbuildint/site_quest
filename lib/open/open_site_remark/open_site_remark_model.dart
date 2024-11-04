@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'open_site_remark_widget.dart' show OpenSiteRemarkWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,8 @@ import 'package:provider/provider.dart';
 class OpenSiteRemarkModel extends FlutterFlowModel<OpenSiteRemarkWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (DOADetailsstepfive)] action in open_site_remark widget.
+  ApiCallResponse? dOADdeatilsfive;
   // State field(s) for Remark1 widget.
   FocusNode? remark1FocusNode;
   TextEditingController? remark1TextController;

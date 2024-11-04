@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestatm/nearestatm_widget.dart';
 import 'open_site_nearest_atm_widget.dart' show OpenSiteNearestAtmWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,8 @@ class OpenSiteNearestAtmModel
     extends FlutterFlowModel<OpenSiteNearestAtmWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (DOADetailsstepseven)] action in open_site_nearest_atm widget.
+  ApiCallResponse? apiResultuyr;
   // Model for nearestatm component.
   late NearestatmModel nearestatmModel;
   // Stores action output result for [Backend Call - API (UpdatenearestATM)] action in Button widget.

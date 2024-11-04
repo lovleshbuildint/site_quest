@@ -1107,7 +1107,22 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.safePop();
+                            context.pushNamed(
+                              'open_site_dimensions',
+                              queryParameters: {
+                                'updateData': serializeParam(
+                                  true,
+                                  ParamType.bool,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,
@@ -1126,6 +1141,12 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                             onPressed: () async {
                               context.pushNamed(
                                 'open_site_nearest_branch',
+                                queryParameters: {
+                                  'updateData': serializeParam(
+                                    false,
+                                    ParamType.bool,
+                                  ),
+                                }.withoutNulls,
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,

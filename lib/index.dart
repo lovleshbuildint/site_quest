@@ -72,8 +72,6 @@ export '/open/open_site_nearest_branch/open_site_nearest_branch_widget.dart'
     show OpenSiteNearestBranchWidget;
 export '/open/open_site_nearest_atm/open_site_nearest_atm_widget.dart'
     show OpenSiteNearestAtmWidget;
-export '/open/open_site_remark/open_site_remark_widget.dart'
-    show OpenSiteRemarkWidget;
 export '/open/open_site_comments/open_site_comments_widget.dart'
     show OpenSiteCommentsWidget;
 export '/open/open_site_review/open_site_review_widget.dart'
@@ -92,3 +90,5 @@ export '/open/referal_clien_details/referal_clien_details_widget.dart'
 export '/referal/referal_submit/referal_submit_widget.dart'
     show ReferalSubmitWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
+export '/open/open_site_remark/open_site_remark_widget.dart'
+    show OpenSiteRemarkWidget;

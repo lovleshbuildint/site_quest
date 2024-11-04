@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,12 @@ import 'open_site_remark_model.dart';
 export 'open_site_remark_model.dart';
 
 class OpenSiteRemarkWidget extends StatefulWidget {
-  const OpenSiteRemarkWidget({super.key});
+  const OpenSiteRemarkWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteRemarkWidget> createState() => _OpenSiteRemarkWidgetState();
@@ -27,6 +33,44 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteRemarkModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+        _model.dOADdeatilsfive = await SqGroup.dOADetailsstepfiveCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.dOADdeatilsfive?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.remark1TextController?.text = FFAppState().Remark1open;
+            _model.remark1TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark1TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark2TextController?.text = FFAppState().Remark2open;
+            _model.remark2TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark2TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark3TextController?.text = FFAppState().Remark3open;
+            _model.remark3TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark3TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark4TextController?.text = FFAppState().Remark4open;
+            _model.remark4TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark4TextController!.text.length);
+          });
+          safeSetState(() {
+            _model.remark5TextController?.text = FFAppState().Remark5open;
+            _model.remark5TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark5TextController!.text.length);
+          });
+        }
+      }
+    });
 
     _model.remark1TextController ??= TextEditingController();
     _model.remark1FocusNode ??= FocusNode();
@@ -306,6 +350,12 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                       onPressed: () async {
                         context.goNamed(
                           'open_site_comments',
+                          queryParameters: {
+                            'updateData': serializeParam(
+                              true,
+                              ParamType.bool,
+                            ),
+                          }.withoutNulls,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
@@ -700,7 +750,22 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.safePop();
+                            context.pushNamed(
+                              'open_site_nearest_atm',
+                              queryParameters: {
+                                'updateData': serializeParam(
+                                  true,
+                                  ParamType.bool,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

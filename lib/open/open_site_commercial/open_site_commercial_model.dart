@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/commercial_advance/commercial_advance_widget.dart';
 import 'open_site_commercial_widget.dart' show OpenSiteCommercialWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,8 @@ class OpenSiteCommercialModel
     extends FlutterFlowModel<OpenSiteCommercialWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (DOADetailsstepthree)] action in open_site_commercial widget.
+  ApiCallResponse? apiResultuyr;
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestbranch/nearestbranch_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,12 @@ import 'open_site_nearest_branch_model.dart';
 export 'open_site_nearest_branch_model.dart';
 
 class OpenSiteNearestBranchWidget extends StatefulWidget {
-  const OpenSiteNearestBranchWidget({super.key});
+  const OpenSiteNearestBranchWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteNearestBranchWidget> createState() =>
@@ -30,6 +36,68 @@ class _OpenSiteNearestBranchWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteNearestBranchModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+        _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultuyr?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.nearestbranchModel.cRACoverageValueController?.value =
+                ((String var1) {
+              return var1 == 'True' ? 'Yes' : 'No';
+            }(getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Is_CRACoverage''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.branchSOLIDTextController?.text =
+                FFAppState().BranchSOLID;
+            _model.nearestbranchModel.branchSOLIDTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel.branchSOLIDTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.nearestBranchstextTextController?.text =
+                FFAppState().NearestBranch;
+            _model.nearestbranchModel.nearestBranchstextTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel
+                        .nearestBranchstextTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.distanceNearestBranchTextController
+                ?.text = FFAppState().DistancefromtheNeearestBranch;
+            _model.nearestbranchModel.distanceNearestBranchTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel
+                        .distanceNearestBranchTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.videoURLTextController?.text =
+                FFAppState().VideoURL;
+            _model.nearestbranchModel.videoURLTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.nearestbranchModel.videoURLTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.nearestbranchModel.cRAAgencyValueController?.value =
+                _model.nearestbranchModel.cRAAgencyValue!;
+          });
+        } else {
+          return;
+        }
+      }
+    });
   }
 
   @override
@@ -198,19 +266,10 @@ class _OpenSiteNearestBranchWidgetState
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('open_site_nearest_branch');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFF07D95A),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFF07D95A),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -228,19 +287,10 @@ class _OpenSiteNearestBranchWidgetState
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed('open_site_nearest_atm');
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.dotCircle,
-                        color: Color(0xFFD1D5DB),
-                        size: 20.0,
-                      ),
+                    FaIcon(
+                      FontAwesomeIcons.dotCircle,
+                      color: Color(0xFFD1D5DB),
+                      size: 20.0,
                     ),
                     Expanded(
                       child: Container(
@@ -387,6 +437,12 @@ class _OpenSiteNearestBranchWidgetState
                               if ((_model.dOADetailsfive?.succeeded ?? true)) {
                                 context.pushNamed(
                                   'open_site_nearest_atm',
+                                  queryParameters: {
+                                    'updateData': serializeParam(
+                                      false,
+                                      ParamType.bool,
+                                    ),
+                                  }.withoutNulls,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

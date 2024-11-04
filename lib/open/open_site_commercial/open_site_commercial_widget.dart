@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/commercial_advance/commercial_advance_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,12 @@ import 'open_site_commercial_model.dart';
 export 'open_site_commercial_model.dart';
 
 class OpenSiteCommercialWidget extends StatefulWidget {
-  const OpenSiteCommercialWidget({super.key});
+  const OpenSiteCommercialWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteCommercialWidget> createState() =>
@@ -27,6 +33,126 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteCommercialModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+        _model.apiResultuyr = await SqGroup.dOADetailsstepthreeCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.apiResultuyr?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentaltypeValueController?.value =
+                _model.commercialAdvanceModel.rentaltypeValue!;
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.eBillingRentAdvanceValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].isEnclEB''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                ?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].Rent''',
+            ).toString().toString();
+            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.commercialAdvanceModel
+                        .advanceRentAmountRENTTextController!.text.length);
+          });
+          safeSetState(() {
+            _model
+                .commercialAdvanceModel
+                .advanceRentMonthRentOrSecurityMonthsValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].EscalationPeriod''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentFreePeriodAdvanceValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].RentFreePeriod''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model
+                .commercialAdvanceModel
+                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                ?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].TotalDeposit''',
+            ).toString().toString();
+            _model
+                    .commercialAdvanceModel
+                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model
+                        .commercialAdvanceModel
+                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                        .text
+                        .length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.intialAdvanceValueController?.value =
+                getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].SecurityDeposit''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                ?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AdvanceDeposit''',
+            ).toString().toString();
+            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.commercialAdvanceModel
+                        .balanceAmountAdvanceTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                ?.text = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AdvanceDeposit''',
+            ).toString().toString();
+            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.commercialAdvanceModel
+                        .advanceAmountAdvanceTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].RentEscalation''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.agreementPeriodsAdvanceValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].AgreementPeriod''',
+            ).toString().toString();
+          });
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    });
   }
 
   @override

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/sitedimentions/sitedimentions_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,12 @@ import 'open_site_dimensions_model.dart';
 export 'open_site_dimensions_model.dart';
 
 class OpenSiteDimensionsWidget extends StatefulWidget {
-  const OpenSiteDimensionsWidget({super.key});
+  const OpenSiteDimensionsWidget({
+    super.key,
+    required this.updateData,
+  });
+
+  final bool? updateData;
 
   @override
   State<OpenSiteDimensionsWidget> createState() =>
@@ -27,6 +33,200 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OpenSiteDimensionsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+        _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
+          iIndent: FFAppState().siteidint.toString(),
+          token: FFAppState().Token,
+        );
+
+        if ((_model.dOADFour?.succeeded ?? true)) {
+          safeSetState(() {
+            _model.sitedimentionsModel.totalShopAreaTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].TotalShopArea''',
+            ).toString().toString();
+            _model.sitedimentionsModel.totalShopAreaTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .totalShopAreaTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].OfferedShopArea''',
+            ).toString().toString();
+            _model.sitedimentionsModel.totalAreaOfferedTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .totalAreaOfferedTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.carpetAreaTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].CarpetArea''',
+            ).toString().toString();
+            _model.sitedimentionsModel.carpetAreaTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.carpetAreaTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.shopDepthTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopDepth''',
+            ).toString().toString();
+            _model.sitedimentionsModel.shopDepthTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.shopDepthTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.shopWidthTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopWidth''',
+            ).toString().toString();
+            _model.sitedimentionsModel.shopWidthTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.shopWidthTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.shopHeightTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].ShopHeight''',
+            ).toString().toString();
+            _model.sitedimentionsModel.shopHeightTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.shopHeightTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.totalFrontageTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].TotalFrontage''',
+            ).toString().toString();
+            _model.sitedimentionsModel.totalFrontageTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .totalFrontageTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.frontageOfferedTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].OfferedFrontage''',
+            ).toString().toString();
+            _model.sitedimentionsModel.frontageOfferedTextController
+                    ?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .frontageOfferedTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.singageWidthTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].SignageWidth''',
+            ).toString().toString();
+            _model.sitedimentionsModel.singageWidthTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .singageWidthTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.singageHeightTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].SignageHeight''',
+            ).toString().toString();
+            _model.sitedimentionsModel.singageHeightTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel
+                        .singageHeightTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.noofHoursTextController?.text =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].PowerAvailHours''',
+            ).toString().toString();
+            _model.sitedimentionsModel.noofHoursTextController?.selection =
+                TextSelection.collapsed(
+                    offset: _model.sitedimentionsModel.noofHoursTextController!
+                        .text.length);
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.powerAvailabilityValueController?.value =
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_Power''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.lShapeSingageValueController?.value =
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_L_Shape''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.lShapeSingageValueController?.value =
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_L_Shape''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.vsatValueController?.value =
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_VSAT''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.acODUSpaceValueController?.value =
+                ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].Is_AC_ODU''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.totemPoleValueController?.value =
+                getJsonField(
+              (_model.dOADFour?.jsonBody ?? ''),
+              r'''$.indents[0].IsTotempole''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.sitedimentionsModel.radioButtonValueController?.value =
+                '\$.indents[0].ShopType';
+          });
+        } else {
+          return;
+        }
+      }
+    });
   }
 
   @override
@@ -307,7 +507,22 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.safePop();
+                            context.pushNamed(
+                              'open_site_commercial',
+                              queryParameters: {
+                                'updateData': serializeParam(
+                                  true,
+                                  ParamType.bool,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Icon(
                             Icons.arrow_back_rounded,

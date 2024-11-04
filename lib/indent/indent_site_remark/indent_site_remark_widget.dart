@@ -579,19 +579,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('open_site_remark');
-                        },
-                        child: FaIcon(
-                          FontAwesomeIcons.dotCircle,
-                          color: Color(0xFF07D95A),
-                          size: 20.0,
-                        ),
+                      FaIcon(
+                        FontAwesomeIcons.dotCircle,
+                        color: Color(0xFF07D95A),
+                        size: 20.0,
                       ),
                       Expanded(
                         child: Container(

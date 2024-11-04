@@ -36,7 +36,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData == true) {
         _model.apiResultuyr = await SqGroup.dOADetailsstepthreeCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
@@ -149,8 +149,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
         } else {
           return;
         }
-      } else {
-        return;
       }
     });
   }

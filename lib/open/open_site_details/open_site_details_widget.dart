@@ -57,14 +57,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                         _model.distanceFromIndentsTextController!.text.length);
           });
           safeSetState(() {
-            _model.addressTextController?.text = '\$.indents[0].LocationName';
-            _model.addressTextController?.selection = TextSelection.collapsed(
-                offset: _model.addressTextController!.text.length);
-          });
-          safeSetState(() {
             _model.pincodeTextController?.text = '\$.indents[0].PinCode';
             _model.pincodeTextController?.selection = TextSelection.collapsed(
                 offset: _model.pincodeTextController!.text.length);
+          });
+          safeSetState(() {
+            _model.addressTextController?.text = '\$.indents[0].LocationName';
+            _model.addressTextController?.selection = TextSelection.collapsed(
+                offset: _model.addressTextController!.text.length);
           });
           safeSetState(() {
             _model.aTMExistingTextController?.text =
@@ -1158,7 +1158,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      FFAppState().statetest,
+                                      valueOrDefault<String>(
+                                        _model.stateDropdownValue,
+                                        '1',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

@@ -17,6 +17,22 @@ int multiply2arg(
   return rentAmount * rentMonth;
 }
 
+String? checkIndexCopy(
+  dynamic list,
+  String? value,
+  String? keys,
+  String? subKeys,
+  String? indexKey,
+) {
+  // from the list check the value at which index it is and return the index number
+  for (int i = 0; i < list[keys].length; i++) {
+    if (list[keys][i][subKeys] == value) {
+      return list[keys][i][indexKey];
+    }
+  }
+  return null;
+}
+
 int? checkIndexint(
   dynamic list,
   String? value,

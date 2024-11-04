@@ -542,7 +542,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 r'''$.Msg''',
                               ).toString())) {
                                 context.goNamed(
-                                  'indent_site_dimensions',
+                                  'open_site_dimensions',
                                   queryParameters: {
                                     'updateData': serializeParam(
                                       false,

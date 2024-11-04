@@ -37,7 +37,7 @@ class _OpenSiteLandlordDetailsWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if ((FFAppState().siteidint > 0) || widget!.updateData!) {
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
         _model.apiResultfoa = await SqGroup.dOADetailssteptwoCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,
@@ -377,7 +377,10 @@ class _OpenSiteLandlordDetailsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Add Landlord Details',
+                                getJsonField(
+                                  (_model.apiResultfoa?.jsonBody ?? ''),
+                                  r'''$.indents[0].iState''',
+                                ).toString(),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

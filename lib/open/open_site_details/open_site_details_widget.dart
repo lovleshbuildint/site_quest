@@ -2686,7 +2686,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             r'''$.Msg''',
                           ).toString())) {
                             FFAppState().siteidint = int.parse(getJsonField(
-                              (_model.apiResults7x?.jsonBody ?? ''),
+                              (_model.updateDOAdetailsfirstwordsSites
+                                      ?.jsonBody ??
+                                  ''),
                               r'''$.SiteId''',
                             ).toString());
                             safeSetState(() {});

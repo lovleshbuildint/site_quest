@@ -2696,22 +2696,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text('test1'),
-                                  content: Text('test1'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
                                   title: Text(getJsonField(
                                     (_model.updateDOAdetailsfirstwordsSites
                                             ?.jsonBody ??
@@ -2724,22 +2708,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         ''),
                                     r'''$.Msg''',
                                   ).toString()),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('test2'),
-                                  content: Text('test2'),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>
@@ -2765,23 +2733,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
                                 ),
-                              },
-                            );
-
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('test3'),
-                                  content: Text('test3'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
-                                );
                               },
                             );
                           } else {

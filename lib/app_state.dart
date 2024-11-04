@@ -859,6 +859,12 @@ class FFAppState extends ChangeNotifier {
   void deleteCommentopen() {
     secureStorage.delete(key: 'ff_commentopen');
   }
+
+  String _statetest = '';
+  String get statetest => _statetest;
+  set statetest(String value) {
+    _statetest = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

@@ -105,8 +105,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             _model.districtValueController?.value = '\$..indents[0].District';
           });
           safeSetState(() {
-            _model.stateDropdownValueController?.value =
-                '\$.indents[0].StateName';
+            _model.stateDropdownValueController?.value = FFAppState().statetest;
           });
           safeSetState(() {
             _model.cityValueController?.value = '\$.indents[0].CityName';
@@ -1159,7 +1158,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      'State',
+                                      FFAppState().statetest,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1231,6 +1230,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                     'States',
                                                     'iState',
                                                     'State');
+                                            safeSetState(() {});
+                                            FFAppState().statetest =
+                                                _model.stateDropdownValue!;
                                             safeSetState(() {});
                                           },
                                           width:

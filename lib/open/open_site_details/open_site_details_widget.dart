@@ -480,10 +480,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                       scrollDirection: Axis.vertical,
                       children: [
                         Text(
-                          getJsonField(
-                            FFAppState().test,
-                            r'''$.customerBank''',
-                          ).toString(),
+                          'Customer Bank',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -538,10 +535,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            getJsonField(
-                              FFAppState().test,
-                              r'''$.siteType''',
-                            ).toString(),
+                            'Site Type',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

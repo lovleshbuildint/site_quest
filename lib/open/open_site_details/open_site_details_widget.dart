@@ -480,7 +480,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                       scrollDirection: Axis.vertical,
                       children: [
                         Text(
-                          'Customer Bank',
+                          getJsonField(
+                            FFAppState().test,
+                            r'''$.customerBank''',
+                          ).toString(),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',

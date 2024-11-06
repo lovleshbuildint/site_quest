@@ -74,8 +74,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                     offset: _model.aTMExistingTextController!.text.length);
           });
           safeSetState(() {
-            _model.sitetypeValueController?.value =
-                _model.isitetypes!.toString();
+            _model.sitetypeValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].SiteTypeName''',
+            ).toString().toString();
           });
           safeSetState(() {
             _model.landMarksTextController?.text = '\$.indents[0].LandMark';

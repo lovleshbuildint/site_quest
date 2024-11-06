@@ -45,30 +45,42 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
 
         if ((_model.apiResults7x?.succeeded ?? true)) {
           safeSetState(() {
-            _model.customerBankValueController?.value =
-                '\$.indents[0].CustomerName';
+            _model.customerBankValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].CustomerName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.distanceFromIndentsTextController?.text =
-                '\$.indents[0].DistFromIndent';
+            _model.distanceFromIndentsTextController?.text = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].DistFromIndent''',
+            ).toString().toString();
             _model.distanceFromIndentsTextController?.selection =
                 TextSelection.collapsed(
                     offset:
                         _model.distanceFromIndentsTextController!.text.length);
           });
           safeSetState(() {
-            _model.pincodeTextController?.text = '\$.indents[0].PinCode';
+            _model.pincodeTextController?.text = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].PinCode''',
+            ).toString().toString();
             _model.pincodeTextController?.selection = TextSelection.collapsed(
                 offset: _model.pincodeTextController!.text.length);
           });
           safeSetState(() {
-            _model.addressTextController?.text = '\$.indents[0].LocationName';
+            _model.addressTextController?.text = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].LocationName''',
+            ).toString().toString();
             _model.addressTextController?.selection = TextSelection.collapsed(
                 offset: _model.addressTextController!.text.length);
           });
           safeSetState(() {
-            _model.aTMExistingTextController?.text =
-                '\$.indents[0].ATMID_Existing';
+            _model.aTMExistingTextController?.text = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].ATMID_Existing''',
+            ).toString().toString();
             _model.aTMExistingTextController?.selection =
                 TextSelection.collapsed(
                     offset: _model.aTMExistingTextController!.text.length);
@@ -80,52 +92,84 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             ).toString().toString();
           });
           safeSetState(() {
-            _model.landMarksTextController?.text = '\$.indents[0].LandMark';
+            _model.landMarksTextController?.text = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].LandMark''',
+            ).toString().toString();
             _model.landMarksTextController?.selection = TextSelection.collapsed(
                 offset: _model.landMarksTextController!.text.length);
           });
           safeSetState(() {
-            _model.cashDeviceValueController?.value =
-                '\$.indents[0].CashDeviceType';
+            _model.cashDeviceValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].CashDeviceType''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.cashDeviceMovementValueController?.value =
-                '\$.indents[0].CashDeviceMovementCategory';
+            _model.cashDeviceMovementValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].CashDeviceMovementCategory''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.tisTypeValueController?.value = '\$.indents[0].TISTypeName';
+            _model.tisTypeValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].TISTypeName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.projectTypeValueController?.value =
-                '\$.indents[0].ProjectTypeName';
+            _model.projectTypeValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].ProjectTypeName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.strategyDropDwonValueController?.value =
-                '\$.indents[0].DOAStrategyName';
+            _model.strategyDropDwonValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].DOAStrategyName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.districtValueController?.value = '\$..indents[0].District';
+            _model.districtValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].District''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.stateDropdownValueController?.value = FFAppState().statetest;
+            _model.stateDropdownValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].StateName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.cityValueController?.value = '\$.indents[0].CityName';
+            _model.cityValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].CityName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.circleValueController?.value = '\$.indents[0].Circle';
+            _model.circleValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].Circle''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.rBICategoryValueController?.value =
-                '\$..indents[0].RBICategoryName';
+            _model.rBICategoryValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].RBICategoryName''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.siteSourcedValueController?.value =
-                '\$.indents[0].SiteSourcedBy';
+            _model.siteSourcedValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].SiteSourcedBy''',
+            ).toString().toString();
           });
           safeSetState(() {
-            _model.businessTypeValueController?.value =
-                '\$.indents[0].ShopTypeName';
+            _model.businessTypeValueController?.value = getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].ShopTypeName''',
+            ).toString().toString();
           });
         } else {
           await showDialog(

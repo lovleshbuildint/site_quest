@@ -57,8 +57,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
       child: SingleChildScrollView(
@@ -740,7 +738,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      FFAppState().rentescalationPerOpencommercial,
+                      'Rent escalation (percent)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,
@@ -792,7 +790,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      FFAppState().TotalAdvanceAmountopencommercial,
+                      'Escalation Period (Years)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: Colors.black,

@@ -158,10 +158,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
               r'''$.indents[0].EscalationPeriod''',
             ).toString().toString();
           });
-          safeSetState(() {
-            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
-                ?.value = FFAppState().rentescalationPerOpencommercial;
-          });
         } else {
           return;
         }

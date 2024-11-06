@@ -126,6 +126,11 @@ class FFAppState extends ChangeNotifier {
               .getString('ff_TotalAdvanceAmountopencommercial') ??
           _TotalAdvanceAmountopencommercial;
     });
+    await _safeInitAsync(() async {
+      _landlordbanklanddetails =
+          await secureStorage.getString('ff_landlordbanklanddetails') ??
+              _landlordbanklanddetails;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -892,6 +897,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteTotalAdvanceAmountopencommercial() {
     secureStorage.delete(key: 'ff_TotalAdvanceAmountopencommercial');
+  }
+
+  String _landlordbanklanddetails = '';
+  String get landlordbanklanddetails => _landlordbanklanddetails;
+  set landlordbanklanddetails(String value) {
+    _landlordbanklanddetails = value;
+    secureStorage.setString('ff_landlordbanklanddetails', value);
+  }
+
+  void deleteLandlordbanklanddetails() {
+    secureStorage.delete(key: 'ff_landlordbanklanddetails');
   }
 }
 

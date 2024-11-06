@@ -1240,8 +1240,12 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   ) as List)
                       .map<String>((s) => s.toString())
                       .toList()!,
-                  onChanged: (val) =>
-                      safeSetState(() => _model.landlordBankNameValue = val),
+                  onChanged: (val) async {
+                    safeSetState(() => _model.landlordBankNameValue = val);
+                    FFAppState().landlordbanklanddetails =
+                        FFAppState().landlordbanklanddetails;
+                    safeSetState(() {});
+                  },
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
                   searchHintTextStyle:

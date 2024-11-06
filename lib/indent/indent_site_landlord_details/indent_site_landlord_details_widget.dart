@@ -67,8 +67,10 @@ class _IndentSiteLandlordDetailsWidgetState
                         .landlordformModel.percentTextController!.text.length);
           });
           safeSetState(() {
-            _model.landlordformModel.stateValueController?.value =
-                '\$.indents[0].iState';
+            _model.landlordformModel.stateValueController?.value = getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].StateName''',
+            ).toString().toString();
           });
           safeSetState(() {
             _model.landlordformModel.cityValueController?.value = getJsonField(
@@ -162,10 +164,7 @@ class _IndentSiteLandlordDetailsWidgetState
           });
           safeSetState(() {
             _model.landlordformModel.landlordBankNameValueController?.value =
-                getJsonField(
-              (_model.apiResultfoa?.jsonBody ?? ''),
-              r'''$.indents[0].IndentBank''',
-            ).toString().toString();
+                FFAppState().landlordbanklanddetails;
           });
           safeSetState(() {
             _model.landlordformModel.lLchequefieldTextController?.text =
@@ -267,10 +266,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].CityName''',
             ).toString().toString();
-          });
-          safeSetState(() {
-            _model.landlordformModel.landlordBankNameValueController?.value =
-                '\$.indents[0].IndentBank';
           });
         } else {
           await showDialog(

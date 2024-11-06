@@ -51,6 +51,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             ).toString().toString();
           });
           safeSetState(() {
+            _model.oNOFSiteValueController?.value = ((String var1) {
+              return var1 == 'False' ? 'Offsite' : 'Onsite';
+            }(getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].isOnSite''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
+            _model.duplicateSiteValueController?.value = ((String var1) {
+              return var1 == 'False' ? 'No' : 'Yes';
+            }(getJsonField(
+              (_model.apiResults7x?.jsonBody ?? ''),
+              r'''$.indents[0].isDuplicateSite''',
+            ).toString().toString()));
+          });
+          safeSetState(() {
             _model.distanceFromIndentsTextController?.text = getJsonField(
               (_model.apiResults7x?.jsonBody ?? ''),
               r'''$.indents[0].DistFromIndent''',
@@ -71,7 +87,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
           safeSetState(() {
             _model.addressTextController?.text = getJsonField(
               (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].LocationName''',
+              r'''$.indents[0].Address1''',
             ).toString().toString();
             _model.addressTextController?.selection = TextSelection.collapsed(
                 offset: _model.addressTextController!.text.length);
@@ -1202,10 +1218,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      valueOrDefault<String>(
-                                        _model.stateDropdownValue,
-                                        '1',
-                                      ),
+                                      'State',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

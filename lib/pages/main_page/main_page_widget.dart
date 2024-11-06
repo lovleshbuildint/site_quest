@@ -1466,7 +1466,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'indent_site_commercial',
+                                          'indent_site_landlord_details',
                                           queryParameters: {
                                             'updateData': serializeParam(
                                               false,

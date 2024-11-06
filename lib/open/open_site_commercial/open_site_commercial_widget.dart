@@ -146,6 +146,17 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
               r'''$.indents[0].AgreementPeriod''',
             ).toString().toString();
           });
+          safeSetState(() {
+            _model.commercialAdvanceModel.escalationPeriodAdvanceValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].EscalationPeriod''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+                ?.value = FFAppState().rentescalationPerOpendimens;
+          });
         } else {
           return;
         }

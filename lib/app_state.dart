@@ -116,6 +116,11 @@ class FFAppState extends ChangeNotifier {
       _commentopen =
           await secureStorage.getString('ff_commentopen') ?? _commentopen;
     });
+    await _safeInitAsync(() async {
+      _rentescalationPerOpendimens =
+          await secureStorage.getString('ff_rentescalationPerOpendimens') ??
+              _rentescalationPerOpendimens;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -860,10 +865,15 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_commentopen');
   }
 
-  String _statetest = '';
-  String get statetest => _statetest;
-  set statetest(String value) {
-    _statetest = value;
+  String _rentescalationPerOpendimens = '';
+  String get rentescalationPerOpendimens => _rentescalationPerOpendimens;
+  set rentescalationPerOpendimens(String value) {
+    _rentescalationPerOpendimens = value;
+    secureStorage.setString('ff_rentescalationPerOpendimens', value);
+  }
+
+  void deleteRentescalationPerOpendimens() {
+    secureStorage.delete(key: 'ff_rentescalationPerOpendimens');
   }
 }
 

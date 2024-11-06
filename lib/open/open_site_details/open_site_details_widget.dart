@@ -1282,9 +1282,6 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                           onChanged: (val) async {
                                             safeSetState(() => _model
                                                 .stateDropdownValue = val);
-                                            FFAppState().statetest =
-                                                _model.stateDropdownValue!;
-                                            safeSetState(() {});
                                             _model.statefordsitopen =
                                                 functions.checkIndex(
                                                     stateDropdownStateListResponse

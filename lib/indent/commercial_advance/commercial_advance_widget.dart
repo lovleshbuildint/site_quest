@@ -747,8 +747,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       controller: _model.rentEscaltionAdvanceValueController ??=
                           FormFieldController<String>(null),
                       options: ['0', '5', '10', '15', '20', '25'],
-                      onChanged: (val) => safeSetState(
-                          () => _model.rentEscaltionAdvanceValue = val),
+                      onChanged: (val) async {
+                        safeSetState(
+                            () => _model.rentEscaltionAdvanceValue = val);
+                        FFAppState().rentescalationPerOpendimens =
+                            _model.rentEscaltionAdvanceValue!;
+                        safeSetState(() {});
+                      },
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:

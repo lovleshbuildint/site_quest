@@ -1048,6 +1048,22 @@ class _IndentSiteLandlordDetailsWidgetState
                                   (_model.updateDOADdeatils2?.jsonBody ?? ''),
                                   r'''$.Msg''',
                                 ).toString())) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('update'),
+                                        content: Text('update onprocess'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
                                   FFAppState().landlordbanklanddetails = _model
                                       .landlordformModel.ilandlordbankname!
                                       .toString();
@@ -1056,7 +1072,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        title: Text('update'),
+                                        title: Text('upadte'),
                                         content: Text('update done'),
                                         actions: [
                                           TextButton(

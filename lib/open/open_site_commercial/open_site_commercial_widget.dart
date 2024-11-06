@@ -155,7 +155,18 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
           });
           safeSetState(() {
             _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
-                ?.value = FFAppState().rentescalationPerOpendimens;
+                ?.value = FFAppState().rentescalationPerOpencommercial;
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+                ?.value = FFAppState().rentescalationPerOpencommercial;
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.escalationPeriodAdvanceValueController
+                ?.value = getJsonField(
+              (_model.apiResultuyr?.jsonBody ?? ''),
+              r'''$.indents[0].EscalationPeriod''',
+            ).toString().toString();
           });
         } else {
           return;

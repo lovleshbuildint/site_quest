@@ -750,7 +750,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       onChanged: (val) async {
                         safeSetState(
                             () => _model.rentEscaltionAdvanceValue = val);
-                        FFAppState().rentescalationPerOpendimens =
+                        FFAppState().rentescalationPerOpencommercial =
                             _model.rentEscaltionAdvanceValue!;
                         safeSetState(() {});
                       },

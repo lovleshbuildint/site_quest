@@ -117,9 +117,9 @@ class FFAppState extends ChangeNotifier {
           await secureStorage.getString('ff_commentopen') ?? _commentopen;
     });
     await _safeInitAsync(() async {
-      _rentescalationPerOpendimens =
-          await secureStorage.getString('ff_rentescalationPerOpendimens') ??
-              _rentescalationPerOpendimens;
+      _rentescalationPerOpencommercial =
+          await secureStorage.getString('ff_rentescalationPerOpencommercial') ??
+              _rentescalationPerOpencommercial;
     });
   }
 
@@ -865,15 +865,16 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_commentopen');
   }
 
-  String _rentescalationPerOpendimens = '';
-  String get rentescalationPerOpendimens => _rentescalationPerOpendimens;
-  set rentescalationPerOpendimens(String value) {
-    _rentescalationPerOpendimens = value;
-    secureStorage.setString('ff_rentescalationPerOpendimens', value);
+  String _rentescalationPerOpencommercial = '';
+  String get rentescalationPerOpencommercial =>
+      _rentescalationPerOpencommercial;
+  set rentescalationPerOpencommercial(String value) {
+    _rentescalationPerOpencommercial = value;
+    secureStorage.setString('ff_rentescalationPerOpencommercial', value);
   }
 
-  void deleteRentescalationPerOpendimens() {
-    secureStorage.delete(key: 'ff_rentescalationPerOpendimens');
+  void deleteRentescalationPerOpencommercial() {
+    secureStorage.delete(key: 'ff_rentescalationPerOpencommercial');
   }
 }
 

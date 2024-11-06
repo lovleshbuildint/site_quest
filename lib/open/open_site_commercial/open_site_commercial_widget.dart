@@ -566,6 +566,17 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                     ''),
                                 r'''$.Msg''',
                               ).toString())) {
+                                FFAppState().TotalAdvanceAmountopencommercial =
+                                    _model
+                                        .commercialAdvanceModel
+                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                        .text;
+                                safeSetState(() {});
+                                FFAppState().rentescalationPerOpencommercial =
+                                    _model.commercialAdvanceModel
+                                        .rentEscaltionAdvanceValue!;
+                                safeSetState(() {});
+
                                 context.goNamed(
                                   'open_site_dimensions',
                                   queryParameters: {

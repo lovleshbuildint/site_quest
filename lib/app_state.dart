@@ -121,6 +121,11 @@ class FFAppState extends ChangeNotifier {
           await secureStorage.getString('ff_rentescalationPerOpencommercial') ??
               _rentescalationPerOpencommercial;
     });
+    await _safeInitAsync(() async {
+      _TotalAdvanceAmountopencommercial = await secureStorage
+              .getString('ff_TotalAdvanceAmountopencommercial') ??
+          _TotalAdvanceAmountopencommercial;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -875,6 +880,18 @@ class FFAppState extends ChangeNotifier {
 
   void deleteRentescalationPerOpencommercial() {
     secureStorage.delete(key: 'ff_rentescalationPerOpencommercial');
+  }
+
+  String _TotalAdvanceAmountopencommercial = '';
+  String get TotalAdvanceAmountopencommercial =>
+      _TotalAdvanceAmountopencommercial;
+  set TotalAdvanceAmountopencommercial(String value) {
+    _TotalAdvanceAmountopencommercial = value;
+    secureStorage.setString('ff_TotalAdvanceAmountopencommercial', value);
+  }
+
+  void deleteTotalAdvanceAmountopencommercial() {
+    secureStorage.delete(key: 'ff_TotalAdvanceAmountopencommercial');
   }
 }
 

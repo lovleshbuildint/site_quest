@@ -379,6 +379,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         Duration(milliseconds: 1),
                         () => safeSetState(() {}),
                       ),
+                      onFieldSubmitted: (_) async {
+                        FFAppState().TotalAdvanceAmountopencommercial = _model
+                            .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                            .text;
+                        safeSetState(() {});
+                      },
                       autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       readOnly: true,

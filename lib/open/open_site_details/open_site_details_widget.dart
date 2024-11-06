@@ -2783,6 +2783,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             FFAppState().test = <String, dynamic>{
                               'customerBank': _model.customerBankValue,
                               'siteType': _model.sitetypeValue,
+                              'State': _model.stateDropdownValue,
                             };
                             safeSetState(() {});
 

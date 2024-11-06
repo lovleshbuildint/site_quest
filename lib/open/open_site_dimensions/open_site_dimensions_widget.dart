@@ -36,7 +36,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData == true) {
         _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
           iIndent: FFAppState().siteidint.toString(),
           token: FFAppState().Token,

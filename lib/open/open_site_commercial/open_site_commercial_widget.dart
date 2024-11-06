@@ -131,10 +131,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
           });
           safeSetState(() {
             _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
-                ?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].RentEscalation''',
-            ).toString().toString();
+                ?.value = FFAppState().rentescalationPerOpencommercial;
           });
           safeSetState(() {
             _model.commercialAdvanceModel.agreementPeriodsAdvanceValueController

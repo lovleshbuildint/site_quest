@@ -1052,6 +1052,22 @@ class _IndentSiteLandlordDetailsWidgetState
                                       .landlordformModel.ilandlordbankname!
                                       .toString();
                                   safeSetState(() {});
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('update'),
+                                        content: Text('update done'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
 
                                   context.goNamed(
                                     'indent_site_commercial',

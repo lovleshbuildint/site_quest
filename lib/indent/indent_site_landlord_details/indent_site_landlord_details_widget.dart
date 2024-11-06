@@ -163,10 +163,6 @@ class _IndentSiteLandlordDetailsWidgetState
                         .text.length);
           });
           safeSetState(() {
-            _model.landlordformModel.landlordBankNameValueController?.value =
-                FFAppState().landlordbanklanddetails;
-          });
-          safeSetState(() {
             _model.landlordformModel.lLchequefieldTextController?.text =
                 getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
@@ -265,6 +261,13 @@ class _IndentSiteLandlordDetailsWidgetState
             _model.landlordformModel.cityValueController?.value = getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].CityName''',
+            ).toString().toString();
+          });
+          safeSetState(() {
+            _model.landlordformModel.landlordBankNameValueController?.value =
+                getJsonField(
+              (_model.apiResultfoa?.jsonBody ?? ''),
+              r'''$.indents[0].IndentBank''',
             ).toString().toString();
           });
         } else {

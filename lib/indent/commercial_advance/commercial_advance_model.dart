@@ -30,9 +30,9 @@ class CommercialAdvanceModel extends FlutterFlowModel<CommercialAdvanceWidget> {
   TextEditingController? advanceRentAmountRENTTextController;
   String? Function(BuildContext, String?)?
       advanceRentAmountRENTTextControllerValidator;
-  // State field(s) for RentFreePeriod-Advance widget.
-  String? rentFreePeriodAdvanceValue;
-  FormFieldController<String>? rentFreePeriodAdvanceValueController;
+  // State field(s) for RentFreePeriod-Advancesss widget.
+  String? rentFreePeriodAdvancesssValue;
+  FormFieldController<String>? rentFreePeriodAdvancesssValueController;
   // State field(s) for advanceRentMonth---RentOrSecurityMonths widget.
   String? advanceRentMonthRentOrSecurityMonthsValue;
   FormFieldController<String>?

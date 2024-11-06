@@ -225,7 +225,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
                       controller:
-                          _model.rentFreePeriodAdvanceValueController ??=
+                          _model.rentFreePeriodAdvancesssValueController ??=
                               FormFieldController<String>(null),
                       options: [
                         '15',
@@ -239,7 +239,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         '365'
                       ],
                       onChanged: (val) => safeSetState(
-                          () => _model.rentFreePeriodAdvanceValue = val),
+                          () => _model.rentFreePeriodAdvancesssValue = val),
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       textStyle:

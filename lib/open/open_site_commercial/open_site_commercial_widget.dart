@@ -76,8 +76,8 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             ).toString().toString();
           });
           safeSetState(() {
-            _model.commercialAdvanceModel.rentFreePeriodAdvanceValueController
-                ?.value = getJsonField(
+            _model.commercialAdvanceModel
+                .rentFreePeriodAdvancesssValueController?.value = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].RentFreePeriod''',
             ).toString().toString();
@@ -86,10 +86,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             _model
                 .commercialAdvanceModel
                 .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                ?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].TotalDeposit''',
-            ).toString().toString();
+                ?.text = FFAppState().TotalAdvanceAmountopencommercial;
             _model
                     .commercialAdvanceModel
                     .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
@@ -158,15 +155,15 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                 ?.value = FFAppState().rentescalationPerOpencommercial;
           });
           safeSetState(() {
-            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
-                ?.value = FFAppState().rentescalationPerOpencommercial;
-          });
-          safeSetState(() {
             _model.commercialAdvanceModel.escalationPeriodAdvanceValueController
                 ?.value = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].EscalationPeriod''',
             ).toString().toString();
+          });
+          safeSetState(() {
+            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+                ?.value = FFAppState().rentescalationPerOpencommercial;
           });
         } else {
           return;
@@ -491,7 +488,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                   .call(
                                 indentId: null,
                                 rentFreePeriod: _model.commercialAdvanceModel
-                                    .rentFreePeriodAdvanceValue,
+                                    .rentFreePeriodAdvancesssValue,
                                 rentalType: _model
                                     .commercialAdvanceModel.rentaltypeValue,
                                 token: FFAppState().Token,
@@ -523,7 +520,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                 totalAdvSec: _model.commercialAdvanceModel
                                     .advanceAmountAdvanceTextController.text,
                                 rentEscalation: _model.commercialAdvanceModel
-                                    .rentFreePeriodAdvanceValue,
+                                    .rentFreePeriodAdvancesssValue,
                                 siteId: valueOrDefault<String>(
                                   FFAppState().siteidint.toString(),
                                   '111111111111',

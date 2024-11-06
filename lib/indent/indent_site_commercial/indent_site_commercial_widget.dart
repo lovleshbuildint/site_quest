@@ -69,8 +69,8 @@ class _IndentSiteCommercialWidgetState
                         .advanceRentAmountRENTTextController!.text.length);
           });
           safeSetState(() {
-            _model.commercialAdvanceModel.rentFreePeriodAdvanceValueController
-                ?.value = getJsonField(
+            _model.commercialAdvanceModel
+                .rentFreePeriodAdvancesssValueController?.value = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].RentFreePeriod''',
             ).toString().toString();
@@ -730,7 +730,7 @@ class _IndentSiteCommercialWidgetState
                                     r'''$.IndentId''',
                                   ).toString(),
                                   rentFreePeriod: _model.commercialAdvanceModel
-                                      .rentFreePeriodAdvanceValue,
+                                      .rentFreePeriodAdvancesssValue,
                                   rentalType: _model
                                       .commercialAdvanceModel.rentaltypeValue,
                                   token: FFAppState().Token,
@@ -763,7 +763,7 @@ class _IndentSiteCommercialWidgetState
                                   totalAdvSec: _model.commercialAdvanceModel
                                       .advanceAmountAdvanceTextController.text,
                                   rentEscalation: _model.commercialAdvanceModel
-                                      .rentFreePeriodAdvanceValue,
+                                      .rentFreePeriodAdvancesssValue,
                                   siteId: FFAppState().siteidint.toString(),
                                   iindent: null,
                                   targetBank: null,
@@ -803,7 +803,7 @@ class _IndentSiteCommercialWidgetState
                                   return;
                                 }
                                 if (_model.commercialAdvanceModel
-                                        .rentFreePeriodAdvanceValue ==
+                                        .rentFreePeriodAdvancesssValue ==
                                     null) {
                                   await showDialog(
                                     context: context,

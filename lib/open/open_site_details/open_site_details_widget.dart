@@ -284,7 +284,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Add Site Details',
+                              FFAppState().test.toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -480,7 +480,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                       scrollDirection: Axis.vertical,
                       children: [
                         Text(
-                          'Customer Bank',
+                          getJsonField(
+                            FFAppState().test,
+                            r'''$.customerBank''',
+                          ).toString(),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -535,7 +538,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Site Type',
+                            getJsonField(
+                              FFAppState().test,
+                              r'''$.siteType''',
+                            ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2777,6 +2783,11 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 );
                               },
                             );
+                            FFAppState().test = <String, dynamic>{
+                              'customerBank': _model.customerBankValue,
+                              'siteType': _model.sitetypeValue,
+                            };
+                            safeSetState(() {});
 
                             context.pushNamed(
                               'open_site_landlord_details',

@@ -131,6 +131,15 @@ class FFAppState extends ChangeNotifier {
           await secureStorage.getString('ff_landlordbanklanddetails') ??
               _landlordbanklanddetails;
     });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_test') != null) {
+        try {
+          _test = jsonDecode(await secureStorage.getString('ff_test') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
   }
 
   void update(VoidCallback callback) {
@@ -908,6 +917,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteLandlordbanklanddetails() {
     secureStorage.delete(key: 'ff_landlordbanklanddetails');
+  }
+
+  dynamic _test;
+  dynamic get test => _test;
+  set test(dynamic value) {
+    _test = value;
+    secureStorage.setString('ff_test', jsonEncode(value));
+  }
+
+  void deleteTest() {
+    secureStorage.delete(key: 'ff_test');
   }
 }
 

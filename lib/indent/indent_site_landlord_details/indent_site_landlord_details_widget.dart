@@ -1067,10 +1067,6 @@ class _IndentSiteLandlordDetailsWidgetState
                                       );
                                     },
                                   );
-                                  FFAppState().landlordbanklanddetails = _model
-                                      .landlordformModel.ilandlordbankname!
-                                      .toString();
-                                  safeSetState(() {});
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {

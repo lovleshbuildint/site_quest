@@ -1260,7 +1260,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         return FlutterFlowDropDown<String>(
                                           controller: _model
                                                   .stateDropdownValueController ??=
-                                              FormFieldController<String>(null),
+                                              FormFieldController<String>(
+                                            _model.stateDropdownValue ??=
+                                                getJsonField(
+                                              FFAppState().test,
+                                              r'''$.State''',
+                                            ).toString(),
+                                          ),
                                           options: List<String>.from(
                                               (getJsonField(
                                             stateDropdownStateListResponse

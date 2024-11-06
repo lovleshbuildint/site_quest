@@ -112,7 +112,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             _model.commercialAdvanceModel.balanceAmountAdvanceTextController
                 ?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AdvanceDeposit''',
+              r'''$.indents[0].FullDeposit''',
             ).toString().toString();
             _model.commercialAdvanceModel.balanceAmountAdvanceTextController
                     ?.selection =

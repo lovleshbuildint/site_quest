@@ -278,17 +278,6 @@ class _OpenSiteLandlordDetailsWidgetState
               r'''$.indents[0].CityName''',
             ).toString().toString();
           });
-          safeSetState(() {
-            _model.landlordformModel.landoardNameTextController?.text =
-                getJsonField(
-              (_model.apiResultfoa?.jsonBody ?? ''),
-              r'''$.indents[0].IndentBank''',
-            ).toString().toString();
-            _model.landlordformModel.landoardNameTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.landlordformModel.landoardNameTextController!
-                        .text.length);
-          });
         } else {
           await showDialog(
             context: context,

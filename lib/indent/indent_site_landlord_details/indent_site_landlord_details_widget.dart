@@ -883,6 +883,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                 190.0, 0.0, 25.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                var _shouldSetState = false;
                                 _model.updateDOADdeatils2 = await SqGroup
                                     .dOADetailsstepSECONDworddocCall
                                     .call(
@@ -962,6 +963,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   emailIds: null,
                                 );
 
+                                _shouldSetState = true;
                                 _model.please = true;
                                 if (_model.formKey.currentState == null ||
                                     !_model.formKey.currentState!.validate()) {
@@ -1036,6 +1038,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   safeSetState(() {});
                                   return;
                                 }
+                                _shouldSetState = true;
                                 if ((String var1) {
                                   return var1 ==
                                           "Data for Step-2 Successfully Updated."
@@ -1045,6 +1048,11 @@ class _IndentSiteLandlordDetailsWidgetState
                                   (_model.updateDOADdeatils2?.jsonBody ?? ''),
                                   r'''$.Msg''',
                                 ).toString())) {
+                                  FFAppState().landlordbanklanddetails = _model
+                                      .landlordformModel.ilandlordbankname!
+                                      .toString();
+                                  safeSetState(() {});
+
                                   context.goNamed(
                                     'indent_site_commercial',
                                     queryParameters: {
@@ -1061,6 +1069,9 @@ class _IndentSiteLandlordDetailsWidgetState
                                       ),
                                     },
                                   );
+
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -1085,7 +1096,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   );
                                 }
 
-                                safeSetState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

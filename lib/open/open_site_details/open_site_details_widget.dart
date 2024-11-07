@@ -38,173 +38,185 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget!.updateData == true) {
-        _model.apiResults7x = await SqGroup.dOADetailssteponeCall.call(
-          iIndent: FFAppState().siteidint.toString(),
-          token: FFAppState().Token,
-        );
-
-        if ((_model.apiResults7x?.succeeded ?? true)) {
-          safeSetState(() {
-            _model.customerBankValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].CustomerName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.oNOFSiteValueController?.value = ((String var1) {
-              return var1 == 'False' ? 'Offsite' : 'Onsite';
-            }(getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].isOnSite''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.duplicateSiteValueController?.value = ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
-            }(getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].isDuplicateSite''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.distanceFromIndentsTextController?.text = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].DistFromIndent''',
-            ).toString().toString();
-            _model.distanceFromIndentsTextController?.selection =
-                TextSelection.collapsed(
-                    offset:
-                        _model.distanceFromIndentsTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.pincodeTextController?.text = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].PinCode''',
-            ).toString().toString();
-            _model.pincodeTextController?.selection = TextSelection.collapsed(
-                offset: _model.pincodeTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.addressTextController?.text = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].Address1''',
-            ).toString().toString();
-            _model.addressTextController?.selection = TextSelection.collapsed(
-                offset: _model.addressTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.aTMExistingTextController?.text = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].ATMID_Existing''',
-            ).toString().toString();
-            _model.aTMExistingTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.aTMExistingTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitetypeValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].SiteTypeName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.landMarksTextController?.text = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].LandMark''',
-            ).toString().toString();
-            _model.landMarksTextController?.selection = TextSelection.collapsed(
-                offset: _model.landMarksTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.cashDeviceValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].CashDeviceType''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.cashDeviceMovementValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].CashDeviceMovementCategory''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.tisTypeValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].TISTypeName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.projectTypeValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].ProjectTypeName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.strategyDropDwonValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].DOAStrategyName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.districtValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].District''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.stateDropdownValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].StateName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.cityValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].CityName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.circleValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].Circle''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.rBICategoryValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].RBICategoryName''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.siteSourcedValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].SiteSourcedBy''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.businessTypeValueController?.value = getJsonField(
-              (_model.apiResults7x?.jsonBody ?? ''),
-              r'''$.indents[0].ShopTypeName''',
-            ).toString().toString();
-          });
-        } else {
-          await showDialog(
-            context: context,
-            builder: (alertDialogContext) {
-              return AlertDialog(
-                title: Text('ALert'),
-                content: Text('Data not able to fetch'),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(alertDialogContext),
-                    child: Text('Ok'),
-                  ),
-                ],
-              );
-            },
-          );
-          return;
-        }
+        safeSetState(() {
+          _model.customerBankValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.CustomerBank''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.sitetypeValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.SiteType''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.cashDeviceValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.CashDeviceType''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.cashDeviceMovementValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.CashDeviceMovementCategory''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.tisTypeValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.TISType''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.projectTypeValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.ProjectType''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.businessTypeValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.BusinessType''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.strategyDropDwonValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.Strategy''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.pOIListValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.POIList''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.distanceFromIndentsTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.Distance''',
+          ).toString().toString();
+          _model.distanceFromIndentsTextController?.selection =
+              TextSelection.collapsed(
+                  offset:
+                      _model.distanceFromIndentsTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.addressTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.SiteAddress''',
+          ).toString().toString();
+          _model.addressTextController?.selection = TextSelection.collapsed(
+              offset: _model.addressTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.stateDropdownValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.State''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.districtValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.District''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.cityValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.City''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.pincodeTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.Pincode''',
+          ).toString().toString();
+          _model.pincodeTextController?.selection = TextSelection.collapsed(
+              offset: _model.pincodeTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.circleValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.Circle''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.aTMExistingTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.ATMExisting''',
+          ).toString().toString();
+          _model.aTMExistingTextController?.selection = TextSelection.collapsed(
+              offset: _model.aTMExistingTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.landMarksTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.Landmark''',
+          ).toString().toString();
+          _model.landMarksTextController?.selection = TextSelection.collapsed(
+              offset: _model.landMarksTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.rBICategoryValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.RBICategory''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.siteSourcedValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.SiteSourcedBy''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.oNOFSiteValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.OnsiteOffsite''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.mangerNameTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.MangerName''',
+          ).toString().toString();
+          _model.mangerNameTextController?.selection = TextSelection.collapsed(
+              offset: _model.mangerNameTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.mangerNumberTextController?.text = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.MangerNumber''',
+          ).toString().toString();
+          _model.mangerNumberTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.mangerNumberTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.duplicateSiteValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.Duplicatesite''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.siteVisitedBYValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.SiteVisitedBy''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.firstSiteVisitedByValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.FirstSiteVisitedBy''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.secondSiteVisitedBYValueController?.value = getJsonField(
+            FFAppState().SiteDetailsIndent,
+            r'''$.SecondSiteVisitedBY''',
+          ).toString().toString();
+        });
       }
     });
 
@@ -284,7 +296,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              FFAppState().test.toString(),
+                              FFAppState().SiteDetailsIndent.toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -1263,7 +1275,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               FormFieldController<String>(
                                             _model.stateDropdownValue ??=
                                                 getJsonField(
-                                              FFAppState().test,
+                                              FFAppState().SiteDetailsIndent,
                                               r'''$.State''',
                                             ).toString(),
                                           ),
@@ -2560,11 +2572,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   ),
                                 );
                               }
-                              final dropDownGetSecondSiteVisitersResponse =
+                              final secondSiteVisitedBYGetSecondSiteVisitersResponse =
                                   snapshot.data!;
 
                               return FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController ??=
+                                controller: _model
+                                        .secondSiteVisitedBYValueController ??=
                                     FormFieldController<String>(null),
                                 options: (getJsonField(
                                   FFAppState().secondsitevisiterNew,
@@ -2574,13 +2587,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     .map<String>((s) => s.toString())
                                     .toList()!,
                                 onChanged: (val) async {
-                                  safeSetState(
-                                      () => _model.dropDownValue = val);
+                                  safeSetState(() =>
+                                      _model.secondSiteVisitedBYValue = val);
                                   _model.isecondsitevisitedbynames =
                                       functions.checkIndexint(
-                                          dropDownGetSecondSiteVisitersResponse
+                                          secondSiteVisitedBYGetSecondSiteVisitersResponse
                                               .jsonBody,
-                                          _model.dropDownValue,
+                                          _model.secondSiteVisitedBYValue,
                                           '-',
                                           'UserName',
                                           'iUser',
@@ -2783,10 +2796,41 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 );
                               },
                             );
-                            FFAppState().test = <String, dynamic>{
+                            FFAppState().SiteDetailsIndent = <String, dynamic>{
                               'customerBank': _model.customerBankValue,
                               'siteType': _model.sitetypeValue,
                               'State': _model.stateDropdownValue,
+                              'CashDeviceType': _model.cashDeviceValue,
+                              'CashDeviceMovementCategory':
+                                  _model.cashDeviceMovementValue,
+                              'TISType': _model.tisTypeValue,
+                              'ProjectType': _model.projectTypeValue,
+                              'BusinessType': _model.businessTypeValue,
+                              'Strategy': _model.strategyDropDwonValue,
+                              'POIList': _model.pOIListValue,
+                              'Distanc':
+                                  _model.distanceFromIndentsTextController.text,
+                              'SiteAddress': _model.addressTextController.text,
+                              'District': _model.districtValue,
+                              'City': _model.cityValue,
+                              'Pincode': _model.pincodeTextController.text,
+                              'Circle': _model.circleValue,
+                              'ATMExisting':
+                                  _model.aTMExistingTextController.text,
+                              'Landmark': _model.landMarksTextController.text,
+                              'RBICategory': _model.rBICategoryValue,
+                              'SiteSourcedBy': _model.siteSourcedValue,
+                              'OnsiteOffsite': _model.oNOFSiteValue,
+                              'MangerName':
+                                  _model.mangerNameTextController.text,
+                              'MangerNumber':
+                                  _model.mangerNumberTextController.text,
+                              'Duplicatesite': _model.duplicateSiteValue,
+                              'SiteVisitedBy': _model.siteVisitedBYValue,
+                              'FirstSiteVisitedBy':
+                                  _model.firstSiteVisitedByValue,
+                              'SecondSiteVisitedBY':
+                                  _model.secondSiteVisitedBYValue,
                             };
                             safeSetState(() {});
 

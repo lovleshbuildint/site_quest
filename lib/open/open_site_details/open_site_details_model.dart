@@ -57,8 +57,6 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (DOADetailsstepone)] action in open_site_details widget.
-  ApiCallResponse? apiResults7x;
   // State field(s) for CustomerBank widget.
   String? customerBankValue;
   FormFieldController<String>? customerBankValueController;
@@ -145,9 +143,9 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for FirstSiteVisitedBy widget.
   String? firstSiteVisitedByValue;
   FormFieldController<String>? firstSiteVisitedByValueController;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // State field(s) for SecondSiteVisitedBY widget.
+  String? secondSiteVisitedBYValue;
+  FormFieldController<String>? secondSiteVisitedBYValueController;
   // Stores action output result for [Backend Call - API (DOADetailsstepFIRSTworddoc)] action in Button widget.
   ApiCallResponse? updateDOAdetailsfirstwordsSites;
 

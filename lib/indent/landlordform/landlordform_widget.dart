@@ -1193,7 +1193,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              'Landlord Bank Name',
+              getJsonField(
+                FFAppState().landlordopensite,
+                r'''$.bankdetails''',
+              ).toString(),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,

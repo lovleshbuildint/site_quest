@@ -117,13 +117,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
           ).toString().toString();
         });
         safeSetState(() {
-          _model.districtValueController?.value = getJsonField(
+          _model.districtssValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
             r'''$.district''',
           ).toString().toString();
         });
         safeSetState(() {
-          _model.cityValueController?.value = getJsonField(
+          _model.cityssValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
             r'''$.city''',
           ).toString().toString();
@@ -1375,7 +1375,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        'District',
+                                        getJsonField(
+                                          FFAppState().SiteDetailsIndent,
+                                          r'''$.district''',
+                                        ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1416,18 +1419,18 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 ),
                                               );
                                             }
-                                            final districtDistrictAPisResponse =
+                                            final districtssDistrictAPisResponse =
                                                 snapshot.data!;
 
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
-                                                      .districtValueController ??=
+                                                      .districtssValueController ??=
                                                   FormFieldController<String>(
-                                                _model.districtValue ??= '',
+                                                _model.districtssValue ??= '',
                                               ),
                                               options: List<String>.from(
                                                   (getJsonField(
-                                                districtDistrictAPisResponse
+                                                districtssDistrictAPisResponse
                                                     .jsonBody,
                                                 r'''$.District..DistrictName''',
                                                 true,
@@ -1436,7 +1439,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                           (s) => s.toString())
                                                       .toList()!),
                                               optionLabels: (getJsonField(
-                                                districtDistrictAPisResponse
+                                                districtssDistrictAPisResponse
                                                     .jsonBody,
                                                 r'''$.District..DistrictName''',
                                                 true,
@@ -1445,13 +1448,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       (s) => s.toString())
                                                   .toList()!,
                                               onChanged: (val) async {
-                                                safeSetState(() =>
-                                                    _model.districtValue = val);
+                                                safeSetState(() => _model
+                                                    .districtssValue = val);
                                                 _model.district =
                                                     functions.checkIndex(
-                                                        districtDistrictAPisResponse
+                                                        districtssDistrictAPisResponse
                                                             .jsonBody,
-                                                        _model.districtValue,
+                                                        _model.districtssValue,
                                                         'District',
                                                         'DistrictName',
                                                         'iDistrict');
@@ -1527,7 +1530,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'City',
+                                      getJsonField(
+                                        FFAppState().SiteDetailsIndent,
+                                        r'''$.city''',
+                                      ).toString(),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1537,8 +1543,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                    if (_model.districtValue != null &&
-                                        _model.districtValue != '')
+                                    if (_model.districtssValue != null &&
+                                        _model.districtssValue != '')
                                       FutureBuilder<ApiCallResponse>(
                                         future: SqGroup
                                             .citiesAPIforStatenDistCall
@@ -1566,16 +1572,16 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                               ),
                                             );
                                           }
-                                          final cityCitiesAPIforStatenDistResponse =
+                                          final cityssCitiesAPIforStatenDistResponse =
                                               snapshot.data!;
 
                                           return FlutterFlowDropDown<String>(
                                             controller:
-                                                _model.cityValueController ??=
+                                                _model.cityssValueController ??=
                                                     FormFieldController<String>(
                                                         null),
                                             options: (getJsonField(
-                                              cityCitiesAPIforStatenDistResponse
+                                              cityssCitiesAPIforStatenDistResponse
                                                   .jsonBody,
                                               r'''$.Cities..City''',
                                               true,
@@ -1584,12 +1590,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                     (s) => s.toString())
                                                 .toList()!,
                                             onChanged: (val) async {
-                                              safeSetState(
-                                                  () => _model.cityValue = val);
+                                              safeSetState(() =>
+                                                  _model.cityssValue = val);
                                               _model.trycity =
                                                   functions.istatetostatevalue(
                                                       FFAppState().City,
-                                                      _model.cityValue,
+                                                      _model.cityssValue,
                                                       'Cities',
                                                       'iCity',
                                                       'City');
@@ -2658,7 +2664,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               _model.customerBankValue,
                               'Abhyudaya Cooperative Bank Ltd',
                             ),
-                            district: _model.districtValue,
+                            district: _model.districtssValue,
                             strategy: valueOrDefault<String>(
                               _model.strategyDropDwonValue,
                               'Additional',
@@ -2667,7 +2673,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               _model.circleValue,
                               'Agra',
                             ),
-                            city: _model.cityValue,
+                            city: _model.cityssValue,
                             iSiteType: valueOrDefault<int>(
                               _model.isitetypes,
                               1,
@@ -2811,8 +2817,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               'Distance':
                                   _model.distanceFromIndentsTextController.text,
                               'SiteAddress': _model.addressTextController.text,
-                              'district': _model.districtValue,
-                              'city': _model.cityValue,
+                              'district': _model.districtssValue,
+                              'city': _model.cityssValue,
                               'Pincode': _model.pincodeTextController.text,
                               'Circle': _model.circleValue,
                               'ATMExisting':

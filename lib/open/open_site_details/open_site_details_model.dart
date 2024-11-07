@@ -96,12 +96,12 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for stateDropdown widget.
   String? stateDropdownValue;
   FormFieldController<String>? stateDropdownValueController;
-  // State field(s) for District widget.
-  String? districtValue;
-  FormFieldController<String>? districtValueController;
-  // State field(s) for City widget.
-  String? cityValue;
-  FormFieldController<String>? cityValueController;
+  // State field(s) for Districtss widget.
+  String? districtssValue;
+  FormFieldController<String>? districtssValueController;
+  // State field(s) for Cityss widget.
+  String? cityssValue;
+  FormFieldController<String>? cityssValueController;
   // State field(s) for Pincode widget.
   FocusNode? pincodeFocusNode;
   TextEditingController? pincodeTextController;

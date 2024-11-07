@@ -141,6 +141,16 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_landlordopensite') != null) {
+        try {
+          _landlordopensite = jsonDecode(
+              await secureStorage.getString('ff_landlordopensite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
   }
 
   void update(VoidCallback callback) {
@@ -929,6 +939,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteSiteDetailsIndent() {
     secureStorage.delete(key: 'ff_SiteDetailsIndent');
+  }
+
+  dynamic _landlordopensite;
+  dynamic get landlordopensite => _landlordopensite;
+  set landlordopensite(dynamic value) {
+    _landlordopensite = value;
+    secureStorage.setString('ff_landlordopensite', jsonEncode(value));
+  }
+
+  void deleteLandlordopensite() {
+    secureStorage.delete(key: 'ff_landlordopensite');
   }
 }
 

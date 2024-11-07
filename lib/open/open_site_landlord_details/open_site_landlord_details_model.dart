@@ -16,8 +16,6 @@ class OpenSiteLandlordDetailsModel
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // Stores action output result for [Backend Call - API (DOADetailssteptwo)] action in open_site_landlord_details widget.
-  ApiCallResponse? apiResultfoa;
   // Model for landlordform component.
   late LandlordformModel landlordformModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepSECONDworddoc)] action in Button widget.

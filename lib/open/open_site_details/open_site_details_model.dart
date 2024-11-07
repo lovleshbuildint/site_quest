@@ -140,10 +140,10 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   // State field(s) for SiteVisitedBY widget.
   String? siteVisitedBYValue;
   FormFieldController<String>? siteVisitedBYValueController;
-  // State field(s) for FirstSiteVisitedBy widget.
+  // State field(s) for firstSiteVisitedBy widget.
   String? firstSiteVisitedByValue;
   FormFieldController<String>? firstSiteVisitedByValueController;
-  // State field(s) for SecondSiteVisitedBY widget.
+  // State field(s) for secondSiteVisitedBY widget.
   String? secondSiteVisitedBYValue;
   FormFieldController<String>? secondSiteVisitedBYValueController;
   // Stores action output result for [Backend Call - API (DOADetailsstepFIRSTworddoc)] action in Button widget.

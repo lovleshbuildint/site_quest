@@ -2502,14 +2502,14 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   safeSetState(() {});
                                 },
                                 width: 300.0,
-                                height: 56.0,
+                                height: 50.0,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Please select...',
+                                hintText: 'Please Select...',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -2519,14 +2519,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
+                                borderColor: Color(0xFFE0E3E7),
                                 borderWidth: 2.0,
                                 borderRadius: 8.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 4.0, 16.0, 4.0),
                                 hidesUnderline: true,
-                                isOverButton: true,
+                                isOverButton: false,
                                 isSearchable: false,
                                 isMultiSelect: false,
                               );
@@ -2581,7 +2580,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         .secondSiteVisitedBYValueController ??=
                                     FormFieldController<String>(null),
                                 options: (getJsonField(
-                                  FFAppState().secondsitevisiterNew,
+                                  secondSiteVisitedBYGetSecondSiteVisitersResponse
+                                      .jsonBody,
                                   r'''$..UserName''',
                                   true,
                                 ) as List)
@@ -2619,8 +2619,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
+                                borderColor: Color(0xFFE0E3E7),
                                 borderWidth: 2.0,
                                 borderRadius: 8.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(

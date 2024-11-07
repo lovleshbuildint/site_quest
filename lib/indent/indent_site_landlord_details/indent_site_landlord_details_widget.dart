@@ -264,7 +264,7 @@ class _IndentSiteLandlordDetailsWidgetState
             ).toString().toString();
           });
           safeSetState(() {
-            _model.landlordformModel.landlordBankNameValueController?.value =
+            _model.landlordformModel.bankdetailsValueController?.value =
                 getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].IndentBank''',
@@ -916,8 +916,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   fax: _model
                                       .landlordformModel.faxTextController.text,
                                   lLBankName: valueOrDefault<String>(
-                                    _model.landlordformModel
-                                        .landlordBankNameValue,
+                                    _model.landlordformModel.bankdetailsValue,
                                     '1',
                                   ),
                                   landLordNameonCheque: _model.landlordformModel
@@ -1017,8 +1016,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   safeSetState(() {});
                                   return;
                                 }
-                                if (_model.landlordformModel
-                                        .landlordBankNameValue ==
+                                if (_model.landlordformModel.bankdetailsValue ==
                                     null) {
                                   await showDialog(
                                     context: context,

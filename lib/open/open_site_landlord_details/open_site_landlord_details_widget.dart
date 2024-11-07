@@ -151,7 +151,7 @@ class _OpenSiteLandlordDetailsWidgetState
                       _model.landlordformModel.faxTextController!.text.length);
         });
         safeSetState(() {
-          _model.landlordformModel.landlordBankNameValueController?.value =
+          _model.landlordformModel.bankdetailsValueController?.value =
               getJsonField(
             FFAppState().landlordopensite,
             r'''$.LandlordBankName''',
@@ -648,8 +648,7 @@ class _OpenSiteLandlordDetailsWidgetState
                                   fax: _model
                                       .landlordformModel.faxTextController.text,
                                   lLBankName: valueOrDefault<String>(
-                                    _model.landlordformModel
-                                        .landlordBankNameValue,
+                                    _model.landlordformModel.bankdetailsValue,
                                     '1',
                                   ),
                                   landLordNameonCheque: _model.landlordformModel
@@ -734,8 +733,8 @@ class _OpenSiteLandlordDetailsWidgetState
                                         .emailidTextController.text,
                                     'Fax': _model.landlordformModel
                                         .faxTextController.text,
-                                    'LandlordBankName': _model.landlordformModel
-                                        .landlordBankNameValue,
+                                    'LandlordBankName': _model
+                                        .landlordformModel.bankdetailsValue,
                                     'chequefield': _model.landlordformModel
                                         .chequefieldTextController.text,
                                     'LLchequefield': _model.landlordformModel

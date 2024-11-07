@@ -332,108 +332,103 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   ),
                         ),
                       ),
-                      if (_model.statefordistland != null &&
-                          _model.statefordistland != '')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
-                          child: FutureBuilder<ApiCallResponse>(
-                            future: SqGroup.districtAPisCall.call(
-                              istate: _model.stateValue,
-                              token: FFAppState().Token,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: FutureBuilder<ApiCallResponse>(
+                          future: SqGroup.districtAPisCall.call(
+                            istate: _model.stateValue,
+                            token: FFAppState().Token,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
-                                );
-                              }
-                              final districtDistrictAPisResponse =
-                                  snapshot.data!;
-
-                              return FlutterFlowDropDown<String>(
-                                controller: _model.districtValueController ??=
-                                    FormFieldController<String>(
-                                  _model.districtValue ??= 'Option 1',
                                 ),
-                                options: List<String>.from((getJsonField(
-                                  districtDistrictAPisResponse.jsonBody,
-                                  r'''$.District..DistrictName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!),
-                                optionLabels: (getJsonField(
-                                  districtDistrictAPisResponse.jsonBody,
-                                  r'''$.District..DistrictName''',
-                                  true,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()!,
-                                onChanged: (val) async {
-                                  safeSetState(
-                                      () => _model.districtValue = val);
-                                  _model.district = functions.checkIndex(
-                                      districtDistrictAPisResponse.jsonBody,
-                                      _model.districtValue,
-                                      'District',
-                                      'DistrictName',
-                                      'iDistrict');
-                                  safeSetState(() {});
-                                },
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 50.0,
-                                searchHintTextStyle:
-                                    FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                searchTextStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Please select',
-                                searchHintText: 'Search District...',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Color(0xFFE1E2E6),
-                                  size: 24.0,
-                                ),
-                                fillColor: Colors.white,
-                                elevation: 2.0,
-                                borderColor: Color(0xFFE1E2E6),
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: true,
-                                isMultiSelect: false,
                               );
-                            },
-                          ),
+                            }
+                            final districtDistrictAPisResponse = snapshot.data!;
+
+                            return FlutterFlowDropDown<String>(
+                              controller: _model.districtValueController ??=
+                                  FormFieldController<String>(
+                                _model.districtValue ??= 'Option 1',
+                              ),
+                              options: List<String>.from((getJsonField(
+                                districtDistrictAPisResponse.jsonBody,
+                                r'''$.District..DistrictName''',
+                                true,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()!),
+                              optionLabels: (getJsonField(
+                                districtDistrictAPisResponse.jsonBody,
+                                r'''$.District..DistrictName''',
+                                true,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()!,
+                              onChanged: (val) async {
+                                safeSetState(() => _model.districtValue = val);
+                                _model.district = functions.checkIndex(
+                                    districtDistrictAPisResponse.jsonBody,
+                                    _model.districtValue,
+                                    'District',
+                                    'DistrictName',
+                                    'iDistrict');
+                                safeSetState(() {});
+                              },
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              searchHintTextStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                              searchTextStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Please select',
+                              searchHintText: 'Search District...',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color: Color(0xFFE1E2E6),
+                                size: 24.0,
+                              ),
+                              fillColor: Colors.white,
+                              elevation: 2.0,
+                              borderColor: Color(0xFFE1E2E6),
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isSearchable: true,
+                              isMultiSelect: false,
+                            );
+                          },
                         ),
+                      ),
                     ],
                   ),
                 ),
@@ -1228,20 +1223,20 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     ),
                   );
                 }
-                final landlordBankNameGetIndentBankResponse = snapshot.data!;
+                final bankdetailsGetIndentBankResponse = snapshot.data!;
 
                 return FlutterFlowDropDown<String>(
-                  controller: _model.landlordBankNameValueController ??=
+                  controller: _model.bankdetailsValueController ??=
                       FormFieldController<String>(null),
                   options: (getJsonField(
-                    landlordBankNameGetIndentBankResponse.jsonBody,
+                    bankdetailsGetIndentBankResponse.jsonBody,
                     r'''$.IndentBanks..Name''',
                     true,
                   ) as List)
                       .map<String>((s) => s.toString())
                       .toList()!,
                   onChanged: (val) async {
-                    safeSetState(() => _model.landlordBankNameValue = val);
+                    safeSetState(() => _model.bankdetailsValue = val);
                     FFAppState().landlordbanklanddetails =
                         FFAppState().landlordbanklanddetails;
                     safeSetState(() {});

@@ -87,9 +87,9 @@ class LandlordformModel extends FlutterFlowModel<LandlordformWidget> {
   FocusNode? faxFocusNode;
   TextEditingController? faxTextController;
   String? Function(BuildContext, String?)? faxTextControllerValidator;
-  // State field(s) for LandlordBankName widget.
-  String? landlordBankNameValue;
-  FormFieldController<String>? landlordBankNameValueController;
+  // State field(s) for bankdetails widget.
+  String? bankdetailsValue;
+  FormFieldController<String>? bankdetailsValueController;
   // State field(s) for Checkbox1 widget.
   bool? checkbox1Value;
   // State field(s) for chequefield widget.

@@ -325,7 +325,7 @@ class _OpenSiteLandlordDetailsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Add Landlord Details',
+                                FFAppState().landlordopensite.toString(),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

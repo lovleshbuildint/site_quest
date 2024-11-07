@@ -1389,8 +1389,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             ),
                                       ),
                                     ),
-                                    if (_model.statefordsitopen != null &&
-                                        _model.statefordsitopen != '')
+                                    if (_model.stateDropdownValue != null &&
+                                        _model.stateDropdownValue != '')
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
@@ -2116,14 +2116,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 .oNOFSiteValueController ??=
                                             FormFieldController<String>(null),
                                         options: ['Onsite', 'Offsite'],
-                                        onChanged: (val) async {
-                                          safeSetState(
-                                              () => _model.oNOFSiteValue = val);
-                                          _model.oNOFsite =
-                                              functions.dropdownsONSITE(
-                                                  _model.oNOFSiteValue!);
-                                          safeSetState(() {});
-                                        },
+                                        onChanged: (val) => safeSetState(
+                                            () => _model.oNOFSiteValue = val),
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
@@ -2332,13 +2326,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             controller: _model.duplicateSiteValueController ??=
                                 FormFieldController<String>(null),
                             options: ['Yes', 'No'],
-                            onChanged: (val) async {
-                              safeSetState(
-                                  () => _model.duplicateSiteValue = val);
-                              _model.iduplicate = functions
-                                  .dropdown(_model.duplicateSiteValue!);
-                              safeSetState(() {});
-                            },
+                            onChanged: (val) => safeSetState(
+                                () => _model.duplicateSiteValue = val),
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2729,14 +2718,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               _model.siteSourcedValue,
                               'HPY',
                             ),
-                            isOnSite: valueOrDefault<String>(
-                              _model.oNOFsite.toString(),
-                              '1',
-                            ),
-                            isDuplicateSite: valueOrDefault<String>(
-                              _model.iduplicate.toString(),
-                              '1',
-                            ),
+                            isOnSite: functions
+                                .dropdownsONSITE(_model.oNOFSiteValue!)
+                                ?.toString(),
+                            isDuplicateSite: functions
+                                .dropdown(_model.duplicateSiteValue!)
+                                ?.toString(),
                             iSiteVisitedBy: valueOrDefault<int>(
                               _model.isitevisitedbys,
                               2,

@@ -2653,6 +2653,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          var _shouldSetState = false;
                           await showDialog(
                             context: context,
                             builder: (alertDialogContext) {
@@ -2768,6 +2769,23 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             districts: null,
                           );
 
+                          _shouldSetState = true;
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('test'),
+                                content: Text('test'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
                           if ((String var1) {
                             return var1 ==
                                     "Data for Step-1 Successfully Updated."
@@ -2887,9 +2905,11 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 );
                               },
                             );
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
                           }
 
-                          safeSetState(() {});
+                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: 'Save & Next',
                         options: FFButtonOptions(

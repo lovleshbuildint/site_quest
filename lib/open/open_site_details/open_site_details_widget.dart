@@ -41,13 +41,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
         safeSetState(() {
           _model.customerBankValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
-            r'''$.CustomerBank''',
+            r'''$.customerBank''',
           ).toString().toString();
         });
         safeSetState(() {
           _model.sitetypeValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
-            r'''$.SiteType''',
+            r'''$.siteType''',
           ).toString().toString();
         });
         safeSetState(() {
@@ -119,13 +119,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
         safeSetState(() {
           _model.districtValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
-            r'''$.District''',
+            r'''$.district''',
           ).toString().toString();
         });
         safeSetState(() {
           _model.cityValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
-            r'''$.City''',
+            r'''$.city''',
           ).toString().toString();
         });
         safeSetState(() {
@@ -208,13 +208,13 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
         safeSetState(() {
           _model.firstSiteVisitedByValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
-            r'''$.FirstSiteVisitedBy''',
+            r'''$.firstSiteVisitedBy''',
           ).toString().toString();
         });
         safeSetState(() {
           _model.secondSiteVisitedBYValueController?.value = getJsonField(
             FFAppState().SiteDetailsIndent,
-            r'''$.SecondSiteVisitedBY''',
+            r'''$.secondSiteVisitedBY''',
           ).toString().toString();
         });
       }
@@ -2808,11 +2808,11 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               'BusinessType': _model.businessTypeValue,
                               'Strategy': _model.strategyDropDwonValue,
                               'POIList': _model.pOIListValue,
-                              'Distanc':
+                              'Distance':
                                   _model.distanceFromIndentsTextController.text,
                               'SiteAddress': _model.addressTextController.text,
-                              'District': _model.districtValue,
-                              'City': _model.cityValue,
+                              'district': _model.districtValue,
+                              'city': _model.cityValue,
                               'Pincode': _model.pincodeTextController.text,
                               'Circle': _model.circleValue,
                               'ATMExisting':
@@ -2827,9 +2827,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   _model.mangerNumberTextController.text,
                               'Duplicatesite': _model.duplicateSiteValue,
                               'SiteVisitedBy': _model.siteVisitedBYValue,
-                              'FirstSiteVisitedBy':
+                              'firstSiteVisitedBy':
                                   _model.firstSiteVisitedByValue,
-                              'SecondSiteVisitedBY':
+                              'secondSiteVisitedBY':
                                   _model.secondSiteVisitedBYValue,
                             };
                             safeSetState(() {});

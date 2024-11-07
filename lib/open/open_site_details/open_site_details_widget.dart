@@ -1543,8 +1543,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                    if (_model.districtssValue != null &&
-                                        _model.districtssValue != '')
+                                    if (_model.stateDropdownValue != null &&
+                                        _model.stateDropdownValue != '')
                                       FutureBuilder<ApiCallResponse>(
                                         future: SqGroup
                                             .citiesAPIforStatenDistCall

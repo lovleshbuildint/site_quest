@@ -2446,7 +2446,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'First Site Visited By',
+                            getJsonField(
+                              FFAppState().SiteDetailsIndent,
+                              r'''$.firstSiteVisitedBy''',
+                            ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2545,7 +2548,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Second Site Visited BY',
+                            getJsonField(
+                              FFAppState().SiteDetailsIndent,
+                              r'''$.secondSiteVisitedBY''',
+                            ).toString(),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

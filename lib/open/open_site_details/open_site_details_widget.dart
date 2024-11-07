@@ -2664,6 +2664,22 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('start'),
+                                content: Text('start'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
                           _model.updateDOAdetailsfirstwordsSites =
                               await SqGroup.dOADetailsstepFIRSTworddocCall.call(
                             customerBank: valueOrDefault<String>(

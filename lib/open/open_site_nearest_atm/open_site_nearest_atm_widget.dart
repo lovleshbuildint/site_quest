@@ -36,7 +36,7 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData == true) {
         safeSetState(() {
           _model.nearestatmModel.atmidTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,

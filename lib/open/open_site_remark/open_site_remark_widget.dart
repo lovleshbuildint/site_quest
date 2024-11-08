@@ -36,7 +36,7 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData == true) {
         safeSetState(() {
           _model.remark1TextController?.text = getJsonField(
             FFAppState().WorkbenchOpenSite,

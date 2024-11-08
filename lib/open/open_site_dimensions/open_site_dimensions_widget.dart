@@ -194,7 +194,10 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
         });
         safeSetState(() {
           _model.sitedimentionsModel.rampAvailabilityValueController?.value =
-              _model.sitedimentionsModel.rampAvailabilityValue!;
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.RampAvailability''',
+          ).toString().toString();
         });
         safeSetState(() {
           _model.sitedimentionsModel.noteForProjectTISTextController?.text =

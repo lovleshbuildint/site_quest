@@ -39,7 +39,7 @@ class _OpenSiteNearestBranchWidgetState
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+      if (widget!.updateData == true) {
         safeSetState(() {
           _model.nearestbranchModel.cRACoverageValueController?.value =
               getJsonField(

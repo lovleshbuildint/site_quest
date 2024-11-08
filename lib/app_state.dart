@@ -151,6 +151,56 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_CommercialOpensite') != null) {
+        try {
+          _CommercialOpensite = jsonDecode(
+              await secureStorage.getString('ff_CommercialOpensite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_sitedimensionOpenSite') != null) {
+        try {
+          _sitedimensionOpenSite = jsonDecode(
+              await secureStorage.getString('ff_sitedimensionOpenSite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_NearestBranchopensite') != null) {
+        try {
+          _NearestBranchopensite = jsonDecode(
+              await secureStorage.getString('ff_NearestBranchopensite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_NearestATMopenSite') != null) {
+        try {
+          _NearestATMopenSite = jsonDecode(
+              await secureStorage.getString('ff_NearestATMopenSite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_WorkbenchOpenSite') != null) {
+        try {
+          _WorkbenchOpenSite = jsonDecode(
+              await secureStorage.getString('ff_WorkbenchOpenSite') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
+    });
   }
 
   void update(VoidCallback callback) {
@@ -950,6 +1000,61 @@ class FFAppState extends ChangeNotifier {
 
   void deleteLandlordopensite() {
     secureStorage.delete(key: 'ff_landlordopensite');
+  }
+
+  dynamic _CommercialOpensite;
+  dynamic get CommercialOpensite => _CommercialOpensite;
+  set CommercialOpensite(dynamic value) {
+    _CommercialOpensite = value;
+    secureStorage.setString('ff_CommercialOpensite', jsonEncode(value));
+  }
+
+  void deleteCommercialOpensite() {
+    secureStorage.delete(key: 'ff_CommercialOpensite');
+  }
+
+  dynamic _sitedimensionOpenSite;
+  dynamic get sitedimensionOpenSite => _sitedimensionOpenSite;
+  set sitedimensionOpenSite(dynamic value) {
+    _sitedimensionOpenSite = value;
+    secureStorage.setString('ff_sitedimensionOpenSite', jsonEncode(value));
+  }
+
+  void deleteSitedimensionOpenSite() {
+    secureStorage.delete(key: 'ff_sitedimensionOpenSite');
+  }
+
+  dynamic _NearestBranchopensite;
+  dynamic get NearestBranchopensite => _NearestBranchopensite;
+  set NearestBranchopensite(dynamic value) {
+    _NearestBranchopensite = value;
+    secureStorage.setString('ff_NearestBranchopensite', jsonEncode(value));
+  }
+
+  void deleteNearestBranchopensite() {
+    secureStorage.delete(key: 'ff_NearestBranchopensite');
+  }
+
+  dynamic _NearestATMopenSite;
+  dynamic get NearestATMopenSite => _NearestATMopenSite;
+  set NearestATMopenSite(dynamic value) {
+    _NearestATMopenSite = value;
+    secureStorage.setString('ff_NearestATMopenSite', jsonEncode(value));
+  }
+
+  void deleteNearestATMopenSite() {
+    secureStorage.delete(key: 'ff_NearestATMopenSite');
+  }
+
+  dynamic _WorkbenchOpenSite;
+  dynamic get WorkbenchOpenSite => _WorkbenchOpenSite;
+  set WorkbenchOpenSite(dynamic value) {
+    _WorkbenchOpenSite = value;
+    secureStorage.setString('ff_WorkbenchOpenSite', jsonEncode(value));
+  }
+
+  void deleteWorkbenchOpenSite() {
+    secureStorage.delete(key: 'ff_WorkbenchOpenSite');
   }
 }
 

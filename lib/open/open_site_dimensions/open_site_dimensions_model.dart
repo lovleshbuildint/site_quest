@@ -14,8 +14,6 @@ class OpenSiteDimensionsModel
     extends FlutterFlowModel<OpenSiteDimensionsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (DOADetailsstepfour)] action in open_site_dimensions widget.
-  ApiCallResponse? dOADFour;
   // Model for sitedimentions component.
   late SitedimentionsModel sitedimentionsModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfour)] action in Button widget.

@@ -15,8 +15,6 @@ class OpenSiteNearestBranchModel
     extends FlutterFlowModel<OpenSiteNearestBranchWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (DOADetailsstepfive)] action in open_site_nearest_branch widget.
-  ApiCallResponse? apiResultuyr;
   // Model for nearestbranch component.
   late NearestbranchModel nearestbranchModel;
   // Stores action output result for [Backend Call - API (UpdateDOADetailsfive)] action in Button widget.

@@ -40,62 +40,65 @@ class _OpenSiteNearestBranchWidgetState
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget!.updateData! || (FFAppState().siteidint > 0)) {
-        _model.apiResultuyr = await SqGroup.dOADetailsstepfiveCall.call(
-          iIndent: FFAppState().siteidint.toString(),
-          token: FFAppState().Token,
-        );
-
-        if ((_model.apiResultuyr?.succeeded ?? true)) {
-          safeSetState(() {
-            _model.nearestbranchModel.cRACoverageValueController?.value =
-                ((String var1) {
-              return var1 == 'True' ? 'Yes' : 'No';
-            }(getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].Is_CRACoverage''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.nearestbranchModel.branchSOLIDTextController?.text =
-                FFAppState().BranchSOLID;
-            _model.nearestbranchModel.branchSOLIDTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel.branchSOLIDTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.nearestbranchModel.nearestBranchstextTextController?.text =
-                FFAppState().NearestBranch;
-            _model.nearestbranchModel.nearestBranchstextTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel
-                        .nearestBranchstextTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestbranchModel.distanceNearestBranchTextController
-                ?.text = FFAppState().DistancefromtheNeearestBranch;
-            _model.nearestbranchModel.distanceNearestBranchTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel
-                        .distanceNearestBranchTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestbranchModel.videoURLTextController?.text =
-                FFAppState().VideoURL;
-            _model.nearestbranchModel.videoURLTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel.videoURLTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.nearestbranchModel.cRAAgencyValueController?.value =
-                _model.nearestbranchModel.cRAAgencyValue!;
-          });
-        } else {
-          return;
-        }
+        safeSetState(() {
+          _model.nearestbranchModel.cRACoverageValueController?.value =
+              getJsonField(
+            FFAppState().NearestBranchopensite,
+            r'''$.CRACoverage''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.nearestbranchModel.cRAAgencyValueController?.value =
+              getJsonField(
+            FFAppState().NearestBranchopensite,
+            r'''$.CRAAgency''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.nearestbranchModel.branchSOLIDTextController?.text =
+              getJsonField(
+            FFAppState().NearestBranchopensite,
+            r'''$.BranchSOLID''',
+          ).toString().toString();
+          _model.nearestbranchModel.branchSOLIDTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.nearestbranchModel.branchSOLIDTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.nearestbranchModel.nearestBranchstextTextController?.text =
+              getJsonField(
+            FFAppState().NearestBranchopensite,
+            r'''$.NearestBranchstext''',
+          ).toString().toString();
+          _model.nearestbranchModel.nearestBranchstextTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model.nearestbranchModel
+                      .nearestBranchstextTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestbranchModel.distanceNearestBranchTextController?.text =
+              getJsonField(
+            FFAppState().NearestBranchopensite,
+            r'''$.distanceNearestBranch''',
+          ).toString().toString();
+          _model.nearestbranchModel.distanceNearestBranchTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model.nearestbranchModel
+                      .distanceNearestBranchTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestbranchModel.videoURLTextController?.text = getJsonField(
+            FFAppState().NearestBranchopensite,
+            r'''$.VideoURL''',
+          ).toString().toString();
+          _model.nearestbranchModel.videoURLTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model
+                      .nearestbranchModel.videoURLTextController!.text.length);
+        });
       }
     });
   }
@@ -435,6 +438,27 @@ class _OpenSiteNearestBranchWidgetState
                               );
 
                               if ((_model.dOADetailsfive?.succeeded ?? true)) {
+                                FFAppState().NearestBranchopensite =
+                                    <String, dynamic>{
+                                  'CRACoverage': _model
+                                      .nearestbranchModel.cRACoverageValue,
+                                  'CRAAgency':
+                                      _model.nearestbranchModel.cRAAgencyValue,
+                                  'BranchSOLID': _model.nearestbranchModel
+                                      .branchSOLIDTextController.text,
+                                  'NearestBranchstext': _model
+                                      .nearestbranchModel
+                                      .nearestBranchstextTextController
+                                      .text,
+                                  'distanceNearestBranch': _model
+                                      .nearestbranchModel
+                                      .distanceNearestBranchTextController
+                                      .text,
+                                  'VideoURL': _model.nearestbranchModel
+                                      .videoURLTextController.text,
+                                };
+                                safeSetState(() {});
+
                                 context.pushNamed(
                                   'open_site_nearest_atm',
                                   queryParameters: {

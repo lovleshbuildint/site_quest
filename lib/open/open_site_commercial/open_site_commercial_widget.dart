@@ -37,130 +37,105 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget!.updateData == true) {
-        _model.apiResultuyr = await SqGroup.dOADetailsstepthreeCall.call(
-          iIndent: FFAppState().siteidint.toString(),
-          token: FFAppState().Token,
-        );
-
-        if ((_model.apiResultuyr?.succeeded ?? true)) {
-          safeSetState(() {
-            _model.commercialAdvanceModel.rentaltypeValueController?.value =
-                _model.commercialAdvanceModel.rentaltypeValue!;
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.eBillingRentAdvanceValueController
-                ?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].isEnclEB''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
-                ?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].Rent''',
-            ).toString().toString();
-            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.commercialAdvanceModel
-                        .advanceRentAmountRENTTextController!.text.length);
-          });
-          safeSetState(() {
-            _model
-                .commercialAdvanceModel
-                .advanceRentMonthRentOrSecurityMonthsValueController
-                ?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].EscalationPeriod''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel
-                .rentFreePeriodAdvancesssValueController?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].RentFreePeriod''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model
-                .commercialAdvanceModel
-                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                ?.text = FFAppState().TotalAdvanceAmountopencommercial;
-            _model
-                    .commercialAdvanceModel
-                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .commercialAdvanceModel
-                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                        .text
-                        .length);
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.intialAdvanceValueController?.value =
-                getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].SecurityDeposit''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
-                ?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].FullDeposit''',
-            ).toString().toString();
-            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.commercialAdvanceModel
-                        .balanceAmountAdvanceTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
-                ?.text = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AdvanceDeposit''',
-            ).toString().toString();
-            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.commercialAdvanceModel
-                        .advanceAmountAdvanceTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
-                ?.value = FFAppState().rentescalationPerOpencommercial;
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.agreementPeriodsAdvanceValueController
-                ?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].AgreementPeriod''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.escalationPeriodAdvanceValueController
-                ?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].EscalationPeriod''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
-                ?.value = FFAppState().rentescalationPerOpencommercial;
-          });
-          safeSetState(() {
-            _model.commercialAdvanceModel.escalationPeriodAdvanceValueController
-                ?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].EscalationPeriod''',
-            ).toString().toString();
-          });
-        } else {
-          return;
-        }
+        safeSetState(() {
+          _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+              ?.text = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.advanceRentAmountRENT''',
+          ).toString().toString();
+          _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model.commercialAdvanceModel
+                      .advanceRentAmountRENTTextController!.text.length);
+        });
+        safeSetState(() {
+          _model
+              .commercialAdvanceModel
+              .advanceRentMonthRentOrSecurityMonthsValueController
+              ?.value = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.advanceRentMonth''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model
+              .commercialAdvanceModel
+              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+              ?.text = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.TotalAdvanceAmount''',
+          ).toString().toString();
+          _model
+                  .commercialAdvanceModel
+                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model
+                      .commercialAdvanceModel
+                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                      .text
+                      .length);
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.intialAdvanceValueController?.value =
+              getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.intialAdvance''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+              ?.text = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.AdvanceAmount''',
+          ).toString().toString();
+          _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model.commercialAdvanceModel
+                      .advanceAmountAdvanceTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+              ?.text = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.BalanceAmount''',
+          ).toString().toString();
+          _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model.commercialAdvanceModel
+                      .balanceAmountAdvanceTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
+              ?.value = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.RentEscaltion''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.escalationPeriodAdvanceValueController
+              ?.value = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.EscalationPeriod''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.agreementPeriodsAdvanceValueController
+              ?.value = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.AgreementPeriods''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.commercialAdvanceModel.eBillingRentAdvanceValueController
+              ?.value = getJsonField(
+            FFAppState().CommercialOpensite,
+            r'''$.EbillingRent''',
+          ).toString().toString();
+        });
       }
     });
   }
@@ -556,11 +531,39 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                                     ''),
                                 r'''$.Msg''',
                               ).toString())) {
-                                FFAppState().TotalAdvanceAmountopencommercial =
-                                    _model
-                                        .commercialAdvanceModel
-                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                        .text;
+                                FFAppState().CommercialOpensite =
+                                    <String, dynamic>{
+                                  'advanceRentAmountRENT': _model
+                                      .commercialAdvanceModel
+                                      .advanceRentAmountRENTTextController
+                                      .text,
+                                  'RentFreePeriod': _model
+                                      .commercialAdvanceModel
+                                      .rentFreePeriodAdvancesssValue,
+                                  'advanceRentMonth': _model
+                                      .commercialAdvanceModel
+                                      .advanceRentMonthRentOrSecurityMonthsValue,
+                                  'TotalAdvanceAmount': _model
+                                      .commercialAdvanceModel
+                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                      .text,
+                                  'intialAdvance': _model.commercialAdvanceModel
+                                      .intialAdvanceValue,
+                                  'AdvanceAmount': _model.commercialAdvanceModel
+                                      .advanceAmountAdvanceTextController.text,
+                                  'BalanceAmount': _model.commercialAdvanceModel
+                                      .balanceAmountAdvanceTextController.text,
+                                  'RentEscaltion': _model.commercialAdvanceModel
+                                      .rentEscaltionAdvanceValue,
+                                  'EscalationPeriod': _model
+                                      .commercialAdvanceModel
+                                      .escalationPeriodAdvanceValue,
+                                  'AgreementPeriods': _model
+                                      .commercialAdvanceModel
+                                      .agreementPeriodsAdvanceValue,
+                                  'EbillingRent': _model.commercialAdvanceModel
+                                      .eBillingRentAdvanceValue,
+                                };
                                 safeSetState(() {});
                                 FFAppState().rentescalationPerOpencommercial =
                                     _model.commercialAdvanceModel

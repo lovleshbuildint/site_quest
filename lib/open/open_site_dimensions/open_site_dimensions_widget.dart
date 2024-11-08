@@ -37,194 +37,177 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget!.updateData == true) {
-        _model.dOADFour = await SqGroup.dOADetailsstepfourCall.call(
-          iIndent: FFAppState().siteidint.toString(),
-          token: FFAppState().Token,
-        );
-
-        if ((_model.dOADFour?.succeeded ?? true)) {
-          safeSetState(() {
-            _model.sitedimentionsModel.totalShopAreaTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].TotalShopArea''',
-            ).toString().toString();
-            _model.sitedimentionsModel.totalShopAreaTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel
-                        .totalShopAreaTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].OfferedShopArea''',
-            ).toString().toString();
-            _model.sitedimentionsModel.totalAreaOfferedTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel
-                        .totalAreaOfferedTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.carpetAreaTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].CarpetArea''',
-            ).toString().toString();
-            _model.sitedimentionsModel.carpetAreaTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel.carpetAreaTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.shopDepthTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].ShopDepth''',
-            ).toString().toString();
-            _model.sitedimentionsModel.shopDepthTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel.shopDepthTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.shopWidthTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].ShopWidth''',
-            ).toString().toString();
-            _model.sitedimentionsModel.shopWidthTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel.shopWidthTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.shopHeightTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].ShopHeight''',
-            ).toString().toString();
-            _model.sitedimentionsModel.shopHeightTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel.shopHeightTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.totalFrontageTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].TotalFrontage''',
-            ).toString().toString();
-            _model.sitedimentionsModel.totalFrontageTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel
-                        .totalFrontageTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.frontageOfferedTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].OfferedFrontage''',
-            ).toString().toString();
-            _model.sitedimentionsModel.frontageOfferedTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel
-                        .frontageOfferedTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.singageWidthTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].SignageWidth''',
-            ).toString().toString();
-            _model.sitedimentionsModel.singageWidthTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel
-                        .singageWidthTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.singageHeightTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].SignageHeight''',
-            ).toString().toString();
-            _model.sitedimentionsModel.singageHeightTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel
-                        .singageHeightTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.noofHoursTextController?.text =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].PowerAvailHours''',
-            ).toString().toString();
-            _model.sitedimentionsModel.noofHoursTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.sitedimentionsModel.noofHoursTextController!
-                        .text.length);
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.powerAvailabilityValueController?.value =
-                ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
-            }(getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].Is_Power''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.lShapeSingageValueController?.value =
-                ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
-            }(getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].Is_L_Shape''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.lShapeSingageValueController?.value =
-                ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
-            }(getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].Is_L_Shape''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.vsatValueController?.value =
-                ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
-            }(getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].Is_VSAT''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.acODUSpaceValueController?.value =
-                ((String var1) {
-              return var1 == 'False' ? 'No' : 'Yes';
-            }(getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].Is_AC_ODU''',
-            ).toString().toString()));
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.totemPoleValueController?.value =
-                getJsonField(
-              (_model.dOADFour?.jsonBody ?? ''),
-              r'''$.indents[0].IsTotempole''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.sitedimentionsModel.radioButtonValueController?.value =
-                '\$.indents[0].ShopType';
-          });
-        } else {
-          return;
-        }
+        safeSetState(() {
+          _model.sitedimentionsModel.totalShopAreaTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.totalShopArea''',
+          ).toString().toString();
+          _model.sitedimentionsModel.totalShopAreaTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel
+                      .totalShopAreaTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.TotalAreaOffered''',
+          ).toString().toString();
+          _model.sitedimentionsModel.totalAreaOfferedTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel
+                      .totalAreaOfferedTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.carpetAreaTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.CarpetArea''',
+          ).toString().toString();
+          _model.sitedimentionsModel.carpetAreaTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel.carpetAreaTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.shopDepthTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.ShopDepth''',
+          ).toString().toString();
+          _model.sitedimentionsModel.shopDepthTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel.shopDepthTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.shopWidthTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.ShopWidth''',
+          ).toString().toString();
+          _model.sitedimentionsModel.shopWidthTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel.shopWidthTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.shopHeightTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.ShopHeight''',
+          ).toString().toString();
+          _model.sitedimentionsModel.shopHeightTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel.shopHeightTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.totalFrontageTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.TotalFrontage''',
+          ).toString().toString();
+          _model.sitedimentionsModel.totalFrontageTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel
+                      .totalFrontageTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.frontageOfferedTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.frontageOffered''',
+          ).toString().toString();
+          _model.sitedimentionsModel.frontageOfferedTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel
+                      .frontageOfferedTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.singageWidthTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.SingageWidth''',
+          ).toString().toString();
+          _model.sitedimentionsModel.singageWidthTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel.singageWidthTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.singageHeightTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.singageHeight''',
+          ).toString().toString();
+          _model.sitedimentionsModel.singageHeightTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel
+                      .singageHeightTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.lShapeSingageValueController?.value =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.LShapeSingage''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.vsatValueController?.value = getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.Vsat''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.acODUSpaceValueController?.value =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.AcODUSpace''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.powerAvailabilityValueController?.value =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.PowerAvailability''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.noofHoursTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.NoofHours''',
+          ).toString().toString();
+          _model.sitedimentionsModel.noofHoursTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel.noofHoursTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.totemPoleValueController?.value =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.TotemPole''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.rampAvailabilityValueController?.value =
+              _model.sitedimentionsModel.rampAvailabilityValue!;
+        });
+        safeSetState(() {
+          _model.sitedimentionsModel.noteForProjectTISTextController?.text =
+              getJsonField(
+            FFAppState().sitedimensionOpenSite,
+            r'''$.NoteForProject''',
+          ).toString().toString();
+          _model.sitedimentionsModel.noteForProjectTISTextController
+                  ?.selection =
+              TextSelection.collapsed(
+                  offset: _model.sitedimentionsModel
+                      .noteForProjectTISTextController!.text.length);
+        });
       }
     });
   }
@@ -627,6 +610,47 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                                 (_model.oPENSIteDOADetailsFour?.jsonBody ?? ''),
                                 r'''$.Msg''',
                               ).toString())) {
+                                FFAppState().sitedimensionOpenSite =
+                                    <String, dynamic>{
+                                  'totalShopArea': _model.sitedimentionsModel
+                                      .totalShopAreaTextController.text,
+                                  'TotalAreaOffered': _model.sitedimentionsModel
+                                      .totalAreaOfferedTextController.text,
+                                  'CarpetArea': _model.sitedimentionsModel
+                                      .carpetAreaTextController.text,
+                                  'ShopDepth': _model.sitedimentionsModel
+                                      .shopDepthTextController.text,
+                                  'ShopWidth': _model.sitedimentionsModel
+                                      .shopWidthTextController.text,
+                                  'ShopHeight': _model.sitedimentionsModel
+                                      .shopHeightTextController.text,
+                                  'TotalFrontage': _model.sitedimentionsModel
+                                      .totalFrontageTextController.text,
+                                  'frontageOffered': _model.sitedimentionsModel
+                                      .frontageOfferedTextController.text,
+                                  'SingageWidth': _model.sitedimentionsModel
+                                      .singageWidthTextController.text,
+                                  'singageHeight': _model.sitedimentionsModel
+                                      .singageHeightTextController.text,
+                                  'LShapeSingage': _model
+                                      .sitedimentionsModel.lShapeSingageValue,
+                                  'Vsat': _model.sitedimentionsModel.vsatValue,
+                                  'AcODUSpace': _model
+                                      .sitedimentionsModel.acODUSpaceValue,
+                                  'PowerAvailability': _model
+                                      .sitedimentionsModel
+                                      .powerAvailabilityValue,
+                                  'NoofHours': _model.sitedimentionsModel
+                                      .noofHoursTextController.text,
+                                  'TotemPole':
+                                      _model.sitedimentionsModel.totemPoleValue,
+                                  'RampAvailability': _model.sitedimentionsModel
+                                      .rampAvailabilityValue,
+                                  'NoteForProject': _model.sitedimentionsModel
+                                      .noteForProjectTISTextController.text,
+                                };
+                                safeSetState(() {});
+
                                 context.pushNamed('open_site_photo');
                               } else {
                                 await showDialog(

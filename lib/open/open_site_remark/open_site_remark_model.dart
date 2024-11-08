@@ -13,8 +13,6 @@ import 'package:provider/provider.dart';
 class OpenSiteRemarkModel extends FlutterFlowModel<OpenSiteRemarkWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (DOADetailsstepfive)] action in open_site_remark widget.
-  ApiCallResponse? dOADdeatilsfive;
   // State field(s) for Remark1 widget.
   FocusNode? remark1FocusNode;
   TextEditingController? remark1TextController;

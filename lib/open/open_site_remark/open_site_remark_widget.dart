@@ -37,38 +37,46 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget!.updateData! || (FFAppState().siteidint > 0)) {
-        _model.dOADdeatilsfive = await SqGroup.dOADetailsstepfiveCall.call(
-          iIndent: FFAppState().siteidint.toString(),
-          token: FFAppState().Token,
-        );
-
-        if ((_model.dOADdeatilsfive?.succeeded ?? true)) {
-          safeSetState(() {
-            _model.remark1TextController?.text = FFAppState().Remark1open;
-            _model.remark1TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark1TextController!.text.length);
-          });
-          safeSetState(() {
-            _model.remark2TextController?.text = FFAppState().Remark2open;
-            _model.remark2TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark2TextController!.text.length);
-          });
-          safeSetState(() {
-            _model.remark3TextController?.text = FFAppState().Remark3open;
-            _model.remark3TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark3TextController!.text.length);
-          });
-          safeSetState(() {
-            _model.remark4TextController?.text = FFAppState().Remark4open;
-            _model.remark4TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark4TextController!.text.length);
-          });
-          safeSetState(() {
-            _model.remark5TextController?.text = FFAppState().Remark5open;
-            _model.remark5TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark5TextController!.text.length);
-          });
-        }
+        safeSetState(() {
+          _model.remark1TextController?.text = getJsonField(
+            FFAppState().WorkbenchOpenSite,
+            r'''$.Remark1''',
+          ).toString().toString();
+          _model.remark1TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark1TextController!.text.length);
+        });
+        safeSetState(() {
+          _model.remark2TextController?.text = getJsonField(
+            FFAppState().WorkbenchOpenSite,
+            r'''$.Remark2''',
+          ).toString().toString();
+          _model.remark2TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark2TextController!.text.length);
+        });
+        safeSetState(() {
+          _model.remark3TextController?.text = getJsonField(
+            FFAppState().WorkbenchOpenSite,
+            r'''$.Remark3''',
+          ).toString().toString();
+          _model.remark3TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark3TextController!.text.length);
+        });
+        safeSetState(() {
+          _model.remark4TextController?.text = getJsonField(
+            FFAppState().WorkbenchOpenSite,
+            r'''$.Remark4''',
+          ).toString().toString();
+          _model.remark4TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark4TextController!.text.length);
+        });
+        safeSetState(() {
+          _model.remark5TextController?.text = getJsonField(
+            FFAppState().WorkbenchOpenSite,
+            r'''$.Remark5''',
+          ).toString().toString();
+          _model.remark5TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark5TextController!.text.length);
+        });
       }
     });
 
@@ -844,6 +852,16 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
                                     ''),
                                 r'''$.Msg''',
                               ).toString())) {
+                                FFAppState().WorkbenchOpenSite =
+                                    <String, dynamic>{
+                                  'Remark1': _model.remark1TextController.text,
+                                  'Remark2': _model.remark2TextController.text,
+                                  'Remark3': _model.remark3TextController.text,
+                                  'Remark4': _model.remark4TextController.text,
+                                  'Remark5': _model.remark5TextController.text,
+                                };
+                                safeSetState(() {});
+
                                 context.pushNamed(
                                   'open_site_review',
                                   extra: <String, dynamic>{

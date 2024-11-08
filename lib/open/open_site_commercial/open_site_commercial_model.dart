@@ -14,8 +14,6 @@ class OpenSiteCommercialModel
     extends FlutterFlowModel<OpenSiteCommercialWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (DOADetailsstepthree)] action in open_site_commercial widget.
-  ApiCallResponse? apiResultuyr;
   // Model for commercial_advance component.
   late CommercialAdvanceModel commercialAdvanceModel;
   // Stores action output result for [Backend Call - API (DOADetailsstepTHIRDworddoc)] action in Button widget.

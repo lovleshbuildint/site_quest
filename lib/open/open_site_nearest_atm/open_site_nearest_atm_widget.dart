@@ -36,85 +36,98 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.updateData! || (FFAppState().siteidint != null)) {
-        _model.apiResultuyr = await SqGroup.dOADetailsstepsevenCall.call(
-          iIndent: FFAppState().siteidint.toString(),
-          token: FFAppState().Token,
-        );
-
-        if ((_model.apiResultuyr?.succeeded ?? true)) {
-          safeSetState(() {
-            _model.nearestatmModel.atmidTextController?.text =
-                FFAppState().ATMIDNrATM;
-            _model.nearestatmModel.atmidTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .nearestatmModel.atmidTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.aTMNameValueController?.value = getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].IndentBank''',
-            ).toString().toString();
-          });
-          safeSetState(() {
-            _model.nearestatmModel.distanceKMTextController?.text =
-                FFAppState().distanceNrATM;
-            _model.nearestatmModel.distanceKMTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .nearestatmModel.distanceKMTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.directionTextController?.text =
-                FFAppState().DirectionNrATM;
-            _model.nearestatmModel.directionTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .nearestatmModel.directionTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
-                FFAppState().AvgapproxtxnsdyNrATM;
-            _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestatmModel
-                        .avgApproxTxnsDayTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.avgApproxTotalDayTextController?.text =
-                FFAppState().agtotaltxnsdyNrATM;
-            _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestatmModel
-                        .avgApproxTotalDayTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.avgOnusTextController?.text =
-                FFAppState().avgonusNrATM;
-            _model.nearestatmModel.avgOnusTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .nearestatmModel.avgOnusTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.avgOffusTextController?.text =
-                FFAppState().avgoffNrATM;
-            _model.nearestatmModel.avgOffusTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .nearestatmModel.avgOffusTextController!.text.length);
-          });
-          safeSetState(() {
-            _model.nearestatmModel.hitachiATMValueController?.value =
-                ((String var1) {
-              return var1 == 'True' ? 'Yes' : 'No';
-            }(getJsonField(
-              (_model.apiResultuyr?.jsonBody ?? ''),
-              r'''$.indents[0].IsBraanch''',
-            ).toString().toString()));
-          });
-        }
+      if (widget!.updateData! || (FFAppState().siteidint > 0)) {
+        safeSetState(() {
+          _model.nearestatmModel.atmidTextController?.text = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.ATMID''',
+          ).toString().toString();
+          _model.nearestatmModel.atmidTextController?.selection =
+              TextSelection.collapsed(
+                  offset:
+                      _model.nearestatmModel.atmidTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestatmModel.aTMNameValueController?.value = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.ATMName''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.nearestatmModel.aTMSTatusValueController?.value = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.ATMSTatus''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.nearestatmModel.hitachiATMValueController?.value =
+              getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.HitachiATM''',
+          ).toString().toString();
+        });
+        safeSetState(() {
+          _model.nearestatmModel.distanceKMTextController?.text = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.DistanceKM''',
+          ).toString().toString();
+          _model.nearestatmModel.distanceKMTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model
+                      .nearestatmModel.distanceKMTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestatmModel.directionTextController?.text = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.Direction''',
+          ).toString().toString();
+          _model.nearestatmModel.directionTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model
+                      .nearestatmModel.directionTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
+              getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.AvgApproxTxns''',
+          ).toString().toString();
+          _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.nearestatmModel.avgApproxTxnsDayTextController!
+                      .text.length);
+        });
+        safeSetState(() {
+          _model.nearestatmModel.avgApproxTotalDayTextController?.text =
+              getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.AvgApproxTotal''',
+          ).toString().toString();
+          _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model.nearestatmModel
+                      .avgApproxTotalDayTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestatmModel.avgOnusTextController?.text = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.AvgOnus''',
+          ).toString().toString();
+          _model.nearestatmModel.avgOnusTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model
+                      .nearestatmModel.avgOnusTextController!.text.length);
+        });
+        safeSetState(() {
+          _model.nearestatmModel.avgOffusTextController?.text = getJsonField(
+            FFAppState().NearestATMopenSite,
+            r'''$.AvgOffus''',
+          ).toString().toString();
+          _model.nearestatmModel.avgOffusTextController?.selection =
+              TextSelection.collapsed(
+                  offset: _model
+                      .nearestatmModel.avgOffusTextController!.text.length);
+        });
       }
     });
   }
@@ -504,6 +517,30 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
                                 (_model.updateNearestATM?.jsonBody ?? ''),
                                 r'''$.Msg''',
                               ).toString())) {
+                                FFAppState().NearestATMopenSite =
+                                    <String, dynamic>{
+                                  'ATMID': _model
+                                      .nearestatmModel.atmidTextController.text,
+                                  'ATMName':
+                                      _model.nearestatmModel.aTMNameValue,
+                                  'ATMSTatus':
+                                      _model.nearestatmModel.aTMSTatusValue,
+                                  'HitachiATM':
+                                      _model.nearestatmModel.hitachiATMValue,
+                                  'DistanceKM': _model.nearestatmModel
+                                      .distanceKMTextController.text,
+                                  'Direction': _model.nearestatmModel
+                                      .directionTextController.text,
+                                  'AvgApproxTxns': _model.nearestatmModel
+                                      .avgApproxTxnsDayTextController.text,
+                                  'AvgApproxTotal': _model.nearestatmModel
+                                      .avgApproxTotalDayTextController.text,
+                                  'AvgOnus': _model.nearestatmModel
+                                      .avgOnusTextController.text,
+                                  'AvgOffus': _model.nearestatmModel
+                                      .avgOffusTextController.text,
+                                };
+                                safeSetState(() {});
                                 if (Navigator.of(context).canPop()) {
                                   context.pop();
                                 }

@@ -97,18 +97,25 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             FFAppState().SiteDetailsIndent,
             r'''$.Distance''',
           ).toString().toString();
-          _model.distanceFromIndentsTextController?.selection =
-              TextSelection.collapsed(
-                  offset:
-                      _model.distanceFromIndentsTextController!.text.length);
+          _model.distanceFromIndentsFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.distanceFromIndentsTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model.distanceFromIndentsTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.addressTextController?.text = getJsonField(
             FFAppState().SiteDetailsIndent,
             r'''$.SiteAddress''',
           ).toString().toString();
-          _model.addressTextController?.selection = TextSelection.collapsed(
-              offset: _model.addressTextController!.text.length);
+          _model.addressFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.addressTextController?.selection = TextSelection.collapsed(
+              offset: _model.addressTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.stateDropdownValueController?.value = getJsonField(
@@ -133,8 +140,12 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             FFAppState().SiteDetailsIndent,
             r'''$.Pincode''',
           ).toString().toString();
-          _model.pincodeTextController?.selection = TextSelection.collapsed(
-              offset: _model.pincodeTextController!.text.length);
+          _model.pincodeFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.pincodeTextController?.selection = TextSelection.collapsed(
+              offset: _model.pincodeTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.circleValueController?.value = getJsonField(
@@ -147,16 +158,25 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             FFAppState().SiteDetailsIndent,
             r'''$.ATMExisting''',
           ).toString().toString();
-          _model.aTMExistingTextController?.selection = TextSelection.collapsed(
-              offset: _model.aTMExistingTextController!.text.length);
+          _model.aTMExistingFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.aTMExistingTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model.aTMExistingTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.landMarksTextController?.text = getJsonField(
             FFAppState().SiteDetailsIndent,
             r'''$.Landmark''',
           ).toString().toString();
-          _model.landMarksTextController?.selection = TextSelection.collapsed(
-              offset: _model.landMarksTextController!.text.length);
+          _model.landMarksFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.landMarksTextController?.selection = TextSelection.collapsed(
+              offset: _model.landMarksTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.rBICategoryValueController?.value = getJsonField(
@@ -181,17 +201,26 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
             FFAppState().SiteDetailsIndent,
             r'''$.MangerName''',
           ).toString().toString();
-          _model.mangerNameTextController?.selection = TextSelection.collapsed(
-              offset: _model.mangerNameTextController!.text.length);
+          _model.mangerNameFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.mangerNameTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model.mangerNameTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.mangerNumberTextController?.text = getJsonField(
             FFAppState().SiteDetailsIndent,
             r'''$.MangerNumber''',
           ).toString().toString();
-          _model.mangerNumberTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.mangerNumberTextController!.text.length);
+          _model.mangerNumberFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.mangerNumberTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model.mangerNumberTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.duplicateSiteValueController?.value = getJsonField(
@@ -296,7 +325,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              FFAppState().SiteDetailsIndent.toString(),
+                              'Add Site Details',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -1375,10 +1404,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
-                                        getJsonField(
-                                          FFAppState().SiteDetailsIndent,
-                                          r'''$.district''',
-                                        ).toString(),
+                                        'District',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1530,10 +1556,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      getJsonField(
-                                        FFAppState().SiteDetailsIndent,
-                                        r'''$.city''',
-                                      ).toString(),
+                                      'City',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -2435,10 +2458,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            getJsonField(
-                              FFAppState().SiteDetailsIndent,
-                              r'''$.firstSiteVisitedBy''',
-                            ).toString(),
+                            'First Site Visited By',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -2536,10 +2556,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            getJsonField(
-                              FFAppState().SiteDetailsIndent,
-                              r'''$.secondSiteVisitedBY''',
-                            ).toString(),
+                            'Second Site Visited BY',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

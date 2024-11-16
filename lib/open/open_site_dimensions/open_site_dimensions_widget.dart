@@ -43,10 +43,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.totalShopArea''',
           ).toString().toString();
-          _model.sitedimentionsModel.totalShopAreaTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel
-                      .totalShopAreaTextController!.text.length);
+          _model.sitedimentionsModel.totalShopAreaFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.totalShopAreaTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.totalShopAreaTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
@@ -54,10 +58,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.TotalAreaOffered''',
           ).toString().toString();
-          _model.sitedimentionsModel.totalAreaOfferedTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel
-                      .totalAreaOfferedTextController!.text.length);
+          _model.sitedimentionsModel.totalAreaOfferedFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.totalAreaOfferedTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.sitedimentionsModel.totalAreaOfferedTextController!
+                  .text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.carpetAreaTextController?.text =
@@ -65,10 +73,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.CarpetArea''',
           ).toString().toString();
-          _model.sitedimentionsModel.carpetAreaTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel.carpetAreaTextController!
-                      .text.length);
+          _model.sitedimentionsModel.carpetAreaFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.carpetAreaTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.carpetAreaTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.shopDepthTextController?.text =
@@ -76,10 +88,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.ShopDepth''',
           ).toString().toString();
-          _model.sitedimentionsModel.shopDepthTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel.shopDepthTextController!
-                      .text.length);
+          _model.sitedimentionsModel.shopDepthFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.shopDepthTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.shopDepthTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.shopWidthTextController?.text =
@@ -87,10 +103,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.ShopWidth''',
           ).toString().toString();
-          _model.sitedimentionsModel.shopWidthTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel.shopWidthTextController!
-                      .text.length);
+          _model.sitedimentionsModel.shopWidthFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.shopWidthTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.shopWidthTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.shopHeightTextController?.text =
@@ -98,10 +118,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.ShopHeight''',
           ).toString().toString();
-          _model.sitedimentionsModel.shopHeightTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel.shopHeightTextController!
-                      .text.length);
+          _model.sitedimentionsModel.shopHeightFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.shopHeightTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.shopHeightTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.totalFrontageTextController?.text =
@@ -109,10 +133,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.TotalFrontage''',
           ).toString().toString();
-          _model.sitedimentionsModel.totalFrontageTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel
-                      .totalFrontageTextController!.text.length);
+          _model.sitedimentionsModel.totalFrontageFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.totalFrontageTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.totalFrontageTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.frontageOfferedTextController?.text =
@@ -120,10 +148,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.frontageOffered''',
           ).toString().toString();
-          _model.sitedimentionsModel.frontageOfferedTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel
-                      .frontageOfferedTextController!.text.length);
+          _model.sitedimentionsModel.frontageOfferedFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.frontageOfferedTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.sitedimentionsModel.frontageOfferedTextController!
+                  .text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.singageWidthTextController?.text =
@@ -131,10 +163,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.SingageWidth''',
           ).toString().toString();
-          _model.sitedimentionsModel.singageWidthTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel.singageWidthTextController!
-                      .text.length);
+          _model.sitedimentionsModel.singageWidthFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.singageWidthTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.singageWidthTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.singageHeightTextController?.text =
@@ -142,10 +178,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.singageHeight''',
           ).toString().toString();
-          _model.sitedimentionsModel.singageHeightTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel
-                      .singageHeightTextController!.text.length);
+          _model.sitedimentionsModel.singageHeightFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.singageHeightTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.singageHeightTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.lShapeSingageValueController?.value =
@@ -180,10 +220,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.NoofHours''',
           ).toString().toString();
-          _model.sitedimentionsModel.noofHoursTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel.noofHoursTextController!
-                      .text.length);
+          _model.sitedimentionsModel.noofHoursFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.noofHoursTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .sitedimentionsModel.noofHoursTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.sitedimentionsModel.totemPoleValueController?.value =
@@ -205,11 +249,14 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
             FFAppState().sitedimensionOpenSite,
             r'''$.NoteForProject''',
           ).toString().toString();
-          _model.sitedimentionsModel.noteForProjectTISTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model.sitedimentionsModel
-                      .noteForProjectTISTextController!.text.length);
+          _model.sitedimentionsModel.noteForProjectTISFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.sitedimentionsModel.noteForProjectTISTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.sitedimentionsModel
+                  .noteForProjectTISTextController!.text.length,
+            );
+          });
         });
       }
     });

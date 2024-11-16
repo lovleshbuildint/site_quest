@@ -137,13 +137,20 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                                   .text) ??
                                               0))
                                       .toString();
-                                  _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                          ?.selection =
-                                      TextSelection.collapsed(
-                                          offset: _model
-                                              .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                                              .text
-                                              .length);
+                                  _model
+                                      .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
+                                      ?.requestFocus();
+                                  WidgetsBinding.instance
+                                      .addPostFrameCallback((_) {
+                                    _model
+                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                        ?.selection = TextSelection.collapsed(
+                                      offset: _model
+                                          .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                          .text
+                                          .length,
+                                    );
+                                  });
                                 });
                               },
                             ),
@@ -315,13 +322,19 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model.totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                  ?.selection =
-                              TextSelection.collapsed(
-                                  offset: _model
-                                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                                      .text
-                                      .length);
+                          _model
+                              .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
+                              ?.requestFocus();
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            _model
+                                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                                ?.selection = TextSelection.collapsed(
+                              offset: _model
+                                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                                  .text
+                                  .length,
+                            );
+                          });
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -480,12 +493,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model.advanceAmountAdvanceTextController?.selection =
-                              TextSelection.collapsed(
-                                  offset: _model
-                                      .advanceAmountAdvanceTextController!
-                                      .text
-                                      .length);
+                          _model.advanceAmountAdvanceFocusNode?.requestFocus();
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            _model.advanceAmountAdvanceTextController
+                                ?.selection = TextSelection.collapsed(
+                              offset: _model.advanceAmountAdvanceTextController!
+                                  .text.length,
+                            );
+                          });
                         });
                         safeSetState(() {
                           _model.balanceAmountAdvanceTextController
@@ -498,12 +513,14 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model.balanceAmountAdvanceTextController?.selection =
-                              TextSelection.collapsed(
-                                  offset: _model
-                                      .balanceAmountAdvanceTextController!
-                                      .text
-                                      .length);
+                          _model.balanceAmountAdvanceFocusNode?.requestFocus();
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            _model.balanceAmountAdvanceTextController
+                                ?.selection = TextSelection.collapsed(
+                              offset: _model.balanceAmountAdvanceTextController!
+                                  .text.length,
+                            );
+                          });
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,

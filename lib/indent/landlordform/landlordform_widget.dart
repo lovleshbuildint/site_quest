@@ -1330,18 +1330,26 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 _model.landoardNameTextController.text,
                                 'Name',
                               );
-                              _model.chequefieldTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model.chequefieldTextController!
-                                          .text.length);
+                              _model.chequefieldFocusNode?.requestFocus();
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                _model.chequefieldTextController?.selection =
+                                    TextSelection.collapsed(
+                                  offset: _model
+                                      .chequefieldTextController!.text.length,
+                                );
+                              });
                             });
                           } else {
                             safeSetState(() {
                               _model.chequefieldTextController?.text = '';
-                              _model.chequefieldTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model.chequefieldTextController!
-                                          .text.length);
+                              _model.chequefieldFocusNode?.requestFocus();
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                _model.chequefieldTextController?.selection =
+                                    TextSelection.collapsed(
+                                  offset: _model
+                                      .chequefieldTextController!.text.length,
+                                );
+                              });
                             });
                           }
                         },
@@ -1469,22 +1477,28 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               safeSetState(() {
                                 _model.lLchequefieldTextController?.text =
                                     _model.percentTextController.text;
-                                _model.lLchequefieldTextController?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .lLchequefieldTextController!
-                                            .text
-                                            .length);
+                                _model.lLchequefieldFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.lLchequefieldTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model.lLchequefieldTextController!
+                                        .text.length,
+                                  );
+                                });
                               });
                             } else {
                               safeSetState(() {
                                 _model.lLchequefieldTextController?.text = '';
-                                _model.lLchequefieldTextController?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .lLchequefieldTextController!
-                                            .text
-                                            .length);
+                                _model.lLchequefieldFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.lLchequefieldTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model.lLchequefieldTextController!
+                                        .text.length,
+                                  );
+                                });
                               });
                             }
                           },

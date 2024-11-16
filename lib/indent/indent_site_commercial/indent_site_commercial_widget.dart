@@ -62,11 +62,15 @@ class _IndentSiteCommercialWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Rent''',
             ).toString().toString();
-            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.commercialAdvanceModel
-                        .advanceRentAmountRENTTextController!.text.length);
+            _model.commercialAdvanceModel.advanceRentAmountRENTFocusNode
+                ?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                  ?.selection = TextSelection.collapsed(
+                offset: _model.commercialAdvanceModel
+                    .advanceRentAmountRENTTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model
@@ -89,16 +93,21 @@ class _IndentSiteCommercialWidgetState
                 .commercialAdvanceModel
                 .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                 ?.text = FFAppState().TotalAdvanceAmountopencommercial;
-            _model
+            _model.commercialAdvanceModel
+                .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
+                ?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model
+                  .commercialAdvanceModel
+                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                  ?.selection = TextSelection.collapsed(
+                offset: _model
                     .commercialAdvanceModel
-                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model
-                        .commercialAdvanceModel
-                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                        .text
-                        .length);
+                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                    .text
+                    .length,
+              );
+            });
           });
           safeSetState(() {
             _model.commercialAdvanceModel.intialAdvanceValueController?.value =
@@ -113,11 +122,15 @@ class _IndentSiteCommercialWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].AdvanceDeposit''',
             ).toString().toString();
-            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.commercialAdvanceModel
-                        .balanceAmountAdvanceTextController!.text.length);
+            _model.commercialAdvanceModel.balanceAmountAdvanceFocusNode
+                ?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                  ?.selection = TextSelection.collapsed(
+                offset: _model.commercialAdvanceModel
+                    .balanceAmountAdvanceTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.commercialAdvanceModel.advanceAmountAdvanceTextController
@@ -125,11 +138,15 @@ class _IndentSiteCommercialWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].AdvanceDeposit''',
             ).toString().toString();
-            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.commercialAdvanceModel
-                        .advanceAmountAdvanceTextController!.text.length);
+            _model.commercialAdvanceModel.advanceAmountAdvanceFocusNode
+                ?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                  ?.selection = TextSelection.collapsed(
+                offset: _model.commercialAdvanceModel
+                    .advanceAmountAdvanceTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.commercialAdvanceModel.rentEscaltionAdvanceValueController

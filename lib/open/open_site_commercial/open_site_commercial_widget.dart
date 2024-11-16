@@ -43,11 +43,15 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.advanceRentAmountRENT''',
           ).toString().toString();
-          _model.commercialAdvanceModel.advanceRentAmountRENTTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model.commercialAdvanceModel
-                      .advanceRentAmountRENTTextController!.text.length);
+          _model.commercialAdvanceModel.advanceRentAmountRENTFocusNode
+              ?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.commercialAdvanceModel
+                  .advanceRentAmountRENTTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model
@@ -66,16 +70,21 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.TotalAdvanceAmount''',
           ).toString().toString();
-          _model
+          _model.commercialAdvanceModel
+              .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
+              ?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model
+                .commercialAdvanceModel
+                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model
                   .commercialAdvanceModel
-                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model
-                      .commercialAdvanceModel
-                      .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                      .text
-                      .length);
+                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
+                  .text
+                  .length,
+            );
+          });
         });
         safeSetState(() {
           _model.commercialAdvanceModel.intialAdvanceValueController?.value =
@@ -90,11 +99,15 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.AdvanceAmount''',
           ).toString().toString();
-          _model.commercialAdvanceModel.advanceAmountAdvanceTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model.commercialAdvanceModel
-                      .advanceAmountAdvanceTextController!.text.length);
+          _model.commercialAdvanceModel.advanceAmountAdvanceFocusNode
+              ?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.commercialAdvanceModel
+                  .advanceAmountAdvanceTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.commercialAdvanceModel.balanceAmountAdvanceTextController
@@ -102,11 +115,15 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.BalanceAmount''',
           ).toString().toString();
-          _model.commercialAdvanceModel.balanceAmountAdvanceTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model.commercialAdvanceModel
-                      .balanceAmountAdvanceTextController!.text.length);
+          _model.commercialAdvanceModel.balanceAmountAdvanceFocusNode
+              ?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.commercialAdvanceModel
+                  .balanceAmountAdvanceTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.commercialAdvanceModel.rentEscaltionAdvanceValueController

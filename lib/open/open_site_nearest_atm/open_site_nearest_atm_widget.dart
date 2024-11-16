@@ -42,10 +42,13 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.ATMID''',
           ).toString().toString();
-          _model.nearestatmModel.atmidTextController?.selection =
-              TextSelection.collapsed(
-                  offset:
-                      _model.nearestatmModel.atmidTextController!.text.length);
+          _model.nearestatmModel.atmidFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.atmidTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model.nearestatmModel.atmidTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestatmModel.aTMNameValueController?.value = getJsonField(
@@ -71,20 +74,28 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.DistanceKM''',
           ).toString().toString();
-          _model.nearestatmModel.distanceKMTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model
-                      .nearestatmModel.distanceKMTextController!.text.length);
+          _model.nearestatmModel.distanceKMFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.distanceKMTextController?.selection =
+                TextSelection.collapsed(
+              offset:
+                  _model.nearestatmModel.distanceKMTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestatmModel.directionTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,
             r'''$.Direction''',
           ).toString().toString();
-          _model.nearestatmModel.directionTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model
-                      .nearestatmModel.directionTextController!.text.length);
+          _model.nearestatmModel.directionFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.directionTextController?.selection =
+                TextSelection.collapsed(
+              offset:
+                  _model.nearestatmModel.directionTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
@@ -92,10 +103,14 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.AvgApproxTxns''',
           ).toString().toString();
-          _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.nearestatmModel.avgApproxTxnsDayTextController!
-                      .text.length);
+          _model.nearestatmModel.avgApproxTxnsDayFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .nearestatmModel.avgApproxTxnsDayTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgApproxTotalDayTextController?.text =
@@ -103,30 +118,41 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.AvgApproxTotal''',
           ).toString().toString();
-          _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.nearestatmModel
-                      .avgApproxTotalDayTextController!.text.length);
+          _model.nearestatmModel.avgApproxTotalDayFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .nearestatmModel.avgApproxTotalDayTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgOnusTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,
             r'''$.AvgOnus''',
           ).toString().toString();
-          _model.nearestatmModel.avgOnusTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model
-                      .nearestatmModel.avgOnusTextController!.text.length);
+          _model.nearestatmModel.avgOnusFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.avgOnusTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model.nearestatmModel.avgOnusTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgOffusTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,
             r'''$.AvgOffus''',
           ).toString().toString();
-          _model.nearestatmModel.avgOffusTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model
-                      .nearestatmModel.avgOffusTextController!.text.length);
+          _model.nearestatmModel.avgOffusFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestatmModel.avgOffusTextController?.selection =
+                TextSelection.collapsed(
+              offset:
+                  _model.nearestatmModel.avgOffusTextController!.text.length,
+            );
+          });
         });
       }
     });

@@ -42,40 +42,60 @@ class _OpenSiteRemarkWidgetState extends State<OpenSiteRemarkWidget> {
             FFAppState().WorkbenchOpenSite,
             r'''$.Remark1''',
           ).toString().toString();
-          _model.remark1TextController?.selection = TextSelection.collapsed(
-              offset: _model.remark1TextController!.text.length);
+          _model.remark1FocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.remark1TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark1TextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.remark2TextController?.text = getJsonField(
             FFAppState().WorkbenchOpenSite,
             r'''$.Remark2''',
           ).toString().toString();
-          _model.remark2TextController?.selection = TextSelection.collapsed(
-              offset: _model.remark2TextController!.text.length);
+          _model.remark2FocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.remark2TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark2TextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.remark3TextController?.text = getJsonField(
             FFAppState().WorkbenchOpenSite,
             r'''$.Remark3''',
           ).toString().toString();
-          _model.remark3TextController?.selection = TextSelection.collapsed(
-              offset: _model.remark3TextController!.text.length);
+          _model.remark3FocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.remark3TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark3TextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.remark4TextController?.text = getJsonField(
             FFAppState().WorkbenchOpenSite,
             r'''$.Remark4''',
           ).toString().toString();
-          _model.remark4TextController?.selection = TextSelection.collapsed(
-              offset: _model.remark4TextController!.text.length);
+          _model.remark4FocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.remark4TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark4TextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.remark5TextController?.text = getJsonField(
             FFAppState().WorkbenchOpenSite,
             r'''$.Remark5''',
           ).toString().toString();
-          _model.remark5TextController?.selection = TextSelection.collapsed(
-              offset: _model.remark5TextController!.text.length);
+          _model.remark5FocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.remark5TextController?.selection = TextSelection.collapsed(
+              offset: _model.remark5TextController!.text.length,
+            );
+          });
         });
       }
     });

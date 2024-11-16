@@ -49,40 +49,60 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks1''',
             ).toString().toString();
-            _model.remark1TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark1TextController!.text.length);
+            _model.remark1FocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.remark1TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark1TextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.remark2TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks2''',
             ).toString().toString();
-            _model.remark2TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark2TextController!.text.length);
+            _model.remark2FocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.remark2TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark2TextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.remark3TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks3''',
             ).toString().toString();
-            _model.remark3TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark3TextController!.text.length);
+            _model.remark3FocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.remark3TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark3TextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.remark4TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks4''',
             ).toString().toString();
-            _model.remark4TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark4TextController!.text.length);
+            _model.remark4FocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.remark4TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark4TextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.remark5TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks5''',
             ).toString().toString();
-            _model.remark5TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark5TextController!.text.length);
+            _model.remark5FocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.remark5TextController?.selection = TextSelection.collapsed(
+                offset: _model.remark5TextController!.text.length,
+              );
+            });
           });
         }
       }

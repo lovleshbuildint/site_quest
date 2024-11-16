@@ -44,36 +44,55 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
           safeSetState(() {
             _model.customerbankTextController?.text =
                 '\$.indents[0].CustomerName';
-            _model.customerbankTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.customerbankTextController!.text.length);
+            _model.customerbankFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.customerbankTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model.customerbankTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.distancefrominindentTextController?.text =
                 '\$.indents[0].DistFromIndent';
-            _model.distancefrominindentTextController?.selection =
-                TextSelection.collapsed(
-                    offset:
-                        _model.distancefrominindentTextController!.text.length);
+            _model.distancefrominindentFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.distancefrominindentTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model.distancefrominindentTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.siteAddressTextController?.text =
                 '\$.indents[0].LocationName';
-            _model.siteAddressTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.siteAddressTextController!.text.length);
+            _model.siteAddressFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.siteAddressTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model.siteAddressTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.pincodeTextController?.text = '\$.indents[0].PinCode';
-            _model.pincodeTextController?.selection = TextSelection.collapsed(
-                offset: _model.pincodeTextController!.text.length);
+            _model.pincodeFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.pincodeTextController?.selection = TextSelection.collapsed(
+                offset: _model.pincodeTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.aTMExisitingTextController?.text =
                 '\$.indents[0].ATMID_Existing';
-            _model.aTMExisitingTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.aTMExisitingTextController!.text.length);
+            _model.aTMExisitingFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.aTMExisitingTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model.aTMExisitingTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.sitetypeValueController?.value =
@@ -81,8 +100,13 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
           });
           safeSetState(() {
             _model.landMarksTextController?.text = '\$.indents[0].LandMark';
-            _model.landMarksTextController?.selection = TextSelection.collapsed(
-                offset: _model.landMarksTextController!.text.length);
+            _model.landMarksFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.landMarksTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model.landMarksTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.cashdevicetypeValueController?.value =

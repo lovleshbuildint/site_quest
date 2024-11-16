@@ -60,10 +60,14 @@ class _OpenSiteNearestBranchWidgetState
             FFAppState().NearestBranchopensite,
             r'''$.BranchSOLID''',
           ).toString().toString();
-          _model.nearestbranchModel.branchSOLIDTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model.nearestbranchModel.branchSOLIDTextController!
-                      .text.length);
+          _model.nearestbranchModel.branchSOLIDFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestbranchModel.branchSOLIDTextController?.selection =
+                TextSelection.collapsed(
+              offset: _model
+                  .nearestbranchModel.branchSOLIDTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestbranchModel.nearestBranchstextTextController?.text =
@@ -71,11 +75,14 @@ class _OpenSiteNearestBranchWidgetState
             FFAppState().NearestBranchopensite,
             r'''$.NearestBranchstext''',
           ).toString().toString();
-          _model.nearestbranchModel.nearestBranchstextTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model.nearestbranchModel
-                      .nearestBranchstextTextController!.text.length);
+          _model.nearestbranchModel.nearestBranchstextFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestbranchModel.nearestBranchstextTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.nearestbranchModel
+                  .nearestBranchstextTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestbranchModel.distanceNearestBranchTextController?.text =
@@ -83,21 +90,29 @@ class _OpenSiteNearestBranchWidgetState
             FFAppState().NearestBranchopensite,
             r'''$.distanceNearestBranch''',
           ).toString().toString();
-          _model.nearestbranchModel.distanceNearestBranchTextController
-                  ?.selection =
-              TextSelection.collapsed(
-                  offset: _model.nearestbranchModel
-                      .distanceNearestBranchTextController!.text.length);
+          _model.nearestbranchModel.distanceNearestBranchFocusNode
+              ?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestbranchModel.distanceNearestBranchTextController
+                ?.selection = TextSelection.collapsed(
+              offset: _model.nearestbranchModel
+                  .distanceNearestBranchTextController!.text.length,
+            );
+          });
         });
         safeSetState(() {
           _model.nearestbranchModel.videoURLTextController?.text = getJsonField(
             FFAppState().NearestBranchopensite,
             r'''$.VideoURL''',
           ).toString().toString();
-          _model.nearestbranchModel.videoURLTextController?.selection =
-              TextSelection.collapsed(
-                  offset: _model
-                      .nearestbranchModel.videoURLTextController!.text.length);
+          _model.nearestbranchModel.videoURLFocusNode?.requestFocus();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _model.nearestbranchModel.videoURLTextController?.selection =
+                TextSelection.collapsed(
+              offset:
+                  _model.nearestbranchModel.videoURLTextController!.text.length,
+            );
+          });
         });
       }
     });

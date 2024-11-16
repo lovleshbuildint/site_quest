@@ -59,36 +59,52 @@ class _IndentSiteNearestBranchWidgetState
           safeSetState(() {
             _model.nearestbranchModel.branchSOLIDTextController?.text =
                 FFAppState().BranchSOLID;
-            _model.nearestbranchModel.branchSOLIDTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel.branchSOLIDTextController!
-                        .text.length);
+            _model.nearestbranchModel.branchSOLIDFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.nearestbranchModel.branchSOLIDTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model
+                    .nearestbranchModel.branchSOLIDTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.nearestbranchModel.nearestBranchstextTextController?.text =
                 FFAppState().NearestBranch;
-            _model.nearestbranchModel.nearestBranchstextTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel
-                        .nearestBranchstextTextController!.text.length);
+            _model.nearestbranchModel.nearestBranchstextFocusNode
+                ?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.nearestbranchModel.nearestBranchstextTextController
+                  ?.selection = TextSelection.collapsed(
+                offset: _model.nearestbranchModel
+                    .nearestBranchstextTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.nearestbranchModel.distanceNearestBranchTextController
                 ?.text = FFAppState().DistancefromtheNeearestBranch;
-            _model.nearestbranchModel.distanceNearestBranchTextController
-                    ?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel
-                        .distanceNearestBranchTextController!.text.length);
+            _model.nearestbranchModel.distanceNearestBranchFocusNode
+                ?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.nearestbranchModel.distanceNearestBranchTextController
+                  ?.selection = TextSelection.collapsed(
+                offset: _model.nearestbranchModel
+                    .distanceNearestBranchTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.nearestbranchModel.videoURLTextController?.text =
                 FFAppState().VideoURL;
-            _model.nearestbranchModel.videoURLTextController?.selection =
-                TextSelection.collapsed(
-                    offset: _model.nearestbranchModel.videoURLTextController!
-                        .text.length);
+            _model.nearestbranchModel.videoURLFocusNode?.requestFocus();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _model.nearestbranchModel.videoURLTextController?.selection =
+                  TextSelection.collapsed(
+                offset: _model
+                    .nearestbranchModel.videoURLTextController!.text.length,
+              );
+            });
           });
           safeSetState(() {
             _model.nearestbranchModel.cRAAgencyValueController?.value =

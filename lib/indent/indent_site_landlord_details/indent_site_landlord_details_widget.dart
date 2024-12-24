@@ -775,9 +775,7 @@ class _IndentSiteLandlordDetailsWidgetState
                       child: wrapWithModel(
                         model: _model.landlordformModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: LandlordformWidget(
-                          trydata: true,
-                        ),
+                        child: LandlordformWidget(),
                       ),
                     ),
                   ),

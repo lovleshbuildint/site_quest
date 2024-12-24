@@ -682,6 +682,9 @@ class _IndentSiteCommercialWidgetState
                                   ),
                                 },
                               );
+
+                              FFAppState().testdatatry = true;
+                              safeSetState(() {});
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,

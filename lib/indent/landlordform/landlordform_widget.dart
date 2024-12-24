@@ -16,12 +16,7 @@ import 'landlordform_model.dart';
 export 'landlordform_model.dart';
 
 class LandlordformWidget extends StatefulWidget {
-  const LandlordformWidget({
-    super.key,
-    required this.trydata,
-  });
-
-  final bool? trydata;
+  const LandlordformWidget({super.key});
 
   @override
   State<LandlordformWidget> createState() => _LandlordformWidgetState();
@@ -340,7 +335,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                       ),
                       if ((_model.statefordistland != null &&
                               _model.statefordistland != '') ||
-                          widget!.trydata!)
+                          FFAppState().testdatatry)
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),

@@ -3477,6 +3477,9 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
                                       ),
                                     },
                                   );
+
+                                  FFAppState().testdatatry = false;
+                                  safeSetState(() {});
                                 } else {
                                   await showDialog(
                                     context: context,

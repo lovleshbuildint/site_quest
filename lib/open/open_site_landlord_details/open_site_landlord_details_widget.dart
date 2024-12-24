@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/landlordform/landlordform_widget.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -44,42 +45,18 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.LandlordName''',
           ).toString().toString();
-          _model.landlordformModel.landoardNameFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.landoardNameTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.landoardNameTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.percentTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.Percent''',
           ).toString().toString();
-          _model.landlordformModel.percentFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.percentTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.percentTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.addressTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.Address''',
           ).toString().toString();
-          _model.landlordformModel.addressFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.addressTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.addressTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.districtValueController?.value =
@@ -105,28 +82,12 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.Pincode''',
           ).toString().toString();
-          _model.landlordformModel.pincodeFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.pincodeTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.pincodeTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.landmarksTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.Landmarks''',
           ).toString().toString();
-          _model.landlordformModel.landmarksFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.landmarksTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.landmarksTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.contactNameTextController?.text =
@@ -134,14 +95,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.ContactName''',
           ).toString().toString();
-          _model.landlordformModel.contactNameFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.contactNameTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.contactNameTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.alernativenumberTextController?.text =
@@ -149,41 +102,18 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.Alernativenumber''',
           ).toString().toString();
-          _model.landlordformModel.alernativenumberFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.alernativenumberTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model.landlordformModel.alernativenumberTextController!
-                  .text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.emailidTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.Emailid''',
           ).toString().toString();
-          _model.landlordformModel.emailidFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.emailidTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.emailidTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.faxTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.Fax''',
           ).toString().toString();
-          _model.landlordformModel.faxFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.faxTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model.landlordformModel.faxTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.bankdetailsValueController?.value =
@@ -198,14 +128,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.chequefield''',
           ).toString().toString();
-          _model.landlordformModel.chequefieldFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.chequefieldTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.chequefieldTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.lLchequefieldTextController?.text =
@@ -213,14 +135,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.LLchequefield''',
           ).toString().toString();
-          _model.landlordformModel.lLchequefieldFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.lLchequefieldTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.lLchequefieldTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.bankAccountNumberTextController?.text =
@@ -228,14 +142,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.BankAccountNumber''',
           ).toString().toString();
-          _model.landlordformModel.bankAccountNumberFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.bankAccountNumberTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model.landlordformModel.bankAccountNumberTextController!
-                  .text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.bankBranchTextController?.text =
@@ -243,42 +149,18 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.BankBranch''',
           ).toString().toString();
-          _model.landlordformModel.bankBranchFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.bankBranchTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.bankBranchTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.iFSCCodeTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.IFSCCode''',
           ).toString().toString();
-          _model.landlordformModel.iFSCCodeFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.iFSCCodeTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.iFSCCodeTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.panNumberTextController?.text = getJsonField(
             FFAppState().landlordopensite,
             r'''$.PanNumber''',
           ).toString().toString();
-          _model.landlordformModel.panNumberFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.panNumberTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.landlordformModel.panNumberTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.aAdharcardNoTextController?.text =
@@ -286,14 +168,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.AAdharcardNo''',
           ).toString().toString();
-          _model.landlordformModel.aAdharcardNoFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.aAdharcardNoTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.aAdharcardNoTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.siteReferralNameTextController?.text =
@@ -301,14 +175,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.SiteReferralName''',
           ).toString().toString();
-          _model.landlordformModel.siteReferralNameFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.siteReferralNameTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model.landlordformModel.siteReferralNameTextController!
-                  .text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.landlordformModel.siteReferralNoTextController?.text =
@@ -316,14 +182,6 @@ class _OpenSiteLandlordDetailsWidgetState
             FFAppState().landlordopensite,
             r'''$.siteReferralNo''',
           ).toString().toString();
-          _model.landlordformModel.siteReferralNoFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.landlordformModel.siteReferralNoTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .landlordformModel.siteReferralNoTextController!.text.length,
-            );
-          });
         });
       }
     });
@@ -341,7 +199,10 @@ class _OpenSiteLandlordDetailsWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -635,7 +496,9 @@ class _OpenSiteLandlordDetailsWidgetState
                     child: wrapWithModel(
                       model: _model.landlordformModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: LandlordformWidget(),
+                      child: LandlordformWidget(
+                        trydata: true,
+                      ),
                     ),
                   ),
                 ),

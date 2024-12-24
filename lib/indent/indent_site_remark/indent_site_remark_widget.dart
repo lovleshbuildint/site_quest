@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -49,60 +50,30 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks1''',
             ).toString().toString();
-            _model.remark1FocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.remark1TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark1TextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.remark2TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks2''',
             ).toString().toString();
-            _model.remark2FocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.remark2TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark2TextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.remark3TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks3''',
             ).toString().toString();
-            _model.remark3FocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.remark3TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark3TextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.remark4TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks4''',
             ).toString().toString();
-            _model.remark4FocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.remark4TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark4TextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.remark5TextController?.text = getJsonField(
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Remarks5''',
             ).toString().toString();
-            _model.remark5FocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.remark5TextController?.selection = TextSelection.collapsed(
-                offset: _model.remark5TextController!.text.length,
-              );
-            });
           });
         }
       }
@@ -136,7 +107,10 @@ class _IndentSiteRemarkWidgetState extends State<IndentSiteRemarkWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,

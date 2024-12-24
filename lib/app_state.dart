@@ -201,6 +201,10 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      _testdatatry =
+          await secureStorage.getBool('ff_testdatatry') ?? _testdatatry;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -1055,6 +1059,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteWorkbenchOpenSite() {
     secureStorage.delete(key: 'ff_WorkbenchOpenSite');
+  }
+
+  bool _testdatatry = false;
+  bool get testdatatry => _testdatatry;
+  set testdatatry(bool value) {
+    _testdatatry = value;
+    secureStorage.setBool('ff_testdatatry', value);
+  }
+
+  void deleteTestdatatry() {
+    secureStorage.delete(key: 'ff_testdatatry');
   }
 }
 

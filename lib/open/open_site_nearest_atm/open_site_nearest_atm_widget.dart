@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestatm/nearestatm_widget.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -42,13 +43,6 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.ATMID''',
           ).toString().toString();
-          _model.nearestatmModel.atmidFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.atmidTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model.nearestatmModel.atmidTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestatmModel.aTMNameValueController?.value = getJsonField(
@@ -74,28 +68,12 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.DistanceKM''',
           ).toString().toString();
-          _model.nearestatmModel.distanceKMFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.distanceKMTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.nearestatmModel.distanceKMTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestatmModel.directionTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,
             r'''$.Direction''',
           ).toString().toString();
-          _model.nearestatmModel.directionFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.directionTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.nearestatmModel.directionTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgApproxTxnsDayTextController?.text =
@@ -103,14 +81,6 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.AvgApproxTxns''',
           ).toString().toString();
-          _model.nearestatmModel.avgApproxTxnsDayFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.avgApproxTxnsDayTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .nearestatmModel.avgApproxTxnsDayTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgApproxTotalDayTextController?.text =
@@ -118,41 +88,18 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
             FFAppState().NearestATMopenSite,
             r'''$.AvgApproxTotal''',
           ).toString().toString();
-          _model.nearestatmModel.avgApproxTotalDayFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.avgApproxTotalDayTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .nearestatmModel.avgApproxTotalDayTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgOnusTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,
             r'''$.AvgOnus''',
           ).toString().toString();
-          _model.nearestatmModel.avgOnusFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.avgOnusTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model.nearestatmModel.avgOnusTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestatmModel.avgOffusTextController?.text = getJsonField(
             FFAppState().NearestATMopenSite,
             r'''$.AvgOffus''',
           ).toString().toString();
-          _model.nearestatmModel.avgOffusFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestatmModel.avgOffusTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.nearestatmModel.avgOffusTextController!.text.length,
-            );
-          });
         });
       }
     });
@@ -170,7 +117,10 @@ class _OpenSiteNearestAtmWidgetState extends State<OpenSiteNearestAtmWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,

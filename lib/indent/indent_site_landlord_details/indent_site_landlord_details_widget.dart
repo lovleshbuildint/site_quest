@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/landlordform/landlordform_widget.dart';
+import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -51,28 +52,12 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].LandLordName''',
             ).toString().toString();
-            _model.landlordformModel.landoardNameFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.landoardNameTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.landoardNameTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.percentTextController?.text = getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].LandLordPercentage''',
             ).toString().toString();
-            _model.landlordformModel.percentFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.percentTextController?.selection =
-                  TextSelection.collapsed(
-                offset:
-                    _model.landlordformModel.percentTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.stateValueController?.value = getJsonField(
@@ -91,28 +76,12 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].Address1''',
             ).toString().toString();
-            _model.landlordformModel.addressFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.addressTextController?.selection =
-                  TextSelection.collapsed(
-                offset:
-                    _model.landlordformModel.addressTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.pincodeTextController?.text = getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].Pincode''',
             ).toString().toString();
-            _model.landlordformModel.pincodeFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.pincodeTextController?.selection =
-                  TextSelection.collapsed(
-                offset:
-                    _model.landlordformModel.pincodeTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.landmarksTextController?.text =
@@ -120,14 +89,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].LandMark''',
             ).toString().toString();
-            _model.landlordformModel.landmarksFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.landmarksTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.landmarksTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.contactNameTextController?.text =
@@ -135,14 +96,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].Contact1''',
             ).toString().toString();
-            _model.landlordformModel.contactNameFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.contactNameTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.contactNameTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.alernativenumberTextController?.text =
@@ -150,41 +103,18 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].Contact2''',
             ).toString().toString();
-            _model.landlordformModel.alernativenumberFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.alernativenumberTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.landlordformModel.alernativenumberTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.emailidTextController?.text = getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].EmailId''',
             ).toString().toString();
-            _model.landlordformModel.emailidFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.emailidTextController?.selection =
-                  TextSelection.collapsed(
-                offset:
-                    _model.landlordformModel.emailidTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.faxTextController?.text = getJsonField(
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].Fax''',
             ).toString().toString();
-            _model.landlordformModel.faxFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.faxTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.landlordformModel.faxTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.chequefieldTextController?.text =
@@ -192,14 +122,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].ChequeInFavour''',
             ).toString().toString();
-            _model.landlordformModel.chequefieldFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.chequefieldTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.chequefieldTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.lLchequefieldTextController?.text =
@@ -207,14 +129,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].LandLordPercentage''',
             ).toString().toString();
-            _model.landlordformModel.lLchequefieldFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.lLchequefieldTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.lLchequefieldTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.bankAccountNumberTextController?.text =
@@ -222,14 +136,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].AccountNo''',
             ).toString().toString();
-            _model.landlordformModel.bankAccountNumberFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.bankAccountNumberTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.landlordformModel
-                    .bankAccountNumberTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.bankBranchTextController?.text =
@@ -237,14 +143,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].BranchName''',
             ).toString().toString();
-            _model.landlordformModel.bankBranchFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.bankBranchTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.bankBranchTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.iFSCCodeTextController?.text =
@@ -252,14 +150,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].IFSCCode''',
             ).toString().toString();
-            _model.landlordformModel.iFSCCodeFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.iFSCCodeTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.iFSCCodeTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.panNumberTextController?.text =
@@ -267,14 +157,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].PANCard''',
             ).toString().toString();
-            _model.landlordformModel.panNumberFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.panNumberTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.panNumberTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.aAdharcardNoTextController?.text =
@@ -282,14 +164,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].Aadharcard''',
             ).toString().toString();
-            _model.landlordformModel.aAdharcardNoFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.aAdharcardNoTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .landlordformModel.aAdharcardNoTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.siteReferralNameTextController?.text =
@@ -297,14 +171,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].RefeName''',
             ).toString().toString();
-            _model.landlordformModel.siteReferralNameFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.siteReferralNameTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.landlordformModel.siteReferralNameTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.siteReferralNoTextController?.text =
@@ -312,14 +178,6 @@ class _IndentSiteLandlordDetailsWidgetState
               (_model.apiResultfoa?.jsonBody ?? ''),
               r'''$.indents[0].RefeId''',
             ).toString().toString();
-            _model.landlordformModel.siteReferralNoFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landlordformModel.siteReferralNoTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.landlordformModel.siteReferralNoTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.landlordformModel.stateValueController?.value = getJsonField(
@@ -373,7 +231,10 @@ class _IndentSiteLandlordDetailsWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -914,7 +775,9 @@ class _IndentSiteLandlordDetailsWidgetState
                       child: wrapWithModel(
                         model: _model.landlordformModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: LandlordformWidget(),
+                        child: LandlordformWidget(
+                          trydata: true,
+                        ),
                       ),
                     ),
                   ),
@@ -956,7 +819,6 @@ class _IndentSiteLandlordDetailsWidgetState
                                 190.0, 0.0, 25.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                var _shouldSetState = false;
                                 _model.updateDOADdeatils2 = await SqGroup
                                     .dOADetailsstepSECONDworddocCall
                                     .call(
@@ -1035,7 +897,6 @@ class _IndentSiteLandlordDetailsWidgetState
                                   emailIds: null,
                                 );
 
-                                _shouldSetState = true;
                                 _model.please = true;
                                 if (_model.formKey.currentState == null ||
                                     !_model.formKey.currentState!.validate()) {
@@ -1109,7 +970,6 @@ class _IndentSiteLandlordDetailsWidgetState
                                   safeSetState(() {});
                                   return;
                                 }
-                                _shouldSetState = true;
                                 if ((String var1) {
                                   return var1 ==
                                           "Data for Step-2 Successfully Updated."
@@ -1119,43 +979,14 @@ class _IndentSiteLandlordDetailsWidgetState
                                   (_model.updateDOADdeatils2?.jsonBody ?? ''),
                                   r'''$.Msg''',
                                 ).toString())) {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('update'),
-                                        content: Text('update onprocess'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('upadte'),
-                                        content: Text('update done'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-
                                   context.goNamed(
                                     'indent_site_commercial',
                                     queryParameters: {
                                       'updateData': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                      'trydata': serializeParam(
                                         false,
                                         ParamType.bool,
                                       ),
@@ -1168,9 +999,6 @@ class _IndentSiteLandlordDetailsWidgetState
                                       ),
                                     },
                                   );
-
-                                  if (_shouldSetState) safeSetState(() {});
-                                  return;
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -1195,7 +1023,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                   );
                                 }
 
-                                if (_shouldSetState) safeSetState(() {});
+                                safeSetState(() {});
                               },
                               text: 'Save & Next',
                               options: FFButtonOptions(

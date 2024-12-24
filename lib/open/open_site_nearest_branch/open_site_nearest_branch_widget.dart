@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestbranch/nearestbranch_widget.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -60,14 +61,6 @@ class _OpenSiteNearestBranchWidgetState
             FFAppState().NearestBranchopensite,
             r'''$.BranchSOLID''',
           ).toString().toString();
-          _model.nearestbranchModel.branchSOLIDFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestbranchModel.branchSOLIDTextController?.selection =
-                TextSelection.collapsed(
-              offset: _model
-                  .nearestbranchModel.branchSOLIDTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestbranchModel.nearestBranchstextTextController?.text =
@@ -75,14 +68,6 @@ class _OpenSiteNearestBranchWidgetState
             FFAppState().NearestBranchopensite,
             r'''$.NearestBranchstext''',
           ).toString().toString();
-          _model.nearestbranchModel.nearestBranchstextFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestbranchModel.nearestBranchstextTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model.nearestbranchModel
-                  .nearestBranchstextTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestbranchModel.distanceNearestBranchTextController?.text =
@@ -90,29 +75,12 @@ class _OpenSiteNearestBranchWidgetState
             FFAppState().NearestBranchopensite,
             r'''$.distanceNearestBranch''',
           ).toString().toString();
-          _model.nearestbranchModel.distanceNearestBranchFocusNode
-              ?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestbranchModel.distanceNearestBranchTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model.nearestbranchModel
-                  .distanceNearestBranchTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.nearestbranchModel.videoURLTextController?.text = getJsonField(
             FFAppState().NearestBranchopensite,
             r'''$.VideoURL''',
           ).toString().toString();
-          _model.nearestbranchModel.videoURLFocusNode?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.nearestbranchModel.videoURLTextController?.selection =
-                TextSelection.collapsed(
-              offset:
-                  _model.nearestbranchModel.videoURLTextController!.text.length,
-            );
-          });
         });
       }
     });
@@ -130,7 +98,10 @@ class _OpenSiteNearestBranchWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,

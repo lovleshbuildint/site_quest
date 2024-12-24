@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/commercial_advance/commercial_advance_widget.dart';
+import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -16,9 +17,11 @@ class IndentSiteCommercialWidget extends StatefulWidget {
   const IndentSiteCommercialWidget({
     super.key,
     required this.updateData,
+    required this.trydata,
   });
 
   final bool? updateData;
+  final bool? trydata;
 
   @override
   State<IndentSiteCommercialWidget> createState() =>
@@ -62,15 +65,6 @@ class _IndentSiteCommercialWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].Rent''',
             ).toString().toString();
-            _model.commercialAdvanceModel.advanceRentAmountRENTFocusNode
-                ?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.commercialAdvanceModel.advanceRentAmountRENTTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.commercialAdvanceModel
-                    .advanceRentAmountRENTTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model
@@ -93,21 +87,6 @@ class _IndentSiteCommercialWidgetState
                 .commercialAdvanceModel
                 .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
                 ?.text = FFAppState().TotalAdvanceAmountopencommercial;
-            _model.commercialAdvanceModel
-                .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
-                ?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model
-                  .commercialAdvanceModel
-                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model
-                    .commercialAdvanceModel
-                    .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                    .text
-                    .length,
-              );
-            });
           });
           safeSetState(() {
             _model.commercialAdvanceModel.intialAdvanceValueController?.value =
@@ -122,15 +101,6 @@ class _IndentSiteCommercialWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].AdvanceDeposit''',
             ).toString().toString();
-            _model.commercialAdvanceModel.balanceAmountAdvanceFocusNode
-                ?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.commercialAdvanceModel.balanceAmountAdvanceTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.commercialAdvanceModel
-                    .balanceAmountAdvanceTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.commercialAdvanceModel.advanceAmountAdvanceTextController
@@ -138,15 +108,6 @@ class _IndentSiteCommercialWidgetState
               (_model.apiResultuyr?.jsonBody ?? ''),
               r'''$.indents[0].AdvanceDeposit''',
             ).toString().toString();
-            _model.commercialAdvanceModel.advanceAmountAdvanceFocusNode
-                ?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.commercialAdvanceModel.advanceAmountAdvanceTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.commercialAdvanceModel
-                    .advanceAmountAdvanceTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
@@ -187,7 +148,10 @@ class _IndentSiteCommercialWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -676,7 +640,9 @@ class _IndentSiteCommercialWidgetState
                     child: wrapWithModel(
                       model: _model.commercialAdvanceModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: CommercialAdvanceWidget(),
+                      child: CommercialAdvanceWidget(
+                        updatedatatest: true,
+                      ),
                     ),
                   ),
                 ),

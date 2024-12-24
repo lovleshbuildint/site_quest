@@ -3,16 +3,23 @@ import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'commercial_advance_model.dart';
 export 'commercial_advance_model.dart';
 
 class CommercialAdvanceWidget extends StatefulWidget {
-  const CommercialAdvanceWidget({super.key});
+  const CommercialAdvanceWidget({
+    super.key,
+    required this.updatedatatest,
+  });
+
+  final bool? updatedatatest;
 
   @override
   State<CommercialAdvanceWidget> createState() =>
@@ -137,20 +144,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                                   .text) ??
                                               0))
                                       .toString();
-                                  _model
-                                      .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
-                                      ?.requestFocus();
-                                  WidgetsBinding.instance
-                                      .addPostFrameCallback((_) {
-                                    _model
-                                        .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                        ?.selection = TextSelection.collapsed(
-                                      offset: _model
-                                          .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                                          .text
-                                          .length,
-                                    );
-                                  });
                                 });
                               },
                             ),
@@ -322,19 +315,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model
-                              .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
-                              ?.requestFocus();
-                          WidgetsBinding.instance.addPostFrameCallback((_) {
-                            _model
-                                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                                ?.selection = TextSelection.collapsed(
-                              offset: _model
-                                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                                  .text
-                                  .length,
-                            );
-                          });
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -493,14 +473,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model.advanceAmountAdvanceFocusNode?.requestFocus();
-                          WidgetsBinding.instance.addPostFrameCallback((_) {
-                            _model.advanceAmountAdvanceTextController
-                                ?.selection = TextSelection.collapsed(
-                              offset: _model.advanceAmountAdvanceTextController!
-                                  .text.length,
-                            );
-                          });
                         });
                         safeSetState(() {
                           _model.balanceAmountAdvanceTextController
@@ -513,14 +485,6 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                           .text) ??
                                       0))
                               .toString();
-                          _model.balanceAmountAdvanceFocusNode?.requestFocus();
-                          WidgetsBinding.instance.addPostFrameCallback((_) {
-                            _model.balanceAmountAdvanceTextController
-                                ?.selection = TextSelection.collapsed(
-                              offset: _model.balanceAmountAdvanceTextController!
-                                  .text.length,
-                            );
-                          });
                         });
                       },
                       width: MediaQuery.sizeOf(context).width * 1.0,

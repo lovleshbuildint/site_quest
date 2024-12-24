@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -44,55 +45,21 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
           safeSetState(() {
             _model.customerbankTextController?.text =
                 '\$.indents[0].CustomerName';
-            _model.customerbankFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.customerbankTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.customerbankTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.distancefrominindentTextController?.text =
                 '\$.indents[0].DistFromIndent';
-            _model.distancefrominindentFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.distancefrominindentTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.distancefrominindentTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.siteAddressTextController?.text =
                 '\$.indents[0].LocationName';
-            _model.siteAddressFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.siteAddressTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.siteAddressTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.pincodeTextController?.text = '\$.indents[0].PinCode';
-            _model.pincodeFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.pincodeTextController?.selection = TextSelection.collapsed(
-                offset: _model.pincodeTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.aTMExisitingTextController?.text =
                 '\$.indents[0].ATMID_Existing';
-            _model.aTMExisitingFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.aTMExisitingTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.aTMExisitingTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitetypeValueController?.value =
@@ -100,13 +67,6 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
           });
           safeSetState(() {
             _model.landMarksTextController?.text = '\$.indents[0].LandMark';
-            _model.landMarksFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.landMarksTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.landMarksTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.cashdevicetypeValueController?.value =
@@ -202,7 +162,10 @@ class _IndentSiteDetailsWidgetState extends State<IndentSiteDetailsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,

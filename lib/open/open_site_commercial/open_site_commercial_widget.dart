@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/commercial_advance/commercial_advance_widget.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,15 +44,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.advanceRentAmountRENT''',
           ).toString().toString();
-          _model.commercialAdvanceModel.advanceRentAmountRENTFocusNode
-              ?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.commercialAdvanceModel.advanceRentAmountRENTTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model.commercialAdvanceModel
-                  .advanceRentAmountRENTTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model
@@ -70,21 +62,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.TotalAdvanceAmount''',
           ).toString().toString();
-          _model.commercialAdvanceModel
-              .totalAdvanceAmountRentOrSecurityMonthsPaidFocusNode
-              ?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model
-                .commercialAdvanceModel
-                .totalAdvanceAmountRentOrSecurityMonthsPaidTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model
-                  .commercialAdvanceModel
-                  .totalAdvanceAmountRentOrSecurityMonthsPaidTextController!
-                  .text
-                  .length,
-            );
-          });
         });
         safeSetState(() {
           _model.commercialAdvanceModel.intialAdvanceValueController?.value =
@@ -99,15 +76,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.AdvanceAmount''',
           ).toString().toString();
-          _model.commercialAdvanceModel.advanceAmountAdvanceFocusNode
-              ?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.commercialAdvanceModel.advanceAmountAdvanceTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model.commercialAdvanceModel
-                  .advanceAmountAdvanceTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.commercialAdvanceModel.balanceAmountAdvanceTextController
@@ -115,15 +83,6 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
             FFAppState().CommercialOpensite,
             r'''$.BalanceAmount''',
           ).toString().toString();
-          _model.commercialAdvanceModel.balanceAmountAdvanceFocusNode
-              ?.requestFocus();
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _model.commercialAdvanceModel.balanceAmountAdvanceTextController
-                ?.selection = TextSelection.collapsed(
-              offset: _model.commercialAdvanceModel
-                  .balanceAmountAdvanceTextController!.text.length,
-            );
-          });
         });
         safeSetState(() {
           _model.commercialAdvanceModel.rentEscaltionAdvanceValueController
@@ -169,7 +128,10 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -411,7 +373,9 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                   child: wrapWithModel(
                     model: _model.commercialAdvanceModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: CommercialAdvanceWidget(),
+                    child: CommercialAdvanceWidget(
+                      updatedatatest: true,
+                    ),
                   ),
                 ),
               ),

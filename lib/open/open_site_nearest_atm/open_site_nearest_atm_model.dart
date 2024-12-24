@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/nearestatm/nearestatm_widget.dart';
+import 'dart:ui';
 import 'open_site_nearest_atm_widget.dart' show OpenSiteNearestAtmWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

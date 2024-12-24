@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/indent/sitedimentions/sitedimentions_widget.dart';
+import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -51,14 +52,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].TotalShopArea''',
             ).toString().toString();
-            _model.sitedimentionsModel.totalShopAreaFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.totalShopAreaTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.sitedimentionsModel.totalShopAreaTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.totalAreaOfferedTextController?.text =
@@ -66,15 +59,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].OfferedShopArea''',
             ).toString().toString();
-            _model.sitedimentionsModel.totalAreaOfferedFocusNode
-                ?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.totalAreaOfferedTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.sitedimentionsModel
-                    .totalAreaOfferedTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.carpetAreaTextController?.text =
@@ -82,14 +66,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].CarpetArea''',
             ).toString().toString();
-            _model.sitedimentionsModel.carpetAreaFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.carpetAreaTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .sitedimentionsModel.carpetAreaTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.shopDepthTextController?.text =
@@ -97,14 +73,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].ShopDepth''',
             ).toString().toString();
-            _model.sitedimentionsModel.shopDepthFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.shopDepthTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .sitedimentionsModel.shopDepthTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.shopWidthTextController?.text =
@@ -112,14 +80,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].ShopWidth''',
             ).toString().toString();
-            _model.sitedimentionsModel.shopWidthFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.shopWidthTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .sitedimentionsModel.shopWidthTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.shopHeightTextController?.text =
@@ -127,14 +87,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].ShopHeight''',
             ).toString().toString();
-            _model.sitedimentionsModel.shopHeightFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.shopHeightTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .sitedimentionsModel.shopHeightTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.totalFrontageTextController?.text =
@@ -142,14 +94,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].TotalFrontage''',
             ).toString().toString();
-            _model.sitedimentionsModel.totalFrontageFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.totalFrontageTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.sitedimentionsModel.totalFrontageTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.frontageOfferedTextController?.text =
@@ -157,14 +101,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].OfferedFrontage''',
             ).toString().toString();
-            _model.sitedimentionsModel.frontageOfferedFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.frontageOfferedTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.sitedimentionsModel
-                    .frontageOfferedTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.singageWidthTextController?.text =
@@ -172,14 +108,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].SignageWidth''',
             ).toString().toString();
-            _model.sitedimentionsModel.singageWidthFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.singageWidthTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model.sitedimentionsModel.singageWidthTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.singageHeightTextController?.text =
@@ -187,14 +115,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].SignageHeight''',
             ).toString().toString();
-            _model.sitedimentionsModel.singageHeightFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.singageHeightTextController
-                  ?.selection = TextSelection.collapsed(
-                offset: _model.sitedimentionsModel.singageHeightTextController!
-                    .text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.noofHoursTextController?.text =
@@ -202,14 +122,6 @@ class _IndentSiteDimensionsWidgetState
               (_model.dOADFour?.jsonBody ?? ''),
               r'''$.indents[0].PowerAvailHours''',
             ).toString().toString();
-            _model.sitedimentionsModel.noofHoursFocusNode?.requestFocus();
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _model.sitedimentionsModel.noofHoursTextController?.selection =
-                  TextSelection.collapsed(
-                offset: _model
-                    .sitedimentionsModel.noofHoursTextController!.text.length,
-              );
-            });
           });
           safeSetState(() {
             _model.sitedimentionsModel.powerAvailabilityValueController?.value =
@@ -277,7 +189,10 @@ class _IndentSiteDimensionsWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
@@ -794,6 +709,10 @@ class _IndentSiteDimensionsWidgetState
                                 'indent_site_commercial',
                                 queryParameters: {
                                   'updateData': serializeParam(
+                                    true,
+                                    ParamType.bool,
+                                  ),
+                                  'trydata': serializeParam(
                                     true,
                                     ParamType.bool,
                                   ),

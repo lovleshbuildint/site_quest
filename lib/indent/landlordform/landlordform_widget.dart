@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
@@ -15,7 +16,12 @@ import 'landlordform_model.dart';
 export 'landlordform_model.dart';
 
 class LandlordformWidget extends StatefulWidget {
-  const LandlordformWidget({super.key});
+  const LandlordformWidget({
+    super.key,
+    required this.trydata,
+  });
+
+  final bool? trydata;
 
   @override
   State<LandlordformWidget> createState() => _LandlordformWidgetState();
@@ -332,8 +338,9 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   ),
                         ),
                       ),
-                      if (_model.statefordistland != null &&
-                          _model.statefordistland != '')
+                      if ((_model.statefordistland != null &&
+                              _model.statefordistland != '') ||
+                          widget!.trydata!)
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
@@ -1198,10 +1205,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Text(
-              getJsonField(
-                FFAppState().landlordopensite,
-                r'''$.bankdetails''',
-              ).toString(),
+              'Landlord Bank Name',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -1330,26 +1334,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 _model.landoardNameTextController.text,
                                 'Name',
                               );
-                              _model.chequefieldFocusNode?.requestFocus();
-                              WidgetsBinding.instance.addPostFrameCallback((_) {
-                                _model.chequefieldTextController?.selection =
-                                    TextSelection.collapsed(
-                                  offset: _model
-                                      .chequefieldTextController!.text.length,
-                                );
-                              });
                             });
                           } else {
                             safeSetState(() {
                               _model.chequefieldTextController?.text = '';
-                              _model.chequefieldFocusNode?.requestFocus();
-                              WidgetsBinding.instance.addPostFrameCallback((_) {
-                                _model.chequefieldTextController?.selection =
-                                    TextSelection.collapsed(
-                                  offset: _model
-                                      .chequefieldTextController!.text.length,
-                                );
-                              });
                             });
                           }
                         },
@@ -1477,28 +1465,10 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               safeSetState(() {
                                 _model.lLchequefieldTextController?.text =
                                     _model.percentTextController.text;
-                                _model.lLchequefieldFocusNode?.requestFocus();
-                                WidgetsBinding.instance
-                                    .addPostFrameCallback((_) {
-                                  _model.lLchequefieldTextController
-                                      ?.selection = TextSelection.collapsed(
-                                    offset: _model.lLchequefieldTextController!
-                                        .text.length,
-                                  );
-                                });
                               });
                             } else {
                               safeSetState(() {
                                 _model.lLchequefieldTextController?.text = '';
-                                _model.lLchequefieldFocusNode?.requestFocus();
-                                WidgetsBinding.instance
-                                    .addPostFrameCallback((_) {
-                                  _model.lLchequefieldTextController
-                                      ?.selection = TextSelection.collapsed(
-                                    offset: _model.lLchequefieldTextController!
-                                        .text.length,
-                                  );
-                                });
                               });
                             }
                           },

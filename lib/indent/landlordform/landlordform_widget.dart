@@ -335,7 +335,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                       ),
                       if ((_model.statefordistland != null &&
                               _model.statefordistland != '') ||
-                          FFAppState().testdatatry)
+                          (FFAppState().testdatatry == true))
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),

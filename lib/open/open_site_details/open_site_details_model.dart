@@ -101,8 +101,8 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   String? districtssValue;
   FormFieldController<String>? districtssValueController;
   // State field(s) for Cityss widget.
-  String? cityssValue;
-  FormFieldController<String>? cityssValueController;
+  String? cityssValue1;
+  FormFieldController<String>? cityssValueController1;
   // State field(s) for Pincode widget.
   FocusNode? pincodeFocusNode;
   TextEditingController? pincodeTextController;
@@ -149,6 +149,12 @@ class OpenSiteDetailsModel extends FlutterFlowModel<OpenSiteDetailsWidget> {
   FormFieldController<String>? secondSiteVisitedBYValueController;
   // Stores action output result for [Backend Call - API (DOADetailsstepFIRSTworddoc)] action in Button widget.
   ApiCallResponse? updateDOAdetailsfirstwordsSites;
+  // State field(s) for Cityss widget.
+  String? cityssValue2;
+  FormFieldController<String>? cityssValueController2;
+  // State field(s) for Cityss widget.
+  String? cityssValue3;
+  FormFieldController<String>? cityssValueController3;
 
   @override
   void initState(BuildContext context) {}

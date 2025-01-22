@@ -1220,7 +1220,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      'State',
+                                      FFAppState().State,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1378,8 +1378,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     ),
                                     if (widget!.updateData! &&
                                             (_model.stateDropdownValue ==
-                                                    null ||
-                                                _model.stateDropdownValue == '')
+                                                FFAppState().State)
                                         ? true
                                         : (_model.stateDropdownValue != null &&
                                             _model.stateDropdownValue != ''))

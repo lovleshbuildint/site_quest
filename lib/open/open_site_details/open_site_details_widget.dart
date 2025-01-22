@@ -1373,8 +1373,19 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             ),
                                       ),
                                     ),
-                                    if (_model.stateDropdownValue != null &&
-                                        _model.stateDropdownValue != '')
+                                    if (() {
+                                      if (widget!.updateData!) {
+                                        return true;
+                                      } else if (_model.stateDropdownValue ==
+                                              null ||
+                                          _model.stateDropdownValue == '') {
+                                        return true;
+                                      } else {
+                                        return (_model.stateDropdownValue !=
+                                                null &&
+                                            _model.stateDropdownValue != '');
+                                      }
+                                    }())
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),

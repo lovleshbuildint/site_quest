@@ -1468,11 +1468,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                         ),
                                               ),
                                             ),
-                                            if (widget!.updateData! ||
-                                                (_model.stateDropdownValue !=
-                                                        null &&
-                                                    _model.stateDropdownValue !=
-                                                        ''))
+                                            if (_model.stateDropdownValue !=
+                                                    null &&
+                                                _model.stateDropdownValue != '')
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(

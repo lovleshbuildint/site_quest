@@ -1374,9 +1374,9 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       ),
                                     ),
                                     if (widget!.updateData! &&
-                                            (_model.stateDropdownValue !=
-                                                    null &&
-                                                _model.stateDropdownValue != '')
+                                            (_model.stateDropdownValue ==
+                                                    null ||
+                                                _model.stateDropdownValue == '')
                                         ? true
                                         : (_model.stateDropdownValue != null &&
                                             _model.stateDropdownValue != ''))

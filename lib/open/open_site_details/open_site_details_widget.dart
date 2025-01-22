@@ -1373,129 +1373,123 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                             ),
                                       ),
                                     ),
-                                    if (_model.stateDropdownValue != null &&
-                                        _model.stateDropdownValue != '')
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: FutureBuilder<ApiCallResponse>(
-                                          future: SqGroup.districtAPisCall.call(
-                                            istate: _model.stateDropdownValue,
-                                            token: FFAppState().Token,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 8.0, 0.0, 0.0),
+                                      child: FutureBuilder<ApiCallResponse>(
+                                        future: SqGroup.districtAPisCall.call(
+                                          istate: _model.stateDropdownValue,
+                                          token: FFAppState().Token,
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
                                                   ),
                                                 ),
-                                              );
-                                            }
-                                            final districtssDistrictAPisResponse =
-                                                snapshot.data!;
-
-                                            return FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .districtssValueController ??=
-                                                  FormFieldController<String>(
-                                                _model.districtssValue ??= '',
                                               ),
-                                              options: List<String>.from(
-                                                  (getJsonField(
-                                                districtssDistrictAPisResponse
-                                                    .jsonBody,
-                                                r'''$.District..DistrictName''',
-                                                true,
-                                              ) as List)
-                                                      .map<String>(
-                                                          (s) => s.toString())
-                                                      .toList()!),
-                                              optionLabels: (getJsonField(
-                                                districtssDistrictAPisResponse
-                                                    .jsonBody,
-                                                r'''$.District..DistrictName''',
-                                                true,
-                                              ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()!,
-                                              onChanged: (val) async {
-                                                safeSetState(() => _model
-                                                    .districtssValue = val);
-                                                _model.district =
-                                                    functions.checkIndex(
-                                                        districtssDistrictAPisResponse
-                                                            .jsonBody,
-                                                        _model.districtssValue,
-                                                        'District',
-                                                        'DistrictName',
-                                                        'iDistrict');
-                                                safeSetState(() {});
-                                              },
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: 50.0,
-                                              searchHintTextStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              searchTextStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              hintText: 'Please select...',
-                                              searchHintText:
-                                                  'Search district...',
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color: Color(0xFFE1E2E6),
-                                                size: 24.0,
-                                              ),
-                                              fillColor: Colors.white,
-                                              elevation: 2.0,
-                                              borderColor: Color(0xFFE1E2E6),
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 4.0, 16.0, 4.0),
-                                              hidesUnderline: true,
-                                              isSearchable: true,
-                                              isMultiSelect: false,
                                             );
-                                          },
-                                        ),
+                                          }
+                                          final districtssDistrictAPisResponse =
+                                              snapshot.data!;
+
+                                          return FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .districtssValueController ??=
+                                                FormFieldController<String>(
+                                              _model.districtssValue ??= '',
+                                            ),
+                                            options: List<String>.from(
+                                                (getJsonField(
+                                              districtssDistrictAPisResponse
+                                                  .jsonBody,
+                                              r'''$.District..DistrictName''',
+                                              true,
+                                            ) as List)
+                                                    .map<String>(
+                                                        (s) => s.toString())
+                                                    .toList()!),
+                                            optionLabels: (getJsonField(
+                                              districtssDistrictAPisResponse
+                                                  .jsonBody,
+                                              r'''$.District..DistrictName''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!,
+                                            onChanged: (val) async {
+                                              safeSetState(() =>
+                                                  _model.districtssValue = val);
+                                              _model.district =
+                                                  functions.checkIndex(
+                                                      districtssDistrictAPisResponse
+                                                          .jsonBody,
+                                                      _model.districtssValue,
+                                                      'District',
+                                                      'DistrictName',
+                                                      'iDistrict');
+                                              safeSetState(() {});
+                                            },
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            searchTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            hintText: 'Please select...',
+                                            searchHintText:
+                                                'Search district...',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color: Color(0xFFE1E2E6),
+                                              size: 24.0,
+                                            ),
+                                            fillColor: Colors.white,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFE1E2E6),
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 4.0, 16.0, 4.0),
+                                            hidesUnderline: true,
+                                            isSearchable: true,
+                                            isMultiSelect: false,
+                                          );
+                                        },
                                       ),
+                                    ),
                                   ],
                                 ),
                               ),

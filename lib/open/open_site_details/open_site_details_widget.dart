@@ -1057,7 +1057,10 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Distance from th Indent (mtrs.)',
+                            valueOrDefault<String>(
+                              widget!.updateData?.toString(),
+                              'test',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

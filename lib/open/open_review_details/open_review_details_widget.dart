@@ -253,7 +253,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                             ),
                                             onPressed: () async {
                                               context.goNamed(
-                                                'open_site_details',
+                                                'open_site_commercial',
                                                 queryParameters: {
                                                   'updateData': serializeParam(
                                                     false,

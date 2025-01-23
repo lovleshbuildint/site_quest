@@ -137,20 +137,20 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Search Indent',
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            labelStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.readexPro(),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            hintStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.readexPro(),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             enabledBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
@@ -196,7 +196,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Readex Pro',
+                                                font: GoogleFonts.readexPro(),
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -277,7 +277,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
@@ -504,8 +504,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(),
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -523,8 +523,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
+                                                                          font:
+                                                                              GoogleFonts.readexPro(),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -559,8 +559,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(),
                                                                         color: Color(
                                                                             0xFF2D2D2D),
                                                                         fontSize:
@@ -614,7 +614,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Poppins',
+                                                                              font: GoogleFonts.poppins(),
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -659,8 +659,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(),
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
@@ -678,8 +678,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(),
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
@@ -711,8 +711,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(),
                                                                             fontSize:
                                                                                 12.0,
                                                                             letterSpacing:
@@ -730,8 +730,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -765,8 +765,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(),
                                                                             fontSize:
                                                                                 12.0,
                                                                             letterSpacing:
@@ -784,8 +784,8 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -879,7 +879,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
@@ -930,7 +930,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.white,
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -990,7 +990,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
@@ -1060,7 +1060,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
@@ -1131,7 +1131,7 @@ class _IndentListWidgetState extends State<IndentListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFFB5BFC8),
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,

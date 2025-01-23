@@ -104,7 +104,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -202,16 +202,17 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                             children: [
                                               AutoSizeText(
                                                 'Customer',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w300,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
                                               ),
                                               AutoSizeText(
                                                 getJsonField(
@@ -223,8 +224,8 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          font: GoogleFonts
+                                                              .readexPro(),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -247,7 +248,8 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -264,7 +266,8 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -287,16 +290,17 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                             children: [
                                               AutoSizeText(
                                                 'Indent Number',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w300,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
                                               ),
                                               AutoSizeText(
                                                 getJsonField(
@@ -304,15 +308,16 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                       .indentSelectedSite,
                                                   r'''$.IndentId''',
                                                 ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
                                               ),
                                             ],
                                           ),
@@ -331,7 +336,8 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -348,7 +354,8 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -459,7 +466,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.white,
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,
@@ -501,7 +508,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Color(0xFFB5BFC8),
                                         fontSize: 10.0,
                                         letterSpacing: 0.0,
@@ -542,7 +549,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Color(0xFFB5BFC8),
                                         fontSize: 10.0,
                                         letterSpacing: 0.0,
@@ -601,7 +608,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Color(0xFFB5BFC8),
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,
@@ -662,7 +669,7 @@ class _HoldListWidgetState extends State<HoldListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Color(0xFFB5BFC8),
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,

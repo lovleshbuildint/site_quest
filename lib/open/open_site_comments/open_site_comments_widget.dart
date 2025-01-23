@@ -102,7 +102,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                           'Add Site Remarks',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -124,7 +124,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         'Site Photo',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -136,7 +136,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         'Nearest Branch',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         'Nearest ATM',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -160,7 +160,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         'Workbench',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -299,7 +299,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         color: Color(0xFFE0E0E0),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
@@ -326,7 +326,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                         color: Color(0xFFED1D35),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.white,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
@@ -387,7 +387,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
@@ -425,7 +425,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textControllerValidator
@@ -547,7 +547,7 @@ class _OpenSiteCommentsWidgetState extends State<OpenSiteCommentsWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

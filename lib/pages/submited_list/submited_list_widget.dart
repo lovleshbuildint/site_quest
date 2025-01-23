@@ -131,7 +131,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -213,7 +213,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -230,8 +231,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
+                                                        font: GoogleFonts
+                                                            .readexPro(),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -254,7 +255,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -271,7 +273,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -298,7 +301,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -315,7 +319,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -338,7 +343,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -355,7 +361,8 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -466,7 +473,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
@@ -510,7 +517,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.white,
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -553,7 +560,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFFB5BFC8),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -614,7 +621,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
@@ -677,7 +684,7 @@ class _SubmitedListWidgetState extends State<SubmitedListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,

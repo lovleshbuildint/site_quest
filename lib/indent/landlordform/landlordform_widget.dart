@@ -117,7 +117,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
           Text(
             'Landlord Name',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Poppins',
+                  font: GoogleFonts.poppins(),
                   color: Colors.black,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
@@ -134,7 +134,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Name',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -170,7 +170,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator: _model.landoardNameTextControllerValidator
@@ -182,7 +182,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Percent',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -199,7 +199,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Percent',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -235,7 +235,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
@@ -248,7 +248,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Address',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -266,7 +266,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Address',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -302,7 +302,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -326,7 +326,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           'District',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -398,20 +398,20 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,
                                         ),
                                 searchTextStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       letterSpacing: 0.0,
                                     ),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
@@ -454,7 +454,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           'State',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -517,7 +517,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               searchHintTextStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w300,
@@ -525,13 +525,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               searchTextStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -579,7 +579,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           'City',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -646,7 +646,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                     FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w300,
@@ -654,13 +654,13 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                 searchTextStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       letterSpacing: 0.0,
                                     ),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
@@ -700,7 +700,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -738,7 +738,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController4Validator
@@ -763,7 +763,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           'Pincode',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -784,7 +784,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
@@ -821,7 +821,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                           maxLength: 6,
@@ -844,7 +844,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Landmark',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -862,7 +862,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Landmark',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -898,7 +898,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -910,7 +910,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Contact Number',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -927,7 +927,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Number',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -963,7 +963,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               maxLength: 10,
@@ -977,7 +977,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Alternative Number',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -994,7 +994,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Number',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1030,7 +1030,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               maxLength: 10,
@@ -1044,7 +1044,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Email Id',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1062,7 +1062,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Email',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1098,7 +1098,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -1110,7 +1110,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Fax',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1150,7 +1150,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     hintText: 'Enter Fax',
                     hintStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               color: Colors.black,
                               letterSpacing: 0.0,
                             ),
@@ -1186,7 +1186,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     fillColor: Colors.transparent,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
+                        font: GoogleFonts.readexPro(),
                         letterSpacing: 0.0,
                       ),
                   maxLength: 10,
@@ -1202,7 +1202,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Landlord Bank Name',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1252,18 +1252,18 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   height: 50.0,
                   searchHintTextStyle:
                       FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             fontSize: 10.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w300,
                           ),
                   searchTextStyle:
                       FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
+                            font: GoogleFonts.readexPro(),
                             letterSpacing: 0.0,
                           ),
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
@@ -1297,7 +1297,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 Text(
                   'Name on Cheque',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Colors.black,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
@@ -1349,7 +1349,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 Text(
                   'Same as above',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Color(0xFF6C6B6B),
                         fontSize: 12.0,
                         letterSpacing: 0.0,
@@ -1370,7 +1370,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Name',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1410,7 +1410,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     : Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator: _model.chequefieldTextControllerValidator
@@ -1427,7 +1427,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 Text(
                   'Landlord Cheque Percentage',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Colors.black,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
@@ -1481,7 +1481,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 Text(
                   'Same as above',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Color(0xFF6C6B6B),
                         fontSize: 12.0,
                         letterSpacing: 0.0,
@@ -1502,7 +1502,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Percentage',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1542,7 +1542,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                     : Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
@@ -1555,7 +1555,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Bank Account Number',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1572,7 +1572,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Number',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1608,7 +1608,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType: TextInputType.number,
@@ -1621,7 +1621,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Bank Branch',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1639,7 +1639,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Branch',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1675,7 +1675,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -1687,7 +1687,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'IFSC Code',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1705,7 +1705,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter IFSC Code',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1741,7 +1741,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -1753,7 +1753,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'PAN Card No.',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1771,7 +1771,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter PAN No.',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1807,7 +1807,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               maxLength: 10,
@@ -1820,7 +1820,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Upload PAN Card Images',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1923,7 +1923,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
@@ -2037,7 +2037,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
@@ -2069,7 +2069,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Aadhaar Card No.',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -2087,7 +2087,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Aadhaar No.',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -2123,7 +2123,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               maxLength: 12,
@@ -2140,7 +2140,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Upload Aadhaar Card Images',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -2243,7 +2243,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
@@ -2357,7 +2357,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
@@ -2389,7 +2389,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Site Referral Name',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -2407,7 +2407,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Name',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -2443,7 +2443,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator: _model.siteReferralNameTextControllerValidator
@@ -2455,7 +2455,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
             child: Text(
               'Site Referral No.',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -2476,7 +2476,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                 decoration: InputDecoration(
                   hintText: 'Enter No.',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
@@ -2512,7 +2512,7 @@ class _LandlordformWidgetState extends State<LandlordformWidget> {
                   fillColor: Colors.transparent,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
+                      font: GoogleFonts.readexPro(),
                       letterSpacing: 0.0,
                     ),
                 keyboardType: TextInputType.number,

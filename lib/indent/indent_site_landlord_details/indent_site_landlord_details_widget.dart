@@ -293,7 +293,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -311,7 +311,7 @@ class _IndentSiteLandlordDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -392,7 +392,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -407,7 +407,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -426,32 +426,30 @@ class _IndentSiteLandlordDetailsWidgetState
                                           children: [
                                             AutoSizeText(
                                               'Indent Number',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    color: Colors.black,
+                                                    fontSize: 12.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
                                             ),
                                             AutoSizeText(
                                               getJsonField(
                                                 FFAppState().indentSelectedSite,
                                                 r'''$.IndentId''',
                                               ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                             ),
                                           ],
                                         ),
@@ -473,32 +471,30 @@ class _IndentSiteLandlordDetailsWidgetState
                                           children: [
                                             AutoSizeText(
                                               'Strategy',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    color: Colors.black,
+                                                    fontSize: 12.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
                                             ),
                                             AutoSizeText(
                                               getJsonField(
                                                 FFAppState().indentSelectedSite,
                                                 r'''$.Strategy''',
                                               ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                             ),
                                           ],
                                         ),
@@ -515,17 +511,18 @@ class _IndentSiteLandlordDetailsWidgetState
                                             children: [
                                               AutoSizeText(
                                                 'City',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w300,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
                                               ),
                                               AutoSizeText(
                                                 getJsonField(
@@ -533,15 +530,16 @@ class _IndentSiteLandlordDetailsWidgetState
                                                       .indentSelectedSite,
                                                   r'''$.City''',
                                                 ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
                                               ),
                                             ],
                                           ),
@@ -571,7 +569,7 @@ class _IndentSiteLandlordDetailsWidgetState
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -584,7 +582,7 @@ class _IndentSiteLandlordDetailsWidgetState
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -597,7 +595,7 @@ class _IndentSiteLandlordDetailsWidgetState
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -610,7 +608,7 @@ class _IndentSiteLandlordDetailsWidgetState
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -718,7 +716,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.white,
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
@@ -1034,7 +1032,7 @@ class _IndentSiteLandlordDetailsWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.white,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,

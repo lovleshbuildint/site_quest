@@ -74,7 +74,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                   child: Text(
                     'Site Submitted Successfully',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
+                          font: GoogleFonts.poppins(),
                           fontSize: 18.0,
                           letterSpacing: 0.0,
                         ),
@@ -89,7 +89,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                       child: Text(
                         'IndentId  Code : ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -101,7 +101,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                         r'''$.IndentId''',
                       ).toString(),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
+                            font: GoogleFonts.readexPro(),
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -133,7 +133,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       color: Colors.black,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -144,7 +144,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -168,7 +168,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       color: Colors.black,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -182,7 +182,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -209,7 +209,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       color: Colors.black,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -223,7 +223,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -247,7 +247,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       color: Colors.black,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -261,7 +261,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      font: GoogleFonts.readexPro(),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -302,7 +302,7 @@ class _IndentSiteReviewWidgetState extends State<IndentSiteReviewWidget> {
                           color: Color(0xFFFF0026),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

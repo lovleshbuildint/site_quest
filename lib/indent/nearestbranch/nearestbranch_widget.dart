@@ -67,7 +67,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: Text(
               'CRA Coverage',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -93,7 +93,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -119,7 +119,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: Text(
               'CRA Agency',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -167,7 +167,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 50.0,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         color: Colors.black,
                         letterSpacing: 0.0,
                       ),
@@ -195,7 +195,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: Text(
               'Branch SOL ID',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -218,7 +218,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter ID',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -254,7 +254,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator: _model.branchSOLIDTextControllerValidator
@@ -266,7 +266,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: Text(
               'Nearest Branch',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -289,7 +289,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Branch',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -325,7 +325,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator: _model.nearestBranchstextTextControllerValidator
@@ -337,7 +337,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: Text(
               'Distance from the Neearest Branch',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -360,7 +360,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               decoration: InputDecoration(
                 hintText: 'In KM',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -396,7 +396,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -413,7 +413,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
             child: Text(
               'Video URL',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -435,7 +435,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter URL',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -471,7 +471,7 @@ class _NearestbranchWidgetState extends State<NearestbranchWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:

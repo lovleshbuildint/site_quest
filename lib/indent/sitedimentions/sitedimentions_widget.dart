@@ -88,7 +88,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
           Text(
             'Shop Type',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Poppins',
+                  font: GoogleFonts.poppins(),
                   color: Colors.black,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
@@ -110,12 +110,12 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                   FormFieldController<String>('Full Shop'),
               optionHeight: 32.0,
               textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               selectedTextStyle:
                   FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),
@@ -134,7 +134,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Total Shop Area (sq.ft.)',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -152,7 +152,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Area',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -188,7 +188,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -205,7 +205,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Total Area Offered (sq.ft.)',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -222,7 +222,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Area',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -258,7 +258,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -275,7 +275,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Carpet Area',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -293,7 +293,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'In Feet',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -329,7 +329,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -358,7 +358,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           'Shop Depth',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -378,7 +378,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -416,7 +416,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: const TextInputType.numberWithOptions(
@@ -444,7 +444,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           'Shop Width ',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -464,7 +464,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -502,7 +502,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: const TextInputType.numberWithOptions(
@@ -526,7 +526,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Shop Height',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -544,7 +544,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'In Feet',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -580,7 +580,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -597,7 +597,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Total Frontage',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -615,7 +615,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Frontage',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -651,7 +651,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -668,7 +668,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Frontage Offered',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -686,7 +686,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Frontage',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -722,7 +722,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -751,7 +751,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           ' Signage Width',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -771,7 +771,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -809,7 +809,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: const TextInputType.numberWithOptions(
@@ -838,7 +838,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           'Signage Height',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -858,7 +858,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -896,7 +896,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: const TextInputType.numberWithOptions(
@@ -921,7 +921,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'L Shape Signage',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -943,7 +943,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -969,7 +969,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'VSAT',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -991,7 +991,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -1017,7 +1017,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'AC ODU Space',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1039,7 +1039,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -1078,7 +1078,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                           'Power Availability',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -1105,7 +1105,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
@@ -1145,7 +1145,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -1165,7 +1165,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
@@ -1203,7 +1203,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               keyboardType: TextInputType.number,
@@ -1227,7 +1227,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Totem Pole',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1250,17 +1250,17 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               height: 50.0,
               searchHintTextStyle:
                   FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         fontSize: 10.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
                       ),
               searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -1287,7 +1287,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Ramp Availability',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1309,7 +1309,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -1335,7 +1335,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
             child: Text(
               'Note For Project/TIS',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -1353,7 +1353,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter Note...',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -1389,7 +1389,7 @@ class _SitedimentionsWidgetState extends State<SitedimentionsWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator: _model.noteForProjectTISTextControllerValidator

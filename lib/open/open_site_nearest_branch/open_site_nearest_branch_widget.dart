@@ -152,7 +152,7 @@ class _OpenSiteNearestBranchWidgetState
                           'Add Nearest Branch',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -174,7 +174,7 @@ class _OpenSiteNearestBranchWidgetState
                         'Site Photo',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -186,7 +186,7 @@ class _OpenSiteNearestBranchWidgetState
                         'Nearest Branch',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -198,7 +198,7 @@ class _OpenSiteNearestBranchWidgetState
                         'Nearest ATM',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -210,7 +210,7 @@ class _OpenSiteNearestBranchWidgetState
                         'Workbench',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -495,7 +495,7 @@ class _OpenSiteNearestBranchWidgetState
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

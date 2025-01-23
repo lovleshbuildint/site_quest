@@ -129,16 +129,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               hintText: 'User ID',
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              hintStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodySmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00DBE2E7),
@@ -182,7 +181,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.white,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
@@ -221,17 +220,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 !_model.passwordVisibility,
                                             decoration: InputDecoration(
                                               hintText: 'Password',
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.white,
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              hintStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    color: Colors.white,
+                                                    fontSize: 12.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00FFFFFF),
@@ -294,7 +292,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.white,
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
@@ -338,7 +336,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFFC9CCC9),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
@@ -501,7 +499,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font: GoogleFonts
+                                                            .poppins(),
                                                         color: Colors.white,
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
@@ -535,16 +534,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: Color(0xFFFF0026),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: Colors.white,
-                                                    fontSize: 18.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleMedium
+                                              .override(
+                                                font: GoogleFonts.lexendDeca(),
+                                                color: Colors.white,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                           elevation: 3.0,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
@@ -594,16 +593,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: Color(0xFF2D2D2D),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: Colors.white,
-                                                    fontSize: 18.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleMedium
+                                              .override(
+                                                font: GoogleFonts.lexendDeca(),
+                                                color: Colors.white,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                           elevation: 3.0,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,

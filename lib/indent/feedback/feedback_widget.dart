@@ -94,7 +94,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                           'Feedback',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -145,7 +145,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
@@ -183,7 +183,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textControllerValidator
@@ -251,7 +251,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                           color: Color(0xFFFF0026),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

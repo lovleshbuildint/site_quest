@@ -96,7 +96,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -113,7 +113,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                           '5/8',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -134,7 +134,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                         'Site Photo',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -146,7 +146,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                         'Nearest Branch',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -158,7 +158,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                         'Nearest ATM',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -170,7 +170,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                         'Workbench',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -361,7 +361,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
@@ -373,7 +373,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            font: GoogleFonts.readexPro(),
                                             color: Color(0xFFFF0026),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
@@ -472,7 +472,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -484,7 +484,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               color: Color(0xFFFF0026),
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
@@ -584,7 +584,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -596,7 +596,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               color: Color(0xFFFF0026),
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
@@ -646,7 +646,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -688,7 +688,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -730,7 +730,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -772,7 +772,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -814,7 +814,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -856,7 +856,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -898,7 +898,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -940,7 +940,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -982,7 +982,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -1024,7 +1024,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -1066,7 +1066,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -1171,7 +1171,7 @@ class _OpenSitePhotoWidgetState extends State<OpenSitePhotoWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

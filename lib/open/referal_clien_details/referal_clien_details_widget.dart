@@ -126,7 +126,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           'Add Site Details',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -148,7 +148,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                         'Site Details',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -160,7 +160,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                         'Location Survey',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -172,7 +172,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                         'Client Information',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -272,7 +272,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           'Name',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -292,7 +292,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -330,7 +330,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController1Validator
@@ -345,7 +345,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -365,7 +365,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -403,7 +403,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             maxLength: 10,
@@ -421,7 +421,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -442,7 +442,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -480,7 +480,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController3Validator
@@ -495,7 +495,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -516,7 +516,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -554,7 +554,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
@@ -570,7 +570,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -590,7 +590,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -628,7 +628,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
@@ -655,7 +655,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -709,24 +709,26 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       fontSize: 10.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w300,
                                                     ),
-                                            searchTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            searchTextStyle: FlutterFlowTheme
+                                                    .of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.readexPro(),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -771,7 +773,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -828,22 +830,24 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       fontSize: 10.0,
                                                       letterSpacing: 0.0,
                                                     ),
-                                            searchTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            searchTextStyle: FlutterFlowTheme
+                                                    .of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.readexPro(),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -886,7 +890,8 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -933,7 +938,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Readex Pro',
+                                                font: GoogleFonts.readexPro(),
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -966,7 +971,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -987,7 +992,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Poppins',
+                                                    font: GoogleFonts.poppins(),
                                                     color: Colors.black,
                                                     letterSpacing: 0.0,
                                                   ),
@@ -1034,7 +1039,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               letterSpacing: 0.0,
                                             ),
                                         keyboardType: TextInputType.number,
@@ -1067,7 +1072,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Colors.black,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -1121,24 +1126,26 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       fontSize: 10.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w300,
                                                     ),
-                                            searchTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            searchTextStyle: FlutterFlowTheme
+                                                    .of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.readexPro(),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1180,7 +1187,8 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font:
+                                                          GoogleFonts.poppins(),
                                                       color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1227,7 +1235,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Readex Pro',
+                                                font: GoogleFonts.readexPro(),
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -1249,7 +1257,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -1270,7 +1278,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -1308,7 +1316,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController9Validator
@@ -1359,7 +1367,7 @@ class _ReferalClienDetailsWidgetState extends State<ReferalClienDetailsWidget> {
                           color: Color(0xFFFF0026),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

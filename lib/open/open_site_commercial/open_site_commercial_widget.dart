@@ -186,7 +186,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -203,7 +203,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                           '3/8',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -224,7 +224,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                         'Site Details',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -236,7 +236,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                         'Landlord Details',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -248,7 +248,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                         'Commercial',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -260,7 +260,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                         'Site Dimensions',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -600,7 +600,7 @@ class _OpenSiteCommercialWidgetState extends State<OpenSiteCommercialWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

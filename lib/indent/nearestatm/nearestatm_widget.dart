@@ -79,7 +79,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'ATM ID',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -101,7 +101,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'Enter ID',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -137,7 +137,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -149,7 +149,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'ATM Name',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -177,17 +177,17 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               height: 50.0,
               searchHintTextStyle:
                   FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         fontSize: 10.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
                       ),
               searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -214,7 +214,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'ATM Status',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -232,11 +232,11 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 FormFieldController<String>('ONSITE'),
             optionHeight: 37.0,
             textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                  fontFamily: 'Readex Pro',
+                  font: GoogleFonts.readexPro(),
                   letterSpacing: 0.0,
                 ),
             selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Poppins',
+                  font: GoogleFonts.poppins(),
                   color: Colors.black,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
@@ -254,7 +254,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Hitachi ATM',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -275,7 +275,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                   ),
@@ -301,7 +301,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Distance',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -324,7 +324,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'In KM',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -360,7 +360,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -377,7 +377,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Direction',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -400,7 +400,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'Entre Direction',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -436,7 +436,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               validator:
@@ -448,7 +448,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Avg. Approx. Txns./Day',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -471,7 +471,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'Count',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -507,7 +507,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -524,7 +524,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Avg. Total. Txns./Day',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -547,7 +547,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'Count',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -583,7 +583,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -600,7 +600,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Avg. Onus',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -618,7 +618,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'Count',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -654,7 +654,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -671,7 +671,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Avg. Offus',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -689,7 +689,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
               decoration: InputDecoration(
                 hintText: 'Count',
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Poppins',
+                      font: GoogleFonts.poppins(),
                       color: Colors.black,
                       letterSpacing: 0.0,
                     ),
@@ -725,7 +725,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                 fillColor: Colors.transparent,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               keyboardType:
@@ -742,7 +742,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
             child: Text(
               'Upload Proof',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -778,7 +778,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     child: Text(
                       'Upload ATM Photo & Transaction Slip Photo',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Color(0xFF2D2D2D),
                             fontSize: 12.0,
                             letterSpacing: 0.0,
@@ -791,7 +791,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                     child: Text(
                       'jpg or png, file size no more than 03MB',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Color(0xFF2D2D2D),
                             fontSize: 10.0,
                             letterSpacing: 0.0,
@@ -850,7 +850,7 @@ class _NearestatmWidgetState extends State<NearestatmWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),

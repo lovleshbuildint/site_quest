@@ -294,7 +294,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
@@ -312,7 +312,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -336,7 +336,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 10.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -350,7 +350,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 10.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -364,7 +364,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 10.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -378,7 +378,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 10.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -501,7 +501,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -529,7 +529,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -559,7 +559,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -599,7 +599,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -630,7 +630,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -670,7 +670,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -701,7 +701,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -742,7 +742,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -773,7 +773,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -813,7 +813,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -844,7 +844,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -884,7 +884,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -915,7 +915,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -955,7 +955,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -985,7 +985,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -1014,7 +1014,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -1045,7 +1045,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
@@ -1075,7 +1075,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -1109,7 +1109,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -1131,7 +1131,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -1175,7 +1175,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -1195,7 +1195,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -1217,7 +1217,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -1261,7 +1261,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -1287,16 +1287,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 _model.stateDropdownValue,
                                                 'test',
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    color: Colors.black,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
                                             ),
                                           ),
                                           Padding(
@@ -1389,8 +1388,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                               context)
                                                           .labelMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Poppins',
+                                                            font: GoogleFonts
+                                                                .poppins(),
                                                             fontSize: 10.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1401,18 +1400,20 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                               context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
+                                                            font: GoogleFonts
+                                                                .readexPro(),
                                                             letterSpacing: 0.0,
                                                           ),
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .poppins(),
+                                                            color: Colors.black,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText: 'Please select...',
                                                   searchHintText:
                                                       'Search Bank...',
@@ -1456,16 +1457,17 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
                                                 'District',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                             if (_model.stateDropdownValue !=
@@ -1562,8 +1564,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                                   context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
+                                                                font: GoogleFonts
+                                                                    .readexPro(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1572,8 +1574,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
+                                                                font: GoogleFonts
+                                                                    .readexPro(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1582,8 +1584,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(),
                                                                 color: Colors
                                                                     .black,
                                                                 letterSpacing:
@@ -1645,16 +1647,17 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
                                                 'City',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                             if (_model.stateDropdownValue !=
@@ -1737,8 +1740,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                                   context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
+                                                                font: GoogleFonts
+                                                                    .readexPro(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1747,8 +1750,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
+                                                                font: GoogleFonts
+                                                                    .readexPro(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1757,8 +1760,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(),
                                                                 color: Colors
                                                                     .black,
                                                                 letterSpacing:
@@ -1814,16 +1817,17 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
                                                 'Pincode',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                             Padding(
@@ -1840,14 +1844,16 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   hintText: 'Enter Pincode',
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .poppins(),
+                                                            color: Colors.black,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1901,8 +1907,8 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          font: GoogleFonts
+                                                              .readexPro(),
                                                           letterSpacing: 0.0,
                                                         ),
                                                 maxLength: 6,
@@ -1925,7 +1931,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -1953,7 +1959,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -1983,7 +1989,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2006,7 +2012,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -2050,7 +2056,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -2066,7 +2072,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2088,7 +2094,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -2132,7 +2138,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -2148,7 +2154,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2177,7 +2183,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -2217,16 +2223,17 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
                                                 'Site Sourced By',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                             Padding(
@@ -2248,14 +2255,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                             .width *
                                                         1.0,
                                                 height: 50.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 hintText: 'Please select',
                                                 icon: Icon(
                                                   Icons
@@ -2295,16 +2303,17 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
                                                 'Onsite/Offsite',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                             Padding(
@@ -2325,14 +2334,15 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                                             .width *
                                                         1.0,
                                                 height: 50.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 hintText: 'Please select',
                                                 icon: Icon(
                                                   Icons
@@ -2367,7 +2377,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2389,7 +2399,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -2433,7 +2443,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -2449,7 +2459,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2472,7 +2482,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -2516,7 +2526,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     maxLength: 10,
@@ -2534,7 +2544,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2557,7 +2567,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -2588,7 +2598,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2636,7 +2646,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                         ),
@@ -2667,7 +2677,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2736,7 +2746,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Please Select...',
@@ -2770,7 +2780,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -2837,7 +2847,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Please select...',
@@ -3171,7 +3181,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.white,
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -3204,7 +3214,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -3266,19 +3276,19 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                                       FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            font: GoogleFonts.readexPro(),
                                             letterSpacing: 0.0,
                                           ),
                                   searchTextStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        font: GoogleFonts.readexPro(),
                                         letterSpacing: 0.0,
                                       ),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         letterSpacing: 0.0,
                                       ),
@@ -3318,7 +3328,7 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                       Text(
                         'City',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               color: Colors.black,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
@@ -3375,19 +3385,19 @@ class _OpenSiteDetailsWidgetState extends State<OpenSiteDetailsWidget> {
                               searchHintTextStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               searchTextStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),

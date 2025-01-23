@@ -74,7 +74,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                   child: Text(
                     'Site Submitted Successfully',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
+                          font: GoogleFonts.poppins(),
                           fontSize: 18.0,
                           letterSpacing: 0.0,
                         ),
@@ -89,7 +89,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                       child: Text(
                         'HPY Code : ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -101,7 +101,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                         r'''$.IndentId''',
                       ).toString(),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
+                            font: GoogleFonts.readexPro(),
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -132,7 +132,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     color: Colors.black,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -146,7 +146,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -170,7 +170,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     color: Colors.black,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -184,7 +184,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -208,7 +208,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     color: Colors.black,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -222,7 +222,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -246,7 +246,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     color: Colors.black,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -260,7 +260,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -300,7 +300,7 @@ class _ReferalSubmitWidgetState extends State<ReferalSubmitWidget> {
                           color: Color(0xFFFF0026),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

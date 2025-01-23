@@ -78,7 +78,7 @@ class _AnalyticsIndentsOverviewWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
@@ -119,7 +119,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -147,7 +147,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.white,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -184,7 +184,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -253,7 +253,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFFFF0026),
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -325,17 +325,18 @@ class _AnalyticsIndentsOverviewWidgetState
                                                       15.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Approval',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                           ),
@@ -404,17 +405,18 @@ class _AnalyticsIndentsOverviewWidgetState
                                                       15.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Pendings',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                           ),
@@ -483,17 +485,18 @@ class _AnalyticsIndentsOverviewWidgetState
                                                       15.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Under Process',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                           ),
@@ -562,17 +565,18 @@ class _AnalyticsIndentsOverviewWidgetState
                                                       15.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Rejected',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                           ),
@@ -601,7 +605,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -664,7 +668,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFF2D2D2D),
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -680,16 +684,15 @@ class _AnalyticsIndentsOverviewWidgetState
                                           children: [
                                             Text(
                                               '3,855',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -722,8 +725,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Poppins',
+                                                            font: GoogleFonts
+                                                                .poppins(),
                                                             color: Color(
                                                                 0xFF219653),
                                                             fontSize: 10.0,
@@ -822,7 +825,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFF2D2D2D),
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -838,16 +841,15 @@ class _AnalyticsIndentsOverviewWidgetState
                                           children: [
                                             Text(
                                               '3,855',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -882,8 +884,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Poppins',
+                                                            font: GoogleFonts
+                                                                .poppins(),
                                                             color: Color(
                                                                 0xFF219653),
                                                             fontSize: 10.0,
@@ -979,16 +981,16 @@ class _AnalyticsIndentsOverviewWidgetState
                                                   -1.0, -1.0),
                                               child: Text(
                                                 'Site Status',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFF2D2D2D),
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      color: Color(0xFF2D2D2D),
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                               ),
                                             ),
                                             Row(
@@ -1029,7 +1031,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(),
                                                           color:
                                                               Color(0xFF2D2D2D),
                                                           fontSize: 10.0,
@@ -1069,7 +1072,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(),
                                                           color:
                                                               Color(0xFF2D2D2D),
                                                           fontSize: 10.0,
@@ -1096,16 +1100,17 @@ class _AnalyticsIndentsOverviewWidgetState
                                             children: [
                                               Text(
                                                 '2,985',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.poppins(),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
@@ -1143,8 +1148,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                 .of(context)
                                                             .bodyMedium
                                                             .override(
-                                                              fontFamily:
-                                                                  'Poppins',
+                                                              font: GoogleFonts
+                                                                  .poppins(),
                                                               color: Color(
                                                                   0xFF219653),
                                                               fontSize: 10.0,
@@ -1254,7 +1259,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -1268,7 +1273,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -1336,8 +1341,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1390,8 +1395,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1455,8 +1460,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1509,8 +1514,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1573,8 +1578,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1627,8 +1632,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1692,8 +1697,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1746,8 +1751,8 @@ class _AnalyticsIndentsOverviewWidgetState
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1833,7 +1838,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
@@ -1900,7 +1905,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
@@ -1967,7 +1972,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
@@ -2034,7 +2039,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Colors.white,
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
@@ -2102,7 +2107,7 @@ class _AnalyticsIndentsOverviewWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFFB5BFC8),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,

@@ -237,7 +237,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -254,7 +254,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                           '4/8',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -275,7 +275,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                         'Site Details',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -287,7 +287,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                         'Landlord Details',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -299,7 +299,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                         'Commercial',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -311,7 +311,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                         'Site Dimensions',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -645,7 +645,7 @@ class _OpenSiteDimensionsWidgetState extends State<OpenSiteDimensionsWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

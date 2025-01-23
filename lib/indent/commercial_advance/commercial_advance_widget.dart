@@ -73,7 +73,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
             Text(
               'Rental Type',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
+                    font: GoogleFonts.poppins(),
                     color: Colors.black,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -86,12 +86,12 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   FormFieldController<String>('Advance Rent'),
               optionHeight: 32.0,
               textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(),
                     letterSpacing: 0.0,
                   ),
               selectedTextStyle:
                   FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        font: GoogleFonts.poppins(),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),
@@ -113,7 +113,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                   Text(
                     'Rent (per month)',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
+                          font: GoogleFonts.poppins(),
                           color: Colors.black,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
@@ -154,7 +154,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -192,7 +192,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
@@ -212,7 +212,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       'Rent Free Period (in Days)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -242,7 +242,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       height: 50.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Poppins',
+                                font: GoogleFonts.poppins(),
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
@@ -274,7 +274,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             : 'Security Deposit (Months)';
                       }(_model.rentaltypeValue!),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -321,7 +321,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       height: 50.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Poppins',
+                                font: GoogleFonts.poppins(),
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
@@ -353,7 +353,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             : 'Total Security Deposit';
                       }(_model.rentaltypeValue!),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -385,7 +385,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       decoration: InputDecoration(
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),
@@ -421,7 +421,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                         fillColor: Color(0xFFF2F2F2),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
+                            font: GoogleFonts.readexPro(),
                             letterSpacing: 0.0,
                           ),
                       validator: _model
@@ -435,7 +435,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       'Initial Advance (Months)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -491,7 +491,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       height: 50.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Poppins',
+                                font: GoogleFonts.poppins(),
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
@@ -531,7 +531,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -559,7 +559,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -603,7 +603,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -628,7 +628,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(),
                                         color: Colors.black,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -656,7 +656,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -700,7 +700,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(),
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -721,7 +721,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       'Rent escalation (percent)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -745,7 +745,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       height: 50.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Poppins',
+                                font: GoogleFonts.poppins(),
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
@@ -773,7 +773,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       'Escalation Period (Years)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -804,7 +804,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       height: 50.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Poppins',
+                                font: GoogleFonts.poppins(),
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
@@ -832,7 +832,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       'Agreement Period (Years)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -864,7 +864,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                       height: 50.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Poppins',
+                                font: GoogleFonts.poppins(),
                                 color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
@@ -892,7 +892,7 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                     child: Text(
                       'Is E-Bill including Rent?',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             color: Colors.black,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -921,13 +921,13 @@ class _CommercialAdvanceWidgetState extends State<CommercialAdvanceWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             selectedTextStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,

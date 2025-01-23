@@ -115,7 +115,7 @@ class _ReferalSurveyDetailsWidgetState
                           'Add Site Details',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -137,7 +137,7 @@ class _ReferalSurveyDetailsWidgetState
                         'Site Details',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class _ReferalSurveyDetailsWidgetState
                         'Location Survey',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class _ReferalSurveyDetailsWidgetState
                         'Client Information',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -261,7 +261,7 @@ class _ReferalSurveyDetailsWidgetState
                           'Daily footfall',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -281,7 +281,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -319,7 +319,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController1Validator
@@ -334,7 +334,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -354,7 +354,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -392,7 +392,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
@@ -408,7 +408,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -429,7 +429,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -467,7 +467,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController3Validator
@@ -482,7 +482,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -503,7 +503,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -541,7 +541,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model.textController4Validator
@@ -556,7 +556,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -576,7 +576,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -614,7 +614,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
@@ -631,7 +631,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -651,7 +651,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -689,7 +689,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
@@ -706,7 +706,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -726,7 +726,7 @@ class _ReferalSurveyDetailsWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.black,
                                     letterSpacing: 0.0,
                                   ),
@@ -764,7 +764,7 @@ class _ReferalSurveyDetailsWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  font: GoogleFonts.readexPro(),
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.number,
@@ -817,7 +817,7 @@ class _ReferalSurveyDetailsWidgetState
                           color: Color(0xFFFF0026),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

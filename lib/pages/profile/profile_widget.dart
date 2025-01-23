@@ -124,7 +124,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.black,
                                           fontSize: 22.0,
                                           letterSpacing: 0.0,
@@ -163,7 +163,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -173,7 +173,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -209,7 +209,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               icon: Icon(
@@ -300,7 +300,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              font: GoogleFonts.readexPro(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -375,7 +375,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -443,7 +443,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -502,7 +502,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -570,7 +570,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFFB5BFC8),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -639,7 +639,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.white,
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,

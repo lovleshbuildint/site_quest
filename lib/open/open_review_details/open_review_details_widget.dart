@@ -86,7 +86,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -193,7 +193,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
@@ -205,7 +205,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFF2D2D2D),
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
@@ -218,7 +218,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(),
                                               color: Color(0xFF2D2D2D),
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
@@ -343,7 +343,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -355,7 +355,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -368,7 +368,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -441,7 +441,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -453,7 +453,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -466,7 +466,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -539,7 +539,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -551,7 +551,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -564,7 +564,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -637,7 +637,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -649,7 +649,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -662,7 +662,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -735,7 +735,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -747,7 +747,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -760,7 +760,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -833,7 +833,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -845,7 +845,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -858,7 +858,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
@@ -931,7 +931,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -943,7 +943,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Color(0xFF2D2D2D),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
@@ -956,7 +956,7 @@ class _OpenReviewDetailsWidgetState extends State<OpenReviewDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(),
                                             color: Color(0xFF2D2D2D),
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,

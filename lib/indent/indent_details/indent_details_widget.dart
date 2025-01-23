@@ -194,7 +194,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       fontSize: 18.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -246,7 +246,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
@@ -261,7 +261,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -293,7 +293,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Color(0xFF2D2D2D),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -318,7 +318,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
@@ -332,7 +332,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -352,7 +352,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
@@ -366,7 +366,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -389,7 +389,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -403,7 +403,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
@@ -433,7 +433,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
@@ -447,7 +447,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -467,7 +467,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
@@ -481,7 +481,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -504,7 +504,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -518,7 +518,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
@@ -564,7 +564,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Color(0xFF9D9D9D),
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -578,7 +578,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -622,7 +622,7 @@ class _IndentDetailsWidgetState extends State<IndentDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(),
                                           color: Colors.white,
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,

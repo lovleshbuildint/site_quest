@@ -108,7 +108,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -125,7 +125,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                           '8/8',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -205,7 +205,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 color: Colors.black,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
@@ -220,7 +220,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(),
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -242,7 +242,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -257,7 +257,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -285,7 +285,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   color: Colors.black,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
@@ -300,7 +300,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -319,32 +319,30 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                           children: [
                                             AutoSizeText(
                                               'City',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    color: Colors.black,
+                                                    fontSize: 12.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
                                             ),
                                             AutoSizeText(
                                               getJsonField(
                                                 FFAppState().indentSelectedSite,
                                                 r'''$.City''',
                                               ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                             ),
                                           ],
                                         ),
@@ -372,7 +370,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                         'Site Photo',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -384,7 +382,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                         'Nearest Branch',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -396,7 +394,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                         'Nearest ATM',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -408,7 +406,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                         'Workbench',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(),
                               fontSize: 10.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -547,7 +545,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                         color: Color(0xFFE0E0E0),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.black,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
@@ -574,7 +572,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                         color: Color(0xFFED1D35),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: Colors.white,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
@@ -630,7 +628,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(),
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
@@ -668,7 +666,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(),
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textControllerValidator
@@ -779,7 +777,7 @@ class _IndentSiteCommentsWidgetState extends State<IndentSiteCommentsWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(),
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
